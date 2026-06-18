@@ -2,8 +2,8 @@ name: github-issue-loop
 default_entrypoint: issue-check
 max_iterations: 10
 router:
-  runtime: codex
-  model: gpt-5.4
+  runtime: cursor-cli
+  model: gpt-5  # JARVIS default; codex/claude optional with OK usuario
 
 tracker:
   repo: owner/repo

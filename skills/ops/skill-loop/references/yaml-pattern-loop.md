@@ -17,14 +17,14 @@ Examples:
 ## Starter shape
 
 ```yaml
-# yaml-language-server: $schema=https://raw.githubusercontent.com/takumiyoshikawa/skill-loop/refs/heads/main/schema.json
+# yaml-language-server: $schema=references/schema.json (pinned copy in jarvis-skills-library)
 
 name: plain-loop
 default_entrypoint: implement
 max_iterations: 10
 router:
-  runtime: codex
-  model: gpt-5.4
+  runtime: cursor-cli
+  model: gpt-5  # JARVIS default; codex/claude optional with OK usuario
 
 skills:
   implement:

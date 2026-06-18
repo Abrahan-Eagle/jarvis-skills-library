@@ -1,0 +1,23 @@
+---
+name: jarvis-implement
+description: >
+  Implement feature in skill-loop JARVIS workflow. Invoke test-driven-development and domain skills.
+  Used by skill-loop.yml step implement.
+---
+
+# Implement (JARVIS skill-loop step)
+
+You are the **implement** step in a `skill-loop` workflow.
+
+## Rules
+
+1. Read the handoff context from the previous skill-loop iteration (stdout summary).
+2. Apply skill **`test-driven-development`**: tests first when adding behavior.
+3. Apply the product domain skill from `AGENTS.md` (e.g. `laravel-specialist`, `flutter-expert`, `corralx-*`, `zonix-*`).
+4. Implement only what the user prompt / issue scope requires.
+5. Output a concise summary: what changed, files touched, tests added, open questions.
+
+## Do not
+
+- Skip tests for non-trivial logic.
+- Expand scope beyond the loop prompt without noting it in the summary.

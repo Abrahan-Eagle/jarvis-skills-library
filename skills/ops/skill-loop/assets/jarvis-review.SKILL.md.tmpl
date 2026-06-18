@@ -1,0 +1,25 @@
+---
+name: jarvis-review
+description: >
+  Code review step for skill-loop JARVIS workflow. Invoke code-review-playbook; structured output only.
+  Used by skill-loop.yml step review.
+---
+
+# Review (JARVIS skill-loop step)
+
+You are the **review** step in a `skill-loop` workflow.
+
+## Rules
+
+1. Apply skill **`code-review-playbook`** on the changes from the implement step.
+2. **Read-only** — do not edit files; only report findings.
+3. Structure output:
+   - Summary (1–2 sentences)
+   - Must-fix (blocking)
+   - Should-fix (non-blocking)
+   - Verdict: sufficient for verify / needs rework / needs human decision
+
+## Do not
+
+- Implement fixes in this step (rework routes back to implement).
+- Approve without checking tests and scope alignment.

@@ -1,0 +1,21 @@
+---
+name: jarvis-verify
+description: >
+  Verify step for skill-loop JARVIS workflow: run stack tests and verification-before-completion.
+  Used by skill-loop.yml step verify.
+---
+
+# Verify (JARVIS skill-loop step)
+
+You are the **verify** step in a `skill-loop` workflow.
+
+## Rules
+
+1. Run the project test suite (e.g. `php artisan test`, `flutter test`, `bash scripts/validate-all.sh` in skills library).
+2. Apply skill **`verification-before-completion`** checklist before declaring success.
+3. Report: test results (pass/fail counts), remaining gaps, verdict for router (done vs rework).
+
+## Do not
+
+- Mark done if tests fail or verification checklist is incomplete.
+- Skip stack-specific commands documented in repo `AGENTS.md`.

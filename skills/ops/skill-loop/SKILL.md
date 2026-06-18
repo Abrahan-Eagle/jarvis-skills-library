@@ -6,7 +6,7 @@ description: >
 license: MIT
 metadata:
   author: JARVIS Global
-  version: "1.0-jarvis1"
+  version: "1.0-jarvis2"
   scope: [global]
   category: ops
   upstream: skill-loop:skill-loop
@@ -22,15 +22,17 @@ metadata:
     - code-review-playbook
     - verification-before-completion
     - session-learner-ops
+    - learning-loop-router
 allowed-tools: [Read, Write, Edit, Grep, Glob, Bash]
 ---
 
 ## JARVIS / Cursor (mandatory)
 
 - **No slash command:** En Cursor no existe `/skill-loop`. Invocar skill `skill-loop` y pedir scaffold YAML o edición de `skill-loop.yml`.
-- **Skills directory:** Por defecto JARVIS usa `.agents/skills/` en el repo producto (no `.claude/skills/`).
+- **Skills directory:** Repo producto → `.agents/skills/` para steps del loop; skills globales JARVIS → `~/.cursor/skills/` (`bash scripts/install.sh --all`).
 - **Runtime preferido:** `cursor-cli` (binario `agent` en PATH) en plantillas JARVIS; requiere Cursor CLI instalado.
 - **Ejecución CLI:** `skill-loop run` solo **tras OK explícito del usuario** en el YAML generado. Ver `install-skill-loop-runtime.sh`.
+- **Starter skills JARVIS:** Copiar `assets/jarvis-implement|review|verify.SKILL.md.tmpl` → `.agents/skills/<step>/SKILL.md`.
 - **Router:** `skill-loop-router`. Doc: [docs/SKILL_LOOP_INTEGRATION.md](../../docs/SKILL_LOOP_INTEGRATION.md)
 - **vs learning-loop:** skill-loop orquesta pasadas de trabajo; learning-loop captura aprendizajes — no confundir.
 - `upstream: skill-loop:skill-loop`
@@ -70,5 +72,6 @@ Use this skill for two cases:
 - explain the execution flow in terms of the chosen pattern
 
 ## Validate
+- JARVIS starter tmpl: `assets/jarvis-implement|review|verify.SKILL.md.tmpl`, `assets/skill-loop.jarvis.yml.tmpl`
 - YAML: validate one or more skill-loop YAML files against `schema.json`
-- schema:https://raw.githubusercontent.com/takumiyoshikawa/skill-loop/refs/heads/main/schema.json
+- schema:references/schema.json (pinned copy in jarvis-skills-library)

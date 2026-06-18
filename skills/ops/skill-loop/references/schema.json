@@ -7,7 +7,7 @@
       "properties": {
         "runtime": {
           "type": "string",
-          "description": "Coding agent CLI runtime to execute. Supported values are claude or codex or cursor-cli or opencode. Defaults to claude."
+          "description": "Agent CLI runtime (claude, codex, cursor-cli, opencode). JARVIS default: cursor-cli. Defaults to claude upstream if omitted."
         },
         "model": {
           "type": "string",
@@ -18,7 +18,7 @@
             "type": "string"
           },
           "type": "array",
-          "description": "Additional CLI arguments to pass to the agent (e.g. --dangerously-skip-permissions for claude)."
+          "description": "Optional CLI args. JARVIS: do not use --dangerously-skip-permissions or equivalent."
         }
       },
       "additionalProperties": false,
@@ -28,7 +28,7 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "Workflow name used for grouping run sessions under ~/.local/share/skill-loop/\u003cname\u003e/. When omitted the config filename is used."
+          "description": "Workflow name used for grouping run sessions under ~/.local/share/skill-loop/<name>/. When omitted the config filename is used."
         },
         "schedule": {
           "type": "string",

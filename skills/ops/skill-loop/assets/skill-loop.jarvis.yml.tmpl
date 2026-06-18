@@ -1,7 +1,6 @@
-# JARVIS feature loop — implement → review → verify (skill-loop)
-# Copy to repo producto as skill-loop.yml and adapt skill names/prompts.
-# Schema: vendor jarvis-skills-library/skills/ops/skill-loop/references/schema.json
-# yaml-language-server: $schema=../jarvis-skills-library/skills/ops/skill-loop/references/schema.json
+# JARVIS feature loop — copy to repo producto as skill-loop.yml
+# yaml-language-server: $schema=skills/ops/skill-loop/references/schema.json
+# (from jarvis-skills-library clone) or vendor schema.json beside this file
 
 name: jarvis-feature-loop
 default_entrypoint: implement
@@ -49,9 +48,3 @@ skills:
       - id: rework
         criteria: "Tests or verification failed; more implementation needed."
         skill: implement
-
-# Starter skills: copy from jarvis-skills-library/skills/ops/skill-loop/assets/
-#   jarvis-implement.SKILL.md.tmpl → .agents/skills/implement/SKILL.md
-#   jarvis-review.SKILL.md.tmpl    → .agents/skills/review/SKILL.md
-#   jarvis-verify.SKILL.md.tmpl    → .agents/skills/verify/SKILL.md
-# Global JARVIS skills: ~/.cursor/skills/ (install.sh --all)

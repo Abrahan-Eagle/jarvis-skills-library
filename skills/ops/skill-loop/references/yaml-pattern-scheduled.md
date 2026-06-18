@@ -21,7 +21,7 @@ Examples:
 Smallest version:
 
 ```yaml
-# yaml-language-server: $schema=https://raw.githubusercontent.com/takumiyoshikawa/skill-loop/refs/heads/main/schema.json
+# yaml-language-server: $schema=references/schema.json (pinned copy in jarvis-skills-library)
 
 name: scheduled-task
 schedule: "0 9 * * 1-5"
@@ -38,7 +38,7 @@ skills:
 Notification variant:
 
 ```yaml
-# yaml-language-server: $schema=https://raw.githubusercontent.com/takumiyoshikawa/skill-loop/refs/heads/main/schema.json
+# yaml-language-server: $schema=references/schema.json (pinned copy in jarvis-skills-library)
 
 name: scheduled-task
 schedule: "0 9 * * 1-5"
@@ -46,8 +46,8 @@ default_entrypoint: run-task
 max_iterations: 2
 
 router:
-  runtime: codex
-  model: gpt-5.4
+  runtime: cursor-cli
+  model: gpt-5  # JARVIS default; codex/claude optional with OK usuario
 
 skills:
   run-task:

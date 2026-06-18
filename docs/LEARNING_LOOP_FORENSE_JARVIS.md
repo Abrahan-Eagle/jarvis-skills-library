@@ -5,6 +5,8 @@
 **Pin JARVIS:** `948dc75bc5a771a57366c651c5d442b44cba214d` (main)  
 **Objetivo:** Captura/consolidación de aprendizajes de sesión sin sustituir `session-learner-ops` ni el cierre canónico JARVIS.
 
+**vs skill-loop:** learning-loop no orquesta loops impl→review; para eso usar `skill-loop-router` + skill `skill-loop`. Ver [SKILL_LOOP_FORENSE_JARVIS.md](SKILL_LOOP_FORENSE_JARVIS.md).
+
 ---
 
 ## Qué es Learning Loop

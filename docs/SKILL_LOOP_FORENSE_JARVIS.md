@@ -27,12 +27,13 @@ Skill upstream: scaffolding YAML, patrones (loop, scheduled, GitHub issues), val
 | `skill-loop-router` | Precedencia vs jarvis-core, learning-loop, speckit |
 | `skill-loop` (ops) | Skill sync upstream + patch JARVIS/Cursor |
 | `sync-skill-loop-skill.sh` | Clone pin + rsync skill tree + schema |
-| `patch-skill-loop-skill.py` | Overlay, IRON LAW, replacements paths |
-| `smoke-skill-loop.sh` | Checks adaptación + validación YAML opcional |
+| `patch-skill-loop-skill.py` | Overlay, IRON LAW, references/assets/schema |
+| `smoke-skill-loop.sh` | Checks adaptación + validación YAML |
+| `audit-skill-loop-body.sh` | Conteos residuales (forense) |
 | `install-skill-loop-runtime.sh` | `go install` binario pin + tmux check |
 | `install-skill-loop-upstream.sh` | Clone opcional `~/skill-loop` |
-| Plantilla | `docs/templates/skill-loop-jarvis-feature.yml.example` |
-| Registry SDX + cruces | `jarvis-core`, `session-learner-ops` |
+| Plantilla + assets JARVIS | `docs/templates/…` + `assets/jarvis-*.tmpl` |
+| Registry SDX + cruces | `jarvis-core`, `session-learner-ops`, `learning-loop-router` |
 
 ## Qué NO se adoptó
 
@@ -41,7 +42,7 @@ Skill upstream: scaffolding YAML, patrones (loop, scheduled, GitHub issues), val
 | Repo Go completo en library | CLI vía `go install` / Homebrew |
 | Slash `/skill-loop` en Cursor | Invocar skill `skill-loop` |
 | Default `.claude/skills/` | JARVIS → `.agents/skills/` |
-| `--dangerously-skip-permissions` en plantillas | AppSec; plantilla JARVIS sin flags peligrosos |
+| `--dangerously-skip-permissions` en plantillas | AppSec; plantilla JARVIS sin args peligrosos |
 | Cron `schedule` por defecto en producto | tmux residente — solo con OK usuario |
 | Dashboard React embebido | Runtime del binario |
 | Sustituir `jarvis-core` / Spec Kit | Orquestación distinta |
@@ -54,7 +55,7 @@ Skill upstream: scaffolding YAML, patrones (loop, scheduled, GitHub issues), val
 |------|--------|----------|
 | Workflow módulo guiado | `jarvis-core` | JARVIS primero |
 | Spec SDD | `sdd-router`, `speckit-*` | JARVIS |
-| TDD / verificación | `test-driven-development`, `verification-before-completion` | Skills en loop, no sustitutos |
+| TDD / verificación | `test-driven-development`, `verification-before-completion` | Skills en loop |
 | Review PR | `code-review-playbook` | Manual o skill en loop |
 | Cierre módulo + memoria | **`session-learner-ops`** | Tras loop `done` |
 | Aprendizajes sesión | `learning-loop` (opcional) | Post-loop complemento |
@@ -66,7 +67,7 @@ Skill upstream: scaffolding YAML, patrones (loop, scheduled, GitHub issues), val
 | Loop automático impl→review→rework | CLI + YAML | — |
 | Scaffold `skill-loop.yml` | skill `skill-loop` | — |
 | Sesiones tmux background | `skill-loop sessions` | — |
-| Human-in-the-loop | `blocked: true` + resume | Alineado con OK usuario |
+| Human-in-the-loop | `blocked: true` + resume | OK usuario |
 
 ### Diferencia vs learning-loop
 
@@ -82,11 +83,34 @@ Skill upstream: scaffolding YAML, patrones (loop, scheduled, GitHub issues), val
 | Pedido | Skill | No usar |
 |--------|-------|---------|
 | Planificar módulo | `jarvis-core` | skill-loop |
-| Crear/editar `skill-loop.yml` | `skill-loop` | manual YAML sin schema |
+| Crear/editar `skill-loop.yml` | `skill-loop` | YAML manual sin schema |
 | Ejecutar loop | `skill-loop run` (tras OK usuario) | skill-loop skill solo |
 | Cierre módulo | `session-learner-ops` | skill-loop |
 | Consolidar aprendizajes | `learning-loop` wrap-up (opc.) | skill-loop |
 | Spec feature nueva | `speckit-*` | skill-loop |
+
+### Matriz ECC + Cyber Neo + learning-loop
+
+| Necesidad | skill-loop | ECC / Cyber Neo / learning-loop |
+|-----------|------------|--------------------------------|
+| Loop impl→review→verify | **skill-loop** + CLI | — |
+| Instincts / hooks | — | `ecc-router`, `continuous-learning-v2` |
+| Auditoría seguridad | — | `cyber-neo-router` |
+| Memoria sesión wrap-up | — | `learning-loop-router` |
+| Cierre módulo | — | `session-learner-ops` (canónico tras `done`) |
+
+**Combinación recomendada:** `skill-loop run` → `done` → `session-learner-ops` → tests → opcional `learning-loop wrap-up`.
+
+### Matriz precedencia ampliada
+
+```
+jarvis-core (plan)
+  → skill-loop scaffold YAML (OK usuario)
+  → skill-loop run (tmux)
+  → session-learner-ops
+  → verification-before-completion
+  → opcional learning-loop wrap-up
+```
 
 ## Cobertura por stack JARVIS
 
@@ -94,11 +118,11 @@ Skill upstream: scaffolding YAML, patrones (loop, scheduled, GitHub issues), val
 |-------|------------|---------|-----------|
 | CorralX Backend | impl→review→`php artisan test` | `cursor-cli` | learner + tests |
 | CorralX Flutter | impl→review→`flutter test` | `cursor-cli` | walkthrough UI |
-| Zonix Pharma | Igual + Rx copy review | `cursor-cli` | `zonix-*` skills en prompts |
-| jarvis-skills-library | Sync skills / validate-all loop | `cursor-cli` | commit local con OK |
-| clawvis-openclaw | Marketing pipeline loops | `cursor-cli` o `claude` | active_context |
+| Zonix Pharma | Igual + Rx copy review | `cursor-cli` | `zonix-*` en prompts |
+| jarvis-skills-library | validate-all loop | `cursor-cli` | commit con OK |
+| clawvis-openclaw | Marketing pipelines | `cursor-cli` o `claude` | active_context |
 
-Skills del loop deben existir en `.agents/skills/` del repo + globales en `~/.cursor/skills/`.
+Skills del loop: globales `~/.cursor/skills/` + dominio `.agents/skills/` del repo producto.
 
 ## Flujo recomendado post-loop
 
@@ -114,22 +138,50 @@ Skills del loop deben existir en `.agents/skills/` del repo + globales en `~/.cu
 2. **Costo API** — `max_iterations` bajo (plantilla JARVIS: 5).
 3. **Permisos peligrosos** — no `--dangerously-skip-permissions` en automatización.
 4. **Confusión learning-loop** — nombres distintos en routers y docs.
-5. **Skills faltantes** — loop invoca nombres que no existen en `.agents/skills/`.
+5. **Skills faltantes** — copiar `assets/jarvis-*.tmpl` a `.agents/skills/`.
 6. **Auto-run sin OK** — IRON LAW: usuario aprueba YAML y `run`.
 7. **Commits locales sin push** — equipo no recibe hasta `git push`.
+8. **Ejemplos upstream codex** — patch v2 alinea patrones JARVIS a `cursor-cli`.
 
-## Gaps detectados (G1–G8)
+## Patrones adoptados (referencia Cyber Neo / learning-loop)
 
-| ID | Gap | Estado | Remedio |
-|----|-----|--------|---------|
-| G1 | Default `.claude/skills/` | Fixed | Patch → `.agents/skills/` |
-| G2 | Slash `/skill-loop` | Fixed | Overlay invocación por skill |
-| G3 | Binario no en repo | Open (by design) | `install-skill-loop-runtime.sh` |
+| Patrón | skill-loop en JARVIS |
+|--------|----------------------|
+| Router harness | `skill-loop-router` |
+| Sync upstream curado | `sync-skill-loop-skill.sh` |
+| Patch Cursor v2 | `patch-skill-loop-skill.py` (SKILL + references + assets + schema) |
+| Doc integración + forense | `SKILL_LOOP_INTEGRATION.md`, este archivo |
+| Smoke + audit | `smoke-skill-loop.sh`, `audit-skill-loop-body.sh` |
+| Starter skills JARVIS | `assets/jarvis-implement|review|verify.SKILL.md.tmpl` |
+
+---
+
+## Re-análisis 2026-06-18 (post-integración `cd5762b`)
+
+**Commit integración inicial:** `cd5762b` — router, skill, sync, smoke, plantilla, registry.  
+**Re-análisis forense v2:** patch references/assets/schema, starter tmpl JARVIS, audit, cruces learning-loop.  
+**Upstream pin:** `0bea8b08` — sin drift conocido al 2026-06-18.
+
+### Gaps detectados (G1–G12)
+
+| ID | Gap | Estado v1 | Remedio v2 |
+|----|-----|-----------|------------|
+| G1 | `.claude/skills/` | Fixed | Patch SKILL + references |
+| G2 | Slash `/skill-loop` | Fixed | Overlay |
+| G3 | Binario fuera del repo | Open (by design) | `install-skill-loop-runtime.sh` |
 | G4 | tmux requerido | Documentado | Forense + integration |
-| G5 | cursor-cli vs Cursor IDE | Parcial | Plantilla `runtime: cursor-cli` |
+| G5 | cursor-cli vs IDE | Parcial → **v2** | Patch examples + plantilla |
 | G6 | Sin SKILL-OC.md | Open (warn) | Baja prioridad |
-| G7 | Confusión learning-loop | Documentado | Routers + forense |
-| G8 | Flags peligrosos upstream examples | Mitigado | Plantilla JARVIS sin args peligrosos |
+| G7 | Confusión learning-loop | Parcial → **v2** | Cruces routers + forense |
+| G8 | Flags en plantilla JARVIS | Mitigado | Sin args peligrosos |
+| G9 | schema.json skip-permissions | Open → **v2** | Patch descripciones schema |
+| G10 | yaml-pattern codex default | Open → **v2** | JARVIS notes + cursor-cli en ejemplos |
+| G11 | Sin starter skills tmpl | Open → **v2** | `jarvis-*.tmpl` |
+| G12 | learning-loop-router sin cruce | Open → **v2** | Fila skill-loop-router |
+
+### Auditoría residual
+
+Ejecutar: `bash scripts/audit-skill-loop-body.sh`
 
 ---
 

@@ -33,8 +33,16 @@ if [ ! -d "$UPSTREAM_SKILL" ]; then
 fi
 
 mkdir -p "$DEST"
+JARVIS_BACKUP="$(mktemp -d)"
+if [ -d "$DEST/assets" ]; then
+  cp "$DEST/assets"/jarvis-*.tmpl "$JARVIS_BACKUP/" 2>/dev/null || true
+  cp "$DEST/assets/skill-loop.jarvis.yml.tmpl" "$JARVIS_BACKUP/" 2>/dev/null || true
+fi
 rsync -a --delete "$UPSTREAM_SKILL/" "$DEST/"
-mkdir -p "$DEST/references"
+mkdir -p "$DEST/references" "$DEST/assets"
+cp "$JARVIS_BACKUP"/jarvis-*.tmpl "$DEST/assets/" 2>/dev/null || true
+cp "$JARVIS_BACKUP/skill-loop.jarvis.yml.tmpl" "$DEST/assets/" 2>/dev/null || true
+rm -rf "$JARVIS_BACKUP"
 if [ -f "$SYNC_ROOT/schema.json" ]; then
   cp "$SYNC_ROOT/schema.json" "$DEST/references/schema.json"
 fi

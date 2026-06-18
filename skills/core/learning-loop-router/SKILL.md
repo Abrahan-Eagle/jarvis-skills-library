@@ -50,6 +50,9 @@ test -d "${HOME}/.cursor/learning-captures" && echo LEARNING_CAPTURES_EXIST
 | Fin sesión / consolidar aprendizajes | `learning-loop` **wrap-up** → verificar usuario → rutear | escribir sin OK |
 | Instincts ECC / `/evolve` | `ecc-router` → `continuous-learning-v2` | learning-loop |
 | Cierre módulo + señales extra | `session-learner-ops` luego opcional wrap-up | solo learning-loop |
+| Loops automáticos impl→review→verify | **`skill-loop-router`** → skill `skill-loop` (YAML + CLI) | **learning-loop** (no orquesta pasadas de trabajo) |
+
+**vs skill-loop:** learning-loop captura aprendizajes de sesión; skill-loop orquesta pasadas de implementación/revisión. Ver [SKILL_LOOP_FORENSE_JARVIS.md](../../docs/SKILL_LOOP_FORENSE_JARVIS.md).
 
 ## Flujo recomendado (Cursor)
 
