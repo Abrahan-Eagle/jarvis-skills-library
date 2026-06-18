@@ -65,7 +65,15 @@ Zonix y otros productos con `.specify/` **no migrar** sin decisión explícita.
 
 ## Spec Kit Extensions (lifecycle)
 
-Workflows community bugfix/modify/refactor/hotfix/deprecate — skill `speckit-lifecycle-router`. Install en producto: ver [docs/SPEC_KIT_EXTENSIONS.md](../docs/SPEC_KIT_EXTENSIONS.md). Entrada en `watchlist` de `sdx-toolkit-registry.json`.
+Workflows community bugfix/modify/refactor/hotfix/deprecate — skill `speckit-lifecycle-router` (v1.1: quality gates, bash fallback, fases JARVIS).
+
+Install en repo producto:
+
+```bash
+bash scripts/install-spec-kit-extensions.sh --target /path/to/product-repo
+```
+
+Manual: [docs/SPEC_KIT_EXTENSIONS.md](../docs/SPEC_KIT_EXTENSIONS.md). Entrada en `watchlist` de `sdx-toolkit-registry.json`.
 
 ## OpenSpec (watchlist awesome-spec-kits)
 

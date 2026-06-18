@@ -45,7 +45,7 @@
       "sdx": ["SD-Development", "SD-Maintenance"],
       "jarvis": {
         "skills": ["speckit-lifecycle-router"],
-        "install": "copiar extensions/ + commands/ al repo producto (ver SPEC_KIT_EXTENSIONS.md)"
+        "install": "scripts/install-spec-kit-extensions.sh --target <repo-producto>"
       }
     },
     {

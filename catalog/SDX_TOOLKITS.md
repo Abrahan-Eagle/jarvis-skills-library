@@ -18,7 +18,7 @@ Ver [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md).
 
 | ID | Nombre | SD-X | Pin | JARVIS | Nota |
 |----|--------|------|-----|--------|------|
-| spec-kit-extensions | Spec Kit Extensions (MartyBonacci) | SD-Development, SD-Maintenance | main | speckit-lifecycle-router · install: `copiar extensions/ + commands/ al repo producto (ver SPEC_KIT_EXTENSIONS.md)` | copiar extensions/ + commands/ al repo producto (ver SPEC_KIT_EXTENSIONS.md) |
+| spec-kit-extensions | Spec Kit Extensions (MartyBonacci) | SD-Development, SD-Maintenance | main | speckit-lifecycle-router · install: `scripts/install-spec-kit-extensions.sh --target <repo-producto>` | scripts/install-spec-kit-extensions.sh --target <repo-producto> |
 | openspec | OpenSpec | SD-Development | 0.16.0 | openspec-router · install: `npm i -g @fission-ai/openspec; openspec init (en repo producto)` | npm i -g @fission-ai/openspec; openspec init (en repo producto) |
 | marketing-spec-kit | Marketing Spec Kit | SDM | 0.4.0 |  | SDM; evaluar para clawvis marketing |
 | mcp-speckit | MCP Spec Kit | SD-Development | 0.1.0 |  | MCP lifecycle; evaluar para OpenClaw |

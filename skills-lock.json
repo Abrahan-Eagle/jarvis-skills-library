@@ -59,7 +59,7 @@
     "jarvis-skills-maintainer": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "837f063d8545ce8e3808a17162eff3adf33fd82f5cc9f2718c9dcb38e88a2308",
+      "computedHash": "eb78c49e5c0c68d2157ac16a1a37c3cf52e3a8f9443db710cf9d856039d390c4",
       "path": "skills/core/jarvis-skills-maintainer/SKILL.md"
     },
     "kitty-router": {
@@ -365,7 +365,7 @@
     "speckit-lifecycle-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "f8f3ae69a0311b3eb96355a6d8b4cc55f9838c919d9316bd48de2a10b5854fd4",
+      "computedHash": "dcd55c61ca38c2875874c05f0f9f1bed97aafd22ac9cfa723bf25bd0678c138f",
       "path": "skills/sdd/speckit-lifecycle-router/SKILL.md"
     },
     "speckit-plan": {
