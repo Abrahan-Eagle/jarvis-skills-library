@@ -17,6 +17,7 @@ metadata:
   related-skills:
     - jarvis-core
     - kitty-router
+    - openspec-router
     - sdd-x-index
     - speckit-specify
     - speckit-plan
@@ -35,6 +36,7 @@ Router de **proceso**, no de dominio. Skills `{producto}-*` siguen en el repo de
 
 ```bash
 test -d .kittify && echo "HAS_SPEC_KITTY"
+test -d openspec && echo "HAS_OPENSPEC"
 test -d .specify && echo "HAS_SPEC_KIT"
 test -d .agents/plans && echo "HAS_JARVIS_PLANS"
 test -d specs && echo "HAS_SPECS_DIR"
@@ -43,9 +45,10 @@ test -d specs && echo "HAS_SPECS_DIR"
 | Condición | Flujo |
 |-----------|--------|
 | `.kittify/` existe | **`kitty-router`** — no usar `speckit-*` |
+| `openspec/` existe (sin otros marcadores SDD) | **`openspec-router`** — no usar `speckit-*` |
 | `.specify/` existe + feature de **producto** | **Spec Kit** (tabla abajo) |
-| Sin `.specify/` o bugfix puntual | **JARVIS** (`brainstorming-ops` → `writing-plans` → `executing-plans`) |
-| Ambos `.kittify/` y `.specify/` | **STOP** — usuario elige canónico |
+| Sin marcador SDD o bugfix puntual | **JARVIS** (`brainstorming-ops` → `writing-plans` → `executing-plans`) |
+| Dos o más entre `.kittify/`, `openspec/`, `.specify/` | **STOP** — usuario elige canónico |
 | Ambos (ej. CorralX `.agents/plans/` + Zonix `specs/`) | SDD para features nuevas; JARVIS para mantenimiento |
 
 ## Cadena Spec Kit (orden)
@@ -84,6 +87,8 @@ Opcional en cualquier fase pre-implement: `speckit-checklist`.
 Ver [docs/SDD_SPECKIT_INTEGRATION.md](../docs/SDD_SPECKIT_INTEGRATION.md).
 
 Repos con Spec Kitty: [docs/SPEC_KITTY_INTEGRATION.md](../docs/SPEC_KITTY_INTEGRATION.md) + `kitty-router`.
+
+Repos con OpenSpec: [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md) + `openspec-router`.
 
 ## SD-X más amplio
 

@@ -31,6 +31,8 @@
 | Misión spec-driven con review y merge | `kitty-router` |
 | Nueva feature de producto | `sdd-router` |
 | Nueva feature de producto con Spec Kit | `speckit-specify` |
+| OPSX propose apply archive | `openspec-router` |
+| OpenSpec u openspec | `openspec-router` |
 | Paleta de colores o tipografía | `ui-router`, `ui-ux-pro-max` |
 | Plan técnico Spec Kit | `speckit-plan` |
 | Planificar desarrollo | `brainstorming-ops`, `jarvis-core`, `writing-plans` |
@@ -41,6 +43,7 @@
 | Spec Kitty o spec-kitty | `kitty-router` |
 | Spec-driven development | `sdd-router` |
 | Spec-driven development ambiguo | `sdd-x-index` |
+| Spec-driven fluido brownfield | `openspec-router` |
 | Terminar módulo | `finishing-a-development-branch`, `jarvis-core`, `session-learner-ops`, `verification-before-completion` |
 | Work packages o kanban SDD | `kitty-router` |
 | spec-kitty dispatch | `kitty-governance` |

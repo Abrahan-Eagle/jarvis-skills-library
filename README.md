@@ -53,11 +53,15 @@ bash scripts/sync-spec-kit-skills.sh # refresh speckit-* desde github/spec-kit
 
 ## Spec-Driven Development (Spec Kit)
 
-10 skills core `speckit-*` en `skills/sdd/` (paridad con [github/spec-kit](https://github.com/github/spec-kit) v0.11.2) + routers `sdd-router`, `sdd-x-index`, `kitty-router`. Guía Spec Kit: [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md). Spec Kitty (complemento): [docs/SPEC_KITTY_INTEGRATION.md](docs/SPEC_KITTY_INTEGRATION.md).
+10 skills core `speckit-*` en `skills/sdd/` (paridad con [github/spec-kit](https://github.com/github/spec-kit) v0.11.2) + routers `sdd-router`, `sdd-x-index`, `kitty-router`, `openspec-router`. Guía Spec Kit: [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md). Spec Kitty: [docs/SPEC_KITTY_INTEGRATION.md](docs/SPEC_KITTY_INTEGRATION.md). awesome-spec-kits: [docs/AWESOME_SPEC_KITS.md](docs/AWESOME_SPEC_KITS.md).
 
 ## Spec Kitty
 
 Complemento SD-Development con runtime gobernado (`.kittify/`, `kitty-specs/`). Skills globales: `kitty-router`, `kitty-governance`. Instalación CLI en repo producto: `pipx install spec-kitty-cli` → `spec-kitty init . --ai cursor`. No reemplaza `speckit-*` ni migra repos con `.specify/` sin decisión explícita.
+
+## OpenSpec (watchlist)
+
+Flujo fluido brownfield (`openspec/`). Skill global: `openspec-router`. Install en producto: `npm i -g @fission-ai/openspec` → `openspec init`. Ver [docs/AWESOME_SPEC_KITS.md](docs/AWESOME_SPEC_KITS.md).
 
 ## Spec-Driven X (SD-X)
 

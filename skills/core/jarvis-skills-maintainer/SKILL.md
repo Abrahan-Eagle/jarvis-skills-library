@@ -63,9 +63,17 @@ No sincronizar comandos kitty al global — `spec-kitty init --ai cursor` los in
 
 Zonix y otros productos con `.specify/` **no migrar** sin decisión explícita.
 
+## OpenSpec (watchlist awesome-spec-kits)
+
+No sincronizar slash commands al global — `openspec init` los instala en el repo producto.
+
+1. Skill global: `openspec-router` en `skills/core/`
+2. Entrada en `watchlist` de `catalog/sdx-toolkit-registry.json`
+3. Documentar en [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md)
+
 ## SD-X (toolkits registrados)
 
-Al integrar un toolkit SD-X (Spec Kit, ui-ux-pro-max, futuros):
+Al integrar un toolkit SD-X (Spec Kit, ui-ux-pro-max, watchlist awesome-spec-kits):
 
 1. Editar `catalog/sdx-toolkit-registry.json`
 2. `python3 scripts/sync-sdx-registry.py` → `catalog/SDX_TOOLKITS.md`
@@ -111,4 +119,5 @@ bash scripts/install.sh --dry-run # preview
 - [docs/MIGRATION.md](../docs/MIGRATION.md)
 - [docs/SDD_SPECKIT_INTEGRATION.md](../docs/SDD_SPECKIT_INTEGRATION.md)
 - [docs/SPEC_KITTY_INTEGRATION.md](../docs/SPEC_KITTY_INTEGRATION.md)
+- [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md)
 - [docs/SDX_ECOSYSTEM.md](../docs/SDX_ECOSYSTEM.md)

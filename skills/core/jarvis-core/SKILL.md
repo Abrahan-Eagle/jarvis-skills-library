@@ -17,6 +17,7 @@ metadata:
     - jarvis-experts
     - sdd-router
     - kitty-router
+    - openspec-router
     - sdd-x-index
     - ui-router
     - speckit-specify
@@ -41,7 +42,9 @@ Skill global en `jarvis-skills-library` → `~/.cursor/skills/`. Skills de **dom
 
 Si el repo tiene `.kittify/`, ver `kitty-router` ([docs/SPEC_KITTY_INTEGRATION.md](../../docs/SPEC_KITTY_INTEGRATION.md)) — **no** `speckit-*`.
 
-Si el repo tiene `.specify/` (sin `.kittify/`), ver `sdd-router` y cadena `speckit-*` ([docs/SDD_SPECKIT_INTEGRATION.md](../../docs/SDD_SPECKIT_INTEGRATION.md)).
+Si el repo tiene `openspec/` (sin otros marcadores SDD), ver `openspec-router` ([docs/AWESOME_SPEC_KITS.md](../../docs/AWESOME_SPEC_KITS.md)) — **no** `speckit-*`.
+
+Si el repo tiene `.specify/` (sin `.kittify/` ni `openspec/`), ver `sdd-router` y cadena `speckit-*` ([docs/SDD_SPECKIT_INTEGRATION.md](../../docs/SDD_SPECKIT_INTEGRATION.md)).
 
 Para UI/UX, ver `ui-router` ([docs/UI_UX_PRO_MAX_INTEGRATION.md](../../docs/UI_UX_PRO_MAX_INTEGRATION.md)).
 
@@ -70,6 +73,7 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 |------|--------|
 | Cualquier tarea no trivial | `jarvis-experts` → (resto según fase) |
 | Nueva feature de producto (con `.kittify/`) | `kitty-router` → charter/specify/plan/tasks (Cursor) → `spec-kitty next` → review/accept/merge (OK usuario) |
+| Nueva feature de producto (con `openspec/`) | `openspec-router` → `/opsx:propose` → `/opsx:apply` (OK usuario) → `/opsx:archive` |
 | Nueva feature de producto (con `.specify/`) | `sdd-router` → `speckit-constitution` → `speckit-specify` → `speckit-clarify` (opc.) → `speckit-plan` → `speckit-tasks` → `speckit-taskstoissues` (opc.) → `speckit-analyze` → `speckit-implement` (OK usuario) → `speckit-converge` (opc.) |
 | Requisitos ambiguos | `deep-interview-ops` → `brainstorming-ops` (sin Spec Kit) o `speckit-clarify` (con Spec Kit) |
 | Iniciar módulo (sin `.specify/`) | `jarvis-core` → `brainstorming-ops` → `writing-plans` → `task-pipeline-ops` |
@@ -100,6 +104,7 @@ Identificar roles y declarar en una línea antes de planificar.
 
 - No escribir código inmediatamente.
 - Con `.kittify/`: seguir `kitty-router` y artefactos en `kitty-specs/`.
+- Con `openspec/`: seguir `openspec-router` y artefactos en `openspec/changes/`.
 - Con `.specify/`: seguir `sdd-router` y artefactos en `specs/`.
 - Sin ninguno: crear `.agents/plans/implementation_plan.md` con propuesta y riesgos.
 - Pedir validación al usuario.

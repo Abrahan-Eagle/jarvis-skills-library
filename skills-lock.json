@@ -47,7 +47,7 @@
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "c08c6014f4ce69cc355eec04eb805d93d518fe7a5c9a075c4e96c0bfaea4f573",
+      "computedHash": "cc74adfcaa139aa972dd38d0b62d41dbdd48c8d0dd160345eb85e7d3a32dba86",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
@@ -59,7 +59,7 @@
     "jarvis-skills-maintainer": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "06c964f64d1b93fb7ed640de4f793530e503c7ec3d13856386de099e423aaa45",
+      "computedHash": "4ba699604e5276ccb94512a94f8ba40de4f04cb29c6b52828d2eb097f508bb53",
       "path": "skills/core/jarvis-skills-maintainer/SKILL.md"
     },
     "kitty-router": {
@@ -68,16 +68,22 @@
       "computedHash": "9fe4089a14b06d55c0e40f0e8681b769b9e53c2c2bf504102817b9ac1fb87a47",
       "path": "skills/core/kitty-router/SKILL.md"
     },
+    "openspec-router": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "116477e71f6bd3d7994915bfc296b75edbcc219d93e3a7580c277a151203f5cc",
+      "path": "skills/core/openspec-router/SKILL.md"
+    },
     "sdd-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "b3c45a1bcdda7f66b326531e3cfc7913b67cb48103029840d473ebf5fba42283",
+      "computedHash": "10ae1c96b9bea335fdb4bc166c09fbbd98da5c095198cd54c7cc6fdf23cb4a04",
       "path": "skills/core/sdd-router/SKILL.md"
     },
     "sdd-x-index": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "bf45787d26ea1ab2e9a49a8a6580b46d4ad6e1267a1eee584d0ed3d8fdac6454",
+      "computedHash": "13ac7e42d86479112d62ded742d4bc7822f1bfac56020a32d5760c59d57866f2",
       "path": "skills/core/sdd-x-index/SKILL.md"
     },
     "task-pipeline-ops": {

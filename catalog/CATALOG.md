@@ -2,14 +2,14 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-18
 
-Total: **62** skills
+Total: **63** skills
 
 ## Resumen por categoría
 
 | Categoría | Cantidad |
 |-----------|----------|
 | `backend` | 7 |
-| `core` | 8 |
+| `core` | 9 |
 | `engineering` | 7 |
 | `git` | 3 |
 | `mobile` | 4 |
@@ -40,6 +40,7 @@ Total: **62** skills
 | `jarvis-experts` | Panel de Expertos JARVIS (agencia de desarrollo virtual). Define roster de roles, criterios de activación, combinaciones… | [skills/core/jarvis-experts/SKILL.md](skills/core/jarvis-experts/SKILL.md) |
 | `jarvis-skills-maintainer` | Mantenimiento de jarvis-skills-library: crear, validar, catalogar, lockear e instalar skills globales. | [skills/core/jarvis-skills-maintainer/SKILL.md](skills/core/jarvis-skills-maintainer/SKILL.md) |
 | `kitty-router` | Orquesta flujo Spec Kitty (misiones, work packages, review/accept/merge) cuando existe .kittify/. | [skills/core/kitty-router/SKILL.md](skills/core/kitty-router/SKILL.md) |
+| `openspec-router` | Orquesta flujo OpenSpec (OPSX: propose → apply → archive) cuando existe openspec/. | [skills/core/openspec-router/SKILL.md](skills/core/openspec-router/SKILL.md) |
 | `sdd-router` | Decide entre flujo Spec Kit (speckit-*) y flujo JARVIS (.agents/plans/) según el repo activo. | [skills/core/sdd-router/SKILL.md](skills/core/sdd-router/SKILL.md) |
 | `sdd-x-index` | Mapa Spec-Driven X (SD-X): elige skills JARVIS por tipo de artefacto (dev, diseño, docs, test, validate). | [skills/core/sdd-x-index/SKILL.md](skills/core/sdd-x-index/SKILL.md) |
 | `task-pipeline-ops` | Pipeline multi-paso proyecto activo: Plan → Spec → Exec → Verify → Fix (máx. 3). | [skills/core/task-pipeline-ops/SKILL.md](skills/core/task-pipeline-ops/SKILL.md) |

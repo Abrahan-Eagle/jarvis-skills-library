@@ -10,7 +10,9 @@ JARVIS **no** usa MetaSpec CLI para distribuir skills; usa `jarvis-skills-librar
 |------|---------------|--------|
 | Development (`.specify/`) | `speckit-*`, dominio `{producto}-*` | `sdd-router` |
 | Development (`.kittify/`) | Spec Kitty CLI, `kitty-governance` | `kitty-router` |
+| Development (`openspec/`) | OpenSpec OPSX | `openspec-router` |
 | Design | `ui-ux-pro-max`, dominio UI | `ui-router` |
+| API (sin speckit dedicado) | `api-design-principles` | — |
 | Documentation | `documentar-avances`, `context-updater` | — (no Spec Kit) |
 | Test | `test-driven-development`, `verification-before-completion` | — |
 | Validate | `speckit-analyze`, `speckit-checklist` | `sdd-x-index` |
@@ -27,6 +29,9 @@ Ver [`catalog/SDX_TOOLKITS.md`](catalog/SDX_TOOLKITS.md) (generado desde `catalo
 | GitHub Spec Kit | v0.11.2 | `bash scripts/sync-spec-kit-skills.sh` |
 | UI UX Pro Max | v2.5.0 | `bash scripts/sync-ui-ux-pro-max.sh` |
 | Spec Kitty | v3.2.1 | `pipx install spec-kitty-cli` + `spec-kitty init` en repo producto |
+| OpenSpec (watchlist) | 0.16.0 | `npm i -g @fission-ai/openspec` + `openspec init` en repo producto |
+
+Watchlist completa: [AWESOME_SPEC_KITS.md](AWESOME_SPEC_KITS.md) + sección Watchlist en `SDX_TOOLKITS.md`.
 
 Regenerar tabla:
 
@@ -47,6 +52,8 @@ speckit-specify → speckit-clarify (opc.)
 
 Flujo alternativo con **Spec Kitty** (`.kittify/`): ver [SPEC_KITTY_INTEGRATION.md](SPEC_KITTY_INTEGRATION.md) — `kitty-router`, no `speckit-*`.
 
+Flujo alternativo con **OpenSpec** (`openspec/`): ver [AWESOME_SPEC_KITS.md](AWESOME_SPEC_KITS.md) — `openspec-router`, OPSX propose/apply/archive.
+
 ## Qué NO es Spec Kit / SD-Development
 
 - Pack inversor, `docs/Lanzamiento/`, cifras financieras
@@ -60,7 +67,8 @@ Usar skills de dominio del producto, no `speckit-*`.
 - [SDD_SPECKIT_INTEGRATION.md](SDD_SPECKIT_INTEGRATION.md) — bootstrap, comandos, extensions
 - [SPEC_KITTY_INTEGRATION.md](SPEC_KITTY_INTEGRATION.md) — misiones, worktrees, review/merge
 - [UI_UX_PRO_MAX_INTEGRATION.md](UI_UX_PRO_MAX_INTEGRATION.md) — design system, overlays
-- [awesome-spec-kits](https://github.com/acnlabs/awesome-spec-kits) — catálogo externo de speckits
+- [AWESOME_SPEC_KITS.md](AWESOME_SPEC_KITS.md) — índice acnlabs + watchlist + OpenSpec
+- [awesome-spec-kits](https://github.com/acnlabs/awesome-spec-kits) — catálogo upstream
 - [MetaSpec](https://mataspec.figma.site/spec-kits) — framework opcional (no usado por JARVIS hoy)
 
 ## SD-X y toolkits externos (SDD)

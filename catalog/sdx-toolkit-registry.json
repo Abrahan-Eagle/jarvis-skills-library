@@ -36,16 +36,53 @@
       }
     }
   ],
+  "watchlist": [
+    {
+      "id": "openspec",
+      "name": "OpenSpec",
+      "repo": "https://github.com/Fission-AI/OpenSpec",
+      "pin": "0.16.0",
+      "sdx": ["SD-Development"],
+      "jarvis": {
+        "skills": ["openspec-router"],
+        "install": "npm i -g @fission-ai/openspec; openspec init (en repo producto)"
+      }
+    },
+    {
+      "id": "marketing-spec-kit",
+      "name": "Marketing Spec Kit",
+      "repo": "https://github.com/ACNet-AI/marketing-spec-kit",
+      "pin": "0.4.0",
+      "sdx": ["SDM"],
+      "note": "SDM; evaluar para clawvis marketing"
+    },
+    {
+      "id": "mcp-speckit",
+      "name": "MCP Spec Kit",
+      "repo": "https://github.com/ACNet-AI/mcp-spec-kit",
+      "pin": "0.1.0",
+      "sdx": ["SD-Development"],
+      "note": "MCP lifecycle; evaluar para OpenClaw"
+    },
+    {
+      "id": "meta-spec",
+      "name": "MetaSpec",
+      "repo": "https://github.com/ACNet-AI/MetaSpec",
+      "pin": "0.9.7",
+      "sdx": ["SD-Development", "SD-Design"],
+      "note": "Framework Python; no distribución JARVIS"
+    }
+  ],
   "references": [
     {
       "name": "awesome-spec-kits",
       "url": "https://github.com/acnlabs/awesome-spec-kits",
-      "note": "Catálogo externo SD-X; no distribución JARVIS"
+      "note": "Catálogo SD-X; ver docs/AWESOME_SPEC_KITS.md"
     },
     {
-      "name": "MetaSpec",
+      "name": "MetaSpec site",
       "url": "https://mataspec.figma.site/spec-kits",
-      "note": "Framework opcional para speckits Python; JARVIS usa Cursor skills"
+      "note": "Documentación MetaSpec"
     }
   ]
 }
