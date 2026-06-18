@@ -79,6 +79,8 @@ specify preset search
 specify preset add <name>
 ```
 
+**Ciclo de vida (bugfix, hotfix, refactor, modify, deprecate):** complemento community [spec-kit-extensions](https://github.com/MartyBonacci/spec-kit-extensions) — skill global `speckit-lifecycle-router`, guía [SPEC_KIT_EXTENSIONS.md](SPEC_KIT_EXTENSIONS.md). Instalar workflows en el **repo producto**; no sustituye `speckit-specify` para features nuevas.
+
 ## Brownfield (proyectos existentes)
 
 Tras implementar una feature, si el código no coincide con spec/plan:

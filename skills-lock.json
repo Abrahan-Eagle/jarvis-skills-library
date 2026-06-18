@@ -47,7 +47,7 @@
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "cc74adfcaa139aa972dd38d0b62d41dbdd48c8d0dd160345eb85e7d3a32dba86",
+      "computedHash": "4ac33513ba24cf694518cde6c85912a5a2c0c034dd10f3c23a554509c5607368",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
@@ -59,7 +59,7 @@
     "jarvis-skills-maintainer": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "4ba699604e5276ccb94512a94f8ba40de4f04cb29c6b52828d2eb097f508bb53",
+      "computedHash": "837f063d8545ce8e3808a17162eff3adf33fd82f5cc9f2718c9dcb38e88a2308",
       "path": "skills/core/jarvis-skills-maintainer/SKILL.md"
     },
     "kitty-router": {
@@ -77,13 +77,13 @@
     "sdd-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "10ae1c96b9bea335fdb4bc166c09fbbd98da5c095198cd54c7cc6fdf23cb4a04",
+      "computedHash": "dfaf3a463f7a1f93c13862fea0efc6d5451a1193482160253f01a8b32654f6e2",
       "path": "skills/core/sdd-router/SKILL.md"
     },
     "sdd-x-index": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "13ac7e42d86479112d62ded742d4bc7822f1bfac56020a32d5760c59d57866f2",
+      "computedHash": "78aa3822c0cc6f6b6791f5e5f17233db521ec7709b869310c4a053beb04f14f9",
       "path": "skills/core/sdd-x-index/SKILL.md"
     },
     "task-pipeline-ops": {
@@ -361,6 +361,12 @@
       "computedHash": "8d86bec304b5864d0ef301dd555958f52d753aa6483e90975c54de95f01cabe3",
       "path": "skills/sdd/speckit-implement/SKILL.md",
       "upstream": "github/spec-kit:templates/commands/implement.md"
+    },
+    "speckit-lifecycle-router": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "f8f3ae69a0311b3eb96355a6d8b4cc55f9838c919d9316bd48de2a10b5854fd4",
+      "path": "skills/sdd/speckit-lifecycle-router/SKILL.md"
     },
     "speckit-plan": {
       "source": "github/spec-kit",

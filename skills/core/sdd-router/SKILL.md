@@ -18,6 +18,7 @@ metadata:
     - jarvis-core
     - kitty-router
     - openspec-router
+    - speckit-lifecycle-router
     - sdd-x-index
     - speckit-specify
     - speckit-plan
@@ -46,12 +47,27 @@ test -d specs && echo "HAS_SPECS_DIR"
 |-----------|--------|
 | `.kittify/` existe | **`kitty-router`** — no usar `speckit-*` |
 | `openspec/` existe (sin otros marcadores SDD) | **`openspec-router`** — no usar `speckit-*` |
-| `.specify/` existe + feature de **producto** | **Spec Kit** (tabla abajo) |
+| `.specify/` + feature de **producto** (nueva) | **Spec Kit** — `speckit-specify` (tabla abajo) |
+| `.specify/` + bugfix / hotfix / refactor / modify / deprecate | **`speckit-lifecycle-router`** |
 | Sin marcador SDD o bugfix puntual | **JARVIS** (`brainstorming-ops` → `writing-plans` → `executing-plans`) |
 | Dos o más entre `.kittify/`, `openspec/`, `.specify/` | **STOP** — usuario elige canónico |
 | Ambos (ej. CorralX `.agents/plans/` + Zonix `specs/`) | SDD para features nuevas; JARVIS para mantenimiento |
 
-## Cadena Spec Kit (orden)
+## Ciclo de vida (no feature nueva)
+
+Con `.specify/` y trabajo distinto de feature nueva, invocar **`speckit-lifecycle-router`**:
+
+| Tipo | No usar |
+|------|---------|
+| Bug, regresión | `speckit-specify` |
+| Hotfix prod | `speckit-specify` |
+| Refactor | `speckit-specify` |
+| Modificar feature `NNN` | `speckit-specify` (usar modify) |
+| Deprecar feature | `speckit-specify` |
+
+Guía: [docs/SPEC_KIT_EXTENSIONS.md](../docs/SPEC_KIT_EXTENSIONS.md).
+
+## Cadena Spec Kit — feature nueva (orden)
 
 1. `speckit-constitution` — si constitution vacía o desactualizada
 2. `speckit-specify` — `specs/.../spec.md`
@@ -79,7 +95,7 @@ Opcional en cualquier fase pre-implement: `speckit-checklist`.
 ## Cuándo NO usar Spec Kit
 
 - Pack inversor, docs marketing, cifras financieras
-- Bugfix puntual (usar `systematic-debugging`)
+- Bugfix puntual sin `.specify/` (usar `systematic-debugging`)
 - Repos sin `specify init` y sin necesidad de `specs/`
 
 ## Bootstrap Spec Kit en un producto

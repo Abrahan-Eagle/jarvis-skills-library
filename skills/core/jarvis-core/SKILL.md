@@ -18,6 +18,7 @@ metadata:
     - sdd-router
     - kitty-router
     - openspec-router
+    - speckit-lifecycle-router
     - sdd-x-index
     - ui-router
     - speckit-specify
@@ -78,8 +79,9 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | Requisitos ambiguos | `deep-interview-ops` → `brainstorming-ops` (sin Spec Kit) o `speckit-clarify` (con Spec Kit) |
 | Iniciar módulo (sin `.specify/`) | `jarvis-core` → `brainstorming-ops` → `writing-plans` → `task-pipeline-ops` |
 | Planificar desarrollo (sin `.specify/`) | `brainstorming-ops` → `writing-plans` → `executing-plans` |
-| Implementar feature / bugfix | `test-driven-development` + skill dominio `{producto}-*` del repo |
-| Bug o test fallido | `systematic-debugging` |
+| Bug o test fallido (con `.specify/`) | `speckit-lifecycle-router` → bugfix branch o `systematic-debugging` si sin extensions |
+| Hotfix producción | `speckit-lifecycle-router` (hotfix) + `git-guardrails-ops` |
+| Implementar feature / bugfix (sin `.specify/`) | `test-driven-development` + skill dominio `{producto}-*` |
 | Terminar módulo | `verification-before-completion` → `session-learner-ops` → `finishing-a-development-branch` |
 | Crear commit | `verification-before-completion` → `git-commit` → `structured-commits-ops` |
 | Push / merge | `git-guardrails-ops` (solo con orden explícita del usuario) |

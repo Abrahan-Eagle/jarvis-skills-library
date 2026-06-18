@@ -5,6 +5,7 @@
 | Acción | Skill(s) |
 |--------|----------|
 | Análisis coherencia Spec Kit pre-implement | `speckit-analyze` |
+| Bugfix con Spec Kit | `speckit-lifecycle-router` |
 | Cerrar gaps post-implement Spec Kit | `speckit-converge` |
 | Checklist calidad spec/plan Spec Kit | `speckit-checklist` |
 | Comando git destructivo | `git-guardrails-ops` |
@@ -17,18 +18,21 @@
 | Decidir flujo planificación | `sdd-router` |
 | Decisión cross-rol | `jarvis-experts` |
 | Definir alcance de un módulo | `jarvis-experts` |
+| Deprecar feature | `speckit-lifecycle-router` |
 | Descomponer plan Spec Kit en tareas | `speckit-tasks` |
 | Diseñar UI o UX | `ui-router`, `ui-ux-pro-max` |
 | Encontrar bug o test fallido | `systematic-debugging` |
 | Establecer principios SDD en proyecto | `speckit-constitution` |
 | Governance standalone fuera de misión | `kitty-governance` |
 | Hacer git push o merge | `git-guardrails-ops` |
+| Hotfix producción | `speckit-lifecycle-router` |
 | Implementar feature Spec Kit con OK usuario | `speckit-implement` |
 | Implementar feature o bugfix | `test-driven-development` |
 | Iniciar módulo | `brainstorming-ops`, `jarvis-core`, `task-pipeline-ops` |
 | Landing page o dashboard | `ui-router`, `ui-ux-pro-max` |
 | Mantener biblioteca de skills globales | `jarvis-skills-maintainer` |
 | Misión spec-driven con review y merge | `kitty-router` |
+| Modificar feature existente NNN | `speckit-lifecycle-router` |
 | Nueva feature de producto | `sdd-router` |
 | Nueva feature de producto con Spec Kit | `speckit-specify` |
 | OPSX propose apply archive | `openspec-router` |
@@ -37,6 +41,7 @@
 | Plan técnico Spec Kit | `speckit-plan` |
 | Planificar desarrollo | `brainstorming-ops`, `jarvis-core`, `writing-plans` |
 | Qué toolkit SD-X usar | `sdd-x-index` |
+| Refactor con spec | `speckit-lifecycle-router` |
 | Requisitos ambiguos | `deep-interview-ops` |
 | Requisitos ambiguos antes de plan SDD | `speckit-clarify` |
 | Revisar accesibilidad o layout | `ui-router`, `ui-ux-pro-max` |

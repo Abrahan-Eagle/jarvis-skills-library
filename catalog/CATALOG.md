@@ -2,7 +2,7 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-18
 
-Total: **63** skills
+Total: **64** skills
 
 ## Resumen por categoría
 
@@ -17,7 +17,7 @@ Total: **63** skills
 | `ops` | 9 |
 | `planning` | 3 |
 | `review` | 5 |
-| `sdd` | 11 |
+| `sdd` | 12 |
 | `ui` | 1 |
 
 ## backend
@@ -127,6 +127,7 @@ Total: **63** skills
 | `speckit-constitution` | Crea o actualiza la constitution del proyecto (.specify/memory/constitution.md). | [skills/sdd/speckit-constitution/SKILL.md](skills/sdd/speckit-constitution/SKILL.md) |
 | `speckit-converge` | Compara código con spec/plan/tasks y añade tareas de remediación a tasks.md. | [skills/sdd/speckit-converge/SKILL.md](skills/sdd/speckit-converge/SKILL.md) |
 | `speckit-implement` | Ejecuta tasks.md según el plan. Solo con OK explícito del usuario. | [skills/sdd/speckit-implement/SKILL.md](skills/sdd/speckit-implement/SKILL.md) |
+| `speckit-lifecycle-router` | Orquesta workflows Spec Kit lifecycle (bugfix, modify, refactor, hotfix, deprecate) cuando existe .specify/. | [skills/sdd/speckit-lifecycle-router/SKILL.md](skills/sdd/speckit-lifecycle-router/SKILL.md) |
 | `speckit-plan` | Genera plan técnico (plan.md) con stack y arquitectura elegida. | [skills/sdd/speckit-plan/SKILL.md](skills/sdd/speckit-plan/SKILL.md) |
 | `speckit-specify` | Define qué construir (requisitos y user stories) antes del stack técnico. | [skills/sdd/speckit-specify/SKILL.md](skills/sdd/speckit-specify/SKILL.md) |
 | `speckit-tasks` | Descompone plan.md en tasks.md accionables con dependencias. | [skills/sdd/speckit-tasks/SKILL.md](skills/sdd/speckit-tasks/SKILL.md) |

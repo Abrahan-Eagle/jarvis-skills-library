@@ -53,7 +53,11 @@ bash scripts/sync-spec-kit-skills.sh # refresh speckit-* desde github/spec-kit
 
 ## Spec-Driven Development (Spec Kit)
 
-10 skills core `speckit-*` en `skills/sdd/` (paridad con [github/spec-kit](https://github.com/github/spec-kit) v0.11.2) + routers `sdd-router`, `sdd-x-index`, `kitty-router`, `openspec-router`. Guía Spec Kit: [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md). Spec Kitty: [docs/SPEC_KITTY_INTEGRATION.md](docs/SPEC_KITTY_INTEGRATION.md). awesome-spec-kits: [docs/AWESOME_SPEC_KITS.md](docs/AWESOME_SPEC_KITS.md).
+10 skills core `speckit-*` en `skills/sdd/` (paridad con [github/spec-kit](https://github.com/github/spec-kit) v0.11.2) + routers `sdd-router`, `sdd-x-index`, `kitty-router`, `openspec-router`, `speckit-lifecycle-router`. Guía Spec Kit: [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md). Lifecycle: [docs/SPEC_KIT_EXTENSIONS.md](docs/SPEC_KIT_EXTENSIONS.md). Spec Kitty: [docs/SPEC_KITTY_INTEGRATION.md](docs/SPEC_KITTY_INTEGRATION.md). awesome-spec-kits: [docs/AWESOME_SPEC_KITS.md](docs/AWESOME_SPEC_KITS.md).
+
+## Spec Kit Extensions (lifecycle)
+
+Bugfix, modify, refactor, hotfix, deprecate — skill `speckit-lifecycle-router`; install upstream en repo producto. Ver [docs/SPEC_KIT_EXTENSIONS.md](docs/SPEC_KIT_EXTENSIONS.md).
 
 ## Spec Kitty
 

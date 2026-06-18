@@ -13,11 +13,12 @@ metadata:
     - "Spec-driven development ambiguo"
     - "Combinar spec con UI o docs"
     - "Qué toolkit SD-X usar"
-  triggers: sdx, sd-x, spec-driven x, speckit, awesome-spec-kits, openspec
+  triggers: sdx, sd-x, spec-driven x, speckit, awesome-spec-kits, openspec, bugfix, hotfix, refactor
   related-skills:
     - sdd-router
     - kitty-router
     - openspec-router
+    - speckit-lifecycle-router
     - ui-router
     - jarvis-core
     - jarvis-skills-maintainer
@@ -34,7 +35,8 @@ Guía completa: [docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md). Catálogo 
 
 | SD-X | Cuándo | Skills / artefactos |
 |------|--------|---------------------|
-| **SD-Development** (`.specify/`) | Feature producto con GitHub Spec Kit | `sdd-router` → `speckit-*` + dominio `{producto}-*` |
+| **SD-Development** (`.specify/`) | Feature **nueva** con Spec Kit | `sdd-router` → `speckit-specify` + dominio |
+| **SD-Maintenance** (`.specify/`) | Bugfix, hotfix, refactor, modify, deprecate | `speckit-lifecycle-router` — ver [SPEC_KIT_EXTENSIONS.md](../../docs/SPEC_KIT_EXTENSIONS.md) |
 | **SD-Development** (`.kittify/`) | Misiones Spec Kitty, work packages | `kitty-router` → CLI + `kitty-governance` |
 | **SD-Development** (`openspec/`) | Cambios fluidos, brownfield | `openspec-router` → OPSX propose/apply/archive |
 | **SD-Design** | Pantallas, landing, UI | `ui-router` → dominio UI → `ui-ux-pro-max` |
@@ -60,7 +62,10 @@ test -d kitty-specs && echo "HAS_KITTY_SPECS"
 |-----------|----------------|
 | Repo con `.kittify/` | `kitty-router` |
 | Repo con `openspec/` | `openspec-router` |
-| Nueva feature (`.specify/`) | `sdd-router` |
+| Nueva feature (`.specify/`) | `sdd-router` → `speckit-specify` |
+| Bug / regresión (`.specify/`) | `speckit-lifecycle-router` (bugfix) |
+| Hotfix producción | `speckit-lifecycle-router` (hotfix) |
+| Refactor / modify / deprecate | `speckit-lifecycle-router` |
 | 2+ marcadores SDD | **STOP** — usuario elige canónico |
 | Solo UI/landing | `ui-router` |
 | Pack inversor / Lanzamiento | Dominio docs — **no** SD-X dev |
@@ -73,6 +78,18 @@ test -d kitty-specs && echo "HAS_KITTY_SPECS"
 | [GitHub Spec Kit](https://github.com/github/spec-kit) v0.11.2 | Development, Validate | `scripts/sync-spec-kit-skills.sh` |
 | [ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) v2.5.0 | Design | `scripts/sync-ui-ux-pro-max.sh` |
 | [Spec Kitty](https://github.com/Priivacy-ai/spec-kitty) v3.2.1 | Development, Validate, Config | `pipx` + `spec-kitty init` en producto |
+| [Spec Kit Extensions](https://github.com/MartyBonacci/spec-kit-extensions) | Maintenance (bugfix, etc.) | `speckit-lifecycle-router` + install en producto |
+
+## Spec Kit: feature nueva vs lifecycle
+
+| Workflow | Comando (con extensions en producto) | Router JARVIS |
+|----------|--------------------------------------|---------------|
+| Feature nueva | `speckit-specify` | `sdd-router` |
+| Bugfix | `/speckit.bugfix` | `speckit-lifecycle-router` |
+| Modify | `/speckit.modify NNN` | `speckit-lifecycle-router` |
+| Refactor | `/speckit.refactor` | `speckit-lifecycle-router` |
+| Hotfix | `/speckit.hotfix` | `speckit-lifecycle-router` |
+| Deprecate | `/speckit.deprecate NNN` | `speckit-lifecycle-router` |
 
 ## Comparativa SD-Development (4 enfoques)
 

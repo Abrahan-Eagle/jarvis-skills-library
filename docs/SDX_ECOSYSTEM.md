@@ -11,6 +11,7 @@ JARVIS **no** usa MetaSpec CLI para distribuir skills; usa `jarvis-skills-librar
 | Development (`.specify/`) | `speckit-*`, dominio `{producto}-*` | `sdd-router` |
 | Development (`.kittify/`) | Spec Kitty CLI, `kitty-governance` | `kitty-router` |
 | Development (`openspec/`) | OpenSpec OPSX | `openspec-router` |
+| Maintenance (`.specify/`) | bugfix, hotfix, refactor, modify, deprecate | `speckit-lifecycle-router` |
 | Design | `ui-ux-pro-max`, dominio UI | `ui-router` |
 | API (sin speckit dedicado) | `api-design-principles` | — |
 | Documentation | `documentar-avances`, `context-updater` | — (no Spec Kit) |
@@ -64,7 +65,7 @@ Usar skills de dominio del producto, no `speckit-*`.
 
 ## Documentación relacionada
 
-- [SDD_SPECKIT_INTEGRATION.md](SDD_SPECKIT_INTEGRATION.md) — bootstrap, comandos, extensions
+- [SPEC_KIT_EXTENSIONS.md](SPEC_KIT_EXTENSIONS.md) — bugfix, hotfix, refactor, modify, deprecate
 - [SPEC_KITTY_INTEGRATION.md](SPEC_KITTY_INTEGRATION.md) — misiones, worktrees, review/merge
 - [UI_UX_PRO_MAX_INTEGRATION.md](UI_UX_PRO_MAX_INTEGRATION.md) — design system, overlays
 - [AWESOME_SPEC_KITS.md](AWESOME_SPEC_KITS.md) — índice acnlabs + watchlist + OpenSpec

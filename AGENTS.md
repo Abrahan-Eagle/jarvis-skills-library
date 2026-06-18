@@ -16,7 +16,7 @@
 | Nombre con prefijo de producto | No | Sí (`corralx-*`, `zonix-*`) |
 | Lógica de negocio exclusiva | No | Sí |
 | Proceso JARVIS / git / review / TDD | Sí | No (importar global) |
-| Spec-Driven Development (Spec Kit) | Sí (10 `speckit-*`, routers `sdd-router`, `kitty-router`, `openspec-router`) | Dominio en implement |
+| Spec-Driven Development (Spec Kit) | Sí (10 `speckit-*`, routers + `speckit-lifecycle-router`) | Dominio en implement |
 
 ## Comandos
 
@@ -35,7 +35,7 @@ python3 skills/engineering/skill-creator/scripts/init_skill.py <name> --path ski
 
 ## Spec-Driven Development
 
-Ver [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md), [docs/AWESOME_SPEC_KITS.md](docs/AWESOME_SPEC_KITS.md) y skills `sdd-router`, `kitty-router`, `openspec-router`.
+Ver [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md), [docs/SPEC_KIT_EXTENSIONS.md](docs/SPEC_KIT_EXTENSIONS.md), [docs/AWESOME_SPEC_KITS.md](docs/AWESOME_SPEC_KITS.md) y skills `sdd-router`, `kitty-router`, `openspec-router`, `speckit-lifecycle-router`.
 
 ## Precedencia operativa
 
@@ -48,6 +48,7 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 | Tarea no trivial | `jarvis-experts` |
 | Nueva feature de producto | `sdd-router` / `kitty-router` / `openspec-router` según marcador de repo |
 | Nueva feature de producto con Spec Kit | `speckit-specify`, `speckit-plan` |
+| Bugfix / hotfix / refactor (`.specify/`) | `speckit-lifecycle-router` |
 | Iniciar módulo (sin Spec Kit) | `jarvis-core`, `brainstorming-ops`, `task-pipeline-ops` |
 | Planificar | `writing-plans`, `executing-plans` o `speckit-plan` |
 | Implementar Spec Kit | `speckit-implement` (solo OK usuario) + dominio producto |

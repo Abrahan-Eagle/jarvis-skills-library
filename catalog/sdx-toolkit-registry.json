@@ -9,7 +9,7 @@
       "repo": "https://github.com/github/spec-kit",
       "pin": "v0.11.2",
       "jarvis": {
-        "skills": ["speckit-*", "sdd-router", "sdd-x-index"],
+        "skills": ["speckit-*", "sdd-router", "sdd-x-index", "speckit-lifecycle-router"],
         "sync": "scripts/sync-spec-kit-skills.sh"
       }
     },
@@ -37,6 +37,17 @@
     }
   ],
   "watchlist": [
+    {
+      "id": "spec-kit-extensions",
+      "name": "Spec Kit Extensions (MartyBonacci)",
+      "repo": "https://github.com/MartyBonacci/spec-kit-extensions",
+      "pin": "main",
+      "sdx": ["SD-Development", "SD-Maintenance"],
+      "jarvis": {
+        "skills": ["speckit-lifecycle-router"],
+        "install": "copiar extensions/ + commands/ al repo producto (ver SPEC_KIT_EXTENSIONS.md)"
+      }
+    },
     {
       "id": "openspec",
       "name": "OpenSpec",

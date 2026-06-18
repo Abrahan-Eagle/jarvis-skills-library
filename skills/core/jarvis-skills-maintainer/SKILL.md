@@ -63,6 +63,10 @@ No sincronizar comandos kitty al global — `spec-kitty init --ai cursor` los in
 
 Zonix y otros productos con `.specify/` **no migrar** sin decisión explícita.
 
+## Spec Kit Extensions (lifecycle)
+
+Workflows community bugfix/modify/refactor/hotfix/deprecate — skill `speckit-lifecycle-router`. Install en producto: ver [docs/SPEC_KIT_EXTENSIONS.md](../docs/SPEC_KIT_EXTENSIONS.md). Entrada en `watchlist` de `sdx-toolkit-registry.json`.
+
 ## OpenSpec (watchlist awesome-spec-kits)
 
 No sincronizar slash commands al global — `openspec init` los instala en el repo producto.
@@ -119,5 +123,6 @@ bash scripts/install.sh --dry-run # preview
 - [docs/MIGRATION.md](../docs/MIGRATION.md)
 - [docs/SDD_SPECKIT_INTEGRATION.md](../docs/SDD_SPECKIT_INTEGRATION.md)
 - [docs/SPEC_KITTY_INTEGRATION.md](../docs/SPEC_KITTY_INTEGRATION.md)
+- [docs/SPEC_KIT_EXTENSIONS.md](../docs/SPEC_KIT_EXTENSIONS.md)
 - [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md)
 - [docs/SDX_ECOSYSTEM.md](../docs/SDX_ECOSYSTEM.md)
