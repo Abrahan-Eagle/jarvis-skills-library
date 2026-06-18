@@ -4,6 +4,7 @@
 
 | Acción | Skill(s) |
 |--------|----------|
+| Alta stakes verificar antes de commit | `doubt-driven-development` |
 | Analisis what-if sin implementar feature | `scenario-router` |
 | Análisis coherencia Spec Kit pre-implement | `speckit-analyze` |
 | Auditoría seguridad profunda read-only | `cyber-neo`, `cyber-neo-router` |
@@ -27,7 +28,9 @@
 | Crear skill-loop.yml workflow | `skill-loop` |
 | Cualquier tarea no trivial | `jarvis-experts` |
 | Decidir flujo planificación | `sdd-router` |
+| Decisión alta stakes antes de commit | `agent-skills-router` |
 | Decisión cross-rol | `jarvis-experts` |
+| Decisión no trivial seguridad producción | `doubt-driven-development` |
 | Deck o presentacion visual | `open-design-router` |
 | Definir alcance de un módulo | `jarvis-experts` |
 | Deprecar feature | `speckit-lifecycle-router` |
@@ -68,6 +71,7 @@
 | OPSX propose apply archive | `openspec-router` |
 | OpenSpec u openspec | `openspec-router` |
 | Orquestar loop implementación revisión | `skill-loop`, `skill-loop-router` |
+| Pack Addy agent-skills lifecycle | `agent-skills-router` |
 | Paleta de colores o tipografía | `ui-router`, `ui-ux-pro-max` |
 | Plan técnico Spec Kit | `speckit-plan` |
 | Planificar desarrollo | `brainstorming-ops`, `jarvis-core`, `writing-plans` |
@@ -99,6 +103,7 @@
 | cyber-neo lockfiles supply chain | `cyber-neo-cli` |
 | cyber-neo pentest OWASP 2025 | `cyber-neo-router` |
 | cyber-neo secrets escaneo rápido | `cyber-neo-cli` |
+| doubt-driven revisión adversarial | `agent-skills-router`, `doubt-driven-development` |
 | ecc consult descubrir componente ECC | `ecc` |
 | ecc consult doctor repair | `ecc-router` |
 | ecc doctor repair harness | `ecc` |

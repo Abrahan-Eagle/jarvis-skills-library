@@ -37,3 +37,7 @@ bash "$ROOT/scripts/smoke-kalman-anomaly.sh"
 echo ""
 echo "== validate-all: skill-supply-chain smoke =="
 bash "$ROOT/scripts/smoke-skill-supply-chain.sh"
+
+echo ""
+echo "== validate-all: addy doubt-driven smoke =="
+bash "$ROOT/scripts/smoke-addy-doubt-driven.sh"

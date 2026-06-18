@@ -26,6 +26,7 @@ metadata:
     - cyber-neo-router
     - kalman-anomaly-router
     - learning-loop-router
+    - agent-skills-router
     - skill-loop-router
     - scenario-router
     - strategic-briefing-ops
@@ -73,6 +74,8 @@ Para captura/consolidación de aprendizajes de sesión (scan/wrap-up), ver `lear
 
 Para orquestación automática de loops multi-skill (`skill-loop.yml` + CLI), ver `skill-loop-router` ([docs/SKILL_LOOP_INTEGRATION.md](../../docs/SKILL_LOOP_INTEGRATION.md)) — no sustituye `jarvis-core` ni `learning-loop`.
 
+Para pack Addy Osmani (doubt-driven in-flight vs canónico JARVIS), ver `agent-skills-router` ([docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../../docs/AGENT_SKILLS_ADDY_INTEGRATION.md)) — solo `doubt-driven-development` curado; no sustituye `speckit-*`.
+
 Para SD-X (dev + diseño + docs + validate), ver `sdd-x-index` ([docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md)).
 
 ## Protocolo de calidad
@@ -110,6 +113,7 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | Crear commit | `verification-before-completion` → `git-commit` → `structured-commits-ops` |
 | Push / merge | `git-guardrails-ops` (solo con orden explícita del usuario) |
 | Code review | `code-review-playbook` (+ opcional requesting/receiving) |
+| Decisión no trivial alta stakes (auth, prod, irreversible) | `agent-skills-router` → `doubt-driven-development` (opcional in-flight; no bloquea TDD ni review) |
 | UI/UX en código, landing en repo, a11y, layout | `ui-router` → skill dominio `{producto}-ui-design` / `zonix-web-design` → `ui-ux-pro-max` → `responsive-design` (opc.) |
 | Carrusel, deck, email HTML, prototipo standalone | `open-design-router` → `open-design` (daemon OD) |
 | Briefing estratégico / estado general | `strategic-briefing-ops` |

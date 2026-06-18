@@ -2,15 +2,15 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-18
 
-Total: **84** skills
+Total: **86** skills
 
 ## Resumen por categoría
 
 | Categoría | Cantidad |
 |-----------|----------|
 | `backend` | 7 |
-| `core` | 14 |
-| `engineering` | 7 |
+| `core` | 15 |
+| `engineering` | 8 |
 | `git` | 3 |
 | `mobile` | 4 |
 | `non-code` | 8 |
@@ -36,6 +36,7 @@ Total: **84** skills
 
 | Skill | Descripción | Ruta |
 |-------|-------------|------|
+| `agent-skills-router` | Orquesta pack addyosmani/agent-skills vs canónico JARVIS y doubt-driven-development. | [skills/core/agent-skills-router/SKILL.md](skills/core/agent-skills-router/SKILL.md) |
 | `cyber-neo-router` | Orquesta auditoría Cyber Neo (11 dominios, OWASP 2025, reporte read-only) vs security checklist JARVIS. | [skills/core/cyber-neo-router/SKILL.md](skills/core/cyber-neo-router/SKILL.md) |
 | `ecc-router` | Orquesta harness ECC (hooks, instincts, rules idioma, ecc consult) vs workflow JARVIS canónico. | [skills/core/ecc-router/SKILL.md](skills/core/ecc-router/SKILL.md) |
 | `jarvis-core` | Protocolo base del sistema JARVIS para cualquier proyecto. Define honestidad, foco de negocio y flujo de trabajo modular… | [skills/core/jarvis-core/SKILL.md](skills/core/jarvis-core/SKILL.md) |
@@ -57,6 +58,7 @@ Total: **84** skills
 |-------|-------------|------|
 | `clean-architecture` | Clean Architecture, SOLID principles, dependency injection, separation of concerns. | [skills/engineering/clean-architecture/SKILL.md](skills/engineering/clean-architecture/SKILL.md) |
 | `clean-code-principles` | SOLID principles, design patterns, DRY, KISS, and clean code fundamentals. Use when reviewing architecture, checking cod… | [skills/engineering/clean-code-principles/SKILL.md](skills/engineering/clean-code-principles/SKILL.md) |
+| `doubt-driven-development` | Revisión adversarial in-flight de decisiones no triviales: CLAIM → EXTRACT → DOUBT → RECONCILE → STOP. | [skills/engineering/doubt-driven-development/SKILL.md](skills/engineering/doubt-driven-development/SKILL.md) |
 | `error-handling-patterns` | Master error handling patterns across languages including exceptions, Result types, error propagation, and graceful degr… | [skills/engineering/error-handling-patterns/SKILL.md](skills/engineering/error-handling-patterns/SKILL.md) |
 | `skill-creator` | Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an exist… | [skills/engineering/skill-creator/SKILL.md](skills/engineering/skill-creator/SKILL.md) |
 | `systematic-debugging` | Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes | [skills/engineering/systematic-debugging/SKILL.md](skills/engineering/systematic-debugging/SKILL.md) |

@@ -103,6 +103,10 @@ Scan mid-session + wrap-up con quality gates — skills `learning-loop-router` +
 
 Loops automáticos impl→review→verify vía `skill-loop.yml` + CLI — skills `skill-loop-router` + `skill-loop`. Upstream: [takumiyoshikawa/skill-loop](https://github.com/takumiyoshikawa/skill-loop) (MIT). Guía: [docs/SKILL_LOOP_INTEGRATION.md](docs/SKILL_LOOP_INTEGRATION.md). Sync: `bash scripts/sync-skill-loop-skill.sh`. CLI: `bash scripts/install-skill-loop-runtime.sh`. No sustituye `jarvis-core` ni `learning-loop`.
 
+### Agent Skills (Addy Osmani)
+
+Revisión adversarial in-flight y router vs pack engineering — skills `agent-skills-router` + `doubt-driven-development`. Upstream: [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) (MIT). Guía: [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](docs/AGENT_SKILLS_ADDY_INTEGRATION.md). Sync: `bash scripts/sync-addy-doubt-driven.sh`. No sustituye `jarvis-core` ni `speckit-*`.
+
 ## Migración desde ~/jarvis-skills
 
 Ver [docs/MIGRATION.md](docs/MIGRATION.md).

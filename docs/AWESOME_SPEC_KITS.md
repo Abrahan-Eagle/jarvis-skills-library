@@ -18,6 +18,14 @@ Fuente upstream (5 entradas; el README del índice puede estar desactualizado):
 | marketing-spec-kit | [ACNet-AI/marketing-spec-kit](https://github.com/ACNet-AI/marketing-spec-kit) | sdm | 0.4.0 | **Watchlist** — evaluar para clawvis marketing |
 | mcp-speckit | [ACNet-AI/mcp-spec-kit](https://github.com/ACNet-AI/mcp-spec-kit) | sdd | 0.1.0 | **Watchlist** — evaluar para MCP / OpenClaw |
 
+## agent-skills (Addy Osmani) — engineering lifecycle
+
+| Pack | Repo | Tipo | Pin | Estado JARVIS |
+|------|------|------|-----|---------------|
+| agent-skills | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | engineering workflow | `36c543d` | **Router** — `agent-skills-router`; sync curado `doubt-driven-development`; resto → canónico JARVIS o pack externo |
+
+Guía: [AGENT_SKILLS_ADDY_INTEGRATION.md](AGENT_SKILLS_ADDY_INTEGRATION.md). No reemplaza Spec Kit ni `jarvis-core`.
+
 ## Cómo elegir toolkit SD-Development
 
 | Criterio | Spec Kit | Spec Kitty | OpenSpec |

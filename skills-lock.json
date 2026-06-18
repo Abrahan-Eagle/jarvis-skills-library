@@ -29,7 +29,7 @@
     "security": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "5c6865d7da085161314aeafe36b5831f242270304f0231be9a8ccbb11de3cfa7",
+      "computedHash": "b4f9f2d53531d33138941128ef00837d93bef55fdd0b4a5788bc07043affb1c5",
       "path": "skills/backend/security/SKILL.md"
     },
     "software-architecture": {
@@ -44,6 +44,12 @@
       "computedHash": "1034d8954ed4bdccbc1198ad01de8c3035c2883ddcfbfa3d63a7b9d551dcec9f",
       "path": "skills/backend/sql-optimization-patterns/SKILL.md"
     },
+    "agent-skills-router": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "8de22d3a2b5e6fde8c6fc2523b56f9388678105948922e8bdea3853745e8e438",
+      "path": "skills/core/agent-skills-router/SKILL.md"
+    },
     "cyber-neo-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
@@ -53,13 +59,13 @@
     "ecc-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "975764ce2d548b8e1b7628a2834f551434b927444650bba1c7402493f2a80440",
+      "computedHash": "cc93c388168752cbe1c098cc1298e38dfdbf1bfaecad42b84993fa5343f88387",
       "path": "skills/core/ecc-router/SKILL.md"
     },
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "bede6017d42d2396774a998b4fe6ad4efd822315ac697ff8d9058f8e1d4133cd",
+      "computedHash": "29ee40e252cfb73b2c562c9238bfd51d437a103532acadc8dbbb20206f268157",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
@@ -139,6 +145,13 @@
       "sourceType": "local",
       "computedHash": "8f8f2c384730f23573292fc1bf2d4b6878e00e32f0c0036e40ab51027ba4c0b3",
       "path": "skills/engineering/clean-code-principles/SKILL.md"
+    },
+    "doubt-driven-development": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "computedHash": "13166eebee63d683621a4ca9c29b2040f847309e057a036a4b8b2e8a7871b4e1",
+      "path": "skills/engineering/doubt-driven-development/SKILL.md",
+      "upstream": "addyosmani/agent-skills:doubt-driven-development"
     },
     "error-handling-patterns": {
       "source": "jarvis-skills-library",
@@ -328,7 +341,7 @@
     "kalman-anomaly-defense": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "fb2d61bca42b9cb4fd229aab158bf218458cd45118724035ef8da4cbc2ec4ea6",
+      "computedHash": "3762ca1710dff7aaa1b8eb2ff22e3ff138c3c814ffd6f2b34609d5248ad297dc",
       "path": "skills/ops/kalman-anomaly-defense/SKILL.md"
     },
     "learning-loop": {
@@ -521,7 +534,7 @@
     "open-design-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "b7c244430ef3bd015ba7d62473c49920a2455f646aa0e5a743a7afe4a36040f3",
+      "computedHash": "71b4af3226b249c7aa46d07a4bb2efb9ba8cc8ebc2fd5c27b552d5a838a78696",
       "path": "skills/ui/open-design-router/SKILL.md"
     },
     "ui-ux-pro-max": {
