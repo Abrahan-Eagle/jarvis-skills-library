@@ -7,6 +7,7 @@
 | Alta stakes verificar antes de commit | `doubt-driven-development` |
 | Analisis what-if sin implementar feature | `scenario-router` |
 | Análisis coherencia Spec Kit pre-implement | `speckit-analyze` |
+| Auditar skill antes de instalar | `claude-skills-router`, `skill-security-auditor` |
 | Auditoría seguridad profunda read-only | `cyber-neo`, `cyber-neo-router` |
 | Briefing estrategico semanal | `strategic-briefing-ops` |
 | Bugfix con Spec Kit | `speckit-lifecycle-router` |
@@ -76,6 +77,7 @@
 | OpenSpec u openspec | `openspec-router` |
 | Orquestar loop implementación revisión | `skill-loop`, `skill-loop-router` |
 | Pack Addy agent-skills lifecycle | `agent-skills-router` |
+| Pack Rezvani claude-skills | `claude-skills-router` |
 | Paleta de colores o tipografía | `ui-router`, `ui-ux-pro-max` |
 | Plan técnico Spec Kit | `speckit-plan` |
 | Planificar desarrollo | `brainstorming-ops`, `jarvis-core`, `writing-plans` |
@@ -113,5 +115,8 @@
 | ecc doctor repair harness | `ecc` |
 | learning-loop scan wrap up | `learning-loop`, `learning-loop-router` |
 | open-design generate | `open-design` |
+| skill security audit pre-install | `claude-skills-router` |
+| skill security check pre-install | `skill-security-auditor` |
 | skill-loop workflow | `skill-loop-router` |
 | spec-kitty dispatch | `kitty-governance` |
+| ¿Es segura esta skill? | `claude-skills-router`, `skill-security-auditor` |

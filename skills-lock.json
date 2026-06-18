@@ -29,7 +29,7 @@
     "security": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "40931e2fbbf5947cbac405332b12e7178391859884e5a65c1936bdd73bd1bd5a",
+      "computedHash": "a93d98b5efd9f86b6d5d19599c0f11d2b2a5d51c0c665405de6f8dcb148a6872",
       "path": "skills/backend/security/SKILL.md"
     },
     "software-architecture": {
@@ -47,8 +47,14 @@
     "agent-skills-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "8de22d3a2b5e6fde8c6fc2523b56f9388678105948922e8bdea3853745e8e438",
+      "computedHash": "80a47dbcf496d62ef93b4d3f0dccae8e14dd5b9b2af6a717541914858d467d92",
       "path": "skills/core/agent-skills-router/SKILL.md"
+    },
+    "claude-skills-router": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "d5eb66bd88aade18367355db0431c116bd99c1d36f768d92965c527dae9bc436",
+      "path": "skills/core/claude-skills-router/SKILL.md"
     },
     "cyber-neo-router": {
       "source": "jarvis-skills-library",
@@ -65,7 +71,7 @@
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "28ed67c9699ca8dd9ed6b77b799d9a8786fd8d83d927aac8d692d7d23312acb9",
+      "computedHash": "a0bc2131920b6114ee414302a383318e7b9da9749caffc6189f471db990d3d3e",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
@@ -77,7 +83,7 @@
     "jarvis-skills-maintainer": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "fb03ec16bc2fe6d6b6fff61c2ca40a48342fb7f9022b6b5ce63d61b22cc68cae",
+      "computedHash": "2bbc41eab74342fe604aa482dd0ac03a38255dc0cd3c506708b0ce3468e8342f",
       "path": "skills/core/jarvis-skills-maintainer/SKILL.md"
     },
     "kalman-anomaly-router": {
@@ -389,6 +395,13 @@
       "computedHash": "fc88c51e89c452c65e1fa308f838b8588f5ed1ec6cd8c9b49637eb984779c98d",
       "path": "skills/ops/skill-loop/SKILL.md",
       "upstream": "skill-loop:skill-loop"
+    },
+    "skill-security-auditor": {
+      "source": "alirezarezvani/claude-skills",
+      "sourceType": "github",
+      "computedHash": "bf5b04e17842adc3c2caac1ae602b2a17f20b88f8b680253a608c844bd8cff8b",
+      "path": "skills/ops/skill-security-auditor/SKILL.md",
+      "upstream": "alirezarezvani/claude-skills:skill-security-auditor"
     },
     "strategic-briefing-ops": {
       "source": "clawvis/strategic-briefing-ops",

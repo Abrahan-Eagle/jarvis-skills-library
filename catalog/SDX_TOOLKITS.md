@@ -29,7 +29,7 @@ Ver [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md).
 | skill-loop | skill-loop (takumiyoshikawa) | SD-Development | 0bea8b08e079c71bc857631e26ada06068e82321 | skill-loop-router, skill-loop · sync: `scripts/sync-skill-loop-skill.sh` · install: `scripts/install-skill-loop-runtime.sh` | scripts/install-skill-loop-runtime.sh |
 | agent-skills-addy | Agent Skills (Addy Osmani) | SD-Validate | 36c543d93b3f2bc0a3c01904c753121e56c105b1 | agent-skills-router, doubt-driven-development · sync: `scripts/sync-addy-doubt-driven.sh` |  |
 | ralph-loop | ralph-loop (PageAI-Pro) | SD-Development | main | skill-loop-router, human-in-the-loop-ops | Watchlist: dev loop Docker sandbox; overlap skill-loop + TDD; sin sync |
-| explainx-loop | explainx/loop (alirezarezvani/claude-skills) | SD-Development | main | skill-loop-router, human-in-the-loop-ops | Watchlist: cron autoresearch; overlap skill-loop; auditar supply-chain antes de sync |
+| claude-skills-rezvani | Claude Skills (Alireza Rezvani) | SD-Validate, SD-Development | v2.9.0 | claude-skills-router, skill-security-auditor · sync: `scripts/sync-claude-skills-skill-security-auditor.sh` |  |
 | marketing-spec-kit | Marketing Spec Kit | SDM | 0.4.0 |  | SDM; evaluar para clawvis marketing |
 | mcp-speckit | MCP Spec Kit | SD-Development | 0.1.0 |  | MCP lifecycle; evaluar para OpenClaw |
 | meta-spec | MetaSpec | SD-Development, SD-Design | 0.9.7 |  | Framework Python; no distribución JARVIS |

@@ -41,3 +41,7 @@ bash "$ROOT/scripts/smoke-skill-supply-chain.sh"
 echo ""
 echo "== validate-all: addy doubt-driven smoke =="
 bash "$ROOT/scripts/smoke-addy-doubt-driven.sh"
+
+echo ""
+echo "== validate-all: claude-skills security-auditor smoke =="
+bash "$ROOT/scripts/smoke-claude-skills-skill-security-auditor.sh"

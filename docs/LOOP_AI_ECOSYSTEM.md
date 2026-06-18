@@ -23,6 +23,7 @@ Skill de gobernanza: [`human-in-the-loop-ops`](skills/ops/human-in-the-loop-ops/
 | Push/merge gate | `git-guardrails-ops` |
 | Publicación con approval | `approval-gate` (OpenClaw) |
 | Auditoría seguridad repo | `cyber-neo-router` |
+| Auditoría skill pre-install | `claude-skills-router` → `skill-security-auditor` |
 | Defensa runtime spikes | `kalman-anomaly-router` |
 
 ## Patrones de bucle
@@ -54,7 +55,8 @@ Automatizaciones (cron, webhooks, CI). JARVIS: scripts en repo producto + `human
 | Repo / skill externa | Notas | Decisión |
 |---------------------|-------|----------|
 | [ralph-loop](https://github.com/PageAI-Pro/ralph-loop) (PageAI-Pro) | Dev loop largo en Docker sandbox, tareas priorizadas | Overlap `skill-loop` + TDD; evaluar si hace falta CLI dedicado |
-| explainx/loop ([alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills)) | Cron autoresearch, un cambio por iteración | Overlap skill-loop + cron; riesgo supply-chain — auditar antes de instalar |
+| [autoresearch-agent](https://github.com/alirezarezvani/claude-skills/tree/main/engineering/autoresearch-agent) | Plugin `/ar:loop`, cron, un cambio por iteración | Overlap `skill-loop` + `human-in-the-loop-ops`; Claude Code slash — ver [CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md](CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md) |
+| [claude-skills](https://github.com/alirezarezvani/claude-skills) (megapack) | 345+ skills multi-dominio | Router + solo `skill-security-auditor` curado — [CLAUDE_SKILLS_REZVANI_INTEGRATION.md](CLAUDE_SKILLS_REZVANI_INTEGRATION.md) |
 | mrkai77-loop | Gestor ventanas macOS (Swift), no skill de dev IA | **Fuera de dominio** |
 | Loop AI Labs / Loop Q | Vendor SLM empresarial on-prem | **Fuera de dominio** (producto corporativo, no skill global) |
 | Perplexity Alexa Skill | Voz + búsqueda | **Fuera de dominio** (integración consumidor) |
@@ -85,4 +87,5 @@ jarvis-core (alcance + plan)
 - [SKILL_LOOP_INTEGRATION.md](SKILL_LOOP_INTEGRATION.md)
 - [LEARNING_LOOP_INTEGRATION.md](LEARNING_LOOP_INTEGRATION.md)
 - [AGENT_SKILLS_ADDY_INTEGRATION.md](AGENT_SKILLS_ADDY_INTEGRATION.md)
+- [CLAUDE_SKILLS_REZVANI_INTEGRATION.md](CLAUDE_SKILLS_REZVANI_INTEGRATION.md)
 - [SDX_ECOSYSTEM.md](SDX_ECOSYSTEM.md)

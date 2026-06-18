@@ -38,6 +38,7 @@ Ver [`catalog/SDX_TOOLKITS.md`](catalog/SDX_TOOLKITS.md) (generado desde `catalo
 | Learning Loop (watchlist) | 948dc75 | `bash scripts/sync-learning-loop-skill.sh` — [LEARNING_LOOP_INTEGRATION.md](LEARNING_LOOP_INTEGRATION.md) |
 | skill-loop (watchlist) | 0bea8b08 | `bash scripts/sync-skill-loop-skill.sh` — [SKILL_LOOP_INTEGRATION.md](SKILL_LOOP_INTEGRATION.md) |
 | Agent Skills Addy (watchlist) | 36c543d | `bash scripts/sync-addy-doubt-driven.sh` — [AGENT_SKILLS_ADDY_INTEGRATION.md](AGENT_SKILLS_ADDY_INTEGRATION.md) |
+| Claude Skills Rezvani (watchlist) | v2.9.0 | `bash scripts/sync-claude-skills-skill-security-auditor.sh` — [CLAUDE_SKILLS_REZVANI_INTEGRATION.md](CLAUDE_SKILLS_REZVANI_INTEGRATION.md) |
 | Spec Kitty | v3.2.1 | `pipx install spec-kitty-cli` + `spec-kitty init` en repo producto |
 | OpenSpec (watchlist) | 0.16.0 | `npm i -g @fission-ai/openspec` + `openspec init` en repo producto |
 
@@ -81,6 +82,7 @@ Usar skills de dominio del producto, no `speckit-*`.
 - [ECC_INTEGRATION.md](ECC_INTEGRATION.md) — harness Cursor (ECC: hooks, instincts, rules)
 - [CYBER_NEO_INTEGRATION.md](CYBER_NEO_INTEGRATION.md) — auditoría seguridad read-only (OWASP 2025, 11 dominios)
 - [AGENT_SKILLS_ADDY_INTEGRATION.md](AGENT_SKILLS_ADDY_INTEGRATION.md) — pack Addy Osmani (doubt-driven in-flight)
+- [CLAUDE_SKILLS_REZVANI_INTEGRATION.md](CLAUDE_SKILLS_REZVANI_INTEGRATION.md) — pack Rezvani (auditoría pre-install `skill-security-auditor`)
 - [STRANGEVERSE_INTEGRATION.md](STRANGEVERSE_INTEGRATION.md) — what-if y simulación multi-agente
 - [AWESOME_SPEC_KITS.md](AWESOME_SPEC_KITS.md) — índice acnlabs + watchlist + OpenSpec
 - [awesome-spec-kits](https://github.com/acnlabs/awesome-spec-kits) — catálogo upstream

@@ -13,6 +13,13 @@ flowchart LR
   agent_skills_router["agent-skills-router"] --> test_driven_development["test-driven-development"]
   brainstorming_ops["brainstorming-ops"] --> deep_interview_ops["deep-interview-ops"]
   brainstorming_ops["brainstorming-ops"] --> jarvis_core["jarvis-core"]
+  claude_skills_router["claude-skills-router"] --> agent_skills_router["agent-skills-router"]
+  claude_skills_router["claude-skills-router"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
+  claude_skills_router["claude-skills-router"] --> jarvis_core["jarvis-core"]
+  claude_skills_router["claude-skills-router"] --> jarvis_skills_maintainer["jarvis-skills-maintainer"]
+  claude_skills_router["claude-skills-router"] --> security["security"]
+  claude_skills_router["claude-skills-router"] --> skill_loop_router["skill-loop-router"]
+  claude_skills_router["claude-skills-router"] --> skill_security_auditor["skill-security-auditor"]
   configure_ecc["configure-ecc"] --> ecc["ecc"]
   configure_ecc["configure-ecc"] --> ecc_router["ecc-router"]
   configure_ecc["configure-ecc"] --> jarvis_core["jarvis-core"]
@@ -73,6 +80,7 @@ flowchart LR
   human_in_the_loop_ops["human-in-the-loop-ops"] --> verification_before_completion["verification-before-completion"]
   jarvis_core["jarvis-core"] --> agent_skills_router["agent-skills-router"]
   jarvis_core["jarvis-core"] --> brainstorming_ops["brainstorming-ops"]
+  jarvis_core["jarvis-core"] --> claude_skills_router["claude-skills-router"]
   jarvis_core["jarvis-core"] --> code_review_playbook["code-review-playbook"]
   jarvis_core["jarvis-core"] --> cyber_neo_router["cyber-neo-router"]
   jarvis_core["jarvis-core"] --> ecc_router["ecc-router"]
@@ -211,6 +219,11 @@ flowchart LR
   skill_loop_router["skill-loop-router"] --> skill_loop["skill-loop"]
   skill_loop_router["skill-loop-router"] --> test_driven_development["test-driven-development"]
   skill_loop_router["skill-loop-router"] --> verification_before_completion["verification-before-completion"]
+  skill_security_auditor["skill-security-auditor"] --> agent_skills_router["agent-skills-router"]
+  skill_security_auditor["skill-security-auditor"] --> claude_skills_router["claude-skills-router"]
+  skill_security_auditor["skill-security-auditor"] --> jarvis_core["jarvis-core"]
+  skill_security_auditor["skill-security-auditor"] --> jarvis_skills_maintainer["jarvis-skills-maintainer"]
+  skill_security_auditor["skill-security-auditor"] --> security["security"]
   speckit_lifecycle_router["speckit-lifecycle-router"] --> clean_code_principles["clean-code-principles"]
   speckit_lifecycle_router["speckit-lifecycle-router"] --> documentar_avances["documentar-avances"]
   speckit_lifecycle_router["speckit-lifecycle-router"] --> git_guardrails_ops["git-guardrails-ops"]
@@ -256,4 +269,4 @@ flowchart LR
   zoom_out["zoom-out"] --> software_architecture["software-architecture"]
 ```
 
-Nodos conocidos: 87. Aristas (solo a skills en catálogo): 250.
+Nodos conocidos: 89. Aristas (solo a skills en catálogo): 263.

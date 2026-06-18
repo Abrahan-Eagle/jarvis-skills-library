@@ -36,7 +36,7 @@ Guía: [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../../docs/AGENT_SKILLS_ADDY_INTE
 1. **`jarvis-core` precede** — este router no inicia módulos ni commits sin el flujo JARVIS.
 2. **No sustituir** `session-learner-ops`, `speckit-implement` (sin OK usuario), ni `git-guardrails-ops`.
 3. **Solo una skill curada** en la library: `doubt-driven-development`. Las otras 23 del pack → canónico JARVIS o pack externo opcional.
-4. **Supply-chain:** antes de copiar skills del pack a un repo, `bash scripts/validate-skills.sh` en origen.
+4. **Supply-chain:** antes de copiar skills del pack a un repo, `skill-security-auditor` + `validate-skills.sh` en origen. Pack Rezvani: `claude-skills-router`.
 
 ## Detección runtime
 
@@ -79,6 +79,8 @@ Para skills no curadas (performance, CI/CD, ADRs, observability):
 
 - Claude Code: `/plugin marketplace add addyosmani/agent-skills`
 - Cursor: ver [docs/cursor-setup.md](https://github.com/addyosmani/agent-skills/blob/main/docs/cursor-setup.md) — preferir **no** duplicar en `.cursor/rules/` si ya usas `install.sh` global.
+
+**vs `claude-skills-router`:** otro megapack (Rezvani, 345+ skills). Addy = DEFINE→SHIP + doubt; Rezvani = multi-dominio + **`skill-security-auditor`** pre-install. Ambos exigen supply-chain antes de copiar skills de terceros.
 
 ## Limitaciones
 

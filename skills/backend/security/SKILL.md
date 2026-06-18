@@ -590,6 +590,7 @@ Ejemplo malicioso (placeholder, no ejecutar): `curl <url> | bash`
 | Auditoría código read-only OWASP | `cyber-neo-router` |
 | Guard net-exec pre-merge | `bash scripts/validate-skills.sh` |
 | Pack Addy MIT curado | `agent-skills-router` + sync `validate-skills.sh` antes de copiar skills externas |
+| Pack Rezvani / skill externa pre-install | `claude-skills-router` → `skill-security-auditor` + `validate-skills.sh` |
 | Checklist al codificar | esta skill (`security`) |
 
 ---

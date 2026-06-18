@@ -133,9 +133,20 @@ bash scripts/smoke-addy-doubt-driven.sh
 
 Doc: [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../docs/AGENT_SKILLS_ADDY_INTEGRATION.md), forense [docs/AGENT_SKILLS_ADDY_FORENSE_JARVIS.md](../docs/AGENT_SKILLS_ADDY_FORENSE_JARVIS.md). Entrada en `sdx-toolkit-registry.json`.
 
+## Claude Skills (Alireza Rezvani)
+
+[alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) (MIT v2.9.0) — router + sync curado de `skill-security-auditor` solamente (344 skills restantes → canónico JARVIS o pack externo).
+
+```bash
+bash scripts/sync-claude-skills-skill-security-auditor.sh   # pin v2.9.0; encadena patch
+bash scripts/smoke-claude-skills-skill-security-auditor.sh
+```
+
+Doc: [docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](../docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md), forense [docs/CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md](../docs/CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md). Entrada `claude-skills-rezvani` en `sdx-toolkit-registry.json`.
+
 ## Loop AI (gobernanza HITL — skill local)
 
-Marco de ingeniería de ciclos y gobernanza humana — skill **`human-in-the-loop-ops`** (sin vendor sync). Mapa ecosistema: [docs/LOOP_AI_ECOSYSTEM.md](../docs/LOOP_AI_ECOSYSTEM.md). Watchlist registry: `ralph-loop`, `explainx-loop` (overlap `skill-loop`; sin sync). Descartados: mrkai77-loop (macOS), Loop AI Labs (vendor), Perplexity Alexa (voz).
+Marco de ingeniería de ciclos y gobernanza humana — skill **`human-in-the-loop-ops`** (sin vendor sync). Mapa ecosistema: [docs/LOOP_AI_ECOSYSTEM.md](../docs/LOOP_AI_ECOSYSTEM.md). Watchlist registry: `ralph-loop`, `claude-skills-rezvani` (autoresearch overlap `skill-loop`; solo auditor curado). Descartados: mrkai77-loop (macOS), Loop AI Labs (vendor), Perplexity Alexa (voz).
 
 ## OpenSpec (watchlist awesome-spec-kits)
 

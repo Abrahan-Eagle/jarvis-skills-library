@@ -2,19 +2,19 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-18
 
-Total: **87** skills
+Total: **89** skills
 
 ## Resumen por categoría
 
 | Categoría | Cantidad |
 |-----------|----------|
 | `backend` | 7 |
-| `core` | 15 |
+| `core` | 16 |
 | `engineering` | 8 |
 | `git` | 3 |
 | `mobile` | 4 |
 | `non-code` | 8 |
-| `ops` | 20 |
+| `ops` | 21 |
 | `planning` | 3 |
 | `review` | 5 |
 | `sdd` | 12 |
@@ -37,6 +37,7 @@ Total: **87** skills
 | Skill | Descripción | Ruta |
 |-------|-------------|------|
 | `agent-skills-router` | Orquesta pack addyosmani/agent-skills vs canónico JARVIS y doubt-driven-development. | [skills/core/agent-skills-router/SKILL.md](skills/core/agent-skills-router/SKILL.md) |
+| `claude-skills-router` | Orquesta pack alirezarezvani/claude-skills vs canónico JARVIS y skill-security-auditor. | [skills/core/claude-skills-router/SKILL.md](skills/core/claude-skills-router/SKILL.md) |
 | `cyber-neo-router` | Orquesta auditoría Cyber Neo (11 dominios, OWASP 2025, reporte read-only) vs security checklist JARVIS. | [skills/core/cyber-neo-router/SKILL.md](skills/core/cyber-neo-router/SKILL.md) |
 | `ecc-router` | Orquesta harness ECC (hooks, instincts, rules idioma, ecc consult) vs workflow JARVIS canónico. | [skills/core/ecc-router/SKILL.md](skills/core/ecc-router/SKILL.md) |
 | `jarvis-core` | Protocolo base del sistema JARVIS para cualquier proyecto. Define honestidad, foco de negocio y flujo de trabajo modular… | [skills/core/jarvis-core/SKILL.md](skills/core/jarvis-core/SKILL.md) |
@@ -117,6 +118,7 @@ Total: **87** skills
 | `security-review-ecc` | ECC OWASP security review checklist (complement to security skill). | [skills/ops/security-review-ecc/SKILL.md](skills/ops/security-review-ecc/SKILL.md) |
 | `session-learner-ops` | Tras cerrar módulo UI: patrones en docs/active_context.md y walkthrough. | [skills/ops/session-learner-ops/SKILL.md](skills/ops/session-learner-ops/SKILL.md) |
 | `skill-loop` | Scaffold skill-loop.yml y starter skills para loops impl-review-rework. | [skills/ops/skill-loop/SKILL.md](skills/ops/skill-loop/SKILL.md) |
+| `skill-security-auditor` | Auditoría de seguridad pre-instalación de agent skills: PASS/WARN/FAIL, prompt injection, supply chain. | [skills/ops/skill-security-auditor/SKILL.md](skills/ops/skill-security-auditor/SKILL.md) |
 | `strategic-briefing-ops` | Briefing estrategico consolidado: sintetiza estado del proyecto, progreso, riesgos y decisiones pendientes en un informe… | [skills/ops/strategic-briefing-ops/SKILL.md](skills/ops/strategic-briefing-ops/SKILL.md) |
 | `verification-before-completion` | OBLIGATORIO antes de declarar cualquier tarea completada en cualquier proyecto. Ejecuta verificación fresca del stack y … | [skills/ops/verification-before-completion/SKILL.md](skills/ops/verification-before-completion/SKILL.md) |
 

@@ -188,15 +188,19 @@
       }
     },
     {
-      "id": "explainx-loop",
-      "name": "explainx/loop (alirezarezvani/claude-skills)",
+      "id": "claude-skills-rezvani",
+      "name": "Claude Skills (Alireza Rezvani)",
       "repo": "https://github.com/alirezarezvani/claude-skills",
-      "pin": "main",
-      "sdx": ["SD-Development"],
-      "note": "Watchlist: cron autoresearch; overlap skill-loop; auditar supply-chain antes de sync",
+      "pin": "v2.9.0",
+      "sdx": ["SD-Validate", "SD-Development"],
       "jarvis": {
-        "skills": ["skill-loop-router", "human-in-the-loop-ops"],
-        "doc": "docs/LOOP_AI_ECOSYSTEM.md"
+        "skills": [
+          "claude-skills-router",
+          "skill-security-auditor"
+        ],
+        "sync": "scripts/sync-claude-skills-skill-security-auditor.sh",
+        "doc": "docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md",
+        "note": "Solo skill-security-auditor curado; 344 restantes → router o pack externo"
       }
     },
     {
