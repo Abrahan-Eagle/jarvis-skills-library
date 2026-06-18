@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Patch learning-loop SKILL.md for jarvis-skills-library: frontmatter + JARVIS/Cursor overlay."""
+"""Patch learning-loop SKILL.md for jarvis-skills-library: frontmatter + JARVIS/Cursor overlay + body v2."""
 
 from __future__ import annotations
 
@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 OVERLAY_MARKER = "## JARVIS / Cursor (mandatory)"
+IRON_LAW_MARKER = "### IRON LAW JARVIS"
 LEARNING_HOME = "~/.cursor/learning-captures"
 
 JARVIS_OVERLAY = f"""
@@ -21,7 +22,7 @@ JARVIS_OVERLAY = f"""
 - **Cierre módulo canónico:** Siempre `session-learner-ops` → `docs/active_context.md` primero; learning-loop wrap-up es **complemento opcional**, no sustituto.
 - `upstream: learning-loop-skill:learning-loop`
 
-### Destinos JARVIS (sustituyen CLAUDE.md / MEMORY.md en repos producto)
+### Destinos JARVIS (sustituyen destinos Claude Code en repos producto)
 
 | Tipo upstream | Destino JARVIS |
 |---------------|----------------|
@@ -30,13 +31,17 @@ JARVIS_OVERLAY = f"""
 | Process operational | `docs/` playbooks o sección AGENTS |
 | Facts / sesión | `docs/active_context.md` (`context-updater` / `session-learner-ops`) |
 | Cierre módulo / patrones UI | `.agents/plans/walkthrough.md` |
-| Code-level fix | walkthrough + `documentar-avances` — **no** `/ce:compound` |
+| Code-level fix | walkthrough + `documentar-avances` — **no** compound Every |
 | Watch-list / graduation | `{LEARNING_HOME}/watch-list.md`, `graduation-log.md` |
-| Judgment Ledger / PERSONAL_CONTEXT / content wedge | **No rutear** en repos producto JARVIS |
+| Content wedge / personal context | **No rutear** en repos producto JARVIS |
 | Skills-level | `jarvis-skills-library` si la sesión tocó skills |
-| Auto-memory Claude (`MEMORY.md`) | `docs/active_context.md` del repo activo |
+| Auto-memory Claude | `docs/active_context.md` del repo activo |
 
-Referencias a `positioning/content_wedges_v2.md` → N/A repos producto JARVIS.
+Referencias a content wedge positioning → N/A repos producto JARVIS.
+
+### IRON LAW JARVIS
+
+En repos producto JARVIS, **nunca** escribir en archivos legacy `CLAUDE.md` de Claude Code, `MEMORY.md` global, content ledger personal ni invocar compound Every. Usar la tabla **Destinos JARVIS** arriba. Si el body upstream menciona destinos Claude Code, interpretar el equivalente JARVIS (`AGENTS.md`, `.cursorrules`, `docs/active_context.md`, walkthrough).
 """
 
 FRONTMATTER_RE = re.compile(r"^---\s*\n.*?\n---\s*\n", re.DOTALL)
@@ -49,7 +54,7 @@ description: >
 license: MIT
 metadata:
   author: JARVIS Global
-  version: "4.1-jarvis1"
+  version: "4.1-jarvis2"
   scope: [global]
   category: ops
   upstream: learning-loop-skill:learning-loop
@@ -71,23 +76,61 @@ allowed-tools: [Read, Write, Edit, Grep, Glob, Bash, Task]
 
 """
 
+# Order matters: specific patterns before broad CLAUDE.md
+BODY_REPLACEMENTS: list[tuple[str, str]] = [
+    ("root CLAUDE.md", "AGENTS.md global (~/.cursor/skills o jarvis-skills-library)"),
+    ("Root CLAUDE.md", "AGENTS.md global (~/.cursor/skills o jarvis-skills-library)"),
+    ("project CLAUDE.md", "AGENTS.md / `.cursorrules` del repo activo"),
+    ("Project CLAUDE.md", "AGENTS.md / `.cursorrules` del repo activo"),
+    ("~/.claude/reference/", "docs/ del repo o `.agents/`"),
+    ("~/.claude/settings.json", "Cursor hooks opcional (no instalado por defecto)"),
+    ("positioning/content_wedges_v2.md", "[JARVIS: N/A producto]"),
+    ("PERSONAL_CONTEXT.md", "[JARVIS: no rutear]"),
+    ("Judgment Ledger", "[JARVIS: no rutear — nota en active_context si aplica]"),
+    ("/ce:compound", "documentar-avances + walkthrough"),
+    ("MEMORY.md", "docs/active_context.md"),
+    ("CLAUDE.md", "AGENTS.md / `.cursorrules`"),
+    ("~/.claude/learning-captures", LEARNING_HOME),
+    ("$HOME/.claude/learning-captures", LEARNING_HOME.replace("~", "$HOME")),
+]
+
+
+def strip_overlay(body: str) -> str:
+    """Remove existing JARVIS overlay block if present."""
+    if OVERLAY_MARKER not in body:
+        return body
+    start = body.index(OVERLAY_MARKER)
+    # Overlay ends at --- before upstream title or at # learning-loop
+    rest = body[start:]
+    for sep in ("\n---\n\n# learning-loop", "\n---\n\n# Learning"):
+        if sep in rest:
+            end = start + rest.index(sep) + len("\n---\n\n")
+            return body[:start] + body[end:]
+    return body
+
 
 def patch_body(body: str) -> str:
-    body = body.replace("~/.claude/learning-captures", LEARNING_HOME)
-    body = body.replace("$HOME/.claude/learning-captures", LEARNING_HOME.replace("~", "$HOME"))
-    body = re.sub(r"\bTask agent\b", "Task subagent (Cursor)", body)
-    body = re.sub(r"\bSPAWN\b.*Task agent", "SPAWN Task subagent (Cursor)", body, count=1)
-    body = body.replace("tool `Agent`", "tool **Task** (Cursor)")
-    body = re.sub(r"\bAgent tool\b", "Task tool (Cursor)", body)
-    # Auto-memory path: prefer repo active_context
-    body = body.replace(
-        "for f in ~/.claude/projects/*/memory/*.md; do",
-        "for f in docs/active_context.md .agents/plans/walkthrough.md; do",
-        1,
-    )
-    if OVERLAY_MARKER not in body:
-        body = JARVIS_OVERLAY.strip() + "\n\n---\n\n" + body
-    return body
+    body = strip_overlay(body).lstrip()
+
+    # Split: overlay untouched; replacements only on upstream body
+    overlay = JARVIS_OVERLAY.strip() + "\n\n---\n\n"
+    upstream = body
+
+    for old, new in BODY_REPLACEMENTS:
+        upstream = upstream.replace(old, new)
+
+    upstream = re.sub(r"\bTask agent\b", "Task subagent (Cursor)", upstream)
+    upstream = upstream.replace("tool `Agent`", "tool **Task** (Cursor)")
+    upstream = re.sub(r"\bAgent tool\b", "Task tool (Cursor)", upstream)
+
+    if "for f in ~/.claude/projects/*/memory/*.md; do" in upstream:
+        upstream = upstream.replace(
+            "for f in ~/.claude/projects/*/memory/*.md; do",
+            "for f in docs/active_context.md .agents/plans/walkthrough.md; do",
+            1,
+        )
+
+    return overlay + upstream
 
 
 def main() -> None:

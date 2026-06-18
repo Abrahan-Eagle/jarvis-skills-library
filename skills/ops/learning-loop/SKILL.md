@@ -6,7 +6,7 @@ description: >
 license: MIT
 metadata:
   author: JARVIS Global
-  version: "4.1-jarvis1"
+  version: "4.1-jarvis2"
   scope: [global]
   category: ops
   upstream: learning-loop-skill:learning-loop
@@ -29,13 +29,13 @@ allowed-tools: [Read, Write, Edit, Grep, Glob, Bash, Task]
 ## JARVIS / Cursor (mandatory)
 
 - **No slash command:** En Cursor no existe `/learning-loop`. Invocar skill `learning-loop` y que el usuario indique **scan** o **wrap up** (o contexto: "contexto largo", "cerrar sesión", "consolidar").
-- **LEARNING_LOOP_HOME:** `~/.cursor/learning-captures` (override: `$LEARNING_LOOP_HOME`). Reemplaza `~/.cursor/learning-captures` del upstream.
+- **LEARNING_LOOP_HOME:** `~/.cursor/learning-captures` (override: `$LEARNING_LOOP_HOME`). Sustituye la ruta runtime de Claude Code del upstream.
 - **Sub-agentes:** Cursor **Task** (`subagent_type: generalPurpose`, `readonly: true`). STOP rules upstream (scan/consolidation en main thread = error). No tool `Skill` de Claude Code.
 - **Router:** `learning-loop-router`. Doc: [docs/LEARNING_LOOP_INTEGRATION.md](../../docs/LEARNING_LOOP_INTEGRATION.md)
 - **Cierre módulo canónico:** Siempre `session-learner-ops` → `docs/active_context.md` primero; learning-loop wrap-up es **complemento opcional**, no sustituto.
 - `upstream: learning-loop-skill:learning-loop`
 
-### Destinos JARVIS (sustituyen CLAUDE.md / MEMORY.md en repos producto)
+### Destinos JARVIS (sustituyen destinos Claude Code en repos producto)
 
 | Tipo upstream | Destino JARVIS |
 |---------------|----------------|
@@ -44,13 +44,17 @@ allowed-tools: [Read, Write, Edit, Grep, Glob, Bash, Task]
 | Process operational | `docs/` playbooks o sección AGENTS |
 | Facts / sesión | `docs/active_context.md` (`context-updater` / `session-learner-ops`) |
 | Cierre módulo / patrones UI | `.agents/plans/walkthrough.md` |
-| Code-level fix | walkthrough + `documentar-avances` — **no** `/ce:compound` |
+| Code-level fix | walkthrough + `documentar-avances` — **no** compound Every |
 | Watch-list / graduation | `~/.cursor/learning-captures/watch-list.md`, `graduation-log.md` |
-| Judgment Ledger / PERSONAL_CONTEXT / content wedge | **No rutear** en repos producto JARVIS |
+| Content wedge / personal context | **No rutear** en repos producto JARVIS |
 | Skills-level | `jarvis-skills-library` si la sesión tocó skills |
-| Auto-memory Claude (`MEMORY.md`) | `docs/active_context.md` del repo activo |
+| Auto-memory Claude | `docs/active_context.md` del repo activo |
 
-Referencias a `positioning/content_wedges_v2.md` → N/A repos producto JARVIS.
+Referencias a content wedge positioning → N/A repos producto JARVIS.
+
+### IRON LAW JARVIS
+
+En repos producto JARVIS, **nunca** escribir en archivos legacy `CLAUDE.md` de Claude Code, `MEMORY.md` global, content ledger personal ni invocar compound Every. Usar la tabla **Destinos JARVIS** arriba. Si el body upstream menciona destinos Claude Code, interpretar el equivalente JARVIS (`AGENTS.md`, `.cursorrules`, `docs/active_context.md`, walkthrough).
 
 ---
 
@@ -71,7 +75,7 @@ Referencias a `positioning/content_wedges_v2.md` → N/A repos producto JARVIS.
 
 
 
-**Purpose:** Two-mode learning capture — raw signal scanning mid-session, quality-gated consolidation at session end. Handles process-level and content-level capture; code-level capture is the user's responsibility via direct `/ce:compound` invocation mid-session (peak-fresh context).
+**Purpose:** Two-mode learning capture — raw signal scanning mid-session, quality-gated consolidation at session end. Handles process-level and content-level capture; code-level capture is the user's responsibility via direct `documentar-avances + walkthrough` invocation mid-session (peak-fresh context).
 
 ---
 
@@ -113,7 +117,7 @@ When `/learning-loop` is invoked, determine which mode to run:
 **Before routing ANY learning to a destination:**
 1. **Present a summary** of captured/consolidated signals to the user
 2. **Explicitly ask for verification** — "Does this accurately reflect what happened?"
-3. **Wait for user confirmation** before routing to CLAUDE.md, Judgment Ledger, or Memory
+3. **Wait for user confirmation** before routing to AGENTS.md / `.cursorrules`, [JARVIS: no rutear — nota en active_context si aplica], or Memory
 
 > **Why this exists (Jan 29, 2026):** AI-generated captures can contain hallucinations — wrong names, fabricated premises, misremembered details. A capture once got the user's husband's name wrong and claimed constraints that didn't exist.
 
@@ -131,7 +135,7 @@ When `/learning-loop` is invoked, determine which mode to run:
 - About to declare a new skill version "shipped" / "live" / "deployed" without checking that the version's added bootstrap files exist
 - Assuming "Step N will create the file when it first runs" without confirming Step N has run at least once after the ship
 
-> **Why (Apr 28, 2026):** v3.5 Phase 1 Persona Panel shipped with three new files supposed to be bootstrapped by Step 4c (`persona-eval-runs.txt`, `phase-1-ship-date.txt`, eventually `phase-1-decision-log.md`). At ship time none existed, because Step 4c only runs DURING a wrap-up — and no wrap-up had run yet under v3.5. Step 1b.5 read these files at the next wrap-up start, found them missing, and silently took the "skip Phase 1 evaluation entirely" branch. The Phase 1 self-evaluation gate would have stayed dormant indefinitely. Caught only by explicit consolidation analysis. Section 1d Verification rule in root CLAUDE.md covered this trigger semantically ("infrastructure done after writing files but before running them") but didn't fire on this ship — this STOP is the enforcement upgrade.
+> **Why (Apr 28, 2026):** v3.5 Phase 1 Persona Panel shipped with three new files supposed to be bootstrapped by Step 4c (`persona-eval-runs.txt`, `phase-1-ship-date.txt`, eventually `phase-1-decision-log.md`). At ship time none existed, because Step 4c only runs DURING a wrap-up — and no wrap-up had run yet under v3.5. Step 1b.5 read these files at the next wrap-up start, found them missing, and silently took the "skip Phase 1 evaluation entirely" branch. The Phase 1 self-evaluation gate would have stayed dormant indefinitely. Caught only by explicit consolidation analysis. Section 1d Verification rule in AGENTS.md global (~/.cursor/skills o jarvis-skills-library) covered this trigger semantically ("infrastructure done after writing files but before running them") but didn't fire on this ship — this STOP is the enforcement upgrade.
 
 ---
 
@@ -141,7 +145,7 @@ When `/learning-loop` is invoked, determine which mode to run:
 
 Context compaction and `/clear` destroy details. Files persist. This skill ensures:
 1. **Learnings are captured** before compaction erases them
-2. **The right tool is named for the right capture type** — process/content capture happens in wrap-up; code-level capture is user-invoked `/ce:compound` mid-session (this skill does NOT orchestrate `/ce:compound`)
+2. **The right tool is named for the right capture type** — process/content capture happens in wrap-up; code-level capture is user-invoked `documentar-avances + walkthrough` mid-session (this skill does NOT orchestrate `documentar-avances + walkthrough`)
 3. **Nothing falls through the cracks** — even when you forget to document
 
 ---
@@ -162,13 +166,13 @@ Claude Code also has a built-in auto-memory feature that intercepts natural-lang
 |---------|-------------|---------------|
 | **Invocation** | Natural language ("remember this", "capture") | Explicit `/learning-loop` command |
 | **Scope** | Quick facts, preferences | Multi-signal session analysis with quality gates |
-| **Output** | `MEMORY.md` entries | Routed to 6 destinations based on type (or Noted/dropped) |
+| **Output** | `docs/active_context.md` entries | Routed to 6 destinations based on type (or Noted/dropped) |
 | **Quality gates** | None (direct write) | Type-specific gates + user verification |
 
 **Complementary, not competing:**
 - Auto-memory handles quick "remember X" requests — let it
 - Learning-loop handles structured session analysis — explicit invocation ensures it runs when intended
-- Memory (MEMORY.md) is one of learning-loop's routing destinations, but learning-loop applies quality gates first
+- Memory (docs/active_context.md) is one of learning-loop's routing destinations, but learning-loop applies quality gates first
 
 ---
 
@@ -348,7 +352,7 @@ Before consolidating, scan for failures in **this session** that match the `revi
 
    ```bash
    for f in docs/active_context.md .agents/plans/walkthrough.md; do
-     [ "$(basename "$f")" = "MEMORY.md" ] && continue
+     [ "$(basename "$f")" = "docs/active_context.md" ] && continue
      if grep -q "^status:[[:space:]]*deferred[[:space:]]*$" "$f" 2>/dev/null; then
        echo "$f"
      fi
@@ -493,7 +497,7 @@ After consolidation produces its draft, run a two-persona adversarial review BEF
 
 **Sequence (sequential, not parallel — Router depends on Auditor's output):**
 
-1. **Trigger-Moment Auditor** runs first. Spawn as sub-agent with `TRIGGER_MOMENT_AUDITOR_PROMPT`. Pass: full consolidation output (`consolidation.md`) + current root CLAUDE.md contents. Returns per-conclusion JSON: `{id, named_trigger_moment, framing_assessment, broader_trigger_class_if_applicable, verdict, challenge_reasoning, counter_proposal}`.
+1. **Trigger-Moment Auditor** runs first. Spawn as sub-agent with `TRIGGER_MOMENT_AUDITOR_PROMPT`. Pass: full consolidation output (`consolidation.md`) + current AGENTS.md global (~/.cursor/skills o jarvis-skills-library) contents. Returns per-conclusion JSON: `{id, named_trigger_moment, framing_assessment, broader_trigger_class_if_applicable, verdict, challenge_reasoning, counter_proposal}`.
 
 2. **Workflow-Step Router** runs second. Spawn as sub-agent with `WORKFLOW_STEP_ROUTER_PROMPT`. Pass: same inputs as Auditor PLUS Auditor's JSON output. Returns per-conclusion JSON: `{id, classification, existing_workflow_step_list_at_trigger, recommended_destination_ranked, consolidation_destination_assessment, verdict, challenge_reasoning, re_route_proposal}`.
 
@@ -551,7 +555,7 @@ From [N] scans, consolidation produced [X] conclusions ([Z1] Zone 1, [Z2] Zone 2
 - **What happened in this session:** [1-3 sentences with specific incident or pattern. Quote the user or quote yourself if a direct exchange triggered the signal. Concrete event, not abstracted rule.]
 - **What's wrong / what's missing:** [explicit gap or failure mode]
 - **What the fix does:** [concrete before/after. If destination is a watch-list cluster or sub-entry, NAME what's already in that cluster and how this addition interacts.]
-- **Why this destination:** [why this cluster/file/section vs alternatives. Don't reason from secondary constraints (e.g., "root CLAUDE.md is at line budget") when the rule's logic dictates a destination.]
+- **Why this destination:** [why this cluster/file/section vs alternatives. Don't reason from secondary constraints (e.g., "AGENTS.md global (~/.cursor/skills o jarvis-skills-library) is at line budget") when the rule's logic dictates a destination.]
 - **Persona challenges (if any):**
   - **[Trigger-Moment Auditor]** ⚠️ challenge: [one-sentence reasoning]
     - Original framing: "[from consolidation]"
@@ -560,7 +564,7 @@ From [N] scans, consolidation produced [X] conclusions ([Z1] Zone 1, [Z2] Zone 2
   - **[Workflow-Step Router]** ⚠️ challenge: [one-sentence reasoning]
     - Original destination: "[from consolidation]"
     - Re-route to: [destination + section]
-- **Zone reason:** [why this is Zone 1 — e.g., "persona challenged" / "new top-level cluster" / "borderline 2/3 same-mechanism" / "root CLAUDE.md edit"]
+- **Zone reason:** [why this is Zone 1 — e.g., "persona challenged" / "new top-level cluster" / "borderline 2/3 same-mechanism" / "AGENTS.md global (~/.cursor/skills o jarvis-skills-library) edit"]
 
 **Your choice for [C-id]:** (a) accept consolidation, (b) accept persona counter-proposal, (c) write your own
 
@@ -586,7 +590,7 @@ From [N] scans, consolidation produced [X] conclusions ([Z1] Zone 1, [Z2] Zone 2
 
 ### Zone 3 — Auto-routed ([Z3] items, informational)
 
-[Z3] items auto-routed to: [destinations summary, e.g., "workflow doc default rules (×6), MEMORY.md (×2), Noted (×4)"].
+[Z3] items auto-routed to: [destinations summary, e.g., "workflow doc default rules (×6), docs/active_context.md (×2), Noted (×4)"].
 
 **(v3.13) When listing individual Z3 items (e.g., in response to "expand Z3"), apply the same concrete-anchor rule as Z2** — the 1-line leads with the session-specific incident/name/quote, not the destination ID.
 
@@ -749,7 +753,7 @@ The Verification Detail Floor scales rigor with zone (per Step 6.5):
   cluster or sub-entry, NAME what's already in that cluster and how this
   addition interacts (sub-entry W_N.x increment vs new cluster).]
 - **Why this destination:** [why this cluster/file/section vs alternatives.
-  Don't reason from secondary constraints (e.g., "root CLAUDE.md is at line
+  Don't reason from secondary constraints (e.g., "AGENTS.md global (~/.cursor/skills o jarvis-skills-library) is at line
   budget") when the rule's logic dictates a destination.]
 - **Persona challenges (if any):** [with the same level of specificity — what
   the persona objected to and what their concrete counter-proposal is]
@@ -926,7 +930,7 @@ A codification that doesn't write to graduation-log.md is **incomplete**. The co
 
 **Per-wrap-up monitoring (also fires at Step 4c):** After eval data capture, scan that session's incidents against graduation-log.md. If any incident matches a graduated rule's surface, increment `incidents_since_codification` on the matching graduation entry. ≥2 post-fix incidents = re-open trigger (usually Cluster 1 enforcement-gap pattern — rule exists, doesn't fire under task momentum, needs discrete hook).
 
-**Why (2026-05-20):** Zero rules graduated from watch-list to graduation-log in 5 weeks despite multiple Cluster 1 + Cluster 2 fixes shipping at the source (CLAUDE.md, reference docs). The fix shipped; the watch-list never updated. Without a ledger, "did the fix work?" is unanswerable; entries accumulate as a one-way archive.
+**Why (2026-05-20):** Zero rules graduated from watch-list to graduation-log in 5 weeks despite multiple Cluster 1 + Cluster 2 fixes shipping at the source (AGENTS.md / `.cursorrules`, reference docs). The fix shipped; the watch-list never updated. Without a ledger, "did the fix work?" is unanswerable; entries accumulate as a one-way archive.
 
 **Mod 10 — Path-Drift Detection at Cluster Audit (added v4.0, 2026-05-20 hygiene pass):**
 
@@ -1011,19 +1015,19 @@ After user confirms, route each learning to its proper destination:
 
 | Type | Destination | Handler |
 |------|-------------|---------|
-| **Code-level** (confirmed fixes) | `docs/solutions/` via user-invoked `/ce:compound` | Wrap-up surfaces nudge only; user invokes `/ce:compound` mid-session |
-| **Process-level (behavioral)** | CLAUDE.md (root or project) | Learning-loop direct (with consolidation discipline) |
+| **Code-level** (confirmed fixes) | `docs/solutions/` via user-invoked `documentar-avances + walkthrough` | Wrap-up surfaces nudge only; user invokes `documentar-avances + walkthrough` mid-session |
+| **Process-level (behavioral)** | AGENTS.md / `.cursorrules` (root or project) | Learning-loop direct (with consolidation discipline) |
 | **Process-level (operational)** | Project operational docs* | Learning-loop direct |
-| **Skills-level** (skill building/authoring/maintenance) | claude-skills repo (CLAUDE.md or playbook) | Learning-loop direct |
-| **Facts** (pure recall, no behavior change) | Memory MEMORY.md | Learning-loop direct |
-| **Content-level** (understanding shifted) | Judgment Ledger | Learning-loop direct |
+| **Skills-level** (skill building/authoring/maintenance) | claude-skills repo (AGENTS.md / `.cursorrules` or playbook) | Learning-loop direct |
+| **Facts** (pure recall, no behavior change) | Memory docs/active_context.md | Learning-loop direct |
+| **Content-level** (understanding shifted) | [JARVIS: no rutear — nota en active_context si aplica] | Learning-loop direct |
 | **Watch List** (noted, but may recur) | `~/.cursor/learning-captures/watch-list.md` | Learning-loop direct (increment or add entry) |
 | **Noted** (below persistence threshold) | Not persisted | Acknowledged in wrap-up summary |
 
 *Operational docs routing (adapts to repo infrastructure):
 1. Does the project have dedicated operational docs (playbooks/, OPERATIONS_PLAYBOOK, etc.)? → Route there
-2. No dedicated docs? Is it significant enough for CLAUDE.md? → Add to project CLAUDE.md under operational section
-3. Not significant enough for CLAUDE.md? → Memory as operational note, or Noted/drop
+2. No dedicated docs? Is it significant enough for AGENTS.md / `.cursorrules`? → Add to AGENTS.md / `.cursorrules` del repo activo under operational section
+3. Not significant enough for AGENTS.md / `.cursorrules`? → Memory as operational note, or Noted/drop
 
 **Memory Routing Decision Test:**
 
@@ -1031,13 +1035,13 @@ After user confirms, route each learning to its proper destination:
 
 | Answer | Destination | Example |
 |--------|-------------|---------|
-| **Yes — changes decisions globally** | Root CLAUDE.md | "Always read the full file before editing" |
-| **Yes — changes decisions in this project** | Project CLAUDE.md | "Develop when you have lived material" |
+| **Yes — changes decisions globally** | AGENTS.md global (~/.cursor/skills o jarvis-skills-library) | "Always read the full file before editing" |
+| **Yes — changes decisions in this project** | AGENTS.md / `.cursorrules` del repo activo | "Develop when you have lived material" |
 | **Yes — changes procedure execution** | Project operational docs* | "Reactive before evergreen scheduling" |
-| **Yes — changes how skills are built/maintained** | claude-skills CLAUDE.md or playbook | "Always include Gotchas section" |
-| **No — it's a fact** | Memory MEMORY.md | "User's spouse's name", "Dave is L1-L2" |
-| **No — worldview/judgment shifted** | Judgment Ledger | "The Leash Length Problem" insight |
-| **No — career/life-level context changed** | PERSONAL_CONTEXT.md | "Content is career infrastructure, not a side project" |
+| **Yes — changes how skills are built/maintained** | claude-skills AGENTS.md / `.cursorrules` or playbook | "Always include Gotchas section" |
+| **No — it's a fact** | Memory docs/active_context.md | "User's spouse's name", "Dave is L1-L2" |
+| **No — worldview/judgment shifted** | [JARVIS: no rutear — nota en active_context si aplica] | "The Leash Length Problem" insight |
+| **No — career/life-level context changed** | [JARVIS: no rutear] | "Content is career infrastructure, not a side project" |
 | **Interesting but forgettable** | Noted (not persisted) | "Research sprints need different cognitive mode" |
 | **Interesting but only 1 occurrence** | Watch List (`watch-list.md`) | "Editorial review missed structural-fit check" |
 | **Code fix** | `docs/solutions/` | Connection pooling timeout fix |
@@ -1052,59 +1056,59 @@ A learning *about content work* is NOT automatically "content-level." Apply this
 
 | Test Result | Destination | Example |
 |-------------|-------------|---------|
-| **Worldview shifted** — publishable insight | Judgment Ledger | "Consensus vs. non-consensus is the real AI division of labor" |
-| **Operational improvement** — how to do content work better | Project CLAUDE.md (Content Lab) | "Diversify publishers", "Same-day launch for timely content", "Cover images must match framing" |
+| **Worldview shifted** — publishable insight | [JARVIS: no rutear — nota en active_context si aplica] | "Consensus vs. non-consensus is the real AI division of labor" |
+| **Operational improvement** — how to do content work better | AGENTS.md / `.cursorrules` del repo activo (Content Lab) | "Diversify publishers", "Same-day launch for timely content", "Cover images must match framing" |
 
-The Judgment Ledger is for **judgment shifts that could become content**. Editorial rules, scheduling heuristics, and production guidelines are process-level learnings — they go to CLAUDE.md even if the project is Content Lab.
+The [JARVIS: no rutear — nota en active_context si aplica] is for **judgment shifts that could become content**. Editorial rules, scheduling heuristics, and production guidelines are process-level learnings — they go to AGENTS.md / `.cursorrules` even if the project is Content Lab.
 
-**⚠️ Content STRATEGY insights are process-level, not content-level.** Insights about what type of content generates what type of engagement ("infrastructure-gap posts attract builders," "dense content has longer tail," "body-of-work coherence drives reader synthesis") are operationally valuable but they're about HOW CONTENT WORKS, not about how AI capability meets reality. They route to performance_log patterns or editorial strategy, not the Judgment Ledger. The test: "Would this insight be interesting to someone who doesn't publish content?" If no, it's content strategy, not a worldview shift.
+**⚠️ Content STRATEGY insights are process-level, not content-level.** Insights about what type of content generates what type of engagement ("infrastructure-gap posts attract builders," "dense content has longer tail," "body-of-work coherence drives reader synthesis") are operationally valuable but they're about HOW CONTENT WORKS, not about how AI capability meets reality. They route to performance_log patterns or editorial strategy, not the [JARVIS: no rutear — nota en active_context si aplica]. The test: "Would this insight be interesting to someone who doesn't publish content?" If no, it's content strategy, not a worldview shift.
 
-> Why this exists (Post #11, Apr 8 2026): "Infrastructure-gap posts function as builder bat signals" and "body-of-work coherence confirmed by cross-post synthesis" both passed the "could this be published?" test (a meta-post about content strategy COULD be published) but failed the content wedge test. The first test is too permissive — always apply the wedge filter before routing to Judgment Ledger.
+> Why this exists (Post #11, Apr 8 2026): "Infrastructure-gap posts function as builder bat signals" and "body-of-work coherence confirmed by cross-post synthesis" both passed the "could this be published?" test (a meta-post about content strategy COULD be published) but failed the content wedge test. The first test is too permissive — always apply the wedge filter before routing to [JARVIS: no rutear — nota en active_context si aplica].
 
-**⚠️ Content Wedge Filter (Judgment Ledger entries only):**
+**⚠️ Content Wedge Filter ([JARVIS: no rutear — nota en active_context si aplica] entries only):**
 
-Before routing to the Judgment Ledger, apply the content wedge test from `positioning/content_wedges_v2.md`:
+Before routing to the [JARVIS: no rutear — nota en active_context si aplica], apply the content wedge test from `[JARVIS: N/A producto]`:
 
 > "Does this insight fit the positioning: *where AI capability meets reality — from an investor who builds*?"
 
 | Wedge Fit | Action |
 |-----------|--------|
-| **Yes** — insight about AI capability vs. reality gap | → Judgment Ledger |
-| **No** — operational process, editorial craft, or unrelated domain | → Route to appropriate CLAUDE.md instead |
+| **Yes** — insight about AI capability vs. reality gap | → [JARVIS: no rutear — nota en active_context si aplica] |
+| **No** — operational process, editorial craft, or unrelated domain | → Route to appropriate AGENTS.md / `.cursorrules` instead |
 | **Borderline** — tag with `⚠️ wedge-check` for user decision during wrap-up verification |
 
-This prevents the Judgment Ledger from accumulating entries that are genuinely useful learnings but would never become published content under the Ground Truth positioning.
+This prevents the [JARVIS: no rutear — nota en active_context si aplica] from accumulating entries that are genuinely useful learnings but would never become published content under the Ground Truth positioning.
 
 **Process-Level Routing (Behavioral — Global vs. Project):**
 
 For behavioral learnings, apply a second test: *"Would this apply if I was working in a completely different project?"*
 
-| YES → root CLAUDE.md (with size gate below) | NO → project CLAUDE.md |
+| YES → AGENTS.md global (~/.cursor/skills o jarvis-skills-library) (with size gate below) | NO → AGENTS.md / `.cursorrules` del repo activo |
 |---|---|
 | "When building APIs, ask about naming convention first" | "This repo's API uses camelCase for all endpoints" |
 | "Before modifying functions, read entire implementation" | "Supabase RPCs in this project use `verb_noun` naming" |
 
-**⚠️ CLAUDE.md Size Gate (MANDATORY — applies to ALL CLAUDE.md files):**
+**⚠️ AGENTS.md / `.cursorrules` Size Gate (MANDATORY — applies to ALL AGENTS.md / `.cursorrules` files):**
 
-Before writing ANY behavioral learning to a CLAUDE.md file (root or project), apply the **trigger-vs-protocol split**:
+Before writing ANY behavioral learning to a AGENTS.md / `.cursorrules` file (root or project), apply the **trigger-vs-protocol split**:
 
 > "Is this a trigger/routing keyword (2-5 lines) or a detailed protocol (>5 lines, STOP lists, checklists)?"
 
 | Answer | Action |
 |--------|--------|
-| **Trigger** (2-5 lines, tells Claude *when* to act) | Write to the target CLAUDE.md |
-| **Protocol** (>5 lines, tells Claude *how* to act in detail) | Write to a reference/companion file, add 2-3 line trigger + pointer in CLAUDE.md |
-| **Extends existing rule** (new STOP item or provenance for an existing section) | Add to the existing rule's reference/companion file, NOT to CLAUDE.md |
+| **Trigger** (2-5 lines, tells Claude *when* to act) | Write to the target AGENTS.md / `.cursorrules` |
+| **Protocol** (>5 lines, tells Claude *how* to act in detail) | Write to a reference/companion file, add 2-3 line trigger + pointer in AGENTS.md / `.cursorrules` |
+| **Extends existing rule** (new STOP item or provenance for an existing section) | Add to the existing rule's reference/companion file, NOT to AGENTS.md / `.cursorrules` |
 
 **Reference file locations by target:**
-- Root CLAUDE.md → `~/.claude/reference/<topic>.md`
-- Project CLAUDE.md → project's own docs folder, or `_meta/<topic>.md`, or inline in SESSION_LOG.md if it's a one-off
+- AGENTS.md global (~/.cursor/skills o jarvis-skills-library) → `docs/ del repo o `.agents/`<topic>.md`
+- AGENTS.md / `.cursorrules` del repo activo → project's own docs folder, or `_meta/<topic>.md`, or inline in SESSION_LOG.md if it's a one-off
 
-**Line count check before writing:** Read the target CLAUDE.md and count lines. If at or near its budget, force extraction regardless of learning size.
-- Root CLAUDE.md target: <250 lines (force extraction at ≥230)
-- Project CLAUDE.md: no fixed number, but apply judgment — if the file requires scrolling to scan, it's too long. Extract.
+**Line count check before writing:** Read the target AGENTS.md / `.cursorrules` and count lines. If at or near its budget, force extraction regardless of learning size.
+- AGENTS.md global (~/.cursor/skills o jarvis-skills-library) target: <250 lines (force extraction at ≥230)
+- AGENTS.md / `.cursorrules` del repo activo: no fixed number, but apply judgment — if the file requires scrolling to scan, it's too long. Extract.
 
-> Why this exists (Apr 3, 2026): Root CLAUDE.md grew from 173 to 351 lines over 6 weeks. Every learning routed without a size gate. The same mechanism applies to project CLAUDE.md files — any destination that receives learnings without a size check will bloat.
+> Why this exists (Apr 3, 2026): AGENTS.md global (~/.cursor/skills o jarvis-skills-library) grew from 173 to 351 lines over 6 weeks. Every learning routed without a size gate. The same mechanism applies to AGENTS.md / `.cursorrules` del repo activo files — any destination that receives learnings without a size check will bloat.
 
 #### Step 5b: Reverse-Check Consumers (Added Apr 17, 2026)
 
@@ -1114,7 +1118,7 @@ If Step 5 routed any learning that **restructures an authoritative doc** (create
 2. Verify each reference still resolves correctly after the restructure
 3. Update routing logic in every affected consumer
 
-See `~/.claude/reference/procedural-rule-routing.md` "Reverse-Check: Consumers After Doc Restructure" for the full protocol. Global principle lives in root CLAUDE.md ("Procedural Rules Belong at the Workflow Step").
+See `docs/ del repo o `.agents/`procedural-rule-routing.md` "Reverse-Check: Consumers After Doc Restructure" for the full protocol. Global principle lives in AGENTS.md global (~/.cursor/skills o jarvis-skills-library) ("Procedural Rules Belong at the Workflow Step").
 
 **STOP and correct if:**
 - A learning restructured a rule's home but the skills/agents that invoke that rule still route to the old home
@@ -1151,10 +1155,10 @@ ls ~/.cursor/learning-captures/ | grep "[consolidated-session-id]" && echo "❌ 
 
 #### Step 6b: Cross-Reference _ideas/
 
-After routing learnings, check if any frustration or bottleneck signal from this session matches a parked idea in `_ideas/`. Use the synthesis summary in `_ideas/CLAUDE.md` for matching — not filenames.
+After routing learnings, check if any frustration or bottleneck signal from this session matches a parked idea in `_ideas/`. Use the synthesis summary in `_ideas/AGENTS.md / `.cursorrules`` for matching — not filenames.
 
 ```
-1. Read _ideas/CLAUDE.md "Current Synthesis Summary" table
+1. Read _ideas/AGENTS.md / `.cursorrules` "Current Synthesis Summary" table
 2. For each routed learning (especially process-level frustrations):
    ask: "Does this pain connect to a parked idea?"
 3. If match found, note:
@@ -1169,7 +1173,7 @@ If any content-level insights were classified as Pattern or Principle:
 
 ```
 "Note: You have [N] Pattern/Principle insight(s) flagged for content development
-in the Judgment Ledger. These are ready for a dedicated Content Development Session
+in the [JARVIS: no rutear — nota en active_context si aplica]. These are ready for a dedicated Content Development Session
 when you have time — they won't be processed in this session."
 ```
 
@@ -1271,7 +1275,7 @@ After all learnings are routed and capture files cleaned up, check if the curren
    Procedure:
    1. Enumerate every git repo in the ecosystem:
       find ~/Documents/claude-projects -maxdepth 5 -name '.git' -type d 2>/dev/null
-      (also include ~/.claude and any other known repo roots — symlinked CLAUDE.md
+      (also include ~/.claude and any other known repo roots — symlinked AGENTS.md / `.cursorrules`
       and REPO_STRUCTURE.md targets land in ~/.claude/workspace/)
    2. For each discovered sub-repo, cd in and run: git status --short
    3. For each repo with uncommitted changes (modified / deleted / untracked):
@@ -1280,7 +1284,7 @@ After all learnings are routed and capture files cleaned up, check if the curren
       ├── Check repo visibility BEFORE prompting commit:
       │   gh repo view <remote> --json visibility -q .visibility
       │   If PUBLIC → flag explicitly and run PII-policy diff scan per
-      │   ~/.claude/reference/public-repo-pii.md before committing
+      │   docs/ del repo o `.agents/`public-repo-pii.md before committing
       ├── Prompt: "Commit and push [repo-name]? (Y/skip)"
       └── If Y → standard commit flow (HEREDOC commit message,
           Co-Authored-By, auto-push fires globally via core.hooksPath)
@@ -1408,7 +1412,7 @@ FOR EACH RAW SIGNAL:
    - If origin matches but fix differs → check whether you've actually thought about the fix carefully, or whether you're inventing a parallel fix where W_N's existing fix would work. Default to W_N's fix unless you can articulate why it wouldn't apply.
    - If neither matches → propose new top-level watch-list entry with `Root cause` and `Fix` populated.
 
-   **STOP — Resolution-vs-Increment Check (added May 7, 2026):** Before proposing ANY watch-list increment OR new entry, ask: "Does this conclusion's routing destination structurally resolve the pattern (e.g., adds the rule to a workflow-step list, modifies a playbook, edits CLAUDE.md)?" If YES → DO NOT propose the watch-list increment in addition to the routing. Watch-list entries track incidents-without-fixes; the conclusion IS the fix, not an incident awaiting one. Skip the increment.
+   **STOP — Resolution-vs-Increment Check (added May 7, 2026):** Before proposing ANY watch-list increment OR new entry, ask: "Does this conclusion's routing destination structurally resolve the pattern (e.g., adds the rule to a workflow-step list, modifies a playbook, edits AGENTS.md / `.cursorrules`)?" If YES → DO NOT propose the watch-list increment in addition to the routing. Watch-list entries track incidents-without-fixes; the conclusion IS the fix, not an incident awaiting one. Skip the increment.
 
    > Why (May 7, 2026): A wrap-up conclusion routed to Operations Playbook Step 5 with a structural fix simultaneously proposed a Cluster 3b watch-list increment. User pushback: *"if we're solving this issue with the routing why do we still increment the watchlist?"* Both consolidation and the persona panel pattern-matched to "Cluster N instance, increment" without checking whether the routing already resolves the pattern. This is a NEW failure category not in the a/c/d/g taxonomy — propose `redundant_increment_with_fix` for the Phase 1 eval taxonomy.
 
@@ -1472,12 +1476,12 @@ FOR EACH RAW SIGNAL:
 
 5.5. **Enforcement-Gap Check (added v3.6 Apr 28 2026 — when existing rule covers trigger but failed to fire):**
 
-   If the conclusion identifies that an existing rule (in CLAUDE.md, a reference doc, or a SKILL.md gate) covers this trigger semantically but did NOT fire in this session, **do NOT route to NOTED with reasoning "already codified."** That dismissal makes learning-loop incapable of improving enforcement — it just confirms gaps without proposing fixes.
+   If the conclusion identifies that an existing rule (in AGENTS.md / `.cursorrules`, a reference doc, or a SKILL.md gate) covers this trigger semantically but did NOT fire in this session, **do NOT route to NOTED with reasoning "already codified."** That dismissal makes learning-loop incapable of improving enforcement — it just confirms gaps without proposing fixes.
 
    Instead, propose a specific ENFORCEMENT MECHANISM upgrade:
 
    - **Mechanical:** Stop hook / pre-commit hook / pre-push hook / SessionStart hook that fires on the symptom phrase or state
-   - **Structural:** relocate the rule to a workflow step that fires automatically (per "Procedural Rules + Canonical Truth" in root CLAUDE.md)
+   - **Structural:** relocate the rule to a workflow step that fires automatically (per "Procedural Rules + Canonical Truth" in AGENTS.md global (~/.cursor/skills o jarvis-skills-library))
    - **Evidence:** add `Evidence:` requirement so the rule produces an artifact that proves it fired
    - **Trigger:** tighten the trigger phrase to match the failure-mode framing (per Trigger-Moment Auditor)
    - **Workflow-step ship gate:** add a STOP item to the relevant skill's ship/closeout checklist that mechanically requires the rule's protocol be run before declaring done
@@ -1508,9 +1512,9 @@ FOR EACH RAW SIGNAL:
    □ NO — this is an interesting observation but forgettable → Route to "Noted"
 
    For process-level conclusions that pass significance, apply the behavioral/operational split:
-   □ Behavioral (changes what Claude decides) → CLAUDE.md (root or project)
+   □ Behavioral (changes what Claude decides) → AGENTS.md / `.cursorrules` (root or project)
    □ Operational (changes how Claude executes a procedure) → Check: does project have
-     dedicated operational docs (playbooks/, etc.)? If yes → route there. If no → CLAUDE.md
+     dedicated operational docs (playbooks/, etc.)? If yes → route there. If no → AGENTS.md / `.cursorrules`
      if significant, Memory if marginal.
 
 6.5. **Zone Classification (added v3.8 May 2 2026, MANDATORY):**
@@ -1522,7 +1526,7 @@ FOR EACH RAW SIGNAL:
    - Persona challenged this conclusion (Auditor or Router issued a `challenge` verdict)
    - Step 5.6 returned 2/3 borderline same-mechanism — surfaced for user verification
    - Conclusion creates a NEW top-level watch-list cluster (not an increment to existing)
-   - Conclusion proposes a NEW root CLAUDE.md edit
+   - Conclusion proposes a NEW AGENTS.md global (~/.cursor/skills o jarvis-skills-library) edit
    - Conclusion proposes a plan amendment / plan-coverage gap flag
    - Routing involves cross-repo edits or restructures an authoritative doc
 
@@ -1532,7 +1536,7 @@ FOR EACH RAW SIGNAL:
    Trigger when:
    - Existing-cluster sub-entry increment AND personas pass on this conclusion
    - Watch-list increment with no scope challenge from either persona
-   - Memory MEMORY.md fact append where the destination is unambiguous
+   - Memory docs/active_context.md fact append where the destination is unambiguous
    - Skills-level learning routing to an existing playbook section the user has already approved
 
    Zone 2 conclusions get a 1-line summary + destination by default. User accepts the batch with a single confirmation; can expand individual items on demand.
@@ -1547,7 +1551,7 @@ FOR EACH RAW SIGNAL:
    Zone 3 conclusions DO NOT surface in the user's main verification scroll. Surface only as "Auto-routed N items to [destinations summary]. Anything to promote to Zone 1?" — a single yes/no.
 
    **Classification questions to ask per conclusion:**
-   1. Does it encode a NEW cross-session enforcement (rule / hook / new cluster / plan amendment / CLAUDE.md edit)? → Zone 1 or Zone 2
+   1. Does it encode a NEW cross-session enforcement (rule / hook / new cluster / plan amendment / AGENTS.md / `.cursorrules` edit)? → Zone 1 or Zone 2
    2. Did either persona challenge it? → Zone 1 (override base classification)
    3. Did Step 5.6 mark it as 2/3 borderline? → Zone 1 (override)
    4. Does it document a decision already made and approved by the user IN-SESSION? → Zone 3
@@ -1570,16 +1574,16 @@ FOR EACH RAW SIGNAL:
 
 6.6. **Wedge-Test Recording (added v3.9 May 12 2026, MANDATORY):**
 
-   For every Zone-1 and Zone-2 conclusion, apply the content wedge test from `~/Documents/claude-projects/Personal/content-lab/positioning/content_wedges_v2.md` (test: *"Is this insight about where AI capability meets reality — a worldview-level shift, not an operational learning?"*) and record the one-line rationale in the `Wedge test:` field of the output template (see Step 7 output schema).
+   For every Zone-1 and Zone-2 conclusion, apply the content wedge test from `~/Documents/claude-projects/Personal/content-lab/[JARVIS: N/A producto]` (test: *"Is this insight about where AI capability meets reality — a worldview-level shift, not an operational learning?"*) and record the one-line rationale in the `Wedge test:` field of the output template (see Step 7 output schema).
 
    Three valid values:
-   - **Pass — <one-line reason>:** Conclusion is a worldview-level shift fitting the content wedge. Surface to user at Step 4 as a Judgment Ledger candidate (NOT auto-routed — user decides whether to draft a ledger entry).
+   - **Pass — <one-line reason>:** Conclusion is a worldview-level shift fitting the content wedge. Surface to user at Step 4 as a [JARVIS: no rutear — nota en active_context si aplica] candidate (NOT auto-routed — user decides whether to draft a ledger entry).
    - **Fail — <one-line reason>:** Conclusion is operational/process-level, not worldview. Routes per its normal destination; the rationale documents WHY it didn't qualify, making the screen auditable.
-   - **N/A:** Conclusion is code-level (user's `/ce:compound` territory) or a routine watch-list increment — wedge test does not apply.
+   - **N/A:** Conclusion is code-level (user's `documentar-avances + walkthrough` territory) or a routine watch-list increment — wedge test does not apply.
 
    **Never omit the field.** Silence is the failure mode we are fixing — across 15+ wrap-ups Apr-May 2026 the wedge test was applied implicitly and silently, producing zero auditable records. The field forces the screen to leave a trace.
 
-   > **Why (May 12 2026):** Apr 2026 had 11 Judgment Ledger entries; May had 0 entries in the first 12 days. Investigation showed wrap-ups had been silently dropping Judgment Ledger consideration without recording rationale — the user had no signal whether the wedge filter had correctly screened or never fired. Per-conclusion recording makes silence auditable. Note: JL is primarily user-originated from in-session reflection, NOT wrap-up extraction — this field is a backstop to catch the rare worldview shift that surfaces operationally, not a primary capture path.
+   > **Why (May 12 2026):** Apr 2026 had 11 [JARVIS: no rutear — nota en active_context si aplica] entries; May had 0 entries in the first 12 days. Investigation showed wrap-ups had been silently dropping [JARVIS: no rutear — nota en active_context si aplica] consideration without recording rationale — the user had no signal whether the wedge filter had correctly screened or never fired. Per-conclusion recording makes silence auditable. Note: JL is primarily user-originated from in-session reflection, NOT wrap-up extraction — this field is a backstop to catch the rare worldview shift that surfaces operationally, not a primary capture path.
 
 7. **If PASSES all gates + significance:** Extract with routing recommendation (including `zone` field per Step 6.5 and `wedge_test` field per Step 6.6)
 
@@ -1607,7 +1611,7 @@ hypotheses_resolved: [confirmed/disproven/still_unresolved counts]
 **Significance:** [✅ Future sessions would: repeat mistake / skip step / lose context] or [❌ Interesting but forgettable → Noted]
 **Zone:** [Zone 1 — Decisions Required / Zone 2 — Routine Confirmation / Zone 3 — Auto-routed]  ← v3.8 (Step 6.5)
 **Zone reason:** [one-line justification — e.g., "persona challenged" / "existing-cluster increment, personas pass" / "documents in-session-approved decision"]
-**Route to:** [docs/solutions/ / CLAUDE.md (root or project) / Project operational docs / Memory MEMORY.md / Judgment Ledger / Noted]
+**Route to:** [docs/solutions/ / AGENTS.md / `.cursorrules` (root or project) / Project operational docs / Memory docs/active_context.md / [JARVIS: no rutear — nota en active_context si aplica] / Noted]
 **Wedge test:** [Pass — <reason> / Fail — <reason> / N/A]  ← v3.9 (Step 6.6) — MANDATORY, never omit
 
 **Trigger Conditions:** (for process-level)
@@ -1652,8 +1656,8 @@ You are auditing the consolidation sub-agent's routing proposals for ONE specifi
 
 INPUTS (will be passed to you):
 - The consolidation.md output from Step 3 (full conclusions list)
-- The current ~/Documents/claude-projects/CLAUDE.md contents
-- The current ~/.claude/reference/reason-upstream.md contents (umbrella reference)
+- The current ~/Documents/claude-projects/AGENTS.md / `.cursorrules` contents
+- The current docs/ del repo o `.agents/`reason-upstream.md contents (umbrella reference)
 
 YOUR JOB: For each routed conclusion in the consolidation output, audit the rule's framing.
 
@@ -1674,7 +1678,7 @@ FOR EACH CONCLUSION:
    - If the cognitive move is named such that adjacent symptoms also trigger it → PASS.
 
 5. Cross-check against existing umbrella rules:
-   - Grep ~/.claude/reference/reason-upstream.md and root CLAUDE.md for keywords that overlap the proposed rule's trigger.
+   - Grep docs/ del repo o `.agents/`reason-upstream.md and AGENTS.md global (~/.cursor/skills o jarvis-skills-library) for keywords that overlap the proposed rule's trigger.
    - If an existing umbrella rule already covers this trigger → CHALLENGE with re-framing as "extend existing rule's STOP list" rather than "create new rule."
 
 OUTPUT FORMAT (one JSON object per conclusion, in a JSON array):
@@ -1696,7 +1700,7 @@ EXAMPLES from past sessions (illustrative — rule names in some cases have sinc
 - "Existing Knowledge Check" routing → CHALLENGED → broader trigger "before drafting anything" was right level, not just "before fact-citing". Later consolidated into "Investigate Before Declaring (assertion trigger)".
 - "Proactive-Offer Filter" → CHALLENGED twice in 2026-04-24 session → broadened to "Reason Upstream Before Acting" (trigger moved from /schedule offers specifically to any pre-action moment).
 
-For current rule names, grep ~/Documents/claude-projects/CLAUDE.md and ~/.claude/reference/reason-upstream.md.
+For current rule names, grep ~/Documents/claude-projects/AGENTS.md / `.cursorrules` and docs/ del repo o `.agents/`reason-upstream.md.
 
 WRITE OUTPUT to ~/.cursor/learning-captures/[session-id]/persona-review.json under the key "trigger_moment_auditor".
 ```
@@ -1708,7 +1712,7 @@ You are auditing the consolidation sub-agent's destination choices. ONE specific
 
 INPUTS (will be passed to you):
 - The consolidation.md output from Step 3 (full conclusions list)
-- The current ~/Documents/claude-projects/CLAUDE.md contents
+- The current ~/Documents/claude-projects/AGENTS.md / `.cursorrules` contents
 - The Trigger-Moment Auditor's JSON output (you receive its named_trigger_moment values to align destination selection with the named trigger)
 
 YOUR JOB: For each routed conclusion, classify decision-changer vs. recall-fact and recommend destination.
@@ -1716,17 +1720,17 @@ YOUR JOB: For each routed conclusion, classify decision-changer vs. recall-fact 
 FOR EACH CONCLUSION:
 
 1. Classify: does this rule CHANGE A DECISION Claude makes, or is it a FACT Claude needs to recall, or is it EXECUTION-TIME BEHAVIOR?
-   - decision-changer → CLAUDE.md (root or project) OR a workflow-step list at the trigger point
-   - recall-fact → memory MEMORY.md
-   - execution-time-behavior → reference doc + 2-3 line trigger pointer in CLAUDE.md
+   - decision-changer → AGENTS.md / `.cursorrules` (root or project) OR a workflow-step list at the trigger point
+   - recall-fact → memory docs/active_context.md
+   - execution-time-behavior → reference doc + 2-3 line trigger pointer in AGENTS.md / `.cursorrules`
 
 2. If decision-changer: is there an EXISTING workflow-step list at the named trigger point (use the Trigger-Moment Auditor's named_trigger_moment value)?
-   - Examples of workflow-step lists: skills' STOP checklists, project CLAUDE.md "Error Handling" sections, "Pre-publish checklist" sections, "When debugging, check these" lists.
+   - Examples of workflow-step lists: skills' STOP checklists, AGENTS.md / `.cursorrules` del repo activo "Error Handling" sections, "Pre-publish checklist" sections, "When debugging, check these" lists.
    - If yes → route there. The rule fires automatically when the workflow step is read.
-   - If no → root or project CLAUDE.md as a new section.
+   - If no → root or AGENTS.md / `.cursorrules` del repo activo as a new section.
 
-3. If routing to root CLAUDE.md: check the size budget.
-   - Root CLAUDE.md target: <250 lines. Force extraction at ≥230.
+3. If routing to AGENTS.md global (~/.cursor/skills o jarvis-skills-library): check the size budget.
+   - AGENTS.md global (~/.cursor/skills o jarvis-skills-library) target: <250 lines. Force extraction at ≥230.
    - At/over budget → force extraction to reference doc, keep 2-3 line trigger only.
 
 4. Compare to consolidation's proposed destination:
@@ -1734,8 +1738,8 @@ FOR EACH CONCLUSION:
    - misaligned → verdict: challenge with re-route recommendation
 
 5. Apply the Memory Routing Decision Test:
-   - "Does this change how Claude should behave?" → if YES, it's NOT a memory entry, it's a CLAUDE.md or workflow-step rule.
-   - If consolidation routed a behavior-changing rule to memory → CHALLENGE with re-route to CLAUDE.md or workflow-step list.
+   - "Does this change how Claude should behave?" → if YES, it's NOT a memory entry, it's a AGENTS.md / `.cursorrules` or workflow-step rule.
+   - If consolidation routed a behavior-changing rule to memory → CHALLENGE with re-route to AGENTS.md / `.cursorrules` or workflow-step list.
 
 OUTPUT FORMAT (one JSON object per conclusion, in a JSON array):
 
@@ -1753,8 +1757,8 @@ OUTPUT FORMAT (one JSON object per conclusion, in a JSON array):
 ```
 
 EXAMPLES from past sessions (illustrative — rule names in some cases have since been further consolidated):
-- C2 (config field fragility) was routed to fact_*.md memory → user moved to project CLAUDE.md "Error Handling" section.
-- "Existing Knowledge Check" was first routed to a reference subsection → user re-routed to root CLAUDE.md as sibling of "Before Any Code". Later consolidated into "Investigate Before Declaring".
+- C2 (config field fragility) was routed to fact_*.md memory → user moved to AGENTS.md / `.cursorrules` del repo activo "Error Handling" section.
+- "Existing Knowledge Check" was first routed to a reference subsection → user re-routed to AGENTS.md global (~/.cursor/skills o jarvis-skills-library) as sibling of "Before Any Code". Later consolidated into "Investigate Before Declaring".
 - 2026-04-24 C2 (`/schedule` remote vs `CronCreate` local) was routed to feedback memory → could have routed to a "tool selection" section.
 
 WRITE OUTPUT to ~/.cursor/learning-captures/[session-id]/persona-review.json under the key "workflow_step_router".
@@ -2007,15 +2011,15 @@ echo "[ISO-timestamp] [source] Signal summary | Key detail or corrective action"
 
 ## Code-Level Capture: User-Invoked, Not Orchestrated
 
-Code-level learnings (codebase-specific bugs, fix-and-confirm moments) belong in `/ce:compound`, which produces schema-validated `docs/solutions/` entries via a 7-agent flow. **Learning-loop does NOT orchestrate `/ce:compound`** — code-level capture wants peak-fresh context, which means invoking `/ce:compound` mid-session right after the fix is confirmed, not at wrap-up.
+Code-level learnings (codebase-specific bugs, fix-and-confirm moments) belong in `documentar-avances + walkthrough`, which produces schema-validated `docs/solutions/` entries via a 7-agent flow. **Learning-loop does NOT orchestrate `documentar-avances + walkthrough`** — code-level capture wants peak-fresh context, which means invoking `documentar-avances + walkthrough` mid-session right after the fix is confirmed, not at wrap-up.
 
-Wrap-up's role for code-level: if a confirmed code-level fix appears in scan signals but `/ce:compound` was not invoked during the session, surface it in the Zone-1 user-attention block with the prompt: *"Worth a delayed `/ce:compound` while context is still warm?"* — but treat it as a one-line nudge, not orchestration.
+Wrap-up's role for code-level: if a confirmed code-level fix appears in scan signals but `documentar-avances + walkthrough` was not invoked during the session, surface it in the Zone-1 user-attention block with the prompt: *"Worth a delayed `documentar-avances + walkthrough` while context is still warm?"* — but treat it as a one-line nudge, not orchestration.
 
 ---
 
 ## Post-Clear Recovery
 
-### Hook Configuration (in ~/.claude/settings.json)
+### Hook Configuration (in Cursor hooks opcional (no instalado por defecto))
 
 ```json
 {
@@ -2076,7 +2080,7 @@ Quality gates apply during **Wrap-up consolidation**, not during Scan mode. Scan
 | **Content-level** | Can I articulate what shifted in my worldview or judgment framework? | Could this become published content — does it contradict or refine a prior belief about the world (not just about how to work)? |
 | **Fact** | Can I verify this against conversation evidence? | Is this worth persisting across sessions? |
 
-**⚠️ Common misclassification:** A learning about content *operations* (editorial rules, scheduling, platform strategy) is **process-level**, not content-level. It routes to Content Lab CLAUDE.md or its playbooks, not the Judgment Ledger. Content-level means your understanding of the *world* shifted — not your understanding of *how to do content work*. **This includes content STRATEGY insights** — "what types of posts generate what types of engagement" is operationally valuable but is about content mechanics, not AI capability meeting reality. Route to performance_log patterns or editorial strategy.
+**⚠️ Common misclassification:** A learning about content *operations* (editorial rules, scheduling, platform strategy) is **process-level**, not content-level. It routes to Content Lab AGENTS.md / `.cursorrules` or its playbooks, not the [JARVIS: no rutear — nota en active_context si aplica]. Content-level means your understanding of the *world* shifted — not your understanding of *how to do content work*. **This includes content STRATEGY insights** — "what types of posts generate what types of engagement" is operationally valuable but is about content mechanics, not AI capability meeting reality. Route to performance_log patterns or editorial strategy.
 
 **If a signal fails any gate → Don't extract. Note why in consolidation output for review.**
 
@@ -2108,14 +2112,14 @@ When a process-level conclusion passes all 5 gates, apply one more split:
 
 **Operational routing adapts to repo infrastructure:**
 1. Does the project have dedicated operational docs (playbooks/, OPERATIONS_PLAYBOOK, etc.)? → Route there
-2. No dedicated docs? Significant enough for CLAUDE.md? → Add to project CLAUDE.md under operational section
-3. Not significant enough for CLAUDE.md? → Memory as operational note, or Noted/drop
+2. No dedicated docs? Significant enough for AGENTS.md / `.cursorrules`? → Add to AGENTS.md / `.cursorrules` del repo activo under operational section
+3. Not significant enough for AGENTS.md / `.cursorrules`? → Memory as operational note, or Noted/drop
 
 ---
 
 ## Process-Level Consolidation Discipline
 
-⚠️ **CONSOLIDATION REQUIRED:** Before adding to any CLAUDE.md:
+⚠️ **CONSOLIDATION REQUIRED:** Before adding to any AGENTS.md / `.cursorrules`:
 
 1. **Read the entire document first** — understand what's already there
 2. **Search for similar rules** — does this concept already exist in some form?
@@ -2127,7 +2131,7 @@ When a process-level conclusion passes all 5 gates, apply one more split:
 
 > **Why this exists (Content Lab, Feb 6 2026):** Rules that exist but aren't surfaced at the point of execution are dead code paths in your process.
 
-After writing any new rule to CLAUDE.md:
+After writing any new rule to AGENTS.md / `.cursorrules`:
 1. Generate 3-5 scenarios where this rule should trigger
 2. For each scenario, trace the workflow — would Claude encounter the rule before taking the wrong action?
 3. Identify gaps and present fixes to the user
@@ -2147,7 +2151,7 @@ After writing any new rule to CLAUDE.md:
 - [Warning sign 2]
 ```
 
-### Content-Level → Judgment Ledger Template
+### Content-Level → [JARVIS: no rutear — nota en active_context si aplica] Template
 
 ```markdown
 ## [Date] - [Project/Context]: [Title]
@@ -2177,7 +2181,7 @@ After writing any new rule to CLAUDE.md:
 **Content Development Status:** [Pending / Not applicable]
 ```
 
-⚠️ For **Pattern/Principle** insights: Write to Judgment Ledger with "Content Development Status: Pending". **DO NOT** prompt to run content development inline. Mention at wrap-up that flagged insights exist. Content development happens in a dedicated session.
+⚠️ For **Pattern/Principle** insights: Write to [JARVIS: no rutear — nota en active_context si aplica] with "Content Development Status: Pending". **DO NOT** prompt to run content development inline. Mention at wrap-up that flagged insights exist. Content development happens in a dedicated session.
 
 ---
 
@@ -2185,14 +2189,14 @@ After writing any new rule to CLAUDE.md:
 
 | Type | Definition | Handler | Destination |
 |------|------------|---------|-------------|
-| **Code-level** | Specific to codebase/framework | User-invoked `/ce:compound` mid-session (not learning-loop) | `docs/solutions/` with schema-validated YAML |
-| **Process-level (behavioral)** | Changes decision-making across sessions | Learning-loop direct | CLAUDE.md (root or project) with trigger + warning signs |
-| **Process-level (operational)** | Changes procedure execution in a workflow | Learning-loop direct | Project operational docs* or CLAUDE.md |
-| **Fact** | Pure recall, no behavior change | Learning-loop direct | Memory MEMORY.md |
-| **Content-level** | Publishable insight, understanding shifted | Learning-loop direct | Judgment Ledger with future trigger |
+| **Code-level** | Specific to codebase/framework | User-invoked `documentar-avances + walkthrough` mid-session (not learning-loop) | `docs/solutions/` with schema-validated YAML |
+| **Process-level (behavioral)** | Changes decision-making across sessions | Learning-loop direct | AGENTS.md / `.cursorrules` (root or project) with trigger + warning signs |
+| **Process-level (operational)** | Changes procedure execution in a workflow | Learning-loop direct | Project operational docs* or AGENTS.md / `.cursorrules` |
+| **Fact** | Pure recall, no behavior change | Learning-loop direct | Memory docs/active_context.md |
+| **Content-level** | Publishable insight, understanding shifted | Learning-loop direct | [JARVIS: no rutear — nota en active_context si aplica] with future trigger |
 | **Noted** | Interesting but below persistence threshold | Acknowledged in summary | Not persisted |
 
-*Operational docs = playbooks/ if project has them, otherwise project CLAUDE.md or Memory.
+*Operational docs = playbooks/ if project has them, otherwise AGENTS.md / `.cursorrules` del repo activo or Memory.
 
 ---
 
@@ -2277,14 +2281,14 @@ Session 3: Finally done!
 |-------------|----------------|
 | **Significance threshold (Gate 5)** | Gates 1-4 are pass/fail on quality. Gate 5 asks "would a future session go WRONG without this?" — separating interesting observations from consequential learnings. Prevents over-documentation of signals that pass quality gates but aren't worth persisting. |
 | **"Noted" routing option** | Explicit acknowledgment for signals that pass quality gates but fall below the persistence threshold. Shown in wrap-up summary but not routed anywhere. Prevents the false binary of "document everything" vs. "lose it." |
-| **Behavioral vs. operational split** | Process-level learnings now split into behavioral (changes decisions → CLAUDE.md) vs. operational (changes procedures → project operational docs). Prevents CLAUDE.md from accumulating scheduling heuristics and workflow sequences that belong in playbooks or operational docs. |
-| **Repo-adaptive operational routing** | Operational learnings route to playbooks/ if the project has them, otherwise to CLAUDE.md or Memory. The skill is global but adapts to each project's documentation infrastructure instead of assuming playbooks exist. |
+| **Behavioral vs. operational split** | Process-level learnings now split into behavioral (changes decisions → AGENTS.md / `.cursorrules`) vs. operational (changes procedures → project operational docs). Prevents AGENTS.md / `.cursorrules` from accumulating scheduling heuristics and workflow sequences that belong in playbooks or operational docs. |
+| **Repo-adaptive operational routing** | Operational learnings route to playbooks/ if the project has them, otherwise to AGENTS.md / `.cursorrules` or Memory. The skill is global but adapts to each project's documentation infrastructure instead of assuming playbooks exist. |
 
 ### v3.2
 
 | Enhancement | Why It Matters |
 |-------------|----------------|
-| **Content wedge filter** | Judgment Ledger entries must now pass the content wedge test ("where AI capability meets reality"). Prevents accumulation of operationally useful but non-publishable entries. Borderline cases tagged `⚠️ wedge-check` for user decision. |
+| **Content wedge filter** | [JARVIS: no rutear — nota en active_context si aplica] entries must now pass the content wedge test ("where AI capability meets reality"). Prevents accumulation of operationally useful but non-publishable entries. Borderline cases tagged `⚠️ wedge-check` for user decision. |
 | **Content-level quality gate** | Added wedge fit checkbox to content-level quality gates in consolidation prompt. Entries that fail get reclassified as process-level. |
 
 ### v3.1
@@ -2293,7 +2297,7 @@ Session 3: Finally done!
 |-------------|----------------|
 | **Session-scoped wrap-up** | v3 consolidated ALL accumulated captures regardless of topic. v3.1 defaults to current session only, surfaces other sessions for triage. Prevents cross-polluting unrelated sessions. |
 | **Orphan session surfacing** | Capture directories from sessions that closed without wrap-up are shown during triage — user decides to include, skip, or delete. No more silent accumulation. |
-| **Sharper content-level routing** | v3 routed learnings *about content work* (editorial rules, scheduling) to Judgment Ledger. v3.1 distinguishes "worldview shifted" (→ Judgment Ledger) from "learned a better way to do content work" (→ Project CLAUDE.md). |
+| **Sharper content-level routing** | v3 routed learnings *about content work* (editorial rules, scheduling) to [JARVIS: no rutear — nota en active_context si aplica]. v3.1 distinguishes "worldview shifted" (→ [JARVIS: no rutear — nota en active_context si aplica]) from "learned a better way to do content work" (→ AGENTS.md / `.cursorrules` del repo activo). |
 
 ### v3.0
 
@@ -2302,13 +2306,13 @@ Session 3: Finally done!
 | **Explicit `/learning-loop` invocation** | v2's description-based matching was non-deterministic — capture phrases matched intermittently, but "wrap up" never triggered reliably. Explicit invocation is deterministic. |
 | **Two-mode model (Scan / Wrap-up)** | Scans capture raw signals without judgment; wrap-up resolves hypotheses with hindsight |
 | **Smart mode detection** | Minimal friction — context clues route to the right mode, explicit override always available |
-| **Memory as routing destination** | Facts (no behavior change) route to MEMORY.md instead of being lost or forced into CLAUDE.md |
+| **Memory as routing destination** | Facts (no behavior change) route to docs/active_context.md instead of being lost or forced into AGENTS.md / `.cursorrules` |
 | **Auto-memory coexistence** | Complementary design — auto-memory handles quick facts, learning-loop handles structured analysis |
 | **User stories documented** | Distinct use cases ("mid-task, save signals" vs "done, consolidate everything") now explicit — prevents future designs from collapsing them |
 
 ### Previous Versions
 
-**v2.1:** Real-time micro-logging (Phase 1 scratch files), project-level CLAUDE.md routing
+**v2.1:** Real-time micro-logging (Phase 1 scratch files), project-level AGENTS.md / `.cursorrules` routing
 **v2:** Type-specific quality gates, orchestration model, user-initiated triggers
 **v1:** Proactive monitoring (failed — Claude can't sense context % in Claude Code)
 
@@ -2321,9 +2325,9 @@ Session 3: Finally done!
 | **Explicit invocation, deterministic behavior** | Description-based matching was non-deterministic (asymmetric failure); `/learning-loop` is deterministic and can't be intercepted |
 | **Scans are raw, wrap-up draws conclusions** | Mid-session hypotheses resolved at session end with hindsight |
 | **Smart default, explicit override** | Context clue detection with fallback to asking |
-| **Memory is a routing destination** | Facts route to MEMORY.md; behavioral changes route to CLAUDE.md |
-| **User-invoked, not orchestrated** | `/ce:compound` is invoked directly by the user mid-session; learning-loop wrap-up surfaces a one-line nudge if a code-level fix was missed, but does not auto-invoke |
-| **Consolidation over accumulation** | CLAUDE.md edits require reading and merging, not just appending |
+| **Memory is a routing destination** | Facts route to docs/active_context.md; behavioral changes route to AGENTS.md / `.cursorrules` |
+| **User-invoked, not orchestrated** | `documentar-avances + walkthrough` is invoked directly by the user mid-session; learning-loop wrap-up surfaces a one-line nudge if a code-level fix was missed, but does not auto-invoke |
+| **Consolidation over accumulation** | AGENTS.md / `.cursorrules` edits require reading and merging, not just appending |
 | **Persistence over memory** | Scratch lines and scan files survive compaction; mental notes don't |
 | **Resilience over rigidity** | Complements auto-memory, adapts when system behaviors change |
 
