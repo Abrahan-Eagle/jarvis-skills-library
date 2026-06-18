@@ -40,6 +40,28 @@ Sub-agente evaluador con rúbrica. JARVIS: `doubt-driven-development` (adversari
 
 Automatizaciones (cron, webhooks, CI). JARVIS: scripts en repo producto + `human-in-the-loop-ops` para definir qué puede correr sin humano.
 
+## Taxonomía de threads → verificación
+
+Referencia conceptual (thread-based engineering + Ralph loops): [claudefa.st — Autonomous Agent Loops](https://claudefa.st/blog/guide/mechanics/autonomous-agent-loops). Vocabulario útil; **no** es repo instalable — overlap con skills JARVIS abajo.
+
+| Tipo thread | Verificación típica | Skill / herramienta JARVIS |
+|-------------|---------------------|----------------------------|
+| **Base** (un hilo, una tarea) | Revisión manual | `jarvis-core`, review humano |
+| **P** (paralelo, features aisladas) | Consenso / aislamiento por worktree | `using-git-worktrees`, `loop-operator`, Task |
+| **C** (encadenado por fases) | Validación tras cada fase | `executing-plans`, `verification-before-completion` por fase |
+| **F** (fusion / múltiples opiniones) | Comparar salidas, elegir mejor | `doubt-driven-development`, multi-perspectiva (Task) |
+| **B** (orquestación sub-agentes) | Orquestador verifica workers | Task + `loop-operator`, `handoff` |
+| **L** (larga duración, overnight) | Tests automatizados + stop hook | `skill-loop` + `human-in-the-loop-ops` + `create-hook` |
+| **Z** (cero humano, producto autónomo) | Feature flags + observabilidad | **Fuera de alcance** JARVIS global — dominio producto + gates estrictos |
+
+Regla del artículo: a mayor autonomía y duración del thread, la verificación debe ser **más automatizada** (TDD, stop hooks, screenshots con `webapp-testing` para UI).
+
+## Economía del loop
+
+Orden de magnitud citado en el artículo: ~**$10/h** por agente (Sonnet) vs ~**$100/h** humano; varios agentes en paralelo multiplican horas-agente, no horas humanas.
+
+El cuello de botella no es el costo por token sino **cuánto trabajo verificable puedes definir** (spec con criterios de aceptación, tests antes de implementar, stop hooks que bloquean hasta green). JARVIS: `test-driven-development`, `verification-before-completion`, `human-in-the-loop-ops` (max iterations + escalamiento).
+
 ## Primitivas (referencia)
 
 | Primitiva | JARVIS |
@@ -57,6 +79,7 @@ Automatizaciones (cron, webhooks, CI). JARVIS: scripts en repo producto + `human
 | [ralph-loop](https://github.com/PageAI-Pro/ralph-loop) (PageAI-Pro) | Dev loop largo en Docker sandbox, tareas priorizadas | Overlap `skill-loop` + TDD; evaluar si hace falta CLI dedicado |
 | [autoresearch-agent](https://github.com/alirezarezvani/claude-skills/tree/main/engineering/autoresearch-agent) | Plugin `/ar:loop`, cron, un cambio por iteración | Overlap `skill-loop` + `human-in-the-loop-ops`; Claude Code slash — ver [CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md](CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md) |
 | [claude-skills](https://github.com/alirezarezvani/claude-skills) (megapack) | 345+ skills multi-dominio | Router + solo `skill-security-auditor` curado — [CLAUDE_SKILLS_REZVANI_INTEGRATION.md](CLAUDE_SKILLS_REZVANI_INTEGRATION.md) |
+| [claude-fast](https://claudefa.st/blog/guide/mechanics/autonomous-agent-loops) (claudefa.st) | Blog comercial — threads, Ralph loops, verification stack | **Referencia sin sync** — overlap `skill-loop` + `human-in-the-loop-ops` + TDD |
 | mrkai77-loop | Gestor ventanas macOS (Swift), no skill de dev IA | **Fuera de dominio** |
 | Loop AI Labs / Loop Q | Vendor SLM empresarial on-prem | **Fuera de dominio** (producto corporativo, no skill global) |
 | Perplexity Alexa Skill | Voz + búsqueda | **Fuera de dominio** (integración consumidor) |
@@ -84,6 +107,7 @@ jarvis-core (alcance + plan)
 
 ## Enlaces
 
+- [claudefa.st — Autonomous Agent Loops](https://claudefa.st/blog/guide/mechanics/autonomous-agent-loops) (referencia conceptual, sin sync)
 - [SKILL_LOOP_INTEGRATION.md](SKILL_LOOP_INTEGRATION.md)
 - [LEARNING_LOOP_INTEGRATION.md](LEARNING_LOOP_INTEGRATION.md)
 - [AGENT_SKILLS_ADDY_INTEGRATION.md](AGENT_SKILLS_ADDY_INTEGRATION.md)
