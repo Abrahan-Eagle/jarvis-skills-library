@@ -33,7 +33,7 @@ Router para [takumiyoshikawa/skill-loop](https://github.com/takumiyoshikawa/skil
 
 **No es** `learning-loop` (melodykoh) — ese captura aprendizajes de sesión.
 
-Guía: [docs/SKILL_LOOP_INTEGRATION.md](../../docs/SKILL_LOOP_INTEGRATION.md). Forense: [docs/SKILL_LOOP_FORENSE_JARVIS.md](../../docs/SKILL_LOOP_FORENSE_JARVIS.md). Gates humanos en loops autónomos: `human-in-the-loop-ops` ([docs/LOOP_AI_ECOSYSTEM.md](../../docs/LOOP_AI_ECOSYSTEM.md) — ver sección *Taxonomía de threads* para L/P/B threads).
+Guía: [docs/SKILL_LOOP_INTEGRATION.md](../../docs/SKILL_LOOP_INTEGRATION.md). Forense: [docs/SKILL_LOOP_FORENSE_JARVIS.md](../../docs/SKILL_LOOP_FORENSE_JARVIS.md). Gates humanos en loops autónomos: `human-in-the-loop-ops` ([docs/LOOP_AI_ECOSYSTEM.md](../../docs/LOOP_AI_ECOSYSTEM.md) — *Taxonomía de threads* y *Patrones de workflow dinámico*). En Claude Code nativo, fan-out / tournament / generate-and-filter equivalen a **dynamic workflows**; en Cursor usar Task + este router.
 
 ## Detección runtime
 

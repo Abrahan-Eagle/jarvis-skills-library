@@ -72,7 +72,10 @@ Antes de `skill-loop run` o loops prolongados, definir:
 - Max iterations: <N> (escalar a humano si se alcanza sin success)
 - Failure: <condición de abort> (ej. 3 crashes consecutivos, credenciales faltantes)
 - Escalation: presentar estado + pedir dirección al usuario (no reintentar el mismo artefacto sin cambio)
+- Token budget: <N> tokens máximo si el usuario lo pide (Anthropic dynamic workflows); al alcanzarlo → escalamiento humano
 ```
+
+**Loop-until-done (Anthropic):** para trabajo de tamaño desconocido, iterar hasta condición de stop explícita (sin hallazgos nuevos, tests green, criterio de rúbrica cumplido) en lugar de un N fijo de pasadas — siempre con **max iterations** como techo de seguridad en `human-in-the-loop-ops`.
 
 Persistir progreso fuera del contexto del chat: `docs/active_context.md`, `.agents/plans/`, `LOOP_STATE.md` en handoff, o salida del CLI del loop.
 

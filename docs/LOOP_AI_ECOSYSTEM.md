@@ -64,6 +64,23 @@ Orden de magnitud citado en el artículo: ~**$10/h** por agente (Sonnet) vs ~**$
 
 El cuello de botella no es el costo por token sino **cuánto trabajo verificable puedes definir** (spec con criterios de aceptación, tests antes de implementar, stop hooks que bloquean hasta green). JARVIS: `test-driven-development`, `verification-before-completion`, `human-in-the-loop-ops` (max iterations + escalamiento).
 
+## Patrones de workflow dinámico (Claude Code oficial)
+
+Referencia canónica Anthropic: [A harness for every task: dynamic workflows in Claude Code](https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code) (jun 2026). Claude Code puede generar harness multi-agente on-the-fly (`ultracode`, workflows JS, `/loop`, `/goal`, `/deep-research`). **No** es repo instalable — es **feature nativa de Claude Code**.
+
+**Nota de plataforma (Cursor / JARVIS):** `ultracode`, dynamic workflows, `/loop` y `/goal` no existen en Cursor. Aproximación JARVIS: Task subagents + `using-git-worktrees` + `skill-loop` + `loop-operator` + `human-in-the-loop-ops`. Para investigación profunda tipo `/deep-research`, combinar Task fan-out + `doubt-driven-development` + `verification-before-completion`.
+
+| Patrón (Anthropic) | Descripción breve | Skill / herramienta JARVIS |
+|--------------------|-------------------|----------------------------|
+| **Classify-and-act** | Clasificar tarea y rutear comportamiento o modelo | Task clasificador + `jarvis-core` / `sdd-router` |
+| **Fan-out-and-synthesize** | Dividir en pasos, agentes en paralelo, barrera de síntesis | Task paralelo + `loop-operator`; merge en orquestador |
+| **Adversarial verification** | Verificador separado contra rúbrica | `doubt-driven-development`, `code-review-playbook` |
+| **Generate-and-filter** | Generar ideas y filtrar por rúbrica / dedupe | `doubt-driven-development`, brainstorm + criterios en plan |
+| **Tournament** | N agentes compiten; judge pairwise elige ganador | Task multi-perspectiva; ver `orchestration-patterns.upstream.md` en `doubt-driven-development` |
+| **Loop-until-done** | Iterar hasta condición de stop (no N fijo) | `skill-loop` + `human-in-the-loop-ops` (max iterations + stop explícito) |
+
+Usar estos patrones solo en tareas **complejas y de alto valor** — consumen más tokens que el harness por defecto.
+
 ## Primitivas (referencia)
 
 | Primitiva | JARVIS |
@@ -86,12 +103,22 @@ El cuello de botella no es el costo por token sino **cuánto trabajo verificable
 | Loop AI Labs / Loop Q | Vendor SLM empresarial on-prem | **Fuera de dominio** (producto corporativo, no skill global) |
 | Perplexity Alexa Skill | Voz + búsqueda | **Fuera de dominio** (integración consumidor) |
 
-Entradas en `catalog/sdx-toolkit-registry.json` (watchlist): `ralph-loop`, `claude-skills-rezvani`. Referencias solo-doc (sin registry): `claude-fast` (claudefa.st).
+Entradas en `catalog/sdx-toolkit-registry.json` (watchlist): `ralph-loop`, `claude-skills-rezvani`. Referencias solo-doc (sin registry): `claude-fast` (claudefa.st), Claude Code dynamic workflows (artículo Anthropic abajo).
 
 ## Modos de fallo → mitigación JARVIS
 
-| Modo de fallo (claudefa.st) | Mitigación JARVIS |
-|----------------------------|-------------------|
+### Naming oficial (Anthropic — dynamic workflows)
+
+| Modo de fallo | Mitigación JARVIS |
+|--------------|-------------------|
+| **Agentic laziness** (declara done con trabajo parcial) | Criterios de éxito medibles; loop-until-done con stop condition; `verification-before-completion` |
+| **Self-preferential bias** (prefiere sus propios hallazgos al verificar) | `doubt-driven-development` con verificador **separado** (Task distinto); `code-review-playbook` |
+| **Goal drift** (pérdida de objetivo tras compaction / muchas vueltas) | Spec/pin en plan; `handoff` + checkpoints; `human-in-the-loop-ops` max iterations + escalamiento |
+
+### Threads y orquestación (claudefa.st + práctica)
+
+| Modo de fallo | Mitigación JARVIS |
+|--------------|-------------------|
 | Thread termina demasiado pronto | Más tests; criterios de completitud objetivos; screenshots UI (`webapp-testing`) |
 | L-thread gira sin fin | Max iterations + abort en `human-in-the-loop-ops`; stop hook (`create-hook`) |
 | P-threads conflictos en mismos archivos | `using-git-worktrees`; aislar por feature/archivo |
@@ -119,6 +146,7 @@ jarvis-core (alcance + plan)
 
 ## Enlaces
 
+- [Anthropic — Dynamic workflows in Claude Code](https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code) (referencia oficial, feature nativa CC — sin sync)
 - [claudefa.st — Autonomous Agent Loops](https://claudefa.st/blog/guide/mechanics/autonomous-agent-loops) (referencia conceptual, sin sync)
 - [SKILL_LOOP_INTEGRATION.md](SKILL_LOOP_INTEGRATION.md)
 - [LEARNING_LOOP_INTEGRATION.md](LEARNING_LOOP_INTEGRATION.md)
