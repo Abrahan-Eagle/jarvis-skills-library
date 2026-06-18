@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT"
+
+echo "== pre-commit: validate =="
+bash scripts/validate-all.sh
+
+echo ""
+echo "== pre-commit: sync catalog & lock =="
+python3 scripts/sync-catalog.py
+python3 scripts/sync-lock.py
+python3 scripts/skills-graph.py
+
+# Stage generated files if changed
+git add catalog/ skills-lock.json 2>/dev/null || true
+
+echo "pre-commit OK"

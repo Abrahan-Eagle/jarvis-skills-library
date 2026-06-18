@@ -1,0 +1,238 @@
+#!/usr/bin/env bash
+# publish-safety — capa de seguridad de publicacion (inspirada en MiloAgent)
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+publish-safety <command> [options]
+
+Commands:
+  check --account <id> --channel <c> [--caption-file <f>] [--caption <text>] [--karma <n>]
+  record --account <id> --channel <c> --status <ok|fail> [--caption-file <f>] [--caption <text>]
+  jitter                 Imprime delay aleatorio en segundos (anti-patron temporal)
+  status --account <id>  Estado de la cuenta
+  help
+
+Estado: state/publish-safety/<account>.json
+Politica: skills/global/publish-safety/policy.json
+EOF
+}
+
+detect_root() {
+  local self
+  self=$(readlink -f "${BASH_SOURCE[0]}")
+  cd "$(dirname "$self")/../../../.." && pwd
+}
+
+ROOT=$(detect_root)
+STATE="${JARVIS_STATE_DIR:-$ROOT/state}/publish-safety"
+POLICY="$ROOT/skills/global/publish-safety/policy.json"
+
+ensure_state() {
+  mkdir -p "$STATE"
+}
+
+account_file() {
+  echo "$STATE/$1.json"
+}
+
+load_account() {
+  local acct="$1"
+  local f
+  f=$(account_file "$acct")
+  if [ ! -f "$f" ]; then
+    jq -n '{karma:0,posts_today:0,posts_this_hour:0,consecutive_failures:0,last_post_at:null,day_key:"",hour_key:"",content_hashes:[]}'
+    return
+  fi
+  cat "$f"
+}
+
+save_account() {
+  local acct="$1" json="$2"
+  ensure_state
+  echo "$json" > "$(account_file "$acct")"
+}
+
+caption_text() {
+  local cap_file="${1:-}" cap="${2:-}"
+  if [ -n "$cap_file" ] && [ -f "$cap_file" ]; then
+    cat "$cap_file"
+  else
+    echo "$cap"
+  fi
+}
+
+content_hash() {
+  echo -n "$1" | sha256sum | awk '{print $1}'
+}
+
+tier_for_karma() {
+  local karma="$1"
+  jq -r --argjson k "$karma" '
+    .karma_tiers
+    | to_entries
+    | map(select($k <= .value.max_karma))
+    | sort_by(.value.max_karma)
+    | .[0].key // "veteran"
+  ' "$POLICY"
+}
+
+reset_counters_if_needed() {
+  local json="$1"
+  local day_key hour_key
+  day_key=$(date -u +%Y-%m-%d)
+  hour_key=$(date -u +%Y-%m-%dT%H)
+  echo "$json" | jq \
+    --arg d "$day_key" --arg h "$hour_key" '
+    if .day_key != $d then .posts_today = 0 | .day_key = $d else . end
+    | if .hour_key != $h then .posts_this_hour = 0 | .hour_key = $h else . end
+  '
+}
+
+cmd_check() {
+  local account="" channel="" cap_file="" caption="" karma=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --account) account="$2"; shift 2 ;;
+      --channel) channel="$2"; shift 2 ;;
+      --caption-file) cap_file="$2"; shift 2 ;;
+      --caption) caption="$2"; shift 2 ;;
+      --karma) karma="$2"; shift 2 ;;
+      *) echo "Opcion desconocida: $1" >&2; exit 1 ;;
+    esac
+  done
+  [ -z "$account" ] || [ -z "$channel" ] && {
+    echo "ERROR: --account y --channel requeridos" >&2; exit 1
+  }
+
+  local text tier daily_cap allow_posts per_hour cb_fail cb_cool
+  text=$(caption_text "$cap_file" "$caption")
+  local acc
+  acc=$(load_account "$account")
+  acc=$(reset_counters_if_needed "$acc")
+  if [ -z "$karma" ]; then
+    karma=$(echo "$acc" | jq -r '.karma // 0')
+  fi
+  tier=$(tier_for_karma "$karma")
+  daily_cap=$(jq -r ".karma_tiers.$tier.daily_cap" "$POLICY")
+  allow_posts=$(jq -r ".karma_tiers.$tier.allow_posts" "$POLICY")
+  per_hour=$(jq -r '.rate_limits.per_hour' "$POLICY")
+  cb_fail=$(jq -r '.rate_limits.circuit_breaker_failures' "$POLICY")
+  cb_cool=$(jq -r '.rate_limits.circuit_breaker_cooldown_minutes' "$POLICY")
+
+  local failures posts_today posts_hour
+  failures=$(echo "$acc" | jq -r '.consecutive_failures // 0')
+  posts_today=$(echo "$acc" | jq -r '.posts_today // 0')
+  posts_hour=$(echo "$acc" | jq -r '.posts_this_hour // 0')
+
+  if [ "$failures" -ge "$cb_fail" ]; then
+    echo "BLOCKED: circuit breaker activo ($failures fallos consecutivos, cooldown ${cb_cool}m)" >&2
+    exit 3
+  fi
+
+  if [ "$posts_today" -ge "$daily_cap" ]; then
+    echo "BLOCKED: daily cap alcanzado ($posts_today/$daily_cap, tier=$tier)" >&2
+    exit 3
+  fi
+
+  if [ "$posts_hour" -ge "$per_hour" ]; then
+    echo "BLOCKED: rate limit por hora ($posts_hour/$per_hour)" >&2
+    exit 3
+  fi
+
+  if [ "$allow_posts" = "false" ] && [ "$channel" != "comment-only" ]; then
+    echo "BLOCKED: tier=$tier solo permite comentarios (karma=$karma)" >&2
+    exit 3
+  fi
+
+  local hash
+  hash=$(content_hash "$text")
+  local dup
+  dup=$(echo "$acc" | jq -r --arg h "$hash" '.content_hashes | index($h) // empty')
+  if [ -n "$dup" ]; then
+    echo "BLOCKED: contenido duplicado (hash ya publicado)" >&2
+    exit 3
+  fi
+
+  while IFS= read -r phrase; do
+    [ -z "$phrase" ] && continue
+    if echo "$text" | grep -qi "$phrase"; then
+      echo "BLOCKED: frase vetada detectada: $phrase" >&2
+      exit 3
+    fi
+  done < <(jq -r '.banned_phrases[]' "$POLICY")
+
+  echo "OK: publish-safety check account=$account channel=$channel tier=$tier"
+}
+
+cmd_record() {
+  local account="" channel="" status="" cap_file="" caption=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --account) account="$2"; shift 2 ;;
+      --channel) channel="$2"; shift 2 ;;
+      --status) status="$2"; shift 2 ;;
+      --caption-file) cap_file="$2"; shift 2 ;;
+      --caption) caption="$2"; shift 2 ;;
+      *) echo "Opcion desconocida: $1" >&2; exit 1 ;;
+    esac
+  done
+  [ -z "$account" ] || [ -z "$channel" ] || [ -z "$status" ] && {
+    echo "ERROR: --account, --channel, --status requeridos" >&2; exit 1
+  }
+
+  local text hash now acc
+  text=$(caption_text "$cap_file" "$caption")
+  hash=$(content_hash "$text")
+  now=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+  acc=$(load_account "$account")
+  acc=$(reset_counters_if_needed "$acc")
+
+  if [ "$status" = "ok" ]; then
+    acc=$(echo "$acc" | jq \
+      --arg now "$now" --arg h "$hash" --arg ch "$channel" '
+      .posts_today = ((.posts_today // 0) + 1)
+      | .posts_this_hour = ((.posts_this_hour // 0) + 1)
+      | .consecutive_failures = 0
+      | .last_post_at = $now
+      | .last_channel = $ch
+      | .content_hashes = ((.content_hashes // []) + [$h] | .[-50:])
+    ')
+  else
+    acc=$(echo "$acc" | jq '.consecutive_failures = ((.consecutive_failures // 0) + 1)')
+  fi
+
+  save_account "$account" "$acc"
+  echo "OK recorded $status for $account"
+}
+
+cmd_jitter() {
+  local min max delay
+  min=$(jq -r '.jitter_seconds.min' "$POLICY")
+  max=$(jq -r '.jitter_seconds.max' "$POLICY")
+  delay=$(( min + RANDOM % (max - min + 1) ))
+  echo "$delay"
+}
+
+cmd_status() {
+  local account=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --account) account="$2"; shift 2 ;;
+      *) echo "Opcion desconocida: $1" >&2; exit 1 ;;
+    esac
+  done
+  [ -z "$account" ] && { echo "ERROR: --account requerido" >&2; exit 1; }
+  load_account "$account" | jq .
+}
+
+cmd="${1:-help}"
+shift || true
+case "$cmd" in
+  check) cmd_check "$@" ;;
+  record) cmd_record "$@" ;;
+  jitter) cmd_jitter "$@" ;;
+  status) cmd_status "$@" ;;
+  help|--help|-h) usage ;;
+  *) echo "Comando desconocido: $cmd" >&2; usage; exit 1 ;;
+esac

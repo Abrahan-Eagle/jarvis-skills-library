@@ -1,0 +1,17 @@
+{
+  "karma_tiers": {
+    "new": { "max_karma": 9, "daily_cap": 3, "allow_posts": false, "priority": "low" },
+    "growing": { "max_karma": 49, "daily_cap": 7, "allow_posts": true, "priority": "medium" },
+    "established": { "max_karma": 199, "daily_cap": 12, "allow_posts": true, "priority": "high" },
+    "veteran": { "max_karma": 999999, "daily_cap": 20, "allow_posts": true, "priority": "max" }
+  },
+  "rate_limits": {
+    "per_hour": 2,
+    "per_channel_hour": 1,
+    "dedup_window_hours": 168,
+    "circuit_breaker_failures": 3,
+    "circuit_breaker_cooldown_minutes": 60
+  },
+  "jitter_seconds": { "min": 30, "max": 180 },
+  "banned_phrases": ["click here now", "buy now limited", "100% free money", "guaranteed results"]
+}

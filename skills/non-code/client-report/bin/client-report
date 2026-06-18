@@ -1,0 +1,227 @@
+#!/usr/bin/env bash
+# client-report — reporte mensual al cliente desde activity-log + calendario
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+client-report generate --dossier <id> --period <YYYY-MM> [--mode quick|standard|deep] [--out-dir <path>]
+help
+EOF
+}
+
+detect_root() {
+  local self
+  self=$(readlink -f "${BASH_SOURCE[0]}")
+  cd "$(dirname "$self")/../../../.." && pwd
+}
+
+ROOT=$(detect_root)
+STATE="${JARVIS_STATE_DIR:-$ROOT/state}"
+DOSSIERS="${JARVIS_DOSSIERS_DIR:-$ROOT/client-dossiers}"
+LOG="$STATE/activity-log.jsonl"
+CAL="$STATE/calendar"
+TEMPLATE="$ROOT/docs/plantillas/REPORTE_CLIENTE.md"
+OUT_BASE="${JARVIS_DOCUMENTS_DIR:-$HOME/Documents/JARVIS-DOCUMENTS}"
+
+cmd_generate() {
+  local dossier="" period="" out_dir="" rmode="standard"
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --dossier) dossier="$2"; shift 2 ;;
+      --period) period="$2"; shift 2 ;;
+      --out-dir) out_dir="$2"; shift 2 ;;
+      --mode) rmode="$2"; shift 2 ;;
+      *) echo "Opcion desconocida: $1" >&2; exit 1 ;;
+    esac
+  done
+  [ -z "$dossier" ] || [ -z "$period" ] && {
+    echo "ERROR: --dossier y --period requeridos" >&2; exit 1
+  }
+  local name="$dossier"
+  if [ -f "$DOSSIERS/$dossier/dossier.json" ]; then
+    name=$(jq -r '.nombre_comercial // .dossier_id' "$DOSSIERS/$dossier/dossier.json")
+  elif [ -f "$DOSSIERS/$dossier.json" ]; then
+    name=$(jq -r '.nombre_comercial // .dossier_id' "$DOSSIERS/$dossier.json")
+  fi
+  [ -z "$out_dir" ] && out_dir="$OUT_BASE/$dossier"
+  mkdir -p "$out_dir"
+  local report="$out_dir/reporte-$period.md"
+
+  local events=0 tasks=0 calendar=0 ig_followers="" ig_reach=""
+  local conv_count=0 lead_open=0 lead_total=0
+  local conv_wa=0 conv_ig=0 conv_fb=0
+  local lead_wa=0 lead_ig=0 lead_fb=0
+  local act_concierge=0 act_lead=0
+  [ -f "$LOG" ] && events=$(grep -c "\"dossier_id\":\"$dossier\"" "$LOG" 2>/dev/null || echo 0)
+  [ -d "$STATE/tasks" ] && tasks=$(grep -l "\"dossier_id\": \"$dossier\"" "$STATE/tasks"/*.json 2>/dev/null | wc -l || echo 0)
+  shopt -s nullglob
+  [ -d "$CAL/$dossier" ] && calendar=$(ls "$CAL/$dossier"/*.json 2>/dev/null | wc -l || echo 0)
+  [ -d "$STATE/conversations/$dossier" ] && conv_count=$(ls "$STATE/conversations/$dossier"/*.json 2>/dev/null | wc -l || echo 0)
+  if [ -d "$STATE/conversations/$dossier" ]; then
+    for cf in "$STATE/conversations/$dossier"/*.json; do
+      [ -f "$cf" ] || continue
+      [[ "$(basename "$cf")" == .handoff_* ]] && continue
+      ch=$(jq -r '.channel // "wa"' "$cf" 2>/dev/null || echo wa)
+      case "$ch" in
+        wa|whatsapp) conv_wa=$((conv_wa + 1)) ;;
+        ig|instagram) conv_ig=$((conv_ig + 1)) ;;
+        fb|facebook) conv_fb=$((conv_fb + 1)) ;;
+      esac
+    done
+  fi
+  if [ -d "$STATE/leads/$dossier" ]; then
+    lead_total=$(ls "$STATE/leads/$dossier"/*.json 2>/dev/null | wc -l || echo 0)
+    for lf in "$STATE/leads/$dossier"/*.json; do
+      [ -f "$lf" ] || continue
+      st=$(jq -r '.status // "open"' "$lf" 2>/dev/null || echo open)
+      [ "$st" = "open" ] && lead_open=$((lead_open + 1))
+      lch=$(jq -r '.channel // "wa"' "$lf" 2>/dev/null || echo wa)
+      case "$lch" in
+        wa|whatsapp) lead_wa=$((lead_wa + 1)) ;;
+        ig|instagram) lead_ig=$((lead_ig + 1)) ;;
+        fb|facebook) lead_fb=$((lead_fb + 1)) ;;
+      esac
+    done
+  fi
+
+  if [ -f "$LOG" ]; then
+    act_concierge=$(grep "\"dossier_id\":\"$dossier\"" "$LOG" 2>/dev/null | grep -c '"kind":"concierge"' || echo 0)
+    act_lead=$(grep "\"dossier_id\":\"$dossier\"" "$LOG" 2>/dev/null | grep -c '"kind":"lead"' || echo 0)
+  fi
+
+  load_meta_env() {
+    for f in "${JARVIS_ENV_FILE:-}" "$HOME/.openclaw/.env" "$ROOT/.env"; do
+      [ -n "$f" ] && [ -f "$f" ] || continue
+      set -a
+      # shellcheck disable=SC1090
+      source "$f" 2>/dev/null || true
+      set +a
+      return 0
+    done
+  }
+
+  if [ "$rmode" != "quick" ]; then
+    load_meta_env
+    INSIGHTS_BIN="$ROOT/scripts/meta-insights-fetch.sh"
+    if [ -x "$INSIGHTS_BIN" ]; then
+      local insights_json
+      insights_json=$("$INSIGHTS_BIN" --dossier "$dossier" --period "$period" --format json 2>/dev/null || echo '{}')
+      ig_followers=$(echo "$insights_json" | jq -r '.instagram.follower_count // empty' 2>/dev/null || true)
+      ig_reach=$(echo "$insights_json" | jq -r '.instagram.reach // empty' 2>/dev/null || true)
+    elif [ -n "${META_ACCESS_TOKEN:-}" ] && [ -n "${IG_USER_ID:-}" ]; then
+      local insights
+      insights=$(curl -sS "https://graph.facebook.com/v19.0/${IG_USER_ID}/insights?metric=follower_count,reach&period=day&access_token=${META_ACCESS_TOKEN}" 2>/dev/null || echo '{}')
+      ig_followers=$(echo "$insights" | jq -r '.data[]? | select(.name=="follower_count") | .values[-1].value // empty' 2>/dev/null || true)
+      ig_reach=$(echo "$insights" | jq -r '.data[]? | select(.name=="reach") | .values[-1].value // empty' 2>/dev/null || true)
+    fi
+  fi
+
+  FUNNEL_BIN="$ROOT/skills/global/funnel-metrics/bin/funnel-metrics"
+  funnel_block=""
+  if [ -x "$FUNNEL_BIN" ] && [ "$rmode" != "quick" ]; then
+    funnel_block=$("$FUNNEL_BIN" report --dossier "$dossier" --period "$period" --format table 2>/dev/null || true)
+  fi
+
+  cat > "$report" <<EOF
+# Reporte de marketing — $name
+
+**Periodo:** $period  
+**Generado:** $(date -u +%Y-%m-%dT%H:%M:%SZ)
+
+---
+
+## Resumen ejecutivo
+
+| Metrica | Valor |
+|---------|-------|
+| Eventos registrados (activity-log) | $events |
+| Tareas del periodo | $tasks |
+| Entradas calendario editorial | $calendar |
+| Conversaciones activas (concierge) | $conv_count |
+| Leads (total / abiertos) | $lead_total / $lead_open |
+| Eventos concierge (activity-log) | $act_concierge |
+| Eventos lead (activity-log) | $act_lead |
+| Instagram followers (API) | ${ig_followers:-_sin credenciales_} |
+| Instagram reach (API, ultimo dia) | ${ig_reach:-_sin credenciales_} |
+
+## Contenido producido
+
+_(Extraido de activity-log — revisar eventos tipo milestone/artifact)_
+
+EOF
+
+  if [ "$rmode" != "quick" ] && [ -f "$LOG" ]; then
+    local tail_n=20
+    [ "$rmode" = "deep" ] && tail_n=99999
+    grep "\"dossier_id\":\"$dossier\"" "$LOG" 2>/dev/null | tail -n "$tail_n" | while read -r line; do
+      echo "- $(echo "$line" | jq -r '[.ts, .type, .payload.note // .payload.title // ""] | join(" — ")' 2>/dev/null || echo "$line")" >> "$report"
+    done
+  fi
+
+  if [ "$rmode" = "quick" ]; then
+    cat >> "$report" <<'EOF'
+
+_(Modo quick: solo resumen ejecutivo)_
+EOF
+  else
+    :
+  fi
+
+  cat >> "$report" <<EOF
+
+## Social selling (concierge)
+
+| Canal | Conversaciones | Leads |
+|-------|----------------|-------|
+| WhatsApp | $conv_wa | $lead_wa |
+| Instagram | $conv_ig | $lead_ig |
+| Facebook | $conv_fb | $lead_fb |
+
+_(Detalle en \`state/conversations/$dossier/\` y \`state/leads/$dossier/\`; periodo $period en activity-log)_
+
+EOF
+
+  if [ -n "$funnel_block" ]; then
+    cat >> "$report" <<EOF
+
+## Embudo de ventas (funnel-metrics)
+
+\`\`\`
+$funnel_block
+\`\`\`
+
+EOF
+  fi
+
+  cat >> "$report" <<EOF
+
+## Publicaciones
+
+| Canal | Estado | Notas |
+|-------|--------|-------|
+| Instagram | _pendiente metricas_ | Requiere credenciales Meta Graph API |
+| Facebook | _pendiente_ | \`mkt-publish --channel facebook\` |
+| TikTok | _pendiente_ | \`TIKTOK_ACCESS_TOKEN\` |
+| WhatsApp | concierge 1:1 | Ver \`docs/WHATSAPP_CONCIERGE_SETUP.md\` |
+
+## Proximos pasos
+
+- [ ] Revisar calendario editorial
+- [ ] Aprobar borradores pendientes (AG-12)
+- [ ] Conectar insights Meta cuando \`mkt-publish\` tenga credenciales
+
+---
+
+_Plantilla: docs/plantillas/REPORTE_CLIENTE.md_
+EOF
+
+  echo "$report"
+}
+
+cmd="${1:-help}"
+shift || true
+case "$cmd" in
+  generate) cmd_generate "$@" ;;
+  help|--help|-h) usage ;;
+  *) echo "Comando desconocido: $cmd" >&2; usage; exit 1 ;;
+esac

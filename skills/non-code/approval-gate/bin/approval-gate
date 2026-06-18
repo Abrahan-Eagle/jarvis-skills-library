@@ -1,0 +1,152 @@
+#!/usr/bin/env bash
+# approval-gate — enforcement tecnico de approval gates (AG-12, AG-03, AG-13)
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+approval-gate <command> [options]
+
+Commands:
+  check     Verificar approval.status==approved en payload/handoff (exit 3 si no)
+  request   Crear escalacion + block task (--handoff --ag AG-12 [--task])
+  approve   Aprobar escalacion (--id) y actualizar payload si aplica
+  reject    Rechazar escalacion (--id [--reason])
+  list      Listar escalaciones abiertas
+  help
+EOF
+}
+
+detect_root() {
+  local self
+  self=$(readlink -f "${BASH_SOURCE[0]}")
+  cd "$(dirname "$self")/../../../.." && pwd
+}
+
+ROOT=$(detect_root)
+STATE="${JARVIS_STATE_DIR:-$ROOT/state}"
+ESC="$STATE/escalations"
+ACTIVITY="$ROOT/skills/global/activity-log/bin/activity-log"
+
+ensure() { mkdir -p "$ESC"; }
+
+resolve_payload() {
+  local handoff_path="$1"
+  if jq -e '.payload' "$handoff_path" >/dev/null 2>&1; then
+    jq '.payload' "$handoff_path"
+  else
+    cat "$handoff_path"
+  fi
+}
+
+cmd_check() {
+  local handoff_path=""
+  while [ $# -gt 0 ]; do
+    case "$1" in --handoff) handoff_path="$2"; shift 2 ;; *) shift ;; esac
+  done
+  [ -z "$handoff_path" ] && { echo "ERROR: --handoff requerido" >&2; exit 1; }
+  [ ! -f "$handoff_path" ] && { echo "ERROR: no existe $handoff_path" >&2; exit 1; }
+  local status ag
+  status=$(resolve_payload "$handoff_path" | jq -r '.approval.status // "missing"')
+  ag=$(resolve_payload "$handoff_path" | jq -r '.approval.ag // "AG-12"')
+  if [ "$status" = "approved" ]; then
+    echo "OK: $ag approved"
+    exit 0
+  fi
+  echo "BLOCKED: approval.status=$status (requiere approved para $ag)" >&2
+  exit 3
+}
+
+cmd_request() {
+  local handoff_path="" ag="AG-12" task=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --handoff) handoff_path="$2"; shift 2 ;;
+      --ag) ag="$2"; shift 2 ;;
+      --task) task="$2"; shift 2 ;;
+      *) shift ;;
+    esac
+  done
+  [ -z "$handoff_path" ] && { echo "ERROR: --handoff requerido" >&2; exit 1; }
+  ensure
+  local id="esc-$(date +%Y%m%d-%H%M%S)-$(head -c 4 /dev/urandom | xxd -p)"
+  local payload
+  payload=$(resolve_payload "$handoff_path")
+  if [ -z "$task" ] && jq -e '.task_id' "$handoff_path" >/dev/null 2>&1; then
+    task=$(jq -r '.task_id' "$handoff_path")
+  fi
+  jq -n \
+    --arg id "$id" --arg ag "$ag" --arg handoff "$handoff_path" \
+    --arg task "${task:-}" --arg created "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+    --argjson payload "$payload" \
+    '{id:$id,ag:$ag,status:"pending",handoff_path:$handoff,payload:$payload,
+      task_id:(if $task=="" then null else $task end),created_at:$created}' \
+    > "$ESC/$id.json"
+  if [ -n "$task" ] && [ -x "$ACTIVITY" ]; then
+    "$ACTIVITY" block --task "$task" --reason "Esperando aprobacion $ag ($id)" >/dev/null || true
+    "$ACTIVITY" event --task "$task" --agent jarvis --kind escalation \
+      --note "Solicitud $ag: $id" >/dev/null || true
+  fi
+  echo "$ESC/$id.json"
+}
+
+cmd_approve() {
+  local id=""
+  while [ $# -gt 0 ]; do
+    case "$1" in --id) id="$2"; shift 2 ;; *) shift ;; esac
+  done
+  [ -z "$id" ] && { echo "ERROR: --id requerido" >&2; exit 1; }
+  local f="$ESC/$id.json"
+  [ ! -f "$f" ] && { echo "ERROR: no existe $f" >&2; exit 1; }
+  local handoff task
+  handoff=$(jq -r '.handoff_path // empty' "$f")
+  task=$(jq -r '.task_id // empty' "$f")
+  jq '.status="approved" | .resolved_at="'$(date -u +%Y-%m-%dT%H:%M:%SZ)'"' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+  if [ -n "$handoff" ] && [ -f "$handoff" ]; then
+    if jq -e '.payload' "$handoff" >/dev/null 2>&1; then
+      jq '.payload.approval.status="approved"' "$handoff" > "$handoff.tmp" && mv "$handoff.tmp" "$handoff"
+    else
+      jq '.approval.status="approved"' "$handoff" > "$handoff.tmp" && mv "$handoff.tmp" "$handoff"
+    fi
+  fi
+  if [ -n "$task" ] && [ -x "$ACTIVITY" ]; then
+    "$ACTIVITY" resume --task "$task" >/dev/null || true
+  fi
+  echo "OK approved $id"
+}
+
+cmd_reject() {
+  local id="" reason="rechazado por CEO"
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --id) id="$2"; shift 2 ;;
+      --reason) reason="$2"; shift 2 ;;
+      *) shift ;;
+    esac
+  done
+  [ -z "$id" ] && { echo "ERROR: --id requerido" >&2; exit 1; }
+  local f="$ESC/$id.json"
+  [ ! -f "$f" ] && { echo "ERROR: no existe $f" >&2; exit 1; }
+  jq --arg r "$reason" '.status="rejected" | .resolved_at="'$(date -u +%Y-%m-%dT%H:%M:%SZ)'" | .reason=$r' \
+    "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+  echo "OK rejected $id"
+}
+
+cmd_list() {
+  ensure
+  shopt -s nullglob
+  for f in "$ESC"/esc-*.json; do
+    jq -c 'select(.status=="pending")' "$f" 2>/dev/null || true
+  done
+}
+
+cmd="${1:-help}"
+shift || true
+case "$cmd" in
+  check) cmd_check "$@" ;;
+  request) cmd_request "$@" ;;
+  approve) cmd_approve "$@" ;;
+  reject) cmd_reject "$@" ;;
+  list) cmd_list "$@" ;;
+  help|--help|-h) usage ;;
+  *) echo "Comando desconocido: $cmd" >&2; usage; exit 1 ;;
+esac

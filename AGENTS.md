@@ -1,0 +1,66 @@
+# AGENTS.md — JARVIS Skills Library
+
+> Repositorio **solo skills globales**. No contiene código de producto (CorralX, Zonix, clawvis, etc.).
+
+## Para agentes IA
+
+1. **Leer este archivo** al trabajar en este repo.
+2. **Skills de dominio** del producto activo: buscar en el repo del producto (`AGENTS.md` → `.agents/skills/`).
+3. **Skills globales** (este repo): instalar con `bash scripts/install.sh` → `~/.cursor/skills/<name>/`.
+
+## Cuándo crear skill aquí vs en un producto
+
+| Criterio | Aquí (global) | En producto (`.agents/skills/`) |
+|----------|---------------|----------------------------------|
+| Útil en cualquier stack/proyecto | Sí | No |
+| Nombre con prefijo de producto | No | Sí (`corralx-*`, `zonix-*`) |
+| Lógica de negocio exclusiva | No | Sí |
+| Proceso JARVIS / git / review / TDD | Sí | No (importar global) |
+| Spec-Driven Development (Spec Kit) | Sí (10 `speckit-*`, `sdd-router`) | Dominio en implement |
+
+## Comandos
+
+```bash
+bash scripts/validate-all.sh
+python3 scripts/sync-catalog.py
+python3 scripts/sync-lock.py
+bash scripts/install.sh --all
+bash scripts/sync-spec-kit-skills.sh   # refresh speckit-* from github/spec-kit
+python3 skills/engineering/skill-creator/scripts/init_skill.py <name> --path skills/<categoria>
+```
+
+## Catálogo
+
+Índice completo: [catalog/CATALOG.md](catalog/CATALOG.md)
+
+## Spec-Driven Development
+
+Ver [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md) y skill `sdd-router`.
+
+## Precedencia operativa
+
+Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y Spec Kit por fase.
+
+## Auto-invoke global (referencia)
+
+| Acción | Skill |
+|--------|-------|
+| Tarea no trivial | `jarvis-experts` |
+| Nueva feature de producto | `sdd-router` → `speckit-*` (si `.specify/`) |
+| Nueva feature de producto con Spec Kit | `speckit-specify`, `speckit-plan` |
+| Iniciar módulo (sin Spec Kit) | `jarvis-core`, `brainstorming-ops`, `task-pipeline-ops` |
+| Planificar | `writing-plans`, `executing-plans` o `speckit-plan` |
+| Implementar Spec Kit | `speckit-implement` (solo OK usuario) + dominio producto |
+| Tasks → GitHub Issues | `speckit-taskstoissues` (opcional, OK usuario + remote GitHub) |
+| Diseñar UI/UX (secundaria a dominio) | `ui-ux-pro-max` + `corralx-ui-design` / `zonix-ui-design` |
+| Debug | `systematic-debugging` |
+| Commit | `verification-before-completion`, `git-commit` |
+| Push/merge | `git-guardrails-ops` (solo con orden explícita del usuario) |
+| Code review | `code-review-playbook` |
+| Cerrar sesión | `context-updater`, `session-learner-ops` |
+
+Los productos referencian esta tabla en su `AGENTS.md`; no copiar el contenido de cada `SKILL.md` global al repo del producto.
+
+---
+
+**Última actualización:** Junio 2026

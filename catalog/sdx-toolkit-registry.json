@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "description": "Toolkits SD-X integrados en jarvis-skills-library (mantenido manualmente)",
+  "toolkits": [
+    {
+      "id": "github-spec-kit",
+      "name": "GitHub Spec Kit",
+      "sdx": ["SD-Development", "SD-Validate"],
+      "repo": "https://github.com/github/spec-kit",
+      "pin": "v0.11.2",
+      "jarvis": {
+        "skills": ["speckit-*", "sdd-router", "sdd-x-index"],
+        "sync": "scripts/sync-spec-kit-skills.sh"
+      }
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "name": "UI UX Pro Max",
+      "sdx": ["SD-Design"],
+      "repo": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "pin": "v2.5.0",
+      "jarvis": {
+        "skills": ["ui-ux-pro-max", "ui-router"],
+        "sync": "scripts/sync-ui-ux-pro-max.sh"
+      }
+    },
+    {
+      "id": "spec-kitty",
+      "name": "Spec Kitty",
+      "sdx": ["SD-Development", "SD-Validate", "SD-Config"],
+      "repo": "https://github.com/Priivacy-ai/spec-kitty",
+      "pin": "v3.2.1",
+      "jarvis": {
+        "skills": ["kitty-router", "kitty-governance", "using-git-worktrees"],
+        "install": "pipx install spec-kitty-cli; spec-kitty init --ai cursor (en repo producto)"
+      }
+    }
+  ],
+  "references": [
+    {
+      "name": "awesome-spec-kits",
+      "url": "https://github.com/acnlabs/awesome-spec-kits",
+      "note": "Catálogo externo SD-X; no distribución JARVIS"
+    },
+    {
+      "name": "MetaSpec",
+      "url": "https://mataspec.figma.site/spec-kits",
+      "note": "Framework opcional para speckits Python; JARVIS usa Cursor skills"
+    }
+  ]
+}
