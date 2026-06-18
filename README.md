@@ -113,7 +113,7 @@ Auditoría pre-install y router vs megapack 345 skills — skills `claude-skills
 
 ### Loop AI (gobernanza HITL)
 
-Espectro HITL/HOTL/automation-bounded, umbrales de confianza y condiciones de terminación en bucles agénticos — skill `human-in-the-loop-ops`. Guía ecosistema: [docs/LOOP_AI_ECOSYSTEM.md](docs/LOOP_AI_ECOSYSTEM.md). Complementa `skill-loop-router`, `learning-loop-router` y `git-guardrails-ops`. Watchlist: `ralph-loop`, `claude-skills-rezvani` (autoresearch; solo auditor curado).
+Espectro HITL/HOTL/automation-bounded, umbrales de confianza y condiciones de terminación en bucles agénticos — skill `human-in-the-loop-ops`. Guía ecosistema: [docs/LOOP_AI_ECOSYSTEM.md](docs/LOOP_AI_ECOSYSTEM.md) (taxonomía threads P/C/F/B/L + ref [claudefa.st](https://claudefa.st/blog/guide/mechanics/autonomous-agent-loops)). Complementa `skill-loop-router`, `learning-loop-router` y `git-guardrails-ops`. Watchlist: `ralph-loop`, `claude-skills-rezvani` (autoresearch; solo auditor curado).
 
 ## Migración desde ~/jarvis-skills
 

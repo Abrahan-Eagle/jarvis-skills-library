@@ -76,7 +76,7 @@ Antes de `skill-loop run` o loops prolongados, definir:
 
 Persistir progreso fuera del contexto del chat: `docs/active_context.md`, `.agents/plans/`, `LOOP_STATE.md` en handoff, o salida del CLI del loop.
 
-**Stop-hook como enforcer (L-threads):** bloquear el cierre del turno/loop hasta que pasen tests o exista promesa de completitud verificable — no confiar en que el modelo “cree” que terminó. Implementación en Cursor: skill `create-hook` (hooks `Stop` / `PostToolUse`). Complementa max iterations y criterios de éxito documentados arriba.
+**Stop-hook como enforcer (L-threads):** bloquear el cierre del turno/loop hasta que pasen tests o exista promesa de completitud verificable — no confiar en que el modelo “cree” que terminó. Implementación en Cursor: skill `create-hook` (hooks `Stop` / `PostToolUse`) — **skill de plataforma Cursor IDE** (`~/.cursor/skills-cursor/`), no catálogo JARVIS global. Complementa max iterations y criterios de éxito documentados arriba.
 
 ## Riesgos cognitivos
 
@@ -97,7 +97,7 @@ Persistir progreso fuera del contexto del chat: `docs/active_context.md`, `.agen
 | Revisión adversarial in-flight | `doubt-driven-development` |
 | Review pre-merge | `code-review-playbook` |
 | Declarar "listo" | `verification-before-completion` |
-| Stop hook que bloquea hasta tests green | `create-hook` (Cursor hooks) |
+| Stop hook que bloquea hasta tests green | `create-hook` (Cursor IDE, no catálogo JARVIS) |
 
 ## EU AI Act Art. 14 (referencia)
 
@@ -110,4 +110,5 @@ Sistemas de IA de **alto riesgo** pueden requerir supervisión humana efectiva, 
 - [ ] Max iteraciones + ruta de escalamiento
 - [ ] Acciones irreversibles listadas con gate humano
 - [ ] Persistencia de estado fuera del contexto del chat
+- [ ] L-threads: stop hook o verificación automatizada antes de declarar done
 - [ ] Review humano planificado antes de merge/deploy

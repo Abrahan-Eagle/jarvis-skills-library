@@ -14,6 +14,8 @@ Skill de gobernanza: [`human-in-the-loop-ops`](skills/ops/human-in-the-loop-ops/
 | Test-driven loop (señal binaria) | `test-driven-development` + `verification-before-completion` |
 | Judge-evaluate-iterate (rúbrica) | `doubt-driven-development`, `code-review-playbook` |
 | Plan + ejecución incremental | `writing-plans`, `executing-plans`, `jarvis-core` |
+| Spec / pin antes del loop (alcance + criterios) | `speckit-specify`, `writing-plans`, `jarvis-core` |
+| Stop hook que bloquea hasta tests green | `create-hook` (Cursor IDE) + `human-in-the-loop-ops` |
 | Sub-agentes / contexto aislado | Task `readonly`, `handoff` |
 | Memoria entre sesiones | `context-updater`, `session-learner-ops`, `docs/active_context.md` |
 | Worktrees / aislamiento | `using-git-worktrees` |
@@ -51,7 +53,7 @@ Referencia conceptual (thread-based engineering + Ralph loops): [claudefa.st —
 | **C** (encadenado por fases) | Validación tras cada fase | `executing-plans`, `verification-before-completion` por fase |
 | **F** (fusion / múltiples opiniones) | Comparar salidas, elegir mejor | `doubt-driven-development`, multi-perspectiva (Task) |
 | **B** (orquestación sub-agentes) | Orquestador verifica workers | Task + `loop-operator`, `handoff` |
-| **L** (larga duración, overnight) | Tests automatizados + stop hook | `skill-loop` + `human-in-the-loop-ops` + `create-hook` |
+| **L** (larga duración, overnight) | Tests automatizados + stop hook | `skill-loop` + `human-in-the-loop-ops` + `create-hook`; ver watchlist [ralph-loop](https://github.com/PageAI-Pro/ralph-loop) |
 | **Z** (cero humano, producto autónomo) | Feature flags + observabilidad | **Fuera de alcance** JARVIS global — dominio producto + gates estrictos |
 
 Regla del artículo: a mayor autonomía y duración del thread, la verificación debe ser **más automatizada** (TDD, stop hooks, screenshots con `webapp-testing` para UI).
@@ -84,7 +86,17 @@ El cuello de botella no es el costo por token sino **cuánto trabajo verificable
 | Loop AI Labs / Loop Q | Vendor SLM empresarial on-prem | **Fuera de dominio** (producto corporativo, no skill global) |
 | Perplexity Alexa Skill | Voz + búsqueda | **Fuera de dominio** (integración consumidor) |
 
-Entradas en `catalog/sdx-toolkit-registry.json` (watchlist).
+Entradas en `catalog/sdx-toolkit-registry.json` (watchlist): `ralph-loop`, `claude-skills-rezvani`. Referencias solo-doc (sin registry): `claude-fast` (claudefa.st).
+
+## Modos de fallo → mitigación JARVIS
+
+| Modo de fallo (claudefa.st) | Mitigación JARVIS |
+|----------------------------|-------------------|
+| Thread termina demasiado pronto | Más tests; criterios de completitud objetivos; screenshots UI (`webapp-testing`) |
+| L-thread gira sin fin | Max iterations + abort en `human-in-the-loop-ops`; stop hook (`create-hook`) |
+| P-threads conflictos en mismos archivos | `using-git-worktrees`; aislar por feature/archivo |
+| B-thread pierde coherencia | Mejor spec; checkpoints; orquestador verifica sub-agentes (`loop-operator`) |
+| Verificación pasa pero trabajo incorrecto | Mejor acceptance criteria; review humano; `doubt-driven-development` en alta stakes |
 
 ## Riesgos documentados
 

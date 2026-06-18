@@ -146,7 +146,7 @@ Doc: [docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](../docs/CLAUDE_SKILLS_REZVANI_I
 
 ## Loop AI (gobernanza HITL — skill local)
 
-Marco de ingeniería de ciclos y gobernanza humana — skill **`human-in-the-loop-ops`** (sin vendor sync). Mapa ecosistema: [docs/LOOP_AI_ECOSYSTEM.md](../docs/LOOP_AI_ECOSYSTEM.md). Watchlist registry: `ralph-loop`, `claude-skills-rezvani` (autoresearch overlap `skill-loop`; solo auditor curado). Descartados: mrkai77-loop (macOS), Loop AI Labs (vendor), Perplexity Alexa (voz).
+Marco de ingeniería de ciclos y gobernanza humana — skill **`human-in-the-loop-ops`** (sin vendor sync). Mapa ecosistema: [docs/LOOP_AI_ECOSYSTEM.md](../docs/LOOP_AI_ECOSYSTEM.md) (taxonomía threads + ref [claudefa.st](https://claudefa.st/blog/guide/mechanics/autonomous-agent-loops), sin sync). Watchlist registry: `ralph-loop`, `claude-skills-rezvani` (autoresearch overlap `skill-loop`; solo auditor curado). Descartados: mrkai77-loop (macOS), Loop AI Labs (vendor), Perplexity Alexa (voz).
 
 ## OpenSpec (watchlist awesome-spec-kits)
 
