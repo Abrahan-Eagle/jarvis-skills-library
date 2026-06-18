@@ -104,5 +104,6 @@ ECC upstream: MIT. Skills curados en este repo: UNLICENSED (overlay JARVIS). Atr
 ## Relacionado
 
 - [ECC_FORENSE_JARVIS.md](ECC_FORENSE_JARVIS.md)
+- [CYBER_NEO_INTEGRATION.md](CYBER_NEO_INTEGRATION.md) — auditoría profunda read-only (complementario; checklist → `security`)
 - [SDX_ECOSYSTEM.md](SDX_ECOSYSTEM.md)
 - [jarvis-core](../skills/core/jarvis-core/SKILL.md) — precedencia harness

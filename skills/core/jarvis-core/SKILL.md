@@ -23,6 +23,7 @@ metadata:
     - ui-router
     - open-design-router
     - ecc-router
+    - cyber-neo-router
     - scenario-router
     - strategic-briefing-ops
     - speckit-specify
@@ -60,6 +61,8 @@ Para what-if estratégico y simulación multi-agente, ver `scenario-router` ([do
 Para briefing estratégico / estado general del proyecto, ver `strategic-briefing-ops` — no `scenario-analysis-ops` ni `speckit-specify`.
 
 Para harness ECC (hooks, instincts, rules idioma, `ecc consult`), ver `ecc-router` ([docs/ECC_INTEGRATION.md](../../docs/ECC_INTEGRATION.md)) — no sustituye este workflow.
+
+Para auditoría de seguridad profunda read-only (Cyber Neo, 11 dominios, reporte OWASP 2025), ver `cyber-neo-router` ([docs/CYBER_NEO_INTEGRATION.md](../../docs/CYBER_NEO_INTEGRATION.md)) — no sustituye `security` ni este workflow.
 
 Para SD-X (dev + diseño + docs + validate), ver `sdd-x-index` ([docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md)).
 
@@ -104,6 +107,7 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | What-if / escenarios estratégicos | `scenario-router` → `scenario-analysis-ops` o `{producto}-scenario-analysis` |
 | Simulación multi-agente / opinión pública | `scenario-router` → `strangeverse` (API :5001) |
 | Harness ECC (hooks, instincts, rules, consult) | `ecc-router` → `ecc` / `install-ecc-runtime.sh` |
+| Auditoría seguridad profunda read-only + reporte | `cyber-neo-router` → skill `cyber-neo` |
 | SD-X ambiguo / multi-arte (dev+UI+docs) | `sdd-x-index` → `sdd-router` o `ui-router` según tabla SD-X |
 
 ## Directivas principales

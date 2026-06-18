@@ -57,7 +57,8 @@ test -d "${ECC_HOME:-$HOME/ecc}" && echo ECC_HOME
 | TDD / tests antes de "listo" | `test-driven-development`, `verification-before-completion` | `tdd-workflow` ECC |
 | Commits / push / merge | `git-commit`, `git-guardrails-ops` | ECC git skills |
 | Code review PR | `code-review-playbook` | `ecc-code-reviewer` salvo complemento |
-| OWASP / seguridad app | `security` o `security-review-ecc` si ECC instalado | — |
+| OWASP / seguridad app (checklist) | `security` o `security-review-ecc` si ECC instalado | — |
+| Auditoría profunda read-only + reporte | `cyber-neo-router` → skill `cyber-neo` | modificar código en audit |
 | Cierre módulo + memoria | `session-learner-ops` → `docs/active_context.md` | Solo ECC memory hooks |
 | Instincts, `/evolve`, homunculus | `continuous-learning-v2` (+ hooks opt-in) | — |
 | Rules PHP/TS en `.cursor/` | `install-ecc-runtime.sh` en repo producto | Copiar rules al global |

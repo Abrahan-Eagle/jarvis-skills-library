@@ -111,6 +111,17 @@ python3 scripts/sync-ecc-manifest.py
 
 Doc: [docs/ECC_INTEGRATION.md](../docs/ECC_INTEGRATION.md), forense [docs/ECC_FORENSE_JARVIS.md](../docs/ECC_FORENSE_JARVIS.md). Índice upstream: `catalog/ecc-skills-index.md`. Perfil `minimal` default (sin hooks).
 
+## Cyber Neo (auditoría seguridad)
+
+[Hainrixz/cyber-neo](https://github.com/Hainrixz/cyber-neo) (MIT) — skills `cyber-neo-router` + `cyber-neo` (ops sync) + `cyber-neo-cli` (bin).
+
+```bash
+bash scripts/sync-cyber-neo-skill.sh
+bash scripts/install-cyber-neo-upstream.sh   # opcional ~/cyber-neo
+```
+
+Doc: [docs/CYBER_NEO_INTEGRATION.md](../docs/CYBER_NEO_INTEGRATION.md), forense [docs/CYBER_NEO_FORENSE_JARVIS.md](../docs/CYBER_NEO_FORENSE_JARVIS.md). Pin: `9a8998a33534bca16c619f4956dd1935dc404620`.
+
 ## OpenSpec (watchlist awesome-spec-kits)
 
 No sincronizar slash commands al global — `openspec init` los instala en el repo producto.

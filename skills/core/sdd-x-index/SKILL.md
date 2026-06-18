@@ -22,7 +22,7 @@ metadata:
     - ui-router
     - open-design-router
     - ecc-router
-    - scenario-router
+    - cyber-neo-router
     - jarvis-skills-maintainer
 allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 ---
@@ -47,6 +47,7 @@ Guía completa: [docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md). Catálogo 
 | **SD-Documentation** | Cierre módulo, AGENTS, walkthrough | `documentar-avances`, `context-updater` |
 | **SD-Test** | Implementación y cierre | `test-driven-development`, `verification-before-completion` |
 | **SD-Validate** | Pre-implement, gates | `speckit-analyze`, `speckit-checklist` |
+| **SD-Validate** | Auditoría seguridad read-only + reporte | `cyber-neo-router` → `cyber-neo` — [CYBER_NEO_INTEGRATION.md](../../docs/CYBER_NEO_INTEGRATION.md) |
 | **SD-Config** | Harness agent (hooks, rules, instincts) | `ecc-router` → `ecc` / `configure-ecc` — [ECC_INTEGRATION.md](../../docs/ECC_INTEGRATION.md) |
 | **SD-Config** | Extensions, presets Spec Kit | `.specify/extensions.yml`, Spec Kitty `.kittify/` |
 | **SD-API** | Diseño REST/GraphQL sin speckit dedicado | `api-design-principles` + dominio `{producto}-api-patterns` |
@@ -76,6 +77,7 @@ test -d kitty-specs && echo "HAS_KITTY_SPECS"
 | Carrusel, deck, email marketing (standalone) | `open-design-router` |
 | Estado general / briefing estratégico | `strategic-briefing-ops` |
 | Harness ECC / hooks / instincts | `ecc-router` |
+| Auditoría seguridad profunda (read-only) | `cyber-neo-router` |
 | What-if / escenarios / simulación social | `scenario-router` |
 | Pack inversor / Lanzamiento | Dominio docs — **no** SD-X dev |
 | No sabes qué rama SD-X | **Esta skill** |
@@ -92,6 +94,7 @@ test -d kitty-specs && echo "HAS_KITTY_SPECS"
 | [StrangeVerse](https://github.com/Abrahan-Eagle/strangeverse) main | Research (simulación multi-agente) | `scenario-router`, `strategic-briefing-ops`, `scenario-analysis-ops`, `strangeverse` — `scripts/install-strangeverse-runtime.sh` |
 | [MiroFish](https://github.com/666ghj/MiroFish) V0.1.2 | Research (referencia upstream AGPL) | Patrones en skills mesa — [MIROFISH_UPSTREAM.md](../../docs/MIROFISH_UPSTREAM.md) |
 | [ECC](https://github.com/affaan-m/ecc) v2.0.0 | Config (harness Cursor) | `ecc-router`, `ecc`, curated ops skills — `scripts/install-ecc-runtime.sh`, `scripts/sync-ecc-skills.sh` |
+| [Cyber Neo](https://github.com/Hainrixz/cyber-neo) 9a8998a | Validate (security audit) | `cyber-neo-router`, `cyber-neo`, `cyber-neo-cli` — `scripts/sync-cyber-neo-skill.sh` |
 
 ## Spec Kit: feature nueva vs lifecycle
 

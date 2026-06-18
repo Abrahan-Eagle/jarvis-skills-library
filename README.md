@@ -87,6 +87,10 @@ Escenarios estratégicos y simulación multi-agente — skills `strategic-briefi
 
 Hooks, instincts, rules idioma, `ecc consult` — skills `ecc-router` + `ecc` (bin) + curated ops (`continuous-learning-v2`, `security-review-ecc`, `configure-ecc`). Upstream: [affaan-m/ecc](https://github.com/affaan-m/ecc) (MIT). Guía: [docs/ECC_INTEGRATION.md](docs/ECC_INTEGRATION.md). Install en repo producto: `bash scripts/install-ecc-runtime.sh --project-dir <repo>`. Sync curado: `bash scripts/sync-ecc-skills.sh`.
 
+### Cyber Neo (auditoría seguridad)
+
+Auditoría read-only 11 dominios, OWASP 2025, reporte MD — skills `cyber-neo-router` + `cyber-neo` + `cyber-neo-cli` (bin). Upstream: [Hainrixz/cyber-neo](https://github.com/Hainrixz/cyber-neo) (MIT). Guía: [docs/CYBER_NEO_INTEGRATION.md](docs/CYBER_NEO_INTEGRATION.md). Sync: `bash scripts/sync-cyber-neo-skill.sh`. CLI: `cyber-neo status|secrets|lockfiles`.
+
 ## Migración desde ~/jarvis-skills
 
 Ver [docs/MIGRATION.md](docs/MIGRATION.md).

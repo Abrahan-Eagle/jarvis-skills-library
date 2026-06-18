@@ -24,6 +24,7 @@ Ver [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md).
 | strangeverse | StrangeVerse (Abrahan-Eagle) | SD-Research | main | scenario-router, strategic-briefing-ops, scenario-analysis-ops, strangeverse · install: `scripts/install-strangeverse-runtime.sh` | scripts/install-strangeverse-runtime.sh |
 | mirofish | MiroFish (666ghj) | SD-Research | V0.1.2 | scenario-router, strategic-briefing-ops, scenario-analysis-ops, strangeverse | Referencia upstream AGPL; patrones en skills mesa; runtime operativo = strangeverse |
 | ecc | Everything Claude Code (affaan-m) | SD-Config | v2.0.0 | ecc-router, ecc, continuous-learning-v2, security-review-ecc, configure-ecc · sync: `scripts/sync-ecc-skills.sh` · install: `scripts/install-ecc-runtime.sh` | scripts/install-ecc-runtime.sh |
+| cyber-neo | Cyber Neo (Hainrixz) | SD-Validate | 9a8998a33534bca16c619f4956dd1935dc404620 | cyber-neo-router, cyber-neo, cyber-neo-cli · sync: `scripts/sync-cyber-neo-skill.sh` |  |
 | marketing-spec-kit | Marketing Spec Kit | SDM | 0.4.0 |  | SDM; evaluar para clawvis marketing |
 | mcp-speckit | MCP Spec Kit | SD-Development | 0.1.0 |  | MCP lifecycle; evaluar para OpenClaw |
 | meta-spec | MetaSpec | SD-Development, SD-Design | 0.9.7 |  | Framework Python; no distribución JARVIS |

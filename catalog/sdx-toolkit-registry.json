@@ -113,6 +113,22 @@
       }
     },
     {
+      "id": "cyber-neo",
+      "name": "Cyber Neo (Hainrixz)",
+      "repo": "https://github.com/Hainrixz/cyber-neo",
+      "pin": "9a8998a33534bca16c619f4956dd1935dc404620",
+      "sdx": ["SD-Validate"],
+      "jarvis": {
+        "skills": [
+          "cyber-neo-router",
+          "cyber-neo",
+          "cyber-neo-cli"
+        ],
+        "sync": "scripts/sync-cyber-neo-skill.sh",
+        "doc": "docs/CYBER_NEO_INTEGRATION.md"
+      }
+    },
+    {
       "id": "marketing-spec-kit",
       "name": "Marketing Spec Kit",
       "repo": "https://github.com/ACNet-AI/marketing-spec-kit",

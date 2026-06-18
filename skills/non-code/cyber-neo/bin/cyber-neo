@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+# cyber-neo — wrapper JARVIS para scripts Python de Cyber Neo upstream
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+cyber-neo <command> [options]
+
+Comandos:
+  status              Verifica skill instalado, python3, scripts
+  secrets <TARGET>    scan_secrets.py en TARGET
+  lockfiles <TARGET>  check_lockfiles.py en TARGET
+  help
+
+Variables:
+  CYBER_NEO_HOME      Skill dir (default: ~/.cursor/skills/cyber-neo o library)
+
+Ejemplos:
+  cyber-neo status
+  cyber-neo secrets /path/to/project
+  cyber-neo lockfiles .
+EOF
+}
+
+find_cyber_neo_home() {
+  if [ -n "${CYBER_NEO_HOME:-}" ] && [ -f "$CYBER_NEO_HOME/scripts/scan_secrets.py" ]; then
+    return 0
+  fi
+  if [ -f "$HOME/.cursor/skills/cyber-neo/scripts/scan_secrets.py" ]; then
+    CYBER_NEO_HOME="$HOME/.cursor/skills/cyber-neo"
+    return 0
+  fi
+  local lib
+  lib="$(cd "$(dirname "$0")/../../.." && pwd)/skills/ops/cyber-neo"
+  if [ -f "$lib/scripts/scan_secrets.py" ]; then
+    CYBER_NEO_HOME="$lib"
+    return 0
+  fi
+  return 1
+}
+
+cmd_status() {
+  local skill=0 py=0 scripts=0
+  if find_cyber_neo_home; then
+    skill=1
+    scripts=1
+  fi
+  if command -v python3 >/dev/null 2>&1; then
+    py=1
+  fi
+  echo "cyber_neo_skill=$skill cyber_neo_python=$py cyber_neo_scripts=$scripts home=${CYBER_NEO_HOME:-unset}"
+  if [ "$skill" -eq 0 ]; then
+    echo "Instalar: bash scripts/install.sh --all (jarvis-skills-library)" >&2
+    return 1
+  fi
+}
+
+cmd_secrets() {
+  local target="${1:-}"
+  [ -n "$target" ] || { echo "secrets requiere TARGET path" >&2; exit 2; }
+  find_cyber_neo_home || { echo "cyber-neo skill not found" >&2; exit 1; }
+  python3 "$CYBER_NEO_HOME/scripts/scan_secrets.py" "$target"
+}
+
+cmd_lockfiles() {
+  local target="${1:-}"
+  [ -n "$target" ] || { echo "lockfiles requiere TARGET path" >&2; exit 2; }
+  find_cyber_neo_home || { echo "cyber-neo skill not found" >&2; exit 1; }
+  python3 "$CYBER_NEO_HOME/scripts/check_lockfiles.py" "$target"
+}
+
+main() {
+  local cmd=${1:-help}
+  shift || true
+  case "$cmd" in
+    status) cmd_status "$@";;
+    secrets) cmd_secrets "$@";;
+    lockfiles) cmd_lockfiles "$@";;
+    help|-h|--help) usage;;
+    *) usage; exit 2;;
+  esac
+}
+
+main "$@"

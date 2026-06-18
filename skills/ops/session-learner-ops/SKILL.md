@@ -35,3 +35,5 @@ Mismo proceso y plantilla que Backend.
 ## ECC instincts (opcional)
 
 Si el repo producto tiene ECC hooks activos (`install-ecc-runtime.sh --with-hooks`), complementar con skill `continuous-learning-v2` para instincts y `/evolve`. **Cierre canónico JARVIS:** siempre `docs/active_context.md` vía esta skill primero.
+
+Si hubo auditoría Cyber Neo en la sesión, enlazar path del reporte MD en `active_context` (hallazgos Critical/High) — forense: [CYBER_NEO_FORENSE_JARVIS.md](../../docs/CYBER_NEO_FORENSE_JARVIS.md).
