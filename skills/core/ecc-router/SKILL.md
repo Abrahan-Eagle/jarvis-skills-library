@@ -61,6 +61,7 @@ test -d "${ECC_HOME:-$HOME/ecc}" && echo ECC_HOME
 | Auditoría profunda read-only + reporte | `cyber-neo-router` → skill `cyber-neo` | modificar código en audit |
 | Cierre módulo + memoria | `session-learner-ops` → `docs/active_context.md` | Solo ECC memory hooks |
 | Instincts, `/evolve`, homunculus | `continuous-learning-v2` (+ hooks opt-in) | — |
+| Scan/wrap-up aprendizajes sesión | `learning-loop-router` → `learning-loop` | sustituir `session-learner-ops` |
 | Rules PHP/TS en `.cursor/` | `install-ecc-runtime.sh` en repo producto | Copiar rules al global |
 | Descubrir componente ECC | `ecc consult "<query>"` | Buscar 268 skills manualmente |
 | Wizard install ECC | `configure-ecc` o `install-ecc-runtime.sh` | Plugin + full profile duplicado |

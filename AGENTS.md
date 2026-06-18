@@ -35,7 +35,7 @@ python3 skills/engineering/skill-creator/scripts/init_skill.py <name> --path ski
 
 ## Spec-Driven Development
 
-Ver [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md), [docs/SPEC_KIT_EXTENSIONS.md](docs/SPEC_KIT_EXTENSIONS.md), [docs/OPEN_DESIGN_INTEGRATION.md](docs/OPEN_DESIGN_INTEGRATION.md), [docs/STRANGEVERSE_INTEGRATION.md](docs/STRANGEVERSE_INTEGRATION.md), [docs/MIROFISH_UPSTREAM.md](docs/MIROFISH_UPSTREAM.md), [docs/ECC_INTEGRATION.md](docs/ECC_INTEGRATION.md), [docs/CYBER_NEO_INTEGRATION.md](docs/CYBER_NEO_INTEGRATION.md), [docs/AWESOME_SPEC_KITS.md](docs/AWESOME_SPEC_KITS.md) y skills `sdd-router`, `kitty-router`, `openspec-router`, `speckit-lifecycle-router`, `open-design-router`, `ecc-router`, `cyber-neo-router`, `scenario-router`, `strategic-briefing-ops`.
+Ver [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md), [docs/SPEC_KIT_EXTENSIONS.md](docs/SPEC_KIT_EXTENSIONS.md), [docs/OPEN_DESIGN_INTEGRATION.md](docs/OPEN_DESIGN_INTEGRATION.md), [docs/STRANGEVERSE_INTEGRATION.md](docs/STRANGEVERSE_INTEGRATION.md), [docs/MIROFISH_UPSTREAM.md](docs/MIROFISH_UPSTREAM.md), [docs/ECC_INTEGRATION.md](docs/ECC_INTEGRATION.md), [docs/CYBER_NEO_INTEGRATION.md](docs/CYBER_NEO_INTEGRATION.md), [docs/LEARNING_LOOP_INTEGRATION.md](docs/LEARNING_LOOP_INTEGRATION.md), [docs/AWESOME_SPEC_KITS.md](docs/AWESOME_SPEC_KITS.md) y skills `sdd-router`, `kitty-router`, `openspec-router`, `speckit-lifecycle-router`, `open-design-router`, `ecc-router`, `cyber-neo-router`, `learning-loop-router`, `scenario-router`, `strategic-briefing-ops`.
 
 ## Precedencia operativa
 
@@ -59,6 +59,7 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 | What-if / escenarios / simulación social | `scenario-router`, `scenario-analysis-ops`, `strangeverse` |
 | Harness ECC (hooks, instincts, rules) | `ecc-router`, `ecc`, `configure-ecc` |
 | Auditoría seguridad profunda (read-only) | `cyber-neo-router`, `cyber-neo`, `cyber-neo-cli` |
+| Scan/wrap-up aprendizajes sesión | `learning-loop-router`, `learning-loop` |
 | Debug | `systematic-debugging` |
 | Commit | `verification-before-completion`, `git-commit` |
 | Push/merge | `git-guardrails-ops` (solo con orden explícita del usuario) |

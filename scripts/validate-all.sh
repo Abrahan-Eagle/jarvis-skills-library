@@ -21,3 +21,7 @@ bash "$ROOT/scripts/validate-ui-ux-pro-max.sh"
 echo ""
 echo "== validate-all: cyber-neo smoke =="
 bash "$ROOT/scripts/smoke-cyber-neo.sh"
+
+echo ""
+echo "== validate-all: learning-loop smoke =="
+bash "$ROOT/scripts/smoke-learning-loop.sh"

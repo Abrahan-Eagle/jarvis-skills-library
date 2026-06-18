@@ -6,6 +6,7 @@
 |--------|----------|
 | Analisis what-if sin implementar feature | `scenario-router` |
 | Análisis coherencia Spec Kit pre-implement | `speckit-analyze` |
+| Auditoría seguridad profunda read-only | `cyber-neo`, `cyber-neo-router` |
 | Briefing estrategico semanal | `strategic-briefing-ops` |
 | Bugfix con Spec Kit | `speckit-lifecycle-router` |
 | Carrusel RRSS o post social | `open-design-router` |
@@ -16,6 +17,9 @@
 | Como va todo el proyecto | `strategic-briefing-ops` |
 | Compactar o traspasar sesion | `handoff` |
 | Comparar escenarios base optimista pesimista | `scenario-analysis-ops` |
+| Consolidar aprendizajes antes de cerrar | `learning-loop-router` |
+| Consolidar aprendizajes de sesión | `learning-loop` |
+| Contexto largo capturar señales | `learning-loop`, `learning-loop-router` |
 | Convertir tasks Spec Kit a issues GitHub | `speckit-taskstoissues` |
 | Crear commit | `git-commit`, `structured-commits-ops`, `verification-before-completion` |
 | Crear skill global | `jarvis-skills-maintainer` |
@@ -34,6 +38,7 @@
 | Ejecutar simulacion StrangeVerse | `strangeverse` |
 | Email marketing HTML | `open-design-router` |
 | Encontrar bug o test fallido | `systematic-debugging` |
+| Escaneo secretos SCA SAST | `cyber-neo-router` |
 | Establecer principios SDD en proyecto | `speckit-constitution` |
 | Estado general del producto | `strategic-briefing-ops` |
 | Generar assets visuales marketing | `open-design-router` |
@@ -77,9 +82,17 @@
 | Spec-driven fluido brownfield | `openspec-router` |
 | Terminar módulo | `finishing-a-development-branch`, `jarvis-core`, `session-learner-ops`, `verification-before-completion` |
 | Verificar estado ECC hooks agents | `ecc` |
+| Verificar instalación cyber-neo | `cyber-neo-cli` |
+| Vulnerability scan con reporte | `cyber-neo-router` |
+| Vulnerability scan reporte ejecutivo | `cyber-neo` |
 | Work packages o kanban SDD | `kitty-router` |
+| cyber-neo OWASP 2025 | `cyber-neo` |
+| cyber-neo lockfiles supply chain | `cyber-neo-cli` |
+| cyber-neo pentest OWASP 2025 | `cyber-neo-router` |
+| cyber-neo secrets escaneo rápido | `cyber-neo-cli` |
 | ecc consult descubrir componente ECC | `ecc` |
 | ecc consult doctor repair | `ecc-router` |
 | ecc doctor repair harness | `ecc` |
+| learning-loop scan wrap up | `learning-loop`, `learning-loop-router` |
 | open-design generate | `open-design` |
 | spec-kitty dispatch | `kitty-governance` |

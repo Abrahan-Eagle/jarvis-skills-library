@@ -44,16 +44,22 @@
       "computedHash": "1034d8954ed4bdccbc1198ad01de8c3035c2883ddcfbfa3d63a7b9d551dcec9f",
       "path": "skills/backend/sql-optimization-patterns/SKILL.md"
     },
+    "cyber-neo-router": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "ae83b6eff0afe68a5b86335fb59f146ea5873b4e9ea52d0981b15618140f11d6",
+      "path": "skills/core/cyber-neo-router/SKILL.md"
+    },
     "ecc-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "d64fcd8ad10135dd55250226a8733df325e3e9d5eef627fca397bb9088382b3d",
+      "computedHash": "975764ce2d548b8e1b7628a2834f551434b927444650bba1c7402493f2a80440",
       "path": "skills/core/ecc-router/SKILL.md"
     },
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "32b3c85ad7126bd25c9882e696662effe4ae8be1c0260cd6fa5d34aa5a44f671",
+      "computedHash": "62048cb09639773fb79da7d941386251abaf16d52989eb63f4ce724081a61300",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
@@ -65,7 +71,7 @@
     "jarvis-skills-maintainer": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "c4b21d500808a0e7674d4b6546b100fd5f2f70a313658c65437273f269ebd294",
+      "computedHash": "93164f308fadd760dae9f3c670e931becebdff3214ce124b8b31d1da5c4ec017",
       "path": "skills/core/jarvis-skills-maintainer/SKILL.md"
     },
     "kitty-router": {
@@ -73,6 +79,12 @@
       "sourceType": "local",
       "computedHash": "9fe4089a14b06d55c0e40f0e8681b769b9e53c2c2bf504102817b9ac1fb87a47",
       "path": "skills/core/kitty-router/SKILL.md"
+    },
+    "learning-loop-router": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "4a15caba482bd51f704d6caf58a065d82bd22294d357d6bf60a2068ae68248ba",
+      "path": "skills/core/learning-loop-router/SKILL.md"
     },
     "openspec-router": {
       "source": "jarvis-skills-library",
@@ -89,7 +101,7 @@
     "sdd-x-index": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "66e5cc5e7121321f7b896b3572c82d343c5e462b3a4165fe52486415721995af",
+      "computedHash": "6e6eacbcdb9518e19b7aa02de31d6e7bec92ba6101cc0584cb079ce2ed4b2240",
       "path": "skills/core/sdd-x-index/SKILL.md"
     },
     "task-pipeline-ops": {
@@ -207,10 +219,16 @@
       "computedHash": "dfd0d4e3979aaced348b89b9493d52cdf5a7618235b7f4dc98aeba48a7cfc6be",
       "path": "skills/non-code/client-report/SKILL.md"
     },
+    "cyber-neo-cli": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "9e8c56e9eada9b7565a90791f63844f0b91defe57fa22a797266503b4aa1d2b5",
+      "path": "skills/non-code/cyber-neo/SKILL.md"
+    },
     "ecc": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "f2c8f49cef8f78f5e8c3f9abe78873a0b3dd9d3aaa276f870562cd3550db6723",
+      "computedHash": "c41e57127fdb871b51a225797843d86059a23781b7cf1f978c6eae279a0314e6",
       "path": "skills/non-code/ecc/SKILL.md"
     },
     "open-design": {
@@ -257,6 +275,13 @@
       "path": "skills/ops/continuous-learning-v2/SKILL.md",
       "upstream": "ecc:continuous-learning-v2"
     },
+    "cyber-neo": {
+      "source": "cyber-neo/cyber-neo",
+      "sourceType": "github",
+      "computedHash": "7b6d2b2e424e3d06cacb13c00d23bf0c5a750b46db0d0f58b5fc85032d330c20",
+      "path": "skills/ops/cyber-neo/SKILL.md",
+      "upstream": "cyber-neo:cyber-neo"
+    },
     "deep-interview-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
@@ -288,6 +313,13 @@
       "computedHash": "549f81d314b8743bc5b176e1b9dbc28e5959104caae2b14413073a4930989d2a",
       "path": "skills/ops/handoff/SKILL.md"
     },
+    "learning-loop": {
+      "source": "learning-loop-skill/learning-loop",
+      "sourceType": "github",
+      "computedHash": "36adf329a37c9a4bcaa269eead74e9af79878c79c60a998bbeeb4a11918bc81e",
+      "path": "skills/ops/learning-loop/SKILL.md",
+      "upstream": "learning-loop-skill:learning-loop"
+    },
     "scenario-analysis-ops": {
       "source": "clawvis/scenario-analysis-ops",
       "sourceType": "github",
@@ -311,7 +343,7 @@
     "session-learner-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "38a4c8ff67fc0d1e2d6c1f5a94680180102fa96fd2bb6fcaf36275dfe850e0fe",
+      "computedHash": "53796cfda0e29db6ed5d15baf7accea4a28e10fc0df086a9a3ba8556d30da655",
       "path": "skills/ops/session-learner-ops/SKILL.md"
     },
     "strategic-briefing-ops": {

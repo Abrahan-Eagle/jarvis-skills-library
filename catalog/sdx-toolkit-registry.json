@@ -129,6 +129,21 @@
       }
     },
     {
+      "id": "learning-loop",
+      "name": "Learning Loop (melodykoh)",
+      "repo": "https://github.com/melodykoh/learning-loop-skill",
+      "pin": "948dc75bc5a771a57366c651c5d442b44cba214d",
+      "sdx": ["SD-Maintenance"],
+      "jarvis": {
+        "skills": [
+          "learning-loop-router",
+          "learning-loop"
+        ],
+        "sync": "scripts/sync-learning-loop-skill.sh",
+        "doc": "docs/LEARNING_LOOP_INTEGRATION.md"
+      }
+    },
+    {
       "id": "marketing-spec-kit",
       "name": "Marketing Spec Kit",
       "repo": "https://github.com/ACNet-AI/marketing-spec-kit",

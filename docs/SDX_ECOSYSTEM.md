@@ -15,7 +15,7 @@ JARVIS **no** usa MetaSpec CLI para distribuir skills; usa `jarvis-skills-librar
 | Design | `ui-ux-pro-max`, dominio UI, `open-design-router` | `ui-router` |
 | Research / what-if | `scenario-router`, `strategic-briefing-ops`, `scenario-analysis-ops`, `strangeverse` | `scenario-router` |
 | API (sin speckit dedicado) | `api-design-principles` | — |
-| Documentation | `documentar-avances`, `context-updater` | — (no Spec Kit) |
+| Documentation | `documentar-avances`, `context-updater`, `learning-loop` (wrap-up opcional) | — (no Spec Kit) |
 | Test | `test-driven-development`, `verification-before-completion` | — |
 | Validate | `speckit-analyze`, `speckit-checklist` | `sdd-x-index` |
 | Config | `.specify/extensions.yml`, `specify extension` | [SDD doc](SDD_SPECKIT_INTEGRATION.md) |
@@ -35,6 +35,7 @@ Ver [`catalog/SDX_TOOLKITS.md`](catalog/SDX_TOOLKITS.md) (generado desde `catalo
 | MiroFish upstream (watchlist) | V0.1.2 | Referencia AGPL — [MIROFISH_UPSTREAM.md](MIROFISH_UPSTREAM.md); runtime = StrangeVerse |
 | ECC (watchlist) | v2.0.0 | `bash scripts/install-ecc-runtime.sh` — [ECC_INTEGRATION.md](ECC_INTEGRATION.md) |
 | Cyber Neo (watchlist) | 9a8998a | `bash scripts/sync-cyber-neo-skill.sh` — [CYBER_NEO_INTEGRATION.md](CYBER_NEO_INTEGRATION.md) |
+| Learning Loop (watchlist) | 948dc75 | `bash scripts/sync-learning-loop-skill.sh` — [LEARNING_LOOP_INTEGRATION.md](LEARNING_LOOP_INTEGRATION.md) |
 | Spec Kitty | v3.2.1 | `pipx install spec-kitty-cli` + `spec-kitty init` en repo producto |
 | OpenSpec (watchlist) | 0.16.0 | `npm i -g @fission-ai/openspec` + `openspec init` en repo producto |
 
