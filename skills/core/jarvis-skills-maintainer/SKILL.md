@@ -133,6 +133,10 @@ bash scripts/smoke-addy-doubt-driven.sh
 
 Doc: [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../docs/AGENT_SKILLS_ADDY_INTEGRATION.md), forense [docs/AGENT_SKILLS_ADDY_FORENSE_JARVIS.md](../docs/AGENT_SKILLS_ADDY_FORENSE_JARVIS.md). Entrada en `sdx-toolkit-registry.json`.
 
+## Loop AI (gobernanza HITL — skill local)
+
+Marco de ingeniería de ciclos y gobernanza humana — skill **`human-in-the-loop-ops`** (sin vendor sync). Mapa ecosistema: [docs/LOOP_AI_ECOSYSTEM.md](../docs/LOOP_AI_ECOSYSTEM.md). Watchlist registry: `ralph-loop`, `explainx-loop` (overlap `skill-loop`; sin sync). Descartados: mrkai77-loop (macOS), Loop AI Labs (vendor), Perplexity Alexa (voz).
+
 ## OpenSpec (watchlist awesome-spec-kits)
 
 No sincronizar slash commands al global — `openspec init` los instala en el repo producto.

@@ -22,6 +22,7 @@ metadata:
     - verification-before-completion
     - session-learner-ops
     - learning-loop-router
+    - human-in-the-loop-ops
     - sdd-router
 allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 ---
@@ -32,7 +33,7 @@ Router para [takumiyoshikawa/skill-loop](https://github.com/takumiyoshikawa/skil
 
 **No es** `learning-loop` (melodykoh) — ese captura aprendizajes de sesión.
 
-Guía: [docs/SKILL_LOOP_INTEGRATION.md](../../docs/SKILL_LOOP_INTEGRATION.md). Forense: [docs/SKILL_LOOP_FORENSE_JARVIS.md](../../docs/SKILL_LOOP_FORENSE_JARVIS.md).
+Guía: [docs/SKILL_LOOP_INTEGRATION.md](../../docs/SKILL_LOOP_INTEGRATION.md). Forense: [docs/SKILL_LOOP_FORENSE_JARVIS.md](../../docs/SKILL_LOOP_FORENSE_JARVIS.md). Gates humanos en loops autónomos: `human-in-the-loop-ops` ([docs/LOOP_AI_ECOSYSTEM.md](../../docs/LOOP_AI_ECOSYSTEM.md)).
 
 ## Detección runtime
 
@@ -56,11 +57,12 @@ test -d "${HOME}/.cursor/skills/skill-loop" && echo SKILL_LOOP_INSTALLED
 
 ## Flujo recomendado (Cursor)
 
-1. Usuario pide loop → skill `skill-loop` scaffolda YAML + starter skills en `.agents/skills/`.
-2. Usuario **aprueba** YAML → `bash scripts/install-skill-loop-runtime.sh` si falta CLI.
-3. `skill-loop run --attach` (o background + `sessions show`).
-4. Al `done`: `session-learner-ops` + tests + `verification-before-completion`.
-5. Opcional: `learning-loop` wrap-up.
+1. Usuario pide loop → definir HITL/HOTL + terminación con `human-in-the-loop-ops`.
+2. Skill `skill-loop` scaffolda YAML + starter skills en `.agents/skills/`.
+3. Usuario **aprueba** YAML → `bash scripts/install-skill-loop-runtime.sh` si falta CLI.
+4. `skill-loop run --attach` (o background + `sessions show`).
+5. Al `done`: `session-learner-ops` + tests + `verification-before-completion`.
+6. Opcional: `learning-loop` wrap-up.
 
 ## Plantilla JARVIS
 

@@ -18,6 +18,7 @@
 | Como va todo el proyecto | `strategic-briefing-ops` |
 | Compactar o traspasar sesion | `handoff` |
 | Comparar escenarios base optimista pesimista | `scenario-analysis-ops` |
+| Condiciones de terminación bucle autónomo | `human-in-the-loop-ops` |
 | Consolidar aprendizajes antes de cerrar | `learning-loop-router` |
 | Consolidar aprendizajes de sesión | `learning-loop` |
 | Contexto largo capturar señales | `learning-loop`, `learning-loop-router` |
@@ -48,11 +49,14 @@
 | Escaneo secretos SCA SAST | `cyber-neo-router` |
 | Establecer principios SDD en proyecto | `speckit-constitution` |
 | Estado general del producto | `strategic-briefing-ops` |
+| Gates humanos antes de acción irreversible | `human-in-the-loop-ops` |
 | Generar assets visuales marketing | `open-design-router` |
 | Generar con Open Design | `open-design` |
 | Governance standalone fuera de misión | `kitty-governance` |
+| HITL HOTL umbrales de confianza | `human-in-the-loop-ops` |
 | Hacer git push o merge | `git-guardrails-ops` |
 | Hotfix producción | `speckit-lifecycle-router` |
+| Human-in-the-loop diseño de loop | `human-in-the-loop-ops` |
 | Implementar feature Spec Kit con OK usuario | `speckit-implement` |
 | Implementar feature o bugfix | `test-driven-development` |
 | Iniciar módulo | `brainstorming-ops`, `jarvis-core`, `task-pipeline-ops` |

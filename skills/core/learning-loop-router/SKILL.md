@@ -29,7 +29,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash, Task]
 
 Router para [learning-loop-skill](https://github.com/melodykoh/learning-loop-skill) (MIT v4.1): captura estructurada de aprendizajes **sin** sustituir cierre canónico JARVIS.
 
-Guía: [docs/LEARNING_LOOP_INTEGRATION.md](../../docs/LEARNING_LOOP_INTEGRATION.md). Forense: [docs/LEARNING_LOOP_FORENSE_JARVIS.md](../../docs/LEARNING_LOOP_FORENSE_JARVIS.md).
+Guía: [docs/LEARNING_LOOP_INTEGRATION.md](../../docs/LEARNING_LOOP_INTEGRATION.md). Forense: [docs/LEARNING_LOOP_FORENSE_JARVIS.md](../../docs/LEARNING_LOOP_FORENSE_JARVIS.md). Gates humanos en loops autónomos (no sustituye wrap-up): `human-in-the-loop-ops` ([docs/LOOP_AI_ECOSYSTEM.md](../../docs/LOOP_AI_ECOSYSTEM.md)).
 
 ## Detección runtime
 

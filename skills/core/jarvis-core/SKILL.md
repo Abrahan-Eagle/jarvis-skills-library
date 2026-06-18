@@ -28,6 +28,7 @@ metadata:
     - learning-loop-router
     - agent-skills-router
     - skill-loop-router
+    - human-in-the-loop-ops
     - scenario-router
     - strategic-briefing-ops
     - speckit-specify
@@ -76,6 +77,8 @@ Para orquestación automática de loops multi-skill (`skill-loop.yml` + CLI), ve
 
 Para pack Addy Osmani (doubt-driven in-flight vs canónico JARVIS), ver `agent-skills-router` ([docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../../docs/AGENT_SKILLS_ADDY_INTEGRATION.md)) — solo `doubt-driven-development` curado; no sustituye `speckit-*`.
 
+Para gobernanza humana en bucles agénticos (HITL/HOTL, umbrales, terminación), ver `human-in-the-loop-ops` ([docs/LOOP_AI_ECOSYSTEM.md](../../docs/LOOP_AI_ECOSYSTEM.md)) — complementa `git-guardrails-ops` y `skill-loop-router`.
+
 Para SD-X (dev + diseño + docs + validate), ver `sdd-x-index` ([docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md)).
 
 ## Protocolo de calidad
@@ -123,6 +126,7 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | Auditoría seguridad profunda read-only + reporte | `cyber-neo-router` → skill `cyber-neo` |
 | Diseño defensa runtime / spikes / política DDoS | `kalman-anomaly-router` → `kalman-anomaly-defense` |
 | Loop automático impl→review→verify (YAML) | `skill-loop-router` → skill `skill-loop` + `skill-loop run` (OK usuario) |
+| Loop autónomo / decisión alta stakes con gate humano | `human-in-the-loop-ops` → `git-guardrails-ops` / `approval-gate` según acción |
 | SD-X ambiguo / multi-arte (dev+UI+docs) | `sdd-x-index` → `sdd-router` o `ui-router` según tabla SD-X |
 
 ## Directivas principales

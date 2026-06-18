@@ -2,7 +2,7 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-18
 
-Total: **86** skills
+Total: **87** skills
 
 ## Resumen por categoría
 
@@ -14,7 +14,7 @@ Total: **86** skills
 | `git` | 3 |
 | `mobile` | 4 |
 | `non-code` | 8 |
-| `ops` | 19 |
+| `ops` | 20 |
 | `planning` | 3 |
 | `review` | 5 |
 | `sdd` | 12 |
@@ -109,6 +109,7 @@ Total: **86** skills
 | `finishing-a-development-branch` | Cerrar feature Flutter: analyze + test, opciones merge/PR. | [skills/ops/finishing-a-development-branch/SKILL.md](skills/ops/finishing-a-development-branch/SKILL.md) |
 | `git-guardrails-ops` | Protección git: bloquea push a main, advierte en dev, exige confirmación antes de comandos destructivos. | [skills/ops/git-guardrails-ops/SKILL.md](skills/ops/git-guardrails-ops/SKILL.md) |
 | `handoff` | Compactar la sesion actual en un documento de traspaso para continuar en otro agente o chat. Complementa session-learner… | [skills/ops/handoff/SKILL.md](skills/ops/handoff/SKILL.md) |
+| `human-in-the-loop-ops` | Gobernanza humana en bucles agénticos: HITL/HOTL/automation-bounded, umbrales de confianza, condiciones de terminación y… | [skills/ops/human-in-the-loop-ops/SKILL.md](skills/ops/human-in-the-loop-ops/SKILL.md) |
 | `kalman-anomaly-defense` | Diseña detección runtime con Kalman (predicción + actualización) y respuesta escalonada del agente. | [skills/ops/kalman-anomaly-defense/SKILL.md](skills/ops/kalman-anomaly-defense/SKILL.md) |
 | `learning-loop` | Scan mid-session y wrap-up con quality gates: captura aprendizajes antes de perder contexto. | [skills/ops/learning-loop/SKILL.md](skills/ops/learning-loop/SKILL.md) |
 | `scenario-analysis-ops` | Analisis what-if estrategico sin motor de simulacion: semilla, variables, escenarios, matriz de riesgos, iteracion. | [skills/ops/scenario-analysis-ops/SKILL.md](skills/ops/scenario-analysis-ops/SKILL.md) |

@@ -176,6 +176,30 @@
       }
     },
     {
+      "id": "ralph-loop",
+      "name": "ralph-loop (PageAI-Pro)",
+      "repo": "https://github.com/PageAI-Pro/ralph-loop",
+      "pin": "main",
+      "sdx": ["SD-Development"],
+      "note": "Watchlist: dev loop Docker sandbox; overlap skill-loop + TDD; sin sync",
+      "jarvis": {
+        "skills": ["skill-loop-router", "human-in-the-loop-ops"],
+        "doc": "docs/LOOP_AI_ECOSYSTEM.md"
+      }
+    },
+    {
+      "id": "explainx-loop",
+      "name": "explainx/loop (alirezarezvani/claude-skills)",
+      "repo": "https://github.com/alirezarezvani/claude-skills",
+      "pin": "main",
+      "sdx": ["SD-Development"],
+      "note": "Watchlist: cron autoresearch; overlap skill-loop; auditar supply-chain antes de sync",
+      "jarvis": {
+        "skills": ["skill-loop-router", "human-in-the-loop-ops"],
+        "doc": "docs/LOOP_AI_ECOSYSTEM.md"
+      }
+    },
+    {
       "id": "marketing-spec-kit",
       "name": "Marketing Spec Kit",
       "repo": "https://github.com/ACNet-AI/marketing-spec-kit",

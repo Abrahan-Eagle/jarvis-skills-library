@@ -63,6 +63,14 @@ flowchart LR
   handoff["handoff"] --> jarvis_core["jarvis-core"]
   handoff["handoff"] --> session_learner_ops["session-learner-ops"]
   handoff["handoff"] --> writing_plans["writing-plans"]
+  human_in_the_loop_ops["human-in-the-loop-ops"] --> approval_gate["approval-gate"]
+  human_in_the_loop_ops["human-in-the-loop-ops"] --> code_review_playbook["code-review-playbook"]
+  human_in_the_loop_ops["human-in-the-loop-ops"] --> doubt_driven_development["doubt-driven-development"]
+  human_in_the_loop_ops["human-in-the-loop-ops"] --> git_guardrails_ops["git-guardrails-ops"]
+  human_in_the_loop_ops["human-in-the-loop-ops"] --> jarvis_core["jarvis-core"]
+  human_in_the_loop_ops["human-in-the-loop-ops"] --> learning_loop_router["learning-loop-router"]
+  human_in_the_loop_ops["human-in-the-loop-ops"] --> skill_loop_router["skill-loop-router"]
+  human_in_the_loop_ops["human-in-the-loop-ops"] --> verification_before_completion["verification-before-completion"]
   jarvis_core["jarvis-core"] --> agent_skills_router["agent-skills-router"]
   jarvis_core["jarvis-core"] --> brainstorming_ops["brainstorming-ops"]
   jarvis_core["jarvis-core"] --> code_review_playbook["code-review-playbook"]
@@ -71,6 +79,7 @@ flowchart LR
   jarvis_core["jarvis-core"] --> executing_plans["executing-plans"]
   jarvis_core["jarvis-core"] --> finishing_a_development_branch["finishing-a-development-branch"]
   jarvis_core["jarvis-core"] --> git_commit["git-commit"]
+  jarvis_core["jarvis-core"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
   jarvis_core["jarvis-core"] --> jarvis_experts["jarvis-experts"]
   jarvis_core["jarvis-core"] --> kalman_anomaly_router["kalman-anomaly-router"]
   jarvis_core["jarvis-core"] --> kitty_router["kitty-router"]
@@ -194,6 +203,7 @@ flowchart LR
   skill_loop["skill-loop"] --> test_driven_development["test-driven-development"]
   skill_loop["skill-loop"] --> verification_before_completion["verification-before-completion"]
   skill_loop_router["skill-loop-router"] --> code_review_playbook["code-review-playbook"]
+  skill_loop_router["skill-loop-router"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
   skill_loop_router["skill-loop-router"] --> jarvis_core["jarvis-core"]
   skill_loop_router["skill-loop-router"] --> learning_loop_router["learning-loop-router"]
   skill_loop_router["skill-loop-router"] --> sdd_router["sdd-router"]
@@ -246,4 +256,4 @@ flowchart LR
   zoom_out["zoom-out"] --> software_architecture["software-architecture"]
 ```
 
-Nodos conocidos: 86. Aristas (solo a skills en catálogo): 240.
+Nodos conocidos: 87. Aristas (solo a skills en catálogo): 250.

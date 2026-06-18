@@ -107,6 +107,10 @@ Loops automáticos impl→review→verify vía `skill-loop.yml` + CLI — skills
 
 Revisión adversarial in-flight y router vs pack engineering — skills `agent-skills-router` + `doubt-driven-development`. Upstream: [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) (MIT). Guía: [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](docs/AGENT_SKILLS_ADDY_INTEGRATION.md). Sync: `bash scripts/sync-addy-doubt-driven.sh`. No sustituye `jarvis-core` ni `speckit-*`.
 
+### Loop AI (gobernanza HITL)
+
+Espectro HITL/HOTL/automation-bounded, umbrales de confianza y condiciones de terminación en bucles agénticos — skill `human-in-the-loop-ops`. Guía ecosistema: [docs/LOOP_AI_ECOSYSTEM.md](docs/LOOP_AI_ECOSYSTEM.md). Complementa `skill-loop-router`, `learning-loop-router` y `git-guardrails-ops`. Sin sync de repos watchlist (`ralph-loop`, `explainx-loop`).
+
 ## Migración desde ~/jarvis-skills
 
 Ver [docs/MIGRATION.md](docs/MIGRATION.md).
