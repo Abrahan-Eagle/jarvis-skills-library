@@ -95,7 +95,7 @@ Listar skills disponibles: `open-design skills`. Design systems: `open-design de
 
 ```bash
 bash scripts/install-open-design-runtime.sh
-# o: curl -fsSL https://open-design.ai/install.sh | sh -s cursor
+# o: curl -fsSL https://open-design.ai/install.sh | sh -s cursor   # jarvis-allow-net-exec
 ```
 
 OpenClaw gateway: ver integración en clawvis `OPEN_DESIGN_JARVIS.md` (no duplicar aquí).

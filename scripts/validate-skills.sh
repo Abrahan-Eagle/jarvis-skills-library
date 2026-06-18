@@ -9,6 +9,7 @@ errors=0
 warnings=0
 checked=0
 bins_checked=0
+net_exec_flags=0
 
 fail() {
   echo "FAIL: $1" >&2
@@ -41,6 +42,48 @@ check_skill_md() {
     fail "$rel — frontmatter sin 'description:'"
   fi
 }
+
+# Supply-chain: net-exec en SKILL.md (vector pdf-helper trojan)
+check_net_exec() {
+  local f="$1"
+  local rel="${f#"$ROOT"/}"
+  local in_front=0
+  local past_front=0
+
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    if [[ "$line" == "---" ]]; then
+      if [[ $in_front -eq 0 ]]; then
+        in_front=1
+      else
+        past_front=1
+      fi
+      continue
+    fi
+    if [[ $past_front -eq 0 ]]; then
+      continue
+    fi
+    if [[ "$line" == *jarvis-allow-net-exec* ]]; then
+      continue
+    fi
+    if echo "$line" | grep -qiE '(curl|wget)[^|]*https?://[^|]*\| *(bash|sh)(\s|$|;)'; then
+      fail "$rel — net-exec sin allowlist (curl|bash). Si es legitimo, anadir comentario 'jarvis-allow-net-exec'."
+      net_exec_flags=$((net_exec_flags + 1))
+      return
+    fi
+    if echo "$line" | grep -qiE '(bash|sh) *<\( *(curl|wget).*https?://'; then
+      fail "$rel — net-exec sin allowlist (curl|bash). Si es legitimo, anadir comentario 'jarvis-allow-net-exec'."
+      net_exec_flags=$((net_exec_flags + 1))
+      return
+    fi
+  done < "$f"
+}
+
+if [[ "${1:-}" == "--check-net-exec" && -n "${2:-}" ]]; then
+  check_net_exec "$2"
+  echo "net_exec_flags=$net_exec_flags errors=$errors"
+  [[ $errors -eq 0 ]]
+  exit $?
+fi
 
 check_bins() {
   local skill_dir="$1"
@@ -81,6 +124,7 @@ check_skill_oc() {
 echo "== validate-skills: frontmatter =="
 while IFS= read -r -d '' f; do
   check_skill_md "$f"
+  check_net_exec "$f"
 done < <(find skills -name 'SKILL.md' -print0 2>/dev/null)
 
 echo "== validate-skills: bins =="
@@ -91,7 +135,7 @@ while IFS= read -r d; do
 done < <(find skills -name 'SKILL.md' -exec dirname {} \; 2>/dev/null | sort -u)
 
 echo ""
-echo "checked=$checked bins=$bins_checked errors=$errors warnings=$warnings"
+echo "checked=$checked bins=$bins_checked net_exec_flags=$net_exec_flags errors=$errors warnings=$warnings"
 if [[ $errors -gt 0 ]]; then
   exit 1
 fi
