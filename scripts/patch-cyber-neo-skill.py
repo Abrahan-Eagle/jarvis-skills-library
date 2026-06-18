@@ -9,17 +9,27 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 OVERLAY_MARKER = "## JARVIS / Cursor (mandatory)"
+SKILL_DIR_HINT = "~/.cursor/skills/cyber-neo (after install.sh --all)"
 
-JARVIS_OVERLAY = """
+JARVIS_OVERLAY = f"""
 ## JARVIS / Cursor (mandatory)
 
-- **No slash command:** En Cursor no existe `/cyber-neo`. Invocar skill `cyber-neo` o pedir "auditoría cyber-neo / security audit" del path del proyecto.
-- **Subagentes:** Sustituir tool `Agent` por **Task** (`subagent_type: generalPurpose` o `explore`, `readonly: true`). Máximo 5 tareas paralelas para fases SCA/SAST/secrets/config/supply-chain.
+- **No slash command:** En Cursor no existe `/cyber-neo`. Invocar skill `cyber-neo` o pedir "auditoría cyber-neo / security audit" con el **path del proyecto en el mensaje del usuario** (no `$ARGUMENTS`).
+- **CYBER_NEO_SKILL_DIR:** Directorio del skill instalado, típico `{SKILL_DIR_HINT}`. Usar `Read`/`Glob` en `references/` y scripts con path absoluto a ese directorio (sustituye `${{CLAUDE_SKILL_DIR}}` de Claude Code).
+- **Subagentes:** Usar tool **Task** (`subagent_type: generalPurpose` o `explore`, `readonly: true`). Máximo 5 tareas paralelas para fases SCA/SAST/secrets/config/supply-chain.
 - **Read-only:** No modificar el target; solo reporte MD (IRON LAW upstream).
-- **Reporte alternativo:** Si el usuario pide, guardar en `{TARGET}/docs/security/cyber-neo-report-{YYYY-MM-DD}.md` en lugar de Desktop.
-- **PHP/Laravel:** Sin `lang-php.md` en v0.1; usar recon `composer.json`, patrones genéricos, `cyber-neo lockfiles`, `security` para fixes Laravel.
-- **Router:** `cyber-neo-router`. **CLI scripts:** `cyber-neo secrets|lockfiles`. Doc: [docs/CYBER_NEO_INTEGRATION.md](../../docs/CYBER_NEO_INTEGRATION.md)
+- **Reporte alternativo:** Si el usuario pide, guardar en `{{TARGET}}/docs/security/cyber-neo-report-{{YYYY-MM-DD}}.md` en lugar de Desktop.
+- **PHP/Laravel SCA:** Si `composer.json` existe y `composer` está en PATH → `cd {{TARGET}} && composer audit --format=json` (read-only). Sin `lang-php.md` en v0.1; fixes con `security` + `laravel-specialist`; ECC `laravel-security` si harness instalado.
+- **Flutter/Dart:** Sin referencia upstream; aplicar secretos, CI/CD, patrones SAST genéricos en `lib/`.
+- **Router:** `cyber-neo-router`. **CLI:** `cyber-neo-cli/bin/cyber-neo` (`secrets`, `lockfiles`, `status`). Doc: [docs/CYBER_NEO_INTEGRATION.md](../../docs/CYBER_NEO_INTEGRATION.md)
 - `upstream: cyber-neo:cyber-neo`
+"""
+
+COMPOSER_SCA_BLOCK = """
+> 7. If composer.json exists and `composer` is available:
+>    `cd {TARGET_DIR} && composer audit --format=json 2>/dev/null`
+>    (read-only — does NOT modify vendor or lock files)
+>
 """
 
 FRONTMATTER_RE = re.compile(r"^---\s*\n.*?\n---\s*\n", re.DOTALL)
@@ -32,7 +42,7 @@ description: >
 license: MIT
 metadata:
   author: JARVIS Global
-  version: "1.0"
+  version: "1.1"
   scope: [global]
   category: ops
   upstream: cyber-neo:cyber-neo
@@ -55,6 +65,21 @@ allowed-tools: [Read, Grep, Glob, Bash, Write]
 def patch_body(body: str) -> str:
     body = body.replace("tool `Agent`", "tool **Task** (Cursor)")
     body = re.sub(r"\bAgent tool\b", "Task tool (Cursor)", body)
+    body = body.replace("${CLAUDE_SKILL_DIR}", "CYBER_NEO_SKILL_DIR")
+    body = body.replace(
+        "If `$ARGUMENTS` contains a path, use it as the target project root",
+        "If the user message contains a project path, use it as the target project root",
+    )
+    body = body.replace(
+        "If `$ARGUMENTS` is empty, ask the user:",
+        "If no path was given in the user message, ask the user:",
+    )
+    if "composer audit" not in body and "If cargo-audit is available" in body:
+        body = body.replace(
+            "If cargo-audit is available and Cargo.lock exists:",
+            "If cargo-audit is available and Cargo.lock exists:" + COMPOSER_SCA_BLOCK,
+            1,
+        )
     if OVERLAY_MARKER not in body:
         body = JARVIS_OVERLAY.strip() + "\n\n---\n\n" + body
     return body

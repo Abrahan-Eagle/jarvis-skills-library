@@ -60,6 +60,7 @@ python3 --version 2>/dev/null
 | Secretos rápidos (solo regex) | `cyber-neo secrets <path>` | — |
 | Supply chain lockfiles | `cyber-neo lockfiles <path>` | — |
 | Harness ECC (hooks, instincts) | `ecc-router` | cyber-neo |
+| Laravel SCA / patterns profundos | `composer audit` (skill) + ECC `laravel-security` si instalado | sustituir auditoría completa |
 | Fixes tras auditoría | `security` + `test-driven-development` | solo reportar sin fix |
 
 ## Flujo recomendado (Cursor)
@@ -74,7 +75,7 @@ python3 --version 2>/dev/null
 
 ## Limitaciones conocidas
 
-- PHP/Laravel: sin `lang-php.md` en v0.1 upstream; recon + patrones genéricos + composer SCA.
+- PHP/Laravel: sin `lang-php.md` en v0.1 upstream; recon + patrones genéricos + `composer audit` en Fase 2; complemento ECC `laravel-security` si harness en repo.
 - Herramientas opcionales (semgrep, trivy, gitleaks) degradan a análisis nativo si no están instaladas.
 
 ## Cuándo NO usar Cyber Neo

@@ -17,3 +17,7 @@ fi
 echo ""
 echo "== validate-all: ui-ux-pro-max smoke =="
 bash "$ROOT/scripts/validate-ui-ux-pro-max.sh"
+
+echo ""
+echo "== validate-all: cyber-neo smoke =="
+bash "$ROOT/scripts/smoke-cyber-neo.sh"

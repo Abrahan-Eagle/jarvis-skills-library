@@ -65,6 +65,7 @@ test -d "${ECC_HOME:-$HOME/ecc}" && echo ECC_HOME
 | Descubrir componente ECC | `ecc consult "<query>"` | Buscar 268 skills manualmente |
 | Wizard install ECC | `configure-ecc` o `install-ecc-runtime.sh` | Plugin + full profile duplicado |
 | Spec Kit / feature producto | `sdd-router`, `speckit-*` | ECC domain skills por defecto |
+| Auditoría 11 dominios + reporte (no ECC) | `cyber-neo-router` → `cyber-neo` | sustituir `security` checklist |
 | AgentShield scan configs | `ecc doctor` / npm `ecc-agentshield` | — |
 
 ## Flujo recomendado

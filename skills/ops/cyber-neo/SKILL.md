@@ -6,7 +6,7 @@ description: >
 license: MIT
 metadata:
   author: JARVIS Global
-  version: "1.0"
+  version: "1.1"
   scope: [global]
   category: ops
   upstream: cyber-neo:cyber-neo
@@ -26,7 +26,7 @@ allowed-tools: [Read, Grep, Glob, Bash, Write]
 ## JARVIS / Cursor (mandatory)
 
 - **No slash command:** En Cursor no existe `/cyber-neo`. Invocar skill `cyber-neo` o pedir "auditoría cyber-neo / security audit" del path del proyecto.
-- **Subagentes:** Sustituir tool `Agent` por **Task** (`subagent_type: generalPurpose` o `explore`, `readonly: true`). Máximo 5 tareas paralelas para fases SCA/SAST/secrets/config/supply-chain.
+- **Subagentes:** Sustituir tool **Task** (Cursor) por **Task** (`subagent_type: generalPurpose` o `explore`, `readonly: true`). Máximo 5 tareas paralelas para fases SCA/SAST/secrets/config/supply-chain.
 - **Read-only:** No modificar el target; solo reporte MD (IRON LAW upstream).
 - **Reporte alternativo:** Si el usuario pide, guardar en `{TARGET}/docs/security/cyber-neo-report-{YYYY-MM-DD}.md` en lugar de Desktop.
 - **PHP/Laravel:** Sin `lang-php.md` en v0.1; usar recon `composer.json`, patrones genéricos, `cyber-neo lockfiles`, `security` para fixes Laravel.
@@ -57,8 +57,8 @@ If you feel tempted to "fix" something in the target project, STOP. Your job is 
 
 ## TARGET RESOLUTION
 
-1. If `$ARGUMENTS` contains a path, use it as the target project root
-2. If `$ARGUMENTS` is empty, ask the user: "Which project would you like me to scan? Please provide the path."
+1. If the user message contains a project path, use it as the target project root
+2. If no path was given in the user message, ask the user: "Which project would you like me to scan? Please provide the path."
 3. Validate the path exists and is a directory
 4. Store the resolved absolute path as `TARGET_DIR` for all subsequent operations
 
@@ -118,11 +118,11 @@ Apply scanning tiers:
 
 ### Step 1.3: Load Reference Files and Resolve Paths
 
-**IMPORTANT:** Read the reference files NOW and store their contents. You will inject the relevant contents into each subagent prompt in Phases 2–6, because subagents cannot access `${CLAUDE_SKILL_DIR}` paths.
+**IMPORTANT:** Read the reference files NOW and store their contents. You will inject the relevant contents into each subagent prompt in Phases 2–6, because subagents cannot access `CYBER_NEO_SKILL_DIR` paths.
 
-Also resolve `${CLAUDE_SKILL_DIR}` to its absolute path NOW and store it. Use this absolute path when constructing script commands for subagents (e.g., `python3 /absolute/path/to/scripts/scan_secrets.py`).
+Also resolve `CYBER_NEO_SKILL_DIR` to its absolute path NOW and store it. Use this absolute path when constructing script commands for subagents (e.g., `python3 /absolute/path/to/scripts/scan_secrets.py`).
 
-Based on detected stack, read the appropriate reference files from `${CLAUDE_SKILL_DIR}/references/`:
+Based on detected stack, read the appropriate reference files from `CYBER_NEO_SKILL_DIR/references/`:
 
 - **Always load:** `owasp-top-10.md`, `cwe-top-25.md`, `report-template.md`
 - **If JavaScript/TypeScript detected:** `lang-javascript.md`
@@ -156,7 +156,7 @@ After Phase 1 completes, launch **5 parallel subagents** using the Task tool (Cu
 
 **IMPORTANT:** Each subagent must follow the READ-ONLY constraint. Pass this explicitly in every subagent prompt.
 
-**IMPORTANT:** Subagents do NOT have access to `${CLAUDE_SKILL_DIR}`. When constructing subagent prompts:
+**IMPORTANT:** Subagents do NOT have access to `CYBER_NEO_SKILL_DIR`. When constructing subagent prompts:
 1. Use the **absolute path** to scripts (resolved in Step 1.3)
 2. **Embed the contents** of relevant reference files directly into the subagent prompt
 3. Pass the reconnaissance results (detected stack, scope tier, available tools) as context
@@ -214,6 +214,11 @@ If no findings in a phase, the subagent must return: "No findings. Checked: [lis
 >    `pip-audit -r {TARGET_DIR}/requirements.txt --format json 2>/dev/null`
 >
 > 5. If cargo-audit is available and Cargo.lock exists:
+> 7. If composer.json exists and `composer` is available:
+>    `cd {TARGET_DIR} && composer audit --format=json 2>/dev/null`
+>    (read-only — does NOT modify vendor or lock files)
+>
+
 >    `cd {TARGET_DIR} && cargo audit --json 2>/dev/null`
 >
 > 6. If NO tools are available, report:
@@ -493,7 +498,7 @@ Risk Score = min(100, (critical × 25) + (high × 10) + (medium × 3) + (low × 
 
 ### Step 7.5: Generate Report
 
-Read the report template from `${CLAUDE_SKILL_DIR}/references/report-template.md` and generate the full report following that format exactly.
+Read the report template from `CYBER_NEO_SKILL_DIR/references/report-template.md` and generate the full report following that format exactly.
 
 The report MUST include:
 1. **Executive Summary** — risk score, severity counts, top 3 priority actions

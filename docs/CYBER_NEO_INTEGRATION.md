@@ -77,13 +77,23 @@ bash scripts/install-cyber-neo-upstream.sh
 
 ### CLI (scripts Python)
 
+El bin **no** se instala en PATH global. Usar path completo o symlink local:
+
 ```bash
-cyber-neo status
-cyber-neo secrets /path/to/project
-cyber-neo lockfiles /path/to/project
+# Desde jarvis-skills-library (desarrollo)
+bash skills/non-code/cyber-neo/bin/cyber-neo status
+bash skills/non-code/cyber-neo/bin/cyber-neo secrets /path/to/project
+bash skills/non-code/cyber-neo/bin/cyber-neo lockfiles /path/to/project
+
+# Tras install.sh --all
+~/.cursor/skills/cyber-neo-cli/bin/cyber-neo status
 ```
 
-Requiere `python3`. El bin resuelve `CYBER_NEO_HOME` desde `~/.cursor/skills/cyber-neo` o library.
+Requiere `python3`. Scripts Python viven en `~/.cursor/skills/cyber-neo/scripts/` (skill `cyber-neo`).
+
+**Secretos en `.env` local:** `scan_secrets.py` **no** excluye `.env` por defecto. En desarrollo local es normal ver Critical/High (APP_KEY, API keys). Para pre-commit: `python3 .../scan_secrets.py --staged-only`. Interpretar hallazgos en `.env` como exposición local, no siempre bug de producción.
+
+**Laravel SCA:** con `composer` en PATH, Fase 2 incluye `composer audit --format=json` (read-only) si existe `composer.json`.
 
 ## Herramientas opcionales (upstream)
 
@@ -94,7 +104,7 @@ Si están instaladas, el skill las usa; si no, degrada a análisis nativo + scri
 | semgrep | SAST |
 | trivy | SCA / containers |
 | gitleaks | Secretos |
-| npm audit / pip-audit / cargo audit | Dependencias |
+| npm audit / pip-audit / cargo audit / composer audit | Dependencias |
 
 ## Limitaciones
 
@@ -111,3 +121,8 @@ Si están instaladas, el skill las usa; si no, degrada a análisis nativo + scri
 | `sync-cyber-neo-skill.sh` | Clone pin + rsync + patch |
 | `patch-cyber-neo-skill.py` | Frontmatter JARVIS + overlay Cursor |
 | `install-cyber-neo-upstream.sh` | Clone `~/cyber-neo` |
+| `smoke-cyber-neo.sh` | Smoke fixture + checks SKILL patched |
+
+## Producto repos
+
+Por defecto **no** modificar `AGENTS.md` ni versionar auditorías en repos de producto. Integración canónica solo en este library + `install.sh --all`.

@@ -91,3 +91,52 @@ Contenido sync:
 | Sync upstream curado | `sync-cyber-neo-skill.sh` (skill completo, no índice masivo) |
 | Bin wrapper | `cyber-neo` bin (como `ecc`) |
 | Doc integración + forense | `CYBER_NEO_INTEGRATION.md`, este archivo |
+
+---
+
+## Re-análisis 2026-06-18 (post-integración `a8ccbab`)
+
+**Commit integración:** `a8ccbab` — `cyber-neo-router`, `cyber-neo`, `cyber-neo-cli`, sync scripts, docs.  
+**Upstream pin:** `9a8998a33534bca16c619f4956dd1935dc404620` — **sin drift** (HEAD main = pin al 2026-06-18).
+
+### Gaps detectados tras integración inicial
+
+| ID | Gap | Impacto | Remedio (library) |
+|----|-----|---------|-------------------|
+| G1 | `${CLAUDE_SKILL_DIR}` en body del skill | Cursor no resuelve variable Claude Code | `patch-cyber-neo-skill.py` → `CYBER_NEO_SKILL_DIR` |
+| G2 | `$ARGUMENTS` para target | Sin slash `/cyber-neo` en Cursor | Patch → path en mensaje del usuario |
+| G3 | SCA PHP sin `composer audit` en Fase 2 | Laravel API con SCA débil | Patch overlay + inyección Fase 2 |
+| G4 | Bin `cyber-neo` no en PATH | Usuario debe path completo al bin | Doc + `smoke-cyber-neo.sh` |
+| G5 | `scan_secrets.py` escanea `.env` local | Hallazgos Critical/High esperados en dev | Doc: `--staged-only`, interpretación humana |
+| G6 | Sin `SKILL-OC.md` | Warn OpenClaw en validate | Opcional / baja prioridad |
+
+### Matriz ampliada vs JARVIS / ECC
+
+| Necesidad | Canónico JARVIS | Cyber Neo | ECC (si instalado en repo) |
+|-----------|-----------------|-----------|----------------------------|
+| Checklist al codificar | `security` | No | `security-review-ecc` |
+| Review PR | `code-review-playbook` | No | agent `security-reviewer` |
+| Auditoría 11 dominios + reporte | — | **`cyber-neo`** | — |
+| Laravel patterns profundos | `laravel-specialist` + `security` | Parcial (genérico SAST) | skill `laravel-security` |
+| Scan dependencias (npm) | — | Fase 2 | `security-scan` |
+| Secretos rápidos CLI | — | `cyber-neo secrets` | — |
+| Harness hooks / consult | — | — | `ecc-router`, `ecc consult` |
+
+**Combinación Laravel API:** `cyber-neo` (reporte) → priorizar Critical/High → `security` + TDD → opcional `ecc consult "laravel security"` o agent `laravel-security` si ECC runtime en el repo.
+
+### Cobertura por stack (JARVIS típico)
+
+| Stack | Cyber Neo cubre | No cubre / débil | Complemento JARVIS |
+|-------|-----------------|------------------|-------------------|
+| Laravel API (`composer.json`) | Secretos, lockfiles, CI/Docker, auth genérico, `composer audit` (patch) | `lang-php.md`, Blade/Eloquent profundo | `security`, `laravel-specialist`, ECC `laravel-security` |
+| Flutter mobile (`pubspec.yaml`) | Secretos, CI, patrones genéricos | Sin `lang-dart.md` | `security`, `flutter-expert` |
+| Monorepo API + mobile | Ambos roots o scan por carpeta | Un solo reporte mezclado si path raíz ambiguo | Escanear backend y front por separado |
+
+### Remedios aplicados en re-análisis
+
+| Artefacto | Cambio |
+|-----------|--------|
+| `patch-cyber-neo-skill.py` | `CYBER_NEO_SKILL_DIR`, `$ARGUMENTS`, composer SCA, Flutter note |
+| `smoke-cyber-neo.sh` | Fixture local + checks SKILL patched |
+| `CYBER_NEO_INTEGRATION.md` | CLI path, `.env`, `composer audit` |
+| `cyber-neo-router` / `ecc-router` | Cruce Laravel + auditoría completa |
