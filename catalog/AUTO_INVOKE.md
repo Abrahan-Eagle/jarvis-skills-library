@@ -6,6 +6,7 @@
 |--------|----------|
 | Análisis coherencia Spec Kit pre-implement | `speckit-analyze` |
 | Bugfix con Spec Kit | `speckit-lifecycle-router` |
+| Carrusel RRSS o post social | `open-design-router` |
 | Cerrar gaps post-implement Spec Kit | `speckit-converge` |
 | Checklist calidad spec/plan Spec Kit | `speckit-checklist` |
 | Comando git destructivo | `git-guardrails-ops` |
@@ -17,12 +18,16 @@
 | Cualquier tarea no trivial | `jarvis-experts` |
 | Decidir flujo planificación | `sdd-router` |
 | Decisión cross-rol | `jarvis-experts` |
+| Deck o presentacion visual | `open-design-router` |
 | Definir alcance de un módulo | `jarvis-experts` |
 | Deprecar feature | `speckit-lifecycle-router` |
 | Descomponer plan Spec Kit en tareas | `speckit-tasks` |
 | Diseñar UI o UX | `ui-router`, `ui-ux-pro-max` |
+| Email marketing HTML | `open-design-router` |
 | Encontrar bug o test fallido | `systematic-debugging` |
 | Establecer principios SDD en proyecto | `speckit-constitution` |
+| Generar assets visuales marketing | `open-design-router` |
+| Generar con Open Design | `open-design` |
 | Governance standalone fuera de misión | `kitty-governance` |
 | Hacer git push o merge | `git-guardrails-ops` |
 | Hotfix producción | `speckit-lifecycle-router` |
@@ -40,6 +45,7 @@
 | Paleta de colores o tipografía | `ui-router`, `ui-ux-pro-max` |
 | Plan técnico Spec Kit | `speckit-plan` |
 | Planificar desarrollo | `brainstorming-ops`, `jarvis-core`, `writing-plans` |
+| Prototipo landing sin codigo en repo | `open-design-router` |
 | Qué toolkit SD-X usar | `sdd-x-index` |
 | Refactor con spec | `speckit-lifecycle-router` |
 | Requisitos ambiguos | `deep-interview-ops` |
@@ -51,4 +57,5 @@
 | Spec-driven fluido brownfield | `openspec-router` |
 | Terminar módulo | `finishing-a-development-branch`, `jarvis-core`, `session-learner-ops`, `verification-before-completion` |
 | Work packages o kanban SDD | `kitty-router` |
+| open-design generate | `open-design` |
 | spec-kitty dispatch | `kitty-governance` |

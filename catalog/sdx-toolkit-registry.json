@@ -60,6 +60,17 @@
       }
     },
     {
+      "id": "open-design",
+      "name": "Open Design (nexu-io)",
+      "repo": "https://github.com/nexu-io/open-design",
+      "pin": "0.10.0",
+      "sdx": ["SD-Design"],
+      "jarvis": {
+        "skills": ["open-design-router", "open-design"],
+        "install": "scripts/install-open-design-runtime.sh"
+      }
+    },
+    {
       "id": "marketing-spec-kit",
       "name": "Marketing Spec Kit",
       "repo": "https://github.com/ACNet-AI/marketing-spec-kit",

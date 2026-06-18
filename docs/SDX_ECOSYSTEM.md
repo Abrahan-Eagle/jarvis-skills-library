@@ -12,7 +12,7 @@ JARVIS **no** usa MetaSpec CLI para distribuir skills; usa `jarvis-skills-librar
 | Development (`.kittify/`) | Spec Kitty CLI, `kitty-governance` | `kitty-router` |
 | Development (`openspec/`) | OpenSpec OPSX | `openspec-router` |
 | Maintenance (`.specify/`) | bugfix, hotfix, refactor, modify, deprecate | `speckit-lifecycle-router` |
-| Design | `ui-ux-pro-max`, dominio UI | `ui-router` |
+| Design | `ui-ux-pro-max`, dominio UI, `open-design-router` | `ui-router` |
 | API (sin speckit dedicado) | `api-design-principles` | — |
 | Documentation | `documentar-avances`, `context-updater` | — (no Spec Kit) |
 | Test | `test-driven-development`, `verification-before-completion` | — |
@@ -29,6 +29,7 @@ Ver [`catalog/SDX_TOOLKITS.md`](catalog/SDX_TOOLKITS.md) (generado desde `catalo
 |---------|-----|------|
 | GitHub Spec Kit | v0.11.2 | `bash scripts/sync-spec-kit-skills.sh` |
 | UI UX Pro Max | v2.5.0 | `bash scripts/sync-ui-ux-pro-max.sh` |
+| Open Design (watchlist) | 0.10.0 | `bash scripts/install-open-design-runtime.sh` |
 | Spec Kitty | v3.2.1 | `pipx install spec-kitty-cli` + `spec-kitty init` en repo producto |
 | OpenSpec (watchlist) | 0.16.0 | `npm i -g @fission-ai/openspec` + `openspec init` en repo producto |
 
@@ -68,6 +69,7 @@ Usar skills de dominio del producto, no `speckit-*`.
 - [SPEC_KIT_EXTENSIONS.md](SPEC_KIT_EXTENSIONS.md) — bugfix, hotfix, refactor, modify, deprecate
 - [SPEC_KITTY_INTEGRATION.md](SPEC_KITTY_INTEGRATION.md) — misiones, worktrees, review/merge
 - [UI_UX_PRO_MAX_INTEGRATION.md](UI_UX_PRO_MAX_INTEGRATION.md) — design system, overlays
+- [OPEN_DESIGN_INTEGRATION.md](OPEN_DESIGN_INTEGRATION.md) — carrusel, deck, email HTML (Open Design)
 - [AWESOME_SPEC_KITS.md](AWESOME_SPEC_KITS.md) — índice acnlabs + watchlist + OpenSpec
 - [awesome-spec-kits](https://github.com/acnlabs/awesome-spec-kits) — catálogo upstream
 - [MetaSpec](https://mataspec.figma.site/spec-kits) — framework opcional (no usado por JARVIS hoy)

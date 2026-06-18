@@ -67,6 +67,12 @@ python3 "$UI_UX_SKILL_ROOT/scripts/search.py" "<query>" \
 
 Crea `design-system/MASTER.md` y overrides por página en el repo activo.
 
+## Cuándo usar Open Design (no ui-ux-pro-max)
+
+Para **entregables visuales standalone** (carrusel RRSS, deck PPTX, email HTML, prototipo sin tocar `lib/`), usar `open-design-router` → skill `open-design` — ver [OPEN_DESIGN_INTEGRATION.md](OPEN_DESIGN_INTEGRATION.md).
+
+`ui-ux-pro-max` sigue siendo la herramienta para **tokens, patrones y checklist** al implementar UI en código (Flutter, Blade).
+
 ## Validación
 
 ```bash

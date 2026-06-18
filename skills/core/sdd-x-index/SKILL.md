@@ -20,7 +20,7 @@ metadata:
     - openspec-router
     - speckit-lifecycle-router
     - ui-router
-    - jarvis-core
+    - open-design-router
     - jarvis-skills-maintainer
 allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 ---
@@ -39,7 +39,8 @@ Guía completa: [docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md). Catálogo 
 | **SD-Maintenance** (`.specify/`) | Bugfix, hotfix, refactor, modify, deprecate | `speckit-lifecycle-router` — ver [SPEC_KIT_EXTENSIONS.md](../../docs/SPEC_KIT_EXTENSIONS.md) |
 | **SD-Development** (`.kittify/`) | Misiones Spec Kitty, work packages | `kitty-router` → CLI + `kitty-governance` |
 | **SD-Development** (`openspec/`) | Cambios fluidos, brownfield | `openspec-router` → OPSX propose/apply/archive |
-| **SD-Design** | Pantallas, landing, UI | `ui-router` → dominio UI → `ui-ux-pro-max` |
+| **SD-Design** (código en repo) | Pantallas, landing en Flutter/Blade | `ui-router` → dominio UI → `ui-ux-pro-max` |
+| **SD-Design** (artefactos agentic) | Carrusel, deck, email HTML, prototipo standalone | `open-design-router` → `open-design` — [OPEN_DESIGN_INTEGRATION.md](../../docs/OPEN_DESIGN_INTEGRATION.md) |
 | **SD-Documentation** | Cierre módulo, AGENTS, walkthrough | `documentar-avances`, `context-updater` |
 | **SD-Test** | Implementación y cierre | `test-driven-development`, `verification-before-completion` |
 | **SD-Validate** | Pre-implement, gates | `speckit-analyze`, `speckit-checklist` |
@@ -67,7 +68,8 @@ test -d kitty-specs && echo "HAS_KITTY_SPECS"
 | Hotfix producción | `speckit-lifecycle-router` (hotfix) |
 | Refactor / modify / deprecate | `speckit-lifecycle-router` |
 | 2+ marcadores SDD | **STOP** — usuario elige canónico |
-| Solo UI/landing | `ui-router` |
+| Solo UI/landing en código | `ui-router` |
+| Carrusel, deck, email marketing (standalone) | `open-design-router` |
 | Pack inversor / Lanzamiento | Dominio docs — **no** SD-X dev |
 | No sabes qué rama SD-X | **Esta skill** |
 
@@ -79,6 +81,7 @@ test -d kitty-specs && echo "HAS_KITTY_SPECS"
 | [ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) v2.5.0 | Design | `scripts/sync-ui-ux-pro-max.sh` |
 | [Spec Kitty](https://github.com/Priivacy-ai/spec-kitty) v3.2.1 | Development, Validate, Config | `pipx` + `spec-kitty init` en producto |
 | [Spec Kit Extensions](https://github.com/MartyBonacci/spec-kit-extensions) | Maintenance (bugfix, etc.) | `speckit-lifecycle-router` + install en producto |
+| [Open Design](https://github.com/nexu-io/open-design) 0.10.0 | Design (artefactos agentic) | `open-design-router`, `open-design` — `scripts/install-open-design-runtime.sh` |
 
 ## Spec Kit: feature nueva vs lifecycle
 

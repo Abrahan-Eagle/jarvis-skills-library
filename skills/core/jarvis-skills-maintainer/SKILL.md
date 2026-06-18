@@ -75,6 +75,16 @@ bash scripts/install-spec-kit-extensions.sh --target /path/to/product-repo
 
 Manual: [docs/SPEC_KIT_EXTENSIONS.md](../docs/SPEC_KIT_EXTENSIONS.md). Entrada en `watchlist` de `sdx-toolkit-registry.json`.
 
+## Open Design (artefactos agentic)
+
+Fábrica visual [nexu-io/open-design](https://github.com/nexu-io/open-design) — skills `open-design-router` + `open-design` (bin HTTP).
+
+```bash
+bash scripts/install-open-design-runtime.sh
+```
+
+Doc: [docs/OPEN_DESIGN_INTEGRATION.md](../docs/OPEN_DESIGN_INTEGRATION.md). Watchlist `sdx-toolkit-registry.json`. OpenClaw: stack en clawvis (no duplicar).
+
 ## OpenSpec (watchlist awesome-spec-kits)
 
 No sincronizar slash commands al global — `openspec init` los instala en el repo producto.
@@ -132,5 +142,6 @@ bash scripts/install.sh --dry-run # preview
 - [docs/SDD_SPECKIT_INTEGRATION.md](../docs/SDD_SPECKIT_INTEGRATION.md)
 - [docs/SPEC_KITTY_INTEGRATION.md](../docs/SPEC_KITTY_INTEGRATION.md)
 - [docs/SPEC_KIT_EXTENSIONS.md](../docs/SPEC_KIT_EXTENSIONS.md)
+- [docs/OPEN_DESIGN_INTEGRATION.md](../docs/OPEN_DESIGN_INTEGRATION.md)
 - [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md)
 - [docs/SDX_ECOSYSTEM.md](../docs/SDX_ECOSYSTEM.md)

@@ -1,0 +1,288 @@
+#!/usr/bin/env bash
+# open-design — puente HTTP al daemon Open Design (JARVIS global)
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+open-design <command> [options]
+
+Comandos:
+  status              Comprobar salud del daemon OD
+  skills              Listar skills disponibles (JSON resumido)
+  design-systems      Listar design systems (JSON resumido)
+  agents              Listar motores CLI detectados
+  create-project      Crear proyecto OD
+  generate            Crear proyecto (opcional) y lanzar run de diseno
+  poll-run            Esperar a que un run termine
+  files               Listar archivos de un proyecto
+  fetch               Descargar un archivo del proyecto al disco local
+  export-artifacts    Copiar todos los artefactos del proyecto a --out
+  help
+
+Variables:
+  OD_DAEMON_URL       default http://127.0.0.1:17456
+  OD_WEB_URL          default http://127.0.0.1:7456 (UI)
+  OD_API_TOKEN        Bearer token (requerido si daemon exige auth)
+  OPEN_DESIGN_HOME    default $HOME/open-design
+  JARVIS_OUT_DIR      default ./out/open-design
+
+Ejemplos:
+  open-design status
+  open-design generate --prompt "Post IG carrusel 3 slides" \
+    --skill social-carousel --design-system vercel --agent cursor-agent \
+    --out ./out/carousel/
+EOF
+}
+
+OPEN_DESIGN_HOME="${OPEN_DESIGN_HOME:-$HOME/open-design}"
+OD_DAEMON_URL="${OD_DAEMON_URL:-http://127.0.0.1:17456}"
+OD_WEB_URL="${OD_WEB_URL:-http://127.0.0.1:7456}"
+OD_API_TOKEN="${OD_API_TOKEN:-}"
+OUT_DIR="${JARVIS_OUT_DIR:-./out/open-design}"
+
+if [ -z "$OD_API_TOKEN" ] && [ -f "$OPEN_DESIGN_HOME/deploy/.env" ]; then
+  OD_API_TOKEN=$(grep -E '^OD_API_TOKEN=' "$OPEN_DESIGN_HOME/deploy/.env" | cut -d= -f2- || true)
+fi
+
+auth_args=()
+if [ -n "$OD_API_TOKEN" ]; then
+  auth_args=(-H "Authorization: Bearer $OD_API_TOKEN")
+fi
+
+api() {
+  local method=$1 path=$2
+  shift 2
+  curl -sS -X "$method" "$OD_DAEMON_URL$path" \
+    "${auth_args[@]}" \
+    -H "Content-Type: application/json" \
+    "$@"
+}
+
+slugify() {
+  echo "$1" | tr '[:upper:]' '[:lower:]' | tr -cs 'a-z0-9._-' '-' | sed 's/^-//;s/-$//' | cut -c1-64
+}
+
+cmd_status() {
+  local code
+  code=$(curl -sS -o /dev/null -w "%{http_code}" "$OD_DAEMON_URL/api/health" "${auth_args[@]}" 2>/dev/null || echo 000)
+  echo "daemon=$OD_DAEMON_URL health=$code web=$OD_WEB_URL home=$OPEN_DESIGN_HOME"
+  [ "$code" = "200" ]
+}
+
+cmd_skills() {
+  local raw
+  raw=$(api GET /api/skills)
+  echo "$raw" | python3 -c "
+import json,sys
+d=json.load(sys.stdin)
+items=d.get('skills', d if isinstance(d,list) else [])
+for s in items[:30]:
+    print(f\"{s.get('id','?'):24} {s.get('mode','?'):10} {s.get('scenario','?')}\")
+print(f'... total={len(items)}')
+"
+}
+
+cmd_design_systems() {
+  local raw
+  raw=$(api GET /api/design-systems)
+  echo "$raw" | python3 -c "
+import json,sys
+d=json.load(sys.stdin)
+items=d.get('designSystems', d if isinstance(d,list) else [])
+for s in items[:20]:
+    print(s.get('id','?'))
+print(f'... total={len(items)}')
+"
+}
+
+cmd_agents() {
+  local raw
+  raw=$(api GET /api/agents)
+  echo "$raw" | python3 -c "
+import json,sys
+d=json.load(sys.stdin)
+for a in d.get('agents',[]):
+    print(f\"{a.get('id'):16} available={a.get('available')} bin={a.get('bin')}\")
+"
+}
+
+cmd_create_project() {
+  local id="" name="" skill="" ds="default"
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --id) id=$2; shift 2;;
+      --name) name=$2; shift 2;;
+      --skill) skill=$2; shift 2;;
+      --design-system) ds=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$name" ] || { echo "--name requerido" >&2; exit 2; }
+  [ -n "$id" ] || id="jarvis-$(slugify "$name")-$(date +%s | tail -c 6)"
+  local body
+  body=$(python3 - <<PY
+import json
+print(json.dumps({
+  "id": "$id",
+  "name": """$name""",
+  "skillId": """$skill""" or None,
+  "designSystemId": "$ds",
+  "skipDiscoveryBrief": True,
+  "metadata": {"skipDiscoveryBrief": True}
+}))
+PY
+)
+  api POST /api/projects -d "$body"
+}
+
+cmd_poll_run() {
+  local run_id="" timeout=600 interval=5
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --run-id) run_id=$2; shift 2;;
+      --timeout) timeout=$2; shift 2;;
+      --interval) interval=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$run_id" ] || { echo "--run-id requerido" >&2; exit 2; }
+  local elapsed=0 status=""
+  while [ "$elapsed" -lt "$timeout" ]; do
+    status=$(api GET "/api/runs/$run_id" | python3 -c "import sys,json; print(json.load(sys.stdin).get('status',''))")
+    echo "status=$status elapsed=${elapsed}s"
+    case "$status" in
+      succeeded|failed|canceled) api GET "/api/runs/$run_id"; return 0;;
+    esac
+    sleep "$interval"
+    elapsed=$((elapsed + interval))
+  done
+  echo "timeout esperando run $run_id" >&2
+  return 3
+}
+
+cmd_files() {
+  local project=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --project) project=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$project" ] || { echo "--project requerido" >&2; exit 2; }
+  api GET "/api/projects/$project/files"
+}
+
+cmd_fetch() {
+  local project="" file="" out=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --project) project=$2; shift 2;;
+      --file) file=$2; shift 2;;
+      --out) out=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$project" ] && [ -n "$file" ] && [ -n "$out" ] || { echo "--project --file --out requeridos" >&2; exit 2; }
+  mkdir -p "$(dirname "$out")"
+  curl -sS "$OD_DAEMON_URL/api/projects/$project/files/$(python3 -c "import urllib.parse; print(urllib.parse.quote('$file'))")" \
+    "${auth_args[@]}" -o "$out"
+  echo "$out"
+}
+
+cmd_export_artifacts() {
+  local project="" out_dir=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --project) project=$2; shift 2;;
+      --out) out_dir=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$project" ] && [ -n "$out_dir" ] || { echo "--project --out requeridos" >&2; exit 2; }
+  mkdir -p "$out_dir"
+  mapfile -t names < <(api GET "/api/projects/$project/files" | python3 -c "
+import json,sys
+d=json.load(sys.stdin)
+for f in d.get('files',[]):
+    if f.get('type')=='file':
+        print(f.get('name',''))
+")
+  for n in "${names[@]}"; do
+    [ -n "$n" ] || continue
+    safe=$(basename "$n")
+    cmd_fetch --project "$project" --file "$n" --out "$out_dir/$safe"
+  done
+  echo "$out_dir"
+}
+
+cmd_generate() {
+  local prompt="" skill="" ds="default" agent="" project="" name="" out="" timeout=900
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --prompt) prompt=$2; shift 2;;
+      --skill) skill=$2; shift 2;;
+      --design-system) ds=$2; shift 2;;
+      --agent) agent=$2; shift 2;;
+      --project) project=$2; shift 2;;
+      --name) name=$2; shift 2;;
+      --out) out=$2; shift 2;;
+      --timeout) timeout=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$prompt" ] || { echo "--prompt requerido" >&2; exit 2; }
+
+  if [ -z "$project" ]; then
+    [ -n "$name" ] || name="jarvis-$(date +%Y%m%d-%H%M%S)"
+    project=$(slugify "$name")
+    local created
+    created=$(cmd_create_project --id "$project" --name "$name" --skill "$skill" --design-system "$ds")
+    echo "$created" | python3 -m json.tool 2>/dev/null || echo "$created"
+  fi
+
+  local body
+  body=$(python3 - <<PY
+import json
+print(json.dumps({
+  "projectId": "$project",
+  "message": """$prompt""",
+  "skipDiscoveryBrief": True,
+  **({"agentId": "$agent"} if "$agent" else {}),
+}))
+PY
+)
+
+  local run_resp run_id
+  run_resp=$(api POST /api/runs -d "$body")
+  echo "$run_resp" | python3 -m json.tool 2>/dev/null || echo "$run_resp"
+  run_id=$(echo "$run_resp" | python3 -c "import sys,json; print(json.load(sys.stdin).get('runId',''))")
+  [ -n "$run_id" ] || { echo "no runId en respuesta" >&2; exit 4; }
+
+  cmd_poll_run --run-id "$run_id" --timeout "$timeout"
+
+  local export_dir="${out:-$OUT_DIR/$project}"
+  mkdir -p "$export_dir"
+  cmd_export_artifacts --project "$project" --out "$export_dir"
+  echo "project=$project run=$run_id artifacts=$export_dir preview=$OD_WEB_URL"
+}
+
+main() {
+  local cmd=${1:-help}
+  shift || true
+  case "$cmd" in
+    status) cmd_status "$@";;
+    skills) cmd_skills "$@";;
+    design-systems) cmd_design_systems "$@";;
+    agents) cmd_agents "$@";;
+    create-project) cmd_create_project "$@";;
+    generate) cmd_generate "$@";;
+    poll-run) cmd_poll_run "$@";;
+    files) cmd_files "$@";;
+    fetch) cmd_fetch "$@";;
+    export-artifacts) cmd_export_artifacts "$@";;
+    help|-h|--help) usage;;
+    *) usage; exit 2;;
+  esac
+}
+
+main "$@"

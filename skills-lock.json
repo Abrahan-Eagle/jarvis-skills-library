@@ -47,7 +47,7 @@
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "4ac33513ba24cf694518cde6c85912a5a2c0c034dd10f3c23a554509c5607368",
+      "computedHash": "76c4d6ef95a2d8d77c63d93bb4245f35f35a9cf2340880f16734829f899a8ff4",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
@@ -59,7 +59,7 @@
     "jarvis-skills-maintainer": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "eb78c49e5c0c68d2157ac16a1a37c3cf52e3a8f9443db710cf9d856039d390c4",
+      "computedHash": "5eaa6deea48e88c54694193d3905ccfa99b3b32d5cdcd049c898b954ed9236de",
       "path": "skills/core/jarvis-skills-maintainer/SKILL.md"
     },
     "kitty-router": {
@@ -83,7 +83,7 @@
     "sdd-x-index": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "78aa3822c0cc6f6b6791f5e5f17233db521ec7709b869310c4a053beb04f14f9",
+      "computedHash": "e866684f57bbe31007768d333ba94d8b30f3dea2845a764f673371f78d62eb3b",
       "path": "skills/core/sdd-x-index/SKILL.md"
     },
     "task-pipeline-ops": {
@@ -95,7 +95,7 @@
     "ui-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "d4b3f559d5abce6cb1c575e77397c21f9b2255ab275d5ae1b1863c59820e6f2d",
+      "computedHash": "655eaa0fdbe32e04f003a3e5f4640f226e7d80124c5b4ce235e982889d1bd4c5",
       "path": "skills/core/ui-router/SKILL.md"
     },
     "clean-architecture": {
@@ -200,6 +200,12 @@
       "sourceType": "local",
       "computedHash": "dfd0d4e3979aaced348b89b9493d52cdf5a7618235b7f4dc98aeba48a7cfc6be",
       "path": "skills/non-code/client-report/SKILL.md"
+    },
+    "open-design": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "b04ab1d4e4b723eeb42a76e7bed87141cc8eacf5ba726ed4087ca11962d9007b",
+      "path": "skills/non-code/open-design/SKILL.md"
     },
     "publish-safety": {
       "source": "jarvis-skills-library",
@@ -395,6 +401,12 @@
       "computedHash": "4319ac34e3a42128a43c1e3caf148df0c32c2da9db69b4f82d7597c02a2bd730",
       "path": "skills/sdd/speckit-taskstoissues/SKILL.md",
       "upstream": "github/spec-kit:templates/commands/taskstoissues.md"
+    },
+    "open-design-router": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "b7c244430ef3bd015ba7d62473c49920a2455f646aa0e5a743a7afe4a36040f3",
+      "path": "skills/ui/open-design-router/SKILL.md"
     },
     "ui-ux-pro-max": {
       "source": "nextlevelbuilder/ui-ux-pro-max-skill",

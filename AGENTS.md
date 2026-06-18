@@ -35,7 +35,7 @@ python3 skills/engineering/skill-creator/scripts/init_skill.py <name> --path ski
 
 ## Spec-Driven Development
 
-Ver [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md), [docs/SPEC_KIT_EXTENSIONS.md](docs/SPEC_KIT_EXTENSIONS.md), [docs/AWESOME_SPEC_KITS.md](docs/AWESOME_SPEC_KITS.md) y skills `sdd-router`, `kitty-router`, `openspec-router`, `speckit-lifecycle-router`.
+Ver [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md), [docs/SPEC_KIT_EXTENSIONS.md](docs/SPEC_KIT_EXTENSIONS.md), [docs/OPEN_DESIGN_INTEGRATION.md](docs/OPEN_DESIGN_INTEGRATION.md), [docs/AWESOME_SPEC_KITS.md](docs/AWESOME_SPEC_KITS.md) y skills `sdd-router`, `kitty-router`, `openspec-router`, `speckit-lifecycle-router`, `open-design-router`.
 
 ## Precedencia operativa
 
@@ -53,7 +53,8 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 | Planificar | `writing-plans`, `executing-plans` o `speckit-plan` |
 | Implementar Spec Kit | `speckit-implement` (solo OK usuario) + dominio producto |
 | Tasks → GitHub Issues | `speckit-taskstoissues` (opcional, OK usuario + remote GitHub) |
-| Diseñar UI/UX (secundaria a dominio) | `ui-ux-pro-max` + `corralx-ui-design` / `zonix-ui-design` |
+| Diseñar UI/UX (código en repo) | `ui-router` + dominio + `ui-ux-pro-max` |
+| Carrusel, deck, email HTML (standalone) | `open-design-router`, `open-design` |
 | Debug | `systematic-debugging` |
 | Commit | `verification-before-completion`, `git-commit` |
 | Push/merge | `git-guardrails-ops` (solo con orden explícita del usuario) |

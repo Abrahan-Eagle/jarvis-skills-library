@@ -2,7 +2,7 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-18
 
-Total: **64** skills
+Total: **66** skills
 
 ## Resumen por categoría
 
@@ -13,12 +13,12 @@ Total: **64** skills
 | `engineering` | 7 |
 | `git` | 3 |
 | `mobile` | 4 |
-| `non-code` | 4 |
+| `non-code` | 5 |
 | `ops` | 9 |
 | `planning` | 3 |
 | `review` | 5 |
 | `sdd` | 12 |
-| `ui` | 1 |
+| `ui` | 2 |
 
 ## backend
 
@@ -82,6 +82,7 @@ Total: **64** skills
 | `activity-log` | Log unificado de actividad de agentes (state/activity-log.jsonl, tasks/, handoffs). | [skills/non-code/activity-log/SKILL.md](skills/non-code/activity-log/SKILL.md) |
 | `approval-gate` | Enforcement tecnico de approval gates AG-12/AG-03/AG-13 antes de publicar. | [skills/non-code/approval-gate/SKILL.md](skills/non-code/approval-gate/SKILL.md) |
 | `client-report` | Generar reporte mensual al cliente desde activity-log y calendario editorial. | [skills/non-code/client-report/SKILL.md](skills/non-code/client-report/SKILL.md) |
+| `open-design` | Fábrica visual local via daemon Open Design: generate carrusel, deck, email, prototipos HTML. | [skills/non-code/open-design/SKILL.md](skills/non-code/open-design/SKILL.md) |
 | `publish-safety` | Capa de seguridad para publicacion RRSS: rate-limit, dedup, karma-tiers, circuit breaker. | [skills/non-code/publish-safety/SKILL.md](skills/non-code/publish-safety/SKILL.md) |
 
 ## ops
@@ -137,4 +138,5 @@ Total: **64** skills
 
 | Skill | Descripción | Ruta |
 |-------|-------------|------|
+| `open-design-router` | Orquesta artefactos visuales standalone via Open Design (carrusel, deck, email, prototipo) vs implementacion en codigo (… | [skills/ui/open-design-router/SKILL.md](skills/ui/open-design-router/SKILL.md) |
 | `ui-ux-pro-max` | UI/UX design intelligence: design system generator, 67+ styles, palettes, typography, UX guidelines, charts, google-font… | [skills/ui/ui-ux-pro-max/SKILL.md](skills/ui/ui-ux-pro-max/SKILL.md) |

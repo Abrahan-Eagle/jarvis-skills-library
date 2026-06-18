@@ -75,6 +75,10 @@ Mapa dev + diseño + docs + validate: [docs/SDX_ECOSYSTEM.md](docs/SDX_ECOSYSTEM
 
 Skill `ui-ux-pro-max` en `skills/ui/` — design system generator + BM25 ([upstream v2.5.0](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)). Guía: [docs/UI_UX_PRO_MAX_INTEGRATION.md](docs/UI_UX_PRO_MAX_INTEGRATION.md). Sync: `bash scripts/sync-ui-ux-pro-max.sh`.
 
+## Open Design (artefactos agentic)
+
+Carrusel RRSS, deck, email HTML, prototipos standalone — skills `open-design-router` + `open-design` (bin). Runtime: [nexu-io/open-design](https://github.com/nexu-io/open-design). Guía: [docs/OPEN_DESIGN_INTEGRATION.md](docs/OPEN_DESIGN_INTEGRATION.md). Install: `bash scripts/install-open-design-runtime.sh`.
+
 ## Migración desde ~/jarvis-skills
 
 Ver [docs/MIGRATION.md](docs/MIGRATION.md).

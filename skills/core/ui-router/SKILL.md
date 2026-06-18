@@ -17,6 +17,7 @@ metadata:
   triggers: ui, ux, design, landing, dashboard, a11y, layout, paleta
   related-skills:
     - jarvis-core
+    - open-design-router
     - ui-ux-pro-max
     - responsive-design
     - sdd-router
@@ -72,6 +73,7 @@ test -f .agents/skills/ui-ux-pro-max/ZONIX.md && echo HAS_ZONIX_OVERLAY_AGENTS
 | Revisión pre-entrega | `ui-ux-pro-max` (checklist prioridad 1–10) + skill dominio |
 | Solo responsive/breakpoints | `responsive-design` primero; `ui-ux-pro-max` si hay dudas de layout global |
 | Feature con Spec Kit + UI | `sdd-router` → specs → implement; al tocar UI, aplicar esta cadena |
+| Artefacto standalone (carrusel, deck, email, prototipo HTML) | `open-design-router` → `open-design` (no código en repo) |
 
 ## Comandos antes de implementar UI nueva
 
@@ -117,4 +119,6 @@ En el repo producto: copiar solo el overlay (ej. `ZONIX.md`) bajo `.cursor/skill
 - Performance no relacionada con UI
 - Infra/DevOps sin interfaz
 
-Si la tarea cambia **cómo se ve, se siente, se mueve o se interactúa**, usar esta cadena.
+Si la tarea cambia **cómo se ve, se siente, se mueve o se interactúa** en el **código del producto**, usar esta cadena.
+
+Para **entregables visuales standalone** (carrusel RRSS, deck, email HTML sin tocar `lib/`), usar `open-design-router` ([OPEN_DESIGN_INTEGRATION.md](../../docs/OPEN_DESIGN_INTEGRATION.md)).

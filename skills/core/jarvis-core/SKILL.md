@@ -21,6 +21,7 @@ metadata:
     - speckit-lifecycle-router
     - sdd-x-index
     - ui-router
+    - open-design-router
     - speckit-specify
     - speckit-plan
     - speckit-taskstoissues
@@ -47,7 +48,9 @@ Si el repo tiene `openspec/` (sin otros marcadores SDD), ver `openspec-router` (
 
 Si el repo tiene `.specify/` (sin `.kittify/` ni `openspec/`), ver `sdd-router` y cadena `speckit-*` ([docs/SDD_SPECKIT_INTEGRATION.md](../../docs/SDD_SPECKIT_INTEGRATION.md)).
 
-Para UI/UX, ver `ui-router` ([docs/UI_UX_PRO_MAX_INTEGRATION.md](../../docs/UI_UX_PRO_MAX_INTEGRATION.md)).
+Para UI/UX en código, ver `ui-router` ([docs/UI_UX_PRO_MAX_INTEGRATION.md](../../docs/UI_UX_PRO_MAX_INTEGRATION.md)).
+
+Para artefactos visuales marketing (carrusel, deck, email HTML), ver `open-design-router` ([docs/OPEN_DESIGN_INTEGRATION.md](../../docs/OPEN_DESIGN_INTEGRATION.md)) — no `speckit-specify`.
 
 Para SD-X (dev + diseño + docs + validate), ver `sdd-x-index` ([docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md)).
 
@@ -86,7 +89,8 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | Crear commit | `verification-before-completion` → `git-commit` → `structured-commits-ops` |
 | Push / merge | `git-guardrails-ops` (solo con orden explícita del usuario) |
 | Code review | `code-review-playbook` (+ opcional requesting/receiving) |
-| UI/UX, landing, a11y, layout | `ui-router` → skill dominio `{producto}-ui-design` / `zonix-web-design` → `ui-ux-pro-max` → `responsive-design` (opc.) |
+| UI/UX en código, landing en repo, a11y, layout | `ui-router` → skill dominio `{producto}-ui-design` / `zonix-web-design` → `ui-ux-pro-max` → `responsive-design` (opc.) |
+| Carrusel, deck, email HTML, prototipo standalone | `open-design-router` → `open-design` (daemon OD) |
 | SD-X ambiguo / multi-arte (dev+UI+docs) | `sdd-x-index` → `sdd-router` o `ui-router` según tabla SD-X |
 
 ## Directivas principales
