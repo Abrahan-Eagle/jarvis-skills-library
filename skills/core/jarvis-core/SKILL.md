@@ -23,6 +23,7 @@ metadata:
     - ui-router
     - open-design-router
     - scenario-router
+    - strategic-briefing-ops
     - speckit-specify
     - speckit-plan
     - speckit-taskstoissues
@@ -53,7 +54,9 @@ Para UI/UX en código, ver `ui-router` ([docs/UI_UX_PRO_MAX_INTEGRATION.md](../.
 
 Para artefactos visuales marketing (carrusel, deck, email HTML), ver `open-design-router` ([docs/OPEN_DESIGN_INTEGRATION.md](../../docs/OPEN_DESIGN_INTEGRATION.md)) — no `speckit-specify`.
 
-Para what-if estratégico y simulación multi-agente, ver `scenario-router` ([docs/STRANGEVERSE_INTEGRATION.md](../../docs/STRANGEVERSE_INTEGRATION.md)) — no `speckit-specify` salvo que el escenario derive en feature.
+Para what-if estratégico y simulación multi-agente, ver `scenario-router` ([docs/STRANGEVERSE_INTEGRATION.md](../../docs/STRANGEVERSE_INTEGRATION.md), [docs/MIROFISH_UPSTREAM.md](../../docs/MIROFISH_UPSTREAM.md)) — no `speckit-specify` salvo que el escenario derive en feature.
+
+Para briefing estratégico / estado general del proyecto, ver `strategic-briefing-ops` — no `scenario-analysis-ops` ni `speckit-specify`.
 
 Para SD-X (dev + diseño + docs + validate), ver `sdd-x-index` ([docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md)).
 
@@ -94,6 +97,7 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | Code review | `code-review-playbook` (+ opcional requesting/receiving) |
 | UI/UX en código, landing en repo, a11y, layout | `ui-router` → skill dominio `{producto}-ui-design` / `zonix-web-design` → `ui-ux-pro-max` → `responsive-design` (opc.) |
 | Carrusel, deck, email HTML, prototipo standalone | `open-design-router` → `open-design` (daemon OD) |
+| Briefing estratégico / estado general | `strategic-briefing-ops` |
 | What-if / escenarios estratégicos | `scenario-router` → `scenario-analysis-ops` o `{producto}-scenario-analysis` |
 | Simulación multi-agente / opinión pública | `scenario-router` → `strangeverse` (API :5001) |
 | SD-X ambiguo / multi-arte (dev+UI+docs) | `sdd-x-index` → `sdd-router` o `ui-router` según tabla SD-X |

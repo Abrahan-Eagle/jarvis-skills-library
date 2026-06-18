@@ -47,7 +47,7 @@
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "d94806c388e72bc07425b8f2bc58a5e463f2002e37f95d14057bf023dff6af4d",
+      "computedHash": "803f85edeb4c723bf85dbf06274a67e5d5c8791ee1adb43243d22edf713d160a",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
@@ -59,7 +59,7 @@
     "jarvis-skills-maintainer": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "4e8b1c0e404d959d9cb3d35fbfe34397f287d3fab20f1a2f3822461cfda706f5",
+      "computedHash": "4ca95099560e0a798aedb320f3075717fff0af9f4fe2596653e8a6c5ae1cb046",
       "path": "skills/core/jarvis-skills-maintainer/SKILL.md"
     },
     "kitty-router": {
@@ -83,7 +83,7 @@
     "sdd-x-index": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "75ea1409ea350656274f81878c65e8ef7f4c5b9965a9befb523c36b512bf794d",
+      "computedHash": "7da3ccb077b8fa0b832d43d50efc704e09f5ff7ed7c727912b5b4b9a781fac27",
       "path": "skills/core/sdd-x-index/SKILL.md"
     },
     "task-pipeline-ops": {
@@ -265,14 +265,14 @@
     "scenario-analysis-ops": {
       "source": "clawvis/scenario-analysis-ops",
       "sourceType": "github",
-      "computedHash": "aad39dee4379ef0cd39be35b973cbeb3558357bf5fc7f7ce1e4942a066b69409",
+      "computedHash": "bb35884384bd79d2f9b94fde518586bf3cd128f18277a2fd3a82d5e61e7afe85",
       "path": "skills/ops/scenario-analysis-ops/SKILL.md",
       "upstream": "clawvis:scenario-analysis-ops"
     },
     "scenario-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "eab4b7167dbfbdd0fb74d7d728a7fc7599f6930148f311368b795e62935fa742",
+      "computedHash": "59f2bffb6b82dbca2ce36b85bfd13f85925f4395a0d3e92d7955d5b68f461d6a",
       "path": "skills/ops/scenario-router/SKILL.md"
     },
     "session-learner-ops": {
@@ -280,6 +280,13 @@
       "sourceType": "local",
       "computedHash": "7ad265898709b7994189539de2432d573cf4073a48f6fbadf71d86c6d06fee4b",
       "path": "skills/ops/session-learner-ops/SKILL.md"
+    },
+    "strategic-briefing-ops": {
+      "source": "clawvis/strategic-briefing-ops",
+      "sourceType": "github",
+      "computedHash": "76194e2e426da2269f521d55788a8b0d5515dcec15d2a51813b6a87faca09726",
+      "path": "skills/ops/strategic-briefing-ops/SKILL.md",
+      "upstream": "clawvis:strategic-briefing-ops"
     },
     "verification-before-completion": {
       "source": "jarvis-skills-library",

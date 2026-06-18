@@ -16,6 +16,7 @@ metadata:
     - "Matriz de riesgos what-if"
   triggers: what-if, escenarios, que pasa si, analisis estrategico, matriz riesgos
   related-skills:
+    - strategic-briefing-ops
     - scenario-router
     - strangeverse
     - deep-interview-ops
@@ -60,7 +61,8 @@ brainstorming-ops → writing-plans / sdd-router / task-pipeline-ops
 1. `AGENTS.md` del proyecto activo
 2. `docs/active_context.md` si existe
 3. Docs de producto relevantes (`README.md`, `docs/product-marketing-context.md`, brand, etc.)
-4. Si el cwd es **clawvis** `jarvis-ecosystem`: además `GOALS.md`, `LESSONS.md`, `client-dossiers/` según aplique
+4. **Opcional:** briefing reciente de `strategic-briefing-ops` (decisiones pendientes, riesgos) como input de contexto
+5. Si el cwd es **clawvis** `jarvis-ecosystem`: además `GOALS.md`, `LESSONS.md`, `client-dossiers/` según aplique
 
 Documentar fuentes en el informe — cada claim trazable.
 

@@ -13,7 +13,7 @@ JARVIS **no** usa MetaSpec CLI para distribuir skills; usa `jarvis-skills-librar
 | Development (`openspec/`) | OpenSpec OPSX | `openspec-router` |
 | Maintenance (`.specify/`) | bugfix, hotfix, refactor, modify, deprecate | `speckit-lifecycle-router` |
 | Design | `ui-ux-pro-max`, dominio UI, `open-design-router` | `ui-router` |
-| Research / what-if | `scenario-router`, `scenario-analysis-ops`, `strangeverse` | `scenario-router` |
+| Research / what-if | `scenario-router`, `strategic-briefing-ops`, `scenario-analysis-ops`, `strangeverse` | `scenario-router` |
 | API (sin speckit dedicado) | `api-design-principles` | — |
 | Documentation | `documentar-avances`, `context-updater` | — (no Spec Kit) |
 | Test | `test-driven-development`, `verification-before-completion` | — |
@@ -32,6 +32,7 @@ Ver [`catalog/SDX_TOOLKITS.md`](catalog/SDX_TOOLKITS.md) (generado desde `catalo
 | UI UX Pro Max | v2.5.0 | `bash scripts/sync-ui-ux-pro-max.sh` |
 | Open Design (watchlist) | 0.10.0 | `bash scripts/install-open-design-runtime.sh` |
 | StrangeVerse (watchlist) | main | `bash scripts/install-strangeverse-runtime.sh` |
+| MiroFish upstream (watchlist) | V0.1.2 | Referencia AGPL — [MIROFISH_UPSTREAM.md](MIROFISH_UPSTREAM.md); runtime = StrangeVerse |
 | Spec Kitty | v3.2.1 | `pipx install spec-kitty-cli` + `spec-kitty init` en repo producto |
 | OpenSpec (watchlist) | 0.16.0 | `npm i -g @fission-ai/openspec` + `openspec init` en repo producto |
 

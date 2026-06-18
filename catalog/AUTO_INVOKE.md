@@ -6,12 +6,14 @@
 |--------|----------|
 | Analisis what-if sin implementar feature | `scenario-router` |
 | Análisis coherencia Spec Kit pre-implement | `speckit-analyze` |
+| Briefing estrategico semanal | `strategic-briefing-ops` |
 | Bugfix con Spec Kit | `speckit-lifecycle-router` |
 | Carrusel RRSS o post social | `open-design-router` |
 | Cerrar gaps post-implement Spec Kit | `speckit-converge` |
 | Checklist calidad spec/plan Spec Kit | `speckit-checklist` |
 | Comando git destructivo | `git-guardrails-ops` |
 | Combinar spec con UI o docs | `sdd-x-index` |
+| Como va todo el proyecto | `strategic-briefing-ops` |
 | Compactar o traspasar sesion | `handoff` |
 | Comparar escenarios base optimista pesimista | `scenario-analysis-ops` |
 | Convertir tasks Spec Kit a issues GitHub | `speckit-taskstoissues` |
@@ -29,6 +31,7 @@
 | Email marketing HTML | `open-design-router` |
 | Encontrar bug o test fallido | `systematic-debugging` |
 | Establecer principios SDD en proyecto | `speckit-constitution` |
+| Estado general del producto | `strategic-briefing-ops` |
 | Generar assets visuales marketing | `open-design-router` |
 | Generar con Open Design | `open-design` |
 | Governance standalone fuera de misión | `kitty-governance` |
@@ -58,6 +61,7 @@
 | Refactor con spec | `speckit-lifecycle-router` |
 | Requisitos ambiguos | `deep-interview-ops` |
 | Requisitos ambiguos antes de plan SDD | `speckit-clarify` |
+| Resumen ejecutivo para el founder | `strategic-briefing-ops` |
 | Revisar accesibilidad o layout | `ui-router`, `ui-ux-pro-max` |
 | Simular opinion publica o reaccion mercado | `scenario-router` |
 | Spec Kitty o spec-kitty | `kitty-router` |

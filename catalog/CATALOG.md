@@ -2,7 +2,7 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-18
 
-Total: **69** skills
+Total: **70** skills
 
 ## Resumen por categoría
 
@@ -14,7 +14,7 @@ Total: **69** skills
 | `git` | 3 |
 | `mobile` | 4 |
 | `non-code` | 6 |
-| `ops` | 11 |
+| `ops` | 12 |
 | `planning` | 3 |
 | `review` | 5 |
 | `sdd` | 12 |
@@ -100,6 +100,7 @@ Total: **69** skills
 | `scenario-analysis-ops` | Analisis what-if estrategico sin motor de simulacion: semilla, variables, escenarios, matriz de riesgos, iteracion. | [skills/ops/scenario-analysis-ops/SKILL.md](skills/ops/scenario-analysis-ops/SKILL.md) |
 | `scenario-router` | Orquesta analisis what-if (scenario-analysis-ops, skills dominio) vs simulacion multi-agente StrangeVerse. | [skills/ops/scenario-router/SKILL.md](skills/ops/scenario-router/SKILL.md) |
 | `session-learner-ops` | Tras cerrar módulo UI: patrones en docs/active_context.md y walkthrough. | [skills/ops/session-learner-ops/SKILL.md](skills/ops/session-learner-ops/SKILL.md) |
+| `strategic-briefing-ops` | Briefing estrategico consolidado: sintetiza estado del proyecto, progreso, riesgos y decisiones pendientes en un informe… | [skills/ops/strategic-briefing-ops/SKILL.md](skills/ops/strategic-briefing-ops/SKILL.md) |
 | `verification-before-completion` | OBLIGATORIO antes de declarar cualquier tarea completada en cualquier proyecto. Ejecuta verificación fresca del stack y … | [skills/ops/verification-before-completion/SKILL.md](skills/ops/verification-before-completion/SKILL.md) |
 
 ## planning

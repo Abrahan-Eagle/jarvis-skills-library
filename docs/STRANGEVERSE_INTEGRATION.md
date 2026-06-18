@@ -2,7 +2,9 @@
 
 [Motor de simulación multi-agente](https://github.com/Abrahan-Eagle/strangeverse) (fork MiroFish, AGPL-3.0): semilla → grafo GraphRAG → simulación OASIS → reporte → chat con agentes. Backend Flask `:5001`, UI Vue `:3000`.
 
-Skills JARVIS: `scenario-router` (decisión) + `scenario-analysis-ops` (mesa) + `strangeverse` (bin HTTP).
+Skills JARVIS: `scenario-router` (decisión) + `strategic-briefing-ops` (god-view) + `scenario-analysis-ops` (mesa) + `strangeverse` (bin HTTP).
+
+Upstream de referencia: [MIROFISH_UPSTREAM.md](MIROFISH_UPSTREAM.md) ([666ghj/MiroFish](https://github.com/666ghj/MiroFish)).
 
 ## vs scenario-analysis-ops vs skills dominio
 
@@ -84,7 +86,12 @@ strangeverse report-download --report-id rep_xxxx --out ./out/strangeverse/repor
 - Fork modificado: cumplir AGPL-3.0 si se redistribuye
 - Atribuir [StrangeVerse](https://github.com/Abrahan-Eagle/strangeverse) y motor OASIS (CAMEL-AI)
 
+## Upstream MiroFish
+
+Este runtime es un **fork** del upstream AGPL. Patrones conceptuales, mapa patrón→skill y política de código: [MIROFISH_UPSTREAM.md](MIROFISH_UPSTREAM.md).
+
 ## Relacionado
 
+- [MIROFISH_UPSTREAM.md](MIROFISH_UPSTREAM.md) — upstream vs StrangeVerse, briefing, AGPL
 - [OPEN_DESIGN_INTEGRATION.md](OPEN_DESIGN_INTEGRATION.md) — artefactos visuales marketing
 - [UI_UX_PRO_MAX_INTEGRATION.md](UI_UX_PRO_MAX_INTEGRATION.md) — UI en código

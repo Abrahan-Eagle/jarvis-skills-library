@@ -81,7 +81,7 @@ Carrusel RRSS, deck, email HTML, prototipos standalone — skills `open-design-r
 
 ## StrangeVerse (what-if y simulación)
 
-Escenarios estratégicos y simulación multi-agente — skills `scenario-router` + `scenario-analysis-ops` + `strangeverse` (bin). Runtime: [Abrahan-Eagle/strangeverse](https://github.com/Abrahan-Eagle/strangeverse). Guía: [docs/STRANGEVERSE_INTEGRATION.md](docs/STRANGEVERSE_INTEGRATION.md). Install: `bash scripts/install-strangeverse-runtime.sh`.
+Escenarios estratégicos y simulación multi-agente — skills `strategic-briefing-ops` + `scenario-router` + `scenario-analysis-ops` + `strangeverse` (bin). Upstream: [666ghj/MiroFish](https://github.com/666ghj/MiroFish) · Runtime: [Abrahan-Eagle/strangeverse](https://github.com/Abrahan-Eagle/strangeverse). Guías: [docs/MIROFISH_UPSTREAM.md](docs/MIROFISH_UPSTREAM.md), [docs/STRANGEVERSE_INTEGRATION.md](docs/STRANGEVERSE_INTEGRATION.md). Install: `bash scripts/install-strangeverse-runtime.sh`.
 
 ## Migración desde ~/jarvis-skills
 

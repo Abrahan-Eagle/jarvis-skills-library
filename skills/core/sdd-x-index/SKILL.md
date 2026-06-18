@@ -42,7 +42,7 @@ Guía completa: [docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md). Catálogo 
 | **SD-Development** (`openspec/`) | Cambios fluidos, brownfield | `openspec-router` → OPSX propose/apply/archive |
 | **SD-Design** (código en repo) | Pantallas, landing en Flutter/Blade | `ui-router` → dominio UI → `ui-ux-pro-max` |
 | **SD-Design** (artefactos agentic) | Carrusel, deck, email HTML, prototipo standalone | `open-design-router` → `open-design` — [OPEN_DESIGN_INTEGRATION.md](../../docs/OPEN_DESIGN_INTEGRATION.md) |
-| **SD-Research** (what-if / simulación) | Escenarios estratégicos, opinión pública, predicción multi-agente | `scenario-router` → `scenario-analysis-ops` o `strangeverse` — [STRANGEVERSE_INTEGRATION.md](../../docs/STRANGEVERSE_INTEGRATION.md) |
+| **SD-Research** (what-if / simulación) | Briefing holding, escenarios, opinión pública | `strategic-briefing-ops` o `scenario-router` → `scenario-analysis-ops` / `strangeverse` — [MIROFISH_UPSTREAM.md](../../docs/MIROFISH_UPSTREAM.md) |
 | **SD-Documentation** | Cierre módulo, AGENTS, walkthrough | `documentar-avances`, `context-updater` |
 | **SD-Test** | Implementación y cierre | `test-driven-development`, `verification-before-completion` |
 | **SD-Validate** | Pre-implement, gates | `speckit-analyze`, `speckit-checklist` |
@@ -72,6 +72,7 @@ test -d kitty-specs && echo "HAS_KITTY_SPECS"
 | 2+ marcadores SDD | **STOP** — usuario elige canónico |
 | Solo UI/landing en código | `ui-router` |
 | Carrusel, deck, email marketing (standalone) | `open-design-router` |
+| Estado general / briefing estratégico | `strategic-briefing-ops` |
 | What-if / escenarios / simulación social | `scenario-router` |
 | Pack inversor / Lanzamiento | Dominio docs — **no** SD-X dev |
 | No sabes qué rama SD-X | **Esta skill** |
@@ -85,7 +86,8 @@ test -d kitty-specs && echo "HAS_KITTY_SPECS"
 | [Spec Kitty](https://github.com/Priivacy-ai/spec-kitty) v3.2.1 | Development, Validate, Config | `pipx` + `spec-kitty init` en producto |
 | [Spec Kit Extensions](https://github.com/MartyBonacci/spec-kit-extensions) | Maintenance (bugfix, etc.) | `speckit-lifecycle-router` + install en producto |
 | [Open Design](https://github.com/nexu-io/open-design) 0.10.0 | Design (artefactos agentic) | `open-design-router`, `open-design` — `scripts/install-open-design-runtime.sh` |
-| [StrangeVerse](https://github.com/Abrahan-Eagle/strangeverse) main | Research (simulación multi-agente) | `scenario-router`, `scenario-analysis-ops`, `strangeverse` — `scripts/install-strangeverse-runtime.sh` |
+| [StrangeVerse](https://github.com/Abrahan-Eagle/strangeverse) main | Research (simulación multi-agente) | `scenario-router`, `strategic-briefing-ops`, `scenario-analysis-ops`, `strangeverse` — `scripts/install-strangeverse-runtime.sh` |
+| [MiroFish](https://github.com/666ghj/MiroFish) V0.1.2 | Research (referencia upstream AGPL) | Patrones en skills mesa — [MIROFISH_UPSTREAM.md](../../docs/MIROFISH_UPSTREAM.md) |
 
 ## Spec Kit: feature nueva vs lifecycle
 

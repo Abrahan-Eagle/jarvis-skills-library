@@ -16,6 +16,7 @@ metadata:
     - "Analisis what-if sin implementar feature"
   triggers: what-if, escenarios, strangeverse, mirofish, simulacion multi-agente, opinion publica
   related-skills:
+    - strategic-briefing-ops
     - scenario-analysis-ops
     - strangeverse
     - deep-interview-ops
@@ -28,7 +29,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Router para **decisiones estrategicas y what-if**: analisis en mesa (sin motor) vs **simulacion multi-agente** via [StrangeVerse](https://github.com/Abrahan-Eagle/strangeverse). Complementa `sdd-router` (features de producto) y `open-design-router` (artefactos visuales).
 
-Guía JARVIS: [docs/STRANGEVERSE_INTEGRATION.md](../../docs/STRANGEVERSE_INTEGRATION.md).
+Guías JARVIS: [docs/STRANGEVERSE_INTEGRATION.md](../../docs/STRANGEVERSE_INTEGRATION.md), [docs/MIROFISH_UPSTREAM.md](../../docs/MIROFISH_UPSTREAM.md).
 
 ## Detección runtime
 
@@ -48,6 +49,7 @@ command -v strangeverse >/dev/null && echo SV_CLI
 
 | Pedido | Ruta | No usar |
 |--------|------|---------|
+| **Estado general** / god-view / "cómo va todo" | `strategic-briefing-ops` | `scenario-analysis-ops` solo |
 | What-if **producto** en repo activo (pricing, rollout, priorización) | `{producto}-scenario-analysis` si existe (ej. `corralx-scenario-analysis`) | StrangeVerse |
 | What-if estratégico **sin** dinámica social / sin coste LLM | `scenario-analysis-ops` | StrangeVerse |
 | Simular **opinión pública**, narrativa, muchos actores | `strangeverse` (runtime up) | Solo brainstorming |
@@ -58,10 +60,15 @@ command -v strangeverse >/dev/null && echo SV_CLI
 ## Cadena por escenario
 
 ```
+strategic-briefing-ops (estado general / god-view)
+        ↓ (decisiones complejas)
+scenario-analysis-ops
+
 deep-interview-ops (semilla vaga)
         ↓
 scenario-router (este skill)
         ↓
+├─ strategic-briefing-ops        (vista consolidada)
 ├─ {producto}-scenario-analysis  (decisión producto en repo)
 ├─ scenario-analysis-ops         (mesa, sin motor)
 └─ strangeverse                  (simulación OASIS + reporte)

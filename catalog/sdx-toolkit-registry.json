@@ -77,8 +77,20 @@
       "pin": "main",
       "sdx": ["SD-Research"],
       "jarvis": {
-        "skills": ["scenario-router", "scenario-analysis-ops", "strangeverse"],
+        "skills": ["scenario-router", "strategic-briefing-ops", "scenario-analysis-ops", "strangeverse"],
         "install": "scripts/install-strangeverse-runtime.sh"
+      }
+    },
+    {
+      "id": "mirofish",
+      "name": "MiroFish (666ghj)",
+      "repo": "https://github.com/666ghj/MiroFish",
+      "pin": "V0.1.2",
+      "sdx": ["SD-Research"],
+      "note": "Referencia upstream AGPL; patrones en skills mesa; runtime operativo = strangeverse",
+      "jarvis": {
+        "skills": ["scenario-router", "strategic-briefing-ops", "scenario-analysis-ops", "strangeverse"],
+        "doc": "docs/MIROFISH_UPSTREAM.md"
       }
     },
     {

@@ -87,13 +87,17 @@ Doc: [docs/OPEN_DESIGN_INTEGRATION.md](../docs/OPEN_DESIGN_INTEGRATION.md). Watc
 
 ## StrangeVerse (simulación multi-agente)
 
-Fork [Abrahan-Eagle/strangeverse](https://github.com/Abrahan-Eagle/strangeverse) — skills `scenario-router` + `scenario-analysis-ops` + `strangeverse` (bin HTTP).
+Fork [Abrahan-Eagle/strangeverse](https://github.com/Abrahan-Eagle/strangeverse) — skills `scenario-router` + `strategic-briefing-ops` + `scenario-analysis-ops` + `strangeverse` (bin HTTP).
 
 ```bash
 bash scripts/install-strangeverse-runtime.sh
 ```
 
-Doc: [docs/STRANGEVERSE_INTEGRATION.md](../docs/STRANGEVERSE_INTEGRATION.md). Watchlist `sdx-toolkit-registry.json`. AGPL: solo API; no copiar código del fork al global.
+Doc: [docs/STRANGEVERSE_INTEGRATION.md](../docs/STRANGEVERSE_INTEGRATION.md). Upstream: [docs/MIROFISH_UPSTREAM.md](../docs/MIROFISH_UPSTREAM.md). Watchlist `sdx-toolkit-registry.json`. AGPL: solo API; no copiar código del fork al global.
+
+## MiroFish upstream (referencia)
+
+Upstream [666ghj/MiroFish](https://github.com/666ghj/MiroFish) (AGPL-3.0, pin V0.1.2) — patrones en `strategic-briefing-ops` y `scenario-analysis-ops`; runtime operativo = StrangeVerse. Doc: [docs/MIROFISH_UPSTREAM.md](../docs/MIROFISH_UPSTREAM.md). Entrada watchlist en `sdx-toolkit-registry.json`.
 
 ## OpenSpec (watchlist awesome-spec-kits)
 
