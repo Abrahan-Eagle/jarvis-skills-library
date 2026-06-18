@@ -122,6 +122,17 @@ bash scripts/install-cyber-neo-upstream.sh   # opcional ~/cyber-neo
 
 Doc: [docs/CYBER_NEO_INTEGRATION.md](../docs/CYBER_NEO_INTEGRATION.md), forense [docs/CYBER_NEO_FORENSE_JARVIS.md](../docs/CYBER_NEO_FORENSE_JARVIS.md). Pin: `9a8998a33534bca16c619f4956dd1935dc404620`.
 
+## Agent Skills (Addy Osmani)
+
+[addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) (MIT) — router + sync curado de `doubt-driven-development` solamente (23 skills restantes → canónico JARVIS o pack externo).
+
+```bash
+bash scripts/sync-addy-doubt-driven.sh   # pin 36c543d…; encadena patch
+bash scripts/smoke-addy-doubt-driven.sh
+```
+
+Doc: [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../docs/AGENT_SKILLS_ADDY_INTEGRATION.md), forense [docs/AGENT_SKILLS_ADDY_FORENSE_JARVIS.md](../docs/AGENT_SKILLS_ADDY_FORENSE_JARVIS.md). Entrada en `sdx-toolkit-registry.json`.
+
 ## OpenSpec (watchlist awesome-spec-kits)
 
 No sincronizar slash commands al global — `openspec init` los instala en el repo producto.
@@ -181,4 +192,5 @@ bash scripts/install.sh --dry-run # preview
 - [docs/SPEC_KIT_EXTENSIONS.md](../docs/SPEC_KIT_EXTENSIONS.md)
 - [docs/OPEN_DESIGN_INTEGRATION.md](../docs/OPEN_DESIGN_INTEGRATION.md)
 - [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md)
+- [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../docs/AGENT_SKILLS_ADDY_INTEGRATION.md)
 - [docs/SDX_ECOSYSTEM.md](../docs/SDX_ECOSYSTEM.md)

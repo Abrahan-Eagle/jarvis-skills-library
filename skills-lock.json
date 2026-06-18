@@ -29,7 +29,7 @@
     "security": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "b4f9f2d53531d33138941128ef00837d93bef55fdd0b4a5788bc07043affb1c5",
+      "computedHash": "40931e2fbbf5947cbac405332b12e7178391859884e5a65c1936bdd73bd1bd5a",
       "path": "skills/backend/security/SKILL.md"
     },
     "software-architecture": {
@@ -77,7 +77,7 @@
     "jarvis-skills-maintainer": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "93164f308fadd760dae9f3c670e931becebdff3214ce124b8b31d1da5c4ec017",
+      "computedHash": "f39cbb772df840a4facd93b3fa1d0797777a570312712b092346c07dff633ef3",
       "path": "skills/core/jarvis-skills-maintainer/SKILL.md"
     },
     "kalman-anomaly-router": {
@@ -174,7 +174,7 @@
     "test-driven-development": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "b9a0a942fae2dfd5578651d9f5e5b92d81b1db8b403f36adf96b79c5043fcbe1",
+      "computedHash": "870f469db501f0b21506b7c39610ea1e4fd0b12b4484bccdb5f84b606e7951c8",
       "path": "skills/engineering/test-driven-development/SKILL.md"
     },
     "webapp-testing": {
@@ -426,7 +426,7 @@
     "code-review-playbook": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "03998b42b55feb8b4530c7ad9dad28d30ac9032861fe8dc5f71d7e1c785bb406",
+      "computedHash": "b57fde6f124d939296504aa28fc4dedf9b594278f618af4ec1e868ae69c01b3e",
       "path": "skills/review/code-review-playbook/SKILL.md"
     },
     "github-code-review": {

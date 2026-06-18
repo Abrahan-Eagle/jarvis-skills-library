@@ -42,4 +42,10 @@ if [ -f "$SYNC_ROOT/references/orchestration-patterns.md" ]; then
 fi
 
 echo "Synced upstream body → skills/engineering/doubt-driven-development/SKILL.md.upstream"
-echo "Run: python3 scripts/patch-addy-doubt-driven.py"
+
+python3 "$ROOT/scripts/patch-addy-doubt-driven.py"
+
+rm -rf "$SYNC_ROOT"
+
+echo ""
+echo "Done. Run: bash scripts/smoke-addy-doubt-driven.sh"

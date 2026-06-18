@@ -160,6 +160,22 @@
       }
     },
     {
+      "id": "agent-skills-addy",
+      "name": "Agent Skills (Addy Osmani)",
+      "repo": "https://github.com/addyosmani/agent-skills",
+      "pin": "36c543d93b3f2bc0a3c01904c753121e56c105b1",
+      "sdx": ["SD-Validate"],
+      "jarvis": {
+        "skills": [
+          "agent-skills-router",
+          "doubt-driven-development"
+        ],
+        "sync": "scripts/sync-addy-doubt-driven.sh",
+        "doc": "docs/AGENT_SKILLS_ADDY_INTEGRATION.md",
+        "note": "Solo doubt-driven curado; patch en sync script"
+      }
+    },
+    {
       "id": "marketing-spec-kit",
       "name": "Marketing Spec Kit",
       "repo": "https://github.com/ACNet-AI/marketing-spec-kit",

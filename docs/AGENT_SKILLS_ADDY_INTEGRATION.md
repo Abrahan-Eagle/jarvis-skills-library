@@ -132,3 +132,4 @@ Ver sección *AI Skill supply-chain* en skill `security`.
 - [agent-skills-router](../skills/core/agent-skills-router/SKILL.md)
 - [doubt-driven-development](../skills/engineering/doubt-driven-development/SKILL.md)
 - [AWESOME_SPEC_KITS.md](AWESOME_SPEC_KITS.md) — watchlist entry
+- [AGENT_SKILLS_ADDY_FORENSE_JARVIS.md](AGENT_SKILLS_ADDY_FORENSE_JARVIS.md) — análisis overlap y decisiones

@@ -26,6 +26,8 @@ Ver [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md).
 | ecc | Everything Claude Code (affaan-m) | SD-Config | v2.0.0 | ecc-router, ecc, continuous-learning-v2, security-review-ecc, configure-ecc · sync: `scripts/sync-ecc-skills.sh` · install: `scripts/install-ecc-runtime.sh` | scripts/install-ecc-runtime.sh |
 | cyber-neo | Cyber Neo (Hainrixz) | SD-Validate | 9a8998a33534bca16c619f4956dd1935dc404620 | cyber-neo-router, cyber-neo, cyber-neo-cli · sync: `scripts/sync-cyber-neo-skill.sh` |  |
 | learning-loop | Learning Loop (melodykoh) | SD-Maintenance | 948dc75bc5a771a57366c651c5d442b44cba214d | learning-loop-router, learning-loop · sync: `scripts/sync-learning-loop-skill.sh` |  |
+| skill-loop | skill-loop (takumiyoshikawa) | SD-Development | 0bea8b08e079c71bc857631e26ada06068e82321 | skill-loop-router, skill-loop · sync: `scripts/sync-skill-loop-skill.sh` · install: `scripts/install-skill-loop-runtime.sh` | scripts/install-skill-loop-runtime.sh |
+| agent-skills-addy | Agent Skills (Addy Osmani) | SD-Validate | 36c543d93b3f2bc0a3c01904c753121e56c105b1 | agent-skills-router, doubt-driven-development · sync: `scripts/sync-addy-doubt-driven.sh` |  |
 | marketing-spec-kit | Marketing Spec Kit | SDM | 0.4.0 |  | SDM; evaluar para clawvis marketing |
 | mcp-speckit | MCP Spec Kit | SD-Development | 0.1.0 |  | MCP lifecycle; evaluar para OpenClaw |
 | meta-spec | MetaSpec | SD-Development, SD-Design | 0.9.7 |  | Framework Python; no distribución JARVIS |

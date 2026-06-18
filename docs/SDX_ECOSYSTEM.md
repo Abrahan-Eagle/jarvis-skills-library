@@ -17,7 +17,7 @@ JARVIS **no** usa MetaSpec CLI para distribuir skills; usa `jarvis-skills-librar
 | API (sin speckit dedicado) | `api-design-principles` | — |
 | Documentation | `documentar-avances`, `context-updater`, `learning-loop` (wrap-up opcional) | — (no Spec Kit) |
 | Test | `test-driven-development`, `verification-before-completion` | — |
-| Validate | `speckit-analyze`, `speckit-checklist` | `sdd-x-index` |
+| Validate | `speckit-analyze`, `speckit-checklist`, `doubt-driven-development` (in-flight adversarial) | `sdd-x-index`, `agent-skills-router` |
 | Config | `.specify/extensions.yml`, `specify extension` | [SDD doc](SDD_SPECKIT_INTEGRATION.md) |
 
 Índice operativo: skill [`sdd-x-index`](skills/core/sdd-x-index/SKILL.md).
@@ -37,6 +37,7 @@ Ver [`catalog/SDX_TOOLKITS.md`](catalog/SDX_TOOLKITS.md) (generado desde `catalo
 | Cyber Neo (watchlist) | 9a8998a | `bash scripts/sync-cyber-neo-skill.sh` — [CYBER_NEO_INTEGRATION.md](CYBER_NEO_INTEGRATION.md) |
 | Learning Loop (watchlist) | 948dc75 | `bash scripts/sync-learning-loop-skill.sh` — [LEARNING_LOOP_INTEGRATION.md](LEARNING_LOOP_INTEGRATION.md) |
 | skill-loop (watchlist) | 0bea8b08 | `bash scripts/sync-skill-loop-skill.sh` — [SKILL_LOOP_INTEGRATION.md](SKILL_LOOP_INTEGRATION.md) |
+| Agent Skills Addy (watchlist) | 36c543d | `bash scripts/sync-addy-doubt-driven.sh` — [AGENT_SKILLS_ADDY_INTEGRATION.md](AGENT_SKILLS_ADDY_INTEGRATION.md) |
 | Spec Kitty | v3.2.1 | `pipx install spec-kitty-cli` + `spec-kitty init` en repo producto |
 | OpenSpec (watchlist) | 0.16.0 | `npm i -g @fission-ai/openspec` + `openspec init` en repo producto |
 
@@ -79,6 +80,7 @@ Usar skills de dominio del producto, no `speckit-*`.
 - [OPEN_DESIGN_INTEGRATION.md](OPEN_DESIGN_INTEGRATION.md) — carrusel, deck, email HTML (Open Design)
 - [ECC_INTEGRATION.md](ECC_INTEGRATION.md) — harness Cursor (ECC: hooks, instincts, rules)
 - [CYBER_NEO_INTEGRATION.md](CYBER_NEO_INTEGRATION.md) — auditoría seguridad read-only (OWASP 2025, 11 dominios)
+- [AGENT_SKILLS_ADDY_INTEGRATION.md](AGENT_SKILLS_ADDY_INTEGRATION.md) — pack Addy Osmani (doubt-driven in-flight)
 - [STRANGEVERSE_INTEGRATION.md](STRANGEVERSE_INTEGRATION.md) — what-if y simulación multi-agente
 - [AWESOME_SPEC_KITS.md](AWESOME_SPEC_KITS.md) — índice acnlabs + watchlist + OpenSpec
 - [awesome-spec-kits](https://github.com/acnlabs/awesome-spec-kits) — catálogo upstream

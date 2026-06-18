@@ -4,6 +4,13 @@
 
 ```mermaid
 flowchart LR
+  agent_skills_router["agent-skills-router"] --> code_review_playbook["code-review-playbook"]
+  agent_skills_router["agent-skills-router"] --> doubt_driven_development["doubt-driven-development"]
+  agent_skills_router["agent-skills-router"] --> jarvis_core["jarvis-core"]
+  agent_skills_router["agent-skills-router"] --> sdd_router["sdd-router"]
+  agent_skills_router["agent-skills-router"] --> security["security"]
+  agent_skills_router["agent-skills-router"] --> systematic_debugging["systematic-debugging"]
+  agent_skills_router["agent-skills-router"] --> test_driven_development["test-driven-development"]
   brainstorming_ops["brainstorming-ops"] --> deep_interview_ops["deep-interview-ops"]
   brainstorming_ops["brainstorming-ops"] --> jarvis_core["jarvis-core"]
   configure_ecc["configure-ecc"] --> ecc["ecc"]
@@ -27,6 +34,12 @@ flowchart LR
   cyber_neo_router["cyber-neo-router"] --> security["security"]
   cyber_neo_router["cyber-neo-router"] --> security_review_ecc["security-review-ecc"]
   deep_interview_ops["deep-interview-ops"] --> brainstorming_ops["brainstorming-ops"]
+  doubt_driven_development["doubt-driven-development"] --> agent_skills_router["agent-skills-router"]
+  doubt_driven_development["doubt-driven-development"] --> code_review_playbook["code-review-playbook"]
+  doubt_driven_development["doubt-driven-development"] --> jarvis_core["jarvis-core"]
+  doubt_driven_development["doubt-driven-development"] --> security["security"]
+  doubt_driven_development["doubt-driven-development"] --> systematic_debugging["systematic-debugging"]
+  doubt_driven_development["doubt-driven-development"] --> test_driven_development["test-driven-development"]
   ecc["ecc"] --> configure_ecc["configure-ecc"]
   ecc["ecc"] --> ecc_router["ecc-router"]
   ecc["ecc"] --> jarvis_core["jarvis-core"]
@@ -50,6 +63,7 @@ flowchart LR
   handoff["handoff"] --> jarvis_core["jarvis-core"]
   handoff["handoff"] --> session_learner_ops["session-learner-ops"]
   handoff["handoff"] --> writing_plans["writing-plans"]
+  jarvis_core["jarvis-core"] --> agent_skills_router["agent-skills-router"]
   jarvis_core["jarvis-core"] --> brainstorming_ops["brainstorming-ops"]
   jarvis_core["jarvis-core"] --> code_review_playbook["code-review-playbook"]
   jarvis_core["jarvis-core"] --> cyber_neo_router["cyber-neo-router"]
@@ -213,6 +227,7 @@ flowchart LR
   task_pipeline_ops["task-pipeline-ops"] --> jarvis_core["jarvis-core"]
   task_pipeline_ops["task-pipeline-ops"] --> verification_before_completion["verification-before-completion"]
   task_pipeline_ops["task-pipeline-ops"] --> writing_plans["writing-plans"]
+  test_driven_development["test-driven-development"] --> doubt_driven_development["doubt-driven-development"]
   test_driven_development["test-driven-development"] --> systematic_debugging["systematic-debugging"]
   test_driven_development["test-driven-development"] --> verification_before_completion["verification-before-completion"]
   ui_router["ui-router"] --> jarvis_core["jarvis-core"]
@@ -231,4 +246,4 @@ flowchart LR
   zoom_out["zoom-out"] --> software_architecture["software-architecture"]
 ```
 
-Nodos conocidos: 84. Aristas (solo a skills en catálogo): 225.
+Nodos conocidos: 86. Aristas (solo a skills en catálogo): 240.
