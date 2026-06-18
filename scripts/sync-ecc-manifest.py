@@ -21,7 +21,7 @@ def fetch_json(url: str) -> list[dict]:
         return json.load(resp)
 
 
-def list_dirs(api_url: str) -> list[str]:
+def list_skill_dirs(api_url: str) -> list[str]:
     try:
         items = fetch_json(api_url)
     except Exception as exc:
@@ -32,9 +32,25 @@ def list_dirs(api_url: str) -> list[str]:
     )
 
 
+def list_agent_files(api_url: str) -> list[str]:
+    try:
+        items = fetch_json(api_url)
+    except Exception as exc:
+        print(f"Warning: could not fetch {api_url}: {exc}")
+        return []
+    names: list[str] = []
+    for x in items:
+        if not isinstance(x, dict) or x.get("type") != "file":
+            continue
+        name = x.get("name", "")
+        if name.endswith(".md"):
+            names.append(name[:-3])
+    return sorted(names)
+
+
 def main() -> None:
-    skills = list_dirs(API_SKILLS)
-    agents = list_dirs(API_AGENTS)
+    skills = list_skill_dirs(API_SKILLS)
+    agents = list_agent_files(API_AGENTS)
 
     lines = [
         "# ECC upstream index (discovery)",
@@ -53,7 +69,7 @@ def main() -> None:
         lines.append(f"- `{name}` → `skills/{name}/`")
     lines.extend(["", f"## Agents upstream ({len(agents)})", ""])
     for name in agents:
-        lines.append(f"- `{name}` → `agents/{name}/` (install → `.cursor/agents/ecc-*`)")
+        lines.append(f"- `{name}` → `agents/{name}.md` (install → `.cursor/agents/`)")
     lines.extend(
         [
             "",

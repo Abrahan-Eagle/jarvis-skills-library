@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ecc — wrapper JARVIS para ecc-universal (Everything Claude Code)
+# ecc — wrapper JARVIS para CLI ECC upstream (Everything Claude Code)
 set -euo pipefail
 
 usage() {
@@ -7,10 +7,10 @@ usage() {
 ecc <command> [options]
 
 Comandos:
-  status              Detecta hooks, agents ecc-*, ecc-universal, ECC_HOME
-  consult <query>     npx ecc-universal consult (default --target cursor)
-  doctor              Diagnóstico harness (si CLI disponible)
-  repair              Reparación harness (si CLI disponible)
+  status              Detecta hooks, agents ecc-*, ECC CLI, ECC_HOME
+  consult <query>     ecc consult (default --target cursor)
+  doctor              Diagnóstico harness
+  repair              Reparación harness
   help
 
 Variables:
@@ -27,15 +27,28 @@ EOF
 ECC_HOME="${ECC_HOME:-$HOME/ecc}"
 ECC_TARGET="${ECC_TARGET:-cursor}"
 
-run_ecc_universal() {
-  if command -v ecc-universal >/dev/null 2>&1; then
-    ecc-universal "$@"
-  elif command -v npx >/dev/null 2>&1; then
-    npx --yes ecc-universal "$@"
-  else
-    echo "ecc-universal no disponible (npm install -g ecc-universal)" >&2
-    return 127
+run_ecc_cli() {
+  if [ -f "$ECC_HOME/scripts/ecc.js" ]; then
+    node "$ECC_HOME/scripts/ecc.js" "$@"
+    return
   fi
+  if command -v ecc >/dev/null 2>&1 && ecc --help 2>/dev/null | grep -q consult; then
+    ecc "$@"
+    return
+  fi
+  if command -v npx >/dev/null 2>&1; then
+    npx --yes ecc-universal "$@" || npx --yes ecc "$@"
+    return
+  fi
+  echo "ECC CLI no disponible — clone en ECC_HOME o npm install ecc-universal" >&2
+  return 127
+}
+
+ecc_cli_ok() {
+  [ -f "$ECC_HOME/scripts/ecc.js" ] && return 0
+  command -v ecc >/dev/null 2>&1 && return 0
+  command -v ecc-universal >/dev/null 2>&1 && return 0
+  return 1
 }
 
 cmd_status() {
@@ -45,31 +58,31 @@ cmd_status() {
   fi
   if [ -d .cursor/agents ]; then
     local a
-    a=$(ls .cursor/agents/ecc-*.md 2>/dev/null | head -1 || true)
+    a=$(ls .cursor/agents/ecc-*.md .cursor/agents/*.md 2>/dev/null | head -1 || true)
     [ -n "$a" ] && agents=1
   fi
-  if command -v ecc-universal >/dev/null 2>&1 || npx ecc-universal --version >/dev/null 2>&1; then
+  if ecc_cli_ok; then
     cli=1
   fi
   [ -d "$ECC_HOME" ] && home=1
   echo "ecc_hooks=$hooks ecc_agents=$agents ecc_cli=$cli ecc_home=$home home=$ECC_HOME target=$ECC_TARGET"
-  if [ "$cli" -eq 1 ]; then
-    run_ecc_universal --version 2>/dev/null || true
+  if [ "$cli" -eq 1 ] && [ -f "$ECC_HOME/scripts/ecc.js" ]; then
+    node "$ECC_HOME/scripts/ecc.js" status 2>/dev/null | head -3 || true
   fi
 }
 
 cmd_consult() {
   local query="${1:-}"
   [ -n "$query" ] || { echo "consult requiere query" >&2; exit 2; }
-  run_ecc_universal consult "$query" --target "$ECC_TARGET"
+  run_ecc_cli consult "$query" --target "$ECC_TARGET"
 }
 
 cmd_doctor() {
-  run_ecc_universal doctor --target "$ECC_TARGET" 2>/dev/null || run_ecc_universal doctor
+  run_ecc_cli doctor --target "$ECC_TARGET"
 }
 
 cmd_repair() {
-  run_ecc_universal repair --target "$ECC_TARGET" 2>/dev/null || run_ecc_universal repair
+  run_ecc_cli repair --target "$ECC_TARGET"
 }
 
 main() {

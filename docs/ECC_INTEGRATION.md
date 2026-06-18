@@ -48,7 +48,26 @@ cd /var/www/html/proyectos/AIPP/jarvis-skills-library
 bash scripts/install-ecc-runtime.sh --project-dir /path/to/CorralX-Backend
 ```
 
-Opciones: `--profile minimal` (default, sin hooks), `--with-hooks`, `--languages "php typescript"`, `--dry-run`.
+Opciones: `--profile minimal` (default, sin hooks-runtime), `--with-hooks`, `--languages "php typescript"` o `dart` para Flutter.
+
+### Language packs (ECC v2)
+
+ECC v2 no acepta idiomas legacy junto con `--profile`. El script JARVIS mapea tokens a componentes `--with`:
+
+| Token JARVIS | Componente ECC |
+|--------------|----------------|
+| `php`, `laravel` | `framework:laravel` |
+| `typescript`, `js` | `lang:typescript` |
+| `dart`, `flutter` | `framework:laravel` (no hay `lang:dart`; rules Flutter vía install adicional si ECC lo publica) |
+| `python` | `lang:python` |
+
+Ejemplo Flutter + Laravel:
+
+```bash
+bash scripts/install-ecc-runtime.sh --project-dir /path/to/CorralX-Frontend --languages "dart typescript"
+```
+
+CorralX típico (API Laravel): default `php typescript` → `framework:laravel` + `lang:typescript`.
 
 ### Perfiles
 
@@ -60,6 +79,8 @@ Opciones: `--profile minimal` (default, sin hooks), `--with-hooks`, `--languages
 **No apilar** plugin Claude `ecc@ecc` + `install.sh --profile full` (duplicación).
 
 ### CLI
+
+Delega a `$ECC_HOME/scripts/ecc.js` (clone upstream) si existe; fallback `npx ecc-universal`.
 
 ```bash
 ecc status

@@ -12,7 +12,7 @@ Harness-native operator system: skills como superficie principal, instincts (con
 
 Flujo instincts (con hooks): observación sesión → instincts con confidence → `/evolve` agrupa en skills/commands.
 
-## Hallazgos vs JARVIS global (70 skills)
+## Hallazgos vs JARVIS global (75 skills)
 
 ### Solapamiento — JARVIS canónico
 

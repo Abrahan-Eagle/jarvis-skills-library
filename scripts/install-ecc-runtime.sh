@@ -21,7 +21,7 @@ Install ECC (Everything Claude Code) into a product repo via official install.sh
 Options:
   --project-dir PATH   Repo where .cursor/ is created (required unless --dry-run preview only)
   --profile NAME       minimal (default) | core
-  --languages LIST     Space-separated language packs (default: php typescript)
+  --languages LIST     Space-separated packs: php|laravel typescript dart (default: php typescript)
   --with-hooks         Add hooks-runtime module (opt-in)
   --dry-run            Preview commands without applying install to project
   -h, --help           Show help
@@ -88,11 +88,30 @@ install_deps() {
   fi
 }
 
-build_install_cmd() {
-  local cmd=("$ECC_HOME/install.sh" --profile "$PROFILE" --target cursor)
+# ECC v2: --profile cannot combine with legacy language positional args.
+# Map JARVIS language tokens to install --with component IDs.
+append_language_components() {
+  local cmd_name=$1
+  shift
+  local -n cmd_ref=$cmd_name
   # shellcheck disable=SC2206
   local langs=( $LANGUAGES )
-  cmd+=("${langs[@]}")
+  for lang in "${langs[@]}"; do
+    case "$lang" in
+      php|laravel) cmd_ref+=(--with framework:laravel);;
+      typescript|ts|javascript|js) cmd_ref+=(--with lang:typescript);;
+      python|py) cmd_ref+=(--with lang:python);;
+      dart|flutter) cmd_ref+=(--with framework:laravel);; # no lang:dart; closest framework pack
+      go|golang) cmd_ref+=(--with lang:go);;
+      rust) cmd_ref+=(--with lang:rust);;
+      *) echo "WARN: unknown language pack '$lang' — skipped (use ecc consult)" >&2;;
+    esac
+  done
+}
+
+build_install_cmd() {
+  local cmd=("$ECC_HOME/install.sh" --profile "$PROFILE" --target cursor)
+  append_language_components cmd
   if [ "$WITH_HOOKS" = true ]; then
     cmd+=(--modules hooks-runtime)
   fi
@@ -106,7 +125,7 @@ if [ "$DRY_RUN" = true ]; then
     echo "[dry-run] From $PROJECT_DIR would run:"
     build_install_cmd
     if command -v npx >/dev/null 2>&1; then
-      echo "[dry-run] Optional: npx ecc-universal consult \"laravel security\" --target cursor"
+      echo "[dry-run] Optional: ecc consult \"laravel security\" (uses \$ECC_HOME/scripts/ecc.js)"
     fi
   fi
   exit 0
@@ -118,20 +137,13 @@ install_deps
 cd "$PROJECT_DIR"
 echo "Installing ECC into $PROJECT_DIR/.cursor ..."
 INSTALL_CMD=("$ECC_HOME/install.sh" --profile "$PROFILE" --target cursor)
-# shellcheck disable=SC2206
-LANG_ARR=( $LANGUAGES )
-INSTALL_CMD+=("${LANG_ARR[@]}")
+append_language_components INSTALL_CMD
 if [ "$WITH_HOOKS" = true ]; then
   INSTALL_CMD+=(--modules hooks-runtime)
 fi
 
 "${INSTALL_CMD[@]}"
 
-if ! command -v ecc-universal >/dev/null 2>&1; then
-  echo ""
-  echo "Optional: npm install -g ecc-universal  (for ecc consult / doctor)"
-fi
-
 echo ""
-echo "Done. Verify: ecc status (from project dir) or npx ecc-universal --version"
+echo "Done. Verify: ecc status (from project dir) or node \$ECC_HOME/scripts/ecc.js status"
 echo "Doc: $ROOT/docs/ECC_INTEGRATION.md"
