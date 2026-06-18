@@ -1,0 +1,46 @@
+# Staged response policy — JARVIS template
+# Copy to repo producto: docs/security/response-policy.yaml
+# Inspired: Mehmet Bahçeci — Kalman Filter + AI Agents (Medium, Oct 2025)
+
+version: "1.0"
+signal:
+  name: api_requests_per_second
+  window_seconds: 60
+  kalman:
+    q: 0.01
+    r: 1.0
+    anomaly_threshold_sigma: 3.0
+    min_consecutive_samples: 3
+
+tiers:
+  low:
+    condition: "norm_residual >= 2.0 and norm_residual < 3.0"
+    actions:
+      - structured_log
+      - optional_notify_admin
+    requires_approval: false
+
+  medium:
+    condition: "norm_residual >= 3.0 and norm_residual < 5.0"
+    actions:
+      - rate_limit_ip
+      - throttle_api_group
+    requires_approval: true  # prod: OK usuario recomendado
+
+  high:
+    condition: "norm_residual >= 5.0 sustained"
+    actions:
+      - block_ip
+      - waf_deny_rule
+      - firewall_rule
+    requires_approval: true  # approval-gate obligatorio JARVIS
+
+allowlist:
+  ips:
+    - "127.0.0.1"
+  paths:
+    - "/health"
+    - "/api/health"
+
+cooldown_seconds: 300
+suppress_on_deploy_minutes: 10

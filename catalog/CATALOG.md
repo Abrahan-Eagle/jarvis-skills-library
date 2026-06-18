@@ -2,19 +2,19 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-18
 
-Total: **82** skills
+Total: **84** skills
 
 ## Resumen por categoría
 
 | Categoría | Cantidad |
 |-----------|----------|
 | `backend` | 7 |
-| `core` | 13 |
+| `core` | 14 |
 | `engineering` | 7 |
 | `git` | 3 |
 | `mobile` | 4 |
 | `non-code` | 8 |
-| `ops` | 18 |
+| `ops` | 19 |
 | `planning` | 3 |
 | `review` | 5 |
 | `sdd` | 12 |
@@ -41,6 +41,7 @@ Total: **82** skills
 | `jarvis-core` | Protocolo base del sistema JARVIS para cualquier proyecto. Define honestidad, foco de negocio y flujo de trabajo modular… | [skills/core/jarvis-core/SKILL.md](skills/core/jarvis-core/SKILL.md) |
 | `jarvis-experts` | Panel de Expertos JARVIS (agencia de desarrollo virtual). Define roster de roles, criterios de activación, combinaciones… | [skills/core/jarvis-experts/SKILL.md](skills/core/jarvis-experts/SKILL.md) |
 | `jarvis-skills-maintainer` | Mantenimiento de jarvis-skills-library: crear, validar, catalogar, lockear e instalar skills globales. | [skills/core/jarvis-skills-maintainer/SKILL.md](skills/core/jarvis-skills-maintainer/SKILL.md) |
+| `kalman-anomaly-router` | Orquesta detección runtime Kalman + respuesta escalonada vs cyber-neo audit y security checklist. | [skills/core/kalman-anomaly-router/SKILL.md](skills/core/kalman-anomaly-router/SKILL.md) |
 | `kitty-router` | Orquesta flujo Spec Kitty (misiones, work packages, review/accept/merge) cuando existe .kittify/. | [skills/core/kitty-router/SKILL.md](skills/core/kitty-router/SKILL.md) |
 | `learning-loop-router` | Orquesta learning-loop (scan/wrap-up) vs session-learner-ops, handoff y ECC continuous-learning. | [skills/core/learning-loop-router/SKILL.md](skills/core/learning-loop-router/SKILL.md) |
 | `openspec-router` | Orquesta flujo OpenSpec (OPSX: propose → apply → archive) cuando existe openspec/. | [skills/core/openspec-router/SKILL.md](skills/core/openspec-router/SKILL.md) |
@@ -106,6 +107,7 @@ Total: **82** skills
 | `finishing-a-development-branch` | Cerrar feature Flutter: analyze + test, opciones merge/PR. | [skills/ops/finishing-a-development-branch/SKILL.md](skills/ops/finishing-a-development-branch/SKILL.md) |
 | `git-guardrails-ops` | Protección git: bloquea push a main, advierte en dev, exige confirmación antes de comandos destructivos. | [skills/ops/git-guardrails-ops/SKILL.md](skills/ops/git-guardrails-ops/SKILL.md) |
 | `handoff` | Compactar la sesion actual en un documento de traspaso para continuar en otro agente o chat. Complementa session-learner… | [skills/ops/handoff/SKILL.md](skills/ops/handoff/SKILL.md) |
+| `kalman-anomaly-defense` | Diseña detección runtime con Kalman (predicción + actualización) y respuesta escalonada del agente. | [skills/ops/kalman-anomaly-defense/SKILL.md](skills/ops/kalman-anomaly-defense/SKILL.md) |
 | `learning-loop` | Scan mid-session y wrap-up con quality gates: captura aprendizajes antes de perder contexto. | [skills/ops/learning-loop/SKILL.md](skills/ops/learning-loop/SKILL.md) |
 | `scenario-analysis-ops` | Analisis what-if estrategico sin motor de simulacion: semilla, variables, escenarios, matriz de riesgos, iteracion. | [skills/ops/scenario-analysis-ops/SKILL.md](skills/ops/scenario-analysis-ops/SKILL.md) |
 | `scenario-router` | Orquesta analisis what-if (scenario-analysis-ops, skills dominio) vs simulacion multi-agente StrangeVerse. | [skills/ops/scenario-router/SKILL.md](skills/ops/scenario-router/SKILL.md) |

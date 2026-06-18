@@ -28,6 +28,8 @@ Forense detallado: [CYBER_NEO_FORENSE_JARVIS.md](CYBER_NEO_FORENSE_JARVIS.md).
 
 Complementario con ECC: ver nota en [ECC_INTEGRATION.md](ECC_INTEGRATION.md).
 
+Complementario runtime: detección Kalman + respuesta escalonada → [KALMAN_ANOMALY_INTEGRATION.md](KALMAN_ANOMALY_INTEGRATION.md) (`kalman-anomaly-router`). No sustituye auditoría read-only.
+
 ## Arquitectura
 
 ```

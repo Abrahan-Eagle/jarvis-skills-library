@@ -22,6 +22,7 @@ metadata:
     - security
     - security-review-ecc
     - ecc-router
+    - kalman-anomaly-router
 allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 ---
 
@@ -62,6 +63,7 @@ python3 --version 2>/dev/null
 | Harness ECC (hooks, instincts) | `ecc-router` | cyber-neo |
 | Laravel SCA / patterns profundos | `composer audit` (skill) + ECC `laravel-security` si instalado | sustituir auditoría completa |
 | Fixes tras auditoría | `security` + `test-driven-development` | solo reportar sin fix |
+| Runtime anomaly / política respuesta spikes | `kalman-anomaly-router` | cyber-neo (audit estático) |
 
 ## Flujo recomendado (Cursor)
 

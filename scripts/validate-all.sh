@@ -29,3 +29,7 @@ bash "$ROOT/scripts/smoke-learning-loop.sh"
 echo ""
 echo "== validate-all: skill-loop smoke =="
 bash "$ROOT/scripts/smoke-skill-loop.sh"
+
+echo ""
+echo "== validate-all: kalman-anomaly smoke =="
+bash "$ROOT/scripts/smoke-kalman-anomaly.sh"

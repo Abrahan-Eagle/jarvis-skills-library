@@ -91,6 +91,10 @@ Hooks, instincts, rules idioma, `ecc consult` — skills `ecc-router` + `ecc` (b
 
 Auditoría read-only 11 dominios, OWASP 2025, reporte MD — skills `cyber-neo-router` + `cyber-neo` + `cyber-neo-cli` (bin). Upstream: [Hainrixz/cyber-neo](https://github.com/Hainrixz/cyber-neo) (MIT). Guía: [docs/CYBER_NEO_INTEGRATION.md](docs/CYBER_NEO_INTEGRATION.md). Sync: `bash scripts/sync-cyber-neo-skill.sh`. CLI: `cyber-neo status|secrets|lockfiles`.
 
+### Kalman Anomaly Defense (runtime)
+
+Detección runtime con filtro Kalman + respuesta escalonada del agente — skills `kalman-anomaly-router` + `kalman-anomaly-defense`. Inspiración: [Medium — Mehmet Bahçeci](https://medium.com/@bahceci.mehmet/kalman-filter-ai-agents-a-smarter-way-to-detect-cyber-attacks-586ce34085ff). Guía: [docs/KALMAN_ANOMALY_INTEGRATION.md](docs/KALMAN_ANOMALY_INTEGRATION.md). Prototipo: `python3 skills/ops/kalman-anomaly-defense/scripts/kalman_1d_anomaly.py`. Complemento de Cyber Neo, no sustituto.
+
 ### Learning Loop (memoria sesión)
 
 Scan mid-session + wrap-up con quality gates — skills `learning-loop-router` + `learning-loop`. Upstream: [melodykoh/learning-loop-skill](https://github.com/melodykoh/learning-loop-skill) (MIT v4.1). Guía: [docs/LEARNING_LOOP_INTEGRATION.md](docs/LEARNING_LOOP_INTEGRATION.md). Sync: `bash scripts/sync-learning-loop-skill.sh`. Complemento de `session-learner-ops`, no sustituto.

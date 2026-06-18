@@ -33,7 +33,9 @@
 | Deprecar feature | `speckit-lifecycle-router` |
 | Descomponer plan Spec Kit en tareas | `speckit-tasks` |
 | Descubrir skill o agent ECC | `ecc-router` |
+| Detección anomalías tráfico o DDoS | `kalman-anomaly-defense` |
 | Diseñar UI o UX | `ui-router`, `ui-ux-pro-max` |
+| Diseñar detección anomalías tráfico | `kalman-anomaly-router` |
 | ECC configure-ecc | `configure-ecc` |
 | ECC continuous-learning-v2 | `continuous-learning-v2` |
 | ECC security-review | `security-review-ecc` |
@@ -53,11 +55,14 @@
 | Iniciar módulo | `brainstorming-ops`, `jarvis-core`, `task-pipeline-ops` |
 | Instalar o configurar ECC en proyecto | `ecc-router` |
 | Instincts evolve hooks Cursor | `ecc-router` |
+| Kalman filter defensa runtime | `kalman-anomaly-router` |
+| Kalman filter seguridad runtime | `kalman-anomaly-defense` |
 | Landing page o dashboard | `ui-router`, `ui-ux-pro-max` |
 | Mantener biblioteca de skills globales | `jarvis-skills-maintainer` |
 | Matriz de riesgos what-if | `scenario-analysis-ops` |
 | Misión spec-driven con review y merge | `kitty-router` |
 | Modificar feature existente NNN | `speckit-lifecycle-router` |
+| Monitoreo adaptativo con respuesta escalonada | `kalman-anomaly-defense` |
 | Nueva feature de producto | `sdd-router` |
 | Nueva feature de producto con Spec Kit | `speckit-specify` |
 | OPSX propose apply archive | `openspec-router` |
@@ -66,6 +71,7 @@
 | Paleta de colores o tipografía | `ui-router`, `ui-ux-pro-max` |
 | Plan técnico Spec Kit | `speckit-plan` |
 | Planificar desarrollo | `brainstorming-ops`, `jarvis-core`, `writing-plans` |
+| Política rate limit ante spikes | `kalman-anomaly-defense`, `kalman-anomaly-router` |
 | Prediccion multi-agente con semilla PDF | `strangeverse` |
 | Prediccion multi-agente con semilla documentos | `scenario-router` |
 | Prototipo landing sin codigo en repo | `open-design-router` |

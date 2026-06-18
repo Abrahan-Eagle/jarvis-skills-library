@@ -24,6 +24,7 @@ metadata:
     - open-design-router
     - ecc-router
     - cyber-neo-router
+    - kalman-anomaly-router
     - learning-loop-router
     - skill-loop-router
     - scenario-router
@@ -65,6 +66,8 @@ Para briefing estratégico / estado general del proyecto, ver `strategic-briefin
 Para harness ECC (hooks, instincts, rules idioma, `ecc consult`), ver `ecc-router` ([docs/ECC_INTEGRATION.md](../../docs/ECC_INTEGRATION.md)) — no sustituye este workflow.
 
 Para auditoría de seguridad profunda read-only (Cyber Neo, 11 dominios, reporte OWASP 2025), ver `cyber-neo-router` ([docs/CYBER_NEO_INTEGRATION.md](../../docs/CYBER_NEO_INTEGRATION.md)) — no sustituye `security` ni este workflow.
+
+Para detección runtime y política escalonada ante spikes (Kalman + agente), ver `kalman-anomaly-router` ([docs/KALMAN_ANOMALY_INTEGRATION.md](../../docs/KALMAN_ANOMALY_INTEGRATION.md)) — no sustituye `cyber-neo` ni este workflow.
 
 Para captura/consolidación de aprendizajes de sesión (scan/wrap-up), ver `learning-loop-router` ([docs/LEARNING_LOOP_INTEGRATION.md](../../docs/LEARNING_LOOP_INTEGRATION.md)) — complemento de `session-learner-ops`, no sustituto.
 
