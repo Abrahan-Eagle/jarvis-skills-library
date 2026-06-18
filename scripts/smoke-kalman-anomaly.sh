@@ -36,4 +36,10 @@ if ! echo "$OUT" | grep -q ',YES$'; then
   exit 1
 fi
 
+STDIN_OUT="$(tail -n +2 "$FIXTURE" | python3 "$SCRIPT" --threshold 3.0 2>/dev/null)"
+if ! echo "$STDIN_OUT" | grep -q ',YES$'; then
+  echo "FAIL: stdin path expected at least one anomaly YES" >&2
+  exit 1
+fi
+
 echo "OK: kalman-anomaly smoke tests passed"

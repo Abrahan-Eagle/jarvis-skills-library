@@ -22,6 +22,7 @@ Skills JARVIS: `kalman-anomaly-router` (decisión) + `kalman-anomaly-defense` (p
 | **Diseño defensa runtime / spikes / DDoS policy** | **`kalman-anomaly-router` → `kalman-anomaly-defense`** |
 | Prototipo score en CSV/logs | `scripts/kalman_1d_anomaly.py` |
 | Block / WAF / firewall prod | `approval-gate` + OK usuario |
+| Harness ECC (hooks, instincts) | `ecc-router` — no sustituye detección runtime |
 | TDD / verificación | `test-driven-development`, `verification-before-completion` |
 | Cierre módulo | `session-learner-ops` |
 

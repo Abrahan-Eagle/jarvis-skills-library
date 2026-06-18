@@ -24,6 +24,7 @@ metadata:
     - continuous-learning-v2
     - security-review-ecc
     - configure-ecc
+    - kalman-anomaly-router
 allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 ---
 
@@ -67,6 +68,7 @@ test -d "${ECC_HOME:-$HOME/ecc}" && echo ECC_HOME
 | Wizard install ECC | `configure-ecc` o `install-ecc-runtime.sh` | Plugin + full profile duplicado |
 | Spec Kit / feature producto | `sdd-router`, `speckit-*` | ECC domain skills por defecto |
 | Auditoría 11 dominios + reporte (no ECC) | `cyber-neo-router` → `cyber-neo` | sustituir `security` checklist |
+| Diseño defensa runtime / spikes / rate limit policy | `kalman-anomaly-router` → `kalman-anomaly-defense` | cyber-neo (audit estático) |
 | AgentShield scan configs | `ecc doctor` / npm `ecc-agentshield` | — |
 
 ## Flujo recomendado

@@ -575,3 +575,11 @@ Run before every release:
 - ❌ Running as root / admin in production
 - ❌ Hardcoded credentials for any environment
 - ❌ Disabling SSL/TLS verification
+
+## JARVIS skills relacionadas
+
+| Necesidad | Skill |
+|-----------|-------|
+| Auditoría código read-only OWASP | `cyber-neo-router` |
+| **Defensa runtime / spikes / política rate limit** | `kalman-anomaly-router` → `kalman-anomaly-defense` |
+| Checklist ECC (harness instalado) | `security-review-ecc` |

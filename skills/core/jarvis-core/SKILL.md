@@ -117,6 +117,7 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | Simulación multi-agente / opinión pública | `scenario-router` → `strangeverse` (API :5001) |
 | Harness ECC (hooks, instincts, rules, consult) | `ecc-router` → `ecc` / `install-ecc-runtime.sh` |
 | Auditoría seguridad profunda read-only + reporte | `cyber-neo-router` → skill `cyber-neo` |
+| Diseño defensa runtime / spikes / política DDoS | `kalman-anomaly-router` → `kalman-anomaly-defense` |
 | Loop automático impl→review→verify (YAML) | `skill-loop-router` → skill `skill-loop` + `skill-loop run` (OK usuario) |
 | SD-X ambiguo / multi-arte (dev+UI+docs) | `sdd-x-index` → `sdd-router` o `ui-router` según tabla SD-X |
 
