@@ -36,6 +36,7 @@ Ver [`catalog/SDX_TOOLKITS.md`](catalog/SDX_TOOLKITS.md) (generado desde `catalo
 | ECC (watchlist) | v2.0.0 | `bash scripts/install-ecc-runtime.sh` — [ECC_INTEGRATION.md](ECC_INTEGRATION.md) |
 | Cyber Neo (watchlist) | 9a8998a | `bash scripts/sync-cyber-neo-skill.sh` — [CYBER_NEO_INTEGRATION.md](CYBER_NEO_INTEGRATION.md) |
 | Learning Loop (watchlist) | 948dc75 | `bash scripts/sync-learning-loop-skill.sh` — [LEARNING_LOOP_INTEGRATION.md](LEARNING_LOOP_INTEGRATION.md) |
+| skill-loop (watchlist) | 0bea8b08 | `bash scripts/sync-skill-loop-skill.sh` — [SKILL_LOOP_INTEGRATION.md](SKILL_LOOP_INTEGRATION.md) |
 | Spec Kitty | v3.2.1 | `pipx install spec-kitty-cli` + `spec-kitty init` en repo producto |
 | OpenSpec (watchlist) | 0.16.0 | `npm i -g @fission-ai/openspec` + `openspec init` en repo producto |
 

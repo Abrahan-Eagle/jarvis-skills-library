@@ -2,19 +2,19 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-18
 
-Total: **80** skills
+Total: **82** skills
 
 ## Resumen por categoría
 
 | Categoría | Cantidad |
 |-----------|----------|
 | `backend` | 7 |
-| `core` | 12 |
+| `core` | 13 |
 | `engineering` | 7 |
 | `git` | 3 |
 | `mobile` | 4 |
 | `non-code` | 8 |
-| `ops` | 17 |
+| `ops` | 18 |
 | `planning` | 3 |
 | `review` | 5 |
 | `sdd` | 12 |
@@ -46,6 +46,7 @@ Total: **80** skills
 | `openspec-router` | Orquesta flujo OpenSpec (OPSX: propose → apply → archive) cuando existe openspec/. | [skills/core/openspec-router/SKILL.md](skills/core/openspec-router/SKILL.md) |
 | `sdd-router` | Decide entre flujo Spec Kit (speckit-*) y flujo JARVIS (.agents/plans/) según el repo activo. | [skills/core/sdd-router/SKILL.md](skills/core/sdd-router/SKILL.md) |
 | `sdd-x-index` | Mapa Spec-Driven X (SD-X): elige skills JARVIS por tipo de artefacto (dev, diseño, docs, test, validate). | [skills/core/sdd-x-index/SKILL.md](skills/core/sdd-x-index/SKILL.md) |
+| `skill-loop-router` | Orquesta skill-loop (YAML loops impl-review) vs jarvis-core, speckit, learning-loop. | [skills/core/skill-loop-router/SKILL.md](skills/core/skill-loop-router/SKILL.md) |
 | `task-pipeline-ops` | Pipeline multi-paso proyecto activo: Plan → Spec → Exec → Verify → Fix (máx. 3). | [skills/core/task-pipeline-ops/SKILL.md](skills/core/task-pipeline-ops/SKILL.md) |
 | `ui-router` | Orquesta precedencia UI/UX: skill dominio del producto, ui-ux-pro-max, responsive-design. | [skills/core/ui-router/SKILL.md](skills/core/ui-router/SKILL.md) |
 
@@ -110,6 +111,7 @@ Total: **80** skills
 | `scenario-router` | Orquesta analisis what-if (scenario-analysis-ops, skills dominio) vs simulacion multi-agente StrangeVerse. | [skills/ops/scenario-router/SKILL.md](skills/ops/scenario-router/SKILL.md) |
 | `security-review-ecc` | ECC OWASP security review checklist (complement to security skill). | [skills/ops/security-review-ecc/SKILL.md](skills/ops/security-review-ecc/SKILL.md) |
 | `session-learner-ops` | Tras cerrar módulo UI: patrones en docs/active_context.md y walkthrough. | [skills/ops/session-learner-ops/SKILL.md](skills/ops/session-learner-ops/SKILL.md) |
+| `skill-loop` | Scaffold skill-loop.yml y starter skills para loops impl-review-rework. | [skills/ops/skill-loop/SKILL.md](skills/ops/skill-loop/SKILL.md) |
 | `strategic-briefing-ops` | Briefing estrategico consolidado: sintetiza estado del proyecto, progreso, riesgos y decisiones pendientes en un informe… | [skills/ops/strategic-briefing-ops/SKILL.md](skills/ops/strategic-briefing-ops/SKILL.md) |
 | `verification-before-completion` | OBLIGATORIO antes de declarar cualquier tarea completada en cualquier proyecto. Ejecuta verificación fresca del stack y … | [skills/ops/verification-before-completion/SKILL.md](skills/ops/verification-before-completion/SKILL.md) |
 

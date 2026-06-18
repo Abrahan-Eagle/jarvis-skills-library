@@ -95,6 +95,10 @@ Auditoría read-only 11 dominios, OWASP 2025, reporte MD — skills `cyber-neo-r
 
 Scan mid-session + wrap-up con quality gates — skills `learning-loop-router` + `learning-loop`. Upstream: [melodykoh/learning-loop-skill](https://github.com/melodykoh/learning-loop-skill) (MIT v4.1). Guía: [docs/LEARNING_LOOP_INTEGRATION.md](docs/LEARNING_LOOP_INTEGRATION.md). Sync: `bash scripts/sync-learning-loop-skill.sh`. Complemento de `session-learner-ops`, no sustituto.
 
+### skill-loop (orquestación multi-skill)
+
+Loops automáticos impl→review→verify vía `skill-loop.yml` + CLI — skills `skill-loop-router` + `skill-loop`. Upstream: [takumiyoshikawa/skill-loop](https://github.com/takumiyoshikawa/skill-loop) (MIT). Guía: [docs/SKILL_LOOP_INTEGRATION.md](docs/SKILL_LOOP_INTEGRATION.md). Sync: `bash scripts/sync-skill-loop-skill.sh`. CLI: `bash scripts/install-skill-loop-runtime.sh`. No sustituye `jarvis-core` ni `learning-loop`.
+
 ## Migración desde ~/jarvis-skills
 
 Ver [docs/MIGRATION.md](docs/MIGRATION.md).

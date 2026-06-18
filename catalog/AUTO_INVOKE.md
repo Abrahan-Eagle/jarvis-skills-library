@@ -23,6 +23,8 @@
 | Convertir tasks Spec Kit a issues GitHub | `speckit-taskstoissues` |
 | Crear commit | `git-commit`, `structured-commits-ops`, `verification-before-completion` |
 | Crear skill global | `jarvis-skills-maintainer` |
+| Crear skill-loop.yml | `skill-loop-router` |
+| Crear skill-loop.yml workflow | `skill-loop` |
 | Cualquier tarea no trivial | `jarvis-experts` |
 | Decidir flujo planificación | `sdd-router` |
 | Decisión cross-rol | `jarvis-experts` |
@@ -60,6 +62,7 @@
 | Nueva feature de producto con Spec Kit | `speckit-specify` |
 | OPSX propose apply archive | `openspec-router` |
 | OpenSpec u openspec | `openspec-router` |
+| Orquestar loop implementación revisión | `skill-loop`, `skill-loop-router` |
 | Paleta de colores o tipografía | `ui-router`, `ui-ux-pro-max` |
 | Plan técnico Spec Kit | `speckit-plan` |
 | Planificar desarrollo | `brainstorming-ops`, `jarvis-core`, `writing-plans` |
@@ -95,4 +98,5 @@
 | ecc doctor repair harness | `ecc` |
 | learning-loop scan wrap up | `learning-loop`, `learning-loop-router` |
 | open-design generate | `open-design` |
+| skill-loop workflow | `skill-loop-router` |
 | spec-kitty dispatch | `kitty-governance` |

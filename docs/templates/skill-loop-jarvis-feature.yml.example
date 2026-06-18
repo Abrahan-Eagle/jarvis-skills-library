@@ -1,0 +1,56 @@
+# JARVIS feature loop — implement → review → verify (skill-loop)
+# Copy to repo producto as skill-loop.yml and adapt skill names/prompts.
+# Plantilla: sin flags peligrosos; max_iterations bajo; runtime cursor-cli.
+# Skills referenciados deben existir en .agents/skills/ o ~/.cursor/skills/
+
+name: jarvis-feature-loop
+default_entrypoint: implement
+max_iterations: 5
+idle_timeout_seconds: 900
+max_restarts: 2
+
+router:
+  runtime: cursor-cli
+  model: gpt-5
+
+skills:
+  implement:
+    agent:
+      runtime: cursor-cli
+      model: gpt-5
+    next:
+      - id: to-review
+        skill: review
+
+  review:
+    agent:
+      runtime: cursor-cli
+      model: gpt-5
+    next:
+      - id: approve
+        criteria: "Review confirms implementation quality is sufficient for this iteration."
+        skill: verify
+      - id: ask-human
+        criteria: "Review needs a human decision before continuing."
+        blocked: true
+        skill: implement
+      - id: rework
+        criteria: "Review found issues that require more implementation work."
+        skill: implement
+
+  verify:
+    agent:
+      runtime: cursor-cli
+      model: gpt-5
+    next:
+      - id: done
+        criteria: "Tests pass and verification-before-completion criteria met."
+        done: true
+      - id: rework
+        criteria: "Tests or verification failed; more implementation needed."
+        skill: implement
+
+# Starter skills (create under .agents/skills/ in product repo):
+#   implement/SKILL.md — invoke test-driven-development + domain skill; implement feature from user prompt
+#   review/SKILL.md — invoke code-review-playbook; output structured review only
+#   verify/SKILL.md — run stack tests + verification-before-completion checklist

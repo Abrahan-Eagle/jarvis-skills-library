@@ -39,3 +39,5 @@ Si el repo producto tiene ECC hooks activos (`install-ecc-runtime.sh --with-hook
 Si hubo auditoría Cyber Neo en la sesión, enlazar path del reporte MD en `active_context` (hallazgos Critical/High) — forense: [CYBER_NEO_FORENSE_JARVIS.md](../../docs/CYBER_NEO_FORENSE_JARVIS.md).
 
 Opcional tras cierre canónico: si el usuario pide consolidación profunda de señales de sesión, invocar `learning-loop-router` → wrap-up — ver [LEARNING_LOOP_INTEGRATION.md](../../docs/LEARNING_LOOP_INTEGRATION.md). No sustituye este skill.
+
+Si la sesión usó `skill-loop run` y el workflow terminó (`done`), documentar resultado del loop en `active_context` (iteraciones, skill final) — ver [SKILL_LOOP_INTEGRATION.md](../../docs/SKILL_LOOP_INTEGRATION.md). Cierre canónico sigue siendo este skill.

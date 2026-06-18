@@ -25,6 +25,7 @@ metadata:
     - ecc-router
     - cyber-neo-router
     - learning-loop-router
+    - skill-loop-router
     - scenario-router
     - strategic-briefing-ops
     - speckit-specify
@@ -66,6 +67,8 @@ Para harness ECC (hooks, instincts, rules idioma, `ecc consult`), ver `ecc-route
 Para auditoría de seguridad profunda read-only (Cyber Neo, 11 dominios, reporte OWASP 2025), ver `cyber-neo-router` ([docs/CYBER_NEO_INTEGRATION.md](../../docs/CYBER_NEO_INTEGRATION.md)) — no sustituye `security` ni este workflow.
 
 Para captura/consolidación de aprendizajes de sesión (scan/wrap-up), ver `learning-loop-router` ([docs/LEARNING_LOOP_INTEGRATION.md](../../docs/LEARNING_LOOP_INTEGRATION.md)) — complemento de `session-learner-ops`, no sustituto.
+
+Para orquestación automática de loops multi-skill (`skill-loop.yml` + CLI), ver `skill-loop-router` ([docs/SKILL_LOOP_INTEGRATION.md](../../docs/SKILL_LOOP_INTEGRATION.md)) — no sustituye `jarvis-core` ni `learning-loop`.
 
 Para SD-X (dev + diseño + docs + validate), ver `sdd-x-index` ([docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md)).
 
@@ -111,6 +114,7 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | Simulación multi-agente / opinión pública | `scenario-router` → `strangeverse` (API :5001) |
 | Harness ECC (hooks, instincts, rules, consult) | `ecc-router` → `ecc` / `install-ecc-runtime.sh` |
 | Auditoría seguridad profunda read-only + reporte | `cyber-neo-router` → skill `cyber-neo` |
+| Loop automático impl→review→verify (YAML) | `skill-loop-router` → skill `skill-loop` + `skill-loop run` (OK usuario) |
 | SD-X ambiguo / multi-arte (dev+UI+docs) | `sdd-x-index` → `sdd-router` o `ui-router` según tabla SD-X |
 
 ## Directivas principales

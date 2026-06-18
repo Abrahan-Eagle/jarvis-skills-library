@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/takumiyoshikawa/skill-loop/main/schema.json",
+  "$ref": "#/$defs/Config",
+  "$defs": {
+    "Agent": {
+      "properties": {
+        "runtime": {
+          "type": "string",
+          "description": "Coding agent CLI runtime to execute. Supported values are claude or codex or cursor-cli or opencode. Defaults to claude."
+        },
+        "model": {
+          "type": "string",
+          "description": "Model ID to use for this skill (agent-specific)."
+        },
+        "args": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "description": "Additional CLI arguments to pass to the agent (e.g. --dangerously-skip-permissions for claude)."
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "Config": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Workflow name used for grouping run sessions under ~/.local/share/skill-loop/\u003cname\u003e/. When omitted the config filename is used."
+        },
+        "schedule": {
+          "type": "string",
+          "description": "Optional cron schedule in standard 5-field crontab syntax. When set skill-loop stays resident and runs the workflow on each matching time."
+        },
+        "router": {
+          "$ref": "#/$defs/Agent",
+          "description": "Shared router agent configuration used to choose the next route when a skill has multiple next routes."
+        },
+        "default_entrypoint": {
+          "type": "string",
+          "description": "Default skill to start the loop with. Must exist in the skills map."
+        },
+        "max_iterations": {
+          "type": "integer",
+          "description": "Maximum number of loop iterations before stopping. Defaults to 100 if omitted."
+        },
+        "idle_timeout_seconds": {
+          "type": "integer",
+          "description": "Idle timeout in seconds for each skill execution before restart. Defaults to 900 (15 minutes)."
+        },
+        "max_restarts": {
+          "type": "integer",
+          "description": "Maximum automatic restarts per skill execution when idle timeout is exceeded. Defaults to 2. Set 0 to disable automatic restarts."
+        },
+        "skills": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Skill"
+          },
+          "type": "object",
+          "description": "Map of skill names to their definitions."
+        }
+      },
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "default_entrypoint",
+        "skills"
+      ]
+    },
+    "Route": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable route identifier returned by the router agent."
+        },
+        "criteria": {
+          "type": "string",
+          "description": "Judgment criteria used by the router agent when deciding whether this route should be chosen."
+        },
+        "skill": {
+          "type": "string",
+          "description": "Target skill name to route to. Mutually exclusive with done."
+        },
+        "done": {
+          "type": "boolean",
+          "description": "Terminate the workflow when this route is selected. Mutually exclusive with skill."
+        },
+        "blocked": {
+          "type": "boolean",
+          "description": "Pause the workflow and mark the session blocked awaiting human input. Requires skill and is mutually exclusive with done."
+        }
+      },
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "id"
+      ]
+    },
+    "Skill": {
+      "properties": {
+        "agent": {
+          "$ref": "#/$defs/Agent",
+          "description": "Agent configuration for this skill. runtime defaults to claude when omitted."
+        },
+        "next": {
+          "items": {
+            "$ref": "#/$defs/Route"
+          },
+          "type": "array",
+          "description": "Route options available after this skill runs. If more than one route exists then the shared router agent selects one by id."
+        }
+      },
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "next"
+      ]
+    }
+  },
+  "title": "skill-loop",
+  "description": "Schema for skill-loop YAML configuration files (skill-loop.yml)"
+}

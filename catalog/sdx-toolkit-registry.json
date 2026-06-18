@@ -144,6 +144,22 @@
       }
     },
     {
+      "id": "skill-loop",
+      "name": "skill-loop (takumiyoshikawa)",
+      "repo": "https://github.com/takumiyoshikawa/skill-loop",
+      "pin": "0bea8b08e079c71bc857631e26ada06068e82321",
+      "sdx": ["SD-Development"],
+      "jarvis": {
+        "skills": [
+          "skill-loop-router",
+          "skill-loop"
+        ],
+        "sync": "scripts/sync-skill-loop-skill.sh",
+        "install": "scripts/install-skill-loop-runtime.sh",
+        "doc": "docs/SKILL_LOOP_INTEGRATION.md"
+      }
+    },
+    {
       "id": "marketing-spec-kit",
       "name": "Marketing Spec Kit",
       "repo": "https://github.com/ACNet-AI/marketing-spec-kit",
