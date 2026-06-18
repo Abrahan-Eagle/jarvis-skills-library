@@ -87,14 +87,21 @@ Por defecto **no** modificar `AGENTS.md` de productos sin OK usuario.
 
 ## Research watchlist
 
-Referencia académica **externa** (sin sync vendor): [ShlezingerLab/AI_Aided_KFs](https://github.com/ShlezingerLab/AI_Aided_KFs) — KalmanNet, DANSE, APBM en sistema Lorenz. Curado en skill: `skills/ops/kalman-anomaly-defense/references/ai-aided-kfs-research.md`.
+Extractos académicos **externos** (sin sync vendor), curados en `skills/ops/kalman-anomaly-defense/references/ai-aided-kfs-research.md`:
+
+| Repo | Notas |
+|------|-------|
+| [ShlezingerLab/AI_Aided_KFs](https://github.com/ShlezingerLab/AI_Aided_KFs) | KalmanNet, DANSE, APBM (Lorenz); licencia TBD |
+| [AaltoML/kalman-jax](https://github.com/AaltoML/kalman-jax) | Obsoleto; periodic/Poisson/EKF ideas; Apache-2.0 |
+| [AaltoML/BayesNewton](https://github.com/AaltoML/BayesNewton/) | Sucesor kalman-jax para R&D GP temporal |
 
 | Uso | Camino |
 |-----|--------|
 | MVP runtime + política agente | `kalman_1d_anomaly.py` + staged response |
-| R&D estimador no lineal / ML gain | Leer `ai-aided-kfs-research.md`; clonar repo fuera del library |
+| R&D ML gain / Lorenz | `ai-aided-kfs-research.md` → clonar Shlezinger fuera del library |
+| R&D periodic baseline / Poisson / GP temporal | `ai-aided-kfs-research.md` → clonar BayesNewton fuera del library |
 
-Licencia del repo externo: **TBD** en su README — no copiar código al library sin verificar.
+Licencia Shlezinger: **TBD** en su README. Aalto kalman-jax: Apache-2.0 — no vendorizar stack JAX completo.
 
 ## IRON LAW
 
@@ -111,5 +118,6 @@ Sin block/WAF/firewall/deploy en producción sin OK explícito. Hard actions ví
 
 - Mehmet Bahçeci — Kalman Filter + AI Agents (Medium, Oct 2025)
 - Rudolf Kalman — filtro de estado
-- ShlezingerLab — AI_Aided_KFs (referencia R&D; ver `ai-aided-kfs-research.md`)
+- ShlezingerLab — AI_Aided_KFs (extracto R&D; ver `ai-aided-kfs-research.md`)
+- AaltoML — kalman-jax / BayesNewton (extracto periodic/Poisson; ver mismo reference)
 - JARVIS overlay — política, approval-gate, integración ecosistema

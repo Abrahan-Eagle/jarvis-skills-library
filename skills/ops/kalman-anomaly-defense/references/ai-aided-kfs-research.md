@@ -1,70 +1,90 @@
-# AI-Aided Kalman Filters — referencia de investigación (ShlezingerLab)
+# Kalman research extracts (externo)
 
-Repositorio externo: [ShlezingerLab/AI_Aided_KFs](https://github.com/ShlezingerLab/AI_Aided_KFs)
+Extractos curados de repos académicos **sin sync vendor**. Orienta R&D cuando el MVP (`kalman_1d_anomaly.py`, random walk 1D) no basta. **No sustituye** política agente ni `approval-gate`.
 
-**No es upstream de JARVIS.** No hay sync vendor. Este documento orienta cuándo consultar el repo y qué **no** copiar a `jarvis-skills-library`.
+| Repo | Enfoque |
+|------|---------|
+| [ShlezingerLab/AI_Aided_KFs](https://github.com/ShlezingerLab/AI_Aided_KFs) | Lorenz + KalmanNet / DANSE / APBM |
+| [AaltoML/kalman-jax](https://github.com/AaltoML/kalman-jax) (obsoleto) | GP temporal + EKF/UKF en JAX |
+| [AaltoML/BayesNewton](https://github.com/AaltoML/BayesNewton/) | Sucesor de kalman-jax para R&D nuevo |
 
-## Qué es el repo
+## Extracto ShlezingerLab (AI_Aided_KFs)
 
-Implementación y comparación de **filtros Kalman asistidos por IA** aplicados a mediciones de un **atractor de Lorenz** (estimación de estado en sistema dinámico no lineal). Colaboración académica (Ben-Gurion, ETH, KTH, UWB, Northeastern). Stack: Python (~94 %), MATLAB (~5 %). Subcarpetas: `RTSNet_IL/`, `DANSE_KTH/`, `APBM_NU_CZ/`, `dataset/`, `figs/`.
+Repositorio: [ShlezingerLab/AI_Aided_KFs](https://github.com/ShlezingerLab/AI_Aided_KFs)
 
-## Algoritmos incluidos
+Implementación y comparación de **filtros Kalman asistidos por IA** en un **atractor de Lorenz**. Stack: Python (~94 %), MATLAB (~5 %). Subcarpetas: `RTSNet_IL/`, `DANSE_KTH/`, `APBM_NU_CZ/`, `dataset/`, `figs/`.
+
+### Algoritmos
 
 | Algoritmo | Descripción breve | Cuándo leerlo en JARVIS |
 |-----------|-------------------|-------------------------|
-| **EKF** (Extended Kalman Filter) | Linealización local para sistemas no lineales | Modelo de estado no es random walk; necesitas intuición EKF antes de custom middleware |
-| **PF** (Particle Filter) | Monte Carlo para no linealidad fuerte | Baseline lineal/EKF insuficiente; evaluar coste computacional |
-| **KalmanNet** | DNN aprende ganancia K en tiempo real; baja complejidad declarada | R&D: tráfico muy no lineal o multi-señal; FP/FN persistentes con `kalman_1d_anomaly.py` |
-| **DANSE** | Estimación de estado no lineal data-driven | Explorar si el “modelo” de negocio es difícil de formalizar (solo conceptual) |
-| **APBM** | Modelo físico + data-driven | Analogía: reglas de negocio + métricas observadas (CorralX/Zonix) — no implementación directa |
+| **EKF** | Linealización local para no lineal | Modelo de estado no es random walk |
+| **PF** (Particle Filter) | Monte Carlo para no linealidad fuerte | EKF insuficiente; evaluar coste |
+| **KalmanNet** | DNN aprende ganancia K en tiempo real | R&D: tráfico muy no lineal o multi-señal |
+| **DANSE** | Estimación no lineal data-driven | Modelo de negocio difícil de formalizar (conceptual) |
+| **APBM** | Física + data-driven | Analogía reglas de negocio + métricas |
 
-## Matriz de decisión JARVIS
+### Limitaciones Shlezinger
+
+- Dominio Lorenz ≠ logs API / throttle / WAF.
+- Licencia README: **TBD** — no copiar código al library sin verificar.
+- PyTorch/MATLAB; sin capa agente ni approval.
+
+## Extracto AaltoML (kalman-jax / BayesNewton)
+
+- [kalman-jax](https://github.com/AaltoML/kalman-jax) está **obsoleto**; para R&D nuevo usar [BayesNewton](https://github.com/AaltoML/BayesNewton/).
+- Inferencia aproximada en **GP temporales** (Markov) vía Kalman iterado en JAX (ICML 2020, [arXiv SS-EP](https://arxiv.org/abs/2007.05994); variacional: [arXiv](https://arxiv.org/abs/2007.04731)).
+- Licencia **Apache-2.0** — si en futuro se porta un snippet mínimo (ej. modelo periodic), licencia clara (Shlezinger sigue TBD).
+
+### Ideas aplicables (sin vendorizar JAX/notebooks)
+
+| Idea | Uso en defensa runtime |
+|------|------------------------|
+| **Periodic / quasi-periodic priors** | Tráfico con horario laboral o campañas recurrentes; reduce FP vs random walk |
+| **Matern class** | Baseline suave con memoria temporal |
+| **Poisson / Cox** | req/s o login failures como **conteos** (intensidad), no solo Gaussian |
+| **EKF / UKF / GHKF** | Catálogo filtros no lineales; complementa EKF de Shlezinger con licencia Apache |
+
+**No extraer:** stack `kalmanjax/`, notebooks, VI/STEP/STKS — peso operativo incompatible con script ligero JARVIS.
+
+### Matriz periodic / Poisson vs script 1D
+
+| Señal | Seguir `kalman_1d_anomaly.py` | Considerar idea Aalto |
+|-------|-------------------------------|------------------------|
+| Spike aislado, baseline plano | Sí | — |
+| FP en horas pico legítimas | Revisar Q/R primero | Periodic / quasi-periodic baseline |
+| Eventos discretos (logins, 4xx bursts) | Umbral por ventana puede bastar | Poisson / Cox como intensidad |
+| R&D con GP temporal completo | No | Clonar BayesNewton fuera del library |
+
+## Matriz de decisión JARVIS (global)
 
 | Escenario | Camino recomendado |
 |-----------|-------------------|
 | MVP defensa runtime, spikes API, política alert/throttle/block | [`kalman_1d_anomaly.py`](../../scripts/kalman_1d_anomaly.py) + [staged-response-policy.md](staged-response-policy.md) + `approval-gate` |
 | Auditoría código OWASP | `cyber-neo-router` |
 | Checklist auth/uploads al codificar | `security` |
-| R&D explícito: multi-variable, no lineal, aprender K con ML | Clonar AI_Aided_KFs **fuera** del library; estudiar KalmanNet/DANSE; **no** vendorizar sin licencia clara |
-| Paper/citation del repo | README indica citation **TBD** — verificar antes de citar en docs públicas |
+| R&D: ML gain / Lorenz / KalmanNet | Clonar AI_Aided_KFs fuera del library; licencia TBD |
+| R&D: periodic baseline / Poisson / GP temporal | Ideas en este doc; clonar BayesNewton fuera del library |
+| Paper Shlezinger en docs públicas | Citation TBD en su README — verificar |
 
 ## vs artículo Medium (Bahçeci)
 
-| | Medium (Bahçeci) | AI_Aided_KFs (ShlezingerLab) |
-|---|------------------|------------------------------|
-| Enfoque | Kalman + **agentes IA** para **ciberataques** operativos | Kalman + **ML** para **estimación de estado** en Lorenz |
-| Agente JARVIS | Base de `kalman-anomaly-defense` (política escalonada) | Sin capa agente ni approval |
-| Código en library | Script 1D + playbook | Solo este reference |
+| | Medium (Bahçeci) | Shlezinger | Aalto |
+|---|------------------|------------|-------|
+| Enfoque | Kalman + agentes para **ciber** operativo | ML + Lorenz | GP temporal + filtros estándar |
+| Agente JARVIS | Base de `kalman-anomaly-defense` | Sin agente | Sin agente |
+| Código en library | Script 1D + playbook | Solo extractos | Solo extractos |
 
-Ambos complementan: Bahçeci = **qué hacer** ante anomalía; Shlezinger = **cómo mejorar el estimador** si el lineal 1D no alcanza.
-
-## Limitaciones (por qué no vendorizar)
-
-1. **Dominio:** Lorenz ≠ logs API, req/s, Laravel throttle, WAF.
-2. **Licencia:** README marca **License: TBD** — riesgo legal al copiar código al library.
-3. **Dependencias:** PyTorch/MATLAB por subcarpeta; rompe patrón script ligero JARVIS.
-4. **Sin operaciones:** no hay política runtime, block IP, ni `approval-gate`.
-5. **Mantenimiento:** sin releases; paper citation TBD; alto costo de sync.
+Bahçeci = **qué hacer** ante anomalía; Shlezinger = **ML gain** no lineal; Aalto = **baselines temporales** (periodic, conteos).
 
 ## Uso recomendado
 
-1. Leer README y `figs/` para intuición de benchmarks.
-2. Si el equipo abre ticket R&D KalmanNet: `git clone` en workspace de investigación (no en `jarvis-skills-library`).
-3. Documentar hallazgos en `docs/active_context.md` del producto, no en skills globales sin OK.
-4. Cualquier block/WAF en prod sigue IRON LAW de la skill principal.
-
-## Estructura del repo (navegación)
-
-| Carpeta | Contenido |
-|---------|-----------|
-| `dataset/` | Observaciones y ground truth Lorenz (no datos ciber) |
-| `figs/` | Resultados de simulación |
-| `RTSNet_IL/` | Implementación RTSNet |
-| `DANSE_KTH/` | Implementación DANSE |
-| `APBM_NU_CZ/` | Implementación APBM |
-
-Seguir instrucciones y requirements en cada subcarpeta al clonar.
+1. MVP siempre con script 1D + staged response.
+2. FP por patrón horario → revisar periodic baseline (idea Aalto) antes de KalmanNet.
+3. R&D KalmanNet → clone Shlezinger; R&D GP temporal → clone BayesNewton (no kalman-jax).
+4. Hallazgos en `docs/active_context.md` del producto, no en skills globales sin OK.
+5. Block/WAF en prod: IRON LAW de la skill principal.
 
 ## Relación con basics
 
-Para predicción/actualización 1D y residual como señal de anomalía, ver [kalman-basics.md](kalman-basics.md). Para EKF, sistemas no lineales y vía ML, volver a este documento.
+Predicción/actualización 1D y residual como señal: [kalman-basics.md](kalman-basics.md). EKF, no lineal, ML y periodic: este documento.

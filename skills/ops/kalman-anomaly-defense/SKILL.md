@@ -132,7 +132,7 @@ Ecosistema JARVIS: [references/jarvis-ecosystem.md](references/jarvis-ecosystem.
 | [staged-response-policy.md](references/staged-response-policy.md) | low/medium/high + Laravel/nginx |
 | [metrics-signals.md](references/metrics-signals.md) | Señales por contexto producto |
 | [jarvis-ecosystem.md](references/jarvis-ecosystem.md) | cyber-neo, skill-loop, approval-gate |
-| [ai-aided-kfs-research.md](references/ai-aided-kfs-research.md) | R&D KalmanNet/DANSE/APBM (ShlezingerLab, externo) |
+| [ai-aided-kfs-research.md](references/ai-aided-kfs-research.md) | R&D extracts (Shlezinger + Aalto/BayesNewton) |
 
 ## Anti-patrones
 
