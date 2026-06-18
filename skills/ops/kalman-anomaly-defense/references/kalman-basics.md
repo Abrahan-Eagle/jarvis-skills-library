@@ -50,3 +50,7 @@ Observas un objeto con ruido (humo, sensor imperfecto). El cerebro **predice** d
 | Multi-señal correlada | Filtro vectorial (fuera de MVP script 1D) |
 
 Script JARVIS: `scripts/kalman_1d_anomaly.py` — random walk 1D, sin dependencias obligatorias.
+
+## Más allá del MVP (EKF / no lineal / ML)
+
+Si el modelo lineal 1D o random walk no alcanza (FP/FN persistentes, multi-señal correlada), ver [ai-aided-kfs-research.md](ai-aided-kfs-research.md) — referencia académica [ShlezingerLab/AI_Aided_KFs](https://github.com/ShlezingerLab/AI_Aided_KFs) (EKF, Particle Filter, KalmanNet). **No vendorizar** ese repo en JARVIS; clonar fuera del library para R&D explícito.

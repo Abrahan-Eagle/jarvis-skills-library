@@ -72,6 +72,7 @@ Fases **predicción** y **actualización** — ver [references/kalman-basics.md]
 
 - 1D suficiente para MVP: una señal (ej. req/s).
 - Estado x̂: nivel esperado; P: incertidumbre; Q: ruido proceso; R: ruido medición.
+- **Vía avanzada ML** (KalmanNet, EKF, no lineal fuerte): ver [references/ai-aided-kfs-research.md](references/ai-aided-kfs-research.md) — **no MVP**; repo externo, sin vendor.
 
 Prototipo CLI:
 
@@ -131,6 +132,7 @@ Ecosistema JARVIS: [references/jarvis-ecosystem.md](references/jarvis-ecosystem.
 | [staged-response-policy.md](references/staged-response-policy.md) | low/medium/high + Laravel/nginx |
 | [metrics-signals.md](references/metrics-signals.md) | Señales por contexto producto |
 | [jarvis-ecosystem.md](references/jarvis-ecosystem.md) | cyber-neo, skill-loop, approval-gate |
+| [ai-aided-kfs-research.md](references/ai-aided-kfs-research.md) | R&D KalmanNet/DANSE/APBM (ShlezingerLab, externo) |
 
 ## Anti-patrones
 
