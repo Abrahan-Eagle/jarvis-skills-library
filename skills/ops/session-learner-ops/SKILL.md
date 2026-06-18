@@ -8,7 +8,7 @@ metadata:
   version: "1.1.0"
   auto_invoke:
     - "Terminar módulo"
-  related-skills: [jarvis-core, verification-before-completion]
+  related-skills: [jarvis-core, verification-before-completion, continuous-learning-v2]
 ---
 
 # Session learner ops — proyecto activo
@@ -31,3 +31,7 @@ Adaptado desde clawvis-openclaw.
 - Duplicar lo ya en `{producto}-ui-design`
 
 Mismo proceso y plantilla que Backend.
+
+## ECC instincts (opcional)
+
+Si el repo producto tiene ECC hooks activos (`install-ecc-runtime.sh --with-hooks`), complementar con skill `continuous-learning-v2` para instincts y `/evolve`. **Cierre canónico JARVIS:** siempre `docs/active_context.md` vía esta skill primero.

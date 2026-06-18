@@ -22,6 +22,7 @@ metadata:
     - sdd-x-index
     - ui-router
     - open-design-router
+    - ecc-router
     - scenario-router
     - strategic-briefing-ops
     - speckit-specify
@@ -57,6 +58,8 @@ Para artefactos visuales marketing (carrusel, deck, email HTML), ver `open-desig
 Para what-if estratégico y simulación multi-agente, ver `scenario-router` ([docs/STRANGEVERSE_INTEGRATION.md](../../docs/STRANGEVERSE_INTEGRATION.md), [docs/MIROFISH_UPSTREAM.md](../../docs/MIROFISH_UPSTREAM.md)) — no `speckit-specify` salvo que el escenario derive en feature.
 
 Para briefing estratégico / estado general del proyecto, ver `strategic-briefing-ops` — no `scenario-analysis-ops` ni `speckit-specify`.
+
+Para harness ECC (hooks, instincts, rules idioma, `ecc consult`), ver `ecc-router` ([docs/ECC_INTEGRATION.md](../../docs/ECC_INTEGRATION.md)) — no sustituye este workflow.
 
 Para SD-X (dev + diseño + docs + validate), ver `sdd-x-index` ([docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md)).
 
@@ -100,6 +103,7 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | Briefing estratégico / estado general | `strategic-briefing-ops` |
 | What-if / escenarios estratégicos | `scenario-router` → `scenario-analysis-ops` o `{producto}-scenario-analysis` |
 | Simulación multi-agente / opinión pública | `scenario-router` → `strangeverse` (API :5001) |
+| Harness ECC (hooks, instincts, rules, consult) | `ecc-router` → `ecc` / `install-ecc-runtime.sh` |
 | SD-X ambiguo / multi-arte (dev+UI+docs) | `sdd-x-index` → `sdd-router` o `ui-router` según tabla SD-X |
 
 ## Directivas principales

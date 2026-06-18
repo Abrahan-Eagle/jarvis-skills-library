@@ -2,19 +2,19 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-18
 
-Total: **70** skills
+Total: **75** skills
 
 ## Resumen por categoría
 
 | Categoría | Cantidad |
 |-----------|----------|
 | `backend` | 7 |
-| `core` | 9 |
+| `core` | 10 |
 | `engineering` | 7 |
 | `git` | 3 |
 | `mobile` | 4 |
-| `non-code` | 6 |
-| `ops` | 12 |
+| `non-code` | 7 |
+| `ops` | 15 |
 | `planning` | 3 |
 | `review` | 5 |
 | `sdd` | 12 |
@@ -36,6 +36,7 @@ Total: **70** skills
 
 | Skill | Descripción | Ruta |
 |-------|-------------|------|
+| `ecc-router` | Orquesta harness ECC (hooks, instincts, rules idioma, ecc consult) vs workflow JARVIS canónico. | [skills/core/ecc-router/SKILL.md](skills/core/ecc-router/SKILL.md) |
 | `jarvis-core` | Protocolo base del sistema JARVIS para cualquier proyecto. Define honestidad, foco de negocio y flujo de trabajo modular… | [skills/core/jarvis-core/SKILL.md](skills/core/jarvis-core/SKILL.md) |
 | `jarvis-experts` | Panel de Expertos JARVIS (agencia de desarrollo virtual). Define roster de roles, criterios de activación, combinaciones… | [skills/core/jarvis-experts/SKILL.md](skills/core/jarvis-experts/SKILL.md) |
 | `jarvis-skills-maintainer` | Mantenimiento de jarvis-skills-library: crear, validar, catalogar, lockear e instalar skills globales. | [skills/core/jarvis-skills-maintainer/SKILL.md](skills/core/jarvis-skills-maintainer/SKILL.md) |
@@ -82,6 +83,7 @@ Total: **70** skills
 | `activity-log` | Log unificado de actividad de agentes (state/activity-log.jsonl, tasks/, handoffs). | [skills/non-code/activity-log/SKILL.md](skills/non-code/activity-log/SKILL.md) |
 | `approval-gate` | Enforcement tecnico de approval gates AG-12/AG-03/AG-13 antes de publicar. | [skills/non-code/approval-gate/SKILL.md](skills/non-code/approval-gate/SKILL.md) |
 | `client-report` | Generar reporte mensual al cliente desde activity-log y calendario editorial. | [skills/non-code/client-report/SKILL.md](skills/non-code/client-report/SKILL.md) |
+| `ecc` | CLI wrapper para ecc-universal: status, consult, doctor, repair. Harness Everything Claude Code en Cursor. | [skills/non-code/ecc/SKILL.md](skills/non-code/ecc/SKILL.md) |
 | `open-design` | Fábrica visual local via daemon Open Design: generate carrusel, deck, email, prototipos HTML. | [skills/non-code/open-design/SKILL.md](skills/non-code/open-design/SKILL.md) |
 | `publish-safety` | Capa de seguridad para publicacion RRSS: rate-limit, dedup, karma-tiers, circuit breaker. | [skills/non-code/publish-safety/SKILL.md](skills/non-code/publish-safety/SKILL.md) |
 | `strangeverse` | Simulacion multi-agente StrangeVerse via API Flask: semilla, grafo, OASIS, reporte de prediccion. | [skills/non-code/strangeverse/SKILL.md](skills/non-code/strangeverse/SKILL.md) |
@@ -91,7 +93,9 @@ Total: **70** skills
 | Skill | Descripción | Ruta |
 |-------|-------------|------|
 | `brainstorming-ops` | OBLIGATORIO antes de tareas complejas en proyecto activo: pantallas, providers, navegación, flujos KYC/onboarding. Propo… | [skills/ops/brainstorming-ops/SKILL.md](skills/ops/brainstorming-ops/SKILL.md) |
+| `configure-ecc` | ECC install wizard and harness configuration for Cursor. | [skills/ops/configure-ecc/SKILL.md](skills/ops/configure-ecc/SKILL.md) |
 | `context-updater` | Actualizar el contexto de sesión para que la IA "recuerde" entre sesiones. Resumir cambios relevantes en docs/active_con… | [skills/ops/context-updater/SKILL.md](skills/ops/context-updater/SKILL.md) |
+| `continuous-learning-v2` | ECC instincts: continuous learning v2, evolve clusters into skills. Use with session-learner-ops at module close. | [skills/ops/continuous-learning-v2/SKILL.md](skills/ops/continuous-learning-v2/SKILL.md) |
 | `deep-interview-ops` | Entrevista socrática antes de tareas ambiguas en proyecto activo. Gate claridad mínima 3.5/5. | [skills/ops/deep-interview-ops/SKILL.md](skills/ops/deep-interview-ops/SKILL.md) |
 | `documentar-avances` | Al finalizar una tarea relevante, proponer el párrafo para "Cambios recientes" en AGENTS.md y/o README. El usuario aprue… | [skills/ops/documentar-avances/SKILL.md](skills/ops/documentar-avances/SKILL.md) |
 | `finishing-a-development-branch` | Cerrar feature Flutter: analyze + test, opciones merge/PR. | [skills/ops/finishing-a-development-branch/SKILL.md](skills/ops/finishing-a-development-branch/SKILL.md) |
@@ -99,6 +103,7 @@ Total: **70** skills
 | `handoff` | Compactar la sesion actual en un documento de traspaso para continuar en otro agente o chat. Complementa session-learner… | [skills/ops/handoff/SKILL.md](skills/ops/handoff/SKILL.md) |
 | `scenario-analysis-ops` | Analisis what-if estrategico sin motor de simulacion: semilla, variables, escenarios, matriz de riesgos, iteracion. | [skills/ops/scenario-analysis-ops/SKILL.md](skills/ops/scenario-analysis-ops/SKILL.md) |
 | `scenario-router` | Orquesta analisis what-if (scenario-analysis-ops, skills dominio) vs simulacion multi-agente StrangeVerse. | [skills/ops/scenario-router/SKILL.md](skills/ops/scenario-router/SKILL.md) |
+| `security-review-ecc` | ECC OWASP security review checklist (complement to security skill). | [skills/ops/security-review-ecc/SKILL.md](skills/ops/security-review-ecc/SKILL.md) |
 | `session-learner-ops` | Tras cerrar módulo UI: patrones en docs/active_context.md y walkthrough. | [skills/ops/session-learner-ops/SKILL.md](skills/ops/session-learner-ops/SKILL.md) |
 | `strategic-briefing-ops` | Briefing estrategico consolidado: sintetiza estado del proyecto, progreso, riesgos y decisiones pendientes en un informe… | [skills/ops/strategic-briefing-ops/SKILL.md](skills/ops/strategic-briefing-ops/SKILL.md) |
 | `verification-before-completion` | OBLIGATORIO antes de declarar cualquier tarea completada en cualquier proyecto. Ejecuta verificación fresca del stack y … | [skills/ops/verification-before-completion/SKILL.md](skills/ops/verification-before-completion/SKILL.md) |

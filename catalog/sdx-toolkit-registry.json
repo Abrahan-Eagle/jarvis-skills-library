@@ -94,6 +94,25 @@
       }
     },
     {
+      "id": "ecc",
+      "name": "Everything Claude Code (affaan-m)",
+      "repo": "https://github.com/affaan-m/ecc",
+      "pin": "v2.0.0",
+      "sdx": ["SD-Config"],
+      "jarvis": {
+        "skills": [
+          "ecc-router",
+          "ecc",
+          "continuous-learning-v2",
+          "security-review-ecc",
+          "configure-ecc"
+        ],
+        "install": "scripts/install-ecc-runtime.sh",
+        "sync": "scripts/sync-ecc-skills.sh",
+        "doc": "docs/ECC_INTEGRATION.md"
+      }
+    },
+    {
       "id": "marketing-spec-kit",
       "name": "Marketing Spec Kit",
       "repo": "https://github.com/ACNet-AI/marketing-spec-kit",

@@ -26,7 +26,11 @@
 | Definir alcance de un módulo | `jarvis-experts` |
 | Deprecar feature | `speckit-lifecycle-router` |
 | Descomponer plan Spec Kit en tareas | `speckit-tasks` |
+| Descubrir skill o agent ECC | `ecc-router` |
 | Diseñar UI o UX | `ui-router`, `ui-ux-pro-max` |
+| ECC configure-ecc | `configure-ecc` |
+| ECC continuous-learning-v2 | `continuous-learning-v2` |
+| ECC security-review | `security-review-ecc` |
 | Ejecutar simulacion StrangeVerse | `strangeverse` |
 | Email marketing HTML | `open-design-router` |
 | Encontrar bug o test fallido | `systematic-debugging` |
@@ -40,6 +44,8 @@
 | Implementar feature Spec Kit con OK usuario | `speckit-implement` |
 | Implementar feature o bugfix | `test-driven-development` |
 | Iniciar módulo | `brainstorming-ops`, `jarvis-core`, `task-pipeline-ops` |
+| Instalar o configurar ECC en proyecto | `ecc-router` |
+| Instincts evolve hooks Cursor | `ecc-router` |
 | Landing page o dashboard | `ui-router`, `ui-ux-pro-max` |
 | Mantener biblioteca de skills globales | `jarvis-skills-maintainer` |
 | Matriz de riesgos what-if | `scenario-analysis-ops` |
@@ -63,12 +69,17 @@
 | Requisitos ambiguos antes de plan SDD | `speckit-clarify` |
 | Resumen ejecutivo para el founder | `strategic-briefing-ops` |
 | Revisar accesibilidad o layout | `ui-router`, `ui-ux-pro-max` |
+| Rules idioma PHP TypeScript en .cursor | `ecc-router` |
 | Simular opinion publica o reaccion mercado | `scenario-router` |
 | Spec Kitty o spec-kitty | `kitty-router` |
 | Spec-driven development | `sdd-router` |
 | Spec-driven development ambiguo | `sdd-x-index` |
 | Spec-driven fluido brownfield | `openspec-router` |
 | Terminar módulo | `finishing-a-development-branch`, `jarvis-core`, `session-learner-ops`, `verification-before-completion` |
+| Verificar estado ECC hooks agents | `ecc` |
 | Work packages o kanban SDD | `kitty-router` |
+| ecc consult descubrir componente ECC | `ecc` |
+| ecc consult doctor repair | `ecc-router` |
+| ecc doctor repair harness | `ecc` |
 | open-design generate | `open-design` |
 | spec-kitty dispatch | `kitty-governance` |

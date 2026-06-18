@@ -99,6 +99,18 @@ Doc: [docs/STRANGEVERSE_INTEGRATION.md](../docs/STRANGEVERSE_INTEGRATION.md). Up
 
 Upstream [666ghj/MiroFish](https://github.com/666ghj/MiroFish) (AGPL-3.0, pin V0.1.2) — patrones en `strategic-briefing-ops` y `scenario-analysis-ops`; runtime operativo = StrangeVerse. Doc: [docs/MIROFISH_UPSTREAM.md](../docs/MIROFISH_UPSTREAM.md). Entrada watchlist en `sdx-toolkit-registry.json`.
 
+## ECC (harness Cursor)
+
+[affaan-m/ecc](https://github.com/affaan-m/ecc) (MIT) — skills `ecc-router` + `ecc` (bin CLI) + curated: `continuous-learning-v2`, `security-review-ecc`, `configure-ecc`.
+
+```bash
+bash scripts/install-ecc-runtime.sh --project-dir /path/to/product-repo
+bash scripts/sync-ecc-skills.sh
+python3 scripts/sync-ecc-manifest.py
+```
+
+Doc: [docs/ECC_INTEGRATION.md](../docs/ECC_INTEGRATION.md), forense [docs/ECC_FORENSE_JARVIS.md](../docs/ECC_FORENSE_JARVIS.md). Índice upstream: `catalog/ecc-skills-index.md`. Perfil `minimal` default (sin hooks).
+
 ## OpenSpec (watchlist awesome-spec-kits)
 
 No sincronizar slash commands al global — `openspec init` los instala en el repo producto.

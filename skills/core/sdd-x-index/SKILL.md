@@ -21,6 +21,7 @@ metadata:
     - speckit-lifecycle-router
     - ui-router
     - open-design-router
+    - ecc-router
     - scenario-router
     - jarvis-skills-maintainer
 allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
@@ -46,7 +47,8 @@ Guía completa: [docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md). Catálogo 
 | **SD-Documentation** | Cierre módulo, AGENTS, walkthrough | `documentar-avances`, `context-updater` |
 | **SD-Test** | Implementación y cierre | `test-driven-development`, `verification-before-completion` |
 | **SD-Validate** | Pre-implement, gates | `speckit-analyze`, `speckit-checklist` |
-| **SD-Config** | Extensions, presets | `.specify/extensions.yml`, Spec Kitty `.kittify/` |
+| **SD-Config** | Harness agent (hooks, rules, instincts) | `ecc-router` → `ecc` / `configure-ecc` — [ECC_INTEGRATION.md](../../docs/ECC_INTEGRATION.md) |
+| **SD-Config** | Extensions, presets Spec Kit | `.specify/extensions.yml`, Spec Kitty `.kittify/` |
 | **SD-API** | Diseño REST/GraphQL sin speckit dedicado | `api-design-principles` + dominio `{producto}-api-patterns` |
 | **SD-Protocol** | Protocolos, estándares wire | Sin speckit JARVIS global — evaluar speckit externo o dominio |
 | **SDM** (marketing ops) | Campañas, workflows marketing | Watchlist `marketing-spec-kit` — ver [AWESOME_SPEC_KITS.md](../../docs/AWESOME_SPEC_KITS.md) |
@@ -73,6 +75,7 @@ test -d kitty-specs && echo "HAS_KITTY_SPECS"
 | Solo UI/landing en código | `ui-router` |
 | Carrusel, deck, email marketing (standalone) | `open-design-router` |
 | Estado general / briefing estratégico | `strategic-briefing-ops` |
+| Harness ECC / hooks / instincts | `ecc-router` |
 | What-if / escenarios / simulación social | `scenario-router` |
 | Pack inversor / Lanzamiento | Dominio docs — **no** SD-X dev |
 | No sabes qué rama SD-X | **Esta skill** |
@@ -88,6 +91,7 @@ test -d kitty-specs && echo "HAS_KITTY_SPECS"
 | [Open Design](https://github.com/nexu-io/open-design) 0.10.0 | Design (artefactos agentic) | `open-design-router`, `open-design` — `scripts/install-open-design-runtime.sh` |
 | [StrangeVerse](https://github.com/Abrahan-Eagle/strangeverse) main | Research (simulación multi-agente) | `scenario-router`, `strategic-briefing-ops`, `scenario-analysis-ops`, `strangeverse` — `scripts/install-strangeverse-runtime.sh` |
 | [MiroFish](https://github.com/666ghj/MiroFish) V0.1.2 | Research (referencia upstream AGPL) | Patrones en skills mesa — [MIROFISH_UPSTREAM.md](../../docs/MIROFISH_UPSTREAM.md) |
+| [ECC](https://github.com/affaan-m/ecc) v2.0.0 | Config (harness Cursor) | `ecc-router`, `ecc`, curated ops skills — `scripts/install-ecc-runtime.sh`, `scripts/sync-ecc-skills.sh` |
 
 ## Spec Kit: feature nueva vs lifecycle
 

@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+# ecc — wrapper JARVIS para ecc-universal (Everything Claude Code)
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+ecc <command> [options]
+
+Comandos:
+  status              Detecta hooks, agents ecc-*, ecc-universal, ECC_HOME
+  consult <query>     npx ecc-universal consult (default --target cursor)
+  doctor              Diagnóstico harness (si CLI disponible)
+  repair              Reparación harness (si CLI disponible)
+  help
+
+Variables:
+  ECC_HOME            Clone ECC (default: $HOME/ecc)
+  ECC_TARGET          Target consult (default: cursor)
+
+Ejemplos:
+  ecc status
+  ecc consult "laravel security review"
+  ecc doctor
+EOF
+}
+
+ECC_HOME="${ECC_HOME:-$HOME/ecc}"
+ECC_TARGET="${ECC_TARGET:-cursor}"
+
+run_ecc_universal() {
+  if command -v ecc-universal >/dev/null 2>&1; then
+    ecc-universal "$@"
+  elif command -v npx >/dev/null 2>&1; then
+    npx --yes ecc-universal "$@"
+  else
+    echo "ecc-universal no disponible (npm install -g ecc-universal)" >&2
+    return 127
+  fi
+}
+
+cmd_status() {
+  local hooks=0 agents=0 cli=0 home=0
+  if [ -f .cursor/hooks.json ] && grep -q ecc .cursor/hooks.json 2>/dev/null; then
+    hooks=1
+  fi
+  if [ -d .cursor/agents ]; then
+    local a
+    a=$(ls .cursor/agents/ecc-*.md 2>/dev/null | head -1 || true)
+    [ -n "$a" ] && agents=1
+  fi
+  if command -v ecc-universal >/dev/null 2>&1 || npx ecc-universal --version >/dev/null 2>&1; then
+    cli=1
+  fi
+  [ -d "$ECC_HOME" ] && home=1
+  echo "ecc_hooks=$hooks ecc_agents=$agents ecc_cli=$cli ecc_home=$home home=$ECC_HOME target=$ECC_TARGET"
+  if [ "$cli" -eq 1 ]; then
+    run_ecc_universal --version 2>/dev/null || true
+  fi
+}
+
+cmd_consult() {
+  local query="${1:-}"
+  [ -n "$query" ] || { echo "consult requiere query" >&2; exit 2; }
+  run_ecc_universal consult "$query" --target "$ECC_TARGET"
+}
+
+cmd_doctor() {
+  run_ecc_universal doctor --target "$ECC_TARGET" 2>/dev/null || run_ecc_universal doctor
+}
+
+cmd_repair() {
+  run_ecc_universal repair --target "$ECC_TARGET" 2>/dev/null || run_ecc_universal repair
+}
+
+main() {
+  local cmd=${1:-help}
+  shift || true
+  case "$cmd" in
+    status) cmd_status "$@";;
+    consult) cmd_consult "$@";;
+    doctor) cmd_doctor "$@";;
+    repair) cmd_repair "$@";;
+    help|-h|--help) usage;;
+    *) usage; exit 2;;
+  esac
+}
+
+main "$@"

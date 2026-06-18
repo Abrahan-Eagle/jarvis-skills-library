@@ -83,6 +83,10 @@ Carrusel RRSS, deck, email HTML, prototipos standalone — skills `open-design-r
 
 Escenarios estratégicos y simulación multi-agente — skills `strategic-briefing-ops` + `scenario-router` + `scenario-analysis-ops` + `strangeverse` (bin). Upstream: [666ghj/MiroFish](https://github.com/666ghj/MiroFish) · Runtime: [Abrahan-Eagle/strangeverse](https://github.com/Abrahan-Eagle/strangeverse). Guías: [docs/MIROFISH_UPSTREAM.md](docs/MIROFISH_UPSTREAM.md), [docs/STRANGEVERSE_INTEGRATION.md](docs/STRANGEVERSE_INTEGRATION.md). Install: `bash scripts/install-strangeverse-runtime.sh`.
 
+### ECC (harness Cursor)
+
+Hooks, instincts, rules idioma, `ecc consult` — skills `ecc-router` + `ecc` (bin) + curated ops (`continuous-learning-v2`, `security-review-ecc`, `configure-ecc`). Upstream: [affaan-m/ecc](https://github.com/affaan-m/ecc) (MIT). Guía: [docs/ECC_INTEGRATION.md](docs/ECC_INTEGRATION.md). Install en repo producto: `bash scripts/install-ecc-runtime.sh --project-dir <repo>`. Sync curado: `bash scripts/sync-ecc-skills.sh`.
+
 ## Migración desde ~/jarvis-skills
 
 Ver [docs/MIGRATION.md](docs/MIGRATION.md).

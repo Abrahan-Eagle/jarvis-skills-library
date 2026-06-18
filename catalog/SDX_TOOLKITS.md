@@ -23,6 +23,7 @@ Ver [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md).
 | open-design | Open Design (nexu-io) | SD-Design | 0.10.0 | open-design-router, open-design · install: `scripts/install-open-design-runtime.sh` | scripts/install-open-design-runtime.sh |
 | strangeverse | StrangeVerse (Abrahan-Eagle) | SD-Research | main | scenario-router, strategic-briefing-ops, scenario-analysis-ops, strangeverse · install: `scripts/install-strangeverse-runtime.sh` | scripts/install-strangeverse-runtime.sh |
 | mirofish | MiroFish (666ghj) | SD-Research | V0.1.2 | scenario-router, strategic-briefing-ops, scenario-analysis-ops, strangeverse | Referencia upstream AGPL; patrones en skills mesa; runtime operativo = strangeverse |
+| ecc | Everything Claude Code (affaan-m) | SD-Config | v2.0.0 | ecc-router, ecc, continuous-learning-v2, security-review-ecc, configure-ecc · sync: `scripts/sync-ecc-skills.sh` · install: `scripts/install-ecc-runtime.sh` | scripts/install-ecc-runtime.sh |
 | marketing-spec-kit | Marketing Spec Kit | SDM | 0.4.0 |  | SDM; evaluar para clawvis marketing |
 | mcp-speckit | MCP Spec Kit | SD-Development | 0.1.0 |  | MCP lifecycle; evaluar para OpenClaw |
 | meta-spec | MetaSpec | SD-Development, SD-Design | 0.9.7 |  | Framework Python; no distribución JARVIS |
