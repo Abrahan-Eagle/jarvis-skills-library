@@ -1,0 +1,382 @@
+#!/usr/bin/env bash
+# strangeverse — puente HTTP al backend StrangeVerse (JARVIS global)
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+strangeverse <command> [options]
+
+Comandos:
+  status              Health del backend (:5001)
+  projects            Listar proyectos
+  project             Detalle de proyecto (--id)
+  ontology            Subir semilla y generar ontología (multipart)
+  build               Construir grafo (--project)
+  task                Estado de tarea de grafo (--task-id)
+  poll-task           Esperar tarea de grafo (--task-id)
+  sim-create          Crear simulación (--project)
+  sim-prepare         Preparar simulación (--simulation)
+  sim-prepare-status  Estado prepare (--task-id o --simulation)
+  poll-prepare        Esperar prepare (--task-id)
+  sim-start           Iniciar simulación OASIS (--simulation)
+  report-generate     Generar reporte (--simulation)
+  report-status       Estado generación reporte (--task-id o --simulation)
+  poll-report         Esperar reporte (--task-id)
+  report-get          Obtener reporte (--report-id)
+  report-download     Descargar reporte MD (--report-id --out)
+  help
+
+Variables:
+  STRANGEVERSE_API_URL   default http://127.0.0.1:5001
+  STRANGEVERSE_HOME      default /var/www/strangeverse
+  JARVIS_OUT_DIR         default ./out/strangeverse
+
+Ejemplos:
+  strangeverse status
+  strangeverse ontology --files doc1.md --requirement "Predice reacción..." --name "Piloto"
+  strangeverse build --project proj_xxxx
+  strangeverse poll-task --task-id task_xxxx
+  strangeverse sim-create --project proj_xxxx
+  strangeverse sim-prepare --simulation sim_xxxx
+  strangeverse poll-prepare --task-id task_xxxx
+  strangeverse sim-start --simulation sim_xxxx --max-rounds 20
+  strangeverse report-generate --simulation sim_xxxx
+  strangeverse poll-report --task-id task_xxxx
+  strangeverse report-download --report-id rep_xxxx --out ./out/report.md
+EOF
+}
+
+STRANGEVERSE_HOME="${STRANGEVERSE_HOME:-/var/www/strangeverse}"
+API="${STRANGEVERSE_API_URL:-http://127.0.0.1:5001}"
+OUT_DIR="${JARVIS_OUT_DIR:-./out/strangeverse}"
+
+api_json() {
+  local method=$1 path=$2
+  shift 2
+  curl -sS -X "$method" "$API$path" \
+    -H "Content-Type: application/json" \
+    "$@"
+}
+
+cmd_status() {
+  local code body
+  code=$(curl -sS -o /dev/null -w "%{http_code}" "$API/health" 2>/dev/null || echo 000)
+  body=$(curl -sS "$API/health" 2>/dev/null || true)
+  echo "api=$API health=$code home=$STRANGEVERSE_HOME"
+  echo "$body"
+  [ "$code" = "200" ]
+}
+
+cmd_projects() {
+  api_json GET /api/graph/project/list | python3 -m json.tool
+}
+
+cmd_project() {
+  local id=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --id) id=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$id" ] || { echo "--id requerido" >&2; exit 2; }
+  api_json GET "/api/graph/project/$id" | python3 -m json.tool
+}
+
+cmd_ontology() {
+  local requirement="" name="JARVIS Project" context="" files=()
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --requirement) requirement=$2; shift 2;;
+      --name) name=$2; shift 2;;
+      --context) context=$2; shift 2;;
+      --files) files+=("$2"); shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$requirement" ] || { echo "--requirement requerido" >&2; exit 2; }
+  [ "${#files[@]}" -gt 0 ] || { echo "--files requerido (uno o más)" >&2; exit 2; }
+  local curl_args=(-sS -X POST "$API/api/graph/ontology/generate")
+  curl_args+=(-F "simulation_requirement=$requirement")
+  curl_args+=(-F "project_name=$name")
+  if [ -n "$context" ]; then
+    curl_args+=(-F "additional_context=$context")
+  fi
+  for f in "${files[@]}"; do
+    [ -f "$f" ] || { echo "archivo no existe: $f" >&2; exit 2; }
+    curl_args+=(-F "files=@$f")
+  done
+  curl "${curl_args[@]}" | python3 -m json.tool
+}
+
+cmd_build() {
+  local project="" graph_name=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --project) project=$2; shift 2;;
+      --graph-name) graph_name=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$project" ] || { echo "--project requerido" >&2; exit 2; }
+  local body
+  body=$(python3 - <<PY
+import json
+d={"project_id": "$project"}
+if "$graph_name":
+    d["graph_name"] = "$graph_name"
+print(json.dumps(d))
+PY
+)
+  api_json POST /api/graph/build -d "$body" | python3 -m json.tool
+}
+
+cmd_task() {
+  local task_id=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --task-id) task_id=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$task_id" ] || { echo "--task-id requerido" >&2; exit 2; }
+  api_json GET "/api/graph/task/$task_id" | python3 -m json.tool
+}
+
+cmd_poll_task() {
+  local task_id="" timeout=1800 interval=10
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --task-id) task_id=$2; shift 2;;
+      --timeout) timeout=$2; shift 2;;
+      --interval) interval=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$task_id" ] || { echo "--task-id requerido" >&2; exit 2; }
+  local elapsed=0 status=""
+  while [ "$elapsed" -lt "$timeout" ]; do
+    local raw
+    raw=$(api_json GET "/api/graph/task/$task_id")
+    status=$(echo "$raw" | python3 -c "import sys,json; d=json.load(sys.stdin); t=d.get('data',d); print(t.get('status',''))")
+    progress=$(echo "$raw" | python3 -c "import sys,json; d=json.load(sys.stdin); t=d.get('data',d); print(t.get('progress',0))")
+    echo "task=$task_id status=$status progress=$progress elapsed=${elapsed}s"
+    case "$status" in
+      completed|failed|error) echo "$raw" | python3 -m json.tool; return 0;;
+    esac
+    sleep "$interval"
+    elapsed=$((elapsed + interval))
+  done
+  echo "timeout esperando task $task_id" >&2
+  return 3
+}
+
+cmd_sim_create() {
+  local project=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --project) project=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$project" ] || { echo "--project requerido" >&2; exit 2; }
+  api_json POST /api/simulation/create -d "{\"project_id\":\"$project\"}" | python3 -m json.tool
+}
+
+cmd_sim_prepare() {
+  local simulation=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --simulation) simulation=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$simulation" ] || { echo "--simulation requerido" >&2; exit 2; }
+  api_json POST /api/simulation/prepare -d "{\"simulation_id\":\"$simulation\"}" | python3 -m json.tool
+}
+
+cmd_sim_prepare_status() {
+  local task_id="" simulation=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --task-id) task_id=$2; shift 2;;
+      --simulation) simulation=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  local body="{}"
+  if [ -n "$task_id" ]; then body="{\"task_id\":\"$task_id\"}"; fi
+  if [ -n "$simulation" ]; then
+    body=$(python3 - <<PY
+import json
+d=json.loads('$body' if '$body' != '{}' else '{}')
+d["simulation_id"]="$simulation"
+print(json.dumps(d))
+PY
+)
+  fi
+  api_json POST /api/simulation/prepare/status -d "$body" | python3 -m json.tool
+}
+
+cmd_poll_prepare() {
+  local task_id="" timeout=3600 interval=15
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --task-id) task_id=$2; shift 2;;
+      --timeout) timeout=$2; shift 2;;
+      --interval) interval=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$task_id" ] || { echo "--task-id requerido" >&2; exit 2; }
+  local elapsed=0
+  while [ "$elapsed" -lt "$timeout" ]; do
+    local raw status progress
+    raw=$(api_json POST /api/simulation/prepare/status -d "{\"task_id\":\"$task_id\"}")
+    status=$(echo "$raw" | python3 -c "import sys,json; d=json.load(sys.stdin).get('data',{}); print(d.get('status',''))")
+    progress=$(echo "$raw" | python3 -c "import sys,json; d=json.load(sys.stdin).get('data',{}); print(d.get('progress',0))")
+    echo "prepare task=$task_id status=$status progress=$progress elapsed=${elapsed}s"
+    case "$status" in
+      completed|ready|failed|error) echo "$raw" | python3 -m json.tool; return 0;;
+    esac
+    sleep "$interval"
+    elapsed=$((elapsed + interval))
+  done
+  echo "timeout esperando prepare $task_id" >&2
+  return 3
+}
+
+cmd_sim_start() {
+  local simulation="" max_rounds="" platform="parallel"
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --simulation) simulation=$2; shift 2;;
+      --max-rounds) max_rounds=$2; shift 2;;
+      --platform) platform=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$simulation" ] || { echo "--simulation requerido" >&2; exit 2; }
+  local body
+  body=$(python3 - <<PY
+import json
+d={"simulation_id":"$simulation","platform":"$platform"}
+if "$max_rounds":
+    d["max_rounds"]=int("$max_rounds")
+print(json.dumps(d))
+PY
+)
+  api_json POST /api/simulation/start -d "$body" | python3 -m json.tool
+}
+
+cmd_report_generate() {
+  local simulation=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --simulation) simulation=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$simulation" ] || { echo "--simulation requerido" >&2; exit 2; }
+  api_json POST /api/report/generate -d "{\"simulation_id\":\"$simulation\"}" | python3 -m json.tool
+}
+
+cmd_report_status() {
+  local task_id="" simulation=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --task-id) task_id=$2; shift 2;;
+      --simulation) simulation=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  local body="{}"
+  if [ -n "$task_id" ]; then body="{\"task_id\":\"$task_id\"}"; fi
+  if [ -n "$simulation" ]; then
+    body=$(python3 -c "import json; d={}; d.update(json.loads('$body')); d['simulation_id']='$simulation'; print(json.dumps(d))" 2>/dev/null || echo "{\"simulation_id\":\"$simulation\"}")
+  fi
+  api_json POST /api/report/generate/status -d "$body" | python3 -m json.tool
+}
+
+cmd_poll_report() {
+  local task_id="" timeout=1800 interval=10
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --task-id) task_id=$2; shift 2;;
+      --timeout) timeout=$2; shift 2;;
+      --interval) interval=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$task_id" ] || { echo "--task-id requerido" >&2; exit 2; }
+  local elapsed=0
+  while [ "$elapsed" -lt "$timeout" ]; do
+    local raw status progress
+    raw=$(api_json POST /api/report/generate/status -d "{\"task_id\":\"$task_id\"}")
+    status=$(echo "$raw" | python3 -c "import sys,json; d=json.load(sys.stdin).get('data',{}); print(d.get('status',''))")
+    progress=$(echo "$raw" | python3 -c "import sys,json; d=json.load(sys.stdin).get('data',{}); print(d.get('progress',0))")
+    echo "report task=$task_id status=$status progress=$progress elapsed=${elapsed}s"
+    case "$status" in
+      completed|failed|error) echo "$raw" | python3 -m json.tool; return 0;;
+    esac
+    sleep "$interval"
+    elapsed=$((elapsed + interval))
+  done
+  echo "timeout esperando report $task_id" >&2
+  return 3
+}
+
+cmd_report_get() {
+  local report_id=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --report-id) report_id=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$report_id" ] || { echo "--report-id requerido" >&2; exit 2; }
+  api_json GET "/api/report/$report_id" | python3 -m json.tool
+}
+
+cmd_report_download() {
+  local report_id="" out=""
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --report-id) report_id=$2; shift 2;;
+      --out) out=$2; shift 2;;
+      *) echo "arg desconocido: $1" >&2; exit 2;;
+    esac
+  done
+  [ -n "$report_id" ] && [ -n "$out" ] || { echo "--report-id --out requeridos" >&2; exit 2; }
+  mkdir -p "$(dirname "$out")"
+  curl -sS -o "$out" "$API/api/report/$report_id/download"
+  echo "$out"
+}
+
+main() {
+  local cmd=${1:-help}
+  shift || true
+  case "$cmd" in
+    status) cmd_status "$@";;
+    projects) cmd_projects "$@";;
+    project) cmd_project "$@";;
+    ontology) cmd_ontology "$@";;
+    build) cmd_build "$@";;
+    task) cmd_task "$@";;
+    poll-task) cmd_poll_task "$@";;
+    sim-create) cmd_sim_create "$@";;
+    sim-prepare) cmd_sim_prepare "$@";;
+    sim-prepare-status) cmd_sim_prepare_status "$@";;
+    poll-prepare) cmd_poll_prepare "$@";;
+    sim-start) cmd_sim_start "$@";;
+    report-generate) cmd_report_generate "$@";;
+    report-status) cmd_report_status "$@";;
+    poll-report) cmd_poll_report "$@";;
+    report-get) cmd_report_get "$@";;
+    report-download) cmd_report_download "$@";;
+    help|-h|--help) usage;;
+    *) usage; exit 2;;
+  esac
+}
+
+main "$@"

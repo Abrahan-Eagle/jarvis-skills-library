@@ -2,7 +2,7 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-18
 
-Total: **66** skills
+Total: **69** skills
 
 ## Resumen por categoría
 
@@ -13,8 +13,8 @@ Total: **66** skills
 | `engineering` | 7 |
 | `git` | 3 |
 | `mobile` | 4 |
-| `non-code` | 5 |
-| `ops` | 9 |
+| `non-code` | 6 |
+| `ops` | 11 |
 | `planning` | 3 |
 | `review` | 5 |
 | `sdd` | 12 |
@@ -84,6 +84,7 @@ Total: **66** skills
 | `client-report` | Generar reporte mensual al cliente desde activity-log y calendario editorial. | [skills/non-code/client-report/SKILL.md](skills/non-code/client-report/SKILL.md) |
 | `open-design` | Fábrica visual local via daemon Open Design: generate carrusel, deck, email, prototipos HTML. | [skills/non-code/open-design/SKILL.md](skills/non-code/open-design/SKILL.md) |
 | `publish-safety` | Capa de seguridad para publicacion RRSS: rate-limit, dedup, karma-tiers, circuit breaker. | [skills/non-code/publish-safety/SKILL.md](skills/non-code/publish-safety/SKILL.md) |
+| `strangeverse` | Simulacion multi-agente StrangeVerse via API Flask: semilla, grafo, OASIS, reporte de prediccion. | [skills/non-code/strangeverse/SKILL.md](skills/non-code/strangeverse/SKILL.md) |
 
 ## ops
 
@@ -96,6 +97,8 @@ Total: **66** skills
 | `finishing-a-development-branch` | Cerrar feature Flutter: analyze + test, opciones merge/PR. | [skills/ops/finishing-a-development-branch/SKILL.md](skills/ops/finishing-a-development-branch/SKILL.md) |
 | `git-guardrails-ops` | Protección git: bloquea push a main, advierte en dev, exige confirmación antes de comandos destructivos. | [skills/ops/git-guardrails-ops/SKILL.md](skills/ops/git-guardrails-ops/SKILL.md) |
 | `handoff` | Compactar la sesion actual en un documento de traspaso para continuar en otro agente o chat. Complementa session-learner… | [skills/ops/handoff/SKILL.md](skills/ops/handoff/SKILL.md) |
+| `scenario-analysis-ops` | Analisis what-if estrategico sin motor de simulacion: semilla, variables, escenarios, matriz de riesgos, iteracion. | [skills/ops/scenario-analysis-ops/SKILL.md](skills/ops/scenario-analysis-ops/SKILL.md) |
+| `scenario-router` | Orquesta analisis what-if (scenario-analysis-ops, skills dominio) vs simulacion multi-agente StrangeVerse. | [skills/ops/scenario-router/SKILL.md](skills/ops/scenario-router/SKILL.md) |
 | `session-learner-ops` | Tras cerrar módulo UI: patrones en docs/active_context.md y walkthrough. | [skills/ops/session-learner-ops/SKILL.md](skills/ops/session-learner-ops/SKILL.md) |
 | `verification-before-completion` | OBLIGATORIO antes de declarar cualquier tarea completada en cualquier proyecto. Ejecuta verificación fresca del stack y … | [skills/ops/verification-before-completion/SKILL.md](skills/ops/verification-before-completion/SKILL.md) |
 

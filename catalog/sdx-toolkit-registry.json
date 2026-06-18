@@ -71,6 +71,17 @@
       }
     },
     {
+      "id": "strangeverse",
+      "name": "StrangeVerse (Abrahan-Eagle)",
+      "repo": "https://github.com/Abrahan-Eagle/strangeverse",
+      "pin": "main",
+      "sdx": ["SD-Research"],
+      "jarvis": {
+        "skills": ["scenario-router", "scenario-analysis-ops", "strangeverse"],
+        "install": "scripts/install-strangeverse-runtime.sh"
+      }
+    },
+    {
       "id": "marketing-spec-kit",
       "name": "Marketing Spec Kit",
       "repo": "https://github.com/ACNet-AI/marketing-spec-kit",

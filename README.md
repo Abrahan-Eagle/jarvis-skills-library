@@ -79,6 +79,10 @@ Skill `ui-ux-pro-max` en `skills/ui/` — design system generator + BM25 ([upstr
 
 Carrusel RRSS, deck, email HTML, prototipos standalone — skills `open-design-router` + `open-design` (bin). Runtime: [nexu-io/open-design](https://github.com/nexu-io/open-design). Guía: [docs/OPEN_DESIGN_INTEGRATION.md](docs/OPEN_DESIGN_INTEGRATION.md). Install: `bash scripts/install-open-design-runtime.sh`.
 
+## StrangeVerse (what-if y simulación)
+
+Escenarios estratégicos y simulación multi-agente — skills `scenario-router` + `scenario-analysis-ops` + `strangeverse` (bin). Runtime: [Abrahan-Eagle/strangeverse](https://github.com/Abrahan-Eagle/strangeverse). Guía: [docs/STRANGEVERSE_INTEGRATION.md](docs/STRANGEVERSE_INTEGRATION.md). Install: `bash scripts/install-strangeverse-runtime.sh`.
+
 ## Migración desde ~/jarvis-skills
 
 Ver [docs/MIGRATION.md](docs/MIGRATION.md).

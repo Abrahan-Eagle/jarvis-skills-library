@@ -4,6 +4,7 @@
 
 | Acción | Skill(s) |
 |--------|----------|
+| Analisis what-if sin implementar feature | `scenario-router` |
 | Análisis coherencia Spec Kit pre-implement | `speckit-analyze` |
 | Bugfix con Spec Kit | `speckit-lifecycle-router` |
 | Carrusel RRSS o post social | `open-design-router` |
@@ -12,6 +13,7 @@
 | Comando git destructivo | `git-guardrails-ops` |
 | Combinar spec con UI o docs | `sdd-x-index` |
 | Compactar o traspasar sesion | `handoff` |
+| Comparar escenarios base optimista pesimista | `scenario-analysis-ops` |
 | Convertir tasks Spec Kit a issues GitHub | `speckit-taskstoissues` |
 | Crear commit | `git-commit`, `structured-commits-ops`, `verification-before-completion` |
 | Crear skill global | `jarvis-skills-maintainer` |
@@ -23,6 +25,7 @@
 | Deprecar feature | `speckit-lifecycle-router` |
 | Descomponer plan Spec Kit en tareas | `speckit-tasks` |
 | Diseñar UI o UX | `ui-router`, `ui-ux-pro-max` |
+| Ejecutar simulacion StrangeVerse | `strangeverse` |
 | Email marketing HTML | `open-design-router` |
 | Encontrar bug o test fallido | `systematic-debugging` |
 | Establecer principios SDD en proyecto | `speckit-constitution` |
@@ -36,6 +39,7 @@
 | Iniciar módulo | `brainstorming-ops`, `jarvis-core`, `task-pipeline-ops` |
 | Landing page o dashboard | `ui-router`, `ui-ux-pro-max` |
 | Mantener biblioteca de skills globales | `jarvis-skills-maintainer` |
+| Matriz de riesgos what-if | `scenario-analysis-ops` |
 | Misión spec-driven con review y merge | `kitty-router` |
 | Modificar feature existente NNN | `speckit-lifecycle-router` |
 | Nueva feature de producto | `sdd-router` |
@@ -45,12 +49,17 @@
 | Paleta de colores o tipografía | `ui-router`, `ui-ux-pro-max` |
 | Plan técnico Spec Kit | `speckit-plan` |
 | Planificar desarrollo | `brainstorming-ops`, `jarvis-core`, `writing-plans` |
+| Prediccion multi-agente con semilla PDF | `strangeverse` |
+| Prediccion multi-agente con semilla documentos | `scenario-router` |
 | Prototipo landing sin codigo en repo | `open-design-router` |
+| Que pasa si decision estrategica | `scenario-analysis-ops` |
+| Que pasa si escenario estrategico | `scenario-router` |
 | Qué toolkit SD-X usar | `sdd-x-index` |
 | Refactor con spec | `speckit-lifecycle-router` |
 | Requisitos ambiguos | `deep-interview-ops` |
 | Requisitos ambiguos antes de plan SDD | `speckit-clarify` |
 | Revisar accesibilidad o layout | `ui-router`, `ui-ux-pro-max` |
+| Simular opinion publica o reaccion mercado | `scenario-router` |
 | Spec Kitty o spec-kitty | `kitty-router` |
 | Spec-driven development | `sdd-router` |
 | Spec-driven development ambiguo | `sdd-x-index` |

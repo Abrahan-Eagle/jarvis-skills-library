@@ -85,6 +85,16 @@ bash scripts/install-open-design-runtime.sh
 
 Doc: [docs/OPEN_DESIGN_INTEGRATION.md](../docs/OPEN_DESIGN_INTEGRATION.md). Watchlist `sdx-toolkit-registry.json`. OpenClaw: stack en clawvis (no duplicar).
 
+## StrangeVerse (simulación multi-agente)
+
+Fork [Abrahan-Eagle/strangeverse](https://github.com/Abrahan-Eagle/strangeverse) — skills `scenario-router` + `scenario-analysis-ops` + `strangeverse` (bin HTTP).
+
+```bash
+bash scripts/install-strangeverse-runtime.sh
+```
+
+Doc: [docs/STRANGEVERSE_INTEGRATION.md](../docs/STRANGEVERSE_INTEGRATION.md). Watchlist `sdx-toolkit-registry.json`. AGPL: solo API; no copiar código del fork al global.
+
 ## OpenSpec (watchlist awesome-spec-kits)
 
 No sincronizar slash commands al global — `openspec init` los instala en el repo producto.

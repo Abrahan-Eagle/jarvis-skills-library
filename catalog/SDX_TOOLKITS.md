@@ -21,6 +21,7 @@ Ver [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md).
 | spec-kit-extensions | Spec Kit Extensions (MartyBonacci) | SD-Development, SD-Maintenance | main | speckit-lifecycle-router · install: `scripts/install-spec-kit-extensions.sh --target <repo-producto>` | scripts/install-spec-kit-extensions.sh --target <repo-producto> |
 | openspec | OpenSpec | SD-Development | 0.16.0 | openspec-router · install: `npm i -g @fission-ai/openspec; openspec init (en repo producto)` | npm i -g @fission-ai/openspec; openspec init (en repo producto) |
 | open-design | Open Design (nexu-io) | SD-Design | 0.10.0 | open-design-router, open-design · install: `scripts/install-open-design-runtime.sh` | scripts/install-open-design-runtime.sh |
+| strangeverse | StrangeVerse (Abrahan-Eagle) | SD-Research | main | scenario-router, scenario-analysis-ops, strangeverse · install: `scripts/install-strangeverse-runtime.sh` | scripts/install-strangeverse-runtime.sh |
 | marketing-spec-kit | Marketing Spec Kit | SDM | 0.4.0 |  | SDM; evaluar para clawvis marketing |
 | mcp-speckit | MCP Spec Kit | SD-Development | 0.1.0 |  | MCP lifecycle; evaluar para OpenClaw |
 | meta-spec | MetaSpec | SD-Development, SD-Design | 0.9.7 |  | Framework Python; no distribución JARVIS |
