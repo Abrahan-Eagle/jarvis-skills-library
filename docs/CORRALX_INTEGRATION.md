@@ -49,16 +49,39 @@ Tras `git pull` en la library: re-ejecutar sync + check en Backend y Frontend.
 | `jarvis-core` | Precedencia Laravel, `php artisan test`, migraciones | Precedencia Flutter, `flutter analyze` |
 | `brainstorming-ops` | Módulos API, Sanctum | Pantallas, providers, KYC UI |
 | `git-guardrails-ops` | Ramas `dev` / `main` CorralX | Igual |
+| `ui-ux-pro-max` | N/A | `OVERLAY.md` → `corralx-ui-design` |
 
-## Scripts CorralX (por repo)
+## Manifest ampliado (auditoría loop)
+
+Passthrough añadidos en Backend y Frontend (referenciados por `jarvis-core` syncado):
+
+`github-code-review`, `work-unit-commits-ops`, `branch-pr-ops`, `chained-pr-ops`, `docs-alignment-ops`, `backlog-triage-ops`, `engram-router`, `engram-memory-protocol`.
+
+Frontend: `ui-ux-pro-max` en tier **overlay** (no passthrough).
+
+## Scripts CorralX
 
 | Script | Uso |
 |--------|-----|
-| `scripts/sync-global-skills-from-library.sh` | Library → `.agents/skills/` |
+| `scripts/sync-all-corralx-skills.sh` | Sync + check Backend **y** Frontend (+ `sync.sh` opcional; en cualquier repo CorralX) |
+| `scripts/sync-global-skills-from-library.sh` | Library → `.agents/skills/` (por repo) |
 | `scripts/check-global-skills-sync.sh` | Verifica manifest + hashes |
 | `.agents/skills/sync.sh` | Regenera tablas AGENTS.md |
 
+```bash
+JARVIS_SKILLS_LIBRARY=/var/www/html/proyectos/AIPP/jarvis-skills-library \
+  ./scripts/sync-all-corralx-skills.sh
+# Solo sync + check (sin regenerar AGENTS.md):
+./scripts/sync-all-corralx-skills.sh --check
+```
+
+**Onboarding:** `bash scripts/install.sh --all` en jarvis-skills-library → `~/.cursor/skills/` complementa `.agents/skills/` del repo (no sustituye).
+
 Doc producto: `MAINTENANCE_SKILLS.md` en cada repo CorralX.
+
+## CI (manifest drift)
+
+Workflow `.github/workflows/global-skills-sync-check.yml` en Backend y Frontend: checkout library + `./scripts/check-global-skills-sync.sh` en PR/push que toquen `.agents/skills/`.
 
 ## Qué NO sync
 

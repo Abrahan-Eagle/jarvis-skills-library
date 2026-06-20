@@ -83,6 +83,17 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 
 Los productos referencian esta tabla en su `AGENTS.md`; no copiar el contenido de cada `SKILL.md` global al repo del producto.
 
+## Sync producto tras cambio global
+
+Tras commit en **jarvis-skills-library** que afecte skills del manifest de producto:
+
+| Producto | Acción |
+|----------|--------|
+| clawvis-openclaw | `sync-global-skills-from-library.sh` + `check-global-skills-sync.sh` — [CLAWVIS_INTEGRATION.md](docs/CLAWVIS_INTEGRATION.md) |
+| CorralX Backend + Frontend | `./scripts/sync-all-corralx-skills.sh` en cualquier repo — [CORRALX_INTEGRATION.md](docs/CORRALX_INTEGRATION.md) |
+
+Ver también skill `jarvis-skills-maintainer` (secciones clawvis y CorralX).
+
 ---
 
 **Última actualización:** Junio 2026

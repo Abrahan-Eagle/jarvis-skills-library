@@ -183,15 +183,14 @@ Doc: [docs/CLAWVIS_INTEGRATION.md](../docs/CLAWVIS_INTEGRATION.md). Promoción c
 Tras añadir o cambiar una skill global que CorralX consume vía manifest:
 
 1. Commit + push en **jarvis-skills-library**
-2. En **CorralX-Backend** y/o **CorralX-Frontend** (según manifest):
+2. En **CorralX-Backend** y/o **CorralX-Frontend** (según manifest), o ambos con:
    ```bash
    JARVIS_SKILLS_LIBRARY=/var/www/html/proyectos/AIPP/jarvis-skills-library \
-     ./scripts/sync-global-skills-from-library.sh
-   ./scripts/check-global-skills-sync.sh
-   python3 .agents/skills/sync.sh
+     ./scripts/sync-all-corralx-skills.sh
    ```
+   Por repo: `sync-global-skills-from-library.sh` → `check-global-skills-sync.sh` → `python3 .agents/skills/sync.sh`.
 
-Doc: [docs/CORRALX_INTEGRATION.md](../docs/CORRALX_INTEGRATION.md). Skills `corralx-*` nunca en manifest; overlay producto en `OVERLAY.md`.
+Doc: [docs/CORRALX_INTEGRATION.md](../docs/CORRALX_INTEGRATION.md). Skills `corralx-*` nunca en manifest; overlay producto en `OVERLAY.md`. CI: `global-skills-sync-check.yml` en PR.
 
 ## Pipeline de verificación
 
