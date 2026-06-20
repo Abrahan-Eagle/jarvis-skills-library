@@ -61,3 +61,11 @@ Valida y regenera catálogo/lock antes de cada commit en **este repo solamente**
 ## No migrar skills de dominio
 
 Skills `corralx-*`, `zonix-*`, marketing de clawvis, etc. permanecen en sus repos. Este proyecto es solo **capa 0 global**.
+
+## Tras migrar la máquina (capa producto)
+
+Este doc cubre **Paso A** (symlinks en `~/.cursor/skills/`). Para bootstrap del **repo de producto** (greenfield o legacy):
+
+- Guía genérica: [PROJECT_ONBOARDING.md](PROJECT_ONBOARDING.md) — Pasos B/C, plantillas, diagnóstico
+- Skill operativa: `project-bootstrap-ops` (auto-invoke: integrar JARVIS, repo sin AGENTS.md)
+- Diagnóstico rápido: `bash scripts/check-project-bootstrap.sh` desde la raíz del producto

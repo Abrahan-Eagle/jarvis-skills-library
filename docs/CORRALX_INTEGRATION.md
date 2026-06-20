@@ -89,7 +89,10 @@ JARVIS_SKILLS_LIBRARY=/var/www/html/proyectos/AIPP/jarvis-skills-library \
 ./scripts/sync-all-corralx-skills.sh --check
 ```
 
-**Onboarding:** `bash scripts/install.sh --all` en jarvis-skills-library → `~/.cursor/skills/` complementa `.agents/skills/` del repo (no sustituye).
+**Onboarding:** CorralX implementa el **Paso C** de [PROJECT_ONBOARDING.md](PROJECT_ONBOARDING.md) (manifest + sync + CI). Antes de eso:
+
+1. **Paso A (máquina):** `bash scripts/install.sh --all` en jarvis-skills-library → `~/.cursor/skills/` (complementa `.agents/skills/` del repo; no sustituye).
+2. **Diagnóstico greenfield/legacy:** skill `project-bootstrap-ops` o `bash scripts/check-project-bootstrap.sh` desde la raíz del repo producto.
 
 Doc producto: `MAINTENANCE_SKILLS.md` en cada repo CorralX.
 

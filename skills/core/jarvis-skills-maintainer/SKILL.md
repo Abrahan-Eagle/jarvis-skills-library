@@ -236,6 +236,7 @@ bash scripts/install.sh --dry-run # preview
 
 - [docs/CONVENTIONS.md](../docs/CONVENTIONS.md)
 - [docs/MIGRATION.md](../docs/MIGRATION.md)
+- [docs/PROJECT_ONBOARDING.md](../docs/PROJECT_ONBOARDING.md)
 - [docs/SDD_SPECKIT_INTEGRATION.md](../docs/SDD_SPECKIT_INTEGRATION.md)
 - [docs/SPEC_KITTY_INTEGRATION.md](../docs/SPEC_KITTY_INTEGRATION.md)
 - [docs/SPEC_KIT_EXTENSIONS.md](../docs/SPEC_KIT_EXTENSIONS.md)

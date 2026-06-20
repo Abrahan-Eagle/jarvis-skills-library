@@ -6,6 +6,7 @@
 |--------|----------|
 | Abrir PR con gh | `branch-pr-ops` |
 | Actualizar docs tras cambio de código | `docs-alignment-ops` |
+| Adoptar JARVIS en proyecto existente | `project-bootstrap-ops` |
 | Agent loop engineering / no prompts haz loops | `agent-loop-engineering` |
 | Alta stakes verificar antes de commit | `doubt-driven-development` |
 | Analisis what-if sin implementar feature | `scenario-router` |
@@ -14,6 +15,7 @@
 | Auditar skill antes de instalar | `claude-skills-router`, `skill-security-auditor` |
 | Auditoría automática pre-gate con rúbrica y score | `llm-as-judge-ops` |
 | Auditoría seguridad profunda read-only | `cyber-neo`, `cyber-neo-router` |
+| Bootstrap skills en producto | `project-bootstrap-ops` |
 | Briefing estrategico semanal | `strategic-briefing-ops` |
 | Bugfix con Spec Kit | `speckit-lifecycle-router` |
 | Buscar contexto previo mem_search mem_context | `engram-memory-protocol` |
@@ -88,6 +90,7 @@
 | Iniciar módulo | `brainstorming-ops`, `jarvis-core`, `task-pipeline-ops` |
 | Instalar o configurar ECC en proyecto | `ecc-router` |
 | Instincts evolve hooks Cursor | `ecc-router` |
+| Integrar jarvis-skills-library en proyecto | `project-bootstrap-ops` |
 | Iterar hasta lograr un objetivo medible | `agent-loop-engineering` |
 | Kalman filter defensa runtime | `kalman-anomaly-router` |
 | Kalman filter seguridad runtime | `kalman-anomaly-defense` |
@@ -102,6 +105,7 @@
 | Naming de branch y checklist pre-PR | `branch-pr-ops` |
 | Nueva feature de producto | `sdd-router` |
 | Nueva feature de producto con Spec Kit | `speckit-specify` |
+| Nuevo proyecto JARVIS | `project-bootstrap-ops` |
 | OPSX propose apply archive | `openspec-router` |
 | OpenSpec u openspec | `openspec-router` |
 | Orquestar loop implementación revisión | `skill-loop`, `skill-loop-router` |
@@ -123,6 +127,7 @@
 | Redactar comentario de PR o issue | `comment-writer-ops` |
 | Redactar o mejorar README, RFC, onboarding o guía | `cognitive-doc-design-ops` |
 | Refactor con spec | `speckit-lifecycle-router` |
+| Repo sin AGENTS.md | `project-bootstrap-ops` |
 | Requisitos ambiguos | `deep-interview-ops` |
 | Requisitos ambiguos antes de plan SDD | `speckit-clarify` |
 | Respuesta de maintainer o mensaje async al equipo | `comment-writer-ops` |

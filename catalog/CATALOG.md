@@ -2,7 +2,7 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-20
 
-Total: **102** skills
+Total: **103** skills
 
 ## Resumen por categoría
 
@@ -14,7 +14,7 @@ Total: **102** skills
 | `git` | 6 |
 | `mobile` | 4 |
 | `non-code` | 8 |
-| `ops` | 26 |
+| `ops` | 27 |
 | `planning` | 4 |
 | `review` | 6 |
 | `sdd` | 12 |
@@ -123,6 +123,7 @@ Total: **102** skills
 | `learning-loop` | Scan mid-session y wrap-up con quality gates: captura aprendizajes antes de perder contexto. | [skills/ops/learning-loop/SKILL.md](skills/ops/learning-loop/SKILL.md) |
 | `llm-as-judge-ops` | Auditoría LLM-as-judge pre-gate: rúbrica ponderada, score 0-1, threshold, salida JSON. | [skills/ops/llm-as-judge-ops/SKILL.md](skills/ops/llm-as-judge-ops/SKILL.md) |
 | `parallel-judge-ops` | Patrón "día del juicio": 2+ jueces adversariales en paralelo e independientes → orquestador valida real vs ruido → subag… | [skills/ops/parallel-judge-ops/SKILL.md](skills/ops/parallel-judge-ops/SKILL.md) |
+| `project-bootstrap-ops` | Diagnosticar e integrar jarvis-skills-library en proyecto nuevo o legacy: globales en máquina, AGENTS.md, manifest sync,… | [skills/ops/project-bootstrap-ops/SKILL.md](skills/ops/project-bootstrap-ops/SKILL.md) |
 | `scenario-analysis-ops` | Analisis what-if estrategico sin motor de simulacion: semilla, variables, escenarios, matriz de riesgos, iteracion. | [skills/ops/scenario-analysis-ops/SKILL.md](skills/ops/scenario-analysis-ops/SKILL.md) |
 | `scenario-router` | Orquesta analisis what-if (scenario-analysis-ops, skills dominio) vs simulacion multi-agente StrangeVerse. | [skills/ops/scenario-router/SKILL.md](skills/ops/scenario-router/SKILL.md) |
 | `security-review-ecc` | ECC OWASP security review checklist (complement to security skill). | [skills/ops/security-review-ecc/SKILL.md](skills/ops/security-review-ecc/SKILL.md) |

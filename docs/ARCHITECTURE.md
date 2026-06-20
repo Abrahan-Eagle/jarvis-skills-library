@@ -32,6 +32,8 @@ flowchart TB
 3. En el repo del producto: solo skills `{producto}-*` o integraciones locales.
 4. `AGENTS.md` del producto lista globales por **nombre** (no copia archivos).
 
+Proyecto **nuevo o legacy** sin configuración JARVIS: [PROJECT_ONBOARDING.md](PROJECT_ONBOARDING.md) + skill `project-bootstrap-ops` (Pasos A/B/C).
+
 ## OpenClaw / dual-file
 
 Skills con binarios o runtime OpenClaw pueden incluir:

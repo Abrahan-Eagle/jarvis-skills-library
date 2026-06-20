@@ -33,6 +33,8 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Router de **proceso**, no de dominio. Skills `{producto}-*` siguen en el repo del producto.
 
+Repo **sin** `AGENTS.md` ni marcadores SDD (`.specify/`, `.kittify/`, `openspec/`): invocar `project-bootstrap-ops` ([PROJECT_ONBOARDING.md](../../docs/PROJECT_ONBOARDING.md)) antes de elegir flujo.
+
 ## Detección (repo activo)
 
 ```bash

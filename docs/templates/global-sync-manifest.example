@@ -1,0 +1,22 @@
+# Global skills synced from jarvis-skills-library — {Producto} {Backend|Frontend}
+# Format: <skill-name> <tier>
+# tier: passthrough | overlay
+#
+# Copy to: .agents/skills/.global-sync-manifest
+# Sync: JARVIS_SKILLS_LIBRARY=/path/to/jarvis-skills-library ./scripts/sync-global-skills-from-library.sh
+# Check: ./scripts/check-global-skills-sync.sh
+# See: jarvis-skills-library/docs/PROJECT_ONBOARDING.md § Paso C
+
+jarvis-core overlay
+jarvis-experts overlay
+brainstorming-ops overlay
+task-pipeline-ops overlay
+git-guardrails-ops overlay
+
+systematic-debugging passthrough
+verification-before-completion passthrough
+test-driven-development passthrough
+writing-plans passthrough
+executing-plans passthrough
+git-commit passthrough
+code-review-playbook passthrough

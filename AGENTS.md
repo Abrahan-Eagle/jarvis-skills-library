@@ -7,6 +7,7 @@
 1. **Leer este archivo** al trabajar en este repo.
 2. **Skills de dominio** del producto activo: buscar en el repo del producto (`AGENTS.md` → `.agents/skills/`).
 3. **Skills globales** (este repo): instalar con `bash scripts/install.sh` → `~/.cursor/skills/<name>/`.
+4. **Onboarding producto nuevo o legacy:** [docs/PROJECT_ONBOARDING.md](docs/PROJECT_ONBOARDING.md) + skill `project-bootstrap-ops`.
 
 ## Cuándo crear skill aquí vs en un producto
 
@@ -35,7 +36,7 @@ python3 skills/engineering/skill-creator/scripts/init_skill.py <name> --path ski
 
 ## Spec-Driven Development
 
-Ver [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md), [docs/SPEC_KIT_EXTENSIONS.md](docs/SPEC_KIT_EXTENSIONS.md), [docs/OPEN_DESIGN_INTEGRATION.md](docs/OPEN_DESIGN_INTEGRATION.md), [docs/STITCH_UPSTREAM.md](docs/STITCH_UPSTREAM.md), [docs/STRANGEVERSE_INTEGRATION.md](docs/STRANGEVERSE_INTEGRATION.md), [docs/MIROFISH_UPSTREAM.md](docs/MIROFISH_UPSTREAM.md), [docs/ECC_INTEGRATION.md](docs/ECC_INTEGRATION.md), [docs/CYBER_NEO_INTEGRATION.md](docs/CYBER_NEO_INTEGRATION.md), [docs/KALMAN_ANOMALY_INTEGRATION.md](docs/KALMAN_ANOMALY_INTEGRATION.md), [docs/LEARNING_LOOP_INTEGRATION.md](docs/LEARNING_LOOP_INTEGRATION.md), [docs/SKILL_LOOP_INTEGRATION.md](docs/SKILL_LOOP_INTEGRATION.md), [docs/GENTLE_AI_LOOP_INTEGRATION.md](docs/GENTLE_AI_LOOP_INTEGRATION.md), [docs/GENTLEMAN_ECOSYSTEM_INTEGRATION.md](docs/GENTLEMAN_ECOSYSTEM_INTEGRATION.md), [docs/ENGRAM_INTEGRATION.md](docs/ENGRAM_INTEGRATION.md), [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](docs/AGENT_SKILLS_ADDY_INTEGRATION.md), [docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md), [docs/LOOP_AI_ECOSYSTEM.md](docs/LOOP_AI_ECOSYSTEM.md), [docs/AWESOME_SPEC_KITS.md](docs/AWESOME_SPEC_KITS.md) y skills `sdd-router`, `kitty-router`, `openspec-router`, `speckit-lifecycle-router`, `open-design-router`, `stitch-router`, `ecc-router`, `cyber-neo-router`, `kalman-anomaly-router`, `learning-loop-router`, `skill-loop-router`, `engram-router`, `agent-skills-router`, `claude-skills-router`, `skill-security-auditor`, `human-in-the-loop-ops`, `scenario-router`, `strategic-briefing-ops`.
+Ver [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md), [docs/PROJECT_ONBOARDING.md](docs/PROJECT_ONBOARDING.md), [docs/SPEC_KIT_EXTENSIONS.md](docs/SPEC_KIT_EXTENSIONS.md), [docs/OPEN_DESIGN_INTEGRATION.md](docs/OPEN_DESIGN_INTEGRATION.md), [docs/STITCH_UPSTREAM.md](docs/STITCH_UPSTREAM.md), [docs/STRANGEVERSE_INTEGRATION.md](docs/STRANGEVERSE_INTEGRATION.md), [docs/MIROFISH_UPSTREAM.md](docs/MIROFISH_UPSTREAM.md), [docs/ECC_INTEGRATION.md](docs/ECC_INTEGRATION.md), [docs/CYBER_NEO_INTEGRATION.md](docs/CYBER_NEO_INTEGRATION.md), [docs/KALMAN_ANOMALY_INTEGRATION.md](docs/KALMAN_ANOMALY_INTEGRATION.md), [docs/LEARNING_LOOP_INTEGRATION.md](docs/LEARNING_LOOP_INTEGRATION.md), [docs/SKILL_LOOP_INTEGRATION.md](docs/SKILL_LOOP_INTEGRATION.md), [docs/GENTLE_AI_LOOP_INTEGRATION.md](docs/GENTLE_AI_LOOP_INTEGRATION.md), [docs/GENTLEMAN_ECOSYSTEM_INTEGRATION.md](docs/GENTLEMAN_ECOSYSTEM_INTEGRATION.md), [docs/ENGRAM_INTEGRATION.md](docs/ENGRAM_INTEGRATION.md), [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](docs/AGENT_SKILLS_ADDY_INTEGRATION.md), [docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md), [docs/LOOP_AI_ECOSYSTEM.md](docs/LOOP_AI_ECOSYSTEM.md), [docs/AWESOME_SPEC_KITS.md](docs/AWESOME_SPEC_KITS.md) y skills `sdd-router`, `kitty-router`, `openspec-router`, `speckit-lifecycle-router`, `open-design-router`, `stitch-router`, `ecc-router`, `cyber-neo-router`, `kalman-anomaly-router`, `learning-loop-router`, `skill-loop-router`, `engram-router`, `agent-skills-router`, `claude-skills-router`, `skill-security-auditor`, `human-in-the-loop-ops`, `scenario-router`, `strategic-briefing-ops`.
 
 ## Precedencia operativa
 
@@ -45,6 +46,7 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 
 | Acción | Skill |
 |--------|-------|
+| Integrar JARVIS / proyecto nuevo o legacy sin AGENTS.md | `project-bootstrap-ops` |
 | Tarea no trivial | `jarvis-experts` |
 | Nueva feature de producto | `sdd-router` / `kitty-router` / `openspec-router` según marcador de repo |
 | Nueva feature de producto con Spec Kit | `speckit-specify`, `speckit-plan` |

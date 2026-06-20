@@ -39,7 +39,7 @@ Patrón upstream documentado en [gentle-ai README](https://github.com/Gentleman-
 | `sdd-apply` | `speckit-implement` + `test-driven-development` |
 | `sdd-verify` | `verification-before-completion`, `speckit-analyze` |
 | `sdd-archive` | cierre módulo + `session-learner-ops` |
-| `sdd-onboard` | `jarvis-core` + `sdd-router` doc |
+| `sdd-onboard` | `project-bootstrap-ops` → `jarvis-core` + `sdd-router` doc |
 
 ## Qué NO sync (watchlist / dominio)
 
