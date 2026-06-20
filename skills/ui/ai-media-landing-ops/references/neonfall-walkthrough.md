@@ -133,6 +133,17 @@ Por qué funciona: los timestamps fuerzan bloques discretos y el "return to star
 
 **Plan B:** sin start/end frame el loop no cierra 100%. Crossfade de 0.3–0.5 s en post (Kapwing) o dual-video en el HTML.
 
+## Paso 5b — Checkpoint: validar video
+
+Antes de gastar el intento de hero en Claude Design, validar el clip:
+
+- Loop cierra visualmente **o** el corte es ocultable con crossfade/dual-video.
+- Cámara estática (sin pan/zoom perceptible).
+- Personaje no cambia de pose base entre inicio y fin.
+- Duración y aspect ratio correctos (16:9, coherente con la imagen key visual).
+
+Si falla: Kapwing crossfade (0.3–0.5 s) o confiar en dual-video del hero; **no** regenerar video salvo que el plan lo permita.
+
 ## Paso 6 — Prompt hero (Claude Design)
 
 Pedir un **único HTML autocontenido** (Tailwind CDN, Google Fonts CDN, vanilla JS inline, mobile-first, cero build) que luego se pueda llevar a Claude Code.
@@ -189,10 +200,49 @@ Por qué funciona: HTML autocontenido = handoff limpio a Claude Code; dual-video
 
 ## Paso 7 — Imágenes internas (Nano Banana 2)
 
-Dos imágenes con contraste pero mismo ADN visual:
+Dos imágenes con contraste pero mismo ADN visual. Config: Nano Banana 2, 16:9, 4K.
 
-- **Épica/amplia** (ej. vista aérea de la ciudad) con horizonte en el tercio superior → negative space para titular. Sin personajes ("la protagonista es el escenario").
-- **Íntima/atmosférica** (ej. callejón) con perspectiva de un punto y tercio inferior limpio para texto.
+### Imagen épica / amplia
+
+```
+Cinematic aerial [THEME] cityscape in widescreen 16:9. [ESTILO visual idéntico al hero:
+paleta [COLORES], atmósfera [MOOD]]. Horizon line in the upper third; the lower two-thirds
+are clean negative space for a section headline overlay.
+
+Subject: sprawling [CIUDAD/ESCENARIO] at [HORA], neon reflections on wet surfaces,
+distant [LANDMARK] silhouette. No characters — the environment is the protagonist.
+
+Composition: high angle or drone perspective, deep atmospheric haze, volumetric light
+through [NIEbla/LLUVIA/partículas]. Clean sky gradient in upper third for typography.
+
+Lighting: [RIM/backlight colors matching hero palette], dramatic contrast.
+
+Style: [MISMO ESTILO que key visual hero], premium AAA game environment art.
+
+Constraints: No text. No logos. No watermarks. No UI. No people or characters.
+Keep upper third clean for headline overlay.
+```
+
+### Imagen íntima / atmosférica
+
+```
+Cinematic [THEME] alley or interior scene in widescreen 16:9. Same visual DNA as hero:
+[COLORES], [ESTILO], [MOOD]. One-point perspective; lower third deliberately clean
+for text overlay.
+
+Subject: narrow [CALLEJÓN/INTERIOR] with [DETALLES: cables, holograms, steam, neon signs
+reflected on wet ground]. Intimate scale — opposite of the epic wide shot.
+
+Composition: eye level, shallow depth of field on midground, soft bokeh on background.
+Lower 30 percent of frame is clean dark gradient or fog — no clutter.
+
+Lighting: [COLORES de acento del hero], chiaroscuro, moody.
+
+Style: [MISMO ESTILO que hero], atmospheric environmental storytelling.
+
+Constraints: No text. No logos. No watermarks. No UI. No characters in foreground.
+Keep lower third clean for copy overlay.
+```
 
 Misma paleta y estética que el hero para que el sitio se sienta de una sola familia.
 

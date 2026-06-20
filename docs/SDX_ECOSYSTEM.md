@@ -79,6 +79,7 @@ Usar skills de dominio del producto, no `speckit-*`.
 - [SPEC_KITTY_INTEGRATION.md](SPEC_KITTY_INTEGRATION.md) — misiones, worktrees, review/merge
 - [UI_UX_PRO_MAX_INTEGRATION.md](UI_UX_PRO_MAX_INTEGRATION.md) — design system, overlays
 - [OPEN_DESIGN_INTEGRATION.md](OPEN_DESIGN_INTEGRATION.md) — carrusel, deck, email HTML (Open Design)
+- Skill `ai-media-landing-ops` — landings con video hero IA (cadena multi-tool Claude + media gen)
 - [ECC_INTEGRATION.md](ECC_INTEGRATION.md) — harness Cursor (ECC: hooks, instincts, rules)
 - [CYBER_NEO_INTEGRATION.md](CYBER_NEO_INTEGRATION.md) — auditoría seguridad read-only (OWASP 2025, 11 dominios)
 - [AGENT_SKILLS_ADDY_INTEGRATION.md](AGENT_SKILLS_ADDY_INTEGRATION.md) — pack Addy Osmani (doubt-driven in-flight)

@@ -143,7 +143,7 @@
     "ui-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "c343601029cc6361b4d853367332c5416b2924f8d63ab9dca37d33bc4b0f3623",
+      "computedHash": "11d03d1dbc73c9cb908b52fb823a8a2218f2ebe21888039c58a851b7b5209995",
       "path": "skills/core/ui-router/SKILL.md"
     },
     "agent-loop-engineering": {

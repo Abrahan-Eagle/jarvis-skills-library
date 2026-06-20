@@ -128,3 +128,5 @@ Si la tarea cambia **cómo se ve, se siente, se mueve o se interactúa** en el *
 Para **entregables visuales standalone** (carrusel RRSS, deck, email HTML sin tocar `lib/`), usar `open-design-router` ([OPEN_DESIGN_INTEGRATION.md](../../docs/OPEN_DESIGN_INTEGRATION.md)).
 
 Para **prototipos en plataforma Stitch** (MCP + `stitch::generate-design`, `stitch-loop`, etc.), usar `stitch-router` ([STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md)) — no confundir con Flutter en repo.
+
+Para **landings con video hero generado por IA** (cadena Claude → Nano Banana → Veo/Kling → Claude Design/Code), usar `ai-media-landing-ops` — assets + draft HTML; implementación en repo → `ui-router`.
