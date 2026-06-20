@@ -74,6 +74,8 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 | Memoria persistente MCP (Engram) | `engram-router` → `engram-memory-protocol` |
 | Triage backlog issues/PRs | `backlog-triage-ops` |
 | Docs deben igualar código | `docs-alignment-ops` |
+| Docs/PR con baja carga cognitiva (README, RFC, onboarding) | `cognitive-doc-design-ops` |
+| Comentarios humanos (PR, issue, review, Slack) | `comment-writer-ops` |
 | Push/merge | `git-guardrails-ops` (solo con orden explícita del usuario) |
 | Code review | `code-review-playbook` |
 | Cerrar sesión | `context-updater`, `session-learner-ops` |

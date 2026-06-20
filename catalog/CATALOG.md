@@ -2,7 +2,7 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-20
 
-Total: **98** skills
+Total: **100** skills
 
 ## Resumen por categoría
 
@@ -15,8 +15,8 @@ Total: **98** skills
 | `mobile` | 4 |
 | `non-code` | 8 |
 | `ops` | 25 |
-| `planning` | 3 |
-| `review` | 5 |
+| `planning` | 4 |
+| `review` | 6 |
 | `sdd` | 12 |
 | `ui` | 2 |
 
@@ -135,6 +135,7 @@ Total: **98** skills
 
 | Skill | Descripción | Ruta |
 |-------|-------------|------|
+| `cognitive-doc-design-ops` | Diseñar docs con baja carga cognitiva: lead with answer, progressive disclosure, checklists para review. | [skills/planning/cognitive-doc-design-ops/SKILL.md](skills/planning/cognitive-doc-design-ops/SKILL.md) |
 | `executing-plans` | Ejecutar plan Flutter paso a paso. | [skills/planning/executing-plans/SKILL.md](skills/planning/executing-plans/SKILL.md) |
 | `writing-plans` | Plan bite-sized Flutter antes de codificar. .agents/plans/implementation_plan.md | [skills/planning/writing-plans/SKILL.md](skills/planning/writing-plans/SKILL.md) |
 | `zoom-out` | Explicar código o un cambio en el contexto del sistema completo del proyecto activo (módulos, capas, flujos). Uso bajo d… | [skills/planning/zoom-out/SKILL.md](skills/planning/zoom-out/SKILL.md) |
@@ -145,6 +146,7 @@ Total: **98** skills
 |-------|-------------|------|
 | `code-review-excellence` | Master effective code review practices to provide constructive feedback, catch bugs early, and foster knowledge sharing … | [skills/review/code-review-excellence/SKILL.md](skills/review/code-review-excellence/SKILL.md) |
 | `code-review-playbook` | Use this skill when conducting or improving code reviews. Provides structured review processes, conventional comments pa… | [skills/review/code-review-playbook/SKILL.md](skills/review/code-review-playbook/SKILL.md) |
+| `comment-writer-ops` | Redactar comentarios de colaboración cálidos y directos: PR, issues, reviews, Slack. | [skills/review/comment-writer-ops/SKILL.md](skills/review/comment-writer-ops/SKILL.md) |
 | `github-code-review` | Comprehensive GitHub code review with AI-powered swarm coordination | [skills/review/github-code-review/SKILL.md](skills/review/github-code-review/SKILL.md) |
 | `receiving-code-review` | Recibir feedback de review UI/código con verificación. | [skills/review/receiving-code-review/SKILL.md](skills/review/receiving-code-review/SKILL.md) |
 | `requesting-code-review` | Code review antes de merge. | [skills/review/requesting-code-review/SKILL.md](skills/review/requesting-code-review/SKILL.md) |

@@ -17,8 +17,14 @@ Engram MCP: [ENGRAM_INTEGRATION.md](ENGRAM_INTEGRATION.md).
 | `memory-protocol` (engram) | `engram-memory-protocol` | ops |
 | `backlog-triage` (engram) | `backlog-triage-ops` | ops |
 | `docs-alignment` (engram) | `docs-alignment-ops` | ops |
+| `cognitive-doc-design` (gentle-ai) | `cognitive-doc-design-ops` | planning |
+| `comment-writer` (gentle-ai) | `comment-writer-ops` | review |
 
 Router: `engram-router` (memoria MCP opt-in).
+
+## Delegation triggers (gentle-ai → jarvis-experts)
+
+Patrón upstream documentado en [gentle-ai README](https://github.com/Gentleman-Programming/gentle-ai/blob/main/README.md); operativo en `jarvis-experts` y cross-ref en `agent-loop-engineering`. Resumen: exploración 4+ archivos → delegar; 2+ archivos no triviales → un writer + review; commit/PR → verificación; sesión monolítica → pausar/re-planificar; review adversarial → contexto fresco (Task readonly).
 
 ## Mapeo SDD gentle-ai → speckit JARVIS (no sync)
 
@@ -55,6 +61,7 @@ jarvis-core
   → git-commit / structured-commits-ops
   → si diff >400 líneas: chained-pr-ops
   → branch-pr-ops (+ gh)
+  → cognitive-doc-design-ops (body PR) / comment-writer-ops (comentarios)
   → code-review-playbook / parallel-judge-ops
   → git-guardrails-ops (push solo OK usuario)
 ```

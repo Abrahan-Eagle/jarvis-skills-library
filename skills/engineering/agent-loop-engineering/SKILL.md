@@ -24,6 +24,7 @@ metadata:
     - test-driven-development
     - doubt-driven-development
     - verification-before-completion
+    - jarvis-experts
 allowed-tools: [Read, Edit, Write, Glob, Grep, Bash, Task]
 ---
 
@@ -111,6 +112,10 @@ Todo loop bien diseñado define **cuatro piezas** antes de correr:
 6. **Ejecuta** vía la skill elegida (con OK del usuario si es `skill-loop run` o aplica fixes irreversibles).
 7. **Cierra** con `verification-before-completion` y `session-learner-ops`.
 
+## Delegation triggers
+
+Cuando el loop crece más allá de una vuelta pequeña, aplicar la tabla de `jarvis-experts` (fuente: gentle-ai): exploración 4+ archivos → Task explore; 2+ archivos no triviales → un writer + review fresco; commit/PR → verificación; sesión monolítica → pausar o re-planificar.
+
 ## Anti-patrones
 
 - **Confiar 100 % en la IA** ("commit, push, todo a prod, nos vemos mañana") — la IA deriva; el humano sigue siendo responsable.
@@ -124,6 +129,7 @@ Todo loop bien diseñado define **cuatro piezas** antes de correr:
 ## Skills relacionadas
 
 - `jarvis-core` — precedencia y alcance.
+- `jarvis-experts` — delegation triggers (hilo orquestador delgado).
 - `human-in-the-loop-ops` — gates, terminación, umbrales.
 - `skill-loop-router` / `skill-loop` — ejecución de loops YAML+CLI.
 - `parallel-judge-ops` — patrón dual-judge ("día del juicio").

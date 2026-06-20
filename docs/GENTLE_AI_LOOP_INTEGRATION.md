@@ -31,7 +31,7 @@ Mapa de ecosistema: [LOOP_AI_ECOSYSTEM.md](LOOP_AI_ECOSYSTEM.md). Gobernanza: `h
 Configurador que "supercharge" agentes con memoria, SDD, skills, routing de modelo por fase y persona. Relevante para nuestras skills:
 
 - **Strict TDD Mode (`/sdd-init`)**: detecta stack y capacidades de test, activa TDD strict. JARVIS ya lo cubre con `test-driven-development` + `sdd-router`/`speckit-*`; el aporte es el patrón "el init guarda reglas del proyecto y el apply las respeta solo".
-- **Delegation triggers**: reglas de cuándo delegar (leer 4+ archivos, tocar 2+ archivos no triviales, review antes de commit). Refuerza `jarvis-experts` + `code-review-playbook` + Task subagents.
+- **Delegation triggers**: reglas de cuándo delegar (leer 4+ archivos, tocar 2+ archivos no triviales, review antes de commit). Operativo en `jarvis-experts`; refuerza Task subagents + `code-review-playbook` + `parallel-judge-ops`.
 - **Per-phase model routing**: modelo distinto por fase SDD. En Cursor: parámetro `model` de Task por subagente.
 
 **Decisión:** no se instala el CLI `gentle-ai`. Es referencia conceptual que alimenta `agent-loop-engineering`. Productos que ya usan SDD JARVIS no cambian.

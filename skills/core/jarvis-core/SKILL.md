@@ -122,6 +122,8 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | Memoria persistente Engram (MCP) | `engram-router` → `engram-memory-protocol` |
 | Triage backlog issues/PRs | `backlog-triage-ops` |
 | Docs deben igualar código | `docs-alignment-ops` |
+| Docs/PR con baja carga cognitiva (README, RFC, onboarding) | `cognitive-doc-design-ops` |
+| Comentarios humanos (PR, issue, review, Slack) | `comment-writer-ops` |
 | Push / merge | `git-guardrails-ops` (solo con orden explícita del usuario) |
 | Code review | `code-review-playbook` (+ opcional requesting/receiving) |
 | Decisión no trivial alta stakes (auth, prod, irreversible) | `agent-skills-router` → `doubt-driven-development` (opcional in-flight; no bloquea TDD ni review) |

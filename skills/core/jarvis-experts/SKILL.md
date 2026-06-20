@@ -7,15 +7,17 @@ description: >
 license: UNLICENSED
 metadata:
   author: JARVIS Global
-  version: "2.0"
+  version: "2.1"
   scope: [global]
   auto_invoke:
     - "Cualquier tarea no trivial"
     - "Decisión cross-rol"
     - "Definir alcance de un módulo"
   triggers: experto, expertos, agencia, panel, rol, roles, jarvis-experts
-  related-skills: jarvis-core
-allowed-tools: [Read, Glob, Grep]
+  related-skills:
+    - jarvis-core
+    - agent-loop-engineering
+allowed-tools: [Read, Glob, Grep, Task]
 ---
 
 # Panel de Expertos JARVIS (global)
@@ -60,11 +62,28 @@ El roster detallado del **producto activo** está en `AGENTS.md` del repo. Esta 
 
 Consultar `AGENTS.md` del repo para dominio (`{producto}-*` skills en `.agents/skills/`).
 
+## Delegation triggers (gentle-ai)
+
+Mantén el hilo orquestador **delgado**. Cuando la tarea deja de ser pequeña, delegar o acotar fase SDD es **esperado**, no opcional. Fuente: [gentle-ai README](https://github.com/Gentleman-Programming/gentle-ai/blob/main/README.md). Ver también `agent-loop-engineering`.
+
+| Trigger | Comportamiento JARVIS |
+|---------|----------------------|
+| Leer **4+ archivos** para entender un flujo | Task `explore` (readonly) o fase de exploración (`speckit-clarify`, Task subagent) |
+| Tocar **2+ archivos no triviales** | Un writer thread; review fresco antes de cerrar (`code-review-playbook`, `parallel-judge-ops`) |
+| Commit, push o PR tras cambios de código | Review fresco salvo diff trivial (docs/texto) — `verification-before-completion` |
+| cwd equivocado, worktree/git accident, merge recovery, test/env confuso | **Parar** y auditar (`systematic-debugging`) antes de continuar |
+| Sesión monolítica larga con complejidad acumulada | Pausar, delegar, re-planificar (`brainstorming-ops`, `handoff`) o justificar por qué no |
+| Review adversarial de diffs, conflictos, PR readiness o incidentes | Contexto fresco: Task `readonly` (`parallel-judge-ops`, `doubt-driven-development`) |
+
+Objetivo: evitar caos accidental con **un orquestador responsable** y **un writer thread**.
+
 ## Anti-patrones
 
 - Más de 3 roles declarados
 - Rol sin justificación (CTO en fix de typo)
 - Pedir permiso para activar AppSec en cambio de auth
+- Explorar 6 archivos en el hilo principal sin delegar
+- Mezclar exploración + implementación + review en una sola vuelta monolítica
 
 ## Referencias
 

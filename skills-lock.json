@@ -77,13 +77,13 @@
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "126f0edc06932d95321e28e5088d59c2463edea89084364648bbe259c48d7717",
+      "computedHash": "ab47c799d03afcf337155122d0248cca89c241f7769e3abcfceaefdc79c64aae",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "344262607c5414405fc028812c1ffdce8b4bbebfc6db228ab5d3384867cffe7d",
+      "computedHash": "80471f92e17e5cbed0d1beee9e0bbb56db74892e9ce5225a3def5546390bcdb0",
       "path": "skills/core/jarvis-experts/SKILL.md"
     },
     "jarvis-skills-maintainer": {
@@ -149,7 +149,7 @@
     "agent-loop-engineering": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "9b275b6df9a7244f0acae8d455c783a69d5748a320ac926cbc5ea7404660c0c7",
+      "computedHash": "62b73ed0cbabb3400974783a18522459c3bede382a4dae8fe630ad6138c2e7d5",
       "path": "skills/engineering/agent-loop-engineering/SKILL.md"
     },
     "clean-architecture": {
@@ -211,7 +211,7 @@
     "chained-pr-ops": {
       "source": "Gentleman-Programming/gentle-ai",
       "sourceType": "github",
-      "computedHash": "5d57e9d3a003346b5f394e774fbdc241e1251f3a48796d4a819a3c345bcd8455",
+      "computedHash": "8bc018e788d7f8434e242d34243db37b1a02e8553fefa6702a581bdd4a680f98",
       "path": "skills/git/chained-pr-ops/SKILL.md",
       "upstream": "Gentleman-Programming/gentle-ai:chained-pr"
     },
@@ -476,6 +476,13 @@
       "computedHash": "0bf291600834d2ddcef3549bc4ce3dd01656ff25db86e51c9f95154fc05973e0",
       "path": "skills/ops/verification-before-completion/SKILL.md"
     },
+    "cognitive-doc-design-ops": {
+      "source": "Gentleman-Programming/gentle-ai",
+      "sourceType": "github",
+      "computedHash": "d14de3e3bc48388ec1dc511302b09f4add88ae920798be102ec96c4b92e64b3c",
+      "path": "skills/planning/cognitive-doc-design-ops/SKILL.md",
+      "upstream": "Gentleman-Programming/gentle-ai:cognitive-doc-design"
+    },
     "executing-plans": {
       "source": "obra/superpowers",
       "sourceType": "github",
@@ -507,6 +514,13 @@
       "sourceType": "local",
       "computedHash": "b57fde6f124d939296504aa28fc4dedf9b594278f618af4ec1e868ae69c01b3e",
       "path": "skills/review/code-review-playbook/SKILL.md"
+    },
+    "comment-writer-ops": {
+      "source": "Gentleman-Programming/gentle-ai",
+      "sourceType": "github",
+      "computedHash": "7fdc9e69bd821af5ca30d0485d3275e9885d4194b2fedfb4a8f2873c5a691d47",
+      "path": "skills/review/comment-writer-ops/SKILL.md",
+      "upstream": "Gentleman-Programming/gentle-ai:comment-writer"
     },
     "github-code-review": {
       "source": "jarvis-skills-library",

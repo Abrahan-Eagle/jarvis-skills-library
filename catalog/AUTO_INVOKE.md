@@ -55,6 +55,7 @@
 | Diseñar loop de agente | `agent-loop-engineering` |
 | Dividir diff grande en slices reviewables | `chained-pr-ops` |
 | Dividir implementación en commits reviewables | `work-unit-commits-ops` |
+| Doc largo, denso o difícil de escanear | `cognitive-doc-design-ops` |
 | Día del juicio / jueces paralelos | `parallel-judge-ops` |
 | ECC configure-ecc | `configure-ecc` |
 | ECC continuous-learning-v2 | `continuous-learning-v2` |
@@ -63,6 +64,8 @@
 | Email marketing HTML | `open-design-router` |
 | Encontrar bug o test fallido | `systematic-debugging` |
 | Escaneo secretos SCA SAST | `cyber-neo-router` |
+| Escribir descripción de PR o notas para review | `cognitive-doc-design-ops` |
+| Escribir feedback de code review para humano | `comment-writer-ops` |
 | Establecer principios SDD en proyecto | `speckit-constitution` |
 | Estado general del producto | `strategic-briefing-ops` |
 | Evitar PR monolítico desde SDD tasks | `work-unit-commits-ops` |
@@ -110,9 +113,12 @@
 | Que pasa si decision estrategica | `scenario-analysis-ops` |
 | Que pasa si escenario estrategico | `scenario-router` |
 | Qué toolkit SD-X usar | `sdd-x-index` |
+| Redactar comentario de PR o issue | `comment-writer-ops` |
+| Redactar o mejorar README, RFC, onboarding o guía | `cognitive-doc-design-ops` |
 | Refactor con spec | `speckit-lifecycle-router` |
 | Requisitos ambiguos | `deep-interview-ops` |
 | Requisitos ambiguos antes de plan SDD | `speckit-clarify` |
+| Respuesta de maintainer o mensaje async al equipo | `comment-writer-ops` |
 | Resumen ejecutivo para el founder | `strategic-briefing-ops` |
 | Revisar accesibilidad o layout | `ui-router`, `ui-ux-pro-max` |
 | Rules idioma PHP TypeScript en .cursor | `ecc-router` |
