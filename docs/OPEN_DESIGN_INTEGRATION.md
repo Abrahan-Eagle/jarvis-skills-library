@@ -80,3 +80,4 @@ Open Design: Apache-2.0. Atribuir [nexu-io/open-design](https://github.com/nexu-
 - [UI_UX_PRO_MAX_INTEGRATION.md](UI_UX_PRO_MAX_INTEGRATION.md)
 - [SDX_ECOSYSTEM.md](SDX_ECOSYSTEM.md)
 - Skill `open-design-router`
+- Skill `ai-media-landing-ops` — landings con video hero IA (cadena multi-tool; no Open Design)

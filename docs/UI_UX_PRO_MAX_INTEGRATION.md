@@ -71,6 +71,10 @@ Crea `design-system/MASTER.md` y overrides por página en el repo activo.
 
 Para **entregables visuales standalone** (carrusel RRSS, deck PPTX, email HTML, prototipo sin tocar `lib/`), usar `open-design-router` → skill `open-design` — ver [OPEN_DESIGN_INTEGRATION.md](OPEN_DESIGN_INTEGRATION.md).
 
+## Landings con media generativa IA (no ui-ux-pro-max)
+
+Para **landings con video hero generado por IA** (cadena Claude → Nano Banana 2 → Veo/Kling → Claude Design → Claude Code), usar skill **`ai-media-landing-ops`** — metodología multi-tool con checkpoints humanos. No sustituye `ui-ux-pro-max` para tokens/patrones al implementar UI en código; complementa el draft HTML antes de portar vía `ui-router`.
+
 `ui-ux-pro-max` sigue siendo la herramienta para **tokens, patrones y checklist** al implementar UI en código (Flutter, Blade).
 
 ## Validación

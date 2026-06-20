@@ -76,6 +76,7 @@
 | Evitar PR monolítico desde SDD tasks | `work-unit-commits-ops` |
 | Exportar Stitch a React | `stitch-router` |
 | Gates humanos antes de acción irreversible | `human-in-the-loop-ops` |
+| Generar assets IA para una web | `ai-media-landing-ops` |
 | Generar assets visuales marketing | `open-design-router` |
 | Generar con Open Design | `open-design` |
 | Generar pantalla con Stitch MCP | `stitch-router` |
@@ -83,6 +84,7 @@
 | Guardar decisión o bugfix en Engram | `engram-memory-protocol` |
 | HITL HOTL umbrales de confianza | `human-in-the-loop-ops` |
 | Hacer git push o merge | `git-guardrails-ops` |
+| Hero section con personaje animado en loop | `ai-media-landing-ops` |
 | Hotfix producción | `speckit-lifecycle-router` |
 | Human-in-the-loop diseño de loop | `human-in-the-loop-ops` |
 | Implementar feature Spec Kit con OK usuario | `speckit-implement` |
@@ -95,6 +97,7 @@
 | Iterar hasta lograr un objetivo medible | `agent-loop-engineering` |
 | Kalman filter defensa runtime | `kalman-anomaly-router` |
 | Kalman filter seguridad runtime | `kalman-anomaly-defense` |
+| Landing page con video hero generado por IA | `ai-media-landing-ops` |
 | Landing page o dashboard | `ui-router`, `ui-ux-pro-max` |
 | Loop stitch-loop next-prompt | `stitch-router` |
 | Mantener biblioteca de skills globales | `jarvis-skills-maintainer` |
@@ -114,6 +117,7 @@
 | Pack Addy agent-skills lifecycle | `agent-skills-router` |
 | Pack Rezvani claude-skills | `claude-skills-router` |
 | Paleta de colores o tipografía | `ui-router`, `ui-ux-pro-max` |
+| Pipeline Nano Banana + Veo + Claude Design + Claude Code | `ai-media-landing-ops` |
 | Plan técnico Spec Kit | `speckit-plan` |
 | Planificar desarrollo | `brainstorming-ops`, `jarvis-core`, `writing-plans` |
 | Política rate limit ante spikes | `kalman-anomaly-defense`, `kalman-anomaly-router` |

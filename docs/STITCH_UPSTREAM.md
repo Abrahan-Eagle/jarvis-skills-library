@@ -265,5 +265,6 @@ Cadena típica Stitch:
 
 - Skill: `stitch-router` (`skills/ui/stitch-router/SKILL.md`)
 - [OPEN_DESIGN_INTEGRATION.md](OPEN_DESIGN_INTEGRATION.md) — artefactos standalone alternativos
+- Skill `ai-media-landing-ops` — landings con video hero IA (cadena multi-tool Claude + media gen)
 - [UI_UX_PRO_MAX_INTEGRATION.md](UI_UX_PRO_MAX_INTEGRATION.md) — tokens en código
 - `ui-router` — precedencia UI en producto

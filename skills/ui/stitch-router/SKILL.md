@@ -20,6 +20,7 @@ metadata:
   related-skills:
     - ui-router
     - open-design-router
+    - ai-media-landing-ops
     - ui-ux-pro-max
     - jarvis-core
 allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
@@ -65,6 +66,7 @@ Antes de generar o leer pantallas Stitch:
 | Carrusel/deck/email standalone | `open-design-router` | Stitch salvo proyecto Stitch activo |
 | Solo tokens para código | `ui-ux-pro-max` | Stitch |
 | CorralX UI diario | `corralx-ui-design` | Stitch/React opcionales |
+| Landing con video hero IA (Nano Banana + Veo/Kling + Claude Design/Code) | `ai-media-landing-ops` | Stitch (usa Claude Design + media gen, no Stitch) |
 
 ## Cadena por intención
 

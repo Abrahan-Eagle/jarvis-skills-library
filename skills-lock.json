@@ -77,7 +77,7 @@
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "d912e53ae71e896456d14963db19e229768e0c55ea022636c92e0ee83bba35d1",
+      "computedHash": "0f70bb272b08246ed1e16881a0af64b2dc71b4402015e878470af5ce15dbcbde",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
@@ -143,7 +143,7 @@
     "ui-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "4f70292ac7a8b8b0b6429f0b872291e5e1ba0821444f3cc3e3b8290c7c61f3ca",
+      "computedHash": "c343601029cc6361b4d853367332c5416b2924f8d63ab9dca37d33bc4b0f3623",
       "path": "skills/core/ui-router/SKILL.md"
     },
     "agent-loop-engineering": {
@@ -637,16 +637,22 @@
       "path": "skills/sdd/speckit-taskstoissues/SKILL.md",
       "upstream": "github/spec-kit:templates/commands/taskstoissues.md"
     },
+    "ai-media-landing-ops": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "dabce6e1cec19ad147260b99b153e174efcc5256b01147281653c376d551a2ab",
+      "path": "skills/ui/ai-media-landing-ops/SKILL.md"
+    },
     "open-design-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "71b4af3226b249c7aa46d07a4bb2efb9ba8cc8ebc2fd5c27b552d5a838a78696",
+      "computedHash": "ae77cad671c47ecfe437b5645d3818aab2d47dfa5632f10e82ad4aabf3ad76f0",
       "path": "skills/ui/open-design-router/SKILL.md"
     },
     "stitch-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "0720d35854ee0ecf75b8f0095bfd9b8a855749157f49e05f725a083bba080a4c",
+      "computedHash": "f58a79c61e92573c697f1eaa7dbd3361e7d1c9c44afc0b620ca36a2aa9810a35",
       "path": "skills/ui/stitch-router/SKILL.md"
     },
     "ui-ux-pro-max": {

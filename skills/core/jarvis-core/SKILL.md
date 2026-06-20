@@ -23,6 +23,7 @@ metadata:
     - ui-router
     - open-design-router
     - stitch-router
+    - ai-media-landing-ops
     - ecc-router
     - cyber-neo-router
     - kalman-anomaly-router
@@ -67,6 +68,8 @@ Para UI/UX en código, ver `ui-router` ([docs/UI_UX_PRO_MAX_INTEGRATION.md](../.
 Para artefactos visuales marketing (carrusel, deck, email HTML), ver `open-design-router` ([docs/OPEN_DESIGN_INTEGRATION.md](../../docs/OPEN_DESIGN_INTEGRATION.md)) — no `speckit-specify`.
 
 Para prototipos web en Google Stitch (MCP, DESIGN.md, stitch-loop), ver `stitch-router` ([docs/STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md)) — no sustituye `ui-router` en Flutter/Blade del producto.
+
+Para landings con media generativa IA (cadena Claude → Nano Banana → Veo/Kling → Claude Design → Claude Code, video hero en loop), ver `ai-media-landing-ops` — no sustituye `ui-router` (UI en repo) ni `open-design-router` (artefacto standalone).
 
 Para what-if estratégico y simulación multi-agente, ver `scenario-router` ([docs/STRANGEVERSE_INTEGRATION.md](../../docs/STRANGEVERSE_INTEGRATION.md), [docs/MIROFISH_UPSTREAM.md](../../docs/MIROFISH_UPSTREAM.md)) — no `speckit-specify` salvo que el escenario derive en feature.
 
@@ -138,6 +141,7 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | UI/UX en código, landing en repo, a11y, layout | `ui-router` → skill dominio `{producto}-ui-design` / `zonix-web-design` → `ui-ux-pro-max` → `responsive-design` (opc.) |
 | Carrusel, deck, email HTML, prototipo standalone | `open-design-router` → `open-design` (daemon OD) |
 | Prototipo web Stitch (MCP, stitch::generate-design, stitch-loop) | `stitch-router` → skills upstream ([STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md)) |
+| Landing con media generativa IA (video hero loop, Nano Banana + Veo + Claude Design/Code) | `ai-media-landing-ops` → checkpoints HITL → `verification-before-completion` |
 | Briefing estratégico / estado general | `strategic-briefing-ops` |
 | What-if / escenarios estratégicos | `scenario-router` → `scenario-analysis-ops` o `{producto}-scenario-analysis` |
 | Simulación multi-agente / opinión pública | `scenario-router` → `strangeverse` (API :5001) |

@@ -19,6 +19,7 @@ metadata:
     - jarvis-core
     - open-design-router
     - stitch-router
+    - ai-media-landing-ops
     - ui-ux-pro-max
     - responsive-design
     - sdd-router
@@ -76,6 +77,7 @@ test -f .agents/skills/ui-ux-pro-max/ZONIX.md && echo HAS_ZONIX_OVERLAY_AGENTS
 | Feature con Spec Kit + UI | `sdd-router` → specs → implement; al tocar UI, aplicar esta cadena |
 | Artefacto standalone (carrusel, deck, email, prototipo HTML) | `open-design-router` → `open-design` (no código en repo) |
 | Prototipo web en Google Stitch (MCP) | `stitch-router` → skills upstream ([STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md)) |
+| Landing con video hero generado por IA (cadena multi-tool: Nano Banana + Veo/Kling + Claude Design/Code) | `ai-media-landing-ops` (assets + draft HTML); implementación en repo → `ui-router` |
 
 ## Comandos antes de implementar UI nueva
 

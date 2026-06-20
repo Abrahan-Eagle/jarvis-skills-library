@@ -58,6 +58,7 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 | Diseñar UI/UX (código en repo) | `ui-router` + dominio + `ui-ux-pro-max` |
 | Prototipo web Google Stitch (MCP) | `stitch-router` → `npx skills add` upstream |
 | Carrusel, deck, email HTML (standalone) | `open-design-router`, `open-design` |
+| Landing con media generativa IA (video hero loop, Nano Banana + Veo/Kling + Claude Design/Code) | `ai-media-landing-ops` |
 | Briefing estratégico / estado general | `strategic-briefing-ops` |
 | What-if / escenarios / simulación social | `scenario-router`, `scenario-analysis-ops`, `strangeverse` |
 | Harness ECC (hooks, instincts, rules) | `ecc-router`, `ecc`, `configure-ecc` |
