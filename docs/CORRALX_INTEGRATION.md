@@ -59,6 +59,20 @@ Passthrough añadidos en Backend y Frontend (referenciados por `jarvis-core` syn
 
 Frontend: `ui-ux-pro-max` en tier **overlay** (no passthrough).
 
+## Repaso tercera pasada (referencias passthrough)
+
+Cierre de skills citadas por passthrough syncados pero ausentes del manifest:
+
+| Skill | Backend | Frontend | Motivo |
+|-------|---------|----------|--------|
+| `doubt-driven-development` | passthrough | passthrough | TDD, parallel-judge, HITL, jarvis-core |
+| `context-updater` | passthrough | passthrough | Fallback file-based de `engram-router` |
+| `ui-router` | — | passthrough | Cadena UI: router → `corralx-ui-design` → `ui-ux-pro-max` |
+
+**Conteo manifest:** 48 Backend (8 overlay + 40 passthrough) · 45 Frontend (9 overlay + 36 passthrough).
+
+Auto-invoke Frontend: `metadata.auto_invoke` en skills CRO locales (`corralx-scenario-analysis`, `corralx-onboarding-cro`, `corralx-signup-flow-cro`, `corralx-aso-audit`); entradas globales vía `sync.sh` tras sync.
+
 ## Scripts CorralX
 
 | Script | Uso |
