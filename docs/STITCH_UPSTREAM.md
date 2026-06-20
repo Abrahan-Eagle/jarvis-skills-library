@@ -28,14 +28,86 @@ JARVIS **no vendoriza** el repo upstream en `jarvis-skills-library`. Orquestaci�
 
 Sin MCP activo, las skills upstream **no funcionan** — el router debe STOP y guiar configuración MCP antes de continuar.
 
+## MCP Setup (Cursor y agentes)
+
+Documentación oficial:
+
+- [MCP setup](https://stitch.withgoogle.com/docs/mcp/setup/?pli=1) — endpoint, credenciales, prereqs
+- [MCP guide](https://stitch.withgoogle.com/docs/mcp/guide/?pli=1) — flujos operativos (proyectos, pantallas, generación)
+- [MCP reference](https://stitch.withgoogle.com/docs/mcp/reference/?pli=1) — catálogo de tools MCP
+
+### Endpoint remoto (recomendado si el cliente soporta headers)
+
+| Campo | Valor |
+|-------|-------|
+| URL | `https://stitch.googleapis.com/mcp` |
+| Header auth | `X-Goog-Api-Key: <tu API key Stitch>` |
+| Transport | Streamable HTTP (MCP remoto) |
+
+Ejemplo **local** (gitignored — no commitear la key):
+
+```json
+{
+  "mcpServers": {
+    "stitch": {
+      "url": "https://stitch.googleapis.com/mcp",
+      "headers": {
+        "X-Goog-Api-Key": "REPLACE_WITH_STITCH_API_KEY"
+      }
+    }
+  }
+}
+```
+
+En Cursor: **Settings → MCP** o copiar plantilla desde `.cursor/mcp.json.example` (CorralX-Frontend) → `.cursor/mcp.json` local.
+
+**Seguridad:** nunca versionar API keys. Rotar si se exponen en chat, issues o commits. Preferir config local gitignored.
+
+### Checklist de verificación
+
+1. Reiniciar Cursor / recargar MCP tras cambiar config.
+2. `list_tools` → prefijo `stitch:` o `mcp_stitch:` visible.
+3. Llamar `[prefix]:list_projects` con `filter: "view=owned"` — debe devolver proyectos, no error auth.
+4. Si OK → invocar skill upstream concreta (`design-md`, `stitch::generate-design`, etc.).
+
+### Fallback si API key falla
+
+Algunos clientes MCP **ignoran `headers`** en servidores remotos y responden con errores OAuth (“API keys are not supported”). Si ocurre:
+
+1. Revisar [MCP setup](https://stitch.withgoogle.com/docs/mcp/setup/?pli=1) — ruta OAuth / Application Default Credentials.
+2. Alternativa comunidad: proxy stdio que inyecta auth (`@_davideast/stitch-mcp proxy`, `@keeponfirst/kof-stitch-mcp`) con `gcloud auth application-default login`.
+3. **STOP** — no inventar pantallas Stitch sin MCP funcional.
+
+## DESIGN.md (formato semántico)
+
+- Overview oficial: [design-md/overview](https://stitch.withgoogle.com/docs/design-md/overview/?pli=1)
+- `DESIGN.md` = “source of truth” semántico para prompts Stitch (atmósfera, paleta, geometría, tipografía).
+
+| Origen | Skill upstream (CLI) | Carpeta local típica (producto) |
+|--------|----------------------|----------------------------------|
+| Proyecto Stitch existente | `design-md` | `.agents/skills/design-md/` |
+| Código frontend (React, Vue, CSS…) | `stitch::extract-design-md` | `.agents/skills/stitch-extract-design-md/` |
+| Estándares premium anti-genérico | `taste-design` (opcional) | — |
+
+Cadena loop: `design-md` o extract → `stitch-loop` con `next-prompt.md`.
+
+## SDK vs MCP
+
+- Tutorial SDK: [sdk/tutorial](https://stitch.withgoogle.com/docs/sdk/tutorial/?pli=1) — REST/programático además de MCP.
+- **MCP:** interacción agente ↔ Stitch (`list_projects`, `get_screen`, generación).
+- **SDK/scripts:** uploads grandes, base64, batch — p.ej. `upload_to_stitch.py` en skill `stitch::upload-to-stitch` cuando MCP trunca payloads.
+
+Usar script upstream cuando la skill lo indique; no duplicar lógica en JARVIS.
+
 ## Instalación (oficial)
 
 ```bash
 # Listar skills disponibles
 npx skills add google-labs-code/stitch-skills --list
 
-# Una skill (global → ~/.cursor/skills/)
-npx skills add google-labs-code/stitch-skills --skill generate-design --global
+# Una skill (global → ~/.cursor/skills/) — nombres CLI reales con --list
+npx skills add google-labs-code/stitch-skills --skill "stitch::generate-design" --global
+npx skills add google-labs-code/stitch-skills --skill design-md --global
 
 # Todas (global)
 npx skills add google-labs-code/stitch-skills --all --global
@@ -58,36 +130,38 @@ El skill monolítico **`stitch-design` fue eliminado** y se dividió en workflow
 
 ### Diseño (stitch-design plugin)
 
-| Skill V2 | Uso |
-|----------|-----|
-| `generate-design` | Pantallas desde texto/imagen; edición y variantes vía MCP |
-| `extract-design-md` | `DESIGN.md` desde código frontend (React, Vue, Svelte, CSS) |
-| `extract-static-html` | HTML estático autocontenido desde app local |
-| `code-to-design` | Cadena: extract HTML → design system → upload Stitch |
-| `manage-design-system` | Subir/aplicar `DESIGN.md` y temas en Stitch |
-| `upload-to-stitch` | Subir assets locales (HTML, imágenes) al proyecto |
+| Skill CLI (`npx skills add --skill`) | Carpeta local típica | Uso |
+|--------------------------------------|----------------------|-----|
+| `stitch::generate-design` | `stitch-generate-design/` | Pantallas desde texto/imagen; edición y variantes vía MCP |
+| `stitch::extract-design-md` | `stitch-extract-design-md/` | `DESIGN.md` desde código frontend |
+| `stitch::extract-static-html` | `stitch-extract-static-html/` | HTML estático autocontenido desde app local |
+| `stitch::code-to-design` | `stitch-code-to-design/` | Cadena: extract HTML → design system → upload Stitch |
+| `stitch::manage-design-system` | `stitch-manage-design-system/` | Subir/aplicar `DESIGN.md` y temas en Stitch |
+| `stitch::upload-to-stitch` | `stitch-upload-to-stitch/` | Subir assets locales (HTML, imágenes) al proyecto |
 
 ### Build (stitch-build plugin)
 
-| Skill | Uso |
-|-------|-----|
-| `react:components` | Stitch → componentes React/Vite |
-| `remotion` | Walkthrough video desde pantallas Stitch |
-| `shadcn-ui` | Integración shadcn/ui |
+| Skill CLI | Carpeta local | Uso |
+|-----------|---------------|-----|
+| `react:components` | `react-components/` | Stitch → componentes React/Vite |
+| `stitch::react-native` | — (opcional) | Stitch HTML → React Native |
+| `remotion` | `remotion/` | Walkthrough video desde pantallas Stitch |
+| `shadcn-ui` | `shadcn-ui/` | Integración shadcn/ui |
 
 ### Utilidades (stitch-utilities plugin)
 
-| Skill | Uso |
-|-------|-----|
-| `design-md` | `DESIGN.md` desde proyecto Stitch existente |
-| `enhance-prompt` | Ideas vagas → prompts Stitch optimizados |
-| `stitch-loop` | Loop autónomo baton (`next-prompt.md` → generar → siguiente) |
+| Skill CLI | Carpeta local | Uso |
+|-----------|---------------|-----|
+| `design-md` | `design-md/` | `DESIGN.md` desde proyecto Stitch existente |
+| `enhance-prompt` | `enhance-prompt/` | Ideas vagas → prompts Stitch optimizados |
+| `stitch-loop` | `stitch-loop/` | Loop autónomo baton (`next-prompt.md` → generar → siguiente) |
+| `taste-design` | — (opcional) | `DESIGN.md` premium anti-genérico |
 
 ### Mapeo V1 → V2 (repos producto con copias antiguas)
 
 | Copia local V1 (ej. CorralX Frontend) | Sustituto upstream V2 |
 |---------------------------------------|------------------------|
-| `stitch-design` (eliminado) | `generate-design` + `manage-design-system` |
+| `stitch-design` (eliminado) | `stitch::generate-design` + `stitch::manage-design-system` |
 | `design-md` | Sigue existiendo; refresh con `npx skills add` |
 | `enhance-prompt` | Sigue existiendo |
 | `stitch-loop` | Sigue existiendo |
@@ -115,9 +189,9 @@ npx skills add google-labs-code/stitch-skills --skill stitch-loop
 
 Cadena típica Stitch:
 
-1. `stitch-router` — verificar MCP
+1. `stitch-router` — verificar MCP ([setup](https://stitch.withgoogle.com/docs/mcp/setup/?pli=1))
 2. `enhance-prompt` o `design-md` (contexto)
-3. `generate-design` / `stitch-loop` (generación)
+3. `stitch::generate-design` / `stitch-loop` (generación)
 4. `react:components` (export código web, opcional)
 
 ## CorralX

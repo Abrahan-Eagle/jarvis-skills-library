@@ -6,34 +6,60 @@ set -euo pipefail
 REPO="google-labs-code/stitch-skills"
 SCOPE_FLAG="--global"
 
+# CLI names from: npx skills add google-labs-code/stitch-skills --list
+DESIGN_SKILLS=(
+  "stitch::generate-design"
+  "stitch::extract-design-md"
+  "stitch::extract-static-html"
+  "stitch::code-to-design"
+  "stitch::manage-design-system"
+  "stitch::upload-to-stitch"
+)
+BUILD_SKILLS=(
+  "react:components"
+  "stitch::react-native"
+  "remotion"
+  "shadcn-ui"
+)
+UTILITIES_SKILLS=(
+  "design-md"
+  "enhance-prompt"
+  "stitch-loop"
+  "taste-design"
+)
+
 usage() {
   cat <<'EOF'
 Usage: install-stitch-skills.sh [options]
 
 Install Stitch skills from google-labs-code/stitch-skills (requires Node 18+, npx).
-Destination: ~/.cursor/skills/ with --global (or agent-detected paths without --global).
+Destination: ~/.cursor/skills/ with --global (or .agents/skills/ in workspace with --local).
 
 Options:
   --list              List available upstream skills
-  --skill NAME        Install one skill (e.g. generate-design, react:components)
+  --skill NAME        Install one skill (e.g. stitch::generate-design, react:components)
   --profile NAME      Install profile bundle: design | build | utilities | all
   --global            Install globally (default)
   --local             Install in current workspace only (omit --global)
   -h, --help          Show help
 
 Profiles:
-  design     generate-design, extract-design-md, extract-static-html,
-             code-to-design, manage-design-system, upload-to-stitch
-  build      react:components, remotion, shadcn-ui
-  utilities  design-md, enhance-prompt, stitch-loop
+  design     stitch::generate-design, stitch::extract-design-md, stitch::extract-static-html,
+             stitch::code-to-design, stitch::manage-design-system, stitch::upload-to-stitch
+  build      react:components, stitch::react-native, remotion, shadcn-ui
+  utilities  design-md, enhance-prompt, stitch-loop, taste-design
   all        All profiles above
+
+Optional (install individually with --skill):
+  stitch::react-native, taste-design
 
 Examples:
   bash scripts/install-stitch-skills.sh --list
   bash scripts/install-stitch-skills.sh --profile design --global
+  bash scripts/install-stitch-skills.sh --skill "stitch::generate-design" --local
   bash scripts/install-stitch-skills.sh --skill stitch-loop --global
 
-Prerequisite: Stitch MCP Server configured in Cursor — see docs/STITCH_UPSTREAM.md
+Prerequisite: Stitch MCP Server — see docs/STITCH_UPSTREAM.md
 EOF
 }
 
@@ -76,28 +102,22 @@ fi
 
 case "$PROFILE" in
   design)
-    for s in generate-design extract-design-md extract-static-html code-to-design manage-design-system upload-to-stitch; do
+    for s in "${DESIGN_SKILLS[@]}"; do
       install_skill "$s"
     done
     ;;
   build)
-    for s in react:components remotion shadcn-ui; do
+    for s in "${BUILD_SKILLS[@]}"; do
       install_skill "$s"
     done
     ;;
   utilities)
-    for s in design-md enhance-prompt stitch-loop; do
+    for s in "${UTILITIES_SKILLS[@]}"; do
       install_skill "$s"
     done
     ;;
   all)
-    for s in generate-design extract-design-md extract-static-html code-to-design manage-design-system upload-to-stitch; do
-      install_skill "$s"
-    done
-    for s in "react:components" remotion shadcn-ui; do
-      install_skill "$s"
-    done
-    for s in design-md enhance-prompt stitch-loop; do
+    for s in "${DESIGN_SKILLS[@]}" "${BUILD_SKILLS[@]}" "${UTILITIES_SKILLS[@]}"; do
       install_skill "$s"
     done
     ;;

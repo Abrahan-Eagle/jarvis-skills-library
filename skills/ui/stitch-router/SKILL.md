@@ -2,12 +2,12 @@
 name: stitch-router
 description: >
   Orquesta prototipos y design systems en Google Stitch via MCP y skills upstream
-  (generate-design, design-md, stitch-loop, react:components). Trigger: prototipo Stitch,
+  (stitch::generate-design, design-md, stitch-loop, react:components). Trigger: prototipo Stitch,
   DESIGN.md desde Stitch, export React desde Stitch, loop baton next-prompt.
 license: UNLICENSED
 metadata:
   author: JARVIS Global
-  version: "1.0"
+  version: "1.1"
   scope: [global]
   category: ui
   auto_invoke:
@@ -16,7 +16,7 @@ metadata:
     - "DESIGN.md desde proyecto Stitch"
     - "Exportar Stitch a React"
     - "Loop stitch-loop next-prompt"
-  triggers: stitch, stitch mcp, generate-design, design-md, stitch-loop, react-components stitch
+  triggers: stitch, stitch mcp, stitch::generate-design, design-md, stitch-loop, react-components stitch
   related-skills:
     - ui-router
     - open-design-router
@@ -31,16 +31,28 @@ Router para **prototipos web en Google Stitch** (MCP + skills upstream). Complem
 
 Guía JARVIS: [docs/STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md).
 
+Docs oficiales MCP: [setup](https://stitch.withgoogle.com/docs/mcp/setup/?pli=1) · [guide](https://stitch.withgoogle.com/docs/mcp/guide/?pli=1) · [reference](https://stitch.withgoogle.com/docs/mcp/reference/?pli=1)
+
+## Gate MCP (obligatorio)
+
+Antes de generar o leer pantallas Stitch:
+
+1. **Config:** endpoint `https://stitch.googleapis.com/mcp`, header `X-Goog-Api-Key` — ver [STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md) y plantilla `.cursor/mcp.json.example` en productos con capa Stitch.
+2. **Reiniciar** Cursor / MCP tras cambiar credenciales.
+3. **`list_tools`:** prefijo `stitch:` o `mcp_stitch:` presente.
+4. **Smoke test:** `[prefix]:list_projects` con `filter: "view=owned"` — respuesta con proyectos, **sin** error auth.
+
+| Resultado | Acción |
+|-----------|--------|
+| Prefijo MCP + `list_projects` OK | Continuar → skill upstream |
+| Sin prefijo MCP | **STOP** — guiar [MCP setup](https://stitch.withgoogle.com/docs/mcp/setup/?pli=1) |
+| Error auth / “API keys not supported” | **STOP** — rotar key expuesta; probar OAuth/proxy stdio del setup oficial; no inventar UI |
+| Skill upstream ausente | `bash scripts/install-stitch-skills.sh --skill <name> --global` (OK usuario) |
+
 ## Detección runtime
 
-1. **MCP Stitch:** invocar `list_tools` (o revisar MCP en Cursor) — buscar prefijo `stitch:` o `mcp_stitch:`.
-2. **Skills upstream instaladas:** existencia en `~/.cursor/skills/<name>/SKILL.md` o `.agents/skills/<name>/SKILL.md` del producto.
-
-| Señal | Interpretación |
-|-------|----------------|
-| Prefijo MCP `stitch:` | Listo para herramientas Stitch |
-| Sin MCP | **STOP** — configurar Stitch MCP ([docs Stitch](https://stitch.withgoogle.com/docs/)) antes de generar |
-| Skill upstream ausente | `bash scripts/install-stitch-skills.sh --skill <name> --global` (OK usuario) |
+1. **MCP Stitch:** gate arriba.
+2. **Skills upstream:** `~/.cursor/skills/<dir>/SKILL.md` o `.agents/skills/<dir>/SKILL.md` (nombres CLI ≠ nombre carpeta para `stitch::*`).
 
 ## Árbol de decisión
 
@@ -54,17 +66,20 @@ Guía JARVIS: [docs/STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md).
 
 ## Cadena por intención
 
-| Intención | Skill upstream | Notas |
-|-----------|----------------|-------|
-| Idea vaga → prompt Stitch | `enhance-prompt` | Ver [prompting guide](https://stitch.withgoogle.com/docs/learn/prompting/) |
-| Generar/editar pantalla MCP | `generate-design` | Reemplaza V1 `stitch-design` |
-| DESIGN.md desde código local | `extract-design-md` o `design-md` | Según origen (código vs proyecto Stitch) |
-| Código → diseño Stitch | `code-to-design` | Cadena extract + upload |
-| Subir assets / DESIGN.md | `manage-design-system`, `upload-to-stitch` | Proyecto Stitch existente |
-| Sitio multi-página autónomo | `stitch-loop` | Requiere `DESIGN.md`, `SITE.md`, `next-prompt.md` |
-| Stitch → React | `react:components` | Nombre CLI: `react:components` |
-| Video walkthrough | `remotion` | Opcional |
-| shadcn/ui | `shadcn-ui` | Stack React |
+| Intención | Skill CLI | Carpeta local típica | Notas |
+|-----------|-----------|----------------------|-------|
+| Idea vaga → prompt Stitch | `enhance-prompt` | `enhance-prompt/` | [Prompting guide](https://stitch.withgoogle.com/docs/learn/prompting/) |
+| Generar/editar pantalla MCP | `stitch::generate-design` | `stitch-generate-design/` | Reemplaza V1 `stitch-design` |
+| DESIGN.md desde proyecto Stitch | `design-md` | `design-md/` | [DESIGN.md overview](https://stitch.withgoogle.com/docs/design-md/overview/?pli=1) |
+| DESIGN.md desde código local | `stitch::extract-design-md` | `stitch-extract-design-md/` | React, Vue, CSS, etc. |
+| Código → diseño Stitch | `stitch::code-to-design` | `stitch-code-to-design/` | Cadena extract + upload |
+| Subir assets / DESIGN.md | `stitch::manage-design-system`, `stitch::upload-to-stitch` | `stitch-manage-design-system/`, `stitch-upload-to-stitch/` | Script SDK si MCP trunca base64 |
+| Sitio multi-página autónomo | `stitch-loop` | `stitch-loop/` | `DESIGN.md`, `SITE.md`, `next-prompt.md` |
+| Stitch → React | `react:components` | `react-components/` | |
+| Stitch → React Native | `stitch::react-native` | — | Opcional |
+| Video walkthrough | `remotion` | `remotion/` | Opcional |
+| shadcn/ui | `shadcn-ui` | `shadcn-ui/` | Stack React |
+| DESIGN.md premium | `taste-design` | — | Opcional |
 
 Instalar selectivo:
 
@@ -75,16 +90,17 @@ bash scripts/install-stitch-skills.sh --skill stitch-loop --global
 
 ## Flujo recomendado
 
-1. Confirmar **MCP Stitch** activo (prefijo en tools).
-2. Si falta skill upstream → `install-stitch-skills.sh` o `npx skills add google-labs-code/stitch-skills --skill <name> --global`.
+1. Ejecutar **Gate MCP** (smoke `list_projects`).
+2. Si falta skill → `install-stitch-skills.sh` o `npx skills add google-labs-code/stitch-skills --skill "<CLI>"`.
 3. `Read` la skill upstream concreta antes de llamar MCP.
-4. Para loops: `design-md` → `stitch-loop` con baton en `next-prompt.md`.
+4. Loops: `design-md` → `stitch-loop` con baton en `next-prompt.md`.
 5. `verification-before-completion` antes de entregar al usuario.
 
 ## Gates JARVIS
 
-- Sin MCP → no inventar respuestas Stitch; guiar configuración
-- Implementación Flutter/producto → derivar tokens manualmente o vía `ui-router`, no copiar HTML Stitch ciego
+- Sin MCP funcional → no inventar respuestas Stitch; guiar setup + rotación de keys
+- Auth fallida → proxy/OAuth según [MCP setup](https://stitch.withgoogle.com/docs/mcp/setup/?pli=1)
+- Implementación Flutter/producto → `ui-router`; no copiar HTML Stitch ciego
 - Publicación → `publish-safety` si aplica
 
 ## Cuándo NO usar Stitch
@@ -100,4 +116,4 @@ bash scripts/install-stitch-skills.sh --list
 bash scripts/install-stitch-skills.sh --profile all --global
 ```
 
-No escribe en `jarvis-skills-library` — destino `~/.cursor/skills/` o agente detectado por `npx skills add`.
+No escribe en `jarvis-skills-library` — destino `~/.cursor/skills/` o `.agents/skills/` según `--global` / `--local`.

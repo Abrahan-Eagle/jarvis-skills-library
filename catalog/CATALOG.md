@@ -174,5 +174,5 @@ Total: **102** skills
 | Skill | Descripción | Ruta |
 |-------|-------------|------|
 | `open-design-router` | Orquesta artefactos visuales standalone via Open Design (carrusel, deck, email, prototipo) vs implementacion en codigo (… | [skills/ui/open-design-router/SKILL.md](skills/ui/open-design-router/SKILL.md) |
-| `stitch-router` | Orquesta prototipos y design systems en Google Stitch via MCP y skills upstream (generate-design, design-md, stitch-loop… | [skills/ui/stitch-router/SKILL.md](skills/ui/stitch-router/SKILL.md) |
+| `stitch-router` | Orquesta prototipos y design systems en Google Stitch via MCP y skills upstream (stitch::generate-design, design-md, sti… | [skills/ui/stitch-router/SKILL.md](skills/ui/stitch-router/SKILL.md) |
 | `ui-ux-pro-max` | UI/UX design intelligence: design system generator, 67+ styles, palettes, typography, UX guidelines, charts, google-font… | [skills/ui/ui-ux-pro-max/SKILL.md](skills/ui/ui-ux-pro-max/SKILL.md) |
