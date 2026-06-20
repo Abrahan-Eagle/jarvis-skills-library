@@ -35,7 +35,7 @@ python3 skills/engineering/skill-creator/scripts/init_skill.py <name> --path ski
 
 ## Spec-Driven Development
 
-Ver [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md), [docs/SPEC_KIT_EXTENSIONS.md](docs/SPEC_KIT_EXTENSIONS.md), [docs/OPEN_DESIGN_INTEGRATION.md](docs/OPEN_DESIGN_INTEGRATION.md), [docs/STRANGEVERSE_INTEGRATION.md](docs/STRANGEVERSE_INTEGRATION.md), [docs/MIROFISH_UPSTREAM.md](docs/MIROFISH_UPSTREAM.md), [docs/ECC_INTEGRATION.md](docs/ECC_INTEGRATION.md), [docs/CYBER_NEO_INTEGRATION.md](docs/CYBER_NEO_INTEGRATION.md), [docs/KALMAN_ANOMALY_INTEGRATION.md](docs/KALMAN_ANOMALY_INTEGRATION.md), [docs/LEARNING_LOOP_INTEGRATION.md](docs/LEARNING_LOOP_INTEGRATION.md), [docs/SKILL_LOOP_INTEGRATION.md](docs/SKILL_LOOP_INTEGRATION.md), [docs/GENTLE_AI_LOOP_INTEGRATION.md](docs/GENTLE_AI_LOOP_INTEGRATION.md), [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](docs/AGENT_SKILLS_ADDY_INTEGRATION.md), [docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md), [docs/LOOP_AI_ECOSYSTEM.md](docs/LOOP_AI_ECOSYSTEM.md), [docs/AWESOME_SPEC_KITS.md](docs/AWESOME_SPEC_KITS.md) y skills `sdd-router`, `kitty-router`, `openspec-router`, `speckit-lifecycle-router`, `open-design-router`, `ecc-router`, `cyber-neo-router`, `kalman-anomaly-router`, `learning-loop-router`, `skill-loop-router`, `agent-skills-router`, `claude-skills-router`, `skill-security-auditor`, `human-in-the-loop-ops`, `scenario-router`, `strategic-briefing-ops`.
+Ver [docs/SDD_SPECKIT_INTEGRATION.md](docs/SDD_SPECKIT_INTEGRATION.md), [docs/SPEC_KIT_EXTENSIONS.md](docs/SPEC_KIT_EXTENSIONS.md), [docs/OPEN_DESIGN_INTEGRATION.md](docs/OPEN_DESIGN_INTEGRATION.md), [docs/STRANGEVERSE_INTEGRATION.md](docs/STRANGEVERSE_INTEGRATION.md), [docs/MIROFISH_UPSTREAM.md](docs/MIROFISH_UPSTREAM.md), [docs/ECC_INTEGRATION.md](docs/ECC_INTEGRATION.md), [docs/CYBER_NEO_INTEGRATION.md](docs/CYBER_NEO_INTEGRATION.md), [docs/KALMAN_ANOMALY_INTEGRATION.md](docs/KALMAN_ANOMALY_INTEGRATION.md), [docs/LEARNING_LOOP_INTEGRATION.md](docs/LEARNING_LOOP_INTEGRATION.md), [docs/SKILL_LOOP_INTEGRATION.md](docs/SKILL_LOOP_INTEGRATION.md), [docs/GENTLE_AI_LOOP_INTEGRATION.md](docs/GENTLE_AI_LOOP_INTEGRATION.md), [docs/GENTLEMAN_ECOSYSTEM_INTEGRATION.md](docs/GENTLEMAN_ECOSYSTEM_INTEGRATION.md), [docs/ENGRAM_INTEGRATION.md](docs/ENGRAM_INTEGRATION.md), [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](docs/AGENT_SKILLS_ADDY_INTEGRATION.md), [docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md), [docs/LOOP_AI_ECOSYSTEM.md](docs/LOOP_AI_ECOSYSTEM.md), [docs/AWESOME_SPEC_KITS.md](docs/AWESOME_SPEC_KITS.md) y skills `sdd-router`, `kitty-router`, `openspec-router`, `speckit-lifecycle-router`, `open-design-router`, `ecc-router`, `cyber-neo-router`, `kalman-anomaly-router`, `learning-loop-router`, `skill-loop-router`, `engram-router`, `agent-skills-router`, `claude-skills-router`, `skill-security-auditor`, `human-in-the-loop-ops`, `scenario-router`, `strategic-briefing-ops`.
 
 ## Precedencia operativa
 
@@ -68,7 +68,12 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 | Auditar skill externa antes de instalar | `claude-skills-router`, `skill-security-auditor` (+ `validate-skills.sh`) |
 | Gobernanza humana irreversible (push, deploy, publicación) | `human-in-the-loop-ops`, `git-guardrails-ops` |
 | Debug | `systematic-debugging` |
-| Commit | `verification-before-completion`, `git-commit` |
+| Commit | `verification-before-completion`, `work-unit-commits-ops`, `git-commit` |
+| PR >400 líneas / stacked PRs | `chained-pr-ops` |
+| Crear o preparar PR | `branch-pr-ops` |
+| Memoria persistente MCP (Engram) | `engram-router` → `engram-memory-protocol` |
+| Triage backlog issues/PRs | `backlog-triage-ops` |
+| Docs deben igualar código | `docs-alignment-ops` |
 | Push/merge | `git-guardrails-ops` (solo con orden explícita del usuario) |
 | Code review | `code-review-playbook` |
 | Cerrar sesión | `context-updater`, `session-learner-ops` |

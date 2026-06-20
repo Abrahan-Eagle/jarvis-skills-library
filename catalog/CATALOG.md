@@ -2,19 +2,19 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-20
 
-Total: **91** skills
+Total: **98** skills
 
 ## Resumen por categoría
 
 | Categoría | Cantidad |
 |-----------|----------|
 | `backend` | 7 |
-| `core` | 16 |
+| `core` | 17 |
 | `engineering` | 9 |
-| `git` | 3 |
+| `git` | 6 |
 | `mobile` | 4 |
 | `non-code` | 8 |
-| `ops` | 22 |
+| `ops` | 25 |
 | `planning` | 3 |
 | `review` | 5 |
 | `sdd` | 12 |
@@ -40,6 +40,7 @@ Total: **91** skills
 | `claude-skills-router` | Orquesta pack alirezarezvani/claude-skills vs canónico JARVIS y skill-security-auditor. | [skills/core/claude-skills-router/SKILL.md](skills/core/claude-skills-router/SKILL.md) |
 | `cyber-neo-router` | Orquesta auditoría Cyber Neo (11 dominios, OWASP 2025, reporte read-only) vs security checklist JARVIS. | [skills/core/cyber-neo-router/SKILL.md](skills/core/cyber-neo-router/SKILL.md) |
 | `ecc-router` | Orquesta harness ECC (hooks, instincts, rules idioma, ecc consult) vs workflow JARVIS canónico. | [skills/core/ecc-router/SKILL.md](skills/core/ecc-router/SKILL.md) |
+| `engram-router` | Orquesta memoria persistente Engram (MCP) vs context-updater/handoff/active_context JARVIS. | [skills/core/engram-router/SKILL.md](skills/core/engram-router/SKILL.md) |
 | `jarvis-core` | Protocolo base del sistema JARVIS para cualquier proyecto. Define honestidad, foco de negocio y flujo de trabajo modular… | [skills/core/jarvis-core/SKILL.md](skills/core/jarvis-core/SKILL.md) |
 | `jarvis-experts` | Panel de Expertos JARVIS (agencia de desarrollo virtual). Define roster de roles, criterios de activación, combinaciones… | [skills/core/jarvis-experts/SKILL.md](skills/core/jarvis-experts/SKILL.md) |
 | `jarvis-skills-maintainer` | Mantenimiento de jarvis-skills-library: crear, validar, catalogar, lockear e instalar skills globales. | [skills/core/jarvis-skills-maintainer/SKILL.md](skills/core/jarvis-skills-maintainer/SKILL.md) |
@@ -71,9 +72,12 @@ Total: **91** skills
 
 | Skill | Descripción | Ruta |
 |-------|-------------|------|
+| `branch-pr-ops` | Workflow branch + PR: naming conventional, checklist pre-PR, issue linking, presupuesto review, gh integration. Adaptabl… | [skills/git/branch-pr-ops/SKILL.md](skills/git/branch-pr-ops/SKILL.md) |
+| `chained-pr-ops` | Divide PRs grandes en cadenas reviewables (stacked o feature-branch chain): regla 400 líneas, diagrama de dependencias, … | [skills/git/chained-pr-ops/SKILL.md](skills/git/chained-pr-ops/SKILL.md) |
 | `git-commit` | Execute git commit with conventional commit message analysis, intelligent staging, and message generation. Use when user… | [skills/git/git-commit/SKILL.md](skills/git/git-commit/SKILL.md) |
 | `structured-commits-ops` | Commits con trailers de decisión en proyecto activo. Complementa git-commit. | [skills/git/structured-commits-ops/SKILL.md](skills/git/structured-commits-ops/SKILL.md) |
 | `using-git-worktrees` | Worktree aislado para features Flutter proyecto. Base dev. | [skills/git/using-git-worktrees/SKILL.md](skills/git/using-git-worktrees/SKILL.md) |
+| `work-unit-commits-ops` | Commits por unidad de trabajo reviewable: un propósito, tests/docs con el código, historia clara. Puente a chained PRs. | [skills/git/work-unit-commits-ops/SKILL.md](skills/git/work-unit-commits-ops/SKILL.md) |
 
 ## mobile
 
@@ -101,13 +105,16 @@ Total: **91** skills
 
 | Skill | Descripción | Ruta |
 |-------|-------------|------|
+| `backlog-triage-ops` | Triage de backlog GitHub: auditar issues/PRs abiertos, clasificar disposición (merge, request-changes, close, needs-desi… | [skills/ops/backlog-triage-ops/SKILL.md](skills/ops/backlog-triage-ops/SKILL.md) |
 | `brainstorming-ops` | OBLIGATORIO antes de tareas complejas en proyecto activo: pantallas, providers, navegación, flujos KYC/onboarding. Propo… | [skills/ops/brainstorming-ops/SKILL.md](skills/ops/brainstorming-ops/SKILL.md) |
 | `configure-ecc` | ECC install wizard and harness configuration for Cursor. | [skills/ops/configure-ecc/SKILL.md](skills/ops/configure-ecc/SKILL.md) |
 | `context-updater` | Actualizar el contexto de sesión para que la IA "recuerde" entre sesiones. Resumir cambios relevantes en docs/active_con… | [skills/ops/context-updater/SKILL.md](skills/ops/context-updater/SKILL.md) |
 | `continuous-learning-v2` | ECC instincts: continuous learning v2, evolve clusters into skills. Use with session-learner-ops at module close. | [skills/ops/continuous-learning-v2/SKILL.md](skills/ops/continuous-learning-v2/SKILL.md) |
 | `cyber-neo` | Auditoría de seguridad read-only: 11 dominios, OWASP 2025, CWE Top 25, reporte priorizado. | [skills/ops/cyber-neo/SKILL.md](skills/ops/cyber-neo/SKILL.md) |
 | `deep-interview-ops` | Entrevista socrática antes de tareas ambiguas en proyecto activo. Gate claridad mínima 3.5/5. | [skills/ops/deep-interview-ops/SKILL.md](skills/ops/deep-interview-ops/SKILL.md) |
+| `docs-alignment-ops` | Alinear documentación con código: docs describen comportamiento actual, mismo PR que el cambio, ejemplos verificables. | [skills/ops/docs-alignment-ops/SKILL.md](skills/ops/docs-alignment-ops/SKILL.md) |
 | `documentar-avances` | Al finalizar una tarea relevante, proponer el párrafo para "Cambios recientes" en AGENTS.md y/o README. El usuario aprue… | [skills/ops/documentar-avances/SKILL.md](skills/ops/documentar-avances/SKILL.md) |
+| `engram-memory-protocol` | Disciplina de memoria persistente con Engram MCP: mem_save, mem_search, mem_context, cierre de sesión y recuperación pos… | [skills/ops/engram-memory-protocol/SKILL.md](skills/ops/engram-memory-protocol/SKILL.md) |
 | `finishing-a-development-branch` | Cerrar feature Flutter: analyze + test, opciones merge/PR. | [skills/ops/finishing-a-development-branch/SKILL.md](skills/ops/finishing-a-development-branch/SKILL.md) |
 | `git-guardrails-ops` | Protección git: bloquea push a main, advierte en dev, exige confirmación antes de comandos destructivos. | [skills/ops/git-guardrails-ops/SKILL.md](skills/ops/git-guardrails-ops/SKILL.md) |
 | `handoff` | Compactar la sesion actual en un documento de traspaso para continuar en otro agente o chat. Complementa session-learner… | [skills/ops/handoff/SKILL.md](skills/ops/handoff/SKILL.md) |

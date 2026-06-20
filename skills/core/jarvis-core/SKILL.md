@@ -116,7 +116,12 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | Hotfix producción | `speckit-lifecycle-router` (hotfix) + `git-guardrails-ops` |
 | Implementar feature / bugfix (sin `.specify/`) | `test-driven-development` + skill dominio `{producto}-*` |
 | Terminar módulo | `verification-before-completion` → `session-learner-ops` → `finishing-a-development-branch` |
-| Crear commit | `verification-before-completion` → `git-commit` → `structured-commits-ops` |
+| Crear commit | `verification-before-completion` → `work-unit-commits-ops` → `git-commit` → `structured-commits-ops` |
+| PR >400 líneas / stacked PRs | `chained-pr-ops` |
+| Crear o preparar PR | `branch-pr-ops` (+ `git-guardrails-ops` en push) |
+| Memoria persistente Engram (MCP) | `engram-router` → `engram-memory-protocol` |
+| Triage backlog issues/PRs | `backlog-triage-ops` |
+| Docs deben igualar código | `docs-alignment-ops` |
 | Push / merge | `git-guardrails-ops` (solo con orden explícita del usuario) |
 | Code review | `code-review-playbook` (+ opcional requesting/receiving) |
 | Decisión no trivial alta stakes (auth, prod, irreversible) | `agent-skills-router` → `doubt-driven-development` (opcional in-flight; no bloquea TDD ni review) |

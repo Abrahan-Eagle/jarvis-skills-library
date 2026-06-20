@@ -23,6 +23,7 @@ Origen forense (video Gentleman + repos engram/gentle-ai): [GENTLE_AI_LOOP_INTEG
 | Stop hook que bloquea hasta tests green | `create-hook` (Cursor IDE) + `human-in-the-loop-ops` |
 | Sub-agentes / contexto aislado | Task `readonly`, `handoff` |
 | Memoria entre sesiones | `context-updater`, `session-learner-ops`, `docs/active_context.md` |
+| Memoria persistente MCP (opt-in) | `engram-router` → `engram-memory-protocol` |
 | Worktrees / aislamiento | `using-git-worktrees` |
 | MCP / conectores externos | MCP en Cursor; dominio en repos producto |
 | **HITL / HOTL / automation-bounded** | **`human-in-the-loop-ops`** |

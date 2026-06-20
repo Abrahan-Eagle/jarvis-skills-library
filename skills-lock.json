@@ -68,10 +68,16 @@
       "computedHash": "cc93c388168752cbe1c098cc1298e38dfdbf1bfaecad42b84993fa5343f88387",
       "path": "skills/core/ecc-router/SKILL.md"
     },
+    "engram-router": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "d5d74feed8a7e6cb56319724318b4bcca651fcf3549448fb9c3aa95265ff3b0f",
+      "path": "skills/core/engram-router/SKILL.md"
+    },
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "1be752474514384ba29f845c530b2de9570470eb6a5de9cd6a9994048c98c9db",
+      "computedHash": "126f0edc06932d95321e28e5088d59c2463edea89084364648bbe259c48d7717",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
@@ -195,6 +201,20 @@
       "computedHash": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
       "path": "skills/engineering/webapp-testing/SKILL.md"
     },
+    "branch-pr-ops": {
+      "source": "Gentleman-Programming/gentle-ai",
+      "sourceType": "github",
+      "computedHash": "8fdfb5ea72ca708cc272eda16d22e17f2845feb3c59299be172251b8364604c5",
+      "path": "skills/git/branch-pr-ops/SKILL.md",
+      "upstream": "Gentleman-Programming/gentle-ai:branch-pr"
+    },
+    "chained-pr-ops": {
+      "source": "Gentleman-Programming/gentle-ai",
+      "sourceType": "github",
+      "computedHash": "5d57e9d3a003346b5f394e774fbdc241e1251f3a48796d4a819a3c345bcd8455",
+      "path": "skills/git/chained-pr-ops/SKILL.md",
+      "upstream": "Gentleman-Programming/gentle-ai:chained-pr"
+    },
     "git-commit": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
@@ -204,7 +224,7 @@
     "structured-commits-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "ea4741ce64a207ee075c5518b14e15d0aef1d79064b3c51088cdb9f1ceb758a6",
+      "computedHash": "2497f90c53f0857146de7662d6d1adbf2b7dd2a32d7054becd95cfd4181ec5f8",
       "path": "skills/git/structured-commits-ops/SKILL.md"
     },
     "using-git-worktrees": {
@@ -213,6 +233,13 @@
       "computedHash": "e2ff80b092e245bf61a38d72bc9552bd4b3c8fcc73ec349b5f45cb9a12f72982",
       "path": "skills/git/using-git-worktrees/SKILL.md",
       "upstream": "superpowers:using-git-worktrees"
+    },
+    "work-unit-commits-ops": {
+      "source": "Gentleman-Programming/gentle-ai",
+      "sourceType": "github",
+      "computedHash": "df55fd862a5586b2ecbc189010bc9a0ebdb255dc514d96c424640ba71944fb7e",
+      "path": "skills/git/work-unit-commits-ops/SKILL.md",
+      "upstream": "Gentleman-Programming/gentle-ai:work-unit-commits"
     },
     "flutter-animations": {
       "source": "jarvis-skills-library",
@@ -286,6 +313,13 @@
       "computedHash": "287419657601705a140862ec9f2d238e772467e05b70c4996edbf7028c791818",
       "path": "skills/non-code/strangeverse/SKILL.md"
     },
+    "backlog-triage-ops": {
+      "source": "Gentleman-Programming/engram",
+      "sourceType": "github",
+      "computedHash": "f62dacfc81b053866f90720fb0a2bae4fdf59654580a53bcf234abad86a84999",
+      "path": "skills/ops/backlog-triage-ops/SKILL.md",
+      "upstream": "Gentleman-Programming/engram:backlog-triage"
+    },
     "brainstorming-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
@@ -325,11 +359,25 @@
       "computedHash": "1bce2384f7099b9cc9d2fed3721929409c1af743efef02a516aa81375b7f22bd",
       "path": "skills/ops/deep-interview-ops/SKILL.md"
     },
+    "docs-alignment-ops": {
+      "source": "Gentleman-Programming/engram",
+      "sourceType": "github",
+      "computedHash": "6f00814a0d2c386a902417cb91e7b8d6693dc2d1ba1e7f63c5aa1a3f6ddeb9ee",
+      "path": "skills/ops/docs-alignment-ops/SKILL.md",
+      "upstream": "Gentleman-Programming/engram:docs-alignment"
+    },
     "documentar-avances": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
       "computedHash": "771b74c5e408959720e73eda9189b47e3c98288884ac3bbd8dd23eb3ea5d7e08",
       "path": "skills/ops/documentar-avances/SKILL.md"
+    },
+    "engram-memory-protocol": {
+      "source": "Gentleman-Programming/engram",
+      "sourceType": "github",
+      "computedHash": "d8d8f90c2124f3f38fe1f1f63e71de115e66a6c6d6b190fea91a2c82b2f61847",
+      "path": "skills/ops/engram-memory-protocol/SKILL.md",
+      "upstream": "Gentleman-Programming/engram:memory-protocol"
     },
     "finishing-a-development-branch": {
       "source": "obra/superpowers",

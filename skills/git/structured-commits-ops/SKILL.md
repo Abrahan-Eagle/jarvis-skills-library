@@ -8,12 +8,14 @@ metadata:
   version: "1.1.0"
   auto_invoke:
     - "Crear commit"
-  related-skills: [git-commit, verification-before-completion]
+  related-skills: [git-commit, work-unit-commits-ops, verification-before-completion]
 ---
 
 # Structured commits ops — proyecto activo
 
 Adaptado desde clawvis-openclaw.
+
+Para commits por **unidad de trabajo** (historia reviewable, tests con código), ver `work-unit-commits-ops`. Esta skill añade **trailers de decisión** en el proyecto activo; no sustituye Conventional Commits base (`git-commit`).
 
 ## Scopes sugeridos
 
