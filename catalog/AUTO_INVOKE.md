@@ -40,6 +40,7 @@
 | Crear skill-loop.yml | `skill-loop-router` |
 | Crear skill-loop.yml workflow | `skill-loop` |
 | Cualquier tarea no trivial | `jarvis-experts` |
+| DESIGN.md desde proyecto Stitch | `stitch-router` |
 | Decidir flujo planificación | `sdd-router` |
 | Decidir loop vs prompt simple | `agent-loop-engineering` |
 | Decisión alta stakes antes de commit | `agent-skills-router` |
@@ -71,9 +72,11 @@
 | Estado general del producto | `strategic-briefing-ops` |
 | Evaluar entregable con LLM-as-judge antes de aprobación humana | `llm-as-judge-ops` |
 | Evitar PR monolítico desde SDD tasks | `work-unit-commits-ops` |
+| Exportar Stitch a React | `stitch-router` |
 | Gates humanos antes de acción irreversible | `human-in-the-loop-ops` |
 | Generar assets visuales marketing | `open-design-router` |
 | Generar con Open Design | `open-design` |
+| Generar pantalla con Stitch MCP | `stitch-router` |
 | Governance standalone fuera de misión | `kitty-governance` |
 | Guardar decisión o bugfix en Engram | `engram-memory-protocol` |
 | HITL HOTL umbrales de confianza | `human-in-the-loop-ops` |
@@ -89,6 +92,7 @@
 | Kalman filter defensa runtime | `kalman-anomaly-router` |
 | Kalman filter seguridad runtime | `kalman-anomaly-defense` |
 | Landing page o dashboard | `ui-router`, `ui-ux-pro-max` |
+| Loop stitch-loop next-prompt | `stitch-router` |
 | Mantener biblioteca de skills globales | `jarvis-skills-maintainer` |
 | Matriz de riesgos what-if | `scenario-analysis-ops` |
 | Memoria persistente Engram MCP | `engram-router` |
@@ -112,6 +116,7 @@
 | Prediccion multi-agente con semilla documentos | `scenario-router` |
 | Preparar commits antes de abrir PR | `work-unit-commits-ops` |
 | Prototipo landing sin codigo en repo | `open-design-router` |
+| Prototipo web en Stitch | `stitch-router` |
 | Que pasa si decision estrategica | `scenario-analysis-ops` |
 | Que pasa si escenario estrategico | `scenario-router` |
 | Qué toolkit SD-X usar | `sdd-x-index` |

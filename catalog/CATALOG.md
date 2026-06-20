@@ -2,7 +2,7 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-06-20
 
-Total: **101** skills
+Total: **102** skills
 
 ## Resumen por categoría
 
@@ -18,7 +18,7 @@ Total: **101** skills
 | `planning` | 4 |
 | `review` | 6 |
 | `sdd` | 12 |
-| `ui` | 2 |
+| `ui` | 3 |
 
 ## backend
 
@@ -174,4 +174,5 @@ Total: **101** skills
 | Skill | Descripción | Ruta |
 |-------|-------------|------|
 | `open-design-router` | Orquesta artefactos visuales standalone via Open Design (carrusel, deck, email, prototipo) vs implementacion en codigo (… | [skills/ui/open-design-router/SKILL.md](skills/ui/open-design-router/SKILL.md) |
+| `stitch-router` | Orquesta prototipos y design systems en Google Stitch via MCP y skills upstream (generate-design, design-md, stitch-loop… | [skills/ui/stitch-router/SKILL.md](skills/ui/stitch-router/SKILL.md) |
 | `ui-ux-pro-max` | UI/UX design intelligence: design system generator, 67+ styles, palettes, typography, UX guidelines, charts, google-font… | [skills/ui/ui-ux-pro-max/SKILL.md](skills/ui/ui-ux-pro-max/SKILL.md) |

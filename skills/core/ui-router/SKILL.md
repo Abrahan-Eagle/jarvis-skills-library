@@ -18,6 +18,7 @@ metadata:
   related-skills:
     - jarvis-core
     - open-design-router
+    - stitch-router
     - ui-ux-pro-max
     - responsive-design
     - sdd-router
@@ -74,6 +75,7 @@ test -f .agents/skills/ui-ux-pro-max/ZONIX.md && echo HAS_ZONIX_OVERLAY_AGENTS
 | Solo responsive/breakpoints | `responsive-design` primero; `ui-ux-pro-max` si hay dudas de layout global |
 | Feature con Spec Kit + UI | `sdd-router` → specs → implement; al tocar UI, aplicar esta cadena |
 | Artefacto standalone (carrusel, deck, email, prototipo HTML) | `open-design-router` → `open-design` (no código en repo) |
+| Prototipo web en Google Stitch (MCP) | `stitch-router` → skills upstream ([STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md)) |
 
 ## Comandos antes de implementar UI nueva
 
@@ -122,3 +124,5 @@ En el repo producto: copiar solo el overlay (ej. `ZONIX.md`) bajo `.cursor/skill
 Si la tarea cambia **cómo se ve, se siente, se mueve o se interactúa** en el **código del producto**, usar esta cadena.
 
 Para **entregables visuales standalone** (carrusel RRSS, deck, email HTML sin tocar `lib/`), usar `open-design-router` ([OPEN_DESIGN_INTEGRATION.md](../../docs/OPEN_DESIGN_INTEGRATION.md)).
+
+Para **prototipos en plataforma Stitch** (MCP + `generate-design`, `stitch-loop`, etc.), usar `stitch-router` ([STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md)) — no confundir con Flutter en repo.

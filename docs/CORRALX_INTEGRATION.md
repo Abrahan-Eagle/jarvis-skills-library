@@ -113,7 +113,7 @@ Log local gitignored. Reiniciar Cursor tras añadir hooks si no cargan.
 ## Qué NO sync
 
 - Skills `corralx-*` (dominio exclusivo)
-- Herramientas Stitch/React opcionales en Frontend
+- Herramientas Stitch/React opcionales en Frontend — ver [STITCH_UPSTREAM.md](STITCH_UPSTREAM.md); refresh V2 con `bash scripts/install-stitch-skills.sh` o `npx skills add google-labs-code/stitch-skills` (no manifest sync)
 - Duplicar `corralx-llm-judge-ops` como global `llm-as-judge-ops`
 
 ## Paralelo clawvis

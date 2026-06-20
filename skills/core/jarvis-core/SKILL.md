@@ -22,6 +22,7 @@ metadata:
     - sdd-x-index
     - ui-router
     - open-design-router
+    - stitch-router
     - ecc-router
     - cyber-neo-router
     - kalman-anomaly-router
@@ -61,6 +62,8 @@ Si el repo tiene `.specify/` (sin `.kittify/` ni `openspec/`), ver `sdd-router` 
 Para UI/UX en código, ver `ui-router` ([docs/UI_UX_PRO_MAX_INTEGRATION.md](../../docs/UI_UX_PRO_MAX_INTEGRATION.md)).
 
 Para artefactos visuales marketing (carrusel, deck, email HTML), ver `open-design-router` ([docs/OPEN_DESIGN_INTEGRATION.md](../../docs/OPEN_DESIGN_INTEGRATION.md)) — no `speckit-specify`.
+
+Para prototipos web en Google Stitch (MCP, DESIGN.md, stitch-loop), ver `stitch-router` ([docs/STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md)) — no sustituye `ui-router` en Flutter/Blade del producto.
 
 Para what-if estratégico y simulación multi-agente, ver `scenario-router` ([docs/STRANGEVERSE_INTEGRATION.md](../../docs/STRANGEVERSE_INTEGRATION.md), [docs/MIROFISH_UPSTREAM.md](../../docs/MIROFISH_UPSTREAM.md)) — no `speckit-specify` salvo que el escenario derive en feature.
 
@@ -130,6 +133,7 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | Auditar skill externa antes de instalar | `claude-skills-router` → `skill-security-auditor` (+ `validate-skills.sh`) |
 | UI/UX en código, landing en repo, a11y, layout | `ui-router` → skill dominio `{producto}-ui-design` / `zonix-web-design` → `ui-ux-pro-max` → `responsive-design` (opc.) |
 | Carrusel, deck, email HTML, prototipo standalone | `open-design-router` → `open-design` (daemon OD) |
+| Prototipo web Stitch (MCP, generate-design, stitch-loop) | `stitch-router` → skills upstream ([STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md)) |
 | Briefing estratégico / estado general | `strategic-briefing-ops` |
 | What-if / escenarios estratégicos | `scenario-router` → `scenario-analysis-ops` o `{producto}-scenario-analysis` |
 | Simulación multi-agente / opinión pública | `scenario-router` → `strangeverse` (API :5001) |

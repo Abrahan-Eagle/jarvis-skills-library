@@ -192,6 +192,15 @@ Tras añadir o cambiar una skill global que CorralX consume vía manifest:
 
 Doc: [docs/CORRALX_INTEGRATION.md](../docs/CORRALX_INTEGRATION.md). Skills `corralx-*` nunca en manifest; overlay producto en `OVERLAY.md`. CI: `global-skills-sync-check.yml` en PR.
 
+## Google Stitch upstream (no vendor)
+
+Skills Stitch viven en [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) — **no** copiar al catálogo global.
+
+1. Doc: [docs/STITCH_UPSTREAM.md](../docs/STITCH_UPSTREAM.md)
+2. Router global: `stitch-router` (`skills/ui/stitch-router/`)
+3. Instalar upstream en IDE/producto: `bash scripts/install-stitch-skills.sh --profile design --global`
+4. CorralX Frontend: skills Stitch opcionales locales (capa 5/6); refresh V2 vía `npx skills add`, no manifest sync
+
 ## Pipeline de verificación
 
 ```bash

@@ -77,7 +77,7 @@
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "e12043dd3bc96e0959ec538c549f49101bb6a66feded289fadcf5a14f6711e11",
+      "computedHash": "4a310333b23aef11bed0e30b75a1752c0c4265a0c8681a8f3bc6c4561f23b126",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
@@ -89,7 +89,7 @@
     "jarvis-skills-maintainer": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "4a8ff5e4bc1d669b7265e69d068f597ae186ddd1f25f49a21f24499814d66f9f",
+      "computedHash": "d6fd15f40c6257584e87858715f658a2e8061360556174c34ec4d313de36a34b",
       "path": "skills/core/jarvis-skills-maintainer/SKILL.md"
     },
     "kalman-anomaly-router": {
@@ -143,7 +143,7 @@
     "ui-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "655eaa0fdbe32e04f003a3e5f4640f226e7d80124c5b4ce235e982889d1bd4c5",
+      "computedHash": "c029f7ccc9b3bdb6061a6f755dce41bc64736536afd4b0ad504b67afef12afac",
       "path": "skills/core/ui-router/SKILL.md"
     },
     "agent-loop-engineering": {
@@ -636,6 +636,12 @@
       "sourceType": "local",
       "computedHash": "71b4af3226b249c7aa46d07a4bb2efb9ba8cc8ebc2fd5c27b552d5a838a78696",
       "path": "skills/ui/open-design-router/SKILL.md"
+    },
+    "stitch-router": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "ae2b11c6eafa53da19e32701aae7b5945dee3967653bf676afb3c1ce92a53c85",
+      "path": "skills/ui/stitch-router/SKILL.md"
     },
     "ui-ux-pro-max": {
       "source": "nextlevelbuilder/ui-ux-pro-max-skill",
