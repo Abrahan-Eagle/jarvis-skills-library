@@ -12,6 +12,7 @@
 | Análisis coherencia Spec Kit pre-implement | `speckit-analyze` |
 | Auditar open issues como maintainer | `backlog-triage-ops` |
 | Auditar skill antes de instalar | `claude-skills-router`, `skill-security-auditor` |
+| Auditoría automática pre-gate con rúbrica y score | `llm-as-judge-ops` |
 | Auditoría seguridad profunda read-only | `cyber-neo`, `cyber-neo-router` |
 | Briefing estrategico semanal | `strategic-briefing-ops` |
 | Bugfix con Spec Kit | `speckit-lifecycle-router` |
@@ -68,6 +69,7 @@
 | Escribir feedback de code review para humano | `comment-writer-ops` |
 | Establecer principios SDD en proyecto | `speckit-constitution` |
 | Estado general del producto | `strategic-briefing-ops` |
+| Evaluar entregable con LLM-as-judge antes de aprobación humana | `llm-as-judge-ops` |
 | Evitar PR monolítico desde SDD tasks | `work-unit-commits-ops` |
 | Gates humanos antes de acción irreversible | `human-in-the-loop-ops` |
 | Generar assets visuales marketing | `open-design-router` |
@@ -122,6 +124,7 @@
 | Resumen ejecutivo para el founder | `strategic-briefing-ops` |
 | Revisar accesibilidad o layout | `ui-router`, `ui-ux-pro-max` |
 | Rules idioma PHP TypeScript en .cursor | `ecc-router` |
+| Score de calidad y must_fix antes de publicar o mergear | `llm-as-judge-ops` |
 | Simular opinion publica o reaccion mercado | `scenario-router` |
 | Spec Kitty o spec-kitty | `kitty-router` |
 | Spec-driven development | `sdd-router` |

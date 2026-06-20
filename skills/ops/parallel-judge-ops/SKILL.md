@@ -21,6 +21,7 @@ metadata:
     - doubt-driven-development
     - code-review-playbook
     - human-in-the-loop-ops
+    - llm-as-judge-ops
     - verification-before-completion
 allowed-tools: [Read, Edit, Write, Glob, Grep, Bash, Task]
 ---
@@ -30,6 +31,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash, Task]
 - **Precedencia:** `jarvis-core` > esta skill. Diseño del loop: `agent-loop-engineering`. Gobernanza: `human-in-the-loop-ops`.
 - **Jueces = Task `readonly`** desde la sesión principal (`subagent_type: code-reviewer`, `security-reviewer` o `generalPurpose`). **No anidar Task** desde un subagent: si estás dentro de uno, escala a la sesión principal.
 - **Diferencia con `doubt-driven-development`:** doubt-driven es **in-flight** con 1 revisor fresco; esta skill es verificación **adversarial paralela** (2+ jueces independientes) sobre un artefacto terminado o casi.
+- **Diferencia con `llm-as-judge-ops`:** un juez + rúbrica + score pre-gate; parallel-judge = 2+ jueces frescos en paralelo.
 - **Fixes irreversibles** (push, deploy, migración) requieren gate humano — ver `git-guardrails-ops`, `approval-gate`.
 - Doc de origen: [docs/GENTLE_AI_LOOP_INTEGRATION.md](../../docs/GENTLE_AI_LOOP_INTEGRATION.md).
 

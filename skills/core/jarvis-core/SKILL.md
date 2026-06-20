@@ -139,6 +139,7 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | Diseñar loop de agente (loop vs prompt, anatomía, conciso/controlado) | `agent-loop-engineering` → `skill-loop-router` / `human-in-the-loop-ops` |
 | Loop automático impl→review→verify (YAML) | `skill-loop-router` → skill `skill-loop` + `skill-loop run` (OK usuario) |
 | Verificación adversarial paralela / "día del juicio" | `parallel-judge-ops` (Task readonly en paralelo) |
+| Auditoría automática pre-gate (LLM-as-judge) | `llm-as-judge-ops` |
 | Loop autónomo / decisión alta stakes con gate humano | `human-in-the-loop-ops` → `git-guardrails-ops` / `approval-gate` según acción |
 | SD-X ambiguo / multi-arte (dev+UI+docs) | `sdd-x-index` → `sdd-router` o `ui-router` según tabla SD-X |
 

@@ -23,6 +23,8 @@ metadata:
     - doubt-driven-development
     - code-review-playbook
     - verification-before-completion
+    - llm-as-judge-ops
+    - parallel-judge-ops
     - approval-gate
 allowed-tools: [Read, Edit, Write, Glob, Grep, Bash, Task]
 ---

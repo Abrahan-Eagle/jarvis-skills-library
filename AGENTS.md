@@ -63,6 +63,7 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 | Scan/wrap-up aprendizajes sesión | `learning-loop-router`, `learning-loop` |
 | Diseñar loop de agente (loop vs prompt, conciso/controlado) | `agent-loop-engineering` |
 | Verificación adversarial paralela / "día del juicio" | `parallel-judge-ops` |
+| Auditoría automática pre-gate (LLM-as-judge, rúbrica + score) | `llm-as-judge-ops` |
 | Loop autónomo / gates HITL/HOTL | `human-in-the-loop-ops` (+ `skill-loop-router` si YAML) |
 | Decisión no trivial alta stakes (auth, prod, irreversible) | `agent-skills-router`, `doubt-driven-development` (opcional in-flight; complementa review/TDD) |
 | Auditar skill externa antes de instalar | `claude-skills-router`, `skill-security-auditor` (+ `validate-skills.sh`) |

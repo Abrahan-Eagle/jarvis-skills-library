@@ -168,6 +168,16 @@ Ver skill `sdd-x-index` para mapa SD-X → skills JARVIS.
 
 Si es `non-code/` con `bin/`, añadir `SKILL-OC.md` compacto.
 
+## clawvis-openclaw (sync runtime OpenClaw)
+
+Tras añadir o cambiar una skill global que clawvis consume vía manifest:
+
+1. Commit + push en **jarvis-skills-library**
+2. En clawvis: `JARVIS_SKILLS_LIBRARY=/var/www/html/proyectos/AIPP/jarvis-skills-library ./scripts/sync-global-skills-from-library.sh`
+3. `./scripts/check-global-skills-sync.sh`
+
+Doc: [docs/CLAWVIS_INTEGRATION.md](../docs/CLAWVIS_INTEGRATION.md). Promoción clawvis→global: generalizar aquí primero; overlay holding en clawvis `OVERLAY.md`.
+
 ## Pipeline de verificación
 
 ```bash
@@ -208,4 +218,5 @@ bash scripts/install.sh --dry-run # preview
 - [docs/OPEN_DESIGN_INTEGRATION.md](../docs/OPEN_DESIGN_INTEGRATION.md)
 - [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md)
 - [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../docs/AGENT_SKILLS_ADDY_INTEGRATION.md)
+- [docs/CLAWVIS_INTEGRATION.md](../docs/CLAWVIS_INTEGRATION.md)
 - [docs/SDX_ECOSYSTEM.md](../docs/SDX_ECOSYSTEM.md)
