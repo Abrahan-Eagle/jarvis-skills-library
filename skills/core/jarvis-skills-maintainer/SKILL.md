@@ -198,8 +198,9 @@ Skills Stitch viven en [google-labs-code/stitch-skills](https://github.com/googl
 
 1. Doc: [docs/STITCH_UPSTREAM.md](../docs/STITCH_UPSTREAM.md)
 2. Router global: `stitch-router` (`skills/ui/stitch-router/`)
-3. Instalar upstream en IDE/producto: `bash scripts/install-stitch-skills.sh --profile design --global`
-4. CorralX Frontend: skills Stitch opcionales locales (capa 5/6); refresh V2 vía `npx skills add`, no manifest sync
+3. Instalar upstream: `bash scripts/install-stitch-skills.sh --profile design --global` (nombres CLI `stitch::*`)
+4. CorralX Frontend: skills Stitch opcionales (capa 5/6); Backend: solo plantilla MCP (`.cursor/mcp.json.proxy.example`); refresh V2 vía `npx skills add`, no manifest sync
+5. Cursor MCP: proxy `@_davideast/stitch-mcp` recomendado; operativo cuando Settings muestra tools bajo `stitch` (no solo punto verde)
 
 ## Pipeline de verificación
 
@@ -239,6 +240,7 @@ bash scripts/install.sh --dry-run # preview
 - [docs/SPEC_KITTY_INTEGRATION.md](../docs/SPEC_KITTY_INTEGRATION.md)
 - [docs/SPEC_KIT_EXTENSIONS.md](../docs/SPEC_KIT_EXTENSIONS.md)
 - [docs/OPEN_DESIGN_INTEGRATION.md](../docs/OPEN_DESIGN_INTEGRATION.md)
+- [docs/STITCH_UPSTREAM.md](../docs/STITCH_UPSTREAM.md)
 - [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md)
 - [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../docs/AGENT_SKILLS_ADDY_INTEGRATION.md)
 - [docs/CLAWVIS_INTEGRATION.md](../docs/CLAWVIS_INTEGRATION.md)

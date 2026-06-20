@@ -39,7 +39,7 @@ Tras `git pull` en la library: re-ejecutar sync + check en Backend y Frontend.
 
 - **Dominio:** `corralx-*` (API, UI, CRO, scenario producto)
 - **Backend local:** `e2e-testing-patterns`, `github-actions-templates`, `frontend-design`, `security-requirement-extraction`
-- **Frontend local:** `design-md`, `stitch-loop`, `remotion`, `react-components`, `enhance-prompt`, `shadcn-ui`
+- **Frontend local (Stitch/React capa 5/6):** utilities (`design-md`, `enhance-prompt`, `stitch-loop`), build (`react-components`, `remotion`, `shadcn-ui`), familia V2 `stitch-*` (`stitch-generate-design`, `stitch-code-to-design`, etc.) — lock: `skills-lock.json`; refresh vía [STITCH_UPSTREAM.md](STITCH_UPSTREAM.md)
 - **Variante dominio:** `corralx-llm-judge-ops` (Backend) — no sustituye global `llm-as-judge-ops`
 
 ## Overlays típicos

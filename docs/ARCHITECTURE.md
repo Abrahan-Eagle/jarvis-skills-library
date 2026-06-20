@@ -17,7 +17,7 @@ flowchart TB
   end
 
   subgraph optional ["Capa 2 — Opcional (por repo)"]
-    STITCH[stitch-loop, react-components]
+    STITCH[stitch-router global + skills upstream en producto]
   end
 
   CURSOR -->|jarvis-core precedencia| AGENTS
