@@ -17,6 +17,8 @@ metadata:
   related-skills:
     - jarvis-core
     - skill-loop
+    - agent-loop-engineering
+    - parallel-judge-ops
     - test-driven-development
     - code-review-playbook
     - verification-before-completion
@@ -47,10 +49,12 @@ test -d "${HOME}/.cursor/skills/skill-loop" && echo SKILL_LOOP_INSTALLED
 
 | Pedido | Ruta | No usar |
 |--------|------|---------|
+| Diseñar / entender un loop (loop vs prompt, anatomía, tipos) | **`agent-loop-engineering`** | scaffold YAML directo sin diseño |
 | Workflow módulo guiado | `jarvis-core` | skill-loop como sustituto |
 | Spec SDD nueva feature | `sdd-router` / `speckit-*` | skill-loop |
 | Scaffold / editar `skill-loop.yml` | skill `skill-loop` | YAML manual sin schema |
 | Ejecutar loop automático | `skill-loop run` (OK usuario) | solo skill sin CLI |
+| Verificación adversarial paralela / "día del juicio" | **`parallel-judge-ops`** | juez único (sesgo) |
 | Review PR puntual | `code-review-playbook` | loop completo |
 | Cierre módulo + memoria | **`session-learner-ops`** | skill-loop |
 | Aprendizajes post-sesión | `learning-loop-router` (opc.) | skill-loop |

@@ -1,8 +1,8 @@
 # Catálogo de skills globales
 
-> Generado por `scripts/sync-catalog.py` — 2026-06-18
+> Generado por `scripts/sync-catalog.py` — 2026-06-20
 
-Total: **89** skills
+Total: **91** skills
 
 ## Resumen por categoría
 
@@ -10,11 +10,11 @@ Total: **89** skills
 |-----------|----------|
 | `backend` | 7 |
 | `core` | 16 |
-| `engineering` | 8 |
+| `engineering` | 9 |
 | `git` | 3 |
 | `mobile` | 4 |
 | `non-code` | 8 |
-| `ops` | 21 |
+| `ops` | 22 |
 | `planning` | 3 |
 | `review` | 5 |
 | `sdd` | 12 |
@@ -57,6 +57,7 @@ Total: **89** skills
 
 | Skill | Descripción | Ruta |
 |-------|-------------|------|
+| `agent-loop-engineering` | Diseño de loops de agente concisos, reducidos y controlados: anatomía estímulo→iteración→stop, cuándo loop vs prompt, ti… | [skills/engineering/agent-loop-engineering/SKILL.md](skills/engineering/agent-loop-engineering/SKILL.md) |
 | `clean-architecture` | Clean Architecture, SOLID principles, dependency injection, separation of concerns. | [skills/engineering/clean-architecture/SKILL.md](skills/engineering/clean-architecture/SKILL.md) |
 | `clean-code-principles` | SOLID principles, design patterns, DRY, KISS, and clean code fundamentals. Use when reviewing architecture, checking cod… | [skills/engineering/clean-code-principles/SKILL.md](skills/engineering/clean-code-principles/SKILL.md) |
 | `doubt-driven-development` | Revisión adversarial in-flight de decisiones no triviales: CLAIM → EXTRACT → DOUBT → RECONCILE → STOP. | [skills/engineering/doubt-driven-development/SKILL.md](skills/engineering/doubt-driven-development/SKILL.md) |
@@ -113,6 +114,7 @@ Total: **89** skills
 | `human-in-the-loop-ops` | Gobernanza humana en bucles agénticos: HITL/HOTL/automation-bounded, umbrales de confianza, condiciones de terminación y… | [skills/ops/human-in-the-loop-ops/SKILL.md](skills/ops/human-in-the-loop-ops/SKILL.md) |
 | `kalman-anomaly-defense` | Diseña detección runtime con Kalman (predicción + actualización) y respuesta escalonada del agente. | [skills/ops/kalman-anomaly-defense/SKILL.md](skills/ops/kalman-anomaly-defense/SKILL.md) |
 | `learning-loop` | Scan mid-session y wrap-up con quality gates: captura aprendizajes antes de perder contexto. | [skills/ops/learning-loop/SKILL.md](skills/ops/learning-loop/SKILL.md) |
+| `parallel-judge-ops` | Patrón "día del juicio": 2+ jueces adversariales en paralelo e independientes → orquestador valida real vs ruido → subag… | [skills/ops/parallel-judge-ops/SKILL.md](skills/ops/parallel-judge-ops/SKILL.md) |
 | `scenario-analysis-ops` | Analisis what-if estrategico sin motor de simulacion: semilla, variables, escenarios, matriz de riesgos, iteracion. | [skills/ops/scenario-analysis-ops/SKILL.md](skills/ops/scenario-analysis-ops/SKILL.md) |
 | `scenario-router` | Orquesta analisis what-if (scenario-analysis-ops, skills dominio) vs simulacion multi-agente StrangeVerse. | [skills/ops/scenario-router/SKILL.md](skills/ops/scenario-router/SKILL.md) |
 | `security-review-ecc` | ECC OWASP security review checklist (complement to security skill). | [skills/ops/security-review-ecc/SKILL.md](skills/ops/security-review-ecc/SKILL.md) |

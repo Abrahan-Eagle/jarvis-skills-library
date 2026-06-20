@@ -1,9 +1,10 @@
 # Auto-invoke global
 
-> Generado por `scripts/sync-catalog.py` — 2026-06-18
+> Generado por `scripts/sync-catalog.py` — 2026-06-20
 
 | Acción | Skill(s) |
 |--------|----------|
+| Agent loop engineering / no prompts haz loops | `agent-loop-engineering` |
 | Alta stakes verificar antes de commit | `doubt-driven-development` |
 | Analisis what-if sin implementar feature | `scenario-router` |
 | Análisis coherencia Spec Kit pre-implement | `speckit-analyze` |
@@ -30,6 +31,7 @@
 | Crear skill-loop.yml workflow | `skill-loop` |
 | Cualquier tarea no trivial | `jarvis-experts` |
 | Decidir flujo planificación | `sdd-router` |
+| Decidir loop vs prompt simple | `agent-loop-engineering` |
 | Decisión alta stakes antes de commit | `agent-skills-router` |
 | Decisión cross-rol | `jarvis-experts` |
 | Decisión no trivial seguridad producción | `doubt-driven-development` |
@@ -41,6 +43,8 @@
 | Detección anomalías tráfico o DDoS | `kalman-anomaly-defense` |
 | Diseñar UI o UX | `ui-router`, `ui-ux-pro-max` |
 | Diseñar detección anomalías tráfico | `kalman-anomaly-router` |
+| Diseñar loop de agente | `agent-loop-engineering` |
+| Día del juicio / jueces paralelos | `parallel-judge-ops` |
 | ECC configure-ecc | `configure-ecc` |
 | ECC continuous-learning-v2 | `continuous-learning-v2` |
 | ECC security-review | `security-review-ecc` |
@@ -63,6 +67,7 @@
 | Iniciar módulo | `brainstorming-ops`, `jarvis-core`, `task-pipeline-ops` |
 | Instalar o configurar ECC en proyecto | `ecc-router` |
 | Instincts evolve hooks Cursor | `ecc-router` |
+| Iterar hasta lograr un objetivo medible | `agent-loop-engineering` |
 | Kalman filter defensa runtime | `kalman-anomaly-router` |
 | Kalman filter seguridad runtime | `kalman-anomaly-defense` |
 | Landing page o dashboard | `ui-router`, `ui-ux-pro-max` |
@@ -100,6 +105,8 @@
 | Spec-driven development ambiguo | `sdd-x-index` |
 | Spec-driven fluido brownfield | `openspec-router` |
 | Terminar módulo | `finishing-a-development-branch`, `jarvis-core`, `session-learner-ops`, `verification-before-completion` |
+| Validar diff/PR con 2+ revisores independientes | `parallel-judge-ops` |
+| Verificación adversarial paralela de un artefacto | `parallel-judge-ops` |
 | Verificar estado ECC hooks agents | `ecc` |
 | Verificar instalación cyber-neo | `cyber-neo-cli` |
 | Vulnerability scan con reporte | `cyber-neo-router` |

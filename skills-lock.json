@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-06-18",
+  "generated": "2026-06-20",
   "skills": {
     "api-design-principles": {
       "source": "jarvis-skills-library",
@@ -71,7 +71,7 @@
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "a0bc2131920b6114ee414302a383318e7b9da9749caffc6189f471db990d3d3e",
+      "computedHash": "1be752474514384ba29f845c530b2de9570470eb6a5de9cd6a9994048c98c9db",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
@@ -83,7 +83,7 @@
     "jarvis-skills-maintainer": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "2bbc41eab74342fe604aa482dd0ac03a38255dc0cd3c506708b0ce3468e8342f",
+      "computedHash": "cc6f1469679a202a098ed4f5ba055aec6cf54c1e5f1242857fff79bd0505a1ce",
       "path": "skills/core/jarvis-skills-maintainer/SKILL.md"
     },
     "kalman-anomaly-router": {
@@ -125,7 +125,7 @@
     "skill-loop-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "1fb4fc202cc08cab680515b8717df2d9613746fcc32583c7272c717fcc36884f",
+      "computedHash": "34fa813907ac5dc79a6371b90a227b221fcca83324446dcfe82919639a05a12c",
       "path": "skills/core/skill-loop-router/SKILL.md"
     },
     "task-pipeline-ops": {
@@ -139,6 +139,12 @@
       "sourceType": "local",
       "computedHash": "655eaa0fdbe32e04f003a3e5f4640f226e7d80124c5b4ce235e982889d1bd4c5",
       "path": "skills/core/ui-router/SKILL.md"
+    },
+    "agent-loop-engineering": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "9b275b6df9a7244f0acae8d455c783a69d5748a320ac926cbc5ea7404660c0c7",
+      "path": "skills/engineering/agent-loop-engineering/SKILL.md"
     },
     "clean-architecture": {
       "source": "jarvis-skills-library",
@@ -347,7 +353,7 @@
     "human-in-the-loop-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "83a69789f9b39d41008c7197c44f906f11f8ec0a037c4ea2c9520418d99fd8b6",
+      "computedHash": "fece712a17eb54fdb49b8ba05e53adb5c1b532b56c52b236e2ce9c2900d2ae11",
       "path": "skills/ops/human-in-the-loop-ops/SKILL.md"
     },
     "kalman-anomaly-defense": {
@@ -362,6 +368,12 @@
       "computedHash": "60a901e18b9f15d6095a97e94326e73760d987122731190a67d5ba078a57be49",
       "path": "skills/ops/learning-loop/SKILL.md",
       "upstream": "learning-loop-skill:learning-loop"
+    },
+    "parallel-judge-ops": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "d121222d6c07c9e277d3e692ef64b932a0cffc519346ccfeb182b58d40873b02",
+      "path": "skills/ops/parallel-judge-ops/SKILL.md"
     },
     "scenario-analysis-ops": {
       "source": "clawvis/scenario-analysis-ops",

@@ -2,13 +2,18 @@
 
 Marco conceptual de **ingeniería de ciclos** (percepción → razonamiento → acción → observación) y cómo JARVIS lo cubre con skills globales existentes + `human-in-the-loop-ops` para gobernanza humana.
 
+Skill de diseño: [`agent-loop-engineering`](skills/engineering/agent-loop-engineering/SKILL.md) (anatomía, loop vs prompt, principios conciso/reducido/controlado).
 Skill de gobernanza: [`human-in-the-loop-ops`](skills/ops/human-in-the-loop-ops/SKILL.md).
+Patrón dual-judge ("día del juicio"): [`parallel-judge-ops`](skills/ops/parallel-judge-ops/SKILL.md).
+Origen forense (video Gentleman + repos engram/gentle-ai): [GENTLE_AI_LOOP_INTEGRATION.md](GENTLE_AI_LOOP_INTEGRATION.md).
 
 ## Mapa concepto → skill JARVIS
 
 | Concepto Loop AI | Skill / herramienta JARVIS |
 |----------------|----------------------------|
+| Diseño de loop (anatomía, loop vs prompt, conciso/controlado) | `agent-loop-engineering` |
 | Bucle agéntico impl→review→verify | `skill-loop-router` → `skill-loop` + CLI |
+| Jueces paralelos / "día del juicio" (validar artefacto) | `parallel-judge-ops` |
 | Captura aprendizajes / anti-amnesia sesión | `learning-loop-router` → `learning-loop` |
 | Operar loops autónomos (subagent) | `loop-operator` (Cursor subagent) |
 | Test-driven loop (señal binaria) | `test-driven-development` + `verification-before-completion` |
@@ -37,6 +42,10 @@ Señal de éxito empírica (tests, lint, build). JARVIS: TDD + verificación ant
 ### Judge-evaluate-iterate
 
 Sub-agente evaluador con rúbrica. JARVIS: `doubt-driven-development` (adversarial in-flight) + `code-review-playbook` (post-hoc). Añadir gate HITL si el judge no es binario.
+
+### Día del juicio (jueces paralelos)
+
+Variante adversarial **paralela**: 2+ jueces independientes (que no se conocen) sobre el mismo artefacto → orquestador valida real vs ruido → fix → re-juicio hasta sin hallazgos. JARVIS: `parallel-judge-ops` (Task `readonly` en paralelo). Diferencia con `doubt-driven-development`: este último usa **un** revisor fresco in-flight; "día del juicio" usa varios jueces sobre un artefacto terminado.
 
 ### Event-driven loops
 
@@ -74,7 +83,7 @@ Referencia canónica Anthropic: [A harness for every task: dynamic workflows in 
 |--------------------|-------------------|----------------------------|
 | **Classify-and-act** | Clasificar tarea y rutear comportamiento o modelo | Task clasificador + `jarvis-core` / `sdd-router` |
 | **Fan-out-and-synthesize** | Dividir en pasos, agentes en paralelo, barrera de síntesis | Task paralelo + `loop-operator`; merge en orquestador |
-| **Adversarial verification** | Verificador separado contra rúbrica | `doubt-driven-development`, `code-review-playbook` |
+| **Adversarial verification** | Verificador separado contra rúbrica | `doubt-driven-development`, `code-review-playbook`, `parallel-judge-ops` (paralelo) |
 | **Generate-and-filter** | Generar ideas y filtrar por rúbrica / dedupe | `doubt-driven-development`, brainstorm + criterios en plan |
 | **Tournament** | N agentes compiten; judge pairwise elige ganador | Task multi-perspectiva; ver `orchestration-patterns.upstream.md` en `doubt-driven-development` |
 | **Loop-until-done** | Iterar hasta condición de stop (no N fijo) | `skill-loop` + `human-in-the-loop-ops` (max iterations + stop explícito) |
@@ -99,6 +108,9 @@ Usar estos patrones solo en tareas **complejas y de alto valor** — consumen m�
 | [autoresearch-agent](https://github.com/alirezarezvani/claude-skills/tree/main/engineering/autoresearch-agent) | Plugin `/ar:loop`, cron, un cambio por iteración | Overlap `skill-loop` + `human-in-the-loop-ops`; Claude Code slash — ver [CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md](CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md) |
 | [claude-skills](https://github.com/alirezarezvani/claude-skills) (megapack) | 345+ skills multi-dominio | Router + solo `skill-security-auditor` curado — [CLAUDE_SKILLS_REZVANI_INTEGRATION.md](CLAUDE_SKILLS_REZVANI_INTEGRATION.md) |
 | [claude-fast](https://claudefa.st/blog/guide/mechanics/autonomous-agent-loops) (claudefa.st) | Blog comercial — threads, Ralph loops, verification stack | **Referencia sin sync** — overlap `skill-loop` + `human-in-the-loop-ops` + TDD |
+| [gentle-ai](https://github.com/Gentleman-Programming/gentle-ai) (Gentleman) | Configurador de ecosistema: SDD + Strict TDD Mode (`/sdd-init`), delegation triggers, routing modelo por fase | **Referencia de patrón sin sync** — alimenta `agent-loop-engineering`; ver [GENTLE_AI_LOOP_INTEGRATION.md](GENTLE_AI_LOOP_INTEGRATION.md) |
+| [engram](https://github.com/Gentleman-Programming/engram) (Gentleman) | Memoria persistente MCP (Go+SQLite+FTS5); `mem_judge`/`mem_compare` conflict surfacing | **Watchlist** — estado de loop largo; overlap `context-updater`/`handoff`/`active_context`; ver [GENTLE_AI_LOOP_INTEGRATION.md](GENTLE_AI_LOOP_INTEGRATION.md) |
+| [Gentleman.Dots](https://github.com/Gentleman-Programming/Gentleman.Dots) (Gentleman) | Dotfiles de entorno dev (Neovim, shells, terminales) | **Fuera de dominio** — entorno, no loop de agente |
 | mrkai77-loop | Gestor ventanas macOS (Swift), no skill de dev IA | **Fuera de dominio** |
 | Loop AI Labs / Loop Q | Vendor SLM empresarial on-prem | **Fuera de dominio** (producto corporativo, no skill global) |
 | Perplexity Alexa Skill | Voz + búsqueda | **Fuera de dominio** (integración consumidor) |
