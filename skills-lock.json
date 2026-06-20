@@ -640,7 +640,7 @@
     "stitch-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "2baf642d0db28241c2b6a3d993a1d1ae182fa4d451baba62e50e81b33ecae6f2",
+      "computedHash": "0720d35854ee0ecf75b8f0095bfd9b8a855749157f49e05f725a083bba080a4c",
       "path": "skills/ui/stitch-router/SKILL.md"
     },
     "ui-ux-pro-max": {

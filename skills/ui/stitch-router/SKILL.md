@@ -7,7 +7,7 @@ description: >
 license: UNLICENSED
 metadata:
   author: JARVIS Global
-  version: "1.1"
+  version: "1.2"
   scope: [global]
   category: ui
   auto_invoke:
@@ -37,16 +37,18 @@ Docs oficiales MCP: [setup](https://stitch.withgoogle.com/docs/mcp/setup/?pli=1)
 
 Antes de generar o leer pantallas Stitch:
 
-1. **Config:** endpoint `https://stitch.googleapis.com/mcp`, header `X-Goog-Api-Key` — ver [STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md) y plantilla `.cursor/mcp.json.example` en productos con capa Stitch.
-2. **Reiniciar** Cursor / MCP tras cambiar credenciales.
-3. **`list_tools`:** prefijo `stitch:` o `mcp_stitch:` presente.
-4. **Smoke test:** `[prefix]:list_projects` con `filter: "view=owned"` — respuesta con proyectos, **sin** error auth.
+1. **Config Cursor (recomendada):** `@_davideast/stitch-mcp proxy` vía `.cursor/mcp.json` — plantilla `mcp.json.proxy.example` en CorralX-Frontend. Ver [STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md).
+2. **Diagnóstico:** `STITCH_API_KEY=... npx -y @_davideast/stitch-mcp@latest doctor` → healthy.
+3. **Reiniciar** Cursor / MCP tras cambiar credenciales.
+4. **Settings → Tools & MCPs:** deben aparecer tools (`list_projects`, `get_screen`, …). **Punto verde + "No tools" = NO operativo** ([foro Cursor](https://forum.cursor.com/t/mcp-server-connected-green-dot-and-tools-discovered-in-logs-but-0-tools-in-ui-and-agent/160620)).
+5. **Smoke test:** `[prefix]:list_projects` con `filter: "view=owned"` — respuesta con proyectos, **sin** error auth.
 
 | Resultado | Acción |
 |-----------|--------|
-| Prefijo MCP + `list_projects` OK | Continuar → skill upstream |
+| Tools visibles + `list_projects` OK | Continuar → skill upstream |
+| Punto verde pero 0 tools | Migrar a proxy `@_davideast/stitch-mcp`; no usar solo `url` remoto |
 | Sin prefijo MCP | **STOP** — guiar [MCP setup](https://stitch.withgoogle.com/docs/mcp/setup/?pli=1) |
-| Error auth / “API keys not supported” | **STOP** — rotar key expuesta; probar OAuth/proxy stdio del setup oficial; no inventar UI |
+| Error auth / “API keys not supported” | **STOP** — rotar key; proxy stdio u OAuth ADC |
 | Skill upstream ausente | `bash scripts/install-stitch-skills.sh --skill <name> --global` (OK usuario) |
 
 ## Detección runtime

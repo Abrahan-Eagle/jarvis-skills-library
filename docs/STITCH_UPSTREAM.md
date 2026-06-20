@@ -59,24 +59,79 @@ Ejemplo **local** (gitignored — no commitear la key):
 }
 ```
 
-En Cursor: **Settings → MCP** o copiar plantilla desde `.cursor/mcp.json.example` (CorralX-Frontend) → `.cursor/mcp.json` local.
-
 **Seguridad:** nunca versionar API keys. Rotar si se exponen en chat, issues o commits. Preferir config local gitignored.
 
-### Checklist de verificación
+### Cursor: config recomendada (proxy stdio)
 
-1. Reiniciar Cursor / recargar MCP tras cambiar config.
+En Cursor, la config remota `url` + `headers` suele mostrar **punto verde** pero **"No tools, prompts, or resources"** — Cursor descarta silenciosamente el `tools/list` de Stitch (~287 KB). Ver [foro Cursor](https://forum.cursor.com/t/mcp-server-connected-green-dot-and-tools-discovered-in-logs-but-0-tools-in-ui-and-agent/160620).
+
+**Recomendado en Cursor:** proxy stdio `@_davideast/stitch-mcp` (plantilla [`.cursor/mcp.json.proxy.example`](file:///var/www/html/proyectos/AIPP-RENNY/DESARROLLO/CorralX/WorksPagesCorralX/CorralX-Frontend/.cursor/mcp.json.proxy.example) en CorralX-Frontend):
+
+```json
+{
+  "mcpServers": {
+    "stitch": {
+      "command": "npx",
+      "args": ["-y", "@_davideast/stitch-mcp@latest", "proxy"],
+      "env": {
+        "STITCH_API_KEY": "REPLACE_WITH_STITCH_API_KEY"
+      }
+    }
+  }
+}
+```
+
+Diagnóstico terminal (antes de reiniciar Cursor):
+
+```bash
+STITCH_API_KEY=REPLACE_WITH_STITCH_API_KEY npx -y @_davideast/stitch-mcp@latest doctor
+```
+
+Debe reportar healthy / 200. Luego copiar plantilla → `.cursor/mcp.json` local (gitignored).
+
+**Alternativa secundaria:** endpoint remoto (puede fallar en Cursor con 0 tools):
+
+```json
+{
+  "mcpServers": {
+    "stitch": {
+      "url": "https://stitch.googleapis.com/mcp",
+      "headers": {
+        "X-Goog-Api-Key": "REPLACE_WITH_STITCH_API_KEY"
+      }
+    }
+  }
+}
+```
+
+Ver también `.cursor/mcp.json.remote.example` en CorralX-Frontend.
+
+### Checklist de verificación en Cursor
+
+**Criterio real:** MCP funciona cuando en **Settings → Tools & MCPs** aparecen tools bajo `stitch` (`list_projects`, `get_screen`, …). Punto verde solo = conectado al endpoint, **no** suficiente.
+
+1. Copiar `mcp.json.proxy.example` → `.cursor/mcp.json`; sustituir placeholder por key **rotada**.
+2. `npx @_davideast/stitch-mcp doctor` → healthy.
+3. Reiniciar Cursor / toggle OFF→ON en `stitch`.
+4. **Settings → Tools & MCPs:** deben listarse tools (no "No tools, prompts, or resources").
+5. Chat Agent: invocar `list_projects` con `filter: "view=owned"` → JSON con proyectos reales.
+6. Si OK → skill upstream (`design-md`, `stitch::generate-design`, etc.).
+
+Acciones si sigue en 0 tools: Output → MCP (logs), probar OAuth/proxy ADC en [MCP setup](https://stitch.withgoogle.com/docs/mcp/setup/?pli=1).
+
+### Checklist genérico (otros agentes)
+
+1. Reiniciar agente / MCP tras cambiar config.
 2. `list_tools` → prefijo `stitch:` o `mcp_stitch:` visible.
 3. Llamar `[prefix]:list_projects` con `filter: "view=owned"` — debe devolver proyectos, no error auth.
 4. Si OK → invocar skill upstream concreta (`design-md`, `stitch::generate-design`, etc.).
 
-### Fallback si API key falla
+### Fallback si API key remota falla o Cursor muestra 0 tools
 
-Algunos clientes MCP **ignoran `headers`** en servidores remotos y responden con errores OAuth (“API keys are not supported”). Si ocurre:
-
-1. Revisar [MCP setup](https://stitch.withgoogle.com/docs/mcp/setup/?pli=1) — ruta OAuth / Application Default Credentials.
-2. Alternativa comunidad: proxy stdio que inyecta auth (`@_davideast/stitch-mcp proxy`, `@keeponfirst/kof-stitch-mcp`) con `gcloud auth application-default login`.
-3. **STOP** — no inventar pantallas Stitch sin MCP funcional.
+1. Migrar a **proxy stdio** `@_davideast/stitch-mcp` (primera opción en Cursor) — ver sección anterior.
+2. Revisar [MCP setup](https://stitch.withgoogle.com/docs/mcp/setup/?pli=1) — ruta OAuth / Application Default Credentials.
+3. Alternativa: `@keeponfirst/kof-stitch-mcp` con `gcloud auth application-default login`.
+4. **STOP** — no inventar pantallas Stitch sin MCP funcional (tools visibles + `list_projects` OK).
 
 ## DESIGN.md (formato semántico)
 
