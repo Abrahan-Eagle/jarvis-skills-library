@@ -97,6 +97,19 @@ Doc producto: `MAINTENANCE_SKILLS.md` en cada repo CorralX.
 
 Workflow `.github/workflows/global-skills-sync-check.yml` en Backend y Frontend: checkout library + `./scripts/check-global-skills-sync.sh` en PR/push que toquen `.agents/skills/`.
 
+## Skill Bootstrap y telemetría
+
+Cursor expone skills al agente como **nombre + descripción**; el protocolo completo requiere **`Read` de `SKILL.md`**.
+
+| Mecanismo | Qué hace |
+|-----------|----------|
+| **Skill Bootstrap** (`jarvis-core/OVERLAY.md`) | Paso 0: leer `SKILL_INDEX.md` + `jarvis-core`; declarar `> Skills:` en primera respuesta |
+| **`SKILL_INDEX.md`** | Generado por `python3 .agents/skills/sync.sh` — índice compacto local |
+| **Hook `.cursor/hooks.json`** | `postToolUse` en `Read` → append `.cursor/skill-usage.jsonl` |
+| **`scripts/skill-usage-report.sh`** | Resumen: top skills, capa local vs global, manifest nunca leído |
+
+Log local gitignored. Reiniciar Cursor tras añadir hooks si no cargan.
+
 ## Qué NO sync
 
 - Skills `corralx-*` (dominio exclusivo)
