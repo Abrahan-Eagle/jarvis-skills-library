@@ -4,14 +4,27 @@ Guía genérica para adoptar **jarvis-skills-library** en un repo de producto (g
 
 Skill operativa: [`project-bootstrap-ops`](../skills/ops/project-bootstrap-ops/SKILL.md).
 
-## Modelo en dos capas
+## Comando `init jarvis`
+
+Frase única para arrancar onboarding en un proyecto:
+
+| Dónde | Qué hacer |
+|-------|-----------|
+| **Cursor Agent** (repo producto abierto) | Escribir en el chat: **`init jarvis`** |
+| **Terminal** (raíz del repo producto) | `bash /path/to/jarvis-skills-library/scripts/init-jarvis.sh` |
+
+El agente invoca `project-bootstrap-ops`: diagnostica Pasos A/B/C, emite plan y pide OK antes de crear archivos. No ejecuta `install.sh` en tu máquina sin permiso explícito.
+
+Opciones terminal: `--min b` (requiere `AGENTS.md` + `.agents/skills/`), `--min c` (+ manifest y scripts sync).
+
+---
 
 | Capa | Dónde vive | Quién instala | Alcance |
 |------|------------|---------------|---------|
 | **0 — Global** | `jarvis-skills-library` → `~/.cursor/skills/` | Desarrollador en su máquina (`install.sh`) | Todos los proyectos abiertos en Cursor |
 | **1 — Producto** | `.agents/skills/` + `AGENTS.md` en el repo | Equipo del producto (commit en git) | Solo ese repo |
 
-Cursor expone **ambas** capas al agente. No hay detección automática al abrir un folder virgen: el agente debe leer `jarvis-core` o invocar `project-bootstrap-ops` para diagnosticar.
+Cursor expone **ambas** capas al agente. No hay detección automática al abrir un folder virgen: escribe **`init jarvis`** en el chat o ejecuta `scripts/init-jarvis.sh`.
 
 Ver [ARCHITECTURE.md](ARCHITECTURE.md).
 

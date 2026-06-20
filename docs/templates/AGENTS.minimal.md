@@ -23,7 +23,7 @@ Copiar tabla desde `jarvis-skills-library/AGENTS.md` § Auto-invoke global y añ
 
 | Acción | Skill |
 |--------|-------|
-| Integrar / diagnosticar JARVIS en este repo | `project-bootstrap-ops` |
+| Integrar / diagnosticar JARVIS en este repo | `init jarvis` → `project-bootstrap-ops` |
 | Tarea no trivial | `jarvis-experts` |
 | Nueva feature (con `.specify/`) | `sdd-router` → `speckit-specify` |
 | Iniciar módulo (sin Spec Kit) | `jarvis-core`, `brainstorming-ops` |

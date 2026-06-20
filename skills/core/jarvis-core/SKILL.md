@@ -54,7 +54,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash, WebFetch, WebSearch, Task]
 
 Skill global en `jarvis-skills-library` → `~/.cursor/skills/`. Skills de **dominio** del producto (`{producto}-*`) viven en `.agents/skills/` del repo activo.
 
-Proyecto **nuevo o legacy sin JARVIS** (sin `AGENTS.md`, globales no instaladas, skills ajenas): ver `project-bootstrap-ops` ([docs/PROJECT_ONBOARDING.md](../../docs/PROJECT_ONBOARDING.md)) — diagnóstico Paso A/B/C antes de planificar features.
+Proyecto **nuevo o legacy sin JARVIS**: escribe **`init jarvis`** en el chat (skill `project-bootstrap-ops`, [PROJECT_ONBOARDING.md](../../docs/PROJECT_ONBOARDING.md)) antes de planificar features.
 
 Si el repo tiene `.kittify/`, ver `kitty-router` ([docs/SPEC_KITTY_INTEGRATION.md](../../docs/SPEC_KITTY_INTEGRATION.md)) — **no** `speckit-*`.
 
@@ -111,7 +111,7 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 
 | Fase | Cadena |
 |------|--------|
-| Integrar / diagnosticar JARVIS en repo (greenfield o legacy) | `project-bootstrap-ops` → [PROJECT_ONBOARDING.md](../../docs/PROJECT_ONBOARDING.md) → OK usuario → Paso A/B/C |
+| Integrar / diagnosticar JARVIS (`init jarvis`) | `project-bootstrap-ops` → [PROJECT_ONBOARDING.md](../../docs/PROJECT_ONBOARDING.md) → OK usuario → Paso A/B/C |
 | Cualquier tarea no trivial | `jarvis-experts` → (resto según fase) |
 | Nueva feature de producto (con `.kittify/`) | `kitty-router` → charter/specify/plan/tasks (Cursor) → `spec-kitty next` → review/accept/merge (OK usuario) |
 | Nueva feature de producto (con `openspec/`) | `openspec-router` → `/opsx:propose` → `/opsx:apply` (OK usuario) → `/opsx:archive` |

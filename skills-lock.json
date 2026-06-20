@@ -77,7 +77,7 @@
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "ca599cd92669771f0400a2a9b8b240a2836a4c534cd8d27fd617450263ec8d88",
+      "computedHash": "d912e53ae71e896456d14963db19e229768e0c55ea022636c92e0ee83bba35d1",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
@@ -433,7 +433,7 @@
     "project-bootstrap-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "f7da41bbd5987683caa9d4b8c304aef4300368a2a8db3fea41913e56279828cc",
+      "computedHash": "a87ea8d4a9153d2f76438ecb7684eb838c78024572e8dd86ad02772aac7ea64d",
       "path": "skills/ops/project-bootstrap-ops/SKILL.md"
     },
     "scenario-analysis-ops": {

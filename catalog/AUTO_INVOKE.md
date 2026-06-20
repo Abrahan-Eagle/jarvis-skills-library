@@ -88,6 +88,7 @@
 | Implementar feature Spec Kit con OK usuario | `speckit-implement` |
 | Implementar feature o bugfix | `test-driven-development` |
 | Iniciar módulo | `brainstorming-ops`, `jarvis-core`, `task-pipeline-ops` |
+| Init JARVIS | `project-bootstrap-ops` |
 | Instalar o configurar ECC en proyecto | `ecc-router` |
 | Instincts evolve hooks Cursor | `ecc-router` |
 | Integrar jarvis-skills-library en proyecto | `project-bootstrap-ops` |
@@ -159,6 +160,7 @@
 | ecc consult descubrir componente ECC | `ecc` |
 | ecc consult doctor repair | `ecc-router` |
 | ecc doctor repair harness | `ecc` |
+| init jarvis | `project-bootstrap-ops` |
 | learning-loop scan wrap up | `learning-loop`, `learning-loop-router` |
 | mem_save mem_search contexto entre sesiones | `engram-router` |
 | open-design generate | `open-design` |

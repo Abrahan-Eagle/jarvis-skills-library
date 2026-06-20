@@ -2,21 +2,23 @@
 name: project-bootstrap-ops
 description: >
   Diagnosticar e integrar jarvis-skills-library en proyecto nuevo o legacy: globales en máquina,
-  AGENTS.md, manifest sync, marcadores SDD. Trigger: nuevo proyecto JARVIS, integrar skills library,
-  repo sin AGENTS.md, adoptar JARVIS en proyecto existente.
+  AGENTS.md, manifest sync, marcadores SDD. Trigger: init jarvis, nuevo proyecto JARVIS,
+  integrar skills library, repo sin AGENTS.md, adoptar JARVIS en proyecto existente.
 license: UNLICENSED
 metadata:
   author: JARVIS Global
-  version: "1.1"
+  version: "1.2"
   scope: [global]
   category: ops
   auto_invoke:
+    - "init jarvis"
+    - "Init JARVIS"
     - "Integrar jarvis-skills-library en proyecto"
     - "Nuevo proyecto JARVIS"
     - "Repo sin AGENTS.md"
     - "Adoptar JARVIS en proyecto existente"
     - "Bootstrap skills en producto"
-  triggers: project onboarding, bootstrap jarvis, adopt skills library, greenfield jarvis, legacy jarvis
+  triggers: init jarvis, project onboarding, bootstrap jarvis, adopt skills library, greenfield jarvis, legacy jarvis
   related-skills:
     - jarvis-core
     - jarvis-skills-maintainer
@@ -32,6 +34,17 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 Skill global para **diagnosticar** y **guiar** la adopción de jarvis-skills-library en un repo de producto. No sustituye `jarvis-core` en el día a día; se usa al inicio o cuando falta configuración.
 
 Doc canónica: [docs/PROJECT_ONBOARDING.md](../../docs/PROJECT_ONBOARDING.md).
+
+## Comando `init jarvis`
+
+Frase canónica del usuario (chat Agent o terminal):
+
+| Contexto | Acción |
+|----------|--------|
+| **Cursor Agent** | Escribir `init jarvis` → leer esta skill, ejecutar diagnóstico, emitir informe § Paso 2 |
+| **Terminal** (repo producto) | `bash /path/to/jarvis-skills-library/scripts/init-jarvis.sh` |
+
+Opcional: `--min b` o `--min c` (Paso B / Paso C mínimo). Ver [check-project-bootstrap.sh](../../scripts/check-project-bootstrap.sh).
 
 ## Cuándo usar
 

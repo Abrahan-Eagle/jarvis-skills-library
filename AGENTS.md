@@ -7,7 +7,7 @@
 1. **Leer este archivo** al trabajar en este repo.
 2. **Skills de dominio** del producto activo: buscar en el repo del producto (`AGENTS.md` → `.agents/skills/`).
 3. **Skills globales** (este repo): instalar con `bash scripts/install.sh` → `~/.cursor/skills/<name>/`.
-4. **Onboarding producto nuevo o legacy:** [docs/PROJECT_ONBOARDING.md](docs/PROJECT_ONBOARDING.md) + skill `project-bootstrap-ops`.
+4. **Onboarding producto:** escribir **`init jarvis`** en Cursor Agent o `bash scripts/init-jarvis.sh` — [docs/PROJECT_ONBOARDING.md](docs/PROJECT_ONBOARDING.md) + skill `project-bootstrap-ops`.
 
 ## Cuándo crear skill aquí vs en un producto
 
@@ -46,7 +46,7 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 
 | Acción | Skill |
 |--------|-------|
-| Integrar JARVIS / proyecto nuevo o legacy sin AGENTS.md | `project-bootstrap-ops` |
+| **init jarvis** / integrar JARVIS en proyecto | `project-bootstrap-ops` |
 | Tarea no trivial | `jarvis-experts` |
 | Nueva feature de producto | `sdd-router` / `kitty-router` / `openspec-router` según marcador de repo |
 | Nueva feature de producto con Spec Kit | `speckit-specify`, `speckit-plan` |
