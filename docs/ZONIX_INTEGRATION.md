@@ -15,7 +15,7 @@ Canon workspace: `ZonixPharma-Backend/docs/ZONIX_WORKSPACE.md`.
 ## Onboarding
 
 ```bash
-bash scripts/install.sh --all                    # Capa 0 máquina
+bash scripts/install.sh --all                    # Capa 0 — desde raíz jarvis-skills-library
 bash scripts/init-jarvis.sh --min c              # verifica Paso A+B+C por repo abierto
 ```
 
@@ -25,6 +25,12 @@ En cada repo Zonix tras pull en library:
 ./scripts/sync-global-skills-from-library.sh
 ./scripts/check-global-skills-sync.sh
 python3 .agents/skills/sync.sh
+```
+
+**Onboarding máquina (rutas absolutas, desde cualquier cwd):**
+
+```bash
+bash /var/www/html/proyectos/AIPP/jarvis-skills-library/scripts/install.sh --all
 ```
 
 ## Manifest tiers
@@ -39,7 +45,7 @@ python3 .agents/skills/sync.sh
 - **Dominio:** `zonix-*` (~27 Backend, ~18 Front stubs)
 - **Backend local:** `documentar-avances`, `ui-ux-pro-max` (ZONIX.md capa 5)
 - **Front local:** Stitch/React, `playwright-skill`, etc.
-- **Spec Kit:** `.cursor/skills/speckit-*` (proceso SDD; complementa `zonix-*`)
+- **Spec Kit:** core global `~/.cursor/skills/speckit-*` (`install.sh --all`); complementa `zonix-*`
 
 ## Diferencias vs CorralX
 
