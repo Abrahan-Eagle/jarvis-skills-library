@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-06-20",
+  "generated": "2026-06-21",
   "skills": {
     "api-design-principles": {
       "source": "jarvis-skills-library",
@@ -77,13 +77,13 @@
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "0f70bb272b08246ed1e16881a0af64b2dc71b4402015e878470af5ce15dbcbde",
+      "computedHash": "7cc25cadd3958fe679f349148b9da54a0eca4ec6574fd912065a9efd86a950cd",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "80471f92e17e5cbed0d1beee9e0bbb56db74892e9ce5225a3def5546390bcdb0",
+      "computedHash": "884443400ec5a0a55d2e99c6848a98e874fc07cb1d6e26230caad9831a3918ea",
       "path": "skills/core/jarvis-experts/SKILL.md"
     },
     "jarvis-skills-maintainer": {
@@ -149,7 +149,7 @@
     "agent-loop-engineering": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "62b73ed0cbabb3400974783a18522459c3bede382a4dae8fe630ad6138c2e7d5",
+      "computedHash": "532257ca10006f68aa42d032a649f692d86511a11fa6e132b356f34c16790ad2",
       "path": "skills/engineering/agent-loop-engineering/SKILL.md"
     },
     "clean-architecture": {
@@ -379,6 +379,12 @@
       "path": "skills/ops/engram-memory-protocol/SKILL.md",
       "upstream": "Gentleman-Programming/engram:memory-protocol"
     },
+    "fan-out-synthesize-ops": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "ad43fef3947c1b5f35fdb7bb1e06f352d206a5f62aae78ec0ffd6bd2f66d3199",
+      "path": "skills/ops/fan-out-synthesize-ops/SKILL.md"
+    },
     "finishing-a-development-branch": {
       "source": "obra/superpowers",
       "sourceType": "github",
@@ -427,13 +433,13 @@
     "parallel-judge-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "99465b909bde2bd54b46bd9651c42737d060329e486b3875707e89e7c9c27ab8",
+      "computedHash": "49478e1c0fd948f520a0ce4db46fd2e7e3c12d570eafd7ea9e86835a776a6eaf",
       "path": "skills/ops/parallel-judge-ops/SKILL.md"
     },
     "project-bootstrap-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "a87ea8d4a9153d2f76438ecb7684eb838c78024572e8dd86ad02772aac7ea64d",
+      "computedHash": "3efc76e676603f587cb8b63fda19ca392cb38d6cf448b68fabb873afd7e1d829",
       "path": "skills/ops/project-bootstrap-ops/SKILL.md"
     },
     "scenario-analysis-ops": {

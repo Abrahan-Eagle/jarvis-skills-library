@@ -4,13 +4,15 @@ Marco conceptual de **ingeniería de ciclos** (percepción → razonamiento → 
 
 Skill de diseño: [`agent-loop-engineering`](skills/engineering/agent-loop-engineering/SKILL.md) (anatomía, loop vs prompt, principios conciso/reducido/controlado).
 Skill de gobernanza: [`human-in-the-loop-ops`](skills/ops/human-in-the-loop-ops/SKILL.md).
-Patrón dual-judge ("día del juicio"): [`parallel-judge-ops`](skills/ops/parallel-judge-ops/SKILL.md).
+**Orquestación por defecto (Map-Reduce agentico):** [`fan-out-synthesize-ops`](skills/ops/fan-out-synthesize-ops/SKILL.md) — obligatorio en tareas no triviales.
+Patrón dual-judge ("día del juicio", fase Verify): [`parallel-judge-ops`](skills/ops/parallel-judge-ops/SKILL.md).
 Origen forense (video Gentleman + repos engram/gentle-ai): [GENTLE_AI_LOOP_INTEGRATION.md](GENTLE_AI_LOOP_INTEGRATION.md).
 
 ## Mapa concepto → skill JARVIS
 
 | Concepto Loop AI | Skill / herramienta JARVIS |
 |----------------|----------------------------|
+| **Fan-out-and-synthesize (default JARVIS)** | **`fan-out-synthesize-ops`** |
 | Diseño de loop (anatomía, loop vs prompt, conciso/controlado) | `agent-loop-engineering` |
 | Bucle agéntico impl→review→verify | `skill-loop-router` → `skill-loop` + CLI |
 | Jueces paralelos / "día del juicio" (validar artefacto) | `parallel-judge-ops` |
@@ -78,18 +80,18 @@ El cuello de botella no es el costo por token sino **cuánto trabajo verificable
 
 Referencia canónica Anthropic: [A harness for every task: dynamic workflows in Claude Code](https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code) (jun 2026). Claude Code puede generar harness multi-agente on-the-fly (`ultracode`, workflows JS, `/loop`, `/goal`, `/deep-research`). **No** es repo instalable — es **feature nativa de Claude Code**.
 
-**Nota de plataforma (Cursor / JARVIS):** `ultracode`, dynamic workflows, `/loop` y `/goal` no existen en Cursor. Aproximación JARVIS: Task subagents + `using-git-worktrees` + `skill-loop` + `loop-operator` + `human-in-the-loop-ops`. Para investigación profunda tipo `/deep-research`, combinar Task fan-out + `doubt-driven-development` + `verification-before-completion`.
+**Nota de plataforma (Cursor / JARVIS):** `ultracode`, dynamic workflows, `/loop` y `/goal` no existen en Cursor. Aproximación JARVIS: **`fan-out-synthesize-ops`** (default) + Task subagents + `using-git-worktrees` + `skill-loop` + `loop-operator` + `human-in-the-loop-ops`. Para investigación profunda tipo `/deep-research`, combinar fan-out + `doubt-driven-development` + `verification-before-completion`.
 
 | Patrón (Anthropic) | Descripción breve | Skill / herramienta JARVIS |
 |--------------------|-------------------|----------------------------|
 | **Classify-and-act** | Clasificar tarea y rutear comportamiento o modelo | Task clasificador + `jarvis-core` / `sdd-router` |
-| **Fan-out-and-synthesize** | Dividir en pasos, agentes en paralelo, barrera de síntesis | Task paralelo + `loop-operator`; merge en orquestador |
+| **Fan-out-and-synthesize** | Dividir en pasos, agentes en paralelo, barrera de síntesis | **`fan-out-synthesize-ops`** (patrón **por defecto** JARVIS) |
 | **Adversarial verification** | Verificador separado contra rúbrica | `doubt-driven-development`, `code-review-playbook`, `parallel-judge-ops` (paralelo) |
 | **Generate-and-filter** | Generar ideas y filtrar por rúbrica / dedupe | `doubt-driven-development`, brainstorm + criterios en plan |
 | **Tournament** | N agentes compiten; judge pairwise elige ganador | Task multi-perspectiva; ver `orchestration-patterns.upstream.md` en `doubt-driven-development` |
 | **Loop-until-done** | Iterar hasta condición de stop (no N fijo) | `skill-loop` + `human-in-the-loop-ops` (max iterations + stop explícito) |
 
-Usar estos patrones solo en tareas **complejas y de alto valor** — consumen más tokens que el harness por defecto.
+Usar fan-out-and-synthesize en **toda tarea no trivial** (exenciones en `fan-out-synthesize-ops`). Patrones adversariales/tournament consumen más tokens — reservar para alto valor.
 
 ## Primitivas (referencia)
 

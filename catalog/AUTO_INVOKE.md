@@ -1,6 +1,6 @@
 # Auto-invoke global
 
-> Generado por `scripts/sync-catalog.py` — 2026-06-20
+> Generado por `scripts/sync-catalog.py` — 2026-06-21
 
 | Acción | Skill(s) |
 |--------|----------|
@@ -14,6 +14,7 @@
 | Auditar open issues como maintainer | `backlog-triage-ops` |
 | Auditar skill antes de instalar | `claude-skills-router`, `skill-security-auditor` |
 | Auditoría automática pre-gate con rúbrica y score | `llm-as-judge-ops` |
+| Auditoría módulo | `fan-out-synthesize-ops` |
 | Auditoría seguridad profunda read-only | `cyber-neo`, `cyber-neo-router` |
 | Bootstrap skills en producto | `project-bootstrap-ops` |
 | Briefing estrategico semanal | `strategic-briefing-ops` |
@@ -41,7 +42,7 @@
 | Crear skill global | `jarvis-skills-maintainer` |
 | Crear skill-loop.yml | `skill-loop-router` |
 | Crear skill-loop.yml workflow | `skill-loop` |
-| Cualquier tarea no trivial | `jarvis-experts` |
+| Cualquier tarea no trivial | `fan-out-synthesize-ops`, `jarvis-experts` |
 | DESIGN.md desde proyecto Stitch | `stitch-router` |
 | Decidir flujo planificación | `sdd-router` |
 | Decidir loop vs prompt simple | `agent-loop-engineering` |
@@ -74,6 +75,7 @@
 | Estado general del producto | `strategic-briefing-ops` |
 | Evaluar entregable con LLM-as-judge antes de aprobación humana | `llm-as-judge-ops` |
 | Evitar PR monolítico desde SDD tasks | `work-unit-commits-ops` |
+| Explorar codebase | `fan-out-synthesize-ops` |
 | Exportar Stitch a React | `stitch-router` |
 | Gates humanos antes de acción irreversible | `human-in-the-loop-ops` |
 | Generar assets IA para una web | `ai-media-landing-ops` |
@@ -88,12 +90,14 @@
 | Hotfix producción | `speckit-lifecycle-router` |
 | Human-in-the-loop diseño de loop | `human-in-the-loop-ops` |
 | Implementar feature Spec Kit con OK usuario | `speckit-implement` |
+| Implementar feature multi-archivo | `fan-out-synthesize-ops` |
 | Implementar feature o bugfix | `test-driven-development` |
 | Iniciar módulo | `brainstorming-ops`, `jarvis-core`, `task-pipeline-ops` |
 | Init JARVIS | `project-bootstrap-ops` |
 | Instalar o configurar ECC en proyecto | `ecc-router` |
 | Instincts evolve hooks Cursor | `ecc-router` |
 | Integrar jarvis-skills-library en proyecto | `project-bootstrap-ops` |
+| Investigar bug | `fan-out-synthesize-ops` |
 | Iterar hasta lograr un objetivo medible | `agent-loop-engineering` |
 | Kalman filter defensa runtime | `kalman-anomaly-router` |
 | Kalman filter seguridad runtime | `kalman-anomaly-defense` |

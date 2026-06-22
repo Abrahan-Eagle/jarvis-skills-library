@@ -47,7 +47,8 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 | Acción | Skill |
 |--------|-------|
 | **init jarvis** / integrar JARVIS en proyecto | `project-bootstrap-ops` |
-| Tarea no trivial | `jarvis-experts` |
+| Tarea no trivial | `jarvis-experts` → **`fan-out-synthesize-ops`** |
+| Explorar codebase / auditoría / feature multi-archivo | **`fan-out-synthesize-ops`** |
 | Nueva feature de producto | `sdd-router` / `kitty-router` / `openspec-router` según marcador de repo |
 | Nueva feature de producto con Spec Kit | `speckit-specify`, `speckit-plan` |
 | Bugfix / hotfix / refactor (`.specify/`) | `speckit-lifecycle-router` |

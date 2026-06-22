@@ -142,6 +142,7 @@ Tras Paso C, productos maduros pueden añadir telemetría y arranque explícito 
 | Mecanismo | Función |
 |-----------|---------|
 | `jarvis-core/OVERLAY.md` | Paso 0: leer `SKILL_INDEX.md` + `jarvis-core`; declarar `> Skills:` en primera respuesta |
+| Orquestación agente | **`fan-out-synthesize-ops`** — patrón por defecto: N subagentes paralelos → orquestador sintetiza (tareas no triviales) |
 | `SKILL_INDEX.md` | Generado por `python3 .agents/skills/sync.sh` |
 | `.cursor/hooks.json` | Telemetría opcional de lecturas de skills |
 

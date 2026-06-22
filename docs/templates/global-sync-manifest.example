@@ -20,3 +20,6 @@ writing-plans passthrough
 executing-plans passthrough
 git-commit passthrough
 code-review-playbook passthrough
+parallel-judge-ops passthrough
+fan-out-synthesize-ops passthrough
+agent-loop-engineering passthrough

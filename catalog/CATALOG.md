@@ -1,8 +1,8 @@
 # Catálogo de skills globales
 
-> Generado por `scripts/sync-catalog.py` — 2026-06-20
+> Generado por `scripts/sync-catalog.py` — 2026-06-21
 
-Total: **104** skills
+Total: **105** skills
 
 ## Resumen por categoría
 
@@ -14,7 +14,7 @@ Total: **104** skills
 | `git` | 6 |
 | `mobile` | 4 |
 | `non-code` | 8 |
-| `ops` | 27 |
+| `ops` | 28 |
 | `planning` | 4 |
 | `review` | 6 |
 | `sdd` | 12 |
@@ -115,6 +115,7 @@ Total: **104** skills
 | `docs-alignment-ops` | Alinear documentación con código: docs describen comportamiento actual, mismo PR que el cambio, ejemplos verificables. | [skills/ops/docs-alignment-ops/SKILL.md](skills/ops/docs-alignment-ops/SKILL.md) |
 | `documentar-avances` | Al finalizar una tarea relevante, proponer el párrafo para "Cambios recientes" en AGENTS.md y/o README. El usuario aprue… | [skills/ops/documentar-avances/SKILL.md](skills/ops/documentar-avances/SKILL.md) |
 | `engram-memory-protocol` | Disciplina de memoria persistente con Engram MCP: mem_save, mem_search, mem_context, cierre de sesión y recuperación pos… | [skills/ops/engram-memory-protocol/SKILL.md](skills/ops/engram-memory-protocol/SKILL.md) |
+| `fan-out-synthesize-ops` | Orquestación por defecto JARVIS: Map-Reduce agentico / Fan-out-and-synthesize — N subagentes en paralelo recaudan contex… | [skills/ops/fan-out-synthesize-ops/SKILL.md](skills/ops/fan-out-synthesize-ops/SKILL.md) |
 | `finishing-a-development-branch` | Cerrar feature Flutter: analyze + test, opciones merge/PR. | [skills/ops/finishing-a-development-branch/SKILL.md](skills/ops/finishing-a-development-branch/SKILL.md) |
 | `git-guardrails-ops` | Protección git: bloquea push a main, advierte en dev, exige confirmación antes de comandos destructivos. | [skills/ops/git-guardrails-ops/SKILL.md](skills/ops/git-guardrails-ops/SKILL.md) |
 | `handoff` | Compactar la sesion actual en un documento de traspaso para continuar en otro agente o chat. Complementa session-learner… | [skills/ops/handoff/SKILL.md](skills/ops/handoff/SKILL.md) |

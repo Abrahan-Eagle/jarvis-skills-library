@@ -26,6 +26,7 @@ metadata:
     - claude-skills-router
     - skill-security-auditor
     - human-in-the-loop-ops
+    - fan-out-synthesize-ops
 allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 ---
 
@@ -178,8 +179,9 @@ Interpretación:
 Tras bootstrap mínimo:
 
 1. **`jarvis-core`** — workflow diario.
-2. **`sdd-router`** / **`kitty-router`** / **`openspec-router`** — según marcadores detectados.
-3. **`jarvis-skills-maintainer`** — solo si el usuario edita la library global.
+2. **`fan-out-synthesize-ops`** — orquestación por defecto (Map-Reduce agentico) en tareas no triviales.
+3. **`sdd-router`** / **`kitty-router`** / **`openspec-router`** — según marcadores detectados.
+4. **`jarvis-skills-maintainer`** — solo si el usuario edita la library global.
 
 ## Anti-patrones
 
