@@ -1,6 +1,6 @@
 # Auto-invoke global
 
-> Generado por `scripts/sync-catalog.py` — 2026-06-21
+> Generado por `scripts/sync-catalog.py` — 2026-07-09
 
 | Acción | Skill(s) |
 |--------|----------|
@@ -32,11 +32,14 @@
 | Compactar o traspasar sesion | `handoff` |
 | Comparar escenarios base optimista pesimista | `scenario-analysis-ops` |
 | Condiciones de terminación bucle autónomo | `human-in-the-loop-ops` |
+| Configurar NotebookLM MCP en Cursor | `notebooklm-router` |
 | Configurar engram en Cursor | `engram-router` |
 | Consolidar aprendizajes antes de cerrar | `learning-loop-router` |
 | Consolidar aprendizajes de sesión | `learning-loop` |
+| Consultar NotebookLM / notebook con citas | `notebooklm-router` |
 | Contexto largo capturar señales | `learning-loop`, `learning-loop-router` |
 | Convertir tasks Spec Kit a issues GitHub | `speckit-taskstoissues` |
+| Corpus grande de documentos para RAG | `notebooklm-router` |
 | Crear commit | `git-commit`, `structured-commits-ops`, `verification-before-completion` |
 | Crear o preparar pull request | `branch-pr-ops` |
 | Crear skill global | `jarvis-skills-maintainer` |
@@ -171,6 +174,7 @@
 | init jarvis | `project-bootstrap-ops` |
 | learning-loop scan wrap up | `learning-loop`, `learning-loop-router` |
 | mem_save mem_search contexto entre sesiones | `engram-router` |
+| nlm login nlm setup add cursor | `notebooklm-router` |
 | open-design generate | `open-design` |
 | skill security audit pre-install | `claude-skills-router` |
 | skill security check pre-install | `skill-security-auditor` |

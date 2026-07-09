@@ -1,15 +1,15 @@
 # Catálogo de skills globales
 
-> Generado por `scripts/sync-catalog.py` — 2026-06-21
+> Generado por `scripts/sync-catalog.py` — 2026-07-09
 
-Total: **105** skills
+Total: **106** skills
 
 ## Resumen por categoría
 
 | Categoría | Cantidad |
 |-----------|----------|
 | `backend` | 7 |
-| `core` | 17 |
+| `core` | 18 |
 | `engineering` | 9 |
 | `git` | 6 |
 | `mobile` | 4 |
@@ -47,6 +47,7 @@ Total: **105** skills
 | `kalman-anomaly-router` | Orquesta detección runtime Kalman + respuesta escalonada vs cyber-neo audit y security checklist. | [skills/core/kalman-anomaly-router/SKILL.md](skills/core/kalman-anomaly-router/SKILL.md) |
 | `kitty-router` | Orquesta flujo Spec Kitty (misiones, work packages, review/accept/merge) cuando existe .kittify/. | [skills/core/kitty-router/SKILL.md](skills/core/kitty-router/SKILL.md) |
 | `learning-loop-router` | Orquesta learning-loop (scan/wrap-up) vs session-learner-ops, handoff y ECC continuous-learning. | [skills/core/learning-loop-router/SKILL.md](skills/core/learning-loop-router/SKILL.md) |
+| `notebooklm-router` | Orquesta consulta RAG a Google NotebookLM (corpus grande/duradero con citas) vía MCP `notebooklm-mcp` vs subida directa … | [skills/core/notebooklm-router/SKILL.md](skills/core/notebooklm-router/SKILL.md) |
 | `openspec-router` | Orquesta flujo OpenSpec (OPSX: propose → apply → archive) cuando existe openspec/. | [skills/core/openspec-router/SKILL.md](skills/core/openspec-router/SKILL.md) |
 | `sdd-router` | Decide entre flujo Spec Kit (speckit-*) y flujo JARVIS (.agents/plans/) según el repo activo. | [skills/core/sdd-router/SKILL.md](skills/core/sdd-router/SKILL.md) |
 | `sdd-x-index` | Mapa Spec-Driven X (SD-X): elige skills JARVIS por tipo de artefacto (dev, diseño, docs, test, validate). | [skills/core/sdd-x-index/SKILL.md](skills/core/sdd-x-index/SKILL.md) |

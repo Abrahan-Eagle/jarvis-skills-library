@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-06-21",
+  "generated": "2026-07-09",
   "skills": {
     "api-design-principles": {
       "source": "jarvis-skills-library",
@@ -109,6 +109,12 @@
       "sourceType": "local",
       "computedHash": "60436ffbfb7b73baaf0e343915e9698cfddfae84b4a4ef35984d465811ba6bc8",
       "path": "skills/core/learning-loop-router/SKILL.md"
+    },
+    "notebooklm-router": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "6609808235a2c88a98b8e739e3942af613985d59d0f5432a565fe49d8fcdb870",
+      "path": "skills/core/notebooklm-router/SKILL.md"
     },
     "openspec-router": {
       "source": "jarvis-skills-library",
