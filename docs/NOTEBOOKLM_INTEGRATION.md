@@ -85,6 +85,26 @@ Este MCP expone **39 tools**. Desactivar en Settings → Tools & MCP cuando no s
 - Cookies de Google en disco — usar cuenta secundaria.
 - 39 tools MCP — gestionar contexto.
 
+## Troubleshooting
+
+| Síntoma | Causa habitual | Acción |
+|---------|----------------|--------|
+| `NOT_FOUND` en `notebook_get` / `studio_create` | `notebook_id` obsoleto (cuaderno borrado o en otra cuenta Google) | `notebook_list` y usar ID fresco; alinear browser con `nlm login --check` |
+| `Could not retrieve notebook sources` | Cuaderno sin fuentes o fuentes aún indexando | `source_add` con `wait: true`; confirmar `source_count >= 1` vía `notebook_get` |
+| `Unexpected keyword argument 'instructions'` | Parámetro inválido en `studio_create` | Usar `custom_prompt` y/o `focus_prompt` (no `instructions`) |
+| `Download failed for slide_deck` | Studio aún en `in_progress` | `studio_status` en loop (puede tardar 5–10 min); reintentar `download_artifact` cuando `status: completed` |
+| Cuadernos visibles en browser pero no en MCP | Cuenta distinta a la del perfil `nlm` | `nlm login --check` vs cuenta activa en notebooklm.google.com; `nlm login switch` si aplica |
+
+**Checklist antes de Studio (`slide_deck`, audio, etc.):**
+
+1. `nlm login --check` → auth válida.
+2. `notebook_list` → ID existe en la cuenta MCP.
+3. `source_add` (`file`/`url`/`text`) + `wait: true` → fuentes listas.
+4. `notebook_query` smoke test → respuesta con citas.
+5. `studio_create` con `confirm: true` → `studio_status` → `download_artifact`.
+
+No cachear `notebook_id` entre sesiones sin verificar con `notebook_list` primero.
+
 ## Enlaces
 
 - Repo: https://github.com/jacob-bd/notebooklm-mcp-cli
