@@ -3,6 +3,8 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+# shellcheck source=lib/git-pin.sh
+source "$ROOT/scripts/lib/git-pin.sh"
 ADDY_AGENT_SKILLS_REF="${ADDY_AGENT_SKILLS_REF:-36c543d93b3f2bc0a3c01904c753121e56c105b1}"
 REPO_URL="https://github.com/addyosmani/agent-skills.git"
 SYNC_ROOT="$ROOT/.tmp-addy-agent-skills-sync"
@@ -14,18 +16,8 @@ echo "REF: $ADDY_AGENT_SKILLS_REF"
 echo ""
 
 rm -rf "$SYNC_ROOT"
-git clone --depth 1 "$REPO_URL" "$SYNC_ROOT" 2>/dev/null || {
-  git clone "$REPO_URL" "$SYNC_ROOT"
-}
-
-if [ -d "$SYNC_ROOT/.git" ]; then
-  if [ "$ADDY_AGENT_SKILLS_REF" != "main" ]; then
-    git -C "$SYNC_ROOT" fetch --depth 1 origin "$ADDY_AGENT_SKILLS_REF" 2>/dev/null || true
-    git -C "$SYNC_ROOT" checkout "$ADDY_AGENT_SKILLS_REF" 2>/dev/null || true
-  fi
-  PINNED=$(git -C "$SYNC_ROOT" rev-parse HEAD)
-  echo "Pinned commit: $PINNED"
-fi
+git clone "$REPO_URL" "$SYNC_ROOT"
+jarvis_git_checkout_pin "$SYNC_ROOT" "$ADDY_AGENT_SKILLS_REF"
 
 if [ ! -f "$SYNC_ROOT/$UPSTREAM_SKILL/SKILL.md" ]; then
   echo "ERROR: $UPSTREAM_SKILL/SKILL.md not found in upstream" >&2

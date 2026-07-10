@@ -55,7 +55,7 @@ Tras `git pull` en la library: re-ejecutar sync + check en Backend y Frontend.
 
 Passthrough añadidos en Backend y Frontend (referenciados por `jarvis-core` syncado):
 
-`github-code-review`, `work-unit-commits-ops`, `branch-pr-ops`, `chained-pr-ops`, `docs-alignment-ops`, `backlog-triage-ops`, `engram-router`, `engram-memory-protocol`.
+`code-review-playbook` (canónico; `github-code-review` / `code-review-excellence` = stubs deprecated), `work-unit-commits-ops`, `branch-pr-ops`, `chained-pr-ops`, `docs-alignment-ops`, `backlog-triage-ops`, `engram-router`, `engram-memory-protocol`.
 
 Frontend: `ui-ux-pro-max` en tier **overlay** (no passthrough).
 

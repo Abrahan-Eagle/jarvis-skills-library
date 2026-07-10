@@ -2,10 +2,13 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-07-10
 
+> Multi-skill: orden = precedencia `jarvis-core` cuando aplica; resto alfabético.
+
 | Acción | Skill(s) |
 |--------|----------|
 | Abrir PR con gh | `branch-pr-ops` |
 | Actualizar docs tras cambio de código | `docs-alignment-ops` |
+| Address review feedback | `receiving-code-review` |
 | Adoptar JARVIS en proyecto existente | `project-bootstrap-ops` |
 | Agent loop engineering / no prompts haz loops | `agent-loop-engineering` |
 | Alta stakes verificar antes de commit | `doubt-driven-development` |
@@ -26,6 +29,10 @@
 | Checklist calidad spec/plan Spec Kit | `speckit-checklist` |
 | Cierre sesión con mem_session_summary | `engram-memory-protocol` |
 | Clasificar PRs merge request-changes close | `backlog-triage-ops` |
+| Code review | `code-review-playbook` |
+| Code review GitHub | `github-code-review` |
+| Code review antes de merge | `requesting-code-review` |
+| Code review excellence | `code-review-excellence` |
 | Comando git destructivo | `git-guardrails-ops` |
 | Combinar spec con UI o docs | `sdd-x-index` |
 | Como va todo el proyecto | `strategic-briefing-ops` |
@@ -40,12 +47,12 @@
 | Contexto largo capturar señales | `learning-loop`, `learning-loop-router` |
 | Convertir tasks Spec Kit a issues GitHub | `speckit-taskstoissues` |
 | Corpus grande de documentos para RAG | `notebooklm-router` |
-| Crear commit | `git-commit`, `structured-commits-ops`, `verification-before-completion` |
+| Crear commit | `verification-before-completion`, `git-commit`, `structured-commits-ops` |
 | Crear o preparar pull request | `branch-pr-ops` |
 | Crear skill global | `jarvis-skills-maintainer` |
 | Crear skill-loop.yml | `skill-loop-router` |
 | Crear skill-loop.yml workflow | `skill-loop` |
-| Cualquier tarea no trivial | `fan-out-synthesize-ops`, `jarvis-experts` |
+| Cualquier tarea no trivial | `jarvis-experts`, `fan-out-synthesize-ops` |
 | DESIGN.md desde proyecto Stitch | `stitch-router` |
 | Decidir flujo planificación | `sdd-router` |
 | Decidir loop vs prompt simple | `agent-loop-engineering` |
@@ -76,6 +83,7 @@
 | Escribir feedback de code review para humano | `comment-writer-ops` |
 | Establecer principios SDD en proyecto | `speckit-constitution` |
 | Estado general del producto | `strategic-briefing-ops` |
+| Estandarizar prácticas de review | `code-review-playbook` |
 | Evaluar entregable con LLM-as-judge antes de aprobación humana | `llm-as-judge-ops` |
 | Evitar PR monolítico desde SDD tasks | `work-unit-commits-ops` |
 | Explorar codebase | `fan-out-synthesize-ops` |
@@ -95,7 +103,7 @@
 | Implementar feature Spec Kit con OK usuario | `speckit-implement` |
 | Implementar feature multi-archivo | `fan-out-synthesize-ops` |
 | Implementar feature o bugfix | `test-driven-development` |
-| Iniciar módulo | `brainstorming-ops`, `jarvis-core`, `task-pipeline-ops` |
+| Iniciar módulo | `jarvis-core`, `brainstorming-ops`, `task-pipeline-ops` |
 | Init JARVIS | `project-bootstrap-ops` |
 | Instalar o configurar ECC en proyecto | `ecc-router` |
 | Instincts evolve hooks Cursor | `ecc-router` |
@@ -124,9 +132,10 @@
 | Pack Addy agent-skills lifecycle | `agent-skills-router` |
 | Pack Rezvani claude-skills | `claude-skills-router` |
 | Paleta de colores o tipografía | `ui-router`, `ui-ux-pro-max` |
+| Pedir code review | `requesting-code-review` |
 | Pipeline Nano Banana + Veo + Claude Design + Claude Code | `ai-media-landing-ops` |
 | Plan técnico Spec Kit | `speckit-plan` |
-| Planificar desarrollo | `brainstorming-ops`, `jarvis-core`, `writing-plans` |
+| Planificar desarrollo | `brainstorming-ops`, `writing-plans`, `jarvis-core` |
 | Política rate limit ante spikes | `kalman-anomaly-defense`, `kalman-anomaly-router` |
 | Prediccion multi-agente con semilla PDF | `strangeverse` |
 | Prediccion multi-agente con semilla documentos | `scenario-router` |
@@ -136,6 +145,7 @@
 | Que pasa si decision estrategica | `scenario-analysis-ops` |
 | Que pasa si escenario estrategico | `scenario-router` |
 | Qué toolkit SD-X usar | `sdd-x-index` |
+| Recibir code review | `receiving-code-review` |
 | Redactar comentario de PR o issue | `comment-writer-ops` |
 | Redactar o mejorar README, RFC, onboarding o guía | `cognitive-doc-design-ops` |
 | Refactor con spec | `speckit-lifecycle-router` |
@@ -145,6 +155,7 @@
 | Respuesta de maintainer o mensaje async al equipo | `comment-writer-ops` |
 | Resumen ejecutivo para el founder | `strategic-briefing-ops` |
 | Revisar accesibilidad o layout | `ui-router`, `ui-ux-pro-max` |
+| Revisar pull request | `code-review-playbook` |
 | Rules idioma PHP TypeScript en .cursor | `ecc-router` |
 | Score de calidad y must_fix antes de publicar o mergear | `llm-as-judge-ops` |
 | Simular opinion publica o reaccion mercado | `scenario-router` |
@@ -153,7 +164,7 @@
 | Spec-driven development ambiguo | `sdd-x-index` |
 | Spec-driven fluido brownfield | `openspec-router` |
 | Stacked PRs o chained PRs | `chained-pr-ops` |
-| Terminar módulo | `finishing-a-development-branch`, `jarvis-core`, `session-learner-ops`, `verification-before-completion` |
+| Terminar módulo | `verification-before-completion`, `session-learner-ops`, `finishing-a-development-branch`, `jarvis-core` |
 | Triage backlog issues y PRs | `backlog-triage-ops` |
 | Validar diff/PR con 2+ revisores independientes | `parallel-judge-ops` |
 | Verificación adversarial paralela de un artefacto | `parallel-judge-ops` |

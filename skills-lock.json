@@ -335,7 +335,7 @@
     "configure-ecc": {
       "source": "ecc/configure-ecc",
       "sourceType": "github",
-      "computedHash": "6bdf84ec92ae52404510642ea76bdd676dd0acbebbe1383cad2fd295b5c7f852",
+      "computedHash": "8e1509e470221b3bd186a8b1bcb59963b6058ef2e2b97bcdc4825a7d5b27fb1f",
       "path": "skills/ops/configure-ecc/SKILL.md",
       "upstream": "ecc:configure-ecc"
     },
@@ -531,13 +531,13 @@
     "code-review-excellence": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "020a8bcacaa36913cc35380bdc8edea947b09b06c9e239d80f5a8331456016b1",
+      "computedHash": "fba8c0813b01d47450e35b983f021745cdf75a56f91996ffc5e628382a85f398",
       "path": "skills/review/code-review-excellence/SKILL.md"
     },
     "code-review-playbook": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "b57fde6f124d939296504aa28fc4dedf9b594278f618af4ec1e868ae69c01b3e",
+      "computedHash": "614016df39eacd6968d3080cb6213fdc235bebaee3e3876c9d8668e53734b7c0",
       "path": "skills/review/code-review-playbook/SKILL.md"
     },
     "comment-writer-ops": {
@@ -550,22 +550,20 @@
     "github-code-review": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "3f8ce4485c2c1942cf489c0728cbe1f8acad09bfa2bf9b57387c7c77258248c3",
+      "computedHash": "53b42cb2808683fc5c776810a0bc20604ea57841639846c6f86bbe283251b318",
       "path": "skills/review/github-code-review/SKILL.md"
     },
     "receiving-code-review": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "computedHash": "1aa6d079c5637e0aceeb7c038bdf38c63582ab938577b303626493e55500e63c",
-      "path": "skills/review/receiving-code-review/SKILL.md",
-      "upstream": "superpowers:receiving-code-review"
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "89bb4bbb80a6de5dd125d924371b73fb2106a6880e92ab2b9682814f7d62f7bd",
+      "path": "skills/review/receiving-code-review/SKILL.md"
     },
     "requesting-code-review": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "computedHash": "29f943ed08fd54dd2e35694a775d028595e977d054a55ef7f3b1c48e44e2bbb4",
-      "path": "skills/review/requesting-code-review/SKILL.md",
-      "upstream": "superpowers:requesting-code-review"
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "20b93a61bdfa6e795ac1d8041195a304e6fec11977bf641c6b29e5c65460c023",
+      "path": "skills/review/requesting-code-review/SKILL.md"
     },
     "kitty-governance": {
       "source": "jarvis-skills-library",

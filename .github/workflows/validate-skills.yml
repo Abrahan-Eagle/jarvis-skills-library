@@ -1,0 +1,47 @@
+# Validate jarvis-skills-library
+name: validate-skills
+
+on:
+  push:
+    branches: [main, master, dev]
+  pull_request:
+    branches: [main, master, dev]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Shell + YAML linter
+        run: |
+          bash scripts/validate-skills.sh
+          python3 scripts/validate-yaml.py
+
+      - name: Lock freshness gate
+        run: |
+          python3 scripts/sync-lock.py
+          if ! git diff --quiet -- skills-lock.json; then
+            echo "ERROR: skills-lock.json is stale. Run: python3 scripts/sync-lock.py" >&2
+            git diff --stat -- skills-lock.json
+            exit 1
+          fi
+          echo "OK: skills-lock.json matches catalog"
+
+      - name: Catalog freshness (informational)
+        run: |
+          python3 scripts/sync-catalog.py
+          if ! git diff --quiet -- catalog/; then
+            echo "WARN: catalog/ drifted after sync-catalog (commit regenerated files)"
+            git diff --stat -- catalog/
+          else
+            echo "OK: catalog/ up to date"
+          fi

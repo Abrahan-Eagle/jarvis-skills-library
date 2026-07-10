@@ -106,3 +106,5 @@
 2. Ampliar `validate-skills.sh` a escanear `scripts/*.sh`.
 3. Sync manifest clawvis (`fan-out-synthesize-ops`, `notebooklm-router`, overlays jarvis).
 4. Normalización masiva legacy frontmatter (code-review-playbook plugin schema).
+
+> **Actualización 2026-07-10 (tarde):** puntos 1–4 cerrados o avanzados en [FORENSE_LIBRARY_2026-07-v2.md](FORENSE_LIBRARY_2026-07-v2.md).

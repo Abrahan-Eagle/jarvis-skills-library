@@ -88,3 +88,23 @@ Skills con CLI pueden soportar `--mode`:
 4. `python3 scripts/sync-catalog.py` y `python3 scripts/sync-lock.py`
 5. `bash scripts/install.sh` o `bash scripts/install.sh --all`
 6. Si el producto debe auto-invocar: añadir fila en su `AGENTS.md` (nombre solamente).
+
+## CI y frontmatter (decisión 2026-07-10)
+
+`scripts/validate-skills.sh` + workflow [`.github/workflows/validate-skills.yml`](../.github/workflows/validate-skills.yml):
+
+| Check | Severidad |
+|-------|-----------|
+| `name` + `description` ausentes | **FAIL** |
+| net-exec sin allowlist (`skills/` + `scripts/`) | **FAIL** |
+| `skills-lock.json` stale | **FAIL** (CI) |
+| `metadata.category`, `Trigger:`, `allowed-tools`, `auto_invoke` incompletos | **WARN / no FAIL** |
+
+Motivo: ~50% del catálogo aún tiene frontmatter parcial; un FAIL masivo rompería CI sin valor inmediato. Normalización gradual; no endurecer a FAIL sin lote previo.
+
+## Deprecación de skills
+
+1. Mover cuerpo histórico a [`archive/skills/`](../archive/README.md).
+2. Dejar stub en `skills/<cat>/<name>/SKILL.md` con `metadata.status: deprecated` y `superseded_by`.
+3. Regenerar catalog/lock/graph; sync productos.
+4. Canónico review: **`code-review-playbook`** (stubs: `github-code-review`, `code-review-excellence`).

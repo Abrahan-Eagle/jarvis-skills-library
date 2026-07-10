@@ -88,7 +88,7 @@ echo "== install-notebooklm-runtime =="
 echo ""
 
 if ! command -v uv >/dev/null 2>&1; then
-  echo "ERROR: uv not found. Install: curl -LsSf https://astral.sh/uv/install.sh | sh" >&2
+  echo "ERROR: uv not found. Install: curl -LsSf https://astral.sh/uv/install.sh | sh" >&2  # jarvis-allow-net-exec (docs only)
   exit 1
 fi
 

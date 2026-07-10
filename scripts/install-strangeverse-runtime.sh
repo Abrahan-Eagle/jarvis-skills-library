@@ -6,6 +6,10 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 STRANGEVERSE_HOME="${STRANGEVERSE_HOME:-/var/www/strangeverse}"
 REPO_URL="https://github.com/Abrahan-Eagle/strangeverse.git"
 SV_REF="${STRANGEVERSE_REF:-main}"
+# Supply-chain: default floats on main — pin STRANGEVERSE_REF to tag/SHA when possible.
+if [[ "$SV_REF" == "main" || "$SV_REF" == "master" ]]; then
+  echo "WARN: STRANGEVERSE_REF='$SV_REF' is a floating branch; prefer tag/SHA" >&2
+fi
 
 usage() {
   cat <<'EOF'

@@ -114,16 +114,58 @@ def main() -> None:
     CATALOG.parent.mkdir(parents=True, exist_ok=True)
     CATALOG.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
 
+    # Precedencia jarvis-core: orden preferido cuando varias skills comparten acción.
+    # Skills no listadas se añaden al final (alfabético).
+    PRECEDENCE: dict[str, list[str]] = {
+        "Cualquier tarea no trivial": [
+            "jarvis-experts",
+            "fan-out-synthesize-ops",
+        ],
+        "Iniciar módulo": [
+            "jarvis-core",
+            "brainstorming-ops",
+            "writing-plans",
+            "task-pipeline-ops",
+        ],
+        "Planificar desarrollo": [
+            "brainstorming-ops",
+            "writing-plans",
+            "executing-plans",
+        ],
+        "Crear commit": [
+            "verification-before-completion",
+            "work-unit-commits-ops",
+            "git-commit",
+            "structured-commits-ops",
+        ],
+        "Terminar módulo": [
+            "verification-before-completion",
+            "session-learner-ops",
+            "finishing-a-development-branch",
+        ],
+    }
+
+    def order_skills(action: str, names: list[str]) -> list[str]:
+        uniq = list(dict.fromkeys(names))
+        pref = PRECEDENCE.get(action)
+        if not pref:
+            return sorted(uniq)
+        ordered = [s for s in pref if s in uniq]
+        rest = sorted(s for s in uniq if s not in ordered)
+        return ordered + rest
+
     auto_lines = [
         "# Auto-invoke global",
         "",
         f"> Generado por `scripts/sync-catalog.py` — {date.today().isoformat()}",
         "",
+        "> Multi-skill: orden = precedencia `jarvis-core` cuando aplica; resto alfabético.",
+        "",
         "| Acción | Skill(s) |",
         "|--------|----------|",
     ]
     for action in sorted(auto_map.keys()):
-        skills = ", ".join(f"`{s}`" for s in sorted(set(auto_map[action])))
+        skills = ", ".join(f"`{s}`" for s in order_skills(action, auto_map[action]))
         auto_lines.append(f"| {action} | {skills} |")
     auto_lines.append("")
 

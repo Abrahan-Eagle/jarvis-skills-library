@@ -3,6 +3,8 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+# shellcheck source=lib/git-pin.sh
+source "$ROOT/scripts/lib/git-pin.sh"
 LEARNING_LOOP_REF="${LEARNING_LOOP_REF:-948dc75bc5a771a57366c651c5d442b44cba214d}"
 REPO_URL="https://github.com/melodykoh/learning-loop-skill.git"
 SYNC_ROOT="$ROOT/.tmp-learning-loop-sync"
@@ -13,18 +15,8 @@ echo "REF: $LEARNING_LOOP_REF"
 echo ""
 
 rm -rf "$SYNC_ROOT"
-git clone --depth 1 --branch main "$REPO_URL" "$SYNC_ROOT" 2>/dev/null || {
-  git clone "$REPO_URL" "$SYNC_ROOT"
-  git -C "$SYNC_ROOT" checkout "$LEARNING_LOOP_REF"
-}
-
-if [ -d "$SYNC_ROOT/.git" ]; then
-  current=$(git -C "$SYNC_ROOT" rev-parse HEAD)
-  if [ "$current" != "$LEARNING_LOOP_REF" ]; then
-    git -C "$SYNC_ROOT" fetch --depth 1 origin "$LEARNING_LOOP_REF" 2>/dev/null || true
-    git -C "$SYNC_ROOT" checkout "$LEARNING_LOOP_REF" 2>/dev/null || true
-  fi
-fi
+git clone "$REPO_URL" "$SYNC_ROOT"
+jarvis_git_checkout_pin "$SYNC_ROOT" "$LEARNING_LOOP_REF"
 
 if [ ! -f "$SYNC_ROOT/SKILL.md" ]; then
   echo "ERROR: SKILL.md not found in upstream" >&2

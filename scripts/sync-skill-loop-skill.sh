@@ -3,6 +3,8 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+# shellcheck source=lib/git-pin.sh
+source "$ROOT/scripts/lib/git-pin.sh"
 SKILL_LOOP_REF="${SKILL_LOOP_REF:-0bea8b08e079c71bc857631e26ada06068e82321}"
 REPO_URL="https://github.com/takumiyoshikawa/skill-loop.git"
 SYNC_ROOT="$ROOT/.tmp-skill-loop-sync"
@@ -14,18 +16,8 @@ echo "REF: $SKILL_LOOP_REF"
 echo ""
 
 rm -rf "$SYNC_ROOT"
-git clone --depth 1 --branch main "$REPO_URL" "$SYNC_ROOT" 2>/dev/null || {
-  git clone "$REPO_URL" "$SYNC_ROOT"
-  git -C "$SYNC_ROOT" checkout "$SKILL_LOOP_REF"
-}
-
-if [ -d "$SYNC_ROOT/.git" ]; then
-  current=$(git -C "$SYNC_ROOT" rev-parse HEAD)
-  if [ "$current" != "$SKILL_LOOP_REF" ]; then
-    git -C "$SYNC_ROOT" fetch --depth 1 origin "$SKILL_LOOP_REF" 2>/dev/null || true
-    git -C "$SYNC_ROOT" checkout "$SKILL_LOOP_REF" 2>/dev/null || true
-  fi
-fi
+git clone "$REPO_URL" "$SYNC_ROOT"
+jarvis_git_checkout_pin "$SYNC_ROOT" "$SKILL_LOOP_REF"
 
 if [ ! -d "$UPSTREAM_SKILL" ]; then
   echo "ERROR: upstream skills/skill-loop not found" >&2

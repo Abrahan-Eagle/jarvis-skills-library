@@ -7,6 +7,10 @@ OPEN_DESIGN_HOME="${OPEN_DESIGN_HOME:-$HOME/open-design}"
 REPO_URL="https://github.com/nexu-io/open-design.git"
 OD_REF="${OPEN_DESIGN_REF:-main}"
 NODE_BIN="${OD_NODE_BIN:-$HOME/.nvm/versions/node/v24.16.0/bin/node}"
+# Supply-chain: default floats on main — pin OPEN_DESIGN_REF to tag/SHA when possible.
+if [[ "$OD_REF" == "main" || "$OD_REF" == "master" ]]; then
+  echo "WARN: OPEN_DESIGN_REF='$OD_REF' is a floating branch; prefer tag/SHA" >&2
+fi
 
 usage() {
   cat <<'EOF'
@@ -25,7 +29,7 @@ Environment:
   OD_NODE_BIN       Node 24 binary for source mode
 
 Alternatives (documented, not run by this script):
-  curl -fsSL https://open-design.ai/install.sh | sh -s cursor
+  curl -fsSL https://open-design.ai/install.sh | sh -s cursor  # jarvis-allow-net-exec (docs only)
   od mcp install cursor   # after OD CLI available
 EOF
 }

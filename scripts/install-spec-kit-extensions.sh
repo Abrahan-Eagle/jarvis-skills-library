@@ -6,6 +6,10 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SPEC_KIT_EXT_REF="${SPEC_KIT_EXT_REF:-main}"
 REPO_URL="https://github.com/MartyBonacci/spec-kit-extensions.git"
 TMP_DIR="${TMPDIR:-/tmp}/spec-kit-extensions-install-$$"
+# Supply-chain: default floats on main — pin SPEC_KIT_EXT_REF to tag/SHA when possible.
+if [[ "$SPEC_KIT_EXT_REF" == "main" || "$SPEC_KIT_EXT_REF" == "master" ]]; then
+  echo "WARN: SPEC_KIT_EXT_REF='$SPEC_KIT_EXT_REF' is a floating branch; prefer tag/SHA" >&2
+fi
 
 usage() {
   cat <<'EOF'

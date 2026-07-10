@@ -11,7 +11,7 @@ Mapa de ecosistema: [LOOP_AI_ECOSYSTEM.md](LOOP_AI_ECOSYSTEM.md). Gobernanza: `h
 |--------|------|-----------------|
 | Video "Agent Loop Engineering" (Gentleman) | Charla | **Adoptado** como base de `agent-loop-engineering` + `parallel-judge-ops` |
 | [gentle-ai](https://github.com/Gentleman-Programming/gentle-ai) (MIT) | Configurador de ecosistema (Go) | **Referencia de patrón**, sin sync de binario |
-| [engram](https://github.com/Gentleman-Programming/engram) (MIT) | Memoria persistente MCP (Go) | **Watchlist**, sin sync |
+| [engram](https://github.com/Gentleman-Programming/engram) (MIT) | Memoria persistente MCP (Go) | **Adoptado** — `engram-router` + `engram-memory-protocol` + `install-engram-runtime.sh` |
 | [Gentleman.Dots](https://github.com/Gentleman-Programming/Gentleman.Dots) (MIT) | Dotfiles entorno dev | **Fuera de dominio** (entorno, no loops) |
 
 ## Tesis del video → principios JARVIS
@@ -36,16 +36,16 @@ Configurador que "supercharge" agentes con memoria, SDD, skills, routing de mode
 
 **Decisión:** no se instala el CLI `gentle-ai`. Es referencia conceptual que alimenta `agent-loop-engineering`. Productos que ya usan SDD JARVIS no cambian.
 
-## engram (watchlist — memoria de loop largo)
+## engram (adoptado — memoria de loop largo)
 
 Memoria persistente agent-agnostic (Go + SQLite + FTS5, MCP stdio). Relevante porque los **loops largos pierden estado en la compactación**:
 
 - `mem_save`/`mem_search`/`mem_context`: persistir decisiones entre vueltas e sesiones.
 - `mem_judge`/`mem_compare`: **conflict surfacing** entre memorias — primo conceptual del patrón juez (detectar que dos decisiones se contradicen).
 
-**Solapamiento JARVIS:** `context-updater`, `handoff`, `session-learner-ops` y `docs/active_context.md` ya cubren persistencia de estado sin dependencia externa.
+**Solapamiento JARVIS:** `context-updater`, `handoff`, `session-learner-ops` y `docs/active_context.md` cubren persistencia **en-repo** sin dependencia externa. Engram es la capa **cross-session MCP**.
 
-**Decisión:** **watchlist**, sin sync. Si un producto adopta engram, se configura como MCP en ese repo (dominio), no en la library global. `agent-loop-engineering` lo cita como opción para "persistencia de estado entre vueltas".
+**Decisión (actualizada 2026-07):** **adoptado** en la library global — skills `engram-router` + `engram-memory-protocol`, runtime `bash scripts/install-engram-runtime.sh`, doc [ENGRAM_INTEGRATION.md](ENGRAM_INTEGRATION.md). Precedencia: Engram MCP vs `active_context` → ver `engram-router`.
 
 ## Gentleman.Dots (fuera de dominio)
 
