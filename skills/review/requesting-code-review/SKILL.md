@@ -8,7 +8,8 @@ metadata:
   upstream: superpowers:requesting-code-review
   related-skills:
     - code-review-playbook
-    - product-ui-design
+    - receiving-code-review
+    - ui-router
 ---
 
 # Requesting code review — proyecto activo

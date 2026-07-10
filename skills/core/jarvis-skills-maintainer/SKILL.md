@@ -42,7 +42,7 @@ bash scripts/validate-all.sh
 
 `sync-spec-kit-skills.sh` ejecuta `patch-speckit-frontmatter.py` al final (frontmatter JARVIS, H1, sección `JARVIS Integration` en skills críticas).
 
-Ver [docs/SDD_SPECKIT_INTEGRATION.md](../docs/SDD_SPECKIT_INTEGRATION.md).
+Ver [docs/SDD_SPECKIT_INTEGRATION.md](../../docs/SDD_SPECKIT_INTEGRATION.md).
 
 ## Actualizar UI UX Pro Max
 
@@ -51,7 +51,7 @@ bash scripts/sync-ui-ux-pro-max.sh   # pin UI_UX_TAG=v2.5.0
 bash scripts/validate-all.sh
 ```
 
-Ver [docs/UI_UX_PRO_MAX_INTEGRATION.md](../docs/UI_UX_PRO_MAX_INTEGRATION.md).
+Ver [docs/UI_UX_PRO_MAX_INTEGRATION.md](../../docs/UI_UX_PRO_MAX_INTEGRATION.md).
 
 ## Spec Kitty (complemento Spec Kit)
 
@@ -59,7 +59,7 @@ No sincronizar comandos kitty al global — `spec-kitty init --ai cursor` los in
 
 1. Skills globales: `kitty-router`, `kitty-governance` (ya en `skills/core/` y `skills/sdd/`)
 2. Entrada en `catalog/sdx-toolkit-registry.json` + `python3 scripts/sync-sdx-registry.py`
-3. Documentar en [docs/SPEC_KITTY_INTEGRATION.md](../docs/SPEC_KITTY_INTEGRATION.md) y [docs/SDX_ECOSYSTEM.md](../docs/SDX_ECOSYSTEM.md)
+3. Documentar en [docs/SPEC_KITTY_INTEGRATION.md](../../docs/SPEC_KITTY_INTEGRATION.md) y [docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md)
 
 Zonix y otros productos con `.specify/` **no migrar** sin decisión explícita.
 
@@ -73,7 +73,7 @@ Install en repo producto:
 bash scripts/install-spec-kit-extensions.sh --target /path/to/product-repo
 ```
 
-Manual: [docs/SPEC_KIT_EXTENSIONS.md](../docs/SPEC_KIT_EXTENSIONS.md). Entrada en `watchlist` de `sdx-toolkit-registry.json`.
+Manual: [docs/SPEC_KIT_EXTENSIONS.md](../../docs/SPEC_KIT_EXTENSIONS.md). Entrada en `watchlist` de `sdx-toolkit-registry.json`.
 
 ## Open Design (artefactos agentic)
 
@@ -83,7 +83,7 @@ Fábrica visual [nexu-io/open-design](https://github.com/nexu-io/open-design) �
 bash scripts/install-open-design-runtime.sh
 ```
 
-Doc: [docs/OPEN_DESIGN_INTEGRATION.md](../docs/OPEN_DESIGN_INTEGRATION.md). Watchlist `sdx-toolkit-registry.json`. OpenClaw: stack en clawvis (no duplicar).
+Doc: [docs/OPEN_DESIGN_INTEGRATION.md](../../docs/OPEN_DESIGN_INTEGRATION.md). Watchlist `sdx-toolkit-registry.json`. OpenClaw: stack en clawvis (no duplicar).
 
 ## StrangeVerse (simulación multi-agente)
 
@@ -93,11 +93,11 @@ Fork [Abrahan-Eagle/strangeverse](https://github.com/Abrahan-Eagle/strangeverse)
 bash scripts/install-strangeverse-runtime.sh
 ```
 
-Doc: [docs/STRANGEVERSE_INTEGRATION.md](../docs/STRANGEVERSE_INTEGRATION.md). Upstream: [docs/MIROFISH_UPSTREAM.md](../docs/MIROFISH_UPSTREAM.md). Watchlist `sdx-toolkit-registry.json`. AGPL: solo API; no copiar código del fork al global.
+Doc: [docs/STRANGEVERSE_INTEGRATION.md](../../docs/STRANGEVERSE_INTEGRATION.md). Upstream: [docs/MIROFISH_UPSTREAM.md](../../docs/MIROFISH_UPSTREAM.md). Watchlist `sdx-toolkit-registry.json`. AGPL: solo API; no copiar código del fork al global.
 
 ## MiroFish upstream (referencia)
 
-Upstream [666ghj/MiroFish](https://github.com/666ghj/MiroFish) (AGPL-3.0, pin V0.1.2) — patrones en `strategic-briefing-ops` y `scenario-analysis-ops`; runtime operativo = StrangeVerse. Doc: [docs/MIROFISH_UPSTREAM.md](../docs/MIROFISH_UPSTREAM.md). Entrada watchlist en `sdx-toolkit-registry.json`.
+Upstream [666ghj/MiroFish](https://github.com/666ghj/MiroFish) (AGPL-3.0, pin V0.1.2) — patrones en `strategic-briefing-ops` y `scenario-analysis-ops`; runtime operativo = StrangeVerse. Doc: [docs/MIROFISH_UPSTREAM.md](../../docs/MIROFISH_UPSTREAM.md). Entrada watchlist en `sdx-toolkit-registry.json`.
 
 ## ECC (harness Cursor)
 
@@ -109,7 +109,7 @@ bash scripts/sync-ecc-skills.sh
 python3 scripts/sync-ecc-manifest.py
 ```
 
-Doc: [docs/ECC_INTEGRATION.md](../docs/ECC_INTEGRATION.md), forense [docs/ECC_FORENSE_JARVIS.md](../docs/ECC_FORENSE_JARVIS.md). Índice upstream: `catalog/ecc-skills-index.md`. Perfil `minimal` default (sin hooks).
+Doc: [docs/ECC_INTEGRATION.md](../../docs/ECC_INTEGRATION.md), forense [docs/ECC_FORENSE_JARVIS.md](../../docs/ECC_FORENSE_JARVIS.md). Índice upstream: `catalog/ecc-skills-index.md`. Perfil `minimal` default (sin hooks).
 
 ## Cyber Neo (auditoría seguridad)
 
@@ -120,7 +120,7 @@ bash scripts/sync-cyber-neo-skill.sh
 bash scripts/install-cyber-neo-upstream.sh   # opcional ~/cyber-neo
 ```
 
-Doc: [docs/CYBER_NEO_INTEGRATION.md](../docs/CYBER_NEO_INTEGRATION.md), forense [docs/CYBER_NEO_FORENSE_JARVIS.md](../docs/CYBER_NEO_FORENSE_JARVIS.md). Pin: `9a8998a33534bca16c619f4956dd1935dc404620`.
+Doc: [docs/CYBER_NEO_INTEGRATION.md](../../docs/CYBER_NEO_INTEGRATION.md), forense [docs/CYBER_NEO_FORENSE_JARVIS.md](../../docs/CYBER_NEO_FORENSE_JARVIS.md). Pin: `9a8998a33534bca16c619f4956dd1935dc404620`.
 
 ## Agent Skills (Addy Osmani)
 
@@ -131,7 +131,7 @@ bash scripts/sync-addy-doubt-driven.sh   # pin 36c543d…; encadena patch
 bash scripts/smoke-addy-doubt-driven.sh
 ```
 
-Doc: [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../docs/AGENT_SKILLS_ADDY_INTEGRATION.md), forense [docs/AGENT_SKILLS_ADDY_FORENSE_JARVIS.md](../docs/AGENT_SKILLS_ADDY_FORENSE_JARVIS.md). Entrada en `sdx-toolkit-registry.json`.
+Doc: [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../../docs/AGENT_SKILLS_ADDY_INTEGRATION.md), forense [docs/AGENT_SKILLS_ADDY_FORENSE_JARVIS.md](../../docs/AGENT_SKILLS_ADDY_FORENSE_JARVIS.md). Entrada en `sdx-toolkit-registry.json`.
 
 ## Claude Skills (Alireza Rezvani)
 
@@ -142,11 +142,11 @@ bash scripts/sync-claude-skills-skill-security-auditor.sh   # pin v2.9.0; encade
 bash scripts/smoke-claude-skills-skill-security-auditor.sh
 ```
 
-Doc: [docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](../docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md), forense [docs/CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md](../docs/CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md). Entrada `claude-skills-rezvani` en `sdx-toolkit-registry.json`.
+Doc: [docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](../../docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md), forense [docs/CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md](../../docs/CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md). Entrada `claude-skills-rezvani` en `sdx-toolkit-registry.json`.
 
 ## Loop AI (gobernanza HITL — skill local)
 
-Marco de ingeniería de ciclos y gobernanza humana — skill **`human-in-the-loop-ops`** (sin vendor sync). Mapa ecosistema: [docs/LOOP_AI_ECOSYSTEM.md](../docs/LOOP_AI_ECOSYSTEM.md) (taxonomía threads + ref [claudefa.st](https://claudefa.st/blog/guide/mechanics/autonomous-agent-loops), sin sync). Watchlist registry: `ralph-loop`, `claude-skills-rezvani` (autoresearch overlap `skill-loop`; solo auditor curado). Descartados: mrkai77-loop (macOS), Loop AI Labs (vendor), Perplexity Alexa (voz).
+Marco de ingeniería de ciclos y gobernanza humana — skill **`human-in-the-loop-ops`** (sin vendor sync). Mapa ecosistema: [docs/LOOP_AI_ECOSYSTEM.md](../../docs/LOOP_AI_ECOSYSTEM.md) (taxonomía threads + ref [claudefa.st](https://claudefa.st/blog/guide/mechanics/autonomous-agent-loops), sin sync). Watchlist registry: `ralph-loop`, `claude-skills-rezvani` (autoresearch overlap `skill-loop`; solo auditor curado). Descartados: mrkai77-loop (macOS), Loop AI Labs (vendor), Perplexity Alexa (voz).
 
 ## OpenSpec (watchlist awesome-spec-kits)
 
@@ -154,7 +154,7 @@ No sincronizar slash commands al global — `openspec init` los instala en el re
 
 1. Skill global: `openspec-router` en `skills/core/`
 2. Entrada en `watchlist` de `catalog/sdx-toolkit-registry.json`
-3. Documentar en [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md)
+3. Documentar en [docs/AWESOME_SPEC_KITS.md](../../docs/AWESOME_SPEC_KITS.md)
 
 ## SD-X (toolkits registrados)
 
@@ -162,7 +162,7 @@ Al integrar un toolkit SD-X (Spec Kit, ui-ux-pro-max, watchlist awesome-spec-kit
 
 1. Editar `catalog/sdx-toolkit-registry.json`
 2. `python3 scripts/sync-sdx-registry.py` → `catalog/SDX_TOOLKITS.md`
-3. Documentar en [docs/SDX_ECOSYSTEM.md](../docs/SDX_ECOSYSTEM.md)
+3. Documentar en [docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md)
 
 Ver skill `sdd-x-index` para mapa SD-X → skills JARVIS.
 
@@ -176,7 +176,7 @@ Tras añadir o cambiar una skill global que clawvis consume vía manifest:
 2. En clawvis: `JARVIS_SKILLS_LIBRARY=/var/www/html/proyectos/AIPP/jarvis-skills-library ./scripts/sync-global-skills-from-library.sh`
 3. `./scripts/check-global-skills-sync.sh`
 
-Doc: [docs/CLAWVIS_INTEGRATION.md](../docs/CLAWVIS_INTEGRATION.md). Promoción clawvis→global: generalizar aquí primero; overlay holding en clawvis `OVERLAY.md`.
+Doc: [docs/CLAWVIS_INTEGRATION.md](../../docs/CLAWVIS_INTEGRATION.md). Promoción clawvis→global: generalizar aquí primero; overlay holding en clawvis `OVERLAY.md`.
 
 ## CorralX Backend + Frontend (sync producto)
 
@@ -190,13 +190,13 @@ Tras añadir o cambiar una skill global que CorralX consume vía manifest:
    ```
    Por repo: `sync-global-skills-from-library.sh` → `check-global-skills-sync.sh` → `python3 .agents/skills/sync.sh`.
 
-Doc: [docs/CORRALX_INTEGRATION.md](../docs/CORRALX_INTEGRATION.md). Skills `corralx-*` nunca en manifest; overlay producto en `OVERLAY.md`. CI: `global-skills-sync-check.yml` en PR.
+Doc: [docs/CORRALX_INTEGRATION.md](../../docs/CORRALX_INTEGRATION.md). Skills `corralx-*` nunca en manifest; overlay producto en `OVERLAY.md`. CI: `global-skills-sync-check.yml` en PR.
 
 ## Google Stitch upstream (no vendor)
 
 Skills Stitch viven en [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) — **no** copiar al catálogo global.
 
-1. Doc: [docs/STITCH_UPSTREAM.md](../docs/STITCH_UPSTREAM.md)
+1. Doc: [docs/STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md)
 2. Router global: `stitch-router` (`skills/ui/stitch-router/`)
 3. Instalar upstream: `bash scripts/install-stitch-skills.sh --profile design --global` (nombres CLI `stitch::*`)
 4. CorralX Frontend: skills Stitch opcionales (capa 5/6); Backend: solo plantilla MCP (`.cursor/mcp.json.proxy.example`); refresh V2 vía `npx skills add`, no manifest sync
@@ -234,15 +234,15 @@ bash scripts/install.sh --dry-run # preview
 
 ## Referencias
 
-- [docs/CONVENTIONS.md](../docs/CONVENTIONS.md)
-- [docs/MIGRATION.md](../docs/MIGRATION.md)
-- [docs/PROJECT_ONBOARDING.md](../docs/PROJECT_ONBOARDING.md)
-- [docs/SDD_SPECKIT_INTEGRATION.md](../docs/SDD_SPECKIT_INTEGRATION.md)
-- [docs/SPEC_KITTY_INTEGRATION.md](../docs/SPEC_KITTY_INTEGRATION.md)
-- [docs/SPEC_KIT_EXTENSIONS.md](../docs/SPEC_KIT_EXTENSIONS.md)
-- [docs/OPEN_DESIGN_INTEGRATION.md](../docs/OPEN_DESIGN_INTEGRATION.md)
-- [docs/STITCH_UPSTREAM.md](../docs/STITCH_UPSTREAM.md)
-- [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md)
-- [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../docs/AGENT_SKILLS_ADDY_INTEGRATION.md)
-- [docs/CLAWVIS_INTEGRATION.md](../docs/CLAWVIS_INTEGRATION.md)
-- [docs/SDX_ECOSYSTEM.md](../docs/SDX_ECOSYSTEM.md)
+- [docs/CONVENTIONS.md](../../docs/CONVENTIONS.md)
+- [docs/MIGRATION.md](../../docs/MIGRATION.md)
+- [docs/PROJECT_ONBOARDING.md](../../docs/PROJECT_ONBOARDING.md)
+- [docs/SDD_SPECKIT_INTEGRATION.md](../../docs/SDD_SPECKIT_INTEGRATION.md)
+- [docs/SPEC_KITTY_INTEGRATION.md](../../docs/SPEC_KITTY_INTEGRATION.md)
+- [docs/SPEC_KIT_EXTENSIONS.md](../../docs/SPEC_KIT_EXTENSIONS.md)
+- [docs/OPEN_DESIGN_INTEGRATION.md](../../docs/OPEN_DESIGN_INTEGRATION.md)
+- [docs/STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md)
+- [docs/AWESOME_SPEC_KITS.md](../../docs/AWESOME_SPEC_KITS.md)
+- [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../../docs/AGENT_SKILLS_ADDY_INTEGRATION.md)
+- [docs/CLAWVIS_INTEGRATION.md](../../docs/CLAWVIS_INTEGRATION.md)
+- [docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md)

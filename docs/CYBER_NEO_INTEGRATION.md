@@ -83,9 +83,9 @@ El bin **no** se instala en PATH global. Usar path completo o symlink local:
 
 ```bash
 # Desde jarvis-skills-library (desarrollo)
-bash skills/non-code/cyber-neo/bin/cyber-neo status
-bash skills/non-code/cyber-neo/bin/cyber-neo secrets /path/to/project
-bash skills/non-code/cyber-neo/bin/cyber-neo lockfiles /path/to/project
+bash skills/non-code/cyber-neo-cli/bin/cyber-neo status
+bash skills/non-code/cyber-neo-cli/bin/cyber-neo secrets /path/to/project
+bash skills/non-code/cyber-neo-cli/bin/cyber-neo lockfiles /path/to/project
 
 # Tras install.sh --all
 ~/.cursor/skills/cyber-neo-cli/bin/cyber-neo status

@@ -67,7 +67,7 @@ Con `.specify/` y trabajo distinto de feature nueva, invocar **`speckit-lifecycl
 | Modificar feature `NNN` | `speckit-specify` (usar modify) |
 | Deprecar feature | `speckit-specify` |
 
-Guía: [docs/SPEC_KIT_EXTENSIONS.md](../docs/SPEC_KIT_EXTENSIONS.md).
+Guía: [docs/SPEC_KIT_EXTENSIONS.md](../../docs/SPEC_KIT_EXTENSIONS.md).
 
 ## Cadena Spec Kit — feature nueva (orden)
 
@@ -102,11 +102,11 @@ Opcional en cualquier fase pre-implement: `speckit-checklist`.
 
 ## Bootstrap Spec Kit en un producto
 
-Ver [docs/SDD_SPECKIT_INTEGRATION.md](../docs/SDD_SPECKIT_INTEGRATION.md).
+Ver [docs/SDD_SPECKIT_INTEGRATION.md](../../docs/SDD_SPECKIT_INTEGRATION.md).
 
-Repos con Spec Kitty: [docs/SPEC_KITTY_INTEGRATION.md](../docs/SPEC_KITTY_INTEGRATION.md) + `kitty-router`.
+Repos con Spec Kitty: [docs/SPEC_KITTY_INTEGRATION.md](../../docs/SPEC_KITTY_INTEGRATION.md) + `kitty-router`.
 
-Repos con OpenSpec: [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md) + `openspec-router`.
+Repos con OpenSpec: [docs/AWESOME_SPEC_KITS.md](../../docs/AWESOME_SPEC_KITS.md) + `openspec-router`.
 
 ## SD-X más amplio
 

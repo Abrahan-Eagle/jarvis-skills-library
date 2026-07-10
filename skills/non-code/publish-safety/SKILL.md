@@ -1,6 +1,7 @@
 ---
 name: publish-safety
 description: "Capa de seguridad para publicacion RRSS: rate-limit, dedup, karma-tiers, circuit breaker."
+license: UNLICENSED
 metadata:
   version: "1.0.0"
 ---

@@ -1,6 +1,7 @@
 ---
 name: activity-log
 description: "Log unificado de actividad de agentes (state/activity-log.jsonl, tasks/, handoffs)."
+license: UNLICENSED
 metadata:
   version: "1.0.0"
 ---

@@ -1,6 +1,6 @@
 # Auto-invoke global
 
-> Generado por `scripts/sync-catalog.py` — 2026-07-09
+> Generado por `scripts/sync-catalog.py` — 2026-07-10
 
 | Acción | Skill(s) |
 |--------|----------|

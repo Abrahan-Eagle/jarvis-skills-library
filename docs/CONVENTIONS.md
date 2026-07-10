@@ -27,7 +27,7 @@ metadata:
   author: JARVIS Global
   version: "1.0"
   scope: [global]               # o rutas si aplica
-  category: ops                 # core | ops | engineering | git | review | planning | backend | mobile | ui | non-code
+  category: ops                 # core | ops | engineering | git | review | planning | backend | mobile | ui | non-code | sdd
   auto_invoke:
     - "Frase para tabla auto-invoke"
   triggers: keyword1, keyword2

@@ -87,6 +87,7 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 | Comentarios humanos (PR, issue, review, Slack) | `comment-writer-ops` |
 | Push/merge | `git-guardrails-ops` (solo con orden explícita del usuario) |
 | Code review | `code-review-playbook` |
+| Compactar o traspasar sesión | `handoff` |
 | Cerrar sesión | `context-updater`, `session-learner-ops` |
 
 Los productos referencian esta tabla en su `AGENTS.md`; no copiar el contenido de cada `SKILL.md` global al repo del producto.
@@ -99,9 +100,10 @@ Tras commit en **jarvis-skills-library** que afecte skills del manifest de produ
 |----------|--------|
 | clawvis-openclaw | `sync-global-skills-from-library.sh` + `check-global-skills-sync.sh` — [CLAWVIS_INTEGRATION.md](docs/CLAWVIS_INTEGRATION.md) |
 | CorralX Backend + Frontend | `./scripts/sync-all-corralx-skills.sh` en cualquier repo — [CORRALX_INTEGRATION.md](docs/CORRALX_INTEGRATION.md) |
+| ZonixPharma Backend + Front | `./scripts/sync-global-skills-from-library.sh` + `check` en cada repo — [ZONIX_INTEGRATION.md](docs/ZONIX_INTEGRATION.md) |
 
-Ver también skill `jarvis-skills-maintainer` (secciones clawvis y CorralX).
+Ver también skill `jarvis-skills-maintainer` (secciones clawvis, CorralX y Zonix).
 
 ---
 
-**Última actualización:** Junio 2026
+**Última actualización:** Julio 2026

@@ -5,6 +5,8 @@ trigger: Después de implementar correcciones o mejoras relevantes (features, co
 scope: AGENTS.md, README.md, .cursorrules
 author: Scaffold Team
 version: 1.0
+license: UNLICENSED
+
 ---
 
 # Documentar avances — Cambios recientes

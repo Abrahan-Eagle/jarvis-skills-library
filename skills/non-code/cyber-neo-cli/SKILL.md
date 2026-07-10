@@ -25,7 +25,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Wrapper bash a scripts Python de [Cyber Neo](https://github.com/Hainrixz/cyber-neo). Router: `cyber-neo-router`. Doc: [docs/CYBER_NEO_INTEGRATION.md](../../docs/CYBER_NEO_INTEGRATION.md).
 
-**Bin:** `skills/non-code/cyber-neo/bin/cyber-neo`
+**Bin:** `skills/non-code/cyber-neo-cli/bin/cyber-neo`
 
 ## Comandos
 

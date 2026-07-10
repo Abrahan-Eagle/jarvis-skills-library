@@ -152,7 +152,9 @@ jarvis-skills-library/
 │   ├── sdd/               # speckit-* (Spec Kit core)
 │   ├── ops/               # context-updater, handoff, brainstorming-ops
 │   ├── engineering/       # TDD, debugging, clean-code
-│   ├── git/               # git-commit, git-guardrails-ops
+│   ├── git/               # git-commit, branch-pr-ops, work-unit-commits-ops
+│   ├── ops/               # git-guardrails-ops, brainstorming-ops, verification-before-completion
+│   ├── sdd/               # speckit-*, kitty-governance, speckit-lifecycle-router
 │   ├── review/            # code-review-playbook
 │   ├── planning/          # writing-plans, zoom-out
 │   ├── backend/           # laravel-specialist, security

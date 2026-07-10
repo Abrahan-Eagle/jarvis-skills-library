@@ -1,6 +1,6 @@
 # Catálogo de skills globales
 
-> Generado por `scripts/sync-catalog.py` — 2026-07-09
+> Generado por `scripts/sync-catalog.py` — 2026-07-10
 
 Total: **106** skills
 
@@ -96,7 +96,7 @@ Total: **106** skills
 | `activity-log` | Log unificado de actividad de agentes (state/activity-log.jsonl, tasks/, handoffs). | [skills/non-code/activity-log/SKILL.md](skills/non-code/activity-log/SKILL.md) |
 | `approval-gate` | Enforcement tecnico de approval gates AG-12/AG-03/AG-13 antes de publicar. | [skills/non-code/approval-gate/SKILL.md](skills/non-code/approval-gate/SKILL.md) |
 | `client-report` | Generar reporte mensual al cliente desde activity-log y calendario editorial. | [skills/non-code/client-report/SKILL.md](skills/non-code/client-report/SKILL.md) |
-| `cyber-neo-cli` | CLI wrapper cyber-neo: status, secrets scan, lockfile check. Scripts Python upstream Cyber Neo. | [skills/non-code/cyber-neo/SKILL.md](skills/non-code/cyber-neo/SKILL.md) |
+| `cyber-neo-cli` | CLI wrapper cyber-neo: status, secrets scan, lockfile check. Scripts Python upstream Cyber Neo. | [skills/non-code/cyber-neo-cli/SKILL.md](skills/non-code/cyber-neo-cli/SKILL.md) |
 | `ecc` | CLI wrapper para ecc-universal: status, consult, doctor, repair. Harness Everything Claude Code en Cursor. | [skills/non-code/ecc/SKILL.md](skills/non-code/ecc/SKILL.md) |
 | `open-design` | Fábrica visual local via daemon Open Design: generate carrusel, deck, email, prototipos HTML. | [skills/non-code/open-design/SKILL.md](skills/non-code/open-design/SKILL.md) |
 | `publish-safety` | Capa de seguridad para publicacion RRSS: rate-limit, dedup, karma-tiers, circuit breaker. | [skills/non-code/publish-safety/SKILL.md](skills/non-code/publish-safety/SKILL.md) |

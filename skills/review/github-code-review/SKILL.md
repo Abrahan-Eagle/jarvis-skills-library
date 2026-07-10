@@ -16,6 +16,8 @@ capabilities:
   - Swarm-based review orchestration
   - Intelligent comment generation
   - Quality gate enforcement
+license: UNLICENSED
+
 ---
 
 # GitHub Code Review Skill

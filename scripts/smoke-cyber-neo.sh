@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-BIN="$ROOT/skills/non-code/cyber-neo/bin/cyber-neo"
+BIN="$ROOT/skills/non-code/cyber-neo-cli/bin/cyber-neo"
 FIXTURE="$ROOT/scripts/fixtures/cyber-neo-fixture"
 SKILL_MD="$ROOT/skills/ops/cyber-neo/SKILL.md"
 

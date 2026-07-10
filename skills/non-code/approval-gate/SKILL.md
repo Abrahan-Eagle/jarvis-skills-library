@@ -1,6 +1,7 @@
 ---
 name: approval-gate
 description: "Enforcement tecnico de approval gates AG-12/AG-03/AG-13 antes de publicar."
+license: UNLICENSED
 metadata:
   version: "1.0.0"
 ---
@@ -15,7 +16,7 @@ approval-gate request --handoff payload.json --ag AG-12 --task task-xxx
 approval-gate approve --id esc-20260602-abc1
 ```
 
-Escalaciones en `state/escalations/`. Ver `docs/APPROVAL_GATES.md`.
+Escalaciones en `state/escalations/`. Ver [docs/APPROVAL_GATES.md](../../docs/APPROVAL_GATES.md).
 
 ## Skills relacionadas
 
