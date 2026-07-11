@@ -18,7 +18,7 @@ approval-gate approve --id esc-20260602-abc1
 
 Escalaciones en `state/escalations/`. Ver [docs/APPROVAL_GATES.md](../../../docs/APPROVAL_GATES.md).
 
-**Pre-gate:** antes de `request` en AG-12/AG-13, correr `llm-as-judge-ops` (score bajo → no solicitar gate). Detalle en la sección *Pre-gate automático* del doc.
+**Pre-gate:** antes de `request` en AG-12/AG-13, correr `llm-as-judge-ops` (score bajo → no solicitar gate). Cadena: score ≥ threshold y `must_fix` vacío → `approval-gate request`. Detalle en la sección *Pre-gate automático* del doc.
 
 ## Skills relacionadas
 
