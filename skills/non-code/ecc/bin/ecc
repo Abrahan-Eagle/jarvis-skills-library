@@ -72,7 +72,7 @@ cmd_status() {
 }
 
 cmd_consult() {
-  local query="${1:-}"
+  local query="$*"
   [ -n "$query" ] || { echo "consult requiere query" >&2; exit 2; }
   run_ecc_cli consult "$query" --target "$ECC_TARGET"
 }

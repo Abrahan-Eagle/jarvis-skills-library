@@ -3,6 +3,9 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+# shellcheck source=lib/git-pin.sh
+source "$ROOT/scripts/lib/git-pin.sh"
+
 OPEN_DESIGN_HOME="${OPEN_DESIGN_HOME:-$HOME/open-design}"
 REPO_URL="https://github.com/nexu-io/open-design.git"
 OD_REF="${OPEN_DESIGN_REF:-main}"
@@ -50,12 +53,12 @@ echo "REF:  $OD_REF"
 echo ""
 
 if [ ! -d "$OPEN_DESIGN_HOME/.git" ]; then
-  git clone --depth 1 --branch "$OD_REF" "$REPO_URL" "$OPEN_DESIGN_HOME" 2>/dev/null || \
-    git clone --depth 1 "$REPO_URL" "$OPEN_DESIGN_HOME"
+  git clone "$REPO_URL" "$OPEN_DESIGN_HOME"
   echo "Cloned open-design → $OPEN_DESIGN_HOME"
 else
-  echo "Exists: $OPEN_DESIGN_HOME"
+  echo "Exists: $OPEN_DESIGN_HOME — re-pinning to $OD_REF"
 fi
+jarvis_git_checkout_pin "$OPEN_DESIGN_HOME" "$OD_REF"
 
 OD_DEPLOY="$OPEN_DESIGN_HOME/deploy"
 if [ ! -f "$OD_DEPLOY/.env" ] && [ -f "$OD_DEPLOY/.env.example" ]; then

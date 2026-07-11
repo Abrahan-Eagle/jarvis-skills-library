@@ -63,7 +63,13 @@ cd /var/www/html/proyectos/AIPP/jarvis-skills-library
 bash scripts/install-ecc-runtime.sh --project-dir /path/to/CorralX-Backend
 ```
 
-Opciones: `--profile minimal` (default, sin hooks-runtime), `--with-hooks`, `--languages "php typescript"` o `dart` para Flutter.
+Opciones:
+
+- `--profile minimal` (default) — rules/agents sin hooks-runtime
+- `--profile core` — perfil upstream **más amplio**; en ECC upstream `core` ya puede incluir hooks/instincts (no asumir “sin hooks”)
+- `--with-hooks` — añade módulo `hooks-runtime` sobre el perfil elegido (típico: `minimal` + `--with-hooks` para instincts opt-in)
+- `--languages "php typescript"` o `dart` para Flutter
+- `--dry-run` — imprime qué clonaría/instalaría **sin** aplicar `install.sh` al proyecto
 
 ### Language packs (ECC v2)
 
@@ -86,10 +92,12 @@ CorralX típico (API Laravel): default `php typescript` → `framework:laravel` 
 
 ### Perfiles
 
-| Perfil | Hooks | Uso JARVIS |
-|--------|-------|------------|
-| `minimal` | No | Recomendado: rules + agents sin runtime intrusivo |
-| `core` | Sí (con `--with-hooks`) | Instincts, memory hooks — opt-in explícito |
+| Perfil / flag | Hooks | Uso JARVIS |
+|---------------|-------|------------|
+| `minimal` (default) | No (salvo `--with-hooks`) | Recomendado: rules + agents sin runtime intrusivo |
+| `core` | Upstream **ya incluye** más harness (hooks/instincts según versión ECC) | Solo si quieres el pack `core` completo |
+| `--with-hooks` | Sí (`--modules hooks-runtime`) | Opt-in explícito; aplica **sobre** el perfil (p. ej. `minimal` + `--with-hooks`) |
+| `--dry-run` | N/A | Preview sin mutar el proyecto |
 
 **No apilar** plugin Claude `ecc@ecc` + `install.sh --profile full` (duplicación).
 
@@ -111,7 +119,7 @@ bash scripts/sync-ecc-skills.sh      # 3 skills complementarios
 python3 scripts/sync-ecc-manifest.py # índice upstream (no catálogo global)
 ```
 
-Índice descubrimiento: [catalog/ecc-skills-index.md](catalog/ecc-skills-index.md).
+Índice descubrimiento: [catalog/ecc-skills-index.md](../catalog/ecc-skills-index.md).
 
 ## Licencia
 

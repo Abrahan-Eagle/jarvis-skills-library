@@ -3,6 +3,9 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+# shellcheck source=lib/git-pin.sh
+source "$ROOT/scripts/lib/git-pin.sh"
+
 ECC_HOME="${ECC_HOME:-$HOME/ecc}"
 REPO_URL="https://github.com/affaan-m/ecc.git"
 ECC_REF="${ECC_REF:-v2.0.0}"
@@ -71,12 +74,13 @@ echo ""
 
 clone_ecc() {
   if [ ! -d "$ECC_HOME/.git" ]; then
-    git clone --depth 1 --branch "$ECC_REF" "$REPO_URL" "$ECC_HOME" 2>/dev/null || \
-      git clone --depth 1 "$REPO_URL" "$ECC_HOME"
+    git clone "$REPO_URL" "$ECC_HOME"
     echo "Cloned ECC → $ECC_HOME"
   else
-    echo "Exists: $ECC_HOME"
+    echo "Exists: $ECC_HOME — re-pinning to $ECC_REF"
   fi
+  # Fail hard if pin cannot be checked out (no unpinned fallback clone).
+  jarvis_git_checkout_pin "$ECC_HOME" "$ECC_REF"
 }
 
 install_deps() {

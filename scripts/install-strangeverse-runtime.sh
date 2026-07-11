@@ -3,6 +3,9 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+# shellcheck source=lib/git-pin.sh
+source "$ROOT/scripts/lib/git-pin.sh"
+
 STRANGEVERSE_HOME="${STRANGEVERSE_HOME:-/var/www/strangeverse}"
 REPO_URL="https://github.com/Abrahan-Eagle/strangeverse.git"
 SV_REF="${STRANGEVERSE_REF:-main}"
@@ -48,12 +51,12 @@ echo "REF:  $SV_REF"
 echo ""
 
 if [ ! -d "$STRANGEVERSE_HOME/.git" ]; then
-  git clone --depth 1 --branch "$SV_REF" "$REPO_URL" "$STRANGEVERSE_HOME" 2>/dev/null || \
-    git clone --depth 1 "$REPO_URL" "$STRANGEVERSE_HOME"
+  git clone "$REPO_URL" "$STRANGEVERSE_HOME"
   echo "Cloned strangeverse → $STRANGEVERSE_HOME"
 else
-  echo "Exists: $STRANGEVERSE_HOME"
+  echo "Exists: $STRANGEVERSE_HOME — re-pinning to $SV_REF"
 fi
+jarvis_git_checkout_pin "$STRANGEVERSE_HOME" "$SV_REF"
 
 if [ ! -f "$STRANGEVERSE_HOME/.env" ] && [ -f "$STRANGEVERSE_HOME/.env.example" ]; then
   cp "$STRANGEVERSE_HOME/.env.example" "$STRANGEVERSE_HOME/.env"

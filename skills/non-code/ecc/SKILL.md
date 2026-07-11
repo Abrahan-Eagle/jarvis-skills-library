@@ -25,7 +25,14 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Wrapper bash a [`ecc-universal`](https://www.npmjs.com/package/ecc-universal). Router: `ecc-router`. Doc: [docs/ECC_INTEGRATION.md](../../../docs/ECC_INTEGRATION.md).
 
-**Bin:** `skills/non-code/ecc/bin/ecc` — usa `node $ECC_HOME/scripts/ecc.js` si el clone existe.
+**Bin (repo):** `skills/non-code/ecc/bin/ecc`  
+**Tras `install.sh`:** `~/.cursor/skills/ecc/bin/ecc` — añadir al `PATH` o invocar con ruta absoluta:
+
+```bash
+export PATH="$HOME/.cursor/skills/ecc/bin:$PATH"
+ecc status
+ecc consult laravel security review   # multi-palabra OK ("$*")
+```
 
 ## Comandos
 
