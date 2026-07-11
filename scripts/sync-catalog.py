@@ -48,7 +48,7 @@ def short_desc(fm: dict) -> str:
 
 
 def main() -> None:
-    entries: list[tuple[str, str, str, str]] = []
+    entries: list[tuple[str, str, str, str, str | None]] = []
     auto_map: dict[str, list[str]] = defaultdict(list)
 
     for skill_md in sorted(SKILLS_ROOT.rglob("SKILL.md")):
@@ -62,10 +62,18 @@ def main() -> None:
         category = category_from_path(skill_md)
         desc = short_desc(fm)
         rel = skill_md.relative_to(ROOT).as_posix()
-        entries.append((category, name, desc, rel))
-
         meta = fm.get("metadata") or {}
+        status = None
         if isinstance(meta, dict):
+            raw_status = meta.get("status")
+            if isinstance(raw_status, str) and raw_status.strip():
+                status = raw_status.strip().lower()
+        entries.append((category, name, desc, rel, status))
+
+        if isinstance(meta, dict):
+            # Deprecated stubs stay in CATALOG but must not pollute AUTO_INVOKE.
+            if status == "deprecated":
+                continue
             invokes = meta.get("auto_invoke") or []
             if isinstance(invokes, str):
                 invokes = [invokes]
@@ -77,7 +85,7 @@ def main() -> None:
 
     # Counts by category
     counts: dict[str, int] = defaultdict(int)
-    for cat, _, _, _ in entries:
+    for cat, _, _, _, _ in entries:
         counts[cat] += 1
 
     lines = [
@@ -97,7 +105,7 @@ def main() -> None:
     lines.append("")
 
     current_cat = None
-    for category, name, desc, rel in entries:
+    for category, name, desc, rel, status in entries:
         if category != current_cat:
             if current_cat is not None:
                 lines.append("")
@@ -107,7 +115,10 @@ def main() -> None:
             lines.append("| Skill | Descripción | Ruta |")
             lines.append("|-------|-------------|------|")
         short = desc[:120] + ("…" if len(desc) > 120 else "")
-        lines.append(f"| `{name}` | {short} | [{rel}]({rel}) |")
+        name_cell = f"`{name}`"
+        if status == "deprecated":
+            name_cell = f"`{name}` *(deprecated)*"
+        lines.append(f"| {name_cell} | {short} | [{rel}]({rel}) |")
 
     lines.append("")
 
@@ -143,6 +154,15 @@ def main() -> None:
             "session-learner-ops",
             "finishing-a-development-branch",
         ],
+        # AGENTS.md canónico: strategic-compact-ops → handoff (misma acción, sin acento en auto_invoke)
+        "Compactar o traspasar sesion": [
+            "strategic-compact-ops",
+            "handoff",
+        ],
+        "Compactar contexto": [
+            "strategic-compact-ops",
+            "handoff",
+        ],
     }
 
     def order_skills(action: str, names: list[str]) -> list[str]:
@@ -160,6 +180,7 @@ def main() -> None:
         f"> Generado por `scripts/sync-catalog.py` — {date.today().isoformat()}",
         "",
         "> Multi-skill: orden = precedencia `jarvis-core` cuando aplica; resto alfabético.",
+        "> Skills con `metadata.status: deprecated` se omiten de esta tabla (siguen en CATALOG).",
         "",
         "| Acción | Skill(s) |",
         "|--------|----------|",
