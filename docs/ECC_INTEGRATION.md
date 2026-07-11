@@ -18,13 +18,28 @@ Forense detallado: [ECC_FORENSE_JARVIS.md](ECC_FORENSE_JARVIS.md).
 | Necesidad | Usar |
 |-----------|------|
 | Workflow módulo, plan, cierre | `jarvis-core`, `brainstorming-ops`, `session-learner-ops` |
+| Arranque de sesión (sin hooks) | `session-startup-ops` |
+| Compactación estratégica (sin hooks) | `strategic-compact-ops` → `handoff` |
+| Modos research/produce/review | `context-packs-ops` |
 | TDD / verificación | `test-driven-development`, `verification-before-completion` |
 | Git / commits / push | `git-commit`, `git-guardrails-ops` |
 | Code review | `code-review-playbook` |
+| Pre-gate publicación/deploy | `llm-as-judge-ops` → `approval-gate` ([APPROVAL_GATES.md](APPROVAL_GATES.md)) |
 | Seguridad OWASP (checklist) | `security` o `security-review-ecc` si ECC instalado |
-| Instincts / evolve / hooks runtime | `ecc-router` → ECC install + `continuous-learning-v2` |
+| Instincts / evolve / hooks runtime | `ecc-router` → ECC install + `continuous-learning-v2` (sin hooks: `learning-loop` HITL) |
 | Rules PHP/TS en `.cursor/` | `install-ecc-runtime.sh` en repo producto |
 | Descubrir componente ECC | `ecc consult "<query>"` |
+
+### Mapa concepto ECC → skill JARVIS (cherry-pick 2026-07)
+
+| Concepto ECC | JARVIS (sin plugin) | Runtime ECC opt-in |
+|--------------|---------------------|--------------------|
+| session-start/end.js | `session-startup-ops` + `session-learner-ops` | hooks `--with-hooks` |
+| strategic-compact | `strategic-compact-ops` | hooks suggest/pre-compact |
+| contexts/*.md | `context-packs-ops` | packs en `.cursor/` |
+| continuous-learning /learn | `learning-loop` (HITL) | `continuous-learning-v2` + hooks |
+| eval / verify | `llm-as-judge-ops` + `verification-before-completion` | eval-harness upstream |
+| approval | `approval-gate` + HITL | — |
 
 ## Arquitectura
 
@@ -86,6 +101,7 @@ Delega a `$ECC_HOME/scripts/ecc.js` (clone upstream) si existe; fallback `npx ec
 ecc status
 ecc consult "laravel security review"
 ecc doctor
+ecc repair
 ```
 
 ## Sync curado (mantenedor)

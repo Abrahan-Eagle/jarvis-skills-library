@@ -16,11 +16,15 @@ approval-gate request --handoff payload.json --ag AG-12 --task task-xxx
 approval-gate approve --id esc-20260602-abc1
 ```
 
-Escalaciones en `state/escalations/`. Ver [docs/APPROVAL_GATES.md](../../docs/APPROVAL_GATES.md).
+Escalaciones en `state/escalations/`. Ver [docs/APPROVAL_GATES.md](../../../docs/APPROVAL_GATES.md).
+
+**Pre-gate:** antes de `request` en AG-12/AG-13, correr `llm-as-judge-ops` (score bajo → no solicitar gate). Detalle en la sección *Pre-gate automático* del doc.
 
 ## Skills relacionadas
 
-- mkt-publish
 - publish-safety
-- creative-qa
 - activity-log
+- llm-as-judge-ops
+- human-in-the-loop-ops
+- git-guardrails-ops
+- parallel-judge-ops

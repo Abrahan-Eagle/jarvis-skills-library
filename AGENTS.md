@@ -47,6 +47,9 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 | Acción | Skill |
 |--------|-------|
 | **init jarvis** / integrar JARVIS en proyecto | `project-bootstrap-ops` |
+| Iniciar / retomar sesión | `session-startup-ops` |
+| Compactar contexto (sugerencia estratégica) | `strategic-compact-ops` → `handoff` |
+| Modo research / produce / review | `context-packs-ops` |
 | Tarea no trivial | `jarvis-experts` → **`fan-out-synthesize-ops`** |
 | Explorar codebase / auditoría / feature multi-archivo | **`fan-out-synthesize-ops`** |
 | Nueva feature de producto | `sdd-router` / `kitty-router` / `openspec-router` según marcador de repo |
@@ -87,7 +90,7 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 | Comentarios humanos (PR, issue, review, Slack) | `comment-writer-ops` |
 | Push/merge | `git-guardrails-ops` (solo con orden explícita del usuario) |
 | Code review | `code-review-playbook` |
-| Compactar o traspasar sesión | `handoff` |
+| Compactar o traspasar sesión | `strategic-compact-ops` → `handoff` |
 | Cerrar sesión | `context-updater`, `session-learner-ops` |
 
 Los productos referencian esta tabla en su `AGENTS.md`; no copiar el contenido de cada `SKILL.md` global al repo del producto.
