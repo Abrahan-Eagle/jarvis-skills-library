@@ -26,7 +26,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 ## JARVIS (mandatory)
 
-- **Router:** `claude-skills-router`. Doc: [docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](../../docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md)
+- **Router:** `claude-skills-router`. Doc: [docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](../../../docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md)
 - **Precedencia:** `jarvis-core` > esta skill. Complementa `security` (app/API) y `validate-skills.sh` (net-exec en library).
 - **CLI local:** `python3 skills/ops/skill-security-auditor/scripts/skill_security_auditor.py <path> [--strict] [--json]`
 - **Mantenedor:** tras sync upstream, ejecutar smoke + `validate-all.sh`.

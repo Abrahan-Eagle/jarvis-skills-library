@@ -177,4 +177,4 @@ Command ends after Phase 2 planning. Report branch, IMPL_PLAN path, and generate
 - For dual-repo products, use path prefixes in `plan.md` (e.g. `backend:`, `front:`) per product convention.
 - Invoke domain architecture skills from the active repo (`corralx-*`, `zonix-*`, etc.) alongside this skill.
 - Do not plan investor packs, marketing-only docs, or financial figures under Spec Kit.
-- If `plan.md` includes screens, landing, or UI work: note invocation of `ui-router` and domain UI skills in the plan; see [docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md).
+- If `plan.md` includes screens, landing, or UI work: note invocation of `ui-router` and domain UI skills in the plan; see [docs/SDX_ECOSYSTEM.md](../../../docs/SDX_ECOSYSTEM.md).

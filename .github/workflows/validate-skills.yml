@@ -26,6 +26,9 @@ jobs:
           bash scripts/validate-skills.sh
           python3 scripts/validate-yaml.py
 
+      - name: Markdown relative links
+        run: python3 scripts/validate-markdown-links.py
+
       - name: Lock freshness gate
         run: |
           python3 scripts/sync-lock.py

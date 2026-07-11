@@ -32,7 +32,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Router para [Everything Claude Code](https://github.com/affaan-m/ecc) (MIT): harness (hooks, rules, agents `ecc-*`, instincts) **sin** sustituir `jarvis-core`.
 
-Guía JARVIS: [docs/ECC_INTEGRATION.md](../../docs/ECC_INTEGRATION.md). Forense: [docs/ECC_FORENSE_JARVIS.md](../../docs/ECC_FORENSE_JARVIS.md).
+Guía JARVIS: [docs/ECC_INTEGRATION.md](../../../docs/ECC_INTEGRATION.md). Forense: [docs/ECC_FORENSE_JARVIS.md](../../../docs/ECC_FORENSE_JARVIS.md).
 
 ## Detección runtime
 

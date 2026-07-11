@@ -29,7 +29,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash, Task]
 
 Router para [learning-loop-skill](https://github.com/melodykoh/learning-loop-skill) (MIT v4.1): captura estructurada de aprendizajes **sin** sustituir cierre canónico JARVIS.
 
-Guía: [docs/LEARNING_LOOP_INTEGRATION.md](../../docs/LEARNING_LOOP_INTEGRATION.md). Forense: [docs/LEARNING_LOOP_FORENSE_JARVIS.md](../../docs/LEARNING_LOOP_FORENSE_JARVIS.md). Gates humanos en loops autónomos (no sustituye wrap-up): `human-in-the-loop-ops` ([docs/LOOP_AI_ECOSYSTEM.md](../../docs/LOOP_AI_ECOSYSTEM.md)).
+Guía: [docs/LEARNING_LOOP_INTEGRATION.md](../../../docs/LEARNING_LOOP_INTEGRATION.md). Forense: [docs/LEARNING_LOOP_FORENSE_JARVIS.md](../../../docs/LEARNING_LOOP_FORENSE_JARVIS.md). Gates humanos en loops autónomos (no sustituye wrap-up): `human-in-the-loop-ops` ([docs/LOOP_AI_ECOSYSTEM.md](../../../docs/LOOP_AI_ECOSYSTEM.md)).
 
 ## Detección runtime
 
@@ -52,7 +52,7 @@ test -d "${HOME}/.cursor/learning-captures" && echo LEARNING_CAPTURES_EXIST
 | Cierre módulo + señales extra | `session-learner-ops` luego opcional wrap-up | solo learning-loop |
 | Loops automáticos impl→review→verify | **`skill-loop-router`** → skill `skill-loop` (YAML + CLI) | **learning-loop** (no orquesta pasadas de trabajo) |
 
-**vs skill-loop:** learning-loop captura aprendizajes de sesión; skill-loop orquesta pasadas de implementación/revisión. Ver [SKILL_LOOP_FORENSE_JARVIS.md](../../docs/SKILL_LOOP_FORENSE_JARVIS.md).
+**vs skill-loop:** learning-loop captura aprendizajes de sesión; skill-loop orquesta pasadas de implementación/revisión. Ver [SKILL_LOOP_FORENSE_JARVIS.md](../../../docs/SKILL_LOOP_FORENSE_JARVIS.md).
 
 ## Flujo recomendado (Cursor)
 

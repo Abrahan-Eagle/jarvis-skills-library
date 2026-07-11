@@ -65,4 +65,4 @@ spec-kitty profile-invocation complete \
 
 ## Documentación
 
-[docs/SPEC_KITTY_INTEGRATION.md](../../docs/SPEC_KITTY_INTEGRATION.md)
+[docs/SPEC_KITTY_INTEGRATION.md](../../../docs/SPEC_KITTY_INTEGRATION.md)

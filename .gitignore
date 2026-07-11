@@ -6,3 +6,15 @@ __pycache__/
 *.swp
 *~
 .tmp-*-sync/
+
+# Local secrets / runtime state
+.env
+.env.*
+!.env.example
+state/
+
+# Ephemeral upstream copies from sync scripts (not curated snapshots)
+**/SKILL.upstream.md
+# Intentional tracked snapshots (human-readable upstream excerpts)
+!skills/engineering/doubt-driven-development/references/orchestration-patterns.upstream.md
+!skills/ops/learning-loop/references/SESSION_LOG.upstream.md

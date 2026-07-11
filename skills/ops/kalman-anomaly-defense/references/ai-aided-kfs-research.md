@@ -60,7 +60,7 @@ Implementación y comparación de **filtros Kalman asistidos por IA** en un **at
 
 | Escenario | Camino recomendado |
 |-----------|-------------------|
-| MVP defensa runtime, spikes API, política alert/throttle/block | [`kalman_1d_anomaly.py`](../../scripts/kalman_1d_anomaly.py) + [staged-response-policy.md](staged-response-policy.md) + `approval-gate` |
+| MVP defensa runtime, spikes API, política alert/throttle/block | [`kalman_1d_anomaly.py`](../scripts/kalman_1d_anomaly.py) + [staged-response-policy.md](staged-response-policy.md) + `approval-gate` |
 | Auditoría código OWASP | `cyber-neo-router` |
 | Checklist auth/uploads al codificar | `security` |
 | R&D: ML gain / Lorenz / KalmanNet | Clonar AI_Aided_KFs fuera del library; licencia TBD |

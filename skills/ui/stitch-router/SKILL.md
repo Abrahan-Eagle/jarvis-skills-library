@@ -30,7 +30,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Router para **prototipos web en Google Stitch** (MCP + skills upstream). Complementa `ui-router` (Flutter/Blade en repo) y `open-design-router` (artefactos standalone Open Design).
 
-Guía JARVIS: [docs/STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md).
+Guía JARVIS: [docs/STITCH_UPSTREAM.md](../../../docs/STITCH_UPSTREAM.md).
 
 Docs oficiales MCP: [setup](https://stitch.withgoogle.com/docs/mcp/setup/?pli=1) · [guide](https://stitch.withgoogle.com/docs/mcp/guide/?pli=1) · [reference](https://stitch.withgoogle.com/docs/mcp/reference/?pli=1)
 
@@ -38,7 +38,7 @@ Docs oficiales MCP: [setup](https://stitch.withgoogle.com/docs/mcp/setup/?pli=1)
 
 Antes de generar o leer pantallas Stitch:
 
-1. **Config Cursor (recomendada):** `@_davideast/stitch-mcp proxy` vía `.cursor/mcp.json` — plantilla `mcp.json.proxy.example` en CorralX-Frontend. Ver [STITCH_UPSTREAM.md](../../docs/STITCH_UPSTREAM.md).
+1. **Config Cursor (recomendada):** `@_davideast/stitch-mcp proxy` vía `.cursor/mcp.json` — plantilla `mcp.json.proxy.example` en CorralX-Frontend. Ver [STITCH_UPSTREAM.md](../../../docs/STITCH_UPSTREAM.md).
 2. **Diagnóstico:** `STITCH_API_KEY=... npx -y @_davideast/stitch-mcp@latest doctor` → healthy.
 3. **Reiniciar** Cursor / MCP tras cambiar credenciales.
 4. **Settings → Tools & MCPs:** deben aparecer tools (`list_projects`, `get_screen`, …). **Punto verde + "No tools" = NO operativo** ([foro Cursor](https://forum.cursor.com/t/mcp-server-connected-green-dot-and-tools-discovered-in-logs-but-0-tools-in-ui-and-agent/160620)).

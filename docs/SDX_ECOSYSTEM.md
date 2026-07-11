@@ -24,7 +24,7 @@ JARVIS **no** usa MetaSpec CLI para distribuir skills; usa `jarvis-skills-librar
 
 ## Toolkits registrados
 
-Ver [`catalog/SDX_TOOLKITS.md`](catalog/SDX_TOOLKITS.md) (generado desde `catalog/sdx-toolkit-registry.json`).
+Ver [`catalog/SDX_TOOLKITS.md`](../catalog/SDX_TOOLKITS.md) (generado desde `catalog/sdx-toolkit-registry.json`).
 
 | Toolkit | Pin | Sync |
 |---------|-----|------|

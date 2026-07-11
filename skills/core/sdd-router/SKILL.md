@@ -33,7 +33,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Router de **proceso**, no de dominio. Skills `{producto}-*` siguen en el repo del producto.
 
-Repo **sin** `AGENTS.md` ni marcadores SDD (`.specify/`, `.kittify/`, `openspec/`): invocar `project-bootstrap-ops` ([PROJECT_ONBOARDING.md](../../docs/PROJECT_ONBOARDING.md)) antes de elegir flujo.
+Repo **sin** `AGENTS.md` ni marcadores SDD (`.specify/`, `.kittify/`, `openspec/`): invocar `project-bootstrap-ops` ([PROJECT_ONBOARDING.md](../../../docs/PROJECT_ONBOARDING.md)) antes de elegir flujo.
 
 ## Detección (repo activo)
 
@@ -67,7 +67,7 @@ Con `.specify/` y trabajo distinto de feature nueva, invocar **`speckit-lifecycl
 | Modificar feature `NNN` | `speckit-specify` (usar modify) |
 | Deprecar feature | `speckit-specify` |
 
-Guía: [docs/SPEC_KIT_EXTENSIONS.md](../../docs/SPEC_KIT_EXTENSIONS.md).
+Guía: [docs/SPEC_KIT_EXTENSIONS.md](../../../docs/SPEC_KIT_EXTENSIONS.md).
 
 ## Cadena Spec Kit — feature nueva (orden)
 
@@ -102,11 +102,11 @@ Opcional en cualquier fase pre-implement: `speckit-checklist`.
 
 ## Bootstrap Spec Kit en un producto
 
-Ver [docs/SDD_SPECKIT_INTEGRATION.md](../../docs/SDD_SPECKIT_INTEGRATION.md).
+Ver [docs/SDD_SPECKIT_INTEGRATION.md](../../../docs/SDD_SPECKIT_INTEGRATION.md).
 
-Repos con Spec Kitty: [docs/SPEC_KITTY_INTEGRATION.md](../../docs/SPEC_KITTY_INTEGRATION.md) + `kitty-router`.
+Repos con Spec Kitty: [docs/SPEC_KITTY_INTEGRATION.md](../../../docs/SPEC_KITTY_INTEGRATION.md) + `kitty-router`.
 
-Repos con OpenSpec: [docs/AWESOME_SPEC_KITS.md](../../docs/AWESOME_SPEC_KITS.md) + `openspec-router`.
+Repos con OpenSpec: [docs/AWESOME_SPEC_KITS.md](../../../docs/AWESOME_SPEC_KITS.md) + `openspec-router`.
 
 ## SD-X más amplio
 
@@ -118,7 +118,7 @@ Si la tarea mezcla **desarrollo + diseño + docs** o no está claro qué rama SD
 | `speckit-implement` con tareas UI | `ui-router` + dominio UI + TDD |
 | Cierre de feature (AGENTS, walkthrough) | `documentar-avances`, `context-updater` — no Spec Kit |
 
-Ver [docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md).
+Ver [docs/SDX_ECOSYSTEM.md](../../../docs/SDX_ECOSYSTEM.md).
 
 ## Equivalencias
 

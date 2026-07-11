@@ -31,28 +31,28 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Índice de **qué skill invocar** según el tipo de salida (filosofía SD-X: Specs → AI → X). Alineado con [awesome-spec-kits](https://github.com/acnlabs/awesome-spec-kits); JARVIS usa **Cursor skills** + `install.sh`, no MetaSpec CLI.
 
-Guía completa: [docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md). Catálogo externo: [docs/AWESOME_SPEC_KITS.md](../../docs/AWESOME_SPEC_KITS.md). Registro: [catalog/sdx-toolkit-registry.json](../../catalog/sdx-toolkit-registry.json).
+Guía completa: [docs/SDX_ECOSYSTEM.md](../../../docs/SDX_ECOSYSTEM.md). Catálogo externo: [docs/AWESOME_SPEC_KITS.md](../../../docs/AWESOME_SPEC_KITS.md). Registro: [catalog/sdx-toolkit-registry.json](../../../catalog/sdx-toolkit-registry.json).
 
 ## Mapa SD-X → skills
 
 | SD-X | Cuándo | Skills / artefactos |
 |------|--------|---------------------|
 | **SD-Development** (`.specify/`) | Feature **nueva** con Spec Kit | `sdd-router` → `speckit-specify` + dominio |
-| **SD-Maintenance** (`.specify/`) | Bugfix, hotfix, refactor, modify, deprecate | `speckit-lifecycle-router` — ver [SPEC_KIT_EXTENSIONS.md](../../docs/SPEC_KIT_EXTENSIONS.md) |
+| **SD-Maintenance** (`.specify/`) | Bugfix, hotfix, refactor, modify, deprecate | `speckit-lifecycle-router` — ver [SPEC_KIT_EXTENSIONS.md](../../../docs/SPEC_KIT_EXTENSIONS.md) |
 | **SD-Development** (`.kittify/`) | Misiones Spec Kitty, work packages | `kitty-router` → CLI + `kitty-governance` |
 | **SD-Development** (`openspec/`) | Cambios fluidos, brownfield | `openspec-router` → OPSX propose/apply/archive |
 | **SD-Design** (código en repo) | Pantallas, landing en Flutter/Blade | `ui-router` → dominio UI → `ui-ux-pro-max` |
-| **SD-Design** (artefactos agentic) | Carrusel, deck, email HTML, prototipo standalone | `open-design-router` → `open-design` — [OPEN_DESIGN_INTEGRATION.md](../../docs/OPEN_DESIGN_INTEGRATION.md) |
-| **SD-Research** (what-if / simulación) | Briefing holding, escenarios, opinión pública | `strategic-briefing-ops` o `scenario-router` → `scenario-analysis-ops` / `strangeverse` — [MIROFISH_UPSTREAM.md](../../docs/MIROFISH_UPSTREAM.md) |
+| **SD-Design** (artefactos agentic) | Carrusel, deck, email HTML, prototipo standalone | `open-design-router` → `open-design` — [OPEN_DESIGN_INTEGRATION.md](../../../docs/OPEN_DESIGN_INTEGRATION.md) |
+| **SD-Research** (what-if / simulación) | Briefing holding, escenarios, opinión pública | `strategic-briefing-ops` o `scenario-router` → `scenario-analysis-ops` / `strangeverse` — [MIROFISH_UPSTREAM.md](../../../docs/MIROFISH_UPSTREAM.md) |
 | **SD-Documentation** | Cierre módulo, AGENTS, walkthrough | `documentar-avances`, `context-updater` |
 | **SD-Test** | Implementación y cierre | `test-driven-development`, `verification-before-completion` |
 | **SD-Validate** | Pre-implement, gates | `speckit-analyze`, `speckit-checklist` |
-| **SD-Validate** | Auditoría seguridad read-only + reporte | `cyber-neo-router` → `cyber-neo` — [CYBER_NEO_INTEGRATION.md](../../docs/CYBER_NEO_INTEGRATION.md) |
-| **SD-Config** | Harness agent (hooks, rules, instincts) | `ecc-router` → `ecc` / `configure-ecc` — [ECC_INTEGRATION.md](../../docs/ECC_INTEGRATION.md) |
+| **SD-Validate** | Auditoría seguridad read-only + reporte | `cyber-neo-router` → `cyber-neo` — [CYBER_NEO_INTEGRATION.md](../../../docs/CYBER_NEO_INTEGRATION.md) |
+| **SD-Config** | Harness agent (hooks, rules, instincts) | `ecc-router` → `ecc` / `configure-ecc` — [ECC_INTEGRATION.md](../../../docs/ECC_INTEGRATION.md) |
 | **SD-Config** | Extensions, presets Spec Kit | `.specify/extensions.yml`, Spec Kitty `.kittify/` |
 | **SD-API** | Diseño REST/GraphQL sin speckit dedicado | `api-design-principles` + dominio `{producto}-api-patterns` |
 | **SD-Protocol** | Protocolos, estándares wire | Sin speckit JARVIS global — evaluar speckit externo o dominio |
-| **SDM** (marketing ops) | Campañas, workflows marketing | Watchlist `marketing-spec-kit` — ver [AWESOME_SPEC_KITS.md](../../docs/AWESOME_SPEC_KITS.md) |
+| **SDM** (marketing ops) | Campañas, workflows marketing | Watchlist `marketing-spec-kit` — ver [AWESOME_SPEC_KITS.md](../../../docs/AWESOME_SPEC_KITS.md) |
 
 ## Decisión rápida
 
@@ -92,7 +92,7 @@ test -d kitty-specs && echo "HAS_KITTY_SPECS"
 | [Spec Kit Extensions](https://github.com/MartyBonacci/spec-kit-extensions) | Maintenance (bugfix, etc.) | `speckit-lifecycle-router` + install en producto |
 | [Open Design](https://github.com/nexu-io/open-design) 0.10.0 | Design (artefactos agentic) | `open-design-router`, `open-design` — `scripts/install-open-design-runtime.sh` |
 | [StrangeVerse](https://github.com/Abrahan-Eagle/strangeverse) main | Research (simulación multi-agente) | `scenario-router`, `strategic-briefing-ops`, `scenario-analysis-ops`, `strangeverse` — `scripts/install-strangeverse-runtime.sh` |
-| [MiroFish](https://github.com/666ghj/MiroFish) V0.1.2 | Research (referencia upstream AGPL) | Patrones en skills mesa — [MIROFISH_UPSTREAM.md](../../docs/MIROFISH_UPSTREAM.md) |
+| [MiroFish](https://github.com/666ghj/MiroFish) V0.1.2 | Research (referencia upstream AGPL) | Patrones en skills mesa — [MIROFISH_UPSTREAM.md](../../../docs/MIROFISH_UPSTREAM.md) |
 | [ECC](https://github.com/affaan-m/ecc) v2.0.0 | Config (harness Cursor) | `ecc-router`, `ecc`, curated ops skills — `scripts/install-ecc-runtime.sh`, `scripts/sync-ecc-skills.sh` |
 | [Cyber Neo](https://github.com/Hainrixz/cyber-neo) 9a8998a | Validate (security audit) | `cyber-neo-router`, `cyber-neo`, `cyber-neo-cli` — `scripts/sync-cyber-neo-skill.sh` |
 
@@ -120,7 +120,7 @@ No mezclar marcadores en el mismo repo sin decisión explícita.
 
 ## awesome-spec-kits watchlist
 
-Fuente upstream: `speckits.json` en [acnlabs/awesome-spec-kits](https://github.com/acnlabs/awesome-spec-kits). Detalle: [AWESOME_SPEC_KITS.md](../../docs/AWESOME_SPEC_KITS.md).
+Fuente upstream: `speckits.json` en [acnlabs/awesome-spec-kits](https://github.com/acnlabs/awesome-spec-kits). Detalle: [AWESOME_SPEC_KITS.md](../../../docs/AWESOME_SPEC_KITS.md).
 
 | Speckit | Estado JARVIS |
 |---------|----------------|

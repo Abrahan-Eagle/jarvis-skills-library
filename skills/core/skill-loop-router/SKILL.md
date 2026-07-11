@@ -35,7 +35,7 @@ Router para [takumiyoshikawa/skill-loop](https://github.com/takumiyoshikawa/skil
 
 **No es** `learning-loop` (melodykoh) — ese captura aprendizajes de sesión.
 
-Guía: [docs/SKILL_LOOP_INTEGRATION.md](../../docs/SKILL_LOOP_INTEGRATION.md). Forense: [docs/SKILL_LOOP_FORENSE_JARVIS.md](../../docs/SKILL_LOOP_FORENSE_JARVIS.md). Gates humanos en loops autónomos: `human-in-the-loop-ops` ([docs/LOOP_AI_ECOSYSTEM.md](../../docs/LOOP_AI_ECOSYSTEM.md) — *Taxonomía de threads* y *Patrones de workflow dinámico*). En Claude Code nativo, fan-out / tournament / generate-and-filter equivalen a **dynamic workflows**; en Cursor usar Task + este router.
+Guía: [docs/SKILL_LOOP_INTEGRATION.md](../../../docs/SKILL_LOOP_INTEGRATION.md). Forense: [docs/SKILL_LOOP_FORENSE_JARVIS.md](../../../docs/SKILL_LOOP_FORENSE_JARVIS.md). Gates humanos en loops autónomos: `human-in-the-loop-ops` ([docs/LOOP_AI_ECOSYSTEM.md](../../../docs/LOOP_AI_ECOSYSTEM.md) — *Taxonomía de threads* y *Patrones de workflow dinámico*). En Claude Code nativo, fan-out / tournament / generate-and-filter equivalen a **dynamic workflows**; en Cursor usar Task + este router.
 
 ## Detección runtime
 
@@ -70,7 +70,7 @@ test -d "${HOME}/.cursor/skills/skill-loop" && echo SKILL_LOOP_INSTALLED
 
 ## Plantilla JARVIS
 
-Ver [docs/templates/skill-loop-jarvis-feature.yml.example](../../docs/templates/skill-loop-jarvis-feature.yml.example).
+Ver [docs/templates/skill-loop-jarvis-feature.yml.example](../../../docs/templates/skill-loop-jarvis-feature.yml.example).
 
 ## Limitaciones
 

@@ -30,7 +30,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Router para **artefactos visuales standalone** (HTML, deck, carrusel, email, MP4) via [Open Design](https://github.com/nexu-io/open-design). Complementa `ui-router` (pantallas en Flutter/Blade).
 
-Guía JARVIS: [docs/OPEN_DESIGN_INTEGRATION.md](../../docs/OPEN_DESIGN_INTEGRATION.md).
+Guía JARVIS: [docs/OPEN_DESIGN_INTEGRATION.md](../../../docs/OPEN_DESIGN_INTEGRATION.md).
 
 ## Detección runtime
 

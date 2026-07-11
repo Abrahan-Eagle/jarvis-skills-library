@@ -33,7 +33,7 @@ allowed-tools: [Read, Write, Edit, Grep, Glob, Bash]
 - **Runtime preferido:** `cursor-cli` (binario `agent` en PATH) en plantillas JARVIS; requiere Cursor CLI instalado.
 - **Ejecución CLI:** `skill-loop run` solo **tras OK explícito del usuario** en el YAML generado. Ver `install-skill-loop-runtime.sh`.
 - **Starter skills JARVIS:** Copiar `assets/jarvis-implement|review|verify.SKILL.md.tmpl` → `.agents/skills/<step>/SKILL.md`.
-- **Router:** `skill-loop-router`. Doc: [docs/SKILL_LOOP_INTEGRATION.md](../../docs/SKILL_LOOP_INTEGRATION.md)
+- **Router:** `skill-loop-router`. Doc: [docs/SKILL_LOOP_INTEGRATION.md](../../../docs/SKILL_LOOP_INTEGRATION.md)
 - **vs learning-loop:** skill-loop orquesta pasadas de trabajo; learning-loop captura aprendizajes — no confundir.
 - `upstream: skill-loop:skill-loop`
 

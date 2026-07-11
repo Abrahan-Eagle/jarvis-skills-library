@@ -33,7 +33,7 @@ Skill JARVIS-original para **detección runtime** bajo ruido y **respuesta escal
 
 **No sustituye** auditoría estática (`cyber-neo`) ni checklist al codificar (`security`). Complementa: filtro → señal; agente → política.
 
-Guía: [docs/KALMAN_ANOMALY_INTEGRATION.md](../../docs/KALMAN_ANOMALY_INTEGRATION.md). Router: `kalman-anomaly-router`.
+Guía: [docs/KALMAN_ANOMALY_INTEGRATION.md](../../../docs/KALMAN_ANOMALY_INTEGRATION.md). Router: `kalman-anomaly-router`.
 
 ## IRON LAW JARVIS
 

@@ -29,7 +29,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Router para **decisiones estrategicas y what-if**: analisis en mesa (sin motor) vs **simulacion multi-agente** via [StrangeVerse](https://github.com/Abrahan-Eagle/strangeverse). Complementa `sdd-router` (features de producto) y `open-design-router` (artefactos visuales).
 
-Guías JARVIS: [docs/STRANGEVERSE_INTEGRATION.md](../../docs/STRANGEVERSE_INTEGRATION.md), [docs/MIROFISH_UPSTREAM.md](../../docs/MIROFISH_UPSTREAM.md).
+Guías JARVIS: [docs/STRANGEVERSE_INTEGRATION.md](../../../docs/STRANGEVERSE_INTEGRATION.md), [docs/MIROFISH_UPSTREAM.md](../../../docs/MIROFISH_UPSTREAM.md).
 
 ## Detección runtime
 

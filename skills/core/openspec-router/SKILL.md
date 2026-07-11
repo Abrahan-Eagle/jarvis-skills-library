@@ -28,7 +28,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Router para repos con **OpenSpec** ([Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec)). Complementa Spec Kit y Spec Kitty; no los reemplaza.
 
-Guía: [docs/AWESOME_SPEC_KITS.md](../../docs/AWESOME_SPEC_KITS.md). Índice SD-X: [docs/SDX_ECOSYSTEM.md](../../docs/SDX_ECOSYSTEM.md).
+Guía: [docs/AWESOME_SPEC_KITS.md](../../../docs/AWESOME_SPEC_KITS.md). Índice SD-X: [docs/SDX_ECOSYSTEM.md](../../../docs/SDX_ECOSYSTEM.md).
 
 ## Detección (repo activo)
 

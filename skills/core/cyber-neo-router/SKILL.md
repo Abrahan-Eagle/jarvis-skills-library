@@ -30,7 +30,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Router para [Cyber Neo](https://github.com/Hainrixz/cyber-neo) (MIT): auditoría de seguridad **read-only** (11 dominios, OWASP 2025, CWE Top 25, reporte MD) **sin** sustituir `jarvis-core` ni checklist `security`.
 
-Guía JARVIS: [docs/CYBER_NEO_INTEGRATION.md](../../docs/CYBER_NEO_INTEGRATION.md). Forense: [docs/CYBER_NEO_FORENSE_JARVIS.md](../../docs/CYBER_NEO_FORENSE_JARVIS.md).
+Guía JARVIS: [docs/CYBER_NEO_INTEGRATION.md](../../../docs/CYBER_NEO_INTEGRATION.md). Forense: [docs/CYBER_NEO_FORENSE_JARVIS.md](../../../docs/CYBER_NEO_FORENSE_JARVIS.md).
 
 ## Detección runtime
 

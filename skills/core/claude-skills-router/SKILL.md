@@ -30,7 +30,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash, Task]
 
 Router para [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) (MIT, 345+ skills): **sin** sustituir `jarvis-core`, `speckit-*` ni vendorizar el pack completo.
 
-Guía: [docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](../../docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md).
+Guía: [docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](../../../docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md).
 
 ## IRON LAW
 

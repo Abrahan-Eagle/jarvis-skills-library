@@ -29,7 +29,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Router para repos con **Spec Kitty** ([Priivacy-ai/spec-kitty](https://github.com/Priivacy-ai/spec-kitty)). Complementa (no reemplaza) GitHub Spec Kit.
 
-Guía: [docs/SPEC_KITTY_INTEGRATION.md](../../docs/SPEC_KITTY_INTEGRATION.md).
+Guía: [docs/SPEC_KITTY_INTEGRATION.md](../../../docs/SPEC_KITTY_INTEGRATION.md).
 
 ## Detección (repo activo)
 

@@ -33,7 +33,7 @@ python3 skills/engineering/skill-creator/scripts/init_skill.py mi-skill --path s
 # Editar skills/ops/mi-skill/SKILL.md
 bash scripts/validate-all.sh
 bash scripts/sync-catalog.sh
-bash scripts/sync-lock.py
+python3 scripts/sync-lock.py
 bash scripts/install.sh --all
 ```
 

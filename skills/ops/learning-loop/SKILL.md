@@ -31,7 +31,7 @@ allowed-tools: [Read, Write, Edit, Grep, Glob, Bash, Task]
 - **No slash command:** En Cursor no existe `/learning-loop`. Invocar skill `learning-loop` y que el usuario indique **scan** o **wrap up** (o contexto: "contexto largo", "cerrar sesión", "consolidar").
 - **LEARNING_LOOP_HOME:** `~/.cursor/learning-captures` (override: `$LEARNING_LOOP_HOME`). Sustituye la ruta runtime de Claude Code del upstream.
 - **Sub-agentes:** Cursor **Task** (`subagent_type: generalPurpose`, `readonly: true`). STOP rules upstream (scan/consolidation en main thread = error). No tool `Skill` de Claude Code.
-- **Router:** `learning-loop-router`. Doc: [docs/LEARNING_LOOP_INTEGRATION.md](../../docs/LEARNING_LOOP_INTEGRATION.md)
+- **Router:** `learning-loop-router`. Doc: [docs/LEARNING_LOOP_INTEGRATION.md](../../../docs/LEARNING_LOOP_INTEGRATION.md)
 - **Cierre módulo canónico:** Siempre `session-learner-ops` → `docs/active_context.md` primero; learning-loop wrap-up es **complemento opcional**, no sustituto.
 - `upstream: learning-loop-skill:learning-loop`
 

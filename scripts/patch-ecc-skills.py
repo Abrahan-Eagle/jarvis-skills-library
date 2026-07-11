@@ -53,7 +53,7 @@ OVERLAYS: dict[str, str] = {
 
 - Preferir `bash scripts/install-ecc-runtime.sh --project-dir <repo>` (perfil `minimal` default).
 - No apilar plugin Claude `ecc@ecc` + `install.sh --profile full`.
-- Doc: [docs/ECC_INTEGRATION.md](../../docs/ECC_INTEGRATION.md)
+- Doc: [docs/ECC_INTEGRATION.md](../../../docs/ECC_INTEGRATION.md)
 - `upstream: ecc:configure-ecc`
 """,
 }
@@ -88,12 +88,48 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 """
 
 
+def fix_known_upstream_glitches(body: str) -> str:
+    """Normalize known upstream markdown glitches before writing curated SKILL.md."""
+    # continuous-learning-v2: heading split across lines
+    body = body.replace(
+        "# Continuous Learning v2.1 - Instinct\n-Based Architecture",
+        "# Continuous Learning v2.1 - Instinct-Based Architecture",
+    )
+    return body
+
+
 def patch_skill(upstream_name: str, upstream_md: Path, dest_dir: Path, jarvis_name: str) -> None:
     raw = upstream_md.read_text(encoding="utf-8")
     body = FRONTMATTER_RE.sub("", raw, count=1).strip()
-    overlay = OVERLAYS.get(jarvis_name, "")
-    if OVERLAY_MARKER not in body and overlay.strip():
-        body = body + "\n" + overlay.strip() + "\n"
+    body = fix_known_upstream_glitches(body)
+    overlay = OVERLAYS.get(jarvis_name, "").strip()
+    if overlay:
+        if OVERLAY_MARKER in body:
+            # Drop any existing overlay block (trailing or mid-body) then re-prepend.
+            parts = body.split(OVERLAY_MARKER, 1)
+            before = parts[0].rstrip()
+            after = parts[1]
+            # Remove remainder of old overlay until blank line + non-overlay content heuristic:
+            # keep content after first blank line following overlay bullets if present.
+            after_lines = after.splitlines()
+            # Skip first line (empty or leftover) and bullet lines / short overlay lines
+            idx = 0
+            while idx < len(after_lines):
+                line = after_lines[idx]
+                if idx == 0 and line.strip() == "":
+                    idx += 1
+                    continue
+                if line.startswith("- ") or line.startswith("* ") or line.strip() == "":
+                    idx += 1
+                    # stop after a blank line that follows bullets
+                    if line.strip() == "" and idx > 2:
+                        break
+                    continue
+                break
+            rest = "\n".join(after_lines[idx:]).strip()
+            body = (before + ("\n\n" + rest if rest else "")).strip()
+        # Prepend overlay so HITL/JARVIS notice is visible at skill start
+        body = overlay + "\n\n" + body
     dest_dir.mkdir(parents=True, exist_ok=True)
     out = dest_dir / "SKILL.md"
     out.write_text(build_frontmatter(jarvis_name, upstream_name) + body + "\n", encoding="utf-8")

@@ -29,7 +29,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash, Task]
 
 Router para [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) (MIT): ciclo DEFINE→SHIP **sin** sustituir `jarvis-core`, `speckit-*` ni skills globales duplicadas.
 
-Guía: [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../../docs/AGENT_SKILLS_ADDY_INTEGRATION.md).
+Guía: [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../../../docs/AGENT_SKILLS_ADDY_INTEGRATION.md).
 
 ## IRON LAW
 

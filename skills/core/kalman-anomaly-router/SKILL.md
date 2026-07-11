@@ -30,7 +30,7 @@ Router para skill JARVIS-original `kalman-anomaly-defense`: **detección runtime
 
 **No sustituye** `jarvis-core`, `cyber-neo` (audit estático) ni `security` (checklist al codificar).
 
-Guía: [docs/KALMAN_ANOMALY_INTEGRATION.md](../../docs/KALMAN_ANOMALY_INTEGRATION.md).
+Guía: [docs/KALMAN_ANOMALY_INTEGRATION.md](../../../docs/KALMAN_ANOMALY_INTEGRATION.md).
 
 ## Detección runtime
 
@@ -56,7 +56,7 @@ python3 --version 2>/dev/null
 
 ## Flujo recomendado (Cursor)
 
-1. Definir señales ([metrics-signals.md](../../skills/ops/kalman-anomaly-defense/references/metrics-signals.md)).
+1. Definir señales ([metrics-signals.md](../../ops/kalman-anomaly-defense/references/metrics-signals.md)).
 2. Prototipo: `python3 skills/ops/kalman-anomaly-defense/scripts/kalman_1d_anomaly.py -f <csv>`.
 3. Copiar `assets/response-policy.template.yaml` al repo producto.
 4. Implementar throttle/middleware con TDD.

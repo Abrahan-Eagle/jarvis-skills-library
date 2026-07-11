@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# validate-all.sh — Ejecuta validación shell + PyYAML en todas las skills.
+# validate-all.sh — Ejecuta validación shell + PyYAML + links + smokes en todas las skills.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -11,6 +11,12 @@ bash "$ROOT/scripts/validate-skills.sh"
 echo ""
 echo "== validate-all: PyYAML =="
 if ! python3 "$ROOT/scripts/validate-yaml.py"; then
+  exit 1
+fi
+
+echo ""
+echo "== validate-all: markdown links =="
+if ! python3 "$ROOT/scripts/validate-markdown-links.py"; then
   exit 1
 fi
 

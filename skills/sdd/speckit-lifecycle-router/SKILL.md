@@ -35,7 +35,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Router para el **75% del trabajo SDD** que no es feature nueva: bugfix, modify, refactor, hotfix, deprecate. Complementa `speckit-specify` (solo features nuevas).
 
-Basado en [MartyBonacci/spec-kit-extensions](https://github.com/MartyBonacci/spec-kit-extensions). Guía JARVIS: [docs/SPEC_KIT_EXTENSIONS.md](../../docs/SPEC_KIT_EXTENSIONS.md).
+Basado en [MartyBonacci/spec-kit-extensions](https://github.com/MartyBonacci/spec-kit-extensions). Guía JARVIS: [docs/SPEC_KIT_EXTENSIONS.md](../../../docs/SPEC_KIT_EXTENSIONS.md).
 
 **Requisito:** repo con `.specify/` (Spec Kit). Si no hay `.specify/`, usar `systematic-debugging` + JARVIS plans.
 
@@ -189,4 +189,4 @@ No bloquear. Crear el workflow correcto, copiar notas relevantes al nuevo artefa
 
 ## Instalación en producto
 
-Ver [SPEC_KIT_EXTENSIONS.md](../../docs/SPEC_KIT_EXTENSIONS.md). Script: `scripts/install-spec-kit-extensions.sh --target <repo>`. Comandos Cursor en `.cursor/commands/` del **repo producto**, no en `jarvis-skills-library`.
+Ver [SPEC_KIT_EXTENSIONS.md](../../../docs/SPEC_KIT_EXTENSIONS.md). Script: `scripts/install-spec-kit-extensions.sh --target <repo>`. Comandos Cursor en `.cursor/commands/` del **repo producto**, no en `jarvis-skills-library`.

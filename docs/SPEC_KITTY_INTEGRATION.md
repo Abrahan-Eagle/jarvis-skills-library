@@ -78,7 +78,7 @@ Igual que Spec Kit: invocar `ui-router` + dominio UI + `ui-ux-pro-max` cuando ha
 
 ## SD-X
 
-Registro: [catalog/sdx-toolkit-registry.json](catalog/sdx-toolkit-registry.json). Mapa: [docs/SDX_ECOSYSTEM.md](SDX_ECOSYSTEM.md).
+Registro: [catalog/sdx-toolkit-registry.json](../catalog/sdx-toolkit-registry.json). Mapa: [docs/SDX_ECOSYSTEM.md](SDX_ECOSYSTEM.md).
 
 ## Referencias
 

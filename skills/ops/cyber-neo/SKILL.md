@@ -30,7 +30,7 @@ allowed-tools: [Read, Grep, Glob, Bash, Write]
 - **Read-only:** No modificar el target; solo reporte MD (IRON LAW upstream).
 - **Reporte alternativo:** Si el usuario pide, guardar en `{TARGET}/docs/security/cyber-neo-report-{YYYY-MM-DD}.md` en lugar de Desktop.
 - **PHP/Laravel:** Sin `lang-php.md` en v0.1; usar recon `composer.json`, patrones genéricos, `cyber-neo lockfiles`, `security` para fixes Laravel.
-- **Router:** `cyber-neo-router`. **CLI scripts:** `cyber-neo secrets|lockfiles`. Doc: [docs/CYBER_NEO_INTEGRATION.md](../../docs/CYBER_NEO_INTEGRATION.md)
+- **Router:** `cyber-neo-router`. **CLI scripts:** `cyber-neo secrets|lockfiles`. Doc: [docs/CYBER_NEO_INTEGRATION.md](../../../docs/CYBER_NEO_INTEGRATION.md)
 - `upstream: cyber-neo:cyber-neo`
 
 ---
