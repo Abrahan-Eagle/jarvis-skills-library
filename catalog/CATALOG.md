@@ -1,8 +1,8 @@
 # Catálogo de skills globales
 
-> Generado por `scripts/sync-catalog.py` — 2026-07-10
+> Generado por `scripts/sync-catalog.py` — 2026-07-11
 
-Total: **106** skills
+Total: **109** skills
 
 ## Resumen por categoría
 
@@ -14,7 +14,7 @@ Total: **106** skills
 | `git` | 6 |
 | `mobile` | 4 |
 | `non-code` | 8 |
-| `ops` | 28 |
+| `ops` | 31 |
 | `planning` | 4 |
 | `review` | 6 |
 | `sdd` | 12 |
@@ -109,6 +109,7 @@ Total: **106** skills
 | `backlog-triage-ops` | Triage de backlog GitHub: auditar issues/PRs abiertos, clasificar disposición (merge, request-changes, close, needs-desi… | [skills/ops/backlog-triage-ops/SKILL.md](skills/ops/backlog-triage-ops/SKILL.md) |
 | `brainstorming-ops` | OBLIGATORIO antes de tareas complejas en proyecto activo: pantallas, providers, navegación, flujos KYC/onboarding. Propo… | [skills/ops/brainstorming-ops/SKILL.md](skills/ops/brainstorming-ops/SKILL.md) |
 | `configure-ecc` | ECC install wizard and harness configuration for Cursor. | [skills/ops/configure-ecc/SKILL.md](skills/ops/configure-ecc/SKILL.md) |
+| `context-packs-ops` | Modos de sesión ligeros research / produce / review (concepto ECC contexts/, sin inyección runtime). Define qué skills p… | [skills/ops/context-packs-ops/SKILL.md](skills/ops/context-packs-ops/SKILL.md) |
 | `context-updater` | Actualizar el contexto de sesión para que la IA "recuerde" entre sesiones. Resumir cambios relevantes en docs/active_con… | [skills/ops/context-updater/SKILL.md](skills/ops/context-updater/SKILL.md) |
 | `continuous-learning-v2` | ECC instincts: continuous learning v2, evolve clusters into skills. Use with session-learner-ops at module close. | [skills/ops/continuous-learning-v2/SKILL.md](skills/ops/continuous-learning-v2/SKILL.md) |
 | `cyber-neo` | Auditoría de seguridad read-only: 11 dominios, OWASP 2025, CWE Top 25, reporte priorizado. | [skills/ops/cyber-neo/SKILL.md](skills/ops/cyber-neo/SKILL.md) |
@@ -130,9 +131,11 @@ Total: **106** skills
 | `scenario-router` | Orquesta analisis what-if (scenario-analysis-ops, skills dominio) vs simulacion multi-agente StrangeVerse. | [skills/ops/scenario-router/SKILL.md](skills/ops/scenario-router/SKILL.md) |
 | `security-review-ecc` | ECC OWASP security review checklist (complement to security skill). | [skills/ops/security-review-ecc/SKILL.md](skills/ops/security-review-ecc/SKILL.md) |
 | `session-learner-ops` | Tras cerrar módulo UI: patrones en docs/active_context.md y walkthrough. | [skills/ops/session-learner-ops/SKILL.md](skills/ops/session-learner-ops/SKILL.md) |
+| `session-startup-ops` | Protocolo de arranque de sesión (concepto ECC session-start, sin hooks). Checklist: active_context, Engram si activo, Ro… | [skills/ops/session-startup-ops/SKILL.md](skills/ops/session-startup-ops/SKILL.md) |
 | `skill-loop` | Scaffold skill-loop.yml y starter skills para loops impl-review-rework. | [skills/ops/skill-loop/SKILL.md](skills/ops/skill-loop/SKILL.md) |
 | `skill-security-auditor` | Auditoría de seguridad pre-instalación de agent skills: PASS/WARN/FAIL, prompt injection, supply chain. | [skills/ops/skill-security-auditor/SKILL.md](skills/ops/skill-security-auditor/SKILL.md) |
 | `strategic-briefing-ops` | Briefing estrategico consolidado: sintetiza estado del proyecto, progreso, riesgos y decisiones pendientes en un informe… | [skills/ops/strategic-briefing-ops/SKILL.md](skills/ops/strategic-briefing-ops/SKILL.md) |
+| `strategic-compact-ops` | Compactación estratégica (concepto ECC strategic-compact, sin hooks). Sugiere compactar en hitos lógicos; preserva decis… | [skills/ops/strategic-compact-ops/SKILL.md](skills/ops/strategic-compact-ops/SKILL.md) |
 | `verification-before-completion` | OBLIGATORIO antes de declarar cualquier tarea completada en cualquier proyecto. Ejecuta verificación fresca del stack y … | [skills/ops/verification-before-completion/SKILL.md](skills/ops/verification-before-completion/SKILL.md) |
 
 ## planning

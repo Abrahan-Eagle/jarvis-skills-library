@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-07-10",
+  "generated": "2026-07-11",
   "skills": {
     "api-design-principles": {
       "source": "jarvis-skills-library",
@@ -77,7 +77,7 @@
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "7cc25cadd3958fe679f349148b9da54a0eca4ec6574fd912065a9efd86a950cd",
+      "computedHash": "f0ec35bebf5ae606c3652e38495fbe2cd56630c76285b563c5d68e2378789009",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
@@ -274,37 +274,37 @@
     "activity-log": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "2bae723d16f6967f0f4f5a15f0575df66557e3573667206a99b0350cfef1708b",
+      "computedHash": "b4027c4a3933d6742d00cf181c1c8f9c80a17348c30afdb2a419b02f6f89e8c3",
       "path": "skills/non-code/activity-log/SKILL.md"
     },
     "approval-gate": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "81e54ced66015254f8614f9288f2bc2cb46cc9c1692172be7e6661ef8a34ee95",
+      "computedHash": "cd6f8b64d22b820818341d98d311799595b56de076e77b0e25b92e5c42df4414",
       "path": "skills/non-code/approval-gate/SKILL.md"
     },
     "client-report": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "c7ebb82e47bb7f3b608934401a7aa2c47e9a4ca6fa0162e8a4013129f57dc540",
+      "computedHash": "bb47a6cfd286d4bb546c1f4207e454729510b0f1923cf3af11fbb2707f8da2b3",
       "path": "skills/non-code/client-report/SKILL.md"
     },
     "cyber-neo-cli": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "c00ffed1e1c57bc5fb107a6abdcfef67377ad21e860092f8ed5bd81bf62b04d3",
+      "computedHash": "8819edd43c69d8db80214b54c032240430d54b6f3d32e8f9097501621b5c1abf",
       "path": "skills/non-code/cyber-neo-cli/SKILL.md"
     },
     "ecc": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "c41e57127fdb871b51a225797843d86059a23781b7cf1f978c6eae279a0314e6",
+      "computedHash": "1369fa6b1a36be05c81d0d8e0a7b44a304e59b18955e430395db5bf21f0c174b",
       "path": "skills/non-code/ecc/SKILL.md"
     },
     "open-design": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "b04ab1d4e4b723eeb42a76e7bed87141cc8eacf5ba726ed4087ca11962d9007b",
+      "computedHash": "ad1701aec132ac0031ab4cd92f0c83b4d1e6a2f11098df6250722c4d8eac263d",
       "path": "skills/non-code/open-design/SKILL.md"
     },
     "publish-safety": {
@@ -316,7 +316,7 @@
     "strangeverse": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "287419657601705a140862ec9f2d238e772467e05b70c4996edbf7028c791818",
+      "computedHash": "53008f55b6618536b03e0adfca8ab27937add4f03e9c1d32850938661f47ba24",
       "path": "skills/non-code/strangeverse/SKILL.md"
     },
     "backlog-triage-ops": {
@@ -339,6 +339,12 @@
       "path": "skills/ops/configure-ecc/SKILL.md",
       "upstream": "ecc:configure-ecc"
     },
+    "context-packs-ops": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "f7084f143a020e89b7e4d9b82cf78af304344f7f837db48be6450493ce9510db",
+      "path": "skills/ops/context-packs-ops/SKILL.md"
+    },
     "context-updater": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
@@ -348,7 +354,7 @@
     "continuous-learning-v2": {
       "source": "ecc/continuous-learning-v2",
       "sourceType": "github",
-      "computedHash": "92e71949e3937f608328b5e04303abd53fc1d38d7ef38e6a9843408a0d8992b0",
+      "computedHash": "9aae5ec87244a7bffbb62a555eb6c8179cd3950dfc4b24138e6dd6046ccfaebd",
       "path": "skills/ops/continuous-learning-v2/SKILL.md",
       "upstream": "ecc:continuous-learning-v2"
     },
@@ -419,7 +425,7 @@
     "kalman-anomaly-defense": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "3762ca1710dff7aaa1b8eb2ff22e3ff138c3c814ffd6f2b34609d5248ad297dc",
+      "computedHash": "d3a240dc7d80a6157a3f1abf35992d2753868c33e279e7b17e5b113544972d9b",
       "path": "skills/ops/kalman-anomaly-defense/SKILL.md"
     },
     "learning-loop": {
@@ -474,6 +480,12 @@
       "computedHash": "a7d921b0abcd355a3752e0dfe3b4b30fe8fbe5c96eb27be849f41bcd06996e1c",
       "path": "skills/ops/session-learner-ops/SKILL.md"
     },
+    "session-startup-ops": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "34bf2bc7c7aabc8259b945275d64a8caa9c4631e416cc0797a2a0d19342480a6",
+      "path": "skills/ops/session-startup-ops/SKILL.md"
+    },
     "skill-loop": {
       "source": "skill-loop/skill-loop",
       "sourceType": "github",
@@ -494,6 +506,12 @@
       "computedHash": "76194e2e426da2269f521d55788a8b0d5515dcec15d2a51813b6a87faca09726",
       "path": "skills/ops/strategic-briefing-ops/SKILL.md",
       "upstream": "clawvis:strategic-briefing-ops"
+    },
+    "strategic-compact-ops": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "34da16c4016fd1ae32badfa862c53b35aed761f2de06d812d9b577effadcfa68",
+      "path": "skills/ops/strategic-compact-ops/SKILL.md"
     },
     "verification-before-completion": {
       "source": "jarvis-skills-library",

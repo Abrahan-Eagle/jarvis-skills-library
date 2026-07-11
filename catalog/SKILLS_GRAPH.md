@@ -1,6 +1,6 @@
 # Grafo de skills relacionadas
 
-> Generado por `scripts/skills-graph.py` — 2026-07-10
+> Generado por `scripts/skills-graph.py` — 2026-07-11
 
 ```mermaid
 flowchart LR
@@ -79,6 +79,12 @@ flowchart LR
   configure_ecc["configure-ecc"] --> ecc["ecc"]
   configure_ecc["configure-ecc"] --> ecc_router["ecc-router"]
   configure_ecc["configure-ecc"] --> jarvis_core["jarvis-core"]
+  context_packs_ops["context-packs-ops"] --> code_review_playbook["code-review-playbook"]
+  context_packs_ops["context-packs-ops"] --> deep_interview_ops["deep-interview-ops"]
+  context_packs_ops["context-packs-ops"] --> fan_out_synthesize_ops["fan-out-synthesize-ops"]
+  context_packs_ops["context-packs-ops"] --> jarvis_core["jarvis-core"]
+  context_packs_ops["context-packs-ops"] --> parallel_judge_ops["parallel-judge-ops"]
+  context_packs_ops["context-packs-ops"] --> test_driven_development["test-driven-development"]
   continuous_learning_v2["continuous-learning-v2"] --> ecc["ecc"]
   continuous_learning_v2["continuous-learning-v2"] --> ecc_router["ecc-router"]
   continuous_learning_v2["continuous-learning-v2"] --> jarvis_core["jarvis-core"]
@@ -188,6 +194,7 @@ flowchart LR
   jarvis_core["jarvis-core"] --> sdd_router["sdd-router"]
   jarvis_core["jarvis-core"] --> sdd_x_index["sdd-x-index"]
   jarvis_core["jarvis-core"] --> session_learner_ops["session-learner-ops"]
+  jarvis_core["jarvis-core"] --> session_startup_ops["session-startup-ops"]
   jarvis_core["jarvis-core"] --> skill_loop_router["skill-loop-router"]
   jarvis_core["jarvis-core"] --> speckit_lifecycle_router["speckit-lifecycle-router"]
   jarvis_core["jarvis-core"] --> speckit_plan["speckit-plan"]
@@ -336,6 +343,12 @@ flowchart LR
   session_learner_ops["session-learner-ops"] --> continuous_learning_v2["continuous-learning-v2"]
   session_learner_ops["session-learner-ops"] --> jarvis_core["jarvis-core"]
   session_learner_ops["session-learner-ops"] --> verification_before_completion["verification-before-completion"]
+  session_startup_ops["session-startup-ops"] --> context_updater["context-updater"]
+  session_startup_ops["session-startup-ops"] --> engram_memory_protocol["engram-memory-protocol"]
+  session_startup_ops["session-startup-ops"] --> engram_router["engram-router"]
+  session_startup_ops["session-startup-ops"] --> handoff["handoff"]
+  session_startup_ops["session-startup-ops"] --> jarvis_core["jarvis-core"]
+  session_startup_ops["session-startup-ops"] --> session_learner_ops["session-learner-ops"]
   skill_loop["skill-loop"] --> code_review_playbook["code-review-playbook"]
   skill_loop["skill-loop"] --> jarvis_core["jarvis-core"]
   skill_loop["skill-loop"] --> learning_loop_router["learning-loop-router"]
@@ -383,6 +396,12 @@ flowchart LR
   strategic_briefing_ops["strategic-briefing-ops"] --> scenario_router["scenario-router"]
   strategic_briefing_ops["strategic-briefing-ops"] --> session_learner_ops["session-learner-ops"]
   strategic_briefing_ops["strategic-briefing-ops"] --> verification_before_completion["verification-before-completion"]
+  strategic_compact_ops["strategic-compact-ops"] --> agent_loop_engineering["agent-loop-engineering"]
+  strategic_compact_ops["strategic-compact-ops"] --> engram_memory_protocol["engram-memory-protocol"]
+  strategic_compact_ops["strategic-compact-ops"] --> handoff["handoff"]
+  strategic_compact_ops["strategic-compact-ops"] --> jarvis_core["jarvis-core"]
+  strategic_compact_ops["strategic-compact-ops"] --> learning_loop_router["learning-loop-router"]
+  strategic_compact_ops["strategic-compact-ops"] --> session_startup_ops["session-startup-ops"]
   structured_commits_ops["structured-commits-ops"] --> git_commit["git-commit"]
   structured_commits_ops["structured-commits-ops"] --> verification_before_completion["verification-before-completion"]
   structured_commits_ops["structured-commits-ops"] --> work_unit_commits_ops["work-unit-commits-ops"]
@@ -419,4 +438,4 @@ flowchart LR
   zoom_out["zoom-out"] --> software_architecture["software-architecture"]
 ```
 
-Nodos conocidos: 106. Aristas (solo a skills en catálogo): 413.
+Nodos conocidos: 109. Aristas (solo a skills en catálogo): 432.

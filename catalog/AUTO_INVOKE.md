@@ -1,6 +1,6 @@
 # Auto-invoke global
 
-> Generado por `scripts/sync-catalog.py` — 2026-07-10
+> Generado por `scripts/sync-catalog.py` — 2026-07-11
 
 > Multi-skill: orden = precedencia `jarvis-core` cuando aplica; resto alfabético.
 
@@ -36,6 +36,7 @@
 | Comando git destructivo | `git-guardrails-ops` |
 | Combinar spec con UI o docs | `sdd-x-index` |
 | Como va todo el proyecto | `strategic-briefing-ops` |
+| Compactar contexto | `strategic-compact-ops` |
 | Compactar o traspasar sesion | `handoff` |
 | Comparar escenarios base optimista pesimista | `scenario-analysis-ops` |
 | Condiciones de terminación bucle autónomo | `human-in-the-loop-ops` |
@@ -104,6 +105,7 @@
 | Implementar feature multi-archivo | `fan-out-synthesize-ops` |
 | Implementar feature o bugfix | `test-driven-development` |
 | Iniciar módulo | `jarvis-core`, `brainstorming-ops`, `task-pipeline-ops` |
+| Iniciar sesión | `session-startup-ops` |
 | Init JARVIS | `project-bootstrap-ops` |
 | Instalar o configurar ECC en proyecto | `ecc-router` |
 | Instincts evolve hooks Cursor | `ecc-router` |
@@ -120,6 +122,9 @@
 | Memoria persistente Engram MCP | `engram-router` |
 | Misión spec-driven con review y merge | `kitty-router` |
 | Modificar feature existente NNN | `speckit-lifecycle-router` |
+| Modo produce | `context-packs-ops` |
+| Modo research | `context-packs-ops` |
+| Modo review | `context-packs-ops` |
 | Monitoreo adaptativo con respuesta escalonada | `kalman-anomaly-defense` |
 | Naming de branch y checklist pre-PR | `branch-pr-ops` |
 | Nueva feature de producto | `sdd-router` |
@@ -154,10 +159,12 @@
 | Requisitos ambiguos antes de plan SDD | `speckit-clarify` |
 | Respuesta de maintainer o mensaje async al equipo | `comment-writer-ops` |
 | Resumen ejecutivo para el founder | `strategic-briefing-ops` |
+| Retomar proyecto | `session-startup-ops` |
 | Revisar accesibilidad o layout | `ui-router`, `ui-ux-pro-max` |
 | Revisar pull request | `code-review-playbook` |
 | Rules idioma PHP TypeScript en .cursor | `ecc-router` |
 | Score de calidad y must_fix antes de publicar o mergear | `llm-as-judge-ops` |
+| Sesión larga sugerir compactación | `strategic-compact-ops` |
 | Simular opinion publica o reaccion mercado | `scenario-router` |
 | Spec Kitty o spec-kitty | `kitty-router` |
 | Spec-driven development | `sdd-router` |
