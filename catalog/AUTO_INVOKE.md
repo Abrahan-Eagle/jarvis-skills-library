@@ -3,6 +3,7 @@
 > Generado por `scripts/sync-catalog.py` — 2026-07-11
 
 > Multi-skill: orden = precedencia `jarvis-core` cuando aplica; resto alfabético.
+> Skills con `metadata.status: deprecated` se omiten de esta tabla (siguen en CATALOG).
 
 | Acción | Skill(s) |
 |--------|----------|
@@ -26,18 +27,17 @@
 | Cambio API CLI setup que afecta documentación | `docs-alignment-ops` |
 | Carrusel RRSS o post social | `open-design-router` |
 | Cerrar gaps post-implement Spec Kit | `speckit-converge` |
+| Cerrar sesión | `context-updater` |
 | Checklist calidad spec/plan Spec Kit | `speckit-checklist` |
 | Cierre sesión con mem_session_summary | `engram-memory-protocol` |
 | Clasificar PRs merge request-changes close | `backlog-triage-ops` |
 | Code review | `code-review-playbook` |
-| Code review GitHub | `github-code-review` |
 | Code review antes de merge | `requesting-code-review` |
-| Code review excellence | `code-review-excellence` |
 | Comando git destructivo | `git-guardrails-ops` |
 | Combinar spec con UI o docs | `sdd-x-index` |
 | Como va todo el proyecto | `strategic-briefing-ops` |
 | Compactar contexto | `strategic-compact-ops` |
-| Compactar o traspasar sesion | `handoff` |
+| Compactar o traspasar sesion | `strategic-compact-ops`, `handoff` |
 | Comparar escenarios base optimista pesimista | `scenario-analysis-ops` |
 | Condiciones de terminación bucle autónomo | `human-in-the-loop-ops` |
 | Configurar NotebookLM MCP en Cursor | `notebooklm-router` |
@@ -48,7 +48,7 @@
 | Contexto largo capturar señales | `learning-loop`, `learning-loop-router` |
 | Convertir tasks Spec Kit a issues GitHub | `speckit-taskstoissues` |
 | Corpus grande de documentos para RAG | `notebooklm-router` |
-| Crear commit | `verification-before-completion`, `git-commit`, `structured-commits-ops` |
+| Crear commit | `verification-before-completion`, `work-unit-commits-ops`, `git-commit`, `structured-commits-ops` |
 | Crear o preparar pull request | `branch-pr-ops` |
 | Crear skill global | `jarvis-skills-maintainer` |
 | Crear skill-loop.yml | `skill-loop-router` |
@@ -104,7 +104,7 @@
 | Implementar feature Spec Kit con OK usuario | `speckit-implement` |
 | Implementar feature multi-archivo | `fan-out-synthesize-ops` |
 | Implementar feature o bugfix | `test-driven-development` |
-| Iniciar módulo | `jarvis-core`, `brainstorming-ops`, `task-pipeline-ops` |
+| Iniciar módulo | `jarvis-core`, `brainstorming-ops`, `writing-plans`, `task-pipeline-ops` |
 | Iniciar sesión | `session-startup-ops` |
 | Init JARVIS | `project-bootstrap-ops` |
 | Instalar o configurar ECC en proyecto | `ecc-router` |

@@ -151,10 +151,10 @@ Total: **109** skills
 
 | Skill | Descripción | Ruta |
 |-------|-------------|------|
-| `code-review-excellence` | DEPRECATED — usar code-review-playbook. Stub de compatibilidad para manifests legacy. | [skills/review/code-review-excellence/SKILL.md](skills/review/code-review-excellence/SKILL.md) |
+| `code-review-excellence` *(deprecated)* | DEPRECATED — usar code-review-playbook. Stub de compatibilidad para manifests legacy. | [skills/review/code-review-excellence/SKILL.md](skills/review/code-review-excellence/SKILL.md) |
 | `code-review-playbook` | Use this skill when conducting or improving code reviews. Provides structured review processes, conventional comments pa… | [skills/review/code-review-playbook/SKILL.md](skills/review/code-review-playbook/SKILL.md) |
 | `comment-writer-ops` | Redactar comentarios de colaboración cálidos y directos: PR, issues, reviews, Slack. | [skills/review/comment-writer-ops/SKILL.md](skills/review/comment-writer-ops/SKILL.md) |
-| `github-code-review` | DEPRECATED — usar code-review-playbook. Stub de compatibilidad para manifests legacy. | [skills/review/github-code-review/SKILL.md](skills/review/github-code-review/SKILL.md) |
+| `github-code-review` *(deprecated)* | DEPRECATED — usar code-review-playbook. Stub de compatibilidad para manifests legacy. | [skills/review/github-code-review/SKILL.md](skills/review/github-code-review/SKILL.md) |
 | `receiving-code-review` | Recibir feedback de review con verificación. Delega estándares a code-review-playbook. | [skills/review/receiving-code-review/SKILL.md](skills/review/receiving-code-review/SKILL.md) |
 | `requesting-code-review` | Pedir code review antes de merge. Delega checklist a code-review-playbook. | [skills/review/requesting-code-review/SKILL.md](skills/review/requesting-code-review/SKILL.md) |
 

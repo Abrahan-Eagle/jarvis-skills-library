@@ -47,37 +47,37 @@
     "agent-skills-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "80a47dbcf496d62ef93b4d3f0dccae8e14dd5b9b2af6a717541914858d467d92",
+      "computedHash": "a7041fd703063dca3616e21364a213a948d615d43c86277f98fb8e7eb981e55f",
       "path": "skills/core/agent-skills-router/SKILL.md"
     },
     "claude-skills-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "d5eb66bd88aade18367355db0431c116bd99c1d36f768d92965c527dae9bc436",
+      "computedHash": "a465ce7fbe194131b825bae125fba46daa4183d7abf73c082eba5bd9e61dcc62",
       "path": "skills/core/claude-skills-router/SKILL.md"
     },
     "cyber-neo-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "b395f0035269caf0d3f33aa4dcff4861c3f56c325f93f6b71dacd37aba21cff2",
+      "computedHash": "9dc6abbd4217ddea1d123f9c534aeffe2a6631605b726043694d2c32c6bc03d1",
       "path": "skills/core/cyber-neo-router/SKILL.md"
     },
     "ecc-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "cc93c388168752cbe1c098cc1298e38dfdbf1bfaecad42b84993fa5343f88387",
+      "computedHash": "9e47b7428472ad5d590a20624d9ddada1f07c5915b6365ed286925aa668511fb",
       "path": "skills/core/ecc-router/SKILL.md"
     },
     "engram-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "d5d74feed8a7e6cb56319724318b4bcca651fcf3549448fb9c3aa95265ff3b0f",
+      "computedHash": "1d566f232966519817434d8f6ceef3af0b71d0ddd8ca1cc537350fc0a2b4014c",
       "path": "skills/core/engram-router/SKILL.md"
     },
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "f0ec35bebf5ae606c3652e38495fbe2cd56630c76285b563c5d68e2378789009",
+      "computedHash": "29e126fa3c9348fefe11bf88965587b5346a5fa88eaa83ae58bafd807a176a14",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
@@ -89,55 +89,55 @@
     "jarvis-skills-maintainer": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "e04fee30242c6d63ece332539c710de89aef150491cd298a78ab41135c587717",
+      "computedHash": "e670ce09ed92219c7e104c174becce8c7b09e54fbcc3d15769ec47507f886ea7",
       "path": "skills/core/jarvis-skills-maintainer/SKILL.md"
     },
     "kalman-anomaly-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "218f73d895a388b5027fb4445a3054411e5b1ec88ebeefc8aff67bce00825f7c",
+      "computedHash": "6f67761a76a1bb886e257f7eab1467951df1846c09cc91a28dc8d25b30b86151",
       "path": "skills/core/kalman-anomaly-router/SKILL.md"
     },
     "kitty-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "9fe4089a14b06d55c0e40f0e8681b769b9e53c2c2bf504102817b9ac1fb87a47",
+      "computedHash": "16ece67e54cdbd0c89ba6f48c1a61d07292f306d16b448ee4bca4fd0865f851f",
       "path": "skills/core/kitty-router/SKILL.md"
     },
     "learning-loop-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "60436ffbfb7b73baaf0e343915e9698cfddfae84b4a4ef35984d465811ba6bc8",
+      "computedHash": "bb5b10077cf9384d9780f466aafad333092a516ff5099d16f431386c69d479da",
       "path": "skills/core/learning-loop-router/SKILL.md"
     },
     "notebooklm-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "6609808235a2c88a98b8e739e3942af613985d59d0f5432a565fe49d8fcdb870",
+      "computedHash": "6ea6804c15dfbb9a8207df327dd8282d56623c06709c839e666e8b8a4adcb011",
       "path": "skills/core/notebooklm-router/SKILL.md"
     },
     "openspec-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "116477e71f6bd3d7994915bfc296b75edbcc219d93e3a7580c277a151203f5cc",
+      "computedHash": "98109e6cdce4fd5fa4f5c2b29579befbc7acc36d84886d5f801b18ae619a27e1",
       "path": "skills/core/openspec-router/SKILL.md"
     },
     "sdd-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "a53a086ccac46d4858c302f55d6d7e84472a2f9b2794be090cf9f4bd05fdff9a",
+      "computedHash": "7b497a8e52cdf35f2352148f85895667ab9f4a8a24a56caf5eee80db697f0d69",
       "path": "skills/core/sdd-router/SKILL.md"
     },
     "sdd-x-index": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "6e6eacbcdb9518e19b7aa02de31d6e7bec92ba6101cc0584cb079ce2ed4b2240",
+      "computedHash": "9a373f6c2a55e5050604bf095a0550ba50bdbfe23313b0704410bddda596d07c",
       "path": "skills/core/sdd-x-index/SKILL.md"
     },
     "skill-loop-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "34fa813907ac5dc79a6371b90a227b221fcca83324446dcfe82919639a05a12c",
+      "computedHash": "0881d3966bada1b521c0a400fd4d42ffd97741ca7d4163b6dcbe2c147cf51220",
       "path": "skills/core/skill-loop-router/SKILL.md"
     },
     "task-pipeline-ops": {
@@ -149,13 +149,13 @@
     "ui-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "11d03d1dbc73c9cb908b52fb823a8a2218f2ebe21888039c58a851b7b5209995",
+      "computedHash": "61174ae0f468182c0d30042d6a50f84ea861b60ff95f074035cecbb5beedd679",
       "path": "skills/core/ui-router/SKILL.md"
     },
     "agent-loop-engineering": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "532257ca10006f68aa42d032a649f692d86511a11fa6e132b356f34c16790ad2",
+      "computedHash": "ed63222edf59a5533bc8fb0ed4048f10c32ab1b01b40c3752d2cc2cbe73c692a",
       "path": "skills/engineering/agent-loop-engineering/SKILL.md"
     },
     "clean-architecture": {
@@ -173,7 +173,7 @@
     "doubt-driven-development": {
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
-      "computedHash": "13166eebee63d683621a4ca9c29b2040f847309e057a036a4b8b2e8a7871b4e1",
+      "computedHash": "c1ee8a9b0ea832ec7d8ce67aec70e699dbfe540812d37a323cd6b32d9eea83c7",
       "path": "skills/engineering/doubt-driven-development/SKILL.md",
       "upstream": "addyosmani/agent-skills:doubt-driven-development"
     },
@@ -186,7 +186,7 @@
     "skill-creator": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "d57b6e3a44535b9c0ef454dad5c86f5df78185fc80a65c7092885b4b5e10f81b",
+      "computedHash": "8d36ecb4d86585174c3b08811ab6b21e5d107872afc0a829dcdfd7bb2aa1ed40",
       "path": "skills/engineering/skill-creator/SKILL.md"
     },
     "systematic-debugging": {
@@ -210,14 +210,14 @@
     "branch-pr-ops": {
       "source": "Gentleman-Programming/gentle-ai",
       "sourceType": "github",
-      "computedHash": "8fdfb5ea72ca708cc272eda16d22e17f2845feb3c59299be172251b8364604c5",
+      "computedHash": "4aa1e21a51d0cfeda899d25b66248c21de7c10af9e504c7e2c11f2fb854a7935",
       "path": "skills/git/branch-pr-ops/SKILL.md",
       "upstream": "Gentleman-Programming/gentle-ai:branch-pr"
     },
     "chained-pr-ops": {
       "source": "Gentleman-Programming/gentle-ai",
       "sourceType": "github",
-      "computedHash": "8bc018e788d7f8434e242d34243db37b1a02e8553fefa6702a581bdd4a680f98",
+      "computedHash": "814b72153e537aef4363c95f6cb341dd0cb22d165f73f320ea4784c0835be89a",
       "path": "skills/git/chained-pr-ops/SKILL.md",
       "upstream": "Gentleman-Programming/gentle-ai:chained-pr"
     },
@@ -243,7 +243,7 @@
     "work-unit-commits-ops": {
       "source": "Gentleman-Programming/gentle-ai",
       "sourceType": "github",
-      "computedHash": "df55fd862a5586b2ecbc189010bc9a0ebdb255dc514d96c424640ba71944fb7e",
+      "computedHash": "05099b82d5cf60f63e184158c6feb4b20d15e47ef1bbf2d7d6703f833f63252d",
       "path": "skills/git/work-unit-commits-ops/SKILL.md",
       "upstream": "Gentleman-Programming/gentle-ai:work-unit-commits"
     },
@@ -280,7 +280,7 @@
     "approval-gate": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "cd6f8b64d22b820818341d98d311799595b56de076e77b0e25b92e5c42df4414",
+      "computedHash": "04b0675ec92ddd0d10d1a350688f88f08df4753381d983f01bb6c0a98eaa95ee",
       "path": "skills/non-code/approval-gate/SKILL.md"
     },
     "client-report": {
@@ -298,7 +298,7 @@
     "ecc": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "1369fa6b1a36be05c81d0d8e0a7b44a304e59b18955e430395db5bf21f0c174b",
+      "computedHash": "a6041d08dc5a0204fe7093ea4234769d565c0e24679bb988d9b7fe56cf0685da",
       "path": "skills/non-code/ecc/SKILL.md"
     },
     "open-design": {
@@ -322,7 +322,7 @@
     "backlog-triage-ops": {
       "source": "Gentleman-Programming/engram",
       "sourceType": "github",
-      "computedHash": "f62dacfc81b053866f90720fb0a2bae4fdf59654580a53bcf234abad86a84999",
+      "computedHash": "7025380bbd53fbd596826830af020774bff968f272267d1ac41f57b0e3963a3c",
       "path": "skills/ops/backlog-triage-ops/SKILL.md",
       "upstream": "Gentleman-Programming/engram:backlog-triage"
     },
@@ -335,7 +335,7 @@
     "configure-ecc": {
       "source": "ecc/configure-ecc",
       "sourceType": "github",
-      "computedHash": "8e1509e470221b3bd186a8b1bcb59963b6058ef2e2b97bcdc4825a7d5b27fb1f",
+      "computedHash": "a74157a739f056655f2c9766eac26cdccca03bfa64e00b7ade8f92d0b5a248d4",
       "path": "skills/ops/configure-ecc/SKILL.md",
       "upstream": "ecc:configure-ecc"
     },
@@ -348,20 +348,20 @@
     "context-updater": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "f6f374905ed1275c50a58fdacd75042b8783e3c46a8bdfd329e37eee991ad80d",
+      "computedHash": "bbb0d29e763b7ad6409ce9d842fd9f5c2bec1e22607f4a407445b2919652db2a",
       "path": "skills/ops/context-updater/SKILL.md"
     },
     "continuous-learning-v2": {
       "source": "ecc/continuous-learning-v2",
       "sourceType": "github",
-      "computedHash": "9aae5ec87244a7bffbb62a555eb6c8179cd3950dfc4b24138e6dd6046ccfaebd",
+      "computedHash": "61f45d3c33c95b715fa051bbd44ea4c60ebfd988e11745f9b5585a83b1fe450b",
       "path": "skills/ops/continuous-learning-v2/SKILL.md",
       "upstream": "ecc:continuous-learning-v2"
     },
     "cyber-neo": {
       "source": "cyber-neo/cyber-neo",
       "sourceType": "github",
-      "computedHash": "7b6d2b2e424e3d06cacb13c00d23bf0c5a750b46db0d0f58b5fc85032d330c20",
+      "computedHash": "9b27241ce578e3993f5b97bceea8b318953a47d347375ba79ebe8a4a26f65db0",
       "path": "skills/ops/cyber-neo/SKILL.md",
       "upstream": "cyber-neo:cyber-neo"
     },
@@ -374,7 +374,7 @@
     "docs-alignment-ops": {
       "source": "Gentleman-Programming/engram",
       "sourceType": "github",
-      "computedHash": "6f00814a0d2c386a902417cb91e7b8d6693dc2d1ba1e7f63c5aa1a3f6ddeb9ee",
+      "computedHash": "1c7e7c3c3e848bcf456528e141e5f7756770c1302203a749e048d2745422104d",
       "path": "skills/ops/docs-alignment-ops/SKILL.md",
       "upstream": "Gentleman-Programming/engram:docs-alignment"
     },
@@ -387,14 +387,14 @@
     "engram-memory-protocol": {
       "source": "Gentleman-Programming/engram",
       "sourceType": "github",
-      "computedHash": "d8d8f90c2124f3f38fe1f1f63e71de115e66a6c6d6b190fea91a2c82b2f61847",
+      "computedHash": "cdfbeb00cbcd235513c9bf77fe10e00d1e0436b41b273c696491d0cea34b435e",
       "path": "skills/ops/engram-memory-protocol/SKILL.md",
       "upstream": "Gentleman-Programming/engram:memory-protocol"
     },
     "fan-out-synthesize-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "ad43fef3947c1b5f35fdb7bb1e06f352d206a5f62aae78ec0ffd6bd2f66d3199",
+      "computedHash": "569619181abb1b08a627a92887a738b63134f8d1e2a80132a7b8d41e2a0cfe7f",
       "path": "skills/ops/fan-out-synthesize-ops/SKILL.md"
     },
     "finishing-a-development-branch": {
@@ -413,45 +413,45 @@
     "handoff": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "549f81d314b8743bc5b176e1b9dbc28e5959104caae2b14413073a4930989d2a",
+      "computedHash": "f41dba6ddd94e37398ecd4ab0e9f2b606f0391f0ef9cfceb3fbadfd2b7c0c470",
       "path": "skills/ops/handoff/SKILL.md"
     },
     "human-in-the-loop-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "752eafc0c551e8df84b167990d3198fc6abf1d9a92d61f9a24de875bd81453d9",
+      "computedHash": "4857baf5958ab464248c757299eb20051e4f35dcb87a84bc09a0bc77f2b38309",
       "path": "skills/ops/human-in-the-loop-ops/SKILL.md"
     },
     "kalman-anomaly-defense": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "d3a240dc7d80a6157a3f1abf35992d2753868c33e279e7b17e5b113544972d9b",
+      "computedHash": "c9e3157ffdc8329fbb6cc3f0afaeaca1977030071d258e2868cb318c56db1cb2",
       "path": "skills/ops/kalman-anomaly-defense/SKILL.md"
     },
     "learning-loop": {
       "source": "learning-loop-skill/learning-loop",
       "sourceType": "github",
-      "computedHash": "60a901e18b9f15d6095a97e94326e73760d987122731190a67d5ba078a57be49",
+      "computedHash": "3691d42ea8461e24e5aa81c02a20d0e558a8ee877d7a256f36f227d5caf3a94f",
       "path": "skills/ops/learning-loop/SKILL.md",
       "upstream": "learning-loop-skill:learning-loop"
     },
     "llm-as-judge-ops": {
       "source": "clawvis-openclaw/llm-as-judge-ops",
       "sourceType": "github",
-      "computedHash": "b66916c9b1dea25be6a6be06794993c1b15a69de29fd709bc1c980a93ec85131",
+      "computedHash": "70750fa8b493c725c11a9e2ff6cef740312a6dc483cabda97a9c0b06b5b207c4",
       "path": "skills/ops/llm-as-judge-ops/SKILL.md",
       "upstream": "clawvis-openclaw:llm-as-judge-ops"
     },
     "parallel-judge-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "49478e1c0fd948f520a0ce4db46fd2e7e3c12d570eafd7ea9e86835a776a6eaf",
+      "computedHash": "922722be6e9112ca8a2aa2f687ce50f51e307677425f4fa223cac5e7d63fee29",
       "path": "skills/ops/parallel-judge-ops/SKILL.md"
     },
     "project-bootstrap-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "3efc76e676603f587cb8b63fda19ca392cb38d6cf448b68fabb873afd7e1d829",
+      "computedHash": "e978deca20625e0391380141ce165ffd5b1c4a7c22905bc425a0f798d038dab5",
       "path": "skills/ops/project-bootstrap-ops/SKILL.md"
     },
     "scenario-analysis-ops": {
@@ -464,7 +464,7 @@
     "scenario-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "59f2bffb6b82dbca2ce36b85bfd13f85925f4395a0d3e92d7955d5b68f461d6a",
+      "computedHash": "7624ecaf8e46353e1e5e1a27a6bfe93c7cab753015afce041c19bc56b081b107",
       "path": "skills/ops/scenario-router/SKILL.md"
     },
     "security-review-ecc": {
@@ -477,40 +477,40 @@
     "session-learner-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "a7d921b0abcd355a3752e0dfe3b4b30fe8fbe5c96eb27be849f41bcd06996e1c",
+      "computedHash": "e0b5baf4d58631d93fd308965a6b833d15ab85d04128453b0ba22a9117e56b08",
       "path": "skills/ops/session-learner-ops/SKILL.md"
     },
     "session-startup-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "34bf2bc7c7aabc8259b945275d64a8caa9c4631e416cc0797a2a0d19342480a6",
+      "computedHash": "e9be78d3a17b5805688bc3f634ae1cf5d8dd874a1e117246ecc6217c5640a25b",
       "path": "skills/ops/session-startup-ops/SKILL.md"
     },
     "skill-loop": {
       "source": "skill-loop/skill-loop",
       "sourceType": "github",
-      "computedHash": "fc88c51e89c452c65e1fa308f838b8588f5ed1ec6cd8c9b49637eb984779c98d",
+      "computedHash": "561619494f55d4b6cd73a96a8c500f32df3231ff0360c422d725ed691cf36ca9",
       "path": "skills/ops/skill-loop/SKILL.md",
       "upstream": "skill-loop:skill-loop"
     },
     "skill-security-auditor": {
       "source": "alirezarezvani/claude-skills",
       "sourceType": "github",
-      "computedHash": "bf5b04e17842adc3c2caac1ae602b2a17f20b88f8b680253a608c844bd8cff8b",
+      "computedHash": "7606f30093b09680f3535dce441a9105128f008c94ce4d04fca1f2b0eee530b5",
       "path": "skills/ops/skill-security-auditor/SKILL.md",
       "upstream": "alirezarezvani/claude-skills:skill-security-auditor"
     },
     "strategic-briefing-ops": {
       "source": "clawvis/strategic-briefing-ops",
       "sourceType": "github",
-      "computedHash": "76194e2e426da2269f521d55788a8b0d5515dcec15d2a51813b6a87faca09726",
+      "computedHash": "9367b5716c9c72c3d7d1e061bbf9c144ad8beac8ed3c09184101402fbac82c8c",
       "path": "skills/ops/strategic-briefing-ops/SKILL.md",
       "upstream": "clawvis:strategic-briefing-ops"
     },
     "strategic-compact-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "34da16c4016fd1ae32badfa862c53b35aed761f2de06d812d9b577effadcfa68",
+      "computedHash": "131af09d985f5904db7f7cde583a636b956a0b666fa84c5bb3d3db8d75152667",
       "path": "skills/ops/strategic-compact-ops/SKILL.md"
     },
     "verification-before-completion": {
@@ -522,7 +522,7 @@
     "cognitive-doc-design-ops": {
       "source": "Gentleman-Programming/gentle-ai",
       "sourceType": "github",
-      "computedHash": "d14de3e3bc48388ec1dc511302b09f4add88ae920798be102ec96c4b92e64b3c",
+      "computedHash": "352905120d7a19b1c59b4dbca5b1d3e03ba8e463f3ef9de9d247e7d940f57a6f",
       "path": "skills/planning/cognitive-doc-design-ops/SKILL.md",
       "upstream": "Gentleman-Programming/gentle-ai:cognitive-doc-design"
     },
@@ -536,7 +536,7 @@
     "writing-plans": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "4b0571c23f15ab5fe8ac554f10a7c62759f6b582fd183ce0cc6f384eff7e9a63",
+      "computedHash": "fa89f1d0e2cf711ec98f39f696d010c2b43ca87b07397bf4781111b941650ba2",
       "path": "skills/planning/writing-plans/SKILL.md",
       "upstream": "superpowers:writing-plans"
     },
@@ -561,7 +561,7 @@
     "comment-writer-ops": {
       "source": "Gentleman-Programming/gentle-ai",
       "sourceType": "github",
-      "computedHash": "7fdc9e69bd821af5ca30d0485d3275e9885d4194b2fedfb4a8f2873c5a691d47",
+      "computedHash": "6331727a7a91e28714d2aca97ada90d389f5bb606bf1a851236beaa07cd79267",
       "path": "skills/review/comment-writer-ops/SKILL.md",
       "upstream": "Gentleman-Programming/gentle-ai:comment-writer"
     },
@@ -586,7 +586,7 @@
     "kitty-governance": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "22d7b76585339adc1854500b14e3587203f6516f29843cd725bcdd7f14ab1750",
+      "computedHash": "7b3a14d13f9557fdf3ae4ca925bf2105da053f1ecbab7d7814c1c3bcbf0bb559",
       "path": "skills/sdd/kitty-governance/SKILL.md"
     },
     "speckit-analyze": {
@@ -634,13 +634,13 @@
     "speckit-lifecycle-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "dcd55c61ca38c2875874c05f0f9f1bed97aafd22ac9cfa723bf25bd0678c138f",
+      "computedHash": "1ae1c01d3bc8d9e61674519ad52424d143c548e02429e811c2cbe336af9421e9",
       "path": "skills/sdd/speckit-lifecycle-router/SKILL.md"
     },
     "speckit-plan": {
       "source": "github/spec-kit",
       "sourceType": "github",
-      "computedHash": "9c3bc620ed4dc35625d4094f51c824c036dde0723ff7620fcd5ddc87ba144446",
+      "computedHash": "f8e98cd23d36be025bbd9366d6929c1494307452c80b8ec3e41221007f358850",
       "path": "skills/sdd/speckit-plan/SKILL.md",
       "upstream": "github/spec-kit:templates/commands/plan.md"
     },
@@ -674,13 +674,13 @@
     "open-design-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "ae77cad671c47ecfe437b5645d3818aab2d47dfa5632f10e82ad4aabf3ad76f0",
+      "computedHash": "f4bd2afc6e45db1f563464764bdb799a38a0ecec6bab219f4121c51b90996dc8",
       "path": "skills/ui/open-design-router/SKILL.md"
     },
     "stitch-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "f58a79c61e92573c697f1eaa7dbd3361e7d1c9c44afc0b620ca36a2aa9810a35",
+      "computedHash": "19a7cbf40e163c8087e3bac31110bfeb2e1b15c74272767e7438b16f9ebad62a",
       "path": "skills/ui/stitch-router/SKILL.md"
     },
     "ui-ux-pro-max": {

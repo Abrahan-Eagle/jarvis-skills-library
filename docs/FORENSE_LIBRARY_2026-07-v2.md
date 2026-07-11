@@ -125,10 +125,30 @@ check-global-skills-sync: 6/6 productos OK + clawvis OK (19 skills)
 
 ---
 
+## Cierre ciclo ECC cherry-pick + remediación (2026-07-11)
+
+Plan ejecutado en `jarvis-skills-library` (rama `main`, commits locales; **sin push** salvo orden).
+
+| Fase | Estado |
+|------|--------|
+| 0 Links + validador + `.gitignore` + CLv2 overlay/heading | **Hecho** — `scripts/validate-markdown-links.py` en `validate-all` + CI |
+| 1 AUTO_INVOKE (excluir deprecated; compact→strategic-compact; writing-plans/work-unit) | **Hecho** |
+| 2 Wiring jarvis-core / session-startup / handoff / judge→approval-gate / context-updater | **Hecho** |
+| 3 Learning-loop seeds + HITL session-learner + configure-ecc | **Hecho** |
+| 4 Onboarding trío ECC (PROJECT_ONBOARDING, AGENTS.minimal, manifest example, bootstrap) | **Hecho** |
+| 5 Supply-chain re-pin (ecc/open-design/strangeverse) + docs pins + `ecc consult "$*"` | **Hecho** |
+| 6 `bash scripts/validate-all.sh` | **OK** (exit 0, 2026-07-11) |
+
+**YAGNI confirmado (no hecho):** vendorizar skills/agents ECC, hooks por defecto, eval-harness, update-codemaps, statusline, mcp-configs, enforcement judge en bin `approval-gate`, skills `laravel-prod-migration-ops` / `release-deploy-ops`.
+
+Cierra pendiente forense § Fuera de scope ítem 4 (auto_invoke writing-plans / work-unit-commits-ops).
+
+---
+
 ## Fuera de scope / siguiente ciclo
 
 1. Poda/fusión skills review + stubs arquitectura/móvil (tras HITL).
 2. Lote frontmatter CONVENTIONS + validate WARN→FAIL.
 3. Remediación paths `skills/global/` en bins OpenClaw (activity-log, approval-gate, client-report).
-4. Añadir `work-unit-commits-ops` / `writing-plans` a auto_invoke de las acciones de commit/iniciar módulo.
+4. ~~Añadir `work-unit-commits-ops` / `writing-plans` a auto_invoke~~ — **cerrado 2026-07-11**.
 5. Commits + push solo con orden del usuario.
