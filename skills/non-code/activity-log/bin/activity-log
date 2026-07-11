@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # activity-log — registro unificado de actividad de agentes
 # Detalle: docs/COORDINACION_AGENTES.md
+# Bin path: skills/non-code/activity-log/bin/activity-log
 
 set -euo pipefail
 

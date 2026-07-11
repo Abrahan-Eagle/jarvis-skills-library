@@ -9,7 +9,7 @@ Guía para usar [GitHub Spec Kit](https://github.com/github/spec-kit) v0.11.2 de
 | **Spec-Driven (SDD)** | `.specify/`, `specs/NNN-feature/{spec,plan,tasks}.md` | 10 `speckit-*` + `sdd-router` |
 | **JARVIS modular** | `.agents/plans/implementation_plan.md` | `jarvis-core`, `writing-plans`, `task-pipeline-ops` |
 
-El router [`sdd-router`](skills/core/sdd-router/SKILL.md) elige el camino según si existe `.specify/` en el repo activo.
+El router [`sdd-router`](../skills/core/sdd-router/SKILL.md) elige el camino según si existe `.specify/` en el repo activo.
 
 ## Bootstrap en un repo de producto
 

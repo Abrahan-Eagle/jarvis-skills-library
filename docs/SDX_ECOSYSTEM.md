@@ -20,7 +20,7 @@ JARVIS **no** usa MetaSpec CLI para distribuir skills; usa `jarvis-skills-librar
 | Validate | `speckit-analyze`, `speckit-checklist`, `doubt-driven-development` (in-flight adversarial) | `sdd-x-index`, `agent-skills-router` |
 | Config | `.specify/extensions.yml`, `specify extension` | [SDD doc](SDD_SPECKIT_INTEGRATION.md) |
 
-Índice operativo: skill [`sdd-x-index`](skills/core/sdd-x-index/SKILL.md).
+Índice operativo: skill [`sdd-x-index`](../skills/core/sdd-x-index/SKILL.md).
 
 ## Toolkits registrados
 

@@ -14,7 +14,7 @@ Commands:
   help
 
 Estado: state/publish-safety/<account>.json
-Politica: skills/global/publish-safety/policy.json
+Politica: skills/non-code/publish-safety/policy.json
 EOF
 }
 
@@ -26,7 +26,7 @@ detect_root() {
 
 ROOT=$(detect_root)
 STATE="${JARVIS_STATE_DIR:-$ROOT/state}/publish-safety"
-POLICY="$ROOT/skills/global/publish-safety/policy.json"
+POLICY="$ROOT/skills/non-code/publish-safety/policy.json"
 
 ensure_state() {
   mkdir -p "$STATE"

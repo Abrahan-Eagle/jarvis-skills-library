@@ -14,7 +14,7 @@ client-report generate --dossier client-demo --period 2026-06
 
 Salida: `~/Documents/JARVIS-DOCUMENTS/<dossier>/reporte-YYYY-MM.md`
 
-Plantilla: [docs/plantillas/REPORTE_CLIENTE.md](../../docs/plantillas/REPORTE_CLIENTE.md)
+Plantilla: [docs/plantillas/REPORTE_CLIENTE.md](../../../docs/plantillas/REPORTE_CLIENTE.md)
 
 ## Skills relacionadas
 

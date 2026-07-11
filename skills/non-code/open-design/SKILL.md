@@ -22,7 +22,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 # open-design — fábrica visual (daemon API)
 
-Puente HTTP al daemon de [Open Design](https://github.com/nexu-io/open-design). Router: `open-design-router`. Doc: [docs/OPEN_DESIGN_INTEGRATION.md](../../docs/OPEN_DESIGN_INTEGRATION.md).
+Puente HTTP al daemon de [Open Design](https://github.com/nexu-io/open-design). Router: `open-design-router`. Doc: [docs/OPEN_DESIGN_INTEGRATION.md](../../../docs/OPEN_DESIGN_INTEGRATION.md).
 
 **Bin:** `skills/non-code/open-design/bin/open-design` (symlink en `~/.cursor/skills/open-design/bin/` tras `install.sh`).
 

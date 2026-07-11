@@ -50,7 +50,7 @@ Cadena completa: ver `skills/core/ui-router/SKILL.md`.
 
 ## Overlay sin duplicar `data/`
 
-Template: [`skills/ui/ui-ux-pro-max/overlays/OVERLAY.template.md`](skills/ui/ui-ux-pro-max/overlays/OVERLAY.template.md).
+Template: [`skills/ui/ui-ux-pro-max/overlays/OVERLAY.template.md`](../skills/ui/ui-ux-pro-max/overlays/OVERLAY.template.md).
 
 En el repo producto:
 

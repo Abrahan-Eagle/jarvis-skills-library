@@ -25,7 +25,7 @@ detect_root() {
 ROOT=$(detect_root)
 STATE="${JARVIS_STATE_DIR:-$ROOT/state}"
 ESC="$STATE/escalations"
-ACTIVITY="$ROOT/skills/global/activity-log/bin/activity-log"
+ACTIVITY="$ROOT/skills/non-code/activity-log/bin/activity-log"
 
 ensure() { mkdir -p "$ESC"; }
 

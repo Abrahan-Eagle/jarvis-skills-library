@@ -2,10 +2,10 @@
 
 Marco conceptual de **ingeniería de ciclos** (percepción → razonamiento → acción → observación) y cómo JARVIS lo cubre con skills globales existentes + `human-in-the-loop-ops` para gobernanza humana.
 
-Skill de diseño: [`agent-loop-engineering`](skills/engineering/agent-loop-engineering/SKILL.md) (anatomía, loop vs prompt, principios conciso/reducido/controlado).
-Skill de gobernanza: [`human-in-the-loop-ops`](skills/ops/human-in-the-loop-ops/SKILL.md).
-**Orquestación por defecto (Map-Reduce agentico):** [`fan-out-synthesize-ops`](skills/ops/fan-out-synthesize-ops/SKILL.md) — obligatorio en tareas no triviales.
-Patrón dual-judge ("día del juicio", fase Verify): [`parallel-judge-ops`](skills/ops/parallel-judge-ops/SKILL.md).
+Skill de diseño: [`agent-loop-engineering`](../skills/engineering/agent-loop-engineering/SKILL.md) (anatomía, loop vs prompt, principios conciso/reducido/controlado).
+Skill de gobernanza: [`human-in-the-loop-ops`](../skills/ops/human-in-the-loop-ops/SKILL.md).
+**Orquestación por defecto (Map-Reduce agentico):** [`fan-out-synthesize-ops`](../skills/ops/fan-out-synthesize-ops/SKILL.md) — obligatorio en tareas no triviales.
+Patrón dual-judge ("día del juicio", fase Verify): [`parallel-judge-ops`](../skills/ops/parallel-judge-ops/SKILL.md).
 Origen forense (video Gentleman + repos engram/gentle-ai): [GENTLE_AI_LOOP_INTEGRATION.md](GENTLE_AI_LOOP_INTEGRATION.md).
 
 ## Mapa concepto → skill JARVIS

@@ -22,7 +22,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 # strangeverse — simulación multi-agente (API)
 
-Puente HTTP al backend de [StrangeVerse](https://github.com/Abrahan-Eagle/strangeverse) (fork MiroFish, AGPL-3.0). Router: `scenario-router`. Doc: [docs/STRANGEVERSE_INTEGRATION.md](../../docs/STRANGEVERSE_INTEGRATION.md).
+Puente HTTP al backend de [StrangeVerse](https://github.com/Abrahan-Eagle/strangeverse) (fork MiroFish, AGPL-3.0). Router: `scenario-router`. Doc: [docs/STRANGEVERSE_INTEGRATION.md](../../../docs/STRANGEVERSE_INTEGRATION.md).
 
 **Bin:** `skills/non-code/strangeverse/bin/strangeverse` (symlink tras `install.sh`).
 

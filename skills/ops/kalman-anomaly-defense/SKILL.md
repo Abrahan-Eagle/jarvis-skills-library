@@ -78,7 +78,7 @@ Prototipo CLI:
 
 ```bash
 python3 skills/ops/kalman-anomaly-defense/scripts/kalman_1d_anomaly.py \
-  --file fixtures/sample_traffic.csv --threshold 3.0
+  --file skills/ops/kalman-anomaly-defense/scripts/fixtures/sample_traffic.csv --threshold 3.0
 ```
 
 ### 3. Umbral y confianza

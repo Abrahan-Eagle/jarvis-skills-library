@@ -9,9 +9,9 @@ metadata:
 # activity-log — log unificado de actividad de agentes
 
 **Tipo:** skill global (no per-agente).
-**Ubicacion:** `skills/global/activity-log/`.
-**Bin:** `skills/global/activity-log/bin/activity-log`.
-**Estado:** v1 (Fase 1 de [docs/PROPUESTA_MEJORA_JARVIS_V2.md](../../../docs/PROPUESTA_MEJORA_JARVIS_V2.md)).
+**Ubicacion:** `skills/non-code/activity-log/`.
+**Bin:** `skills/non-code/activity-log/bin/activity-log`.
+**Estado:** v1 — contrato en [docs/COORDINACION_AGENTES.md](../../../docs/COORDINACION_AGENTES.md).
 
 ---
 
@@ -140,7 +140,7 @@ Tipos validos: `start`, `end`, `event`, `handoff`, `block`, `resume`, `dossier-w
 ## Integracion en SOUL.md de cada agente
 
 ```markdown
-- Coordinacion operativa: registra `activity-log start` al iniciar tarea relevante, `event` para hitos, `handoff create` al pasar a otro agente, `activity-log end` al cerrar. Detalle: [docs/COORDINACION_AGENTES.md](../../docs/COORDINACION_AGENTES.md).
+- Coordinacion operativa: registra `activity-log start` al iniciar tarea relevante, `event` para hitos, `handoff create` al pasar a otro agente, `activity-log end` al cerrar. Detalle: [docs/COORDINACION_AGENTES.md](../../../docs/COORDINACION_AGENTES.md).
 ```
 
 ## Limites
@@ -156,8 +156,8 @@ Tipos validos: `start`, `end`, `event`, `handoff`, `block`, `resume`, `dossier-w
 ## Tests rapidos
 
 ```bash
-cd /var/www/clawvis-openclaw/jarvis-ecosystem
-bin=skills/global/activity-log/bin/activity-log
+cd /path/to/jarvis-skills-library
+bin=skills/non-code/activity-log/bin/activity-log
 TASK=$($bin start --agent demo --title "prueba" --ref test | jq -r .task_id)
 $bin event --agent demo --task "$TASK" --kind progress --note "midcheck"
 $bin end --task "$TASK"

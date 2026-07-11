@@ -116,7 +116,7 @@ cmd_generate() {
     fi
   fi
 
-  FUNNEL_BIN="$ROOT/skills/global/funnel-metrics/bin/funnel-metrics"
+  FUNNEL_BIN="$ROOT/skills/non-code/funnel-metrics/bin/funnel-metrics"
   funnel_block=""
   if [ -x "$FUNNEL_BIN" ] && [ "$rmode" != "quick" ]; then
     funnel_block=$("$FUNNEL_BIN" report --dossier "$dossier" --period "$period" --format table 2>/dev/null || true)
