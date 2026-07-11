@@ -72,4 +72,13 @@ if [[ -f "$SESSION_LOG" ]]; then
   echo "OK: SESSION_LOG.upstream.md present (excluded from body checks)"
 fi
 
+SEEDS_DIR="$ROOT/skills/ops/learning-loop/references"
+for seed in watch-list.seed.md graduation-log.seed.md phase-1-decision-log.seed.md; do
+  if [[ ! -f "$SEEDS_DIR/$seed" ]]; then
+    echo "FAIL: missing seed $SEEDS_DIR/$seed" >&2
+    exit 1
+  fi
+done
+echo "OK: 3 learning-loop seeds present"
+
 echo "OK: learning-loop smoke tests passed"

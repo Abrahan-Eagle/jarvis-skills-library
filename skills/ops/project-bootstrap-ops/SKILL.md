@@ -22,6 +22,9 @@ metadata:
   related-skills:
     - jarvis-core
     - jarvis-skills-maintainer
+    - session-startup-ops
+    - strategic-compact-ops
+    - context-packs-ops
     - sdd-router
     - claude-skills-router
     - skill-security-auditor
@@ -34,7 +37,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 Skill global para **diagnosticar** y **guiar** la adopción de jarvis-skills-library en un repo de producto. No sustituye `jarvis-core` en el día a día; se usa al inicio o cuando falta configuración.
 
-Doc canónica: [docs/PROJECT_ONBOARDING.md](../../docs/PROJECT_ONBOARDING.md).
+Doc canónica: [docs/PROJECT_ONBOARDING.md](../../../docs/PROJECT_ONBOARDING.md).
 
 ## Comando `init jarvis`
 
@@ -45,7 +48,7 @@ Frase canónica del usuario (chat Agent o terminal):
 | **Cursor Agent** | Escribir `init jarvis` → leer esta skill, ejecutar diagnóstico, emitir informe § Paso 2 |
 | **Terminal** (repo producto) | `bash /path/to/jarvis-skills-library/scripts/init-jarvis.sh` |
 
-Opcional: `--min b` o `--min c` (Paso B / Paso C mínimo). Ver [check-project-bootstrap.sh](../../scripts/check-project-bootstrap.sh).
+Opcional: `--min b` o `--min c` (Paso B / Paso C mínimo). Ver [check-project-bootstrap.sh](../../../scripts/check-project-bootstrap.sh).
 
 ## Cuándo usar
 
@@ -58,7 +61,7 @@ Opcional: `--min b` o `--min c` (Paso B / Paso C mínimo). Ver [check-project-bo
 
 1. **No ejecutar `install.sh` ni modificar `~/.cursor/skills/`** sin orden explícita del usuario (capa máquina).
 2. **No borrar** skills ajenas en `.agents/skills/` sin auditoría (`skill-security-auditor`) y OK usuario.
-3. **Leer** [PROJECT_ONBOARDING.md](../../docs/PROJECT_ONBOARDING.md) antes de proponer cambios en el repo.
+3. **Leer** [PROJECT_ONBOARDING.md](../../../docs/PROJECT_ONBOARDING.md) antes de proponer cambios en el repo.
 4. Emitir informe estructurado (plantilla abajo) en la primera respuesta útil.
 5. Cambios en el repo de producto (crear `AGENTS.md`, manifest, scripts): pedir OK antes de escribir archivos.
 
@@ -123,12 +126,12 @@ Interpretación:
 
 | Señal | Nivel bootstrap recomendado |
 |-------|----------------------------|
-| `GLOBAL_MISSING`, `GLOBAL_DIR_NOT_SYMLINK` o `GLOBAL_STATE=LEGACY` | **Paso A** — [MIGRATION.md](../../docs/MIGRATION.md) + `install.sh --all` |
-| `MISSING_AGENTS` o `MISSING_LOCAL_SKILLS` | **Paso B** — plantilla [`AGENTS.minimal.md`](../../docs/templates/AGENTS.minimal.md) |
+| `GLOBAL_MISSING`, `GLOBAL_DIR_NOT_SYMLINK` o `GLOBAL_STATE=LEGACY` | **Paso A** — [MIGRATION.md](../../../docs/MIGRATION.md) + `install.sh --all` |
+| `MISSING_AGENTS` o `MISSING_LOCAL_SKILLS` | **Paso B** — plantilla [`AGENTS.minimal.md`](../../../docs/templates/AGENTS.minimal.md) |
 | `WARN_REPO_GLOBAL_SKILLS` | Advertir: no versionar globales en repo; usar `~/.cursor/skills/` |
-| Producto AIPP / equipo / overlays | **Paso C** — manifest [`global-sync-manifest.example`](../../docs/templates/global-sync-manifest.example) + sync + CI |
+| Producto AIPP / equipo / overlays | **Paso C** — manifest [`global-sync-manifest.example`](../../../docs/templates/global-sync-manifest.example) + sync + CI |
 | `HAS_MANIFEST` + scripts sync | Ejecutar check; `JARVIS_SKILLS_LIBRARY` debe apuntar a library válida |
-| `HAS_JARVIS_CORE_OVERLAY` / `HAS_SKILL_INDEX` | Skill Bootstrap CorralX activo — ver [CORRALX_INTEGRATION.md](../../docs/CORRALX_INTEGRATION.md) |
+| `HAS_JARVIS_CORE_OVERLAY` / `HAS_SKILL_INDEX` | Skill Bootstrap CorralX activo — ver [CORRALX_INTEGRATION.md](../../../docs/CORRALX_INTEGRATION.md) |
 
 ## Paso 2 — Informe (plantilla de respuesta)
 
@@ -167,21 +170,25 @@ Interpretación:
 
 | Acción | Referencia |
 |--------|------------|
-| Crear `AGENTS.md` mínimo | [`AGENTS.minimal.md`](../../docs/templates/AGENTS.minimal.md) |
-| Crear manifest Paso C | [`global-sync-manifest.example`](../../docs/templates/global-sync-manifest.example) |
+| Crear `AGENTS.md` mínimo | [`AGENTS.minimal.md`](../../../docs/templates/AGENTS.minimal.md) |
+| Crear manifest Paso C | [`global-sync-manifest.example`](../../../docs/templates/global-sync-manifest.example) |
 | Crear skill `{producto}-*` | `init_skill.py` en `.agents/skills/` |
-| Copiar manifest + scripts desde CorralX/clawvis | [CORRALX_INTEGRATION.md](../../docs/CORRALX_INTEGRATION.md) |
-| Bootstrap Spec Kit | [SDD_SPECKIT_INTEGRATION.md](../../docs/SDD_SPECKIT_INTEGRATION.md) |
+| Copiar manifest + scripts desde CorralX/clawvis | [CORRALX_INTEGRATION.md](../../../docs/CORRALX_INTEGRATION.md) |
+| Bootstrap Spec Kit | [SDD_SPECKIT_INTEGRATION.md](../../../docs/SDD_SPECKIT_INTEGRATION.md) |
 | Auditar skills de terceros | `claude-skills-router` → `skill-security-auditor` |
 
 ## Paso 4 — Handoff al flujo normal
 
 Tras bootstrap mínimo:
 
-1. **`jarvis-core`** — workflow diario.
-2. **`fan-out-synthesize-ops`** — orquestación por defecto (Map-Reduce agentico) en tareas no triviales.
-3. **`sdd-router`** / **`kitty-router`** / **`openspec-router`** — según marcadores detectados.
-4. **`jarvis-skills-maintainer`** — solo si el usuario edita la library global.
+1. **`session-startup-ops`** — checklist de arranque (y opcional `> Context pack:` vía `context-packs-ops`).
+2. **`jarvis-core`** — workflow diario (precedencia incluye compact → `handoff`).
+3. **`fan-out-synthesize-ops`** — orquestación por defecto (Map-Reduce agentico) en tareas no triviales.
+4. **`sdd-router`** / **`kitty-router`** / **`openspec-router`** — según marcadores detectados.
+5. Sesión larga: **`strategic-compact-ops`** → `handoff` (HITL).
+6. **`jarvis-skills-maintainer`** — solo si el usuario edita la library global.
+
+En Paso C, incluir el trío ECC en el manifest (ver `global-sync-manifest.example`).
 
 ## Anti-patrones
 

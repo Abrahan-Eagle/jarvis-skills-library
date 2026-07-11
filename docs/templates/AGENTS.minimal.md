@@ -24,6 +24,9 @@ Copiar tabla desde `jarvis-skills-library/AGENTS.md` § Auto-invoke global y añ
 | Acción | Skill |
 |--------|-------|
 | Integrar / diagnosticar JARVIS en este repo | `init jarvis` → `project-bootstrap-ops` |
+| Iniciar / retomar sesión | `session-startup-ops` |
+| Compactar o traspasar sesión | `strategic-compact-ops` → `handoff` |
+| Modo research / produce / review | `context-packs-ops` |
 | Tarea no trivial | `jarvis-experts` |
 | Nueva feature (con `.specify/`) | `sdd-router` → `speckit-specify` |
 | Iniciar módulo (sin Spec Kit) | `jarvis-core`, `brainstorming-ops` |

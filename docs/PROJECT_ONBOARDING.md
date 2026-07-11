@@ -135,6 +135,18 @@ Default si no se exporta: `/var/www/html/proyectos/AIPP/jarvis-skills-library` (
 
 Plantilla manifest reducida: [`docs/templates/global-sync-manifest.example`](templates/global-sync-manifest.example).
 
+### Trío ECC (sesión / compactación / packs) — recomendado en Paso C
+
+Incluir en el manifest (o al menos en auto-invoke de `AGENTS.md`) estas skills globales **passthrough**:
+
+| Skill | Uso |
+|-------|-----|
+| `session-startup-ops` | Arranque / retomar sesión (checklist + Roles/Skills) |
+| `strategic-compact-ops` | Sugerir compactar → `handoff` (HITL) |
+| `context-packs-ops` | Modos `research` / `produce` / `review` |
+
+Plantilla mínima: ver filas en [`AGENTS.minimal.md`](templates/AGENTS.minimal.md) y entradas en [`global-sync-manifest.example`](templates/global-sync-manifest.example). Patrón completo: manifest de **CorralX-Backend**.
+
 ### Skill Bootstrap opcional (CorralX)
 
 Tras Paso C, productos maduros pueden añadir telemetría y arranque explícito de skills:

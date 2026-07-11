@@ -110,6 +110,27 @@ mkdir -p ~/.cursor/learning-captures
 
 Override: `export LEARNING_LOOP_HOME=/custom/path`
 
+### Seeds + bootstrap automático (`install.sh`)
+
+`scripts/install.sh` llama `bootstrap_learning_captures` (líneas ~158–182) y, si faltan en `LEARNING_LOOP_HOME` (default `~/.cursor/learning-captures`), copia:
+
+| Seed en repo | Destino runtime |
+|--------------|-----------------|
+| `skills/ops/learning-loop/references/watch-list.seed.md` | `watch-list.md` |
+| `skills/ops/learning-loop/references/graduation-log.seed.md` | `graduation-log.md` |
+| `skills/ops/learning-loop/references/phase-1-decision-log.seed.md` | `phase-1-decision-log.md` |
+
+No sobrescribe archivos ya existentes. Smoke: `bash scripts/smoke-learning-loop.sh` exige que los 3 seeds existan en el repo.
+
+### HITL: scan vs wrap-up
+
+| Modo | Escritura | Gate humano |
+|------|-----------|-------------|
+| **Scan** | Puede escribir capturas **crudas** bajo `LEARNING_LOOP_HOME/<session>/` (señales mid-session) **sin** OK previo | El gate HITL **no** aplica al scan crudo |
+| **Wrap-up / routing** | Destinos canónicos (`active_context`, walkthrough, AGENTS) | **Nada durable sin OK usuario** |
+
+Esto alinea el doc con el comportamiento real del skill: el *scan* es captura efímera; el wrap-up y el cierre canónico (`session-learner-ops`) son HITL.
+
 ### Hook post-clear (opcional, Claude Code)
 
 Upstream documenta hook SessionStart en settings Claude Code. En Cursor no se instala por defecto; wrap-up manual si hay captures huérfanas.

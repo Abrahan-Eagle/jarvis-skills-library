@@ -230,7 +230,9 @@ When iterating over globbed source directories, never pass a trailing-slash sour
 cp -R "${src%/}" "$TARGET/skills/$(basename "${src%/}")"
 ```
 
-Note: `continuous-learning` and `continuous-learning-v2` have extra files (config.json, hooks, scripts) — ensure the entire directory is copied, not just SKILL.md.
+Note (upstream Claude Code): `continuous-learning` / `continuous-learning-v2` pueden traer `config.json`, hooks y scripts — en ese ecosistema a veces se copia el directorio completo.
+
+**JARVIS (Cursor):** el sync curado (`scripts/sync-ecc-skills.sh` + `scripts/patch-ecc-skills.py` + `install.sh`) instala **solo `SKILL.md`** (y referencias documentadas). No copiar el árbol ECC completo al producto; hooks son opt-in vía `install-ecc-runtime.sh --with-hooks`. Para CLv2 sin hooks, usar **`learning-loop`**.
 
 ---
 
@@ -401,6 +403,6 @@ Then print a summary report:
 
 - Preferir `bash scripts/install-ecc-runtime.sh --project-dir <repo>` (perfil `minimal` default).
 - No apilar plugin Claude `ecc@ecc` + `install.sh --profile full`.
-- Doc: [docs/ECC_INTEGRATION.md](../../docs/ECC_INTEGRATION.md)
+- Doc: [docs/ECC_INTEGRATION.md](../../../docs/ECC_INTEGRATION.md)
 - `upstream: ecc:configure-ecc`
 
