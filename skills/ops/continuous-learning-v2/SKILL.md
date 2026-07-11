@@ -376,6 +376,7 @@ v2.1 is fully compatible with v2.0 and v1:
 
 - **Cierre de módulo canónico:** `session-learner-ops` → `docs/active_context.md` (siempre).
 - **Instincts ECC:** opt-in con hooks (`install-ecc-runtime.sh --with-hooks`); usar esta skill para `/evolve` y confidence.
+- **Scripts/hooks upstream no vendorizados** en este repo (`migrate-homunculus.sh`, `hooks/observe.sh`). Sin `--with-hooks`, usar **`learning-loop`** (HITL wrap-up) en lugar de auto-captura.
 - Router: `ecc-router`. Install: `scripts/install-ecc-runtime.sh`.
 - `upstream: ecc:continuous-learning-v2`
 

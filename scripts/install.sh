@@ -155,6 +155,32 @@ install_to_target() {
   return 0
 }
 
+# Seed learning-loop runtime files (HITL wrap-up) if missing
+bootstrap_learning_captures() {
+  local home_dir="${LEARNING_LOOP_HOME:-$HOME/.cursor/learning-captures}"
+  local seeds="$ROOT/skills/ops/learning-loop/references"
+  if $DRY_RUN; then
+    echo "WOULD bootstrap learning-captures under $home_dir"
+    return 0
+  fi
+  mkdir -p "$home_dir"
+  local pair src dest
+  for pair in \
+    "watch-list.seed.md:watch-list.md" \
+    "graduation-log.seed.md:graduation-log.md" \
+    "phase-1-decision-log.seed.md:phase-1-decision-log.md"
+  do
+    src="$seeds/${pair%%:*}"
+    dest="$home_dir/${pair##*:}"
+    if [[ -f "$src" && ! -e "$dest" ]]; then
+      cp "$src" "$dest"
+      echo "SEED: $dest"
+    fi
+  done
+}
+
+bootstrap_learning_captures
+
 if $INSTALL_ALL; then
   failed=0
   install_to_target "${HOME}/.cursor/skills" "$DRY_RUN" "$FORCE" || failed=1
