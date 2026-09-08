@@ -1,12 +1,13 @@
 # Auto-invoke global
 
-> Generado por `scripts/sync-catalog.py` — 2026-07-11
+> Generado por `scripts/sync-catalog.py` — 2026-09-07
 
 > Multi-skill: orden = precedencia `jarvis-core` cuando aplica; resto alfabético.
 > Skills con `metadata.status: deprecated` se omiten de esta tabla (siguen en CATALOG).
 
 | Acción | Skill(s) |
 |--------|----------|
+| /office-hours /ship /qa /careful | `gstack-router` |
 | Abrir PR con gh | `branch-pr-ops` |
 | Actualizar docs tras cambio de código | `docs-alignment-ops` |
 | Address review feedback | `receiving-code-review` |
@@ -136,6 +137,7 @@
 | PR supera 400 líneas o presupuesto de review | `chained-pr-ops` |
 | Pack Addy agent-skills lifecycle | `agent-skills-router` |
 | Pack Rezvani claude-skills | `claude-skills-router` |
+| Pack gstack / Garry Tan | `gstack-router` |
 | Paleta de colores o tipografía | `ui-router`, `ui-ux-pro-max` |
 | Pedir code review | `requesting-code-review` |
 | Pipeline Nano Banana + Veo + Claude Design + Claude Code | `ai-media-landing-ops` |
@@ -181,6 +183,7 @@
 | Vulnerability scan con reporte | `cyber-neo-router` |
 | Vulnerability scan reporte ejecutivo | `cyber-neo` |
 | Work packages o kanban SDD | `kitty-router` |
+| autoplan o freeze de alcance gstack | `gstack-router` |
 | cyber-neo OWASP 2025 | `cyber-neo` |
 | cyber-neo lockfiles supply chain | `cyber-neo-cli` |
 | cyber-neo pentest OWASP 2025 | `cyber-neo-router` |

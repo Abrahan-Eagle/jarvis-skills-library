@@ -26,6 +26,14 @@ Fuente upstream (5 entradas; el README del índice puede estar desactualizado):
 
 Guía: [AGENT_SKILLS_ADDY_INTEGRATION.md](AGENT_SKILLS_ADDY_INTEGRATION.md). No reemplaza Spec Kit ni `jarvis-core`.
 
+## gstack (Garry Tan) — sprint opinionado — watchlist
+
+| Pack | Repo | Tipo | Pin | Estado JARVIS |
+|------|------|------|-----|---------------|
+| gstack | [garrytan/gstack](https://github.com/garrytan/gstack) | Claude Code team simulation | `0530392821c277b95e5cd65aa9d9fda4248718b2` (v1.81.0.0) | **Router** — `gstack-router`; cherry-picks en skills canónicas; **no** sync masivo SKILL.md |
+
+Guía: [GSTACK_INTEGRATION.md](GSTACK_INTEGRATION.md) · Forense: [GSTACK_FORENSE_JARVIS.md](GSTACK_FORENSE_JARVIS.md). Revisar pin trimestral (Aside driver, telemetría, hooks). No reemplaza `git-guardrails-ops` ni Spec Kit.
+
 ## Cómo elegir toolkit SD-Development
 
 | Criterio | Spec Kit | Spec Kitty | OpenSpec |

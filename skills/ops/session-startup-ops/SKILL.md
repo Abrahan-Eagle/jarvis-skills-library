@@ -7,7 +7,7 @@ description: >
 license: UNLICENSED
 metadata:
   author: JARVIS Global
-  version: "1.0"
+  version: "1.1"
   scope: [global]
   category: ops
   auto_invoke:
@@ -59,3 +59,7 @@ Equivalente conceptual a ECC `session-start.js`, como **protocolo** (no hook SSO
 - `context-packs-ops` — modos research/produce/review
 - `engram-memory-protocol` — recuperación post-compactación
 - `strategic-compact-ops` — cuándo sugerir compactar (no en arranque)
+
+## Preferir handoff de la rama actual
+
+Al retomar: buscar primero handoff/checkpoint de la **rama git actual**; otros handoffs solo como fallback. Evita restaurar contexto de otra feature.

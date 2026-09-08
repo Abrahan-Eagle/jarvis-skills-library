@@ -7,7 +7,7 @@ description: >
 license: UNLICENSED
 metadata:
   author: JARVIS Global
-  version: "2.0.0"
+  version: "2.1.0"
   scope: [global]
   auto_invoke:
     - "Terminar módulo"
@@ -51,3 +51,31 @@ NINGÚN CLAIM DE COMPLETADO SIN EVIDENCIA FRESCA DE VERIFICACIÓN EN ESTE TURNO
 ## Si falla
 
 Invocar `systematic-debugging` antes de proponer fix.
+
+## Evidencia fresca (working tree)
+
+La evidencia solo cuenta si cubre el **contenido actual** del working tree (tracked + untracked relevantes). Si editas código **después** del último comando de verificación, esa evidencia queda **STALE** y debes re-ejecutar.
+
+Anti-racionalizaciones (nunca usan como “verificado”):
+
+- “Debería funcionar ahora”
+- “Confío en el cambio”
+- “El CI ya pasó en otro commit”
+- “Solo toqué docs/comentarios” (si el claim incluye comportamiento)
+
+## Completion Status Protocol
+
+Al cerrar, declarar **exactamente uno**:
+
+| Estado | Significado |
+|--------|-------------|
+| `DONE` | Evidencia fresca confirma el claim; sin reservas materiales |
+| `DONE_WITH_CONCERNS` | Claim cumplido con riesgos residuales **listados** |
+| `BLOCKED` | No se puede completar; blocker explícito |
+| `NEEDS_CONTEXT` | Falta decisión/datos del usuario |
+
+Tras **3** intentos fallidos de verificación o fix sin progreso → `BLOCKED` o `NEEDS_CONTEXT` y escalar (no insistir en silencio).
+
+## Origen
+
+Patrón *evidence ledger* / completion status inspirado en gstack (`/ship` verification gate); enforcement de push sigue en `git-guardrails-ops`.

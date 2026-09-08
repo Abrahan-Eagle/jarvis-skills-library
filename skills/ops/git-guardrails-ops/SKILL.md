@@ -5,7 +5,7 @@ description: >
   Trigger: Hacer git push o merge, comando git destructivo.
 license: UNLICENSED
 metadata:
-  version: "2.0.0"
+  version: "2.1.0"
   adapted_from: mattpocock/skills (git-guardrails-claude-code)
   related-skills: [git-commit, structured-commits-ops, finishing-a-development-branch, using-git-worktrees, jarvis-core]
   auto_invoke:
@@ -52,6 +52,17 @@ Si el repo define `.githooks/`, el usuario activa manualmente:
 chmod +x .githooks/pre-push
 git config core.hooksPath .githooks
 ```
+
+### Cursor `create-hook` (careful / freeze)
+
+gstack aporta careful/freeze vía hooks Claude Code; **en Cursor no se exportan**. Para enforcement local, usar skill Cursor `create-hook` / `beforeShellExecution` con familias:
+
+- **Deny:** `rm -rf /`, `rm -rf ~`, `git push --force` a rama default
+- **Ask:** `DROP`/`TRUNCATE`, `git reset --hard`, ofuscación tipo `${IFS}` / `base64|sh`, `docker system prune`, `kubectl delete`
+
+**Scope freeze (prosa + hook opcional):** declarar directorio permitido; rechazar edits fuera sin OK. No instalar gstack solo para obtener careful en Cursor.
+
+Pack gstack `/ship` non-interactive **está prohibido** aquí: push/merge solo con orden explícita (ver `gstack-router`).
 
 ## Checklist antes de push (agente)
 

@@ -1,15 +1,15 @@
 # Catálogo de skills globales
 
-> Generado por `scripts/sync-catalog.py` — 2026-07-11
+> Generado por `scripts/sync-catalog.py` — 2026-09-07
 
-Total: **109** skills
+Total: **110** skills
 
 ## Resumen por categoría
 
 | Categoría | Cantidad |
 |-----------|----------|
 | `backend` | 7 |
-| `core` | 18 |
+| `core` | 19 |
 | `engineering` | 9 |
 | `git` | 6 |
 | `mobile` | 4 |
@@ -41,6 +41,7 @@ Total: **109** skills
 | `cyber-neo-router` | Orquesta auditoría Cyber Neo (11 dominios, OWASP 2025, reporte read-only) vs security checklist JARVIS. | [skills/core/cyber-neo-router/SKILL.md](skills/core/cyber-neo-router/SKILL.md) |
 | `ecc-router` | Orquesta harness ECC (hooks, instincts, rules idioma, ecc consult) vs workflow JARVIS canónico. | [skills/core/ecc-router/SKILL.md](skills/core/ecc-router/SKILL.md) |
 | `engram-router` | Orquesta memoria persistente Engram (MCP) vs context-updater/handoff/active_context JARVIS. | [skills/core/engram-router/SKILL.md](skills/core/engram-router/SKILL.md) |
+| `gstack-router` | Orquesta pack garrytan/gstack vs canónico JARVIS. | [skills/core/gstack-router/SKILL.md](skills/core/gstack-router/SKILL.md) |
 | `jarvis-core` | Protocolo base del sistema JARVIS para cualquier proyecto. Define honestidad, foco de negocio y flujo de trabajo modular… | [skills/core/jarvis-core/SKILL.md](skills/core/jarvis-core/SKILL.md) |
 | `jarvis-experts` | Panel de Expertos JARVIS (agencia de desarrollo virtual). Define roster de roles, criterios de activación, combinaciones… | [skills/core/jarvis-experts/SKILL.md](skills/core/jarvis-experts/SKILL.md) |
 | `jarvis-skills-maintainer` | Mantenimiento de jarvis-skills-library: crear, validar, catalogar, lockear e instalar skills globales. | [skills/core/jarvis-skills-maintainer/SKILL.md](skills/core/jarvis-skills-maintainer/SKILL.md) |

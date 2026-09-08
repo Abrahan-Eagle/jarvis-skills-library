@@ -6,7 +6,7 @@ description: >
 license: Apache-2.0
 metadata:
   author: JARVIS Global (patch)
-  version: "1.0-jarvis"
+  version: "1.1-jarvis"
   scope: [global]
   category: ops
   upstream: Gentleman-Programming/engram:docs-alignment
@@ -69,3 +69,16 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 
 - `speckit-converge` — gaps spec vs código post-implement.
 - `branch-pr-ops` — incluir docs en checklist del PR.
+
+## Mapa Diátaxis (gstack document-release)
+
+Por entidad tocada, verificar cobertura:
+
+| Tipo | Pregunta |
+|------|----------|
+| Reference | ¿API/config documentada? |
+| How-to | ¿Tarea concreta con pasos? |
+| Tutorial | ¿Onboarding guiado si aplica? |
+| Explanation | ¿Por qué / contexto? |
+
+Verificar diagramas ASCII/mermaid: entidades renombradas no deben quedar huérfanas.

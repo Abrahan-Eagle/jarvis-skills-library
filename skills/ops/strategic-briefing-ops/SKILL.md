@@ -7,7 +7,7 @@ description: >
 license: UNLICENSED
 metadata:
   author: JARVIS Global
-  version: "1.0"
+  version: "1.1"
   scope: [global]
   category: ops
   upstream: clawvis:strategic-briefing-ops
@@ -243,3 +243,17 @@ Ver [STRANGEVERSE_INTEGRATION.md](../../../docs/STRANGEVERSE_INTEGRATION.md) § 
 - Resumen ejecutivo standalone (mensaje corto)
 - Lista de decisiones pendientes con recomendación
 - Prioridades top-3 para la semana
+
+## Métricas git cuantitativas (gstack retro-inspired)
+
+Cuando haya repo git, incluir tabla (ventana 7d/14d/30d):
+
+| Métrica | Cómo |
+|---------|------|
+| SLOC lógico añadido/eliminado | `git log --numstat` (no inventar) |
+| Días activos / streaks | commits por día |
+| Hotspots | archivos más tocados |
+| PR/commit size | percentiles |
+| AI-assisted | commits con co-author/trailer bot si existe; **separar** de humanos |
+
+**Anti-fabricación:** si la ventana devuelve ~0 commits, sospechar fecha/ref stale o cwd incorrecto **antes** de narrar. Citar `GUARD: latest commit <sha> <date>`.

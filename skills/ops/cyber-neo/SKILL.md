@@ -6,7 +6,7 @@ description: >
 license: MIT
 metadata:
   author: JARVIS Global
-  version: "1.1"
+  version: "1.2"
   scope: [global]
   category: ops
   upstream: cyber-neo:cyber-neo
@@ -588,3 +588,11 @@ If you find yourself thinking any of these, you are cutting corners:
 | "Checking auth on every route would take too long" | At minimum check admin/API routes. Scope up, don't skip. |
 | "I already found enough issues" | Complete all phases. The one you skip might be the critical one. |
 | "The framework probably handles this" | Verify it. Frameworks have defaults that can be disabled. |
+
+## Domain: Skill Supply Chain (gstack CSO-inspired)
+
+Tratar `SKILL.md`, `AGENTS.md`, `.cursor/rules` y prompts de agente como **código ejecutable**, no como documentación descartable.
+
+- Incluir siempre en el alcance de auditoría (nunca excluir como “solo docs”).
+- Gate de confianza numérico sugerido: daily ≥ **8/10** para afirmar hallazgo; comprehensive puede bajar a **2/10** marcando `TENTATIVE`.
+- Cruzar con `skill-security-auditor` antes de instalar skills de terceros.

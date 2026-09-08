@@ -292,3 +292,7 @@ Report completion (after questioning loop ends or early termination):
 - Cap clarifying questions (max 5 per round); prefer structured options over open-ended lists.
 - Without `.specify/`, use `deep-interview-ops` instead of this skill.
 - Record answers in `spec.md` Clarifications section — do not proceed to plan with unresolved MUST items.
+
+## Read-first (gstack spec-inspired)
+
+Antes de la **primera** pregunta de clarificación: leer código/specs relevantes y citar al menos un `path:line` (o sección de `spec.md`) que motive la pregunta. No preguntar en abstracto lo que el repo ya responde.

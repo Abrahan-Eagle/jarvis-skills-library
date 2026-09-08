@@ -204,6 +204,18 @@
       }
     },
     {
+      "id": "gstack",
+      "name": "gstack (Garry Tan)",
+      "repo": "https://github.com/garrytan/gstack",
+      "pin": "0530392821c277b95e5cd65aa9d9fda4248718b2",
+      "sdx": ["SD-Development", "SD-Validate"],
+      "note": "Router-only; cherry-picks en skills canónicas; sin sync masivo SKILL.md",
+      "jarvis": {
+        "skills": ["gstack-router"],
+        "doc": "docs/GSTACK_INTEGRATION.md"
+      }
+    },
+    {
       "id": "marketing-spec-kit",
       "name": "Marketing Spec Kit",
       "repo": "https://github.com/ACNet-AI/marketing-spec-kit",

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-07-11",
+  "generated": "2026-09-07",
   "skills": {
     "api-design-principles": {
       "source": "jarvis-skills-library",
@@ -74,22 +74,28 @@
       "computedHash": "1d566f232966519817434d8f6ceef3af0b71d0ddd8ca1cc537350fc0a2b4014c",
       "path": "skills/core/engram-router/SKILL.md"
     },
+    "gstack-router": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "a873a49fa6b499a575fad989edbc301338b32f6fe1ccf840ee16ec7377f4e433",
+      "path": "skills/core/gstack-router/SKILL.md"
+    },
     "jarvis-core": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "29e126fa3c9348fefe11bf88965587b5346a5fa88eaa83ae58bafd807a176a14",
+      "computedHash": "1191c2d7e355d23b6b0cc266451da68ba05928d12b950ab3a3a6a50e0464ae15",
       "path": "skills/core/jarvis-core/SKILL.md"
     },
     "jarvis-experts": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "884443400ec5a0a55d2e99c6848a98e874fc07cb1d6e26230caad9831a3918ea",
+      "computedHash": "262c4deb16f39dfdffa1093b1d305670ba0bb8b036ab9d565bb93de563fbfe93",
       "path": "skills/core/jarvis-experts/SKILL.md"
     },
     "jarvis-skills-maintainer": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "e670ce09ed92219c7e104c174becce8c7b09e54fbcc3d15769ec47507f886ea7",
+      "computedHash": "8616b76110bad3fd3aaf007c42c19ba6bd3778a8a71269d37c884997fd4bda9d",
       "path": "skills/core/jarvis-skills-maintainer/SKILL.md"
     },
     "kalman-anomaly-router": {
@@ -192,7 +198,7 @@
     "systematic-debugging": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "b14243735935a589d95627935e6359e1f397741472bcd23fc56232439a4580be",
+      "computedHash": "5a334c0436348ec4ce0dffd81346379c2947df22f2450153ac013140881d9687",
       "path": "skills/engineering/systematic-debugging/SKILL.md"
     },
     "test-driven-development": {
@@ -204,7 +210,7 @@
     "webapp-testing": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
+      "computedHash": "269980efa1e951bb6339f92d33d65dd8069aba4b403217ebf295e2558b6ae4f9",
       "path": "skills/engineering/webapp-testing/SKILL.md"
     },
     "branch-pr-ops": {
@@ -361,20 +367,20 @@
     "cyber-neo": {
       "source": "cyber-neo/cyber-neo",
       "sourceType": "github",
-      "computedHash": "9b27241ce578e3993f5b97bceea8b318953a47d347375ba79ebe8a4a26f65db0",
+      "computedHash": "b08bb2a4dc498b42fc1300ad056262bb7a47db40397aecf3506587e523dd2ffe",
       "path": "skills/ops/cyber-neo/SKILL.md",
       "upstream": "cyber-neo:cyber-neo"
     },
     "deep-interview-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "0393de447d2cbc0c4deab3ddb2d35301b7235c58fe45e74e3598ee1745625456",
+      "computedHash": "b1ce0d0301807d86b074cfeae1ba8528a8f34e2bee6526ee3b6bb015a6e0313c",
       "path": "skills/ops/deep-interview-ops/SKILL.md"
     },
     "docs-alignment-ops": {
       "source": "Gentleman-Programming/engram",
       "sourceType": "github",
-      "computedHash": "1c7e7c3c3e848bcf456528e141e5f7756770c1302203a749e048d2745422104d",
+      "computedHash": "e1caa0ddede6fbad929b505d7b1c126958dab30e27675c2a85601374c65da163",
       "path": "skills/ops/docs-alignment-ops/SKILL.md",
       "upstream": "Gentleman-Programming/engram:docs-alignment"
     },
@@ -400,14 +406,14 @@
     "finishing-a-development-branch": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "117867f9debca0a4d0a94da3b334b0ae0efe08a40a37b424ad322980331297ba",
+      "computedHash": "cdbc8c8af2a2c5dbf64027ac25f5639eefe95010e464a0c6434fe94831c314c5",
       "path": "skills/ops/finishing-a-development-branch/SKILL.md",
       "upstream": "superpowers:finishing-a-development-branch"
     },
     "git-guardrails-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "fb2e812dc45bc22a4bc543d57e49e24d718dbacbed24b7d8c51362f602cd84f4",
+      "computedHash": "b2908796a83f6ece6cc1b29aa2698b8b5b697375216af49b7b8d011e4a0e2df6",
       "path": "skills/ops/git-guardrails-ops/SKILL.md"
     },
     "handoff": {
@@ -419,7 +425,7 @@
     "human-in-the-loop-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "4857baf5958ab464248c757299eb20051e4f35dcb87a84bc09a0bc77f2b38309",
+      "computedHash": "9473da79d77891804785d1fd50bdf33b2ebd0471ce5504f9137875b6596d46cc",
       "path": "skills/ops/human-in-the-loop-ops/SKILL.md"
     },
     "kalman-anomaly-defense": {
@@ -445,7 +451,7 @@
     "parallel-judge-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "922722be6e9112ca8a2aa2f687ce50f51e307677425f4fa223cac5e7d63fee29",
+      "computedHash": "624870a7f9d61eabcbec84abaf374112e6827c7d6c2f45086700900627ebc0e8",
       "path": "skills/ops/parallel-judge-ops/SKILL.md"
     },
     "project-bootstrap-ops": {
@@ -483,7 +489,7 @@
     "session-startup-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "e9be78d3a17b5805688bc3f634ae1cf5d8dd874a1e117246ecc6217c5640a25b",
+      "computedHash": "7844579262d152d022fea9d571fd281fcb535384b18f69bc82a4c102c42da8d3",
       "path": "skills/ops/session-startup-ops/SKILL.md"
     },
     "skill-loop": {
@@ -496,14 +502,14 @@
     "skill-security-auditor": {
       "source": "alirezarezvani/claude-skills",
       "sourceType": "github",
-      "computedHash": "7606f30093b09680f3535dce441a9105128f008c94ce4d04fca1f2b0eee530b5",
+      "computedHash": "99298193013bb2a007a22d07ee9d80ffa691c731bd4fbf3bc3fb928df5f580d7",
       "path": "skills/ops/skill-security-auditor/SKILL.md",
       "upstream": "alirezarezvani/claude-skills:skill-security-auditor"
     },
     "strategic-briefing-ops": {
       "source": "clawvis/strategic-briefing-ops",
       "sourceType": "github",
-      "computedHash": "9367b5716c9c72c3d7d1e061bbf9c144ad8beac8ed3c09184101402fbac82c8c",
+      "computedHash": "c7981c9e3d9c5dcc8619b765a33d92b33e060501bd0623d44248e0d7990d8b02",
       "path": "skills/ops/strategic-briefing-ops/SKILL.md",
       "upstream": "clawvis:strategic-briefing-ops"
     },
@@ -516,7 +522,7 @@
     "verification-before-completion": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "0bf291600834d2ddcef3549bc4ce3dd01656ff25db86e51c9f95154fc05973e0",
+      "computedHash": "8b7f79d3a66318d9bcd2cef510a63d1e615d78dbe1964db3bfcf1eb7ced0c579",
       "path": "skills/ops/verification-before-completion/SKILL.md"
     },
     "cognitive-doc-design-ops": {
@@ -555,7 +561,7 @@
     "code-review-playbook": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "614016df39eacd6968d3080cb6213fdc235bebaee3e3876c9d8668e53734b7c0",
+      "computedHash": "8164979fd8eb87b99efabcf1b46967865c41d32f3e5cd8870cd5c0537e4242fd",
       "path": "skills/review/code-review-playbook/SKILL.md"
     },
     "comment-writer-ops": {
@@ -606,7 +612,7 @@
     "speckit-clarify": {
       "source": "github/spec-kit",
       "sourceType": "github",
-      "computedHash": "aee7ba24e59a19d66c2245f25d6afb578fa5b0e66a48324c793f9fbea6bd680a",
+      "computedHash": "4171587c034f80e88b7d5de49e3f0f1a7add253d2aea71e9e05c68bc2fa71a1a",
       "path": "skills/sdd/speckit-clarify/SKILL.md",
       "upstream": "github/spec-kit:templates/commands/clarify.md"
     },
@@ -661,7 +667,7 @@
     "speckit-taskstoissues": {
       "source": "github/spec-kit",
       "sourceType": "github",
-      "computedHash": "4319ac34e3a42128a43c1e3caf148df0c32c2da9db69b4f82d7597c02a2bd730",
+      "computedHash": "8bfd58066de71ddbeae0ecb4eb7f3c72ca7c647b1be64743a4ebe862030e07ae",
       "path": "skills/sdd/speckit-taskstoissues/SKILL.md",
       "upstream": "github/spec-kit:templates/commands/taskstoissues.md"
     },

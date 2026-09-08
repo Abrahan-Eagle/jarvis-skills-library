@@ -7,7 +7,7 @@ description: >
 license: UNLICENSED
 metadata:
   author: JARVIS Global
-  version: "2.1"
+  version: "2.2"
   scope: [global]
   auto_invoke:
     - "Cualquier tarea no trivial"
@@ -94,3 +94,16 @@ Objetivo: evitar caos accidental con **un orquestador responsable**, **workers p
 - `AGENTS.md` del proyecto — roster y reglas locales
 - `jarvis-core` — workflow modular
 - `fan-out-synthesize-ops` — orquestación paralela obligatoria
+
+## CEO / scope modes (gstack-inspired)
+
+Antes de planificar una feature no trivial, elegir **un** modo de scope y declarar ≥2 alternativas de implementación con esfuerzo relativo:
+
+| Modo | Cuándo |
+|------|--------|
+| `EXPANSION` | Oportunidad clara; blast radius acotado; usuario pide más ambición |
+| `SELECTIVE` | Ampliar solo en el radio del cambio |
+| `HOLD` | Default en bugfix / hotfix / refactor local |
+| `REDUCTION` | Diff proyectado >15 archivos o riesgo de boil-the-ocean |
+
+Defaults: bugfix/refactor → `HOLD`; >15 archivos → sugerir `REDUCTION`. **User Challenge** (cambiar la dirección declarada del usuario) → gate HITL (`human-in-the-loop-ops`), nunca auto-aprobar.

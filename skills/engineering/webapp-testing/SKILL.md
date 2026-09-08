@@ -94,3 +94,19 @@ with sync_playwright() as p:
   - `element_discovery.py` - Discovering buttons, links, and inputs on a page
   - `static_html_automation.py` - Using file:// URLs for local HTML
   - `console_logging.py` - Capturing console logs during automation
+
+## Self-regulación en loops fix–verify (WTF-likelihood)
+
+Cuando el agente corrige fallos de UI/E2E en bucle (inspirado en gstack `/qa`; **sin** daemon gstack):
+
+1. Empieza WTF-likelihood en **0%**.
+2. Suma aproximada:
+   - revertir un fix: **+15%**
+   - fix que toca **>3 archivos**: **+5%**
+   - tras el fix nº 15: **+1%** por cada fix adicional
+   - quedar solo severidad Low: **+10%**
+   - tocar archivos **no relacionados** con el fallo: **+20%**
+3. Si WTF **> 20%** → **STOP** y pregunta al usuario (no seguir parcheando).
+4. **Hard cap: 50 fixes** en una sesión de QA.
+5. Cada fix debe incluir **test o script de regresión** reproducible (o documentar por qué no aplica).
+6. Modo **report-only**: listar hallazgos y no editar código (equivalente a `/qa-only`).

@@ -1,6 +1,6 @@
 # SD-X Toolkits (JARVIS)
 
-> Generado por `scripts/sync-sdx-registry.py` — 2026-06-18
+> Generado por `scripts/sync-sdx-registry.py` — 2026-09-07
 
 Fuente: [`sdx-toolkit-registry.json`](sdx-toolkit-registry.json). Guía: [docs/SDX_ECOSYSTEM.md](../docs/SDX_ECOSYSTEM.md).
 
@@ -30,6 +30,7 @@ Ver [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md).
 | agent-skills-addy | Agent Skills (Addy Osmani) | SD-Validate | 36c543d93b3f2bc0a3c01904c753121e56c105b1 | agent-skills-router, doubt-driven-development · sync: `scripts/sync-addy-doubt-driven.sh` |  |
 | ralph-loop | ralph-loop (PageAI-Pro) | SD-Development | main | skill-loop-router, human-in-the-loop-ops | Watchlist: dev loop Docker sandbox; overlap skill-loop + TDD; sin sync |
 | claude-skills-rezvani | Claude Skills (Alireza Rezvani) | SD-Validate, SD-Development | v2.9.0 | claude-skills-router, skill-security-auditor · sync: `scripts/sync-claude-skills-skill-security-auditor.sh` |  |
+| gstack | gstack (Garry Tan) | SD-Development, SD-Validate | 0530392821c277b95e5cd65aa9d9fda4248718b2 | gstack-router | Router-only; cherry-picks en skills canónicas; sin sync masivo SKILL.md |
 | marketing-spec-kit | Marketing Spec Kit | SDM | 0.4.0 |  | SDM; evaluar para clawvis marketing |
 | mcp-speckit | MCP Spec Kit | SD-Development | 0.1.0 |  | MCP lifecycle; evaluar para OpenClaw |
 | meta-spec | MetaSpec | SD-Development, SD-Design | 0.9.7 |  | Framework Python; no distribución JARVIS |

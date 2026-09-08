@@ -6,7 +6,7 @@ description: >
 license: UNLICENSED
 metadata:
   author: JARVIS Global
-  version: "2.0"
+  version: "2.1"
   scope: [global]
   auto_invoke:
     - "Iniciar módulo"
@@ -30,6 +30,7 @@ metadata:
     - kalman-anomaly-router
     - learning-loop-router
     - agent-skills-router
+    - gstack-router
     - claude-skills-router
     - skill-loop-router
     - human-in-the-loop-ops
@@ -91,6 +92,8 @@ Para orquestación automática de loops multi-skill (`skill-loop.yml` + CLI), ve
 
 Para pack Addy Osmani (doubt-driven in-flight vs canónico JARVIS), ver `agent-skills-router` ([docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../../../docs/AGENT_SKILLS_ADDY_INTEGRATION.md)) — solo `doubt-driven-development` curado; no sustituye `speckit-*`.
 
+Para pack gstack / Garry Tan (sprint office-hours→ship), ver `gstack-router` ([docs/GSTACK_INTEGRATION.md](../../../docs/GSTACK_INTEGRATION.md)) — solo ideas curadas en skills canónicas; **nunca** `/ship` ni `/autoplan` gstack; no sustituye `code-review-playbook`, `webapp-testing`, `branch-pr-ops`, `git-guardrails-ops`.
+
 Para pack Rezvani/claude-skills (auditoría pre-install vs megapack), ver `claude-skills-router` ([docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](../../../docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md)) — solo `skill-security-auditor` curado.
 
 Para gobernanza humana en bucles agénticos (HITL/HOTL, umbrales, terminación), ver `human-in-the-loop-ops` ([docs/LOOP_AI_ECOSYSTEM.md](../../../docs/LOOP_AI_ECOSYSTEM.md)) — complementa `git-guardrails-ops` y `skill-loop-router`.
@@ -146,6 +149,7 @@ Cuando `AGENTS.md` lista varias skills para la misma acción, aplicar esta secue
 | Push / merge | `git-guardrails-ops` (solo con orden explícita del usuario) |
 | Code review | `code-review-playbook` (+ opcional requesting/receiving) |
 | Decisión no trivial alta stakes (auth, prod, irreversible) | `agent-skills-router` → `doubt-driven-development` (opcional in-flight; no bloquea TDD ni review) |
+| Pack gstack / Garry Tan (`/office-hours`, `/ship`, `/qa`, `/careful`) | `gstack-router` → cadena canónica JARVIS (nunca `/ship`/`/autoplan` gstack) |
 | Auditar skill externa antes de instalar | `claude-skills-router` → `skill-security-auditor` (+ `validate-skills.sh`) |
 | UI/UX en código, landing en repo, a11y, layout | `ui-router` → skill dominio `{producto}-ui-design` / `zonix-web-design` → `ui-ux-pro-max` → `responsive-design` (opc.) |
 | Carrusel, deck, email HTML, prototipo standalone | `open-design-router` → `open-design` (daemon OD) |

@@ -195,3 +195,7 @@ For the complete threat model, detection patterns, and known attack vectors agai
 - Dependency vulnerability checks use local pattern matching, not live CVE databases
 
 When in doubt after an audit, **don't install**. Ask the skill author for clarification.
+
+## SKILL.md is executable prompt code
+
+`SKILL.md` no es documentación pasiva: es prompt que dirige herramientas. Auditar como código (exfil, net-exec, path escape, hook registration). No clasificar skills como “docs only” para saltarse el scan.

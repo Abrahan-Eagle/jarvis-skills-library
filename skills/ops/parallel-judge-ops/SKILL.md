@@ -7,7 +7,7 @@ description: >
 license: UNLICENSED
 metadata:
   author: JARVIS Global
-  version: "1.0"
+  version: "1.1"
   scope: [global]
   category: ops
   auto_invoke:
@@ -132,3 +132,7 @@ Ver `human-in-the-loop-ops` para el detalle de umbrales y escalamiento.
 - `code-review-playbook` — review estándar pre-merge.
 - `human-in-the-loop-ops` — terminación, umbrales, gates.
 - `verification-before-completion` — cierre con evidencia fresca.
+
+## Roster specialists sugerido (gstack Review Army)
+
+Especialistas opcionales en paralelo (Task readonly): `api-contract`, `data-migration`, `performance`, `security`, `testing`, `maintainability`, `simplification`. **Red-team** solo si diff >200 líneas o hay críticos. Preferir al menos un juez de **otro proveedor/modelo** si está disponible (`doubt-driven-development` / CLI cross-model con OK usuario).

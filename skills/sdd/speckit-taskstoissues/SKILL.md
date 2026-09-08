@@ -114,3 +114,7 @@ Check if `.specify/extensions.yml` exists in the project root.
 - Verify `git remote` is a GitHub URL before creating any issue; never create issues in the wrong repo.
 - Without GitHub MCP: offer `gh issue create` per task or a numbered list for manual creation.
 - Does **not** replace `speckit-implement`; alternative execution path via issues after `speckit-tasks`.
+
+## Dedupe antes de crear issues
+
+Antes de filar cada issue: `gh issue list --search "<titulo o keywords>"` (o MCP GitHub equivalente). Si existe issue abierto sustancialmente igual → enlazar/actualizar, no duplicar. Nunca crear issues sin OK usuario + remote GitHub (regla existente).

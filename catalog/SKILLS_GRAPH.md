@@ -1,6 +1,6 @@
 # Grafo de skills relacionadas
 
-> Generado por `scripts/skills-graph.py` — 2026-07-11
+> Generado por `scripts/skills-graph.py` — 2026-09-07
 
 ```mermaid
 flowchart LR
@@ -161,6 +161,20 @@ flowchart LR
   github_code_review["github-code-review"] --> branch_pr_ops["branch-pr-ops"]
   github_code_review["github-code-review"] --> code_review_playbook["code-review-playbook"]
   github_code_review["github-code-review"] --> comment_writer_ops["comment-writer-ops"]
+  gstack_router["gstack-router"] --> agent_skills_router["agent-skills-router"]
+  gstack_router["gstack-router"] --> code_review_playbook["code-review-playbook"]
+  gstack_router["gstack-router"] --> cyber_neo_router["cyber-neo-router"]
+  gstack_router["gstack-router"] --> deep_interview_ops["deep-interview-ops"]
+  gstack_router["gstack-router"] --> docs_alignment_ops["docs-alignment-ops"]
+  gstack_router["gstack-router"] --> git_guardrails_ops["git-guardrails-ops"]
+  gstack_router["gstack-router"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
+  gstack_router["gstack-router"] --> jarvis_core["jarvis-core"]
+  gstack_router["gstack-router"] --> jarvis_experts["jarvis-experts"]
+  gstack_router["gstack-router"] --> parallel_judge_ops["parallel-judge-ops"]
+  gstack_router["gstack-router"] --> session_startup_ops["session-startup-ops"]
+  gstack_router["gstack-router"] --> systematic_debugging["systematic-debugging"]
+  gstack_router["gstack-router"] --> verification_before_completion["verification-before-completion"]
+  gstack_router["gstack-router"] --> webapp_testing["webapp-testing"]
   handoff["handoff"] --> executing_plans["executing-plans"]
   handoff["handoff"] --> jarvis_core["jarvis-core"]
   handoff["handoff"] --> session_learner_ops["session-learner-ops"]
@@ -188,6 +202,7 @@ flowchart LR
   jarvis_core["jarvis-core"] --> fan_out_synthesize_ops["fan-out-synthesize-ops"]
   jarvis_core["jarvis-core"] --> finishing_a_development_branch["finishing-a-development-branch"]
   jarvis_core["jarvis-core"] --> git_commit["git-commit"]
+  jarvis_core["jarvis-core"] --> gstack_router["gstack-router"]
   jarvis_core["jarvis-core"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
   jarvis_core["jarvis-core"] --> jarvis_experts["jarvis-experts"]
   jarvis_core["jarvis-core"] --> kalman_anomaly_router["kalman-anomaly-router"]
@@ -451,4 +466,4 @@ flowchart LR
   zoom_out["zoom-out"] --> software_architecture["software-architecture"]
 ```
 
-Nodos conocidos: 109. Aristas (solo a skills en catálogo): 445.
+Nodos conocidos: 110. Aristas (solo a skills en catálogo): 460.

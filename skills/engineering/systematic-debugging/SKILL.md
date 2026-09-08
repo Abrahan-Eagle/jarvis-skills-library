@@ -3,7 +3,7 @@ name: systematic-debugging
 description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes
 license: UNLICENSED
 metadata:
-  version: "1.1.0"
+  version: "1.2.0"
   auto_invoke:
     - "Encontrar bug o test fallido"
   related-skills: [verification-before-completion, test-driven-development]
@@ -26,6 +26,11 @@ NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST
 ```
 
 If you haven't completed Phase 1, you cannot propose fixes.
+
+## Three-strike rule + scope lock
+
+- Tras **3 hipótesis falsadas** o **3 fixes** que no resuelven: **STOP**. Resume evidencia, ofrece 2–3 opciones al usuario (posible issue arquitectónico). No hay “quick fix for now”.
+- Declara un **scope lock**: directorio(s) bajo investigación. No edites fuera de ese scope sin OK explícito (análogo a freeze; en Cursor el enforcement mecánico es opcional vía `create-hook`).
 
 ## When to Use
 

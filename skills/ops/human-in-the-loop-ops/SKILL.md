@@ -6,7 +6,7 @@ description: >
 license: UNLICENSED
 metadata:
   author: JARVIS Global
-  version: "1.0"
+  version: "1.1"
   scope: [global]
   category: ops
   auto_invoke:
@@ -34,6 +34,12 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash, Task]
 Gobernanza operativa para bucles agénticos y decisiones autónomas: **cuándo** el humano aprueba, supervisa o queda fuera del bucle.
 
 Guía ecosistema: [docs/LOOP_AI_ECOSYSTEM.md](../../../docs/LOOP_AI_ECOSYSTEM.md).
+
+## One-way doors y User Challenge
+
+- **Puertas de un solo sentido** (destructivo, prod, auth, datos irreversibles, arquitectura que encierra) **anulan** cualquier preferencia de “no preguntar” / auto-decide.
+- Si el agente **discrepa** de la dirección declarada del usuario (cambiar objetivo, ampliar/recortar scope de forma material): **nunca auto-decidir**. Presentar evidencia + coste de equivocarse y esperar OK (`AskQuestion` / confirmación explícita).
+- No portar gstack `/plan-tune` ni auto-aprobación de `/autoplan`.
 
 ## IRON LAW
 

@@ -7,7 +7,7 @@ description: >
 license: MIT
 metadata:
   author: JARVIS Global
-  version: "2.0.0"
+  version: "2.1.0"
   scope: [global]
   category: review
   auto_invoke:
@@ -268,6 +268,16 @@ cache.set(key, value, CACHE_TTL_SECONDS);
 - [ ] **Secrets Management**: No hardcoded credentials or API keys
 - [ ] **Encryption**: Sensitive data encrypted at rest and in transit
 - [ ] **Rate Limiting**: Endpoints protected from abuse
+- [ ] **LLM Output Trust Boundary**: model/tool output treated as untrusted input (no `eval`, no raw SQL/shell from LLM text, prompt injection surfaces checked)
+
+### Pre-emit gate + Fix-First (gstack-inspired)
+
+Before publishing a finding:
+
+1. Cite verified `path:line` (or range). **No citation → confidence < 6/10 → omit or mark `tentative`.**
+2. Confidence 1–10; findings <7 go to appendix unless CRITICAL security.
+3. Split into **AUTO-FIX** (safe, obvious: dead code, typo, lint) vs **ASK** (needs judgment). Ask once in a single batch.
+4. Dedup against findings already skipped/dismissed on this branch.
 
 ---
 
@@ -291,9 +301,9 @@ cache.set(key, value, CACHE_TTL_SECONDS);
 
 ---
 
-**Skill Version**: 2.0.0
-**Last Updated**: 2026-01-08
-**Maintained by**: AI Agent Hub Team
+**Skill Version**: 2.1.0
+**Last Updated**: 2026-09-07
+**Maintained by**: JARVIS Global
 
 ## Related Skills
 

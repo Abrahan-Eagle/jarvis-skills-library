@@ -6,7 +6,7 @@ description: >
 license: UNLICENSED
 metadata:
   author: JARVIS Global
-  version: "1.0"
+  version: "1.1"
   scope: [global]
   category: core
   auto_invoke:
@@ -143,6 +143,14 @@ bash scripts/smoke-claude-skills-skill-security-auditor.sh
 ```
 
 Doc: [docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](../../../docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md), forense [docs/CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md](../../../docs/CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md). Entrada `claude-skills-rezvani` en `sdx-toolkit-registry.json`.
+
+## gstack (Garry Tan)
+
+[garrytan/gstack](https://github.com/garrytan/gstack) (MIT) — **router-only**. Ideas curadas en skills canónicas; **no** hay `sync-gstack-*.sh` ni vendorización de SKILL.md. Nunca ejecutar `/ship` ni `/autoplan` upstream.
+
+Pin: `0530392821c277b95e5cd65aa9d9fda4248718b2` (v1.81.0.0). Entrada `gstack` en watchlist de `sdx-toolkit-registry.json`.
+
+Doc: [docs/GSTACK_INTEGRATION.md](../../../docs/GSTACK_INTEGRATION.md), forense [docs/GSTACK_FORENSE_JARVIS.md](../../../docs/GSTACK_FORENSE_JARVIS.md).
 
 ## Loop AI (gobernanza HITL — skill local)
 
