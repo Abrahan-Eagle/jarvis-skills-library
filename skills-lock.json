@@ -410,6 +410,12 @@
       "path": "skills/ops/finishing-a-development-branch/SKILL.md",
       "upstream": "superpowers:finishing-a-development-branch"
     },
+    "flutter-otp-kyc-audit-ops": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "9330d3fb06d04f6add253e0c0c970623741e506c2ba5fc81a29983c257d2e6cb",
+      "path": "skills/ops/flutter-otp-kyc-audit-ops/SKILL.md"
+    },
     "git-guardrails-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",

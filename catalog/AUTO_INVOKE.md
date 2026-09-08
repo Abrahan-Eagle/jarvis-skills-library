@@ -16,8 +16,10 @@
 | Alta stakes verificar antes de commit | `doubt-driven-development` |
 | Analisis what-if sin implementar feature | `scenario-router` |
 | Análisis coherencia Spec Kit pre-implement | `speckit-analyze` |
+| Auditar onboarding OTP KYC | `flutter-otp-kyc-audit-ops` |
 | Auditar open issues como maintainer | `backlog-triage-ops` |
 | Auditar skill antes de instalar | `claude-skills-router`, `skill-security-auditor` |
+| Auditoría Flutter OTP+KYC / onboarding seguro | `flutter-otp-kyc-audit-ops` |
 | Auditoría automática pre-gate con rúbrica y score | `llm-as-judge-ops` |
 | Auditoría módulo | `fan-out-synthesize-ops` |
 | Auditoría seguridad profunda read-only | `cyber-neo`, `cyber-neo-router` |
@@ -113,6 +115,7 @@
 | Integrar jarvis-skills-library en proyecto | `project-bootstrap-ops` |
 | Investigar bug | `fan-out-synthesize-ops` |
 | Iterar hasta lograr un objetivo medible | `agent-loop-engineering` |
+| KYC bypass / OTP security audit Flutter | `flutter-otp-kyc-audit-ops` |
 | Kalman filter defensa runtime | `kalman-anomaly-router` |
 | Kalman filter seguridad runtime | `kalman-anomaly-defense` |
 | Landing page con video hero generado por IA | `ai-media-landing-ops` |
