@@ -216,7 +216,7 @@
     "webapp-testing": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "3eb08a30f3f52dd6dad3320ae434175d7cc0bdfb389dc91ce3cb653a7207449b",
+      "computedHash": "990a535a609b085b7db5f641f08f9cbabe3383f29e83b97b23936895ecf592bb",
       "path": "skills/engineering/webapp-testing/SKILL.md"
     },
     "branch-pr-ops": {
@@ -736,6 +736,12 @@
       "sourceType": "local",
       "computedHash": "f4bd2afc6e45db1f563464764bdb799a38a0ecec6bab219f4121c51b90996dc8",
       "path": "skills/ui/open-design-router/SKILL.md"
+    },
+    "scroll-landing-ops": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "a36c9aeb64e791fc6a91579cde9f26a3cff4789afa318c5e403fcb7c7dbca84a",
+      "path": "skills/ui/scroll-landing-ops/SKILL.md"
     },
     "stitch-router": {
       "source": "jarvis-skills-library",

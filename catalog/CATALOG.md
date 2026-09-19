@@ -2,7 +2,7 @@
 
 > Generado por `scripts/sync-catalog.py` — 2026-09-19
 
-Total: **118** skills
+Total: **119** skills
 
 ## Resumen por categoría
 
@@ -18,7 +18,7 @@ Total: **118** skills
 | `planning` | 10 |
 | `review` | 6 |
 | `sdd` | 12 |
-| `ui` | 4 |
+| `ui` | 5 |
 
 ## backend
 
@@ -190,5 +190,6 @@ Total: **118** skills
 |-------|-------------|------|
 | `ai-media-landing-ops` | Orquesta una cadena de herramientas generativas (Claude research → Nano Banana 2 imagen → Veo 3/Kling video loop → Claud… | [skills/ui/ai-media-landing-ops/SKILL.md](skills/ui/ai-media-landing-ops/SKILL.md) |
 | `open-design-router` | Orquesta artefactos visuales standalone via Open Design (carrusel, deck, email, prototipo) vs implementacion en codigo (… | [skills/ui/open-design-router/SKILL.md](skills/ui/open-design-router/SKILL.md) |
+| `scroll-landing-ops` | Proceso para landings con scroll narrativo: brief, design.md, hero por capas y verificación visual. Usar cuando pidan la… | [skills/ui/scroll-landing-ops/SKILL.md](skills/ui/scroll-landing-ops/SKILL.md) |
 | `stitch-router` | Orquesta prototipos y design systems en Google Stitch via MCP y skills upstream (stitch::generate-design, design-md, sti… | [skills/ui/stitch-router/SKILL.md](skills/ui/stitch-router/SKILL.md) |
 | `ui-ux-pro-max` | UI/UX design intelligence: design system generator, 67+ styles, palettes, typography, UX guidelines, charts, google-font… | [skills/ui/ui-ux-pro-max/SKILL.md](skills/ui/ui-ux-pro-max/SKILL.md) |

@@ -120,6 +120,7 @@
 | KYC bypass / OTP security audit Flutter | `flutter-otp-kyc-audit-ops` |
 | Kalman filter defensa runtime | `kalman-anomaly-router` |
 | Kalman filter seguridad runtime | `kalman-anomaly-defense` |
+| Landing con scroll narrativo o hero por capas | `scroll-landing-ops` |
 | Landing page con video hero generado por IA | `ai-media-landing-ops` |
 | Landing page o dashboard | `ui-router`, `ui-ux-pro-max` |
 | Loop stitch-loop next-prompt | `stitch-router` |
@@ -147,6 +148,7 @@
 | Pack shawnpang founder-skills (pitch, data room, outreach, PRD) vs canónico JARVIS/producto | `founder-skills-router` |
 | Paleta de colores o tipografía | `ui-router`, `ui-ux-pro-max` |
 | Pedir code review | `requesting-code-review` |
+| Película continua, capítulos o un solo mundo al scrollear | `scroll-landing-ops` |
 | Pipeline Nano Banana + Veo + Claude Design + Claude Code | `ai-media-landing-ops` |
 | Plan técnico Spec Kit | `speckit-plan` |
 | Planificar desarrollo | `brainstorming-ops`, `writing-plans`, `jarvis-core` |

@@ -86,6 +86,7 @@ with sync_playwright() as p:
 - Use `sync_playwright()` for synchronous scripts
 - Always close the browser when done
 - Orden de selectores: `data-testid`, luego `role`, luego label/texto; CSS y XPath solo como último recurso. No guardar ni commitear screenshots que contengan secretos o PII (tokens, correos, documentos).
+- En scroll narrativo, capturar varias posiciones de scroll en escritorio y a 390 px, y con prefers-reduced-motion, antes de dar la UI por verificada.
 - Add appropriate waits: `page.wait_for_selector()` or `page.wait_for_timeout()`
 
 ## Reference Files
