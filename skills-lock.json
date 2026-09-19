@@ -5,7 +5,7 @@
     "api-design-principles": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "d9224418d2c2b5b817a235f12efdd18a8f7fe7831a4a2b8de97916d629a64e03",
+      "computedHash": "83ed76518d1b3144b1bfeaaa0493bd0699dbe53615442be429acbd568033cdb2",
       "path": "skills/backend/api-design-principles/SKILL.md"
     },
     "architecture-patterns": {
@@ -185,7 +185,7 @@
     "doubt-driven-development": {
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
-      "computedHash": "a8d9a96891d9c8152b47cba009dadbbfac97879274524cd52bc7ec67c4b4176e",
+      "computedHash": "2b970c0631e90a0249ec89c39c8eccf637ba147f5d62b400307e28bf1ecbeeb6",
       "path": "skills/engineering/doubt-driven-development/SKILL.md",
       "upstream": "addyosmani/agent-skills:doubt-driven-development"
     },
@@ -198,13 +198,13 @@
     "skill-creator": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "8d36ecb4d86585174c3b08811ab6b21e5d107872afc0a829dcdfd7bb2aa1ed40",
+      "computedHash": "476a66c4d2eb4a49147db0912f78d744cbd008b2f315533a54f60ad7d117ccea",
       "path": "skills/engineering/skill-creator/SKILL.md"
     },
     "systematic-debugging": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "67331b26a52afeba3cd09c93c3dfb47e09c88142a54e28180402746592368281",
+      "computedHash": "98da59920615ce5c0aff6b6283b33374a5069a27bb411185e54f429a7f851aa3",
       "path": "skills/engineering/systematic-debugging/SKILL.md"
     },
     "test-driven-development": {
@@ -216,7 +216,7 @@
     "webapp-testing": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "269980efa1e951bb6339f92d33d65dd8069aba4b403217ebf295e2558b6ae4f9",
+      "computedHash": "3eb08a30f3f52dd6dad3320ae434175d7cc0bdfb389dc91ce3cb653a7207449b",
       "path": "skills/engineering/webapp-testing/SKILL.md"
     },
     "branch-pr-ops": {
@@ -322,7 +322,7 @@
     "publish-safety": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "8694b8f9ef062eefa4d63ec4685927733fdf0188db858989ef702ffb5159bfe7",
+      "computedHash": "95bd774e479b8a6f686d25c9105881ccb2d275e297a6cb1b70556a8d487e3d66",
       "path": "skills/non-code/publish-safety/SKILL.md"
     },
     "strangeverse": {
@@ -475,7 +475,7 @@
     "scenario-analysis-ops": {
       "source": "clawvis/scenario-analysis-ops",
       "sourceType": "github",
-      "computedHash": "bb35884384bd79d2f9b94fde518586bf3cd128f18277a2fd3a82d5e61e7afe85",
+      "computedHash": "b6e29b1c8049dc28a745a1d64977924223aaf93f003f902562c86bd7e59f0bfd",
       "path": "skills/ops/scenario-analysis-ops/SKILL.md",
       "upstream": "clawvis:scenario-analysis-ops"
     },
@@ -540,7 +540,7 @@
     "cognitive-doc-design-ops": {
       "source": "Gentleman-Programming/gentle-ai",
       "sourceType": "github",
-      "computedHash": "352905120d7a19b1c59b4dbca5b1d3e03ba8e463f3ef9de9d247e7d940f57a6f",
+      "computedHash": "ab2692ecf4b4c9ef4a100a0a39eece345d25acfdc829b9bceee264ff9fa30a78",
       "path": "skills/planning/cognitive-doc-design-ops/SKILL.md",
       "upstream": "Gentleman-Programming/gentle-ai:cognitive-doc-design"
     },
@@ -561,14 +561,14 @@
     "founder-competitive-positioning": {
       "source": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f",
       "sourceType": "github",
-      "computedHash": "26a1e52fb9592fd1c6850be4a20ee38f3530f459a70779db1d1df9aec551eaaf",
+      "computedHash": "171e6b1e0c24f64002cea8d6ec2c46619e03525c60b7d8cd0a7f25f754fa3f64",
       "path": "skills/planning/founder-competitive-positioning/SKILL.md",
       "upstream": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f"
     },
     "founder-deck-review": {
       "source": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f",
       "sourceType": "github",
-      "computedHash": "1fced38a13a51cc9983a8f97ef001f59e71abaa3bf10d283050a85661ee0f814",
+      "computedHash": "ad47e4730f5e621b803a407d9257838984b47aec7cb0aebf2bd42289a8b8b2a0",
       "path": "skills/planning/founder-deck-review/SKILL.md",
       "upstream": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f"
     },
@@ -615,13 +615,13 @@
     "code-review-playbook": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "9647104d2942807a0efd2369962407c0fea8ff590579b4b76a3d8b3fd20c3ee9",
+      "computedHash": "f74e43ea9421f996c2c3007c6e89a6e5a36110804c7a81ce90421cadd9c3d49d",
       "path": "skills/review/code-review-playbook/SKILL.md"
     },
     "comment-writer-ops": {
       "source": "Gentleman-Programming/gentle-ai",
       "sourceType": "github",
-      "computedHash": "6331727a7a91e28714d2aca97ada90d389f5bb606bf1a851236beaa07cd79267",
+      "computedHash": "9c640a03dda1baf28c3535acc4559054c2e3188d8404663302e219be02045169",
       "path": "skills/review/comment-writer-ops/SKILL.md",
       "upstream": "Gentleman-Programming/gentle-ai:comment-writer"
     },
@@ -746,7 +746,7 @@
     "ui-ux-pro-max": {
       "source": "nextlevelbuilder/ui-ux-pro-max-skill",
       "sourceType": "github",
-      "computedHash": "43f6dba4cff278c58af8f741da988e0d811ee6db98782a2f627e6f1e90dbe689",
+      "computedHash": "caef2793ea2aebf6f71d1b4d504ff150eb51c5aff31543a0ce02cd6ce6bdb0df",
       "path": "skills/ui/ui-ux-pro-max/SKILL.md",
       "upstream": "nextlevelbuilder/ui-ux-pro-max-skill:v2.5.0"
     }

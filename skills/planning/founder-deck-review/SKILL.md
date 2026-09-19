@@ -74,6 +74,8 @@ Estos ocho no son las 14 diapositivas. El mapa está más abajo.
 - Diseño consistente.
 - Legible en el móvil.
 
+Si hay fotos, que sean reales del equipo y del producto; iconos o placeholders genéricos en esas slides cuentan como aviso dentro de “diseño consistente”, no como criterio nuevo.
+
 ## 5. Errores (5)
 
 - Sin propósito vago.

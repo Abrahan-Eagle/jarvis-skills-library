@@ -178,6 +178,8 @@ You MUST complete each phase before proceeding to the next.
    - Ask for help
    - Research more
 
+Si varias causas verificadas son necesarias a la vez, no fuerces una cadena lineal de "por qué": ramifica y prueba cada rama por separado. Etiqueta cada candidata como observada, inferida o posible antes de actuar sobre ella.
+
 ### Phase 4: Implementation
 
 **Fix the root cause, not the symptom:**

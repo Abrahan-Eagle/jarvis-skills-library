@@ -269,6 +269,7 @@ cache.set(key, value, CACHE_TTL_SECONDS);
 - [ ] **Encryption**: Sensitive data encrypted at rest and in transit
 - [ ] **Rate Limiting**: Endpoints protected from abuse
 - [ ] **LLM Output Trust Boundary**: model/tool output treated as untrusted input (no `eval`, no raw SQL/shell from LLM text, prompt injection surfaces checked)
+- [ ] **Secretos en comentarios**: si aparece una credencial en el diff, el comentario es `security [blocking]` con el valor redactado; nunca repetir el secreto ni su ubicación exacta en el hilo del PR.
 
 ### Pre-emit gate + Fix-First (gstack-inspired)
 

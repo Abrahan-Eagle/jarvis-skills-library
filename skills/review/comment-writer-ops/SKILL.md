@@ -54,6 +54,8 @@ Cada vez que escribes un comentario que leerá otro humano:
 | Match target context language | Hilo en español → comentario en español; en inglés → inglés; contexto mixto → idioma del mensaje objetivo. Si el usuario pide idioma/tono explícito, obedecer. Español: neutro/profesional salvo tono regional claro en el hilo |
 | No em dashes | Comas, puntos o paréntesis en su lugar |
 
+Ancla el comentario en dónde y cuándo (archivo, línea, commit) y describe la conducta observable, no etiquetas de carácter o intención. Separa el impacto medible de tu interpretación, y márcala como tal.
+
 ## Fórmula del comentario
 
 ```text

@@ -322,6 +322,8 @@ Write instructions for using the skill and its bundled resources.
 
 Once development of the skill is complete, it must be packaged into a distributable .skill file that gets shared with the user. The packaging process automatically validates the skill first to ensure it meets all requirements:
 
+Antes de empaquetar, barrer rutas absolutas, hostnames, claves y datos internos del SKILL.md y sus recursos; y contrastar la `description` con tres o cuatro frases reales de usuario para detectar que dispare de más o de menos.
+
 ```bash
 scripts/package_skill.py <path/to/skill-folder>
 ```

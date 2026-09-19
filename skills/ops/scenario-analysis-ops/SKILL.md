@@ -110,6 +110,8 @@ Tabla comparativa con **confianza** (Alta / Media / Baja).
 
 Probabilidad × Impacto; deal-breakers = Alta + Alto.
 
+Para cada mitigación, comprueba que no destruye el valor de la acción que protege, y pregunta "¿y luego qué?" en corto, medio y largo plazo. Anota el supuesto más débil de la recomendación y el evento concreto que obliga a revisar el análisis.
+
 ### Fase 6: Resumen ejecutivo
 
 **Al inicio del informe** (5–7 oraciones): qué se analizó, recomendación, riesgo principal, decisión requerida.

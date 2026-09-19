@@ -224,6 +224,8 @@ For each finding, classify in this **precedence order** (first matching class wi
 
 A fresh reviewer can be wrong because it lacks context. Don't defer just because it's "fresh."
 
+Antes de clasificar un hallazgo como ruido, formula al menos dos interpretaciones plausibles del artefacto y refuta la versión más fuerte del hallazgo, no la más débil. Una autoridad o "estudio" citado sin artefacto verificable cuenta como supuesto no declarado, no como evidencia.
+
 ### Step 5: STOP — Bounded loop, not recursion
 
 Stop when:

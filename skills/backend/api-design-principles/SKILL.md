@@ -498,6 +498,7 @@ def create_context():
 5. **Pagination**: Always paginate large collections
 6. **Rate Limiting**: Protect your API with rate limits
 7. **Documentation**: Use OpenAPI/Swagger for interactive docs
+8. Fechas y horas siempre en ISO-8601 con UTC explícito (`2026-09-19T16:02:00Z`); ningún endpoint queda sin autenticación salvo que se declare público a propósito.
 
 ### GraphQL APIs
 

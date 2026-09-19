@@ -100,6 +100,7 @@ This Skill is not needed in the following situations:
 - `color-not-only` - Don't convey info by color alone (add icon/text)
 - `dynamic-type` - Support system text scaling; avoid truncation as text grows (Apple Dynamic Type, MD)
 - `reduced-motion` - Respect prefers-reduced-motion; reduce/disable animations when requested (Apple Reduced Motion API, MD)
+- `no-flash` - Nada parpadea más de 3 veces por segundo; sin destellos de pantalla completa (WCAG 2.3.1)
 - `voiceover-sr` - Meaningful accessibilityLabel/accessibilityHint; logical reading order for VoiceOver/screen readers (Apple HIG, MD)
 - `escape-routes` - Provide cancel/back in modals and multi-step flows (Apple HIG)
 - `keyboard-shortcuts` - Preserve system and a11y shortcuts; offer keyboard alternatives for drag-and-drop (Apple HIG)

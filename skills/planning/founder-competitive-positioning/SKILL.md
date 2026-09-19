@@ -41,7 +41,7 @@ Ejes (5): el par de ejes importa al cliente; no son vanidad; la posición tiene 
 
 Foso (4): los seis evaluados; evidencia mínima; trayectoria; un foso “propio” solo si se justifica.
 
-Evidencia (4): profundidad por rival; mayoría con fuente; separado lo investigado de lo estimado; precios solo si hay fuente. Sin fuente, marcar estimado.
+Evidencia (4): profundidad por rival; mayoría con fuente; separado lo investigado de lo estimado; precios solo si hay fuente. Sin fuente, marcar estimado. Si el usuario aporta movimientos recientes de un rival, etiquetarlos como producto, precio, financiación, contratación, marketing o contenido, cada uno con fuente o marcado como estimado; no buscarlos en la web.
 
 Narrativa (4): el claim de diferencia aguanta un contraejemplo; se puede decir en una slide; coincide con el deck si lo hay; hay plan de cómo el foso crece (slide 07).
 

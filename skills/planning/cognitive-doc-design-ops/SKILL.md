@@ -52,6 +52,8 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 | Recognition over recall | Tablas, checklists, ejemplos y plantillas > prosa memorizable |
 | Review empathy | El revisor verifica intent sin reconstruir toda la historia |
 
+No lideres con la respuesta cuando el doc es exploratorio, la incertidumbre es alta o una estructura legal/regulatoria es obligatoria: ahí lidera con la pregunta y el estado. Coloca la incertidumbre junto a la afirmación que matiza, no en una nota al final.
+
 ## Forma por defecto
 
 Usar esta estructura salvo que el repo tenga plantilla más fuerte:
