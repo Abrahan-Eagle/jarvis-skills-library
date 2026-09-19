@@ -81,6 +81,8 @@ En repos producto JARVIS, **nunca** escribir en archivos legacy `CLAUDE.md` de C
 
 ## Mode Detection
 
+En Cursor `/learning-loop` = invocar la skill `learning-loop` con la palabra scan/wrap up (ver bloque JARVIS).
+
 When `/learning-loop` is invoked, determine which mode to run:
 
 | User says | Mode | Why |
@@ -493,7 +495,7 @@ After consolidation produces its draft, run a two-persona adversarial review BEF
 - Latest decision = `REVERT` → **skip Step 3a entirely** (proceed to Step 4 unchanged)
 - Latest decision = `ITERATE` → shadow mode, but flag in output that prompts may be in revision
 
-**Note on retired Phase 2 gatekeeper mode (2026-05-20):** A planned Phase 2 gatekeeper variant (challenges block Step 4 until resolved) was retired after analysis showed the binding constraint on learning-loop effectiveness is downstream throughput (watchlist → codified rule graduation), not upstream catch-rate. Shadow mode catches 70%+ of user corrections at zero workflow friction; gatekeeper mode would amplify catches without addressing the graduation gap. See `~/.cursor/learning-captures/phase-1-decision-log.md` 2026-05-20 entry for full rationale. **Treat any `GO` entry in the decision log as historical context — shadow mode is the permanent active mode.**
+**Note on retired Phase 2 gatekeeper mode (2026-05-20):** A planned Phase 2 gatekeeper variant (challenges block Step 4 until resolved) was retired after analysis showed the binding constraint on learning-loop effectiveness is downstream throughput (watchlist → codified rule graduation), not upstream catch-rate. Shadow mode captura la mayoría (estimación upstream, sin fuente) of user corrections at zero workflow friction; gatekeeper mode would amplify catches without addressing the graduation gap. See `~/.cursor/learning-captures/phase-1-decision-log.md` 2026-05-20 entry for full rationale. **Treat any `GO` entry in the decision log as historical context — shadow mode is the permanent active mode.**
 
 **Sequence (sequential, not parallel — Router depends on Auditor's output):**
 
@@ -1101,7 +1103,7 @@ Before writing ANY behavioral learning to a AGENTS.md / `.cursorrules` file (roo
 | **Extends existing rule** (new STOP item or provenance for an existing section) | Add to the existing rule's reference/companion file, NOT to AGENTS.md / `.cursorrules` |
 
 **Reference file locations by target:**
-- AGENTS.md global (~/.cursor/skills o jarvis-skills-library) → `docs/ del repo o `.agents/`<topic>.md`
+- AGENTS.md global (~/.cursor/skills o jarvis-skills-library) → `docs/<topic>.md` o `.agents/<topic>.md` del repo activo
 - AGENTS.md / `.cursorrules` del repo activo → project's own docs folder, or `_meta/<topic>.md`, or inline in SESSION_LOG.md if it's a one-off
 
 **Line count check before writing:** Read the target AGENTS.md / `.cursorrules` and count lines. If at or near its budget, force extraction regardless of learning size.
@@ -1118,7 +1120,7 @@ If Step 5 routed any learning that **restructures an authoritative doc** (create
 2. Verify each reference still resolves correctly after the restructure
 3. Update routing logic in every affected consumer
 
-See `docs/ del repo o `.agents/`procedural-rule-routing.md` "Reverse-Check: Consumers After Doc Restructure" for the full protocol. Global principle lives in AGENTS.md global (~/.cursor/skills o jarvis-skills-library) ("Procedural Rules Belong at the Workflow Step").
+See `docs/procedural-rule-routing.md` o `.agents/procedural-rule-routing.md` del repo activo "Reverse-Check: Consumers After Doc Restructure" for the full protocol. Global principle lives in AGENTS.md global (~/.cursor/skills o jarvis-skills-library) ("Procedural Rules Belong at the Workflow Step").
 
 **STOP and correct if:**
 - A learning restructured a rule's home but the skills/agents that invoke that rule still route to the old home
@@ -1222,7 +1224,7 @@ After all learnings are routed and capture files cleaned up, check if the curren
    └── Stage all relevant files (.gitignore handles exclusions)
    └── Commit with descriptive message summarizing session work
    └── Push to remote if one exists (`git remote -v` to check)
-   └── **VERIFY the push landed — don't assume the global auto-push hook fired** (it has silently no-opped ≥3× across distinct causes, incl. a plain main-checkout commit 2026-06-18). Run `git rev-list --left-right --count origin/main...main` → expect `0 0`; if `main` is ahead, `git push origin main`. This is a 1-line self-check, NOT a permission ask. See memory `feedback_git_auto_push_hook`.
+   └── **VERIFY the push landed — don't assume the global auto-push hook fired** (it has silently no-opped ≥3× across distinct causes, incl. a plain main-checkout commit 2026-06-18). Run `git rev-list --left-right --count origin/main...main` → expect `0 0`; si `main` va por delante, informar al usuario y pedir orden antes de cualquier `git push`. See memory `feedback_git_auto_push_hook`.
    └── Confirm: "Committed and pushed: [short hash] [message]" — only after the `0 0` verify
 
 5. If user skips:
@@ -1238,9 +1240,8 @@ After all learnings are routed and capture files cleaned up, check if the curren
    Build the list of repos to check in TWO passes:
 
    Pass A — Hardcoded known repos (always check):
-   - ~/Documents/claude-projects/claude-skills/ (if skills-level learnings were routed)
-   - ~/.claude/ (if reference docs or settings changed → claude-config auto-push handles this)
-   - ~/.claude/skills/learning-loop/ (if routing rules were updated → needs push to claude-learning-loop)
+   - jarvis-skills-library (if skills-level learnings were routed)
+   - ~/.cursor/skills/ (if reference docs or settings changed)
 
    Pass B — Dynamic discovery (catches nested repos not in the hardcoded list):
    For each file written or modified during Step 5 routing:
@@ -1284,7 +1285,7 @@ After all learnings are routed and capture files cleaned up, check if the curren
       ├── Check repo visibility BEFORE prompting commit:
       │   gh repo view <remote> --json visibility -q .visibility
       │   If PUBLIC → flag explicitly and run PII-policy diff scan per
-      │   docs/ del repo o `.agents/`public-repo-pii.md before committing
+      │   `docs/public-repo-pii.md` o `.agents/public-repo-pii.md` del repo activo before committing
       ├── Prompt: "Commit and push [repo-name]? (Y/skip)"
       └── If Y → standard commit flow (HEREDOC commit message,
           Co-Authored-By, auto-push fires globally via core.hooksPath)
@@ -1657,7 +1658,7 @@ You are auditing the consolidation sub-agent's routing proposals for ONE specifi
 INPUTS (will be passed to you):
 - The consolidation.md output from Step 3 (full conclusions list)
 - The current ~/Documents/claude-projects/AGENTS.md / `.cursorrules` contents
-- The current docs/ del repo o `.agents/`reason-upstream.md contents (umbrella reference)
+- The current `docs/reason-upstream.md` o `.agents/reason-upstream.md` del repo activo contents (umbrella reference)
 
 YOUR JOB: For each routed conclusion in the consolidation output, audit the rule's framing.
 

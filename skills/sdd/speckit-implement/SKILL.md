@@ -90,7 +90,7 @@ You **MUST** consider the user input before proceeding (if not empty).
 
    - **If all checklists are complete**:
      - Display the table showing all checklists passed
-     - Automatically proceed to step 3
+     - STOP: mostrar la tabla y pedir OK explícito del usuario antes de continuar al paso 3 (regla JARVIS: implement solo con OK)
 
 3. Load and analyze the implementation context:
    - **REQUIRED**: Read tasks.md for the complete task list and execution plan
@@ -98,7 +98,7 @@ You **MUST** consider the user input before proceeding (if not empty).
    - **IF EXISTS**: Read data-model.md for entities and relationships
    - **IF EXISTS**: Read contracts/ for API specifications and test requirements
    - **IF EXISTS**: Read research.md for technical decisions and constraints
-   - **IF EXISTS**: Read /memory/constitution.md for governance constraints
+   - **IF EXISTS**: Read `.specify/memory/constitution.md` for governance constraints
    - **IF EXISTS**: Read quickstart.md for integration scenarios
 
 4. **Project Setup Verification**:

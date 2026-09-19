@@ -430,8 +430,7 @@ npm outdated
 
 #### Lock Files
 ```bash
-# ALWAYS commit lock files
-git add package-lock.json
+# Política: los lock files se versionan (no ejecutar git add/commit sin orden del usuario)
 
 # Use in CI/CD for reproducible builds
 npm ci  # Instead of npm install

@@ -31,9 +31,9 @@ Consultar `AGENTS.md` del proyecto para ramas y entornos. Patrón habitual:
 ## Comandos prohibidos sin orden explícita
 
 - `git push` (cualquier rama remota)
-- `git push origin main` / merge a `main`
+- `git push origin main`
 - `git push --force` / `git push -f`
-- `git merge` hacia `main`
+- `git merge` hacia cualquier rama compartida (`main`, `dev`/`develop`)
 - `git reset --hard`
 - `git clean -fd` / `git clean -fdx`
 - `git branch -D` en ramas compartidas

@@ -165,9 +165,7 @@ Continuous-learning-v2 stores observer data outside `~/.claude` so Claude Code's
 
 Existing users with data at `~/.claude/homunculus` can migrate once:
 
-```bash
-bash skills/continuous-learning-v2/scripts/migrate-homunculus.sh
-```
+Script `migrate-homunculus.sh` solo en upstream ECC (no vendorizado en esta library); ejecutar desde `$ECC_ROOT` si se instaló con `install-ecc-runtime.sh`.
 
 ## Quick Start
 
@@ -357,7 +355,7 @@ Hooks fire **100% of the time**, deterministically. This means:
 ## Backward Compatibility
 
 v2.1 is fully compatible with v2.0 and v1:
-- Existing global instincts can be migrated from `~/.claude/homunculus/instincts/` with `scripts/migrate-homunculus.sh`
+- Existing global instincts can be migrated from `~/.claude/homunculus/instincts/` with `scripts/migrate-homunculus.sh` (upstream, no vendorizado)
 - Existing `~/.claude/skills/learned/` skills from v1 still work
 - Stop hook still runs (but now also feeds into v2)
 - Gradual migration: run both in parallel

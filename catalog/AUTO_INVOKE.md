@@ -1,6 +1,6 @@
 # Auto-invoke global
 
-> Generado por `scripts/sync-catalog.py` — 2026-09-07
+> Generado por `scripts/sync-catalog.py` — 2026-09-19
 
 > Multi-skill: orden = precedencia `jarvis-core` cuando aplica; resto alfabético.
 > Skills con `metadata.status: deprecated` se omiten de esta tabla (siguen en CATALOG).
@@ -16,6 +16,7 @@
 | Alta stakes verificar antes de commit | `doubt-driven-development` |
 | Analisis what-if sin implementar feature | `scenario-router` |
 | Análisis coherencia Spec Kit pre-implement | `speckit-analyze` |
+| Análisis de competencia del pitch | `founder-competitive-positioning` |
 | Auditar onboarding OTP KYC | `flutter-otp-kyc-audit-ops` |
 | Auditar open issues como maintainer | `backlog-triage-ops` |
 | Auditar skill antes de instalar | `claude-skills-router`, `skill-security-auditor` |
@@ -57,6 +58,7 @@
 | Crear skill-loop.yml | `skill-loop-router` |
 | Crear skill-loop.yml workflow | `skill-loop` |
 | Cualquier tarea no trivial | `jarvis-experts`, `fan-out-synthesize-ops` |
+| Cómo ganamos frente a rivales | `founder-competitive-positioning` |
 | DESIGN.md desde proyecto Stitch | `stitch-router` |
 | Decidir flujo planificación | `sdd-router` |
 | Decidir loop vs prompt simple | `agent-loop-engineering` |
@@ -141,6 +143,8 @@
 | Pack Addy agent-skills lifecycle | `agent-skills-router` |
 | Pack Rezvani claude-skills | `claude-skills-router` |
 | Pack gstack / Garry Tan | `gstack-router` |
+| Pack lool founder-skills (deck, mercado, IC, cap table) vs rúbricas JARVIS | `founder-skills-router` |
+| Pack shawnpang founder-skills (pitch, data room, outreach, PRD) vs canónico JARVIS/producto | `founder-skills-router` |
 | Paleta de colores o tipografía | `ui-router`, `ui-ux-pro-max` |
 | Pedir code review | `requesting-code-review` |
 | Pipeline Nano Banana + Veo + Claude Design + Claude Code | `ai-media-landing-ops` |
@@ -154,6 +158,8 @@
 | Prototipo web en Stitch | `stitch-router` |
 | Que pasa si decision estrategica | `scenario-analysis-ops` |
 | Que pasa si escenario estrategico | `scenario-router` |
+| Qué dilución preguntar al abogado | `founder-cap-table-checklist` |
+| Qué objetaría un inversor al deck | `founder-ic-sim` |
 | Qué toolkit SD-X usar | `sdd-x-index` |
 | Recibir code review | `receiving-code-review` |
 | Redactar comentario de PR o issue | `comment-writer-ops` |
@@ -165,20 +171,27 @@
 | Respuesta de maintainer o mensaje async al equipo | `comment-writer-ops` |
 | Resumen ejecutivo para el founder | `strategic-briefing-ops` |
 | Retomar proyecto | `session-startup-ops` |
+| Revisar SAFE o cap table | `founder-cap-table-checklist` |
 | Revisar accesibilidad o layout | `ui-router`, `ui-ux-pro-max` |
+| Revisar modelo financiero | `founder-financial-review` |
+| Revisar pitch deck | `founder-deck-review` |
 | Revisar pull request | `code-review-playbook` |
 | Rules idioma PHP TypeScript en .cursor | `ecc-router` |
+| Runway y unit economics del pitch | `founder-financial-review` |
 | Score de calidad y must_fix antes de publicar o mergear | `llm-as-judge-ops` |
 | Sesión larga sugerir compactación | `strategic-compact-ops` |
+| Simular comité de inversión | `founder-ic-sim` |
 | Simular opinion publica o reaccion mercado | `scenario-router` |
 | Spec Kitty o spec-kitty | `kitty-router` |
 | Spec-driven development | `sdd-router` |
 | Spec-driven development ambiguo | `sdd-x-index` |
 | Spec-driven fluido brownfield | `openspec-router` |
 | Stacked PRs o chained PRs | `chained-pr-ops` |
+| Tamaño de mercado TAM SAM SOM | `founder-market-sizing` |
 | Terminar módulo | `verification-before-completion`, `session-learner-ops`, `finishing-a-development-branch`, `jarvis-core` |
 | Triage backlog issues y PRs | `backlog-triage-ops` |
 | Validar diff/PR con 2+ revisores independientes | `parallel-judge-ops` |
+| Validar el mercado del pitch | `founder-market-sizing` |
 | Verificación adversarial paralela de un artefacto | `parallel-judge-ops` |
 | Verificar estado ECC hooks agents | `ecc` |
 | Verificar instalación cyber-neo | `cyber-neo-cli` |
@@ -195,13 +208,16 @@
 | ecc consult descubrir componente ECC | `ecc` |
 | ecc consult doctor repair | `ecc-router` |
 | ecc doctor repair harness | `ecc` |
+| founder skills o startup-founder-skills | `founder-skills-router` |
 | init jarvis | `project-bootstrap-ops` |
 | learning-loop scan wrap up | `learning-loop`, `learning-loop-router` |
 | mem_save mem_search contexto entre sesiones | `engram-router` |
 | nlm login nlm setup add cursor | `notebooklm-router` |
 | open-design generate | `open-design` |
+| pitch deck / data room / fundraising email | `founder-skills-router` |
 | skill security audit pre-install | `claude-skills-router` |
 | skill security check pre-install | `skill-security-auditor` |
 | skill-loop workflow | `skill-loop-router` |
 | spec-kitty dispatch | `kitty-governance` |
+| ¿El deck está listo para inversores? | `founder-deck-review` |
 | ¿Es segura esta skill? | `claude-skills-router`, `skill-security-auditor` |

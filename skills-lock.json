@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-09-07",
+  "generated": "2026-09-19",
   "skills": {
     "api-design-principles": {
       "source": "jarvis-skills-library",
@@ -74,6 +74,12 @@
       "computedHash": "1d566f232966519817434d8f6ceef3af0b71d0ddd8ca1cc537350fc0a2b4014c",
       "path": "skills/core/engram-router/SKILL.md"
     },
+    "founder-skills-router": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "2aa29832be3488c5116b5ca2e8c06ec70ee8a4c2721c81104ea731637353cc5f",
+      "path": "skills/core/founder-skills-router/SKILL.md"
+    },
     "gstack-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
@@ -95,7 +101,7 @@
     "jarvis-skills-maintainer": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "8616b76110bad3fd3aaf007c42c19ba6bd3778a8a71269d37c884997fd4bda9d",
+      "computedHash": "8b79a4d5ec1b2c55d7a537f3f0a68f509c811bbe0e884402c7dab66d32771bec",
       "path": "skills/core/jarvis-skills-maintainer/SKILL.md"
     },
     "kalman-anomaly-router": {
@@ -173,13 +179,13 @@
     "clean-code-principles": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "8b032a3cb83112289a3ed45f56046f057b90ed1ef6869642d1da4d7abb7275b3",
+      "computedHash": "17eddecf48109ef101b06ec5de3831a633955110233560dfae50bb35b0ac40c7",
       "path": "skills/engineering/clean-code-principles/SKILL.md"
     },
     "doubt-driven-development": {
       "source": "addyosmani/agent-skills",
       "sourceType": "github",
-      "computedHash": "c1ee8a9b0ea832ec7d8ce67aec70e699dbfe540812d37a323cd6b32d9eea83c7",
+      "computedHash": "a8d9a96891d9c8152b47cba009dadbbfac97879274524cd52bc7ec67c4b4176e",
       "path": "skills/engineering/doubt-driven-development/SKILL.md",
       "upstream": "addyosmani/agent-skills:doubt-driven-development"
     },
@@ -198,7 +204,7 @@
     "systematic-debugging": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "5a334c0436348ec4ce0dffd81346379c2947df22f2450153ac013140881d9687",
+      "computedHash": "67331b26a52afeba3cd09c93c3dfb47e09c88142a54e28180402746592368281",
       "path": "skills/engineering/systematic-debugging/SKILL.md"
     },
     "test-driven-development": {
@@ -223,7 +229,7 @@
     "chained-pr-ops": {
       "source": "Gentleman-Programming/gentle-ai",
       "sourceType": "github",
-      "computedHash": "814b72153e537aef4363c95f6cb341dd0cb22d165f73f320ea4784c0835be89a",
+      "computedHash": "3634907e3a203cf3c8aeb53cec48806cc7cbb682dd343ccdd790f492bb9c0197",
       "path": "skills/git/chained-pr-ops/SKILL.md",
       "upstream": "Gentleman-Programming/gentle-ai:chained-pr"
     },
@@ -360,7 +366,7 @@
     "continuous-learning-v2": {
       "source": "ecc/continuous-learning-v2",
       "sourceType": "github",
-      "computedHash": "61f45d3c33c95b715fa051bbd44ea4c60ebfd988e11745f9b5585a83b1fe450b",
+      "computedHash": "9e8cb67a464a1c9f328499e47ed901a4b6652acca1c75c72a2fa2ad93dd996a1",
       "path": "skills/ops/continuous-learning-v2/SKILL.md",
       "upstream": "ecc:continuous-learning-v2"
     },
@@ -413,13 +419,13 @@
     "flutter-otp-kyc-audit-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "9330d3fb06d04f6add253e0c0c970623741e506c2ba5fc81a29983c257d2e6cb",
+      "computedHash": "b0ee5ad24828eb2edd760a0bdf5e7baf640f25636e89d9b6b9bdaad6087d76f4",
       "path": "skills/ops/flutter-otp-kyc-audit-ops/SKILL.md"
     },
     "git-guardrails-ops": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "b2908796a83f6ece6cc1b29aa2698b8b5b697375216af49b7b8d011e4a0e2df6",
+      "computedHash": "62b34e69c42f96ee58be9d5ce2f151b08b4a834de4566a8e730f92654eafeec8",
       "path": "skills/ops/git-guardrails-ops/SKILL.md"
     },
     "handoff": {
@@ -443,7 +449,7 @@
     "learning-loop": {
       "source": "learning-loop-skill/learning-loop",
       "sourceType": "github",
-      "computedHash": "3691d42ea8461e24e5aa81c02a20d0e558a8ee877d7a256f36f227d5caf3a94f",
+      "computedHash": "e8f438f51f8ec39fb62a6fda90f8e11a45beedb1a48af98afc56599015047c03",
       "path": "skills/ops/learning-loop/SKILL.md",
       "upstream": "learning-loop-skill:learning-loop"
     },
@@ -482,7 +488,7 @@
     "security-review-ecc": {
       "source": "ecc/security-review",
       "sourceType": "github",
-      "computedHash": "7d5d7f87015782e169453417f53b671b7d58dd1ebe05c854ffa8634826097d8c",
+      "computedHash": "92ca7627198c0b47a3b5164385be0d40a45b3fe85617e536afec3fb8b2a01574",
       "path": "skills/ops/security-review-ecc/SKILL.md",
       "upstream": "ecc:security-review"
     },
@@ -545,10 +551,52 @@
       "path": "skills/planning/executing-plans/SKILL.md",
       "upstream": "superpowers:executing-plans"
     },
+    "founder-cap-table-checklist": {
+      "source": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f",
+      "sourceType": "github",
+      "computedHash": "0e778674f4dc78ba19c10b49ea568349acbbdf775f3222f01c350dae5f82862d",
+      "path": "skills/planning/founder-cap-table-checklist/SKILL.md",
+      "upstream": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f"
+    },
+    "founder-competitive-positioning": {
+      "source": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f",
+      "sourceType": "github",
+      "computedHash": "26a1e52fb9592fd1c6850be4a20ee38f3530f459a70779db1d1df9aec551eaaf",
+      "path": "skills/planning/founder-competitive-positioning/SKILL.md",
+      "upstream": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f"
+    },
+    "founder-deck-review": {
+      "source": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f",
+      "sourceType": "github",
+      "computedHash": "1fced38a13a51cc9983a8f97ef001f59e71abaa3bf10d283050a85661ee0f814",
+      "path": "skills/planning/founder-deck-review/SKILL.md",
+      "upstream": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f"
+    },
+    "founder-financial-review": {
+      "source": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f",
+      "sourceType": "github",
+      "computedHash": "384271997ace3557840a84f702d06dc57fc4eaa46a341a100f50f657f071bbe8",
+      "path": "skills/planning/founder-financial-review/SKILL.md",
+      "upstream": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f"
+    },
+    "founder-ic-sim": {
+      "source": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f",
+      "sourceType": "github",
+      "computedHash": "ee30e6b64e0b7c45eba68e47af9da366bc3ea627c0a2dddba546d613f0ed08d9",
+      "path": "skills/planning/founder-ic-sim/SKILL.md",
+      "upstream": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f"
+    },
+    "founder-market-sizing": {
+      "source": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f",
+      "sourceType": "github",
+      "computedHash": "2fae94544b2d428e7d283b0b3825ffbc799bd7e0439436d4c2df92ef488cacde",
+      "path": "skills/planning/founder-market-sizing/SKILL.md",
+      "upstream": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f"
+    },
     "writing-plans": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "fa89f1d0e2cf711ec98f39f696d010c2b43ca87b07397bf4781111b941650ba2",
+      "computedHash": "356d8a3ac544018cc982ca55437ae2c5aab7737431a626c7d3cd106965467734",
       "path": "skills/planning/writing-plans/SKILL.md",
       "upstream": "superpowers:writing-plans"
     },
@@ -567,7 +615,7 @@
     "code-review-playbook": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "8164979fd8eb87b99efabcf1b46967865c41d32f3e5cd8870cd5c0537e4242fd",
+      "computedHash": "9647104d2942807a0efd2369962407c0fea8ff590579b4b76a3d8b3fd20c3ee9",
       "path": "skills/review/code-review-playbook/SKILL.md"
     },
     "comment-writer-ops": {
@@ -639,7 +687,7 @@
     "speckit-implement": {
       "source": "github/spec-kit",
       "sourceType": "github",
-      "computedHash": "8d86bec304b5864d0ef301dd555958f52d753aa6483e90975c54de95f01cabe3",
+      "computedHash": "058931037a88aa9bb54162d261f1688e3d17071a9425d785a2bc82b1a43dc183",
       "path": "skills/sdd/speckit-implement/SKILL.md",
       "upstream": "github/spec-kit:templates/commands/implement.md"
     },
@@ -673,7 +721,7 @@
     "speckit-taskstoissues": {
       "source": "github/spec-kit",
       "sourceType": "github",
-      "computedHash": "8bfd58066de71ddbeae0ecb4eb7f3c72ca7c647b1be64743a4ebe862030e07ae",
+      "computedHash": "df3e6ff70d0b4551e14e17a40046911b308bc20d7242377673b357cccfddd09d",
       "path": "skills/sdd/speckit-taskstoissues/SKILL.md",
       "upstream": "github/spec-kit:templates/commands/taskstoissues.md"
     },
@@ -698,7 +746,7 @@
     "ui-ux-pro-max": {
       "source": "nextlevelbuilder/ui-ux-pro-max-skill",
       "sourceType": "github",
-      "computedHash": "de1a22e45c29df37bedc5eaf5c1936343214e5b4871cab2eeeff6682d4aa7d0f",
+      "computedHash": "43f6dba4cff278c58af8f741da988e0d811ee6db98782a2f627e6f1e90dbe689",
       "path": "skills/ui/ui-ux-pro-max/SKILL.md",
       "upstream": "nextlevelbuilder/ui-ux-pro-max-skill:v2.5.0"
     }

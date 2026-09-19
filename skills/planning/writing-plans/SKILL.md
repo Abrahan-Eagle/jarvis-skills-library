@@ -28,7 +28,7 @@ metadata:
 
 **Goal:** ...
 **Architecture:** Provider, screens, services, API contract.
-**Tech:** Flutter 19, Provider, AppConfig.apiUrl.
+**Tech:** Flutter 3.x (versión según `pubspec.yaml` del proyecto), Provider, AppConfig.apiUrl.
 ```
 
 ## Tareas

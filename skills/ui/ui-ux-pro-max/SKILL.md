@@ -28,7 +28,7 @@ export UI_UX_SKILL_ROOT="${UI_UX_SKILL_ROOT:-$HOME/.cursor/skills/ui-ux-pro-max}
 ```
  - Design Intelligence
 
-Comprehensive design guide for web and mobile applications. Contains 50+ styles, 161 color palettes, 57 font pairings, 161 product types with reasoning rules, 99 UX guidelines, and 25 chart types across 10 technology stacks. Searchable database with priority-based recommendations.
+Comprehensive design guide for web and mobile applications. Contains 67+ styles, 161 color palettes, 57 font pairings, 161 product types with reasoning rules, 99 UX guidelines, and 25 chart types across 10 technology stacks. Searchable database with priority-based recommendations.
 
 ## When to Apply
 
@@ -379,7 +379,7 @@ Extract key information from user request:
 - **Product type**: Entertainment (social, video, music, gaming), Tool (scanner, editor, converter), Productivity (task manager, notes, calendar), or hybrid
 - **Target audience**: C-end consumer users; consider age group, usage context (commute, leisure, work)
 - **Style keywords**: playful, vibrant, minimal, dark mode, content-first, immersive, etc.
-- **Stack**: React Native (this project's only tech stack)
+- **Stack**: el del proyecto activo (Flutter en CorralX/Zonix; ver *Available Stacks* abajo)
 
 ### Step 2: Generate Design System (REQUIRED)
 
@@ -488,6 +488,8 @@ python3 "${UI_UX_SKILL_ROOT:-$HOME/.cursor/skills/ui-ux-pro-max}/scripts/search.
 | `prompt` | AI prompts, CSS keywords | (style name) |
 
 ### Available Stacks
+
+El stack se toma del proyecto activo (no hay un único stack). Incluye `flutter`, `react`, `nextjs`, `vue`, `html-tailwind`, `shadcn`, `react-native` y el resto en `data/stacks/`.
 
 | Stack | Focus |
 |-------|-------|

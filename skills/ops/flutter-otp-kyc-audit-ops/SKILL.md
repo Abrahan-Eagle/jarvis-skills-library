@@ -95,12 +95,14 @@ Esta regla también aplica cuando esta skill se usa como Verify de `parallel-jud
 
 Resolver carpeta: `references/` junto a este `SKILL.md` si existe; si el sync de producto solo copió `SKILL.md`, leer desde `jarvis-skills-library/skills/ops/flutter-otp-kyc-audit-ops/references/`.
 
+Estos archivos de `references/` no existen en la library; usar la estructura descrita inline en cada sección.
+
 | Archivo | Cuándo |
 |---------|--------|
-| [finding-template.md](references/finding-template.md) | Cada hallazgo de agente A/B/C |
-| [checklists.md](references/checklists.md) | Fases OTP, auth, KYC, PII, estados imposibles |
-| [agent-prompts.md](references/agent-prompts.md) | Antes de lanzar Task A/B/C |
-| [report-template.md](references/report-template.md) | Informe final |
+| `finding-template.md` | Cada hallazgo de agente A/B/C |
+| `checklists.md` | Fases OTP, auth, KYC, PII, estados imposibles |
+| `agent-prompts.md` | Antes de lanzar Task A/B/C |
+| `report-template.md` | Informe final |
 
 ## Loop
 
@@ -134,11 +136,11 @@ Anotar endpoints, tokens, IDs (`userId`, `kycId`, `documentId`, `verificationId`
 
 **Máquina de estados:** reconstruirla **desde el código** (no desde el ejemplo). Incluir fallos: OTP_EXPIRED/FAILED/LOCKED, KYC_REJECTED/EXPIRED/RETRY, SESSION_EXPIRED, USER_BLOCKED.
 
-Buscar transiciones imposibles (OTP no verificado → KYC approved; flag local → ACCESS_GRANTED). Checklist: [checklists.md](references/checklists.md).
+Buscar transiciones imposibles (OTP no verificado → KYC approved; flag local → ACCESS_GRANTED). Usar el checklist/estructura de informe descritos en esta skill.
 
 ## Fase 1–3 — AUDIT (fan-out)
 
-Lanzar **en un mismo mensaje** tres Task readonly, contextos aislados, prompts adversarial. Plantillas: [agent-prompts.md](references/agent-prompts.md).
+Lanzar **en un mismo mensaje** tres Task readonly, contextos aislados, prompts adversarial. Plantillas: `agent-prompts.md`.
 
 | Agente | Foco | `model` |
 |--------|------|---------|
@@ -146,7 +148,7 @@ Lanzar **en un mismo mensaje** tres Task readonly, contextos aislados, prompts a
 | B Flutter / state / perf | lifecycle, async races, navigation, persistence, UX | `cursor-grok-4.5-high` |
 | C Dart / architecture | SOLID, duplicación, testing, error handling | `composer-2.5` |
 
-`subagent_type: generalPurpose`. Cada finding usa [finding-template.md](references/finding-template.md).
+`subagent_type: generalPurpose`. Cada finding usa `finding-template.md`.
 
 Agent A tiene autoridad para **elevar** posibles P0; no para cerrar el juicio.
 
@@ -187,7 +189,7 @@ No registrar ni reproducir secretos/PII completos.
 
 ## Informe final
 
-Usar [report-template.md](references/report-template.md). Resultado: `PASS | PASS_WITH_WARNINGS | BLOCKED | FAILED`.
+Usar el checklist/estructura de informe descritos en esta skill. Resultado: `PASS | PASS_WITH_WARNINGS | BLOCKED | FAILED`.
 
 Resumen por dominio (OTP, AUTH, SESSION, KYC, AUTHORIZATION, PII, STATE MACHINE): `PASS | WARN | FAIL | NOT_VERIFIED`.
 

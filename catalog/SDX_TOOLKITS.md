@@ -1,6 +1,6 @@
 # SD-X Toolkits (JARVIS)
 
-> Generado por `scripts/sync-sdx-registry.py` — 2026-09-07
+> Generado por `scripts/sync-sdx-registry.py` — 2026-09-19
 
 Fuente: [`sdx-toolkit-registry.json`](sdx-toolkit-registry.json). Guía: [docs/SDX_ECOSYSTEM.md](../docs/SDX_ECOSYSTEM.md).
 
@@ -31,6 +31,8 @@ Ver [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md).
 | ralph-loop | ralph-loop (PageAI-Pro) | SD-Development | main | skill-loop-router, human-in-the-loop-ops | Watchlist: dev loop Docker sandbox; overlap skill-loop + TDD; sin sync |
 | claude-skills-rezvani | Claude Skills (Alireza Rezvani) | SD-Validate, SD-Development | v2.9.0 | claude-skills-router, skill-security-auditor · sync: `scripts/sync-claude-skills-skill-security-auditor.sh` |  |
 | gstack | gstack (Garry Tan) | SD-Development, SD-Validate | 0530392821c277b95e5cd65aa9d9fda4248718b2 | gstack-router | Router-only; cherry-picks en skills canónicas; sin sync masivo SKILL.md |
+| shawnpang-founder-skills | Startup Founder Skills (Shawn Pang) | SD-Validate | 4ad31b43eef3ae3755cc57ec7e435dab4699ab44 | founder-skills-router | Router-only; sin sync SKILL.md; dominio fundraising en zonix-* |
+| lool-founder-skills | Founder Skills (lool ventures) | SD-Validate | 70d216778b67b6956cadd79033c219e6bc8b154f | founder-skills-router, founder-deck-review, founder-market-sizing, founder-competitive-positioning, founder-financial-review, founder-ic-sim, founder-cap-table-checklist | Rúbricas reescritas; sin sync de scripts ni plugin |
 | marketing-spec-kit | Marketing Spec Kit | SDM | 0.4.0 |  | SDM; evaluar para clawvis marketing |
 | mcp-speckit | MCP Spec Kit | SD-Development | 0.1.0 |  | MCP lifecycle; evaluar para OpenClaw |
 | meta-spec | MetaSpec | SD-Development, SD-Design | 0.9.7 |  | Framework Python; no distribución JARVIS |

@@ -1,21 +1,21 @@
 # Catálogo de skills globales
 
-> Generado por `scripts/sync-catalog.py` — 2026-09-07
+> Generado por `scripts/sync-catalog.py` — 2026-09-19
 
-Total: **111** skills
+Total: **118** skills
 
 ## Resumen por categoría
 
 | Categoría | Cantidad |
 |-----------|----------|
 | `backend` | 7 |
-| `core` | 19 |
+| `core` | 20 |
 | `engineering` | 9 |
 | `git` | 6 |
 | `mobile` | 4 |
 | `non-code` | 8 |
 | `ops` | 32 |
-| `planning` | 4 |
+| `planning` | 10 |
 | `review` | 6 |
 | `sdd` | 12 |
 | `ui` | 4 |
@@ -41,6 +41,7 @@ Total: **111** skills
 | `cyber-neo-router` | Orquesta auditoría Cyber Neo (11 dominios, OWASP 2025, reporte read-only) vs security checklist JARVIS. | [skills/core/cyber-neo-router/SKILL.md](skills/core/cyber-neo-router/SKILL.md) |
 | `ecc-router` | Orquesta harness ECC (hooks, instincts, rules idioma, ecc consult) vs workflow JARVIS canónico. | [skills/core/ecc-router/SKILL.md](skills/core/ecc-router/SKILL.md) |
 | `engram-router` | Orquesta memoria persistente Engram (MCP) vs context-updater/handoff/active_context JARVIS. | [skills/core/engram-router/SKILL.md](skills/core/engram-router/SKILL.md) |
+| `founder-skills-router` | Orquesta shawnpang y las rúbricas lool (deck, mercado, competencia, finanzas, comité, cap table) vs canónico JARVIS. | [skills/core/founder-skills-router/SKILL.md](skills/core/founder-skills-router/SKILL.md) |
 | `gstack-router` | Orquesta pack garrytan/gstack vs canónico JARVIS. | [skills/core/gstack-router/SKILL.md](skills/core/gstack-router/SKILL.md) |
 | `jarvis-core` | Protocolo base del sistema JARVIS para cualquier proyecto. Define honestidad, foco de negocio y flujo de trabajo modular… | [skills/core/jarvis-core/SKILL.md](skills/core/jarvis-core/SKILL.md) |
 | `jarvis-experts` | Panel de Expertos JARVIS (agencia de desarrollo virtual). Define roster de roles, criterios de activación, combinaciones… | [skills/core/jarvis-experts/SKILL.md](skills/core/jarvis-experts/SKILL.md) |
@@ -146,6 +147,12 @@ Total: **111** skills
 |-------|-------------|------|
 | `cognitive-doc-design-ops` | Diseñar docs con baja carga cognitiva: lead with answer, progressive disclosure, checklists para review. | [skills/planning/cognitive-doc-design-ops/SKILL.md](skills/planning/cognitive-doc-design-ops/SKILL.md) |
 | `executing-plans` | Ejecutar plan Flutter paso a paso. | [skills/planning/executing-plans/SKILL.md](skills/planning/executing-plans/SKILL.md) |
+| `founder-cap-table-checklist` | Lista de qué revisar en SAFE, notas y dilución antes de firmar. No calcula el porcentaje. | [skills/planning/founder-cap-table-checklist/SKILL.md](skills/planning/founder-cap-table-checklist/SKILL.md) |
+| `founder-competitive-positioning` | Mapa de rivales, ejes y seis fosos. | [skills/planning/founder-competitive-positioning/SKILL.md](skills/planning/founder-competitive-positioning/SKILL.md) |
+| `founder-deck-review` | Revisa un pitch contra 35 criterios en 7 bloques, por etapa. | [skills/planning/founder-deck-review/SKILL.md](skills/planning/founder-deck-review/SKILL.md) |
+| `founder-financial-review` | Revisa un modelo o unas cifras contra 46 criterios. No construye el Excel. | [skills/planning/founder-financial-review/SKILL.md](skills/planning/founder-financial-review/SKILL.md) |
+| `founder-ic-sim` | Ensayo de comité de inversión: tres voces y 28 dimensiones. No contacta fondos. | [skills/planning/founder-ic-sim/SKILL.md](skills/planning/founder-ic-sim/SKILL.md) |
+| `founder-market-sizing` | Método TAM/SAM/SOM y 22 trampas. No inventa cifras. | [skills/planning/founder-market-sizing/SKILL.md](skills/planning/founder-market-sizing/SKILL.md) |
 | `writing-plans` | Plan bite-sized Flutter antes de codificar. .agents/plans/implementation_plan.md | [skills/planning/writing-plans/SKILL.md](skills/planning/writing-plans/SKILL.md) |
 | `zoom-out` | Explicar código o un cambio en el contexto del sistema completo del proyecto activo (módulos, capas, flujos). Uso bajo d… | [skills/planning/zoom-out/SKILL.md](skills/planning/zoom-out/SKILL.md) |
 

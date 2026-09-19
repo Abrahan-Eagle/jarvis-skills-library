@@ -34,33 +34,35 @@ Reference these guidelines when:
 
 ### 1. SOLID Principles (CRITICAL)
 
-- `solid-srp` - Single Responsibility Principle
-- `solid-ocp` - Open/Closed Principle
-- `solid-lsp` - Liskov Substitution Principle
-- `solid-isp` - Interface Segregation Principle
-- `solid-dip` - Dependency Inversion Principle
+- `solid-srp-class` - Single Responsibility Principle (Class Level)
+- `solid-srp-function` - Single Responsibility Principle (Function Level)
+- `solid-ocp-extension` - Open/Closed Principle (Extension)
+- `solid-ocp-abstraction` - Open/Closed Principle (Abstraction)
+- `solid-lsp-contracts` - Liskov Substitution Principle (Contracts)
+- `solid-lsp-preconditions` - Liskov Substitution Principle (Preconditions)
+- `solid-isp-clients` - Interface Segregation Principle (Client-Specific)
+- `solid-isp-interfaces` - Interface Segregation Principle (Small Interfaces)
+- `solid-dip-abstractions` - Dependency Inversion Principle (Abstractions)
+- `solid-dip-injection` - Dependency Inversion Principle (Injection)
 
 ### 2. Core Principles (CRITICAL)
 
-- `core-dry` - Don't Repeat Yourself
-- `core-kiss` - Keep It Simple, Stupid
-- `core-yagni` - You Aren't Gonna Need It
-- `core-separation-of-concerns` - Separate different responsibilities
-- `core-composition-over-inheritance` - Favor composition
-- `core-law-of-demeter` - Principle of least knowledge
-- `core-fail-fast` - Detect and report errors early
-- `core-encapsulation` - Hide implementation details
+- `core-dry` - Don't Repeat Yourself (DRY)
+- `core-dry-extraction` - DRY - Code Extraction
+- `core-dry-single-source` - DRY - Single Source of Truth
+- `core-kiss-simplicity` - KISS Principle - Simplicity
+- `core-kiss-readability` - KISS - Readability
+- `core-yagni-features` - YAGNI Principle - Features
+- `core-yagni-abstractions` - YAGNI Principle - Abstractions
+- `core-separation-concerns` - Separation of Concerns
+- `core-composition` - Composition Over Inheritance
+- `core-law-demeter` - Law of Demeter
+- `core-fail-fast` - Fail Fast Principle
+- `core-encapsulation` - Encapsulation
 
 ### 3. Design Patterns (HIGH)
 
-- `pattern-factory` - Factory pattern for object creation
-- `pattern-strategy` - Strategy pattern for algorithms
 - `pattern-repository` - Repository pattern for data access
-- `pattern-decorator` - Decorator pattern for behavior extension
-- `pattern-observer` - Observer pattern for event handling
-- `pattern-adapter` - Adapter pattern for interface conversion
-- `pattern-facade` - Facade pattern for simplified interfaces
-- `pattern-dependency-injection` - DI for loose coupling
 
 ### 4. Code Organization (HIGH)
 

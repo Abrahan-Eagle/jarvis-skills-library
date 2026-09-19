@@ -1,6 +1,6 @@
 # Grafo de skills relacionadas
 
-> Generado por `scripts/skills-graph.py` — 2026-09-07
+> Generado por `scripts/skills-graph.py` — 2026-09-19
 
 ```mermaid
 flowchart LR
@@ -150,6 +150,58 @@ flowchart LR
   fan_out_synthesize_ops["fan-out-synthesize-ops"] --> parallel_judge_ops["parallel-judge-ops"]
   fan_out_synthesize_ops["fan-out-synthesize-ops"] --> systematic_debugging["systematic-debugging"]
   fan_out_synthesize_ops["fan-out-synthesize-ops"] --> verification_before_completion["verification-before-completion"]
+  flutter_otp_kyc_audit_ops["flutter-otp-kyc-audit-ops"] --> agent_loop_engineering["agent-loop-engineering"]
+  flutter_otp_kyc_audit_ops["flutter-otp-kyc-audit-ops"] --> doubt_driven_development["doubt-driven-development"]
+  flutter_otp_kyc_audit_ops["flutter-otp-kyc-audit-ops"] --> fan_out_synthesize_ops["fan-out-synthesize-ops"]
+  flutter_otp_kyc_audit_ops["flutter-otp-kyc-audit-ops"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
+  flutter_otp_kyc_audit_ops["flutter-otp-kyc-audit-ops"] --> jarvis_core["jarvis-core"]
+  flutter_otp_kyc_audit_ops["flutter-otp-kyc-audit-ops"] --> parallel_judge_ops["parallel-judge-ops"]
+  flutter_otp_kyc_audit_ops["flutter-otp-kyc-audit-ops"] --> verification_before_completion["verification-before-completion"]
+  founder_cap_table_checklist["founder-cap-table-checklist"] --> founder_deck_review["founder-deck-review"]
+  founder_cap_table_checklist["founder-cap-table-checklist"] --> founder_financial_review["founder-financial-review"]
+  founder_cap_table_checklist["founder-cap-table-checklist"] --> founder_skills_router["founder-skills-router"]
+  founder_cap_table_checklist["founder-cap-table-checklist"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
+  founder_competitive_positioning["founder-competitive-positioning"] --> founder_deck_review["founder-deck-review"]
+  founder_competitive_positioning["founder-competitive-positioning"] --> founder_skills_router["founder-skills-router"]
+  founder_competitive_positioning["founder-competitive-positioning"] --> scenario_analysis_ops["scenario-analysis-ops"]
+  founder_deck_review["founder-deck-review"] --> founder_cap_table_checklist["founder-cap-table-checklist"]
+  founder_deck_review["founder-deck-review"] --> founder_competitive_positioning["founder-competitive-positioning"]
+  founder_deck_review["founder-deck-review"] --> founder_financial_review["founder-financial-review"]
+  founder_deck_review["founder-deck-review"] --> founder_ic_sim["founder-ic-sim"]
+  founder_deck_review["founder-deck-review"] --> founder_market_sizing["founder-market-sizing"]
+  founder_deck_review["founder-deck-review"] --> founder_skills_router["founder-skills-router"]
+  founder_deck_review["founder-deck-review"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
+  founder_financial_review["founder-financial-review"] --> founder_cap_table_checklist["founder-cap-table-checklist"]
+  founder_financial_review["founder-financial-review"] --> founder_deck_review["founder-deck-review"]
+  founder_financial_review["founder-financial-review"] --> founder_skills_router["founder-skills-router"]
+  founder_financial_review["founder-financial-review"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
+  founder_ic_sim["founder-ic-sim"] --> founder_deck_review["founder-deck-review"]
+  founder_ic_sim["founder-ic-sim"] --> founder_financial_review["founder-financial-review"]
+  founder_ic_sim["founder-ic-sim"] --> founder_market_sizing["founder-market-sizing"]
+  founder_ic_sim["founder-ic-sim"] --> founder_skills_router["founder-skills-router"]
+  founder_ic_sim["founder-ic-sim"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
+  founder_market_sizing["founder-market-sizing"] --> founder_deck_review["founder-deck-review"]
+  founder_market_sizing["founder-market-sizing"] --> founder_skills_router["founder-skills-router"]
+  founder_market_sizing["founder-market-sizing"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
+  founder_skills_router["founder-skills-router"] --> architecture_patterns["architecture-patterns"]
+  founder_skills_router["founder-skills-router"] --> brainstorming_ops["brainstorming-ops"]
+  founder_skills_router["founder-skills-router"] --> code_review_playbook["code-review-playbook"]
+  founder_skills_router["founder-skills-router"] --> cyber_neo_router["cyber-neo-router"]
+  founder_skills_router["founder-skills-router"] --> deep_interview_ops["deep-interview-ops"]
+  founder_skills_router["founder-skills-router"] --> founder_cap_table_checklist["founder-cap-table-checklist"]
+  founder_skills_router["founder-skills-router"] --> founder_competitive_positioning["founder-competitive-positioning"]
+  founder_skills_router["founder-skills-router"] --> founder_deck_review["founder-deck-review"]
+  founder_skills_router["founder-skills-router"] --> founder_financial_review["founder-financial-review"]
+  founder_skills_router["founder-skills-router"] --> founder_ic_sim["founder-ic-sim"]
+  founder_skills_router["founder-skills-router"] --> founder_market_sizing["founder-market-sizing"]
+  founder_skills_router["founder-skills-router"] --> gstack_router["gstack-router"]
+  founder_skills_router["founder-skills-router"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
+  founder_skills_router["founder-skills-router"] --> jarvis_core["jarvis-core"]
+  founder_skills_router["founder-skills-router"] --> scenario_analysis_ops["scenario-analysis-ops"]
+  founder_skills_router["founder-skills-router"] --> sdd_router["sdd-router"]
+  founder_skills_router["founder-skills-router"] --> skill_security_auditor["skill-security-auditor"]
+  founder_skills_router["founder-skills-router"] --> strategic_briefing_ops["strategic-briefing-ops"]
+  founder_skills_router["founder-skills-router"] --> ui_router["ui-router"]
   git_commit["git-commit"] --> git_guardrails_ops["git-guardrails-ops"]
   git_commit["git-commit"] --> structured_commits_ops["structured-commits-ops"]
   git_commit["git-commit"] --> verification_before_completion["verification-before-completion"]
@@ -466,4 +518,4 @@ flowchart LR
   zoom_out["zoom-out"] --> software_architecture["software-architecture"]
 ```
 
-Nodos conocidos: 110. Aristas (solo a skills en catálogo): 460.
+Nodos conocidos: 118. Aristas (solo a skills en catálogo): 512.

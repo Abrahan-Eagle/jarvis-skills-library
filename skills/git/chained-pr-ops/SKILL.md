@@ -78,7 +78,7 @@ Divide cambios que superan el **presupuesto de review** (~400 líneas `additions
 
 ## Plantilla Chain Context
 
-```markdown
+~~~~markdown
 ## Chain Context
 - Strategy: stacked | feature-branch-chain
 - Position: PR 2 of 4
@@ -93,7 +93,7 @@ flowchart LR
   PR2 --> PR3[#125 next]
 ```
 📍 = PR actual
-```
+~~~~
 
 ## Anti-patrones
 

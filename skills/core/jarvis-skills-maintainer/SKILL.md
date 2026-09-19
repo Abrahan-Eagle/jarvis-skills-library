@@ -180,7 +180,7 @@ Si es `non-code/` con `bin/`, añadir `SKILL-OC.md` compacto.
 
 Tras añadir o cambiar una skill global que clawvis consume vía manifest:
 
-1. Commit + push en **jarvis-skills-library**
+1. Commit local en jarvis-skills-library; push solo con orden explícita del usuario (`git-guardrails-ops`)
 2. En clawvis: `JARVIS_SKILLS_LIBRARY=/var/www/html/proyectos/AIPP/jarvis-skills-library ./scripts/sync-global-skills-from-library.sh`
 3. `./scripts/check-global-skills-sync.sh`
 
@@ -190,7 +190,7 @@ Doc: [docs/CLAWVIS_INTEGRATION.md](../../../docs/CLAWVIS_INTEGRATION.md). Promoc
 
 Tras añadir o cambiar una skill global que CorralX consume vía manifest:
 
-1. Commit + push en **jarvis-skills-library**
+1. Commit local en jarvis-skills-library; push solo con orden explícita del usuario (`git-guardrails-ops`)
 2. En **CorralX-Backend** y/o **CorralX-Frontend** (según manifest), o ambos con:
    ```bash
    JARVIS_SKILLS_LIBRARY=/var/www/html/proyectos/AIPP/jarvis-skills-library \

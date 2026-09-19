@@ -308,9 +308,9 @@ Before publishing a finding:
 ## Related Skills
 
 - `doubt-driven-development` — revisión adversarial **in-flight** antes de merge; este skill = veredicto **post-hoc** en PR
-- `ork:architecture-patterns` - Enforce testing and architectural best practices during code review
-- `security-scanning` - Automated security checks to complement manual review
-- `ork:testing-patterns` - Comprehensive testing patterns to verify during review
+- `architecture-patterns` - Enforce testing and architectural best practices during code review
+- `security` - Automated security checks to complement manual review
+- `test-driven-development` - Comprehensive testing patterns to verify during review
 
 ## Capability Details
 
@@ -366,7 +366,7 @@ Each category has individual rule files in `rules/` loaded on-demand:
 
 - **`scripts/review-pr.md`** - Dynamic PR review with auto-fetched GitHub data
   - Auto-fetches: PR title, author, state, changed files, diff stats, comments count
-  - Usage: `/ork:review-pr [PR-number]`
+  - Usage: leer `scripts/review-pr.md` y ejecutar `scripts/fetch-pr-data.sh <PR-number>` (sin slash command en Cursor)
   - Requires: GitHub CLI (`gh`)
   - Uses `$ARGUMENTS` and `!command` for live PR data
 

@@ -216,6 +216,38 @@
       }
     },
     {
+      "id": "shawnpang-founder-skills",
+      "name": "Startup Founder Skills (Shawn Pang)",
+      "repo": "https://github.com/shawnpang/startup-founder-skills",
+      "pin": "4ad31b43eef3ae3755cc57ec7e435dab4699ab44",
+      "sdx": ["SD-Validate"],
+      "note": "Router-only; sin sync SKILL.md; dominio fundraising en zonix-*",
+      "jarvis": {
+        "skills": ["founder-skills-router"],
+        "doc": "docs/SHAWNPANG_FOUNDER_SKILLS_INTEGRATION.md"
+      }
+    },
+    {
+      "id": "lool-founder-skills",
+      "name": "Founder Skills (lool ventures)",
+      "repo": "https://github.com/lool-ventures/founder-skills",
+      "pin": "70d216778b67b6956cadd79033c219e6bc8b154f",
+      "sdx": ["SD-Validate"],
+      "note": "Rúbricas reescritas; sin sync de scripts ni plugin",
+      "jarvis": {
+        "skills": [
+          "founder-skills-router",
+          "founder-deck-review",
+          "founder-market-sizing",
+          "founder-competitive-positioning",
+          "founder-financial-review",
+          "founder-ic-sim",
+          "founder-cap-table-checklist"
+        ],
+        "doc": "docs/LOOL_FOUNDER_SKILLS_INTEGRATION.md"
+      }
+    },
+    {
       "id": "marketing-spec-kit",
       "name": "Marketing Spec Kit",
       "repo": "https://github.com/ACNet-AI/marketing-spec-kit",
