@@ -270,6 +270,19 @@
       "pin": "0.9.7",
       "sdx": ["SD-Development", "SD-Design"],
       "note": "Framework Python; no distribución JARVIS"
+    },
+    {
+      "id": "eachlabs-skills",
+      "name": "eachlabs skills (each::sense)",
+      "repo": "https://github.com/eachlabs/skills",
+      "pin": "dbd25b7",
+      "sdx": ["SD-Design"],
+      "jarvis": {
+        "skills": ["eachlabs-router", "brochure-design-generation"],
+        "sync": "scripts/sync-eachlabs-brochure-design-generation.sh",
+        "doc": "docs/EACHLABS_SKILLS_INTEGRATION.md",
+        "note": "Solo brochure-design-generation curado (tríptico); 101 restantes → router o pack externo; API de pago EACHLABS_API_KEY"
+      }
     }
   ],
   "references": [

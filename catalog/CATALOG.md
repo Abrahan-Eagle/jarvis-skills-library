@@ -1,8 +1,8 @@
 # Catálogo de skills globales
 
-> Generado por `scripts/sync-catalog.py` — 2026-09-19
+> Generado por `scripts/sync-catalog.py` — 2026-09-20
 
-Total: **119** skills
+Total: **121** skills
 
 ## Resumen por categoría
 
@@ -13,12 +13,12 @@ Total: **119** skills
 | `engineering` | 9 |
 | `git` | 6 |
 | `mobile` | 4 |
-| `non-code` | 8 |
+| `non-code` | 9 |
 | `ops` | 32 |
 | `planning` | 10 |
 | `review` | 6 |
 | `sdd` | 12 |
-| `ui` | 5 |
+| `ui` | 6 |
 
 ## backend
 
@@ -97,6 +97,7 @@ Total: **119** skills
 |-------|-------------|------|
 | `activity-log` | Log unificado de actividad de agentes (state/activity-log.jsonl, tasks/, handoffs). | [skills/non-code/activity-log/SKILL.md](skills/non-code/activity-log/SKILL.md) |
 | `approval-gate` | Enforcement tecnico de approval gates AG-12/AG-03/AG-13 antes de publicar. | [skills/non-code/approval-gate/SKILL.md](skills/non-code/approval-gate/SKILL.md) |
+| `brochure-design-generation` | Tríptico, díptico, folleto o brochure impreso con IA each::sense (eachlabs, API de pago): formatos tri-fold/bi-fold/Z/ga… | [skills/non-code/brochure-design-generation/SKILL.md](skills/non-code/brochure-design-generation/SKILL.md) |
 | `client-report` | Generar reporte mensual al cliente desde activity-log y calendario editorial. | [skills/non-code/client-report/SKILL.md](skills/non-code/client-report/SKILL.md) |
 | `cyber-neo-cli` | CLI wrapper cyber-neo: status, secrets scan, lockfile check. Scripts Python upstream Cyber Neo. | [skills/non-code/cyber-neo-cli/SKILL.md](skills/non-code/cyber-neo-cli/SKILL.md) |
 | `ecc` | CLI wrapper para ecc-universal: status, consult, doctor, repair. Harness Everything Claude Code en Cursor. | [skills/non-code/ecc/SKILL.md](skills/non-code/ecc/SKILL.md) |
@@ -189,6 +190,7 @@ Total: **119** skills
 | Skill | Descripción | Ruta |
 |-------|-------------|------|
 | `ai-media-landing-ops` | Orquesta una cadena de herramientas generativas (Claude research → Nano Banana 2 imagen → Veo 3/Kling video loop → Claud… | [skills/ui/ai-media-landing-ops/SKILL.md](skills/ui/ai-media-landing-ops/SKILL.md) |
+| `eachlabs-router` | Orquesta pack eachlabs/skills (each::sense, API de pago) vs canónico JARVIS: tríptico, folleto, brochure, flyer o poster… | [skills/ui/eachlabs-router/SKILL.md](skills/ui/eachlabs-router/SKILL.md) |
 | `open-design-router` | Orquesta artefactos visuales standalone via Open Design (carrusel, deck, email, prototipo) vs implementacion en codigo (… | [skills/ui/open-design-router/SKILL.md](skills/ui/open-design-router/SKILL.md) |
 | `scroll-landing-ops` | Proceso para landings con scroll narrativo: brief, design.md, hero por capas y verificación visual. Usar cuando pidan la… | [skills/ui/scroll-landing-ops/SKILL.md](skills/ui/scroll-landing-ops/SKILL.md) |
 | `stitch-router` | Orquesta prototipos y design systems en Google Stitch via MCP y skills upstream (stitch::generate-design, design-md, sti… | [skills/ui/stitch-router/SKILL.md](skills/ui/stitch-router/SKILL.md) |

@@ -40,6 +40,7 @@ Ver [`catalog/SDX_TOOLKITS.md`](../catalog/SDX_TOOLKITS.md) (generado desde `cat
 | Agent Skills Addy (watchlist) | 36c543d | `bash scripts/sync-addy-doubt-driven.sh` — [AGENT_SKILLS_ADDY_INTEGRATION.md](AGENT_SKILLS_ADDY_INTEGRATION.md) |
 | Claude Skills Rezvani (watchlist) | v2.9.0 | `bash scripts/sync-claude-skills-skill-security-auditor.sh` — [CLAUDE_SKILLS_REZVANI_INTEGRATION.md](CLAUDE_SKILLS_REZVANI_INTEGRATION.md) |
 | gstack Garry Tan (watchlist) | `0530392` | Router-only `gstack-router` — [GSTACK_INTEGRATION.md](GSTACK_INTEGRATION.md); **sin** sync SKILL.md |
+| eachlabs skills each::sense (watchlist) | `dbd25b7` | `bash scripts/sync-eachlabs-brochure-design-generation.sh` — [EACHLABS_SKILLS_INTEGRATION.md](EACHLABS_SKILLS_INTEGRATION.md); API de pago |
 | Spec Kitty | v3.2.1 | `pipx install spec-kitty-cli` + `spec-kitty init` en repo producto |
 | OpenSpec (watchlist) | 0.16.0 | `npm i -g @fission-ai/openspec` + `openspec init` en repo producto |
 
@@ -80,6 +81,7 @@ Usar skills de dominio del producto, no `speckit-*`.
 - [SPEC_KITTY_INTEGRATION.md](SPEC_KITTY_INTEGRATION.md) — misiones, worktrees, review/merge
 - [UI_UX_PRO_MAX_INTEGRATION.md](UI_UX_PRO_MAX_INTEGRATION.md) — design system, overlays
 - [OPEN_DESIGN_INTEGRATION.md](OPEN_DESIGN_INTEGRATION.md) — carrusel, deck, email HTML (Open Design)
+- [EACHLABS_SKILLS_INTEGRATION.md](EACHLABS_SKILLS_INTEGRATION.md) — tríptico / folleto / brochure con IA each::sense (`eachlabs-router`, `brochure-design-generation`)
 - Skill `ai-media-landing-ops` — landings con video hero IA (cadena multi-tool Claude + media gen)
 - [ECC_INTEGRATION.md](ECC_INTEGRATION.md) — harness Cursor (ECC: hooks, instincts, rules)
 - [CYBER_NEO_INTEGRATION.md](CYBER_NEO_INTEGRATION.md) — auditoría seguridad read-only (OWASP 2025, 11 dominios)

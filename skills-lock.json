@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-09-19",
+  "generated": "2026-09-20",
   "skills": {
     "api-design-principles": {
       "source": "jarvis-skills-library",
@@ -101,7 +101,7 @@
     "jarvis-skills-maintainer": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "8b79a4d5ec1b2c55d7a537f3f0a68f509c811bbe0e884402c7dab66d32771bec",
+      "computedHash": "bb18546bd2791a23d16bb93a4d30e2dbbe44c9f429e355f91c89341ad6aafefa",
       "path": "skills/core/jarvis-skills-maintainer/SKILL.md"
     },
     "kalman-anomaly-router": {
@@ -294,6 +294,13 @@
       "sourceType": "local",
       "computedHash": "04b0675ec92ddd0d10d1a350688f88f08df4753381d983f01bb6c0a98eaa95ee",
       "path": "skills/non-code/approval-gate/SKILL.md"
+    },
+    "brochure-design-generation": {
+      "source": "eachlabs/skills",
+      "sourceType": "github",
+      "computedHash": "585f7cc8fad110690d4050b89cd2757612f10dcaa21a75f51bba08d1c8d39b60",
+      "path": "skills/non-code/brochure-design-generation/SKILL.md",
+      "upstream": "eachlabs/skills:brochure-design-generation"
     },
     "client-report": {
       "source": "jarvis-skills-library",
@@ -731,10 +738,16 @@
       "computedHash": "dabce6e1cec19ad147260b99b153e174efcc5256b01147281653c376d551a2ab",
       "path": "skills/ui/ai-media-landing-ops/SKILL.md"
     },
+    "eachlabs-router": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "203464272d7970d6a73d61c8856e37624cca40f90c926359d9abc66de17565bb",
+      "path": "skills/ui/eachlabs-router/SKILL.md"
+    },
     "open-design-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "f4bd2afc6e45db1f563464764bdb799a38a0ecec6bab219f4121c51b90996dc8",
+      "computedHash": "d98f37dbe1c2be83b73909b8d4b0ef3b5b5baf3d6474da83fdb6212c655cde40",
       "path": "skills/ui/open-design-router/SKILL.md"
     },
     "scroll-landing-ops": {

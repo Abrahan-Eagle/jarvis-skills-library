@@ -1,6 +1,6 @@
 # SD-X Toolkits (JARVIS)
 
-> Generado por `scripts/sync-sdx-registry.py` — 2026-09-19
+> Generado por `scripts/sync-sdx-registry.py` — 2026-09-20
 
 Fuente: [`sdx-toolkit-registry.json`](sdx-toolkit-registry.json). Guía: [docs/SDX_ECOSYSTEM.md](../docs/SDX_ECOSYSTEM.md).
 
@@ -36,6 +36,7 @@ Ver [docs/AWESOME_SPEC_KITS.md](../docs/AWESOME_SPEC_KITS.md).
 | marketing-spec-kit | Marketing Spec Kit | SDM | 0.4.0 |  | SDM; evaluar para clawvis marketing |
 | mcp-speckit | MCP Spec Kit | SD-Development | 0.1.0 |  | MCP lifecycle; evaluar para OpenClaw |
 | meta-spec | MetaSpec | SD-Development, SD-Design | 0.9.7 |  | Framework Python; no distribución JARVIS |
+| eachlabs-skills | eachlabs skills (each::sense) | SD-Design | dbd25b7 | eachlabs-router, brochure-design-generation · sync: `scripts/sync-eachlabs-brochure-design-generation.sh` |  |
 
 ## Referencias externas
 

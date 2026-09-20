@@ -1,6 +1,6 @@
 # Auto-invoke global
 
-> Generado por `scripts/sync-catalog.py` — 2026-09-19
+> Generado por `scripts/sync-catalog.py` — 2026-09-20
 
 > Multi-skill: orden = precedencia `jarvis-core` cuando aplica; resto alfabético.
 > Skills con `metadata.status: deprecated` se omiten de esta tabla (siguen en CATALOG).
@@ -94,9 +94,11 @@
 | Evitar PR monolítico desde SDD tasks | `work-unit-commits-ops` |
 | Explorar codebase | `fan-out-synthesize-ops` |
 | Exportar Stitch a React | `stitch-router` |
+| Flyer o poster con IA each::sense | `eachlabs-router` |
 | Gates humanos antes de acción irreversible | `human-in-the-loop-ops` |
 | Generar assets IA para una web | `ai-media-landing-ops` |
 | Generar assets visuales marketing | `open-design-router` |
+| Generar brochure con each::sense | `brochure-design-generation` |
 | Generar con Open Design | `open-design` |
 | Generar pantalla con Stitch MCP | `stitch-router` |
 | Governance standalone fuera de misión | `kitty-governance` |
@@ -143,6 +145,7 @@
 | PR supera 400 líneas o presupuesto de review | `chained-pr-ops` |
 | Pack Addy agent-skills lifecycle | `agent-skills-router` |
 | Pack Rezvani claude-skills | `claude-skills-router` |
+| Pack eachlabs skills | `eachlabs-router` |
 | Pack gstack / Garry Tan | `gstack-router` |
 | Pack lool founder-skills (deck, mercado, IC, cap table) vs rúbricas JARVIS | `founder-skills-router` |
 | Pack shawnpang founder-skills (pitch, data room, outreach, PRD) vs canónico JARVIS/producto | `founder-skills-router` |
@@ -192,6 +195,7 @@
 | Tamaño de mercado TAM SAM SOM | `founder-market-sizing` |
 | Terminar módulo | `verification-before-completion`, `session-learner-ops`, `finishing-a-development-branch`, `jarvis-core` |
 | Triage backlog issues y PRs | `backlog-triage-ops` |
+| Tríptico / díptico / folleto / brochure impreso | `brochure-design-generation`, `eachlabs-router` |
 | Validar diff/PR con 2+ revisores independientes | `parallel-judge-ops` |
 | Validar el mercado del pitch | `founder-market-sizing` |
 | Verificación adversarial paralela de un artefacto | `parallel-judge-ops` |

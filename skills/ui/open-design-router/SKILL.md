@@ -21,6 +21,7 @@ metadata:
     - ui-ux-pro-max
     - open-design
     - ai-media-landing-ops
+    - eachlabs-router
     - publish-safety
     - jarvis-core
 allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
@@ -56,6 +57,7 @@ test -d "${OPEN_DESIGN_HOME:-$HOME/open-design}" && echo OD_HOME
 | Spec Kit feature con UI en repo | `sdd-router` → implement; UI → `ui-router` | OD salvo entregable marketing explícito |
 | Generación visual marketing | Esta skill → `open-design` | `speckit-specify` |
 | Landing con video hero IA + cadena multi-tool (Nano Banana + Veo/Kling + Claude Design/Code) | `ai-media-landing-ops` | Open Design (es un daemon único, no cadena) |
+| Tríptico / díptico / folleto impreso con render IA (300 DPI, imprenta) | `eachlabs-router` → `brochure-design-generation` (si `EACHLABS_API_KEY`); sin key → `open-design --skill magazine-poster` | OD como sustituto si se exige imagen final IA |
 
 ## Recetas OD (skill upstream)
 

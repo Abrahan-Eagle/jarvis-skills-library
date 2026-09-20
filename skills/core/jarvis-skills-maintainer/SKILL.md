@@ -144,6 +144,17 @@ bash scripts/smoke-claude-skills-skill-security-auditor.sh
 
 Doc: [docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md](../../../docs/CLAUDE_SKILLS_REZVANI_INTEGRATION.md), forense [docs/CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md](../../../docs/CLAUDE_SKILLS_REZVANI_FORENSE_JARVIS.md). Entrada `claude-skills-rezvani` en `sdx-toolkit-registry.json`.
 
+## eachlabs skills (each::sense)
+
+[eachlabs/skills](https://github.com/eachlabs/skills) (MIT, 102 skills, API de pago `EACHLABS_API_KEY`) — router + sync curado de `brochure-design-generation` solamente (tríptico / folleto; 101 restantes → router o pack externo; nunca `nsfw-*`).
+
+```bash
+bash scripts/sync-eachlabs-brochure-design-generation.sh   # pin SHA dbd25b7…; audita --strict antes de copiar; encadena patch
+bash scripts/smoke-eachlabs-brochure-design-generation.sh
+```
+
+Doc: [docs/EACHLABS_SKILLS_INTEGRATION.md](../../../docs/EACHLABS_SKILLS_INTEGRATION.md) (incluye forense breve del pack). Entrada `eachlabs-skills` en watchlist de `sdx-toolkit-registry.json`. Fallback sin key → `open-design-router`.
+
 ## gstack (Garry Tan)
 
 [garrytan/gstack](https://github.com/garrytan/gstack) (MIT) — **router-only**. Ideas curadas en skills canónicas; **no** hay `sync-gstack-*.sh` ni vendorización de SKILL.md. Nunca ejecutar `/ship` ni `/autoplan` upstream.
@@ -249,6 +260,7 @@ bash scripts/install.sh --dry-run # preview
 - [docs/SPEC_KITTY_INTEGRATION.md](../../../docs/SPEC_KITTY_INTEGRATION.md)
 - [docs/SPEC_KIT_EXTENSIONS.md](../../../docs/SPEC_KIT_EXTENSIONS.md)
 - [docs/OPEN_DESIGN_INTEGRATION.md](../../../docs/OPEN_DESIGN_INTEGRATION.md)
+- [docs/EACHLABS_SKILLS_INTEGRATION.md](../../../docs/EACHLABS_SKILLS_INTEGRATION.md)
 - [docs/STITCH_UPSTREAM.md](../../../docs/STITCH_UPSTREAM.md)
 - [docs/AWESOME_SPEC_KITS.md](../../../docs/AWESOME_SPEC_KITS.md)
 - [docs/AGENT_SKILLS_ADDY_INTEGRATION.md](../../../docs/AGENT_SKILLS_ADDY_INTEGRATION.md)
