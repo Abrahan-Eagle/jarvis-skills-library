@@ -1,6 +1,6 @@
 # Grafo de skills relacionadas
 
-> Generado por `scripts/skills-graph.py` — 2026-09-19
+> Generado por `scripts/skills-graph.py` — 2026-09-20
 
 ```mermaid
 flowchart LR
@@ -45,6 +45,14 @@ flowchart LR
   branch_pr_ops["branch-pr-ops"] --> speckit_taskstoissues["speckit-taskstoissues"]
   branch_pr_ops["branch-pr-ops"] --> verification_before_completion["verification-before-completion"]
   branch_pr_ops["branch-pr-ops"] --> work_unit_commits_ops["work-unit-commits-ops"]
+  brochure_design_generation["brochure-design-generation"] --> eachlabs_router["eachlabs-router"]
+  brochure_design_generation["brochure-design-generation"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
+  brochure_design_generation["brochure-design-generation"] --> jarvis_core["jarvis-core"]
+  brochure_design_generation["brochure-design-generation"] --> open_design["open-design"]
+  brochure_design_generation["brochure-design-generation"] --> open_design_router["open-design-router"]
+  brochure_design_generation["brochure-design-generation"] --> publish_safety["publish-safety"]
+  brochure_design_generation["brochure-design-generation"] --> ui_ux_pro_max["ui-ux-pro-max"]
+  brochure_design_generation["brochure-design-generation"] --> verification_before_completion["verification-before-completion"]
   chained_pr_ops["chained-pr-ops"] --> branch_pr_ops["branch-pr-ops"]
   chained_pr_ops["chained-pr-ops"] --> code_review_playbook["code-review-playbook"]
   chained_pr_ops["chained-pr-ops"] --> git_guardrails_ops["git-guardrails-ops"]
@@ -119,6 +127,18 @@ flowchart LR
   doubt_driven_development["doubt-driven-development"] --> security["security"]
   doubt_driven_development["doubt-driven-development"] --> systematic_debugging["systematic-debugging"]
   doubt_driven_development["doubt-driven-development"] --> test_driven_development["test-driven-development"]
+  eachlabs_router["eachlabs-router"] --> ai_media_landing_ops["ai-media-landing-ops"]
+  eachlabs_router["eachlabs-router"] --> brochure_design_generation["brochure-design-generation"]
+  eachlabs_router["eachlabs-router"] --> claude_skills_router["claude-skills-router"]
+  eachlabs_router["eachlabs-router"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
+  eachlabs_router["eachlabs-router"] --> jarvis_core["jarvis-core"]
+  eachlabs_router["eachlabs-router"] --> jarvis_skills_maintainer["jarvis-skills-maintainer"]
+  eachlabs_router["eachlabs-router"] --> open_design["open-design"]
+  eachlabs_router["eachlabs-router"] --> open_design_router["open-design-router"]
+  eachlabs_router["eachlabs-router"] --> publish_safety["publish-safety"]
+  eachlabs_router["eachlabs-router"] --> skill_security_auditor["skill-security-auditor"]
+  eachlabs_router["eachlabs-router"] --> ui_router["ui-router"]
+  eachlabs_router["eachlabs-router"] --> ui_ux_pro_max["ui-ux-pro-max"]
   ecc["ecc"] --> configure_ecc["configure-ecc"]
   ecc["ecc"] --> ecc_router["ecc-router"]
   ecc["ecc"] --> jarvis_core["jarvis-core"]
@@ -344,6 +364,7 @@ flowchart LR
   open_design["open-design"] --> publish_safety["publish-safety"]
   open_design["open-design"] --> ui_router["ui-router"]
   open_design_router["open-design-router"] --> ai_media_landing_ops["ai-media-landing-ops"]
+  open_design_router["open-design-router"] --> eachlabs_router["eachlabs-router"]
   open_design_router["open-design-router"] --> jarvis_core["jarvis-core"]
   open_design_router["open-design-router"] --> open_design["open-design"]
   open_design_router["open-design-router"] --> publish_safety["publish-safety"]
@@ -394,6 +415,11 @@ flowchart LR
   scenario_router["scenario-router"] --> scenario_analysis_ops["scenario-analysis-ops"]
   scenario_router["scenario-router"] --> strangeverse["strangeverse"]
   scenario_router["scenario-router"] --> strategic_briefing_ops["strategic-briefing-ops"]
+  scroll_landing_ops["scroll-landing-ops"] --> ai_media_landing_ops["ai-media-landing-ops"]
+  scroll_landing_ops["scroll-landing-ops"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
+  scroll_landing_ops["scroll-landing-ops"] --> ui_ux_pro_max["ui-ux-pro-max"]
+  scroll_landing_ops["scroll-landing-ops"] --> verification_before_completion["verification-before-completion"]
+  scroll_landing_ops["scroll-landing-ops"] --> webapp_testing["webapp-testing"]
   sdd_router["sdd-router"] --> brainstorming_ops["brainstorming-ops"]
   sdd_router["sdd-router"] --> jarvis_core["jarvis-core"]
   sdd_router["sdd-router"] --> kitty_router["kitty-router"]
@@ -518,4 +544,4 @@ flowchart LR
   zoom_out["zoom-out"] --> software_architecture["software-architecture"]
 ```
 
-Nodos conocidos: 118. Aristas (solo a skills en catálogo): 512.
+Nodos conocidos: 121. Aristas (solo a skills en catálogo): 538.

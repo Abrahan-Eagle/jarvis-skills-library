@@ -79,6 +79,10 @@ Skill `ui-ux-pro-max` en `skills/ui/` — design system generator + BM25 ([upstr
 
 Carrusel RRSS, deck, email HTML, prototipos standalone — skills `open-design-router` + `open-design` (bin). Runtime: [nexu-io/open-design](https://github.com/nexu-io/open-design). Guía: [docs/OPEN_DESIGN_INTEGRATION.md](docs/OPEN_DESIGN_INTEGRATION.md). Install: `bash scripts/install-open-design-runtime.sh`.
 
+## eachlabs skills (each::sense)
+
+Tríptico, díptico, folleto o brochure impreso con IA — skills `eachlabs-router` + `brochure-design-generation` (curada; el resto del pack vía router). Upstream: [eachlabs/skills](https://github.com/eachlabs/skills) (MIT, pin `dbd25b7`). API de pago `EACHLABS_API_KEY` (solo entorno); sin clave → `open-design-router`. Guía: [docs/EACHLABS_SKILLS_INTEGRATION.md](docs/EACHLABS_SKILLS_INTEGRATION.md). Sync: `bash scripts/sync-eachlabs-brochure-design-generation.sh`.
+
 ## StrangeVerse (what-if y simulación)
 
 Escenarios estratégicos y simulación multi-agente — skills `strategic-briefing-ops` + `scenario-router` + `scenario-analysis-ops` + `strangeverse` (bin). Upstream: [666ghj/MiroFish](https://github.com/666ghj/MiroFish) · Runtime: [Abrahan-Eagle/strangeverse](https://github.com/Abrahan-Eagle/strangeverse). Guías: [docs/MIROFISH_UPSTREAM.md](docs/MIROFISH_UPSTREAM.md), [docs/STRANGEVERSE_INTEGRATION.md](docs/STRANGEVERSE_INTEGRATION.md). Install: `bash scripts/install-strangeverse-runtime.sh`.

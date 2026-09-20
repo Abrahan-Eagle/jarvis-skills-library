@@ -298,7 +298,7 @@
     "brochure-design-generation": {
       "source": "eachlabs/skills",
       "sourceType": "github",
-      "computedHash": "585f7cc8fad110690d4050b89cd2757612f10dcaa21a75f51bba08d1c8d39b60",
+      "computedHash": "459a631065d245055b4b49be2d3d4b752424a042aaa3ce6c166ce146394885ab",
       "path": "skills/non-code/brochure-design-generation/SKILL.md",
       "upstream": "eachlabs/skills:brochure-design-generation"
     },

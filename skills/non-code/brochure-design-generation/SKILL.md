@@ -33,6 +33,7 @@ allowed-tools: [Read, Edit, Write, Glob, Grep, Bash]
 - **Precedencia:** `jarvis-core` > `eachlabs-router` > esta skill. Complementa `open-design-router` (fábrica local sin coste) y `ui-ux-pro-max` (tokens para código).
 - **Servicio remoto de pago:** cada `curl` a `eachsense-agent.core.eachlabs.run` consume saldo each::labs. HTTP 422 = saldo insuficiente.
 - **Mantenedor:** tras sync upstream, ejecutar `scripts/smoke-eachlabs-brochure-design-generation.sh` + `validate-all.sh`.
+- **"Related Skills" del cuerpo upstream** (`each-sense`, `meta-ad-creative-generation`, `product-photo-generation`, `presentation-design-generation`) **no están en la library**: pedirlas vía `eachlabs-router` (`npx skills add eachlabs/skills@<skill>` tras `skill-security-auditor` PASS); no buscarlas en `~/.cursor/skills/`.
 - `upstream: eachlabs/skills:brochure-design-generation` (pin SHA en `scripts/sync-eachlabs-brochure-design-generation.sh`)
 
 ### IRON LAW JARVIS
