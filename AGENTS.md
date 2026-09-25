@@ -78,6 +78,7 @@ Ver skill `jarvis-core` (`skills/core/jarvis-core/SKILL.md`) — cadena JARVIS y
 | Pack gstack / Garry Tan (`/office-hours`, `/plan-ceo-review`, `/qa`, `/ship`, `/careful`) vs canónico JARVIS | `gstack-router` → `deep-interview-ops`, `code-review-playbook`, `webapp-testing`, `verification-before-completion`, `branch-pr-ops`, `git-guardrails-ops` |
 | Pack shawnpang founder-skills (pitch, data room, outreach, PRD) vs canónico JARVIS/producto | `founder-skills-router` → `zonix-*` (producto), `brainstorming-ops`, `deep-interview-ops`, `strategic-briefing-ops`, `sdd-router` |
 | Pack lool (deck, TAM, competencia, finanzas, IC, cap table) | `founder-skills-router` → `founder-deck-review`, `founder-market-sizing`, `founder-competitive-positioning`, `founder-financial-review`, `founder-ic-sim`, `founder-cap-table-checklist` |
+| Construir pitch deck / one-pager inversor / slide de petición | `founder-skills-router` → `founder-pitch-deck-builder` (método) → `founder-deck-review` (juez); cifras solo desde skill de producto |
 | Auditar skill externa antes de instalar | `claude-skills-router`, `skill-security-auditor` (+ `validate-skills.sh`) |
 | Gobernanza humana irreversible (push, deploy, publicación) | `human-in-the-loop-ops`, `git-guardrails-ops` |
 | Debug | `systematic-debugging` |
@@ -113,4 +114,4 @@ Ver también skill `jarvis-skills-maintainer` (secciones clawvis, CorralX y Zoni
 
 ---
 
-**Última actualización:** 2026-09-20
+**Última actualización:** 2026-09-25

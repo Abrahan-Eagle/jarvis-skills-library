@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-09-20",
+  "generated": "2026-09-25",
   "skills": {
     "api-design-principles": {
       "source": "jarvis-skills-library",
@@ -77,7 +77,7 @@
     "founder-skills-router": {
       "source": "jarvis-skills-library",
       "sourceType": "local",
-      "computedHash": "2aa29832be3488c5116b5ca2e8c06ec70ee8a4c2721c81104ea731637353cc5f",
+      "computedHash": "a479bcae990b3bc38cfbc6d18c63820d938c1a0d3603465d16cdb4904ebb28cd",
       "path": "skills/core/founder-skills-router/SKILL.md"
     },
     "gstack-router": {
@@ -575,7 +575,7 @@
     "founder-deck-review": {
       "source": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f",
       "sourceType": "github",
-      "computedHash": "ad47e4730f5e621b803a407d9257838984b47aec7cb0aebf2bd42289a8b8b2a0",
+      "computedHash": "1c709e931b0a49a68dd42b981efc27de08cf8ea5433790bad256e5cbb35ed064",
       "path": "skills/planning/founder-deck-review/SKILL.md",
       "upstream": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f"
     },
@@ -599,6 +599,12 @@
       "computedHash": "2fae94544b2d428e7d283b0b3825ffbc799bd7e0439436d4c2df92ef488cacde",
       "path": "skills/planning/founder-market-sizing/SKILL.md",
       "upstream": "lool-ventures/founder-skills@70d216778b67b6956cadd79033c219e6bc8b154f"
+    },
+    "founder-pitch-deck-builder": {
+      "source": "jarvis-skills-library",
+      "sourceType": "local",
+      "computedHash": "531d61cc339c127bfcb4594b0f12b85c52bcc16c89b6b64737ad74dfb58a0015",
+      "path": "skills/planning/founder-pitch-deck-builder/SKILL.md"
     },
     "writing-plans": {
       "source": "obra/superpowers",

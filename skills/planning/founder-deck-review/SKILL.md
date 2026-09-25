@@ -16,6 +16,7 @@ metadata:
   triggers: deck review, pitch deck, slides, la petición, plan de salida
   related-skills:
     - founder-skills-router
+    - founder-pitch-deck-builder
     - founder-market-sizing
     - founder-competitive-positioning
     - founder-financial-review
@@ -28,6 +29,8 @@ allowed-tools: [Read, Glob, Grep]
 # Revisión de pitch (rúbrica)
 
 Reescritura JARVIS de la rúbrica de deck review de lool ventures. No ejecuta sus scripts. Forense: [docs/LOOL_FOUNDER_SKILLS_FORENSE_JARVIS.md](../../../docs/LOOL_FOUNDER_SKILLS_FORENSE_JARVIS.md).
+
+Esta skill juzga. Para construir el deck o el one-pager: `founder-pitch-deck-builder` (autor y juez separados).
 
 ## Qué pedir
 

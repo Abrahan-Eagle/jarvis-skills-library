@@ -1,6 +1,6 @@
 # Auto-invoke global
 
-> Generado por `scripts/sync-catalog.py` — 2026-09-20
+> Generado por `scripts/sync-catalog.py` — 2026-09-25
 
 > Multi-skill: orden = precedencia `jarvis-core` cuando aplica; resto alfabético.
 > Skills con `metadata.status: deprecated` se omiten de esta tabla (siguen en CATALOG).
@@ -48,6 +48,8 @@
 | Configurar engram en Cursor | `engram-router` |
 | Consolidar aprendizajes antes de cerrar | `learning-loop-router` |
 | Consolidar aprendizajes de sesión | `learning-loop` |
+| Construir deck, one-pager o slide de petición para inversores | `founder-skills-router` |
+| Construir pitch deck o presentación para inversores | `founder-pitch-deck-builder` |
 | Consultar NotebookLM / notebook con citas | `notebooklm-router` |
 | Contexto largo capturar señales | `learning-loop`, `learning-loop-router` |
 | Convertir tasks Spec Kit a issues GitHub | `speckit-taskstoissues` |
@@ -140,6 +142,7 @@
 | Nueva feature de producto con Spec Kit | `speckit-specify` |
 | Nuevo proyecto JARVIS | `project-bootstrap-ops` |
 | OPSX propose apply archive | `openspec-router` |
+| One-pager para ángel o inversor | `founder-pitch-deck-builder` |
 | OpenSpec u openspec | `openspec-router` |
 | Orquestar loop implementación revisión | `skill-loop`, `skill-loop-router` |
 | PR supera 400 líneas o presupuesto de review | `chained-pr-ops` |
@@ -187,6 +190,7 @@
 | Sesión larga sugerir compactación | `strategic-compact-ops` |
 | Simular comité de inversión | `founder-ic-sim` |
 | Simular opinion publica o reaccion mercado | `scenario-router` |
+| Slide de petición / uso de fondos / la ronda | `founder-pitch-deck-builder` |
 | Spec Kitty o spec-kitty | `kitty-router` |
 | Spec-driven development | `sdd-router` |
 | Spec-driven development ambiguo | `sdd-x-index` |
@@ -194,6 +198,7 @@
 | Stacked PRs o chained PRs | `chained-pr-ops` |
 | Tamaño de mercado TAM SAM SOM | `founder-market-sizing` |
 | Terminar módulo | `verification-before-completion`, `session-learner-ops`, `finishing-a-development-branch`, `jarvis-core` |
+| Traducir SAFE con cap al lenguaje de un ángel | `founder-pitch-deck-builder` |
 | Triage backlog issues y PRs | `backlog-triage-ops` |
 | Tríptico / díptico / folleto / brochure impreso | `brochure-design-generation`, `eachlabs-router` |
 | Validar diff/PR con 2+ revisores independientes | `parallel-judge-ops` |

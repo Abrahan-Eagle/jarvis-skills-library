@@ -1,6 +1,6 @@
 # Grafo de skills relacionadas
 
-> Generado por `scripts/skills-graph.py` — 2026-09-20
+> Generado por `scripts/skills-graph.py` — 2026-09-25
 
 ```mermaid
 flowchart LR
@@ -189,6 +189,7 @@ flowchart LR
   founder_deck_review["founder-deck-review"] --> founder_financial_review["founder-financial-review"]
   founder_deck_review["founder-deck-review"] --> founder_ic_sim["founder-ic-sim"]
   founder_deck_review["founder-deck-review"] --> founder_market_sizing["founder-market-sizing"]
+  founder_deck_review["founder-deck-review"] --> founder_pitch_deck_builder["founder-pitch-deck-builder"]
   founder_deck_review["founder-deck-review"] --> founder_skills_router["founder-skills-router"]
   founder_deck_review["founder-deck-review"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
   founder_financial_review["founder-financial-review"] --> founder_cap_table_checklist["founder-cap-table-checklist"]
@@ -203,6 +204,15 @@ flowchart LR
   founder_market_sizing["founder-market-sizing"] --> founder_deck_review["founder-deck-review"]
   founder_market_sizing["founder-market-sizing"] --> founder_skills_router["founder-skills-router"]
   founder_market_sizing["founder-market-sizing"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
+  founder_pitch_deck_builder["founder-pitch-deck-builder"] --> cognitive_doc_design_ops["cognitive-doc-design-ops"]
+  founder_pitch_deck_builder["founder-pitch-deck-builder"] --> founder_cap_table_checklist["founder-cap-table-checklist"]
+  founder_pitch_deck_builder["founder-pitch-deck-builder"] --> founder_competitive_positioning["founder-competitive-positioning"]
+  founder_pitch_deck_builder["founder-pitch-deck-builder"] --> founder_deck_review["founder-deck-review"]
+  founder_pitch_deck_builder["founder-pitch-deck-builder"] --> founder_financial_review["founder-financial-review"]
+  founder_pitch_deck_builder["founder-pitch-deck-builder"] --> founder_market_sizing["founder-market-sizing"]
+  founder_pitch_deck_builder["founder-pitch-deck-builder"] --> founder_skills_router["founder-skills-router"]
+  founder_pitch_deck_builder["founder-pitch-deck-builder"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
+  founder_pitch_deck_builder["founder-pitch-deck-builder"] --> open_design_router["open-design-router"]
   founder_skills_router["founder-skills-router"] --> architecture_patterns["architecture-patterns"]
   founder_skills_router["founder-skills-router"] --> brainstorming_ops["brainstorming-ops"]
   founder_skills_router["founder-skills-router"] --> code_review_playbook["code-review-playbook"]
@@ -214,6 +224,7 @@ flowchart LR
   founder_skills_router["founder-skills-router"] --> founder_financial_review["founder-financial-review"]
   founder_skills_router["founder-skills-router"] --> founder_ic_sim["founder-ic-sim"]
   founder_skills_router["founder-skills-router"] --> founder_market_sizing["founder-market-sizing"]
+  founder_skills_router["founder-skills-router"] --> founder_pitch_deck_builder["founder-pitch-deck-builder"]
   founder_skills_router["founder-skills-router"] --> gstack_router["gstack-router"]
   founder_skills_router["founder-skills-router"] --> human_in_the_loop_ops["human-in-the-loop-ops"]
   founder_skills_router["founder-skills-router"] --> jarvis_core["jarvis-core"]
@@ -544,4 +555,4 @@ flowchart LR
   zoom_out["zoom-out"] --> software_architecture["software-architecture"]
 ```
 
-Nodos conocidos: 121. Aristas (solo a skills en catálogo): 538.
+Nodos conocidos: 122. Aristas (solo a skills en catálogo): 549.

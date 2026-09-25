@@ -7,12 +7,13 @@ description: >
 license: UNLICENSED
 metadata:
   author: JARVIS Global
-  version: "1.1"
+  version: "1.2"
   scope: [global]
   category: core
   auto_invoke:
     - "Pack shawnpang founder-skills (pitch, data room, outreach, PRD) vs canónico JARVIS/producto"
     - "pitch deck / data room / fundraising email"
+    - "Construir deck, one-pager o slide de petición para inversores"
     - "founder skills o startup-founder-skills"
     - "Pack lool founder-skills (deck, mercado, IC, cap table) vs rúbricas JARVIS"
   triggers: shawnpang, lool, founder skills, pitch deck, data room, fundraising email, cold outreach, PRD, market research, TAM, IC, SAFE, cap table, SOC2, startup-context
@@ -30,6 +31,7 @@ metadata:
     - human-in-the-loop-ops
     - skill-security-auditor
     - gstack-router
+    - founder-pitch-deck-builder
     - founder-deck-review
     - founder-market-sizing
     - founder-competitive-positioning
@@ -61,7 +63,8 @@ Dos packs, un router. No sustituye `jarvis-core`, `speckit-*`, ni las skills `zo
 
 | Pedido | Ruta | No usar |
 |--------|------|---------|
-| Pitch, data room, email inversor | Rúbrica: `founder-deck-review`. Cifras y copy de producto: `zonix-fundraising-narrative`, `zonix-investor-materials` | Skill global `pitch-deck` y el plugin lool |
+| Construir deck / one-pager / slide de petición | Método: `founder-pitch-deck-builder` (formato, 11 slides, petición, uso de fondos). Cifras: skill de producto (`zonix-startup-context`, `zonix-fundraising-narrative`). Render: `open-design-router` | `pitch-deck` shawnpang; inventar tracción, cap o MOIC |
+| Revisar pitch, data room, email inversor | Rúbrica: `founder-deck-review`. Cifras y copy de producto: `zonix-fundraising-narrative`, `zonix-investor-materials` | Skill global `pitch-deck` y el plugin lool |
 | Exit (slide 13) o petición (slide 14) | `founder-deck-review` + `founder-cap-table-checklist` | Inventar acquirers, ROI o un % de dilución |
 | PRD / feature | `sdd-router` → `speckit-specify` | `prd-writing` |
 | Cortar MVP | `brainstorming-ops` (MoSCoW: citar, no hay sección nueva) | Segundo PRD |
@@ -93,7 +96,7 @@ Dos packs, un router. No sustituye `jarvis-core`, `speckit-*`, ni las skills `zo
 | `gstack-router` | Garry Tan | Sprint de ingeniería; no pitch |
 | `claude-skills-router` | Rezvani | Auditoría de skills antes de instalar |
 | `sdd-router` | Spec Kit | PRD canónico |
-| **`founder-skills-router`** | Shawn Pang + lool | Shawnpang solo routing; lool son las seis rúbricas |
+| **`founder-skills-router`** | Shawn Pang + lool + builder JARVIS | Shawnpang solo routing; lool son las seis rúbricas; `founder-pitch-deck-builder` construye (autor ≠ juez) |
 
 ## Limitaciones
 

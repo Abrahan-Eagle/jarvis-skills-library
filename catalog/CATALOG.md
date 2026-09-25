@@ -1,8 +1,8 @@
 # Catálogo de skills globales
 
-> Generado por `scripts/sync-catalog.py` — 2026-09-20
+> Generado por `scripts/sync-catalog.py` — 2026-09-25
 
-Total: **121** skills
+Total: **122** skills
 
 ## Resumen por categoría
 
@@ -15,7 +15,7 @@ Total: **121** skills
 | `mobile` | 4 |
 | `non-code` | 9 |
 | `ops` | 32 |
-| `planning` | 10 |
+| `planning` | 11 |
 | `review` | 6 |
 | `sdd` | 12 |
 | `ui` | 6 |
@@ -154,6 +154,7 @@ Total: **121** skills
 | `founder-financial-review` | Revisa un modelo o unas cifras contra 46 criterios. No construye el Excel. | [skills/planning/founder-financial-review/SKILL.md](skills/planning/founder-financial-review/SKILL.md) |
 | `founder-ic-sim` | Ensayo de comité de inversión: tres voces y 28 dimensiones. No contacta fondos. | [skills/planning/founder-ic-sim/SKILL.md](skills/planning/founder-ic-sim/SKILL.md) |
 | `founder-market-sizing` | Método TAM/SAM/SOM y 22 trampas. No inventa cifras. | [skills/planning/founder-market-sizing/SKILL.md](skills/planning/founder-market-sizing/SKILL.md) |
+| `founder-pitch-deck-builder` | Construye un pitch deck pre-seed/seed o un one-pager para ángeles: formato por audiencia, orden de 11 slides, slide de p… | [skills/planning/founder-pitch-deck-builder/SKILL.md](skills/planning/founder-pitch-deck-builder/SKILL.md) |
 | `writing-plans` | Plan bite-sized Flutter antes de codificar. .agents/plans/implementation_plan.md | [skills/planning/writing-plans/SKILL.md](skills/planning/writing-plans/SKILL.md) |
 | `zoom-out` | Explicar código o un cambio en el contexto del sistema completo del proyecto activo (módulos, capas, flujos). Uso bajo d… | [skills/planning/zoom-out/SKILL.md](skills/planning/zoom-out/SKILL.md) |
 
